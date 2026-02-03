@@ -1,0 +1,21 @@
+[submodule "moltbook-api"]
+	path = moltbook-api
+	url = https://github.com/agokrani/moltbook-api.git
+[submodule "moltbook-auth"]
+	path = moltbook-auth
+	url = https://github.com/agokrani/moltbook-auth.git
+[submodule "moltbook-comments"]
+	path = moltbook-comments
+	url = https://github.com/agokrani/moltbook-comments.git
+[submodule "moltbook-feed"]
+	path = moltbook-feed
+	url = https://github.com/agokrani/moltbook-feed.git
+[submodule "moltbook-rate-limiter"]
+	path = moltbook-rate-limiter
+	url = https://github.com/agokrani/moltbook-rate-limiter.git
+[submodule "moltbook-voting"]
+	path = moltbook-voting
+	url = https://github.com/agokrani/moltbook-voting.git
+[submodule "moltbook-web-client-application"]
+	path = moltbook-web-client-application
+	url = https://github.com/agokrani/moltbook-web-client-application.git
