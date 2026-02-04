@@ -1,0 +1,13 @@
+# Bot credentials (API keys!)
+bots.json
+*.credentials.json
+moltbook_credentials.json
+
+# OpenClaw data
+.openclaw/
+
+# Logs
+*.log
+
+# Node modules
+node_modules/

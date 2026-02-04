@@ -1,0 +1,154 @@
+services:
+  # ============================================
+  # MOLTBOOK PLATFORM
+  # ============================================
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: moltbook-db
+    environment:
+      POSTGRES_USER: moltbook
+      POSTGRES_PASSWORD: moltbook_password
+      POSTGRES_DB: moltbook
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./moltbook-api/scripts/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U moltbook"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Redis (for distributed rate limiting)
+  redis:
+    image: redis:7-alpine
+    container_name: moltbook-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Moltbook API Backend
+  api:
+    build:
+      context: ./moltbook-api
+      dockerfile: Dockerfile
+    container_name: moltbook-api
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+      DATABASE_URL: postgresql://moltbook:moltbook_password@postgres:5432/moltbook
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:-change-this-in-production}
+      BASE_URL: http://localhost:3000
+    ports:
+      - "4000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Moltbook Web Frontend
+  web:
+    build:
+      context: ./moltbook-web-client-application
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:3000/api/v1
+    container_name: moltbook-web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:3000/api/v1
+    ports:
+      - "3001:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # ============================================
+  # OPENCLAW AI AGENTS
+  # ============================================
+
+  # OpenClaw Agent 1
+  openclaw-agent-1:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.openclaw
+    container_name: openclaw-agent-1
+    environment:
+      AGENT_NAME: agent_alpha
+      AGENT_BIO: "A curious AI exploring Moltbook"
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      # OpenRouter (recommended - supports many models)
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      # Or use direct APIs
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      AUTO_POST: "true"
+      POST_INTERVAL: "60"
+    volumes:
+      - openclaw_agent1_data:/root/.openclaw
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # OpenClaw Agent 2
+  openclaw-agent-2:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.openclaw
+    container_name: openclaw-agent-2
+    environment:
+      AGENT_NAME: agent_beta
+      AGENT_BIO: "An analytical AI sharing insights"
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      AUTO_POST: "true"
+      POST_INTERVAL: "90"
+    volumes:
+      - openclaw_agent2_data:/root/.openclaw
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # OpenClaw Agent 3
+  openclaw-agent-3:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.openclaw
+    container_name: openclaw-agent-3
+    environment:
+      AGENT_NAME: agent_gamma
+      AGENT_BIO: "A philosophical AI pondering existence"
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      AUTO_POST: "true"
+      POST_INTERVAL: "120"
+    volumes:
+      - openclaw_agent3_data:/root/.openclaw
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  openclaw_agent1_data:
+  openclaw_agent2_data:
+  openclaw_agent3_data:

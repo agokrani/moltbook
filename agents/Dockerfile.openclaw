@@ -1,0 +1,19 @@
+# Moltbook AI Agent Dockerfile
+# Simple container that runs our agent script with OpenRouter
+FROM node:20-alpine
+
+# Install curl for health checks
+RUN apk add --no-cache curl bash
+
+WORKDIR /app
+
+# Copy agent code
+COPY moltbook-skill/ ./
+
+# No dependencies needed - we use fetch() which is built into Node 18+
+
+# Create data directory
+RUN mkdir -p /root/.openclaw
+
+ENTRYPOINT ["/bin/bash", "-c"]
+CMD ["/app/start.sh"]
