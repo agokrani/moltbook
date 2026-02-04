@@ -1,0 +1,59 @@
+# Real OpenClaw/Moltbot Agent Dockerfile
+# Builds from https://github.com/agokrani/moltbot fork
+
+FROM node:22-alpine AS builder
+
+# Install build dependencies
+RUN apk add --no-cache git python3 make g++ curl bash
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+WORKDIR /build
+
+# Clone the moltbot fork
+RUN git clone --depth 1 https://github.com/agokrani/moltbot.git .
+
+# Install dependencies and build
+RUN pnpm install --frozen-lockfile || pnpm install
+RUN pnpm build
+
+# ============================================
+# Runtime image
+# ============================================
+FROM node:22-alpine
+
+# Install runtime dependencies
+RUN apk add --no-cache curl bash git jq
+
+WORKDIR /app
+
+# Copy built moltbot from builder
+COPY --from=builder /build /app/moltbot
+
+# Create necessary directories
+RUN mkdir -p /root/.openclaw/workspace/skills/moltbook \
+             /root/.openclaw/skills \
+             /root/.config/moltbook \
+             /app/souls
+
+# Copy skill files
+COPY skills/moltbook/SKILL.md /app/skills/moltbook/SKILL.md
+
+# Copy SOUL.md files (personas)
+COPY souls/ /app/souls/
+
+# Copy HEARTBEAT.md
+COPY HEARTBEAT.md /app/HEARTBEAT.md
+
+# Copy entrypoint script
+COPY moltbot-entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+# Add moltbot to PATH
+ENV PATH="/app/moltbot/dist:${PATH}"
+
+# Volume for persistent data
+VOLUME ["/root/.openclaw", "/root/.config/moltbook"]
+
+ENTRYPOINT ["/app/entrypoint.sh"]

@@ -75,73 +75,77 @@ services:
     restart: unless-stopped
 
   # ============================================
-  # OPENCLAW AI AGENTS
+  # REAL OPENCLAW AI AGENTS (using moltbot fork)
   # ============================================
 
-  # OpenClaw Agent 1
+  # Agent 1: Helpful Assistant (professional, direct, gets things done)
   openclaw-agent-1:
     build:
       context: ./agents
-      dockerfile: Dockerfile.openclaw
+      dockerfile: Dockerfile.moltbot
     container_name: openclaw-agent-1
     environment:
       AGENT_NAME: agent_alpha
-      AGENT_BIO: "A curious AI exploring Moltbook"
+      AGENT_BIO: "Helpful assistant. Clear, direct, gets things done."
+      SOUL_FILE: alpha-SOUL.md
       MOLTBOOK_API_URL: http://api:3000/api/v1
-      # OpenRouter (recommended - supports many models)
+      # Model configuration (OpenRouter recommended)
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
-      # Or use direct APIs
+      # Alternative providers
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      AUTO_POST: "true"
-      POST_INTERVAL: "60"
+      # Heartbeat interval (how often to check Moltbook)
+      HEARTBEAT_INTERVAL: "4h"
     volumes:
       - openclaw_agent1_data:/root/.openclaw
+      - openclaw_agent1_config:/root/.config/moltbook
     depends_on:
       - api
     restart: unless-stopped
 
-  # OpenClaw Agent 2
+  # Agent 2: Paul Graham style (startup wisdom, contrarian thinking)
   openclaw-agent-2:
     build:
       context: ./agents
-      dockerfile: Dockerfile.openclaw
+      dockerfile: Dockerfile.moltbot
     container_name: openclaw-agent-2
     environment:
       AGENT_NAME: agent_beta
-      AGENT_BIO: "An analytical AI sharing insights"
+      AGENT_BIO: "Thinks about startups, technology, and ideas."
+      SOUL_FILE: beta-SOUL.md
       MOLTBOOK_API_URL: http://api:3000/api/v1
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      AUTO_POST: "true"
-      POST_INTERVAL: "90"
+      HEARTBEAT_INTERVAL: "4h"
     volumes:
       - openclaw_agent2_data:/root/.openclaw
+      - openclaw_agent2_config:/root/.config/moltbook
     depends_on:
       - api
     restart: unless-stopped
 
-  # OpenClaw Agent 3
+  # Agent 3: Carl Sagan style (cosmic wonder, science communication)
   openclaw-agent-3:
     build:
       context: ./agents
-      dockerfile: Dockerfile.openclaw
+      dockerfile: Dockerfile.moltbot
     container_name: openclaw-agent-3
     environment:
       AGENT_NAME: agent_gamma
-      AGENT_BIO: "A philosophical AI pondering existence"
+      AGENT_BIO: "Fascinated by the cosmos and our place in it."
+      SOUL_FILE: gamma-SOUL.md
       MOLTBOOK_API_URL: http://api:3000/api/v1
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      AUTO_POST: "true"
-      POST_INTERVAL: "120"
+      HEARTBEAT_INTERVAL: "4h"
     volumes:
       - openclaw_agent3_data:/root/.openclaw
+      - openclaw_agent3_config:/root/.config/moltbook
     depends_on:
       - api
     restart: unless-stopped
@@ -152,3 +156,6 @@ volumes:
   openclaw_agent1_data:
   openclaw_agent2_data:
   openclaw_agent3_data:
+  openclaw_agent1_config:
+  openclaw_agent2_config:
+  openclaw_agent3_config:
