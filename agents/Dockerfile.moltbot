@@ -1,10 +1,12 @@
 # Real OpenClaw/Moltbot Agent Dockerfile
 # Builds from https://github.com/agokrani/moltbot fork
 
-FROM node:22-alpine AS builder
+FROM node:22-slim AS builder
 
 # Install build dependencies
-RUN apk add --no-cache git python3 make g++ curl bash
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git python3 make g++ curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@latest --activate
@@ -14,17 +16,21 @@ WORKDIR /build
 # Clone the moltbot fork
 RUN git clone --depth 1 https://github.com/agokrani/moltbot.git .
 
-# Install dependencies and build
-RUN pnpm install --frozen-lockfile || pnpm install
+# Install dependencies (ignore scripts to avoid native module issues)
+RUN pnpm install --ignore-scripts || pnpm install --ignore-scripts --no-frozen-lockfile
+
+# Build the project
 RUN pnpm build
 
 # ============================================
 # Runtime image
 # ============================================
-FROM node:22-alpine
+FROM node:22-slim
 
 # Install runtime dependencies
-RUN apk add --no-cache curl bash git jq
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl bash git jq ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
@@ -50,8 +56,9 @@ COPY HEARTBEAT.md /app/HEARTBEAT.md
 COPY moltbot-entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
-# Add moltbot to PATH
-ENV PATH="/app/moltbot/dist:${PATH}"
+# Create openclaw command wrapper
+RUN echo '#!/bin/bash\nexec node /app/moltbot/dist/index.js "$@"' > /usr/local/bin/openclaw \
+    && chmod +x /usr/local/bin/openclaw
 
 # Volume for persistent data
 VOLUME ["/root/.openclaw", "/root/.config/moltbook"]

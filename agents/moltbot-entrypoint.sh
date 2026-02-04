@@ -12,6 +12,7 @@ WORKSPACE="/root/.openclaw/workspace"
 SKILLS_DIR="$WORKSPACE/skills/moltbook"
 CONFIG_DIR="/root/.openclaw"
 CREDS_FILE="/root/.config/moltbook/credentials.json"
+MOLTBOT_DIR="/app/moltbot"
 
 # Create directories
 mkdir -p "$WORKSPACE" "$SKILLS_DIR" "$CONFIG_DIR"
@@ -100,42 +101,59 @@ else
 fi
 
 # ============================================
-# 4. Create OpenClaw config
+# 4. Determine model provider
 # ============================================
 
 echo ""
-echo "Creating OpenClaw configuration..."
+echo "Configuring model provider..."
 
-# Determine which model provider to use
 if [ -n "$OPENROUTER_API_KEY" ]; then
-  MODEL_PROVIDER="openrouter"
-  MODEL_NAME="${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}"
+  MODEL_PRIMARY="openrouter/${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}"
+  echo "  Using OpenRouter: $MODEL_PRIMARY"
 elif [ -n "$ANTHROPIC_API_KEY" ]; then
-  MODEL_PROVIDER="anthropic"
-  MODEL_NAME="claude-sonnet-4-20250514"
+  MODEL_PRIMARY="anthropic/claude-sonnet-4-20250514"
+  echo "  Using Anthropic: $MODEL_PRIMARY"
 elif [ -n "$OPENAI_API_KEY" ]; then
-  MODEL_PROVIDER="openai"
-  MODEL_NAME="gpt-4o"
+  MODEL_PRIMARY="openai/gpt-4o"
+  echo "  Using OpenAI: $MODEL_PRIMARY"
 else
   echo "[ERROR] No AI API key provided"
   echo "Set one of: OPENROUTER_API_KEY, ANTHROPIC_API_KEY, OPENAI_API_KEY"
   exit 1
 fi
 
-echo "  Model provider: $MODEL_PROVIDER"
-echo "  Model: $MODEL_NAME"
+# ============================================
+# 5. Create OpenClaw config
+# ============================================
 
-# Create openclaw.json config
+echo ""
+echo "Creating OpenClaw configuration..."
+
+# Create openclaw.json config following the documented schema
 cat > "$CONFIG_DIR/openclaw.json" << EOF
 {
-  "model": {
-    "provider": "$MODEL_PROVIDER",
-    "model": "$MODEL_NAME"
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "auth": {
+      "token": "moltbook-agent-$AGENT_NAME"
+    }
   },
-  "workspace": "$WORKSPACE",
+  "agents": {
+    "defaults": {
+      "workspace": "$WORKSPACE",
+      "model": {
+        "primary": "$MODEL_PRIMARY"
+      },
+      "heartbeat": {
+        "every": "${HEARTBEAT_INTERVAL:-30m}",
+        "target": "none"
+      }
+    }
+  },
   "skills": {
     "load": {
-      "paths": ["$WORKSPACE/skills"]
+      "extraDirs": ["$WORKSPACE/skills"]
     },
     "entries": {
       "moltbook": {
@@ -147,49 +165,43 @@ cat > "$CONFIG_DIR/openclaw.json" << EOF
       }
     }
   },
-  "agents": {
-    "defaults": {
-      "workspace": "$WORKSPACE",
-      "heartbeat": {
-        "enabled": true,
-        "every": "${HEARTBEAT_INTERVAL:-4h}"
-      }
-    }
+  "env": {
+    "MOLTBOOK_API_URL": "$MOLTBOOK_API_URL",
+    "MOLTBOOK_API_KEY": "$MOLTBOOK_API_KEY"
   }
 }
 EOF
 
-echo "[OK] Configuration created"
+echo "[OK] Configuration created at $CONFIG_DIR/openclaw.json"
 
 # ============================================
-# 5. Export environment variables
+# 6. Export environment variables
 # ============================================
 
 export MOLTBOOK_API_KEY="$MOLTBOOK_API_KEY"
 export MOLTBOOK_API_URL="$MOLTBOOK_API_URL"
-
-# Export API keys for OpenClaw
 export OPENROUTER_API_KEY="${OPENROUTER_API_KEY:-}"
 export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
 export OPENAI_API_KEY="${OPENAI_API_KEY:-}"
 
 # ============================================
-# 6. Start OpenClaw agent
+# 7. Start OpenClaw Gateway
 # ============================================
 
 echo ""
 echo "========================================"
-echo "Starting OpenClaw agent with heartbeat"
+echo "Starting OpenClaw Gateway"
 echo "  Workspace: $WORKSPACE"
-echo "  Heartbeat interval: ${HEARTBEAT_INTERVAL:-4h}"
+echo "  Heartbeat interval: ${HEARTBEAT_INTERVAL:-30m}"
+echo "  Heartbeat target: none (internal only)"
 echo "========================================"
 echo ""
 
-# Change to moltbot directory and run
-cd /app/moltbot
+cd "$MOLTBOT_DIR"
 
-# Run the openclaw agent with heartbeat
-# Using node to run the built CLI
-exec node dist/index.js agent \
-  --config "$CONFIG_DIR/openclaw.json" \
-  --workspace "$WORKSPACE"
+# Run the gateway with heartbeat enabled
+# --allow-unconfigured bypasses interactive setup
+# --verbose for debugging
+exec node dist/index.js gateway \
+  --allow-unconfigured \
+  --verbose
