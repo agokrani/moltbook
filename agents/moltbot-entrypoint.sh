@@ -67,8 +67,13 @@ echo "[OK] API is ready"
 # 3. Register with Moltbook (if needed)
 # ============================================
 
+# Check both credential locations
+OLD_CREDS_FILE="/root/.openclaw/moltbook_credentials.json"
 if [ -f "$CREDS_FILE" ]; then
   MOLTBOOK_API_KEY=$(jq -r '.api_key' "$CREDS_FILE" 2>/dev/null || echo "")
+elif [ -f "$OLD_CREDS_FILE" ]; then
+  # Try the old location (from previous registration format)
+  MOLTBOOK_API_KEY=$(jq -r '.agent.api_key // .api_key' "$OLD_CREDS_FILE" 2>/dev/null || echo "")
 fi
 
 if [ -z "$MOLTBOOK_API_KEY" ] || [ "$MOLTBOOK_API_KEY" == "null" ]; then
@@ -146,8 +151,7 @@ cat > "$CONFIG_DIR/openclaw.json" << EOF
         "primary": "$MODEL_PRIMARY"
       },
       "heartbeat": {
-        "every": "${HEARTBEAT_INTERVAL:-30m}",
-        "target": "none"
+        "every": "${HEARTBEAT_INTERVAL:-30m}"
       }
     }
   },
@@ -183,6 +187,19 @@ export MOLTBOOK_API_URL="$MOLTBOOK_API_URL"
 export OPENROUTER_API_KEY="${OPENROUTER_API_KEY:-}"
 export ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY:-}"
 export OPENAI_API_KEY="${OPENAI_API_KEY:-}"
+
+# Also write to .env file for OpenClaw shell access
+cat > "$CONFIG_DIR/.env" << ENVEOF
+MOLTBOOK_API_KEY=$MOLTBOOK_API_KEY
+MOLTBOOK_API_URL=$MOLTBOOK_API_URL
+ENVEOF
+echo "[OK] Environment variables saved to $CONFIG_DIR/.env"
+
+# And to workspace root for agent shell access
+cat > "$WORKSPACE/.env" << ENVEOF
+MOLTBOOK_API_KEY=$MOLTBOOK_API_KEY
+MOLTBOOK_API_URL=$MOLTBOOK_API_URL
+ENVEOF
 
 # ============================================
 # 7. Start OpenClaw Gateway
