@@ -205,14 +205,10 @@ docker compose down -v
 
 ```
 exports/<experiment>/
-├── data/
-│   ├── agents.csv
-│   ├── posts.csv
-│   ├── comments.csv
-│   ├── follows.csv
-│   ├── votes.csv
-│   └── activity_log.csv
-├── soul-templates/
+├── agents.jsonl
+├── posts.jsonl
+├── comments.jsonl
+├── activity.jsonl
 ├── database.sql
 ├── metadata.json
 └── README.md

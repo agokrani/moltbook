@@ -13,7 +13,7 @@
 #     posts.jsonl         - All posts
 #     comments.jsonl      - All comments
 #     agents.jsonl        - Agent profiles
-#     interactions.jsonl  - Votes and other interactions
+#     activity.jsonl      - Activity log (posts/comments/votes/follows)
 #     README.md           - Dataset card for HuggingFace
 
 set -e
@@ -50,11 +50,11 @@ fi
 
 # Get API key from a running agent (required for auth)
 echo "Getting API key..."
-API_KEY=$(docker compose ps --format json 2>/dev/null | jq -r '.[].Name' | grep -E "agent" | head -1 | xargs -I {} docker exec {} cat /root/.config/moltbook/credentials.json 2>/dev/null | jq -r '.api_key' || echo "")
+API_KEY=$(docker compose ps --format json 2>/dev/null | jq -r '.[].Name' | grep -E "(agent|openclaw|civiclens)" | head -1 | xargs -I {} docker exec {} cat /root/.config/moltbook/credentials.json 2>/dev/null | jq -r '.api_key' || echo "")
 
 if [ -z "$API_KEY" ] || [ "$API_KEY" == "null" ]; then
   # Try alternate method
-  API_KEY=$(docker ps --format "{{.Names}}" | grep -E "agent" | head -1 | xargs -I {} docker exec {} cat /root/.config/moltbook/credentials.json 2>/dev/null | jq -r '.api_key' || echo "")
+  API_KEY=$(docker ps --format "{{.Names}}" | grep -E "(agent|openclaw|civiclens)" | head -1 | xargs -I {} docker exec {} cat /root/.config/moltbook/credentials.json 2>/dev/null | jq -r '.api_key' || echo "")
 fi
 
 if [ -z "$API_KEY" ] || [ "$API_KEY" == "null" ]; then
@@ -70,7 +70,28 @@ AUTH_HEADER="Authorization: Bearer $API_KEY"
 # Export Agents
 # ============================================
 echo "Exporting agents..."
-curl -s -H "$AUTH_HEADER" "$API_URL/agents" | jq -c '.data[]' > "$OUTPUT_DIR/agents.jsonl" 2>/dev/null || echo "[]" > "$OUTPUT_DIR/agents.jsonl"
+> "$OUTPUT_DIR/agents.jsonl"
+AGENT_OFFSET=0
+AGENT_LIMIT=100
+
+while true; do
+  RESPONSE=$(curl -s -H "$AUTH_HEADER" "$API_URL/agents?limit=$AGENT_LIMIT&offset=$AGENT_OFFSET&sort=newest")
+  AGENTS=$(echo "$RESPONSE" | jq -c '.data[]' 2>/dev/null || true)
+
+  if [ -z "$AGENTS" ]; then
+    break
+  fi
+
+  echo "$AGENTS" >> "$OUTPUT_DIR/agents.jsonl"
+
+  HAS_MORE=$(echo "$RESPONSE" | jq -r '.pagination.hasMore // false' 2>/dev/null || echo "false")
+  if [ "$HAS_MORE" != "true" ]; then
+    break
+  fi
+
+  AGENT_OFFSET=$((AGENT_OFFSET + AGENT_LIMIT))
+done
+
 AGENT_COUNT=$(wc -l < "$OUTPUT_DIR/agents.jsonl" | tr -d ' ')
 echo "  -> $AGENT_COUNT agents"
 
@@ -78,13 +99,13 @@ echo "  -> $AGENT_COUNT agents"
 # Export Posts
 # ============================================
 echo "Exporting posts..."
-# Fetch all posts (paginate if needed)
-PAGE=1
+# Fetch all posts (paginate with offset)
+OFFSET=0
 LIMIT=100
 > "$OUTPUT_DIR/posts.jsonl"
 
 while true; do
-  RESPONSE=$(curl -s -H "$AUTH_HEADER" "$API_URL/posts?page=$PAGE&limit=$LIMIT&sort=new")
+  RESPONSE=$(curl -s -H "$AUTH_HEADER" "$API_URL/posts?limit=$LIMIT&offset=$OFFSET&sort=new")
   POSTS=$(echo "$RESPONSE" | jq -c '.data[]' 2>/dev/null)
 
   if [ -z "$POSTS" ] || [ "$POSTS" == "" ]; then
@@ -98,7 +119,7 @@ while true; do
     break
   fi
 
-  PAGE=$((PAGE + 1))
+  OFFSET=$((OFFSET + LIMIT))
 done
 
 POST_COUNT=$(wc -l < "$OUTPUT_DIR/posts.jsonl" | tr -d ' ')
@@ -114,12 +135,53 @@ echo "Exporting comments..."
 while IFS= read -r post; do
   POST_ID=$(echo "$post" | jq -r '.id')
   if [ -n "$POST_ID" ] && [ "$POST_ID" != "null" ]; then
-    curl -s -H "$AUTH_HEADER" "$API_URL/posts/$POST_ID/comments" | jq -c '.data[]' 2>/dev/null >> "$OUTPUT_DIR/comments.jsonl" || true
+    # API returns a nested comment tree; flatten to one JSON object per comment line.
+    curl -s -H "$AUTH_HEADER" "$API_URL/posts/$POST_ID/comments?sort=new&limit=500" \
+      | jq -c --arg post_id "$POST_ID" '
+          def flat:
+            . as $c
+            | [$c] + ((.replies // []) | map(. | flat) | add // []);
+          (.comments // [])
+          | map(. | flat) | add // []
+          | .[]
+          | . + {post_id: $post_id}
+          | del(.replies)
+        ' 2>/dev/null >> "$OUTPUT_DIR/comments.jsonl" || true
   fi
 done < "$OUTPUT_DIR/posts.jsonl"
 
 COMMENT_COUNT=$(wc -l < "$OUTPUT_DIR/comments.jsonl" | tr -d ' ')
 echo "  -> $COMMENT_COUNT comments"
+
+# ============================================
+# Export Activity Log (CivicLens)
+# ============================================
+echo "Exporting activity log..."
+> "$OUTPUT_DIR/activity.jsonl"
+
+ACTIVITY_OFFSET=0
+ACTIVITY_LIMIT=1000
+
+while true; do
+  RESPONSE=$(curl -s -H "$AUTH_HEADER" "$API_URL/analytics/activity?limit=$ACTIVITY_LIMIT&offset=$ACTIVITY_OFFSET")
+  EVENTS=$(echo "$RESPONSE" | jq -c '.activities[]' 2>/dev/null || true)
+
+  if [ -z "$EVENTS" ]; then
+    break
+  fi
+
+  echo "$EVENTS" >> "$OUTPUT_DIR/activity.jsonl"
+
+  COUNT=$(echo "$RESPONSE" | jq -r '.count // 0' 2>/dev/null || echo "0")
+  if [ "$COUNT" -lt "$ACTIVITY_LIMIT" ]; then
+    break
+  fi
+
+  ACTIVITY_OFFSET=$((ACTIVITY_OFFSET + ACTIVITY_LIMIT))
+done
+
+ACTIVITY_COUNT=$(wc -l < "$OUTPUT_DIR/activity.jsonl" | tr -d ' ')
+echo "  -> $ACTIVITY_COUNT events"
 
 # ============================================
 # Export Raw Database (optional - more complete)
@@ -145,7 +207,8 @@ cat > "$OUTPUT_DIR/metadata.json" << EOF
   "stats": {
     "agents": $AGENT_COUNT,
     "posts": $POST_COUNT,
-    "comments": $COMMENT_COUNT
+    "comments": $COMMENT_COUNT,
+    "activity_events": $ACTIVITY_COUNT
   },
   "agents": [$(cat "$OUTPUT_DIR/agents.jsonl" | jq -c '{name: .name, description: .description}' | paste -sd, -)]
 }
@@ -198,6 +261,7 @@ Data from a CivicLens multi-agent AI experiment on the Moltbook platform.
 - \`posts.jsonl\` - All posts with content, author, timestamps, votes
 - \`comments.jsonl\` - All comments with threading info
 - \`agents.jsonl\` - Agent profiles and descriptions
+- \`activity.jsonl\` - CivicLens activity log (posts/comments/votes/follows)
 - \`metadata.json\` - Experiment metadata
 - \`database.sql\` - Full PostgreSQL dump (for complete reconstruction)
 

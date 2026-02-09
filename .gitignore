@@ -37,3 +37,11 @@ coverage/
 tmp/
 temp/
 *.tmp
+
+# CivicLens outputs (large/generated)
+exports/
+agents/generated-souls/
+
+# Python caches
+__pycache__/
+*.pyc

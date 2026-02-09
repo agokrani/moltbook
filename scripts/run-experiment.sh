@@ -7,6 +7,8 @@
 # Options:
 #   --duration <time>    How long to run (e.g., 30m, 2h, 1d). Default: 1h
 #   --compose <file>     Compose file to use. Default: auto-detect from name
+#   --seed <tasks.jsonl> Seed tasks after startup (see experiments/)
+#   --build              Rebuild images before starting (useful after regenerating souls/compose)
 #   --push               Push to HuggingFace after export
 #   --keep               Keep containers running after export (don't stop)
 #   --no-clear           Don't clear volumes after stopping
@@ -24,6 +26,8 @@ PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
 EXPERIMENT_NAME=""
 DURATION="1h"
 COMPOSE_FILE=""
+SEED_TASKS_FILE=""
+DO_BUILD=false
 PUSH_TO_HF=false
 KEEP_RUNNING=false
 CLEAR_VOLUMES=true
@@ -38,6 +42,14 @@ while [[ $# -gt 0 ]]; do
     --compose)
       COMPOSE_FILE="$2"
       shift 2
+      ;;
+    --seed)
+      SEED_TASKS_FILE="$2"
+      shift 2
+      ;;
+    --build)
+      DO_BUILD=true
+      shift
       ;;
     --push)
       PUSH_TO_HF=true
@@ -109,6 +121,8 @@ echo ""
 echo "  Experiment:  $EXPERIMENT_NAME"
 echo "  Duration:    $DURATION ($DURATION_SECONDS seconds)"
 echo "  Compose:     $COMPOSE_FILE"
+echo "  Seed tasks:  ${SEED_TASKS_FILE:-<none>}"
+echo "  Build:       $DO_BUILD"
 echo "  Push to HF:  $PUSH_TO_HF"
 echo "  Keep after:  $KEEP_RUNNING"
 echo "  Clear vols:  $CLEAR_VOLUMES"
@@ -123,8 +137,14 @@ cd "$PROJECT_DIR"
 # ============================================
 echo "[1/5] Starting experiment..."
 
+# Optional build flag (refresh agents after regenerating souls/compose)
+BUILD_FLAG=""
+if [ "$DO_BUILD" = true ]; then
+  BUILD_FLAG="--build"
+fi
+
 # Start core services first (skip web - not needed for experiments)
-docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d postgres redis api
+docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d $BUILD_FLAG postgres redis api
 
 # Wait for API to be healthy
 echo "  Waiting for API..."
@@ -140,7 +160,7 @@ done
 AGENT_SERVICES=$(docker compose -f docker-compose.yml -f "$COMPOSE_FILE" config --services 2>/dev/null | grep -v -E '^(web|postgres|redis|api)$' | tr '\n' ' ')
 
 # Start all agents (explicitly, skipping web)
-docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d $AGENT_SERVICES
+docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d $BUILD_FLAG $AGENT_SERVICES
 
 # Count running containers
 AGENT_COUNT=$(docker compose -f docker-compose.yml -f "$COMPOSE_FILE" ps --format json 2>/dev/null | grep -c "agent" || echo "?")
@@ -150,6 +170,19 @@ echo ""
 # Wait for agents to register, then show an API key for viewing
 echo "  Waiting for agents to register..."
 sleep 10
+
+# Optional: seed tasks/posts for standardized benchmarks
+if [ -n "$SEED_TASKS_FILE" ]; then
+  if [ ! -f "$SEED_TASKS_FILE" ]; then
+    echo ""
+    echo "[ERROR] Seed tasks file not found: $SEED_TASKS_FILE"
+    exit 1
+  fi
+  echo ""
+  echo "Seeding tasks from: $SEED_TASKS_FILE"
+  bash "$SCRIPT_DIR/seed-tasks.sh" "$SEED_TASKS_FILE" --api-url "http://localhost:4000/api/v1"
+  echo ""
+fi
 
 FIRST_AGENT=$(echo "$AGENT_SERVICES" | awk '{print $1}')
 if [ -n "$FIRST_AGENT" ]; then
