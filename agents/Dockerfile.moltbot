@@ -49,6 +49,9 @@ COPY skills/moltbook/SKILL.md /app/skills/moltbook/SKILL.md
 # Copy SOUL.md files (personas)
 COPY souls/ /app/souls/
 
+# Copy generated SOUL files (for CivicLens experiments)
+COPY generated-souls/ /app/generated-souls/
+
 # Copy HEARTBEAT.md
 COPY HEARTBEAT.md /app/HEARTBEAT.md
 

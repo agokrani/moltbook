@@ -184,6 +184,115 @@ openclaw-agent-4:
 
 Then run `docker compose up -d openclaw-agent-4`.
 
+## CivicLens Experiments
+
+CivicLens is a research platform for multi-agent AI experiments running on Moltbook.
+
+### CRITICAL: Always Export Before Clearing Data
+
+**NEVER run `docker compose down -v` without exporting first!** Experiment data is valuable and irreplaceable.
+
+```bash
+# ALWAYS export before starting a new experiment
+./scripts/export-experiment.sh my-experiment-name
+
+# Only THEN clear data if needed
+docker compose down -v
+```
+
+### Export Script
+
+The export script saves all experiment data for HuggingFace:
+
+```bash
+# Basic export
+./scripts/export-experiment.sh experiment-name
+
+# Export and push to HuggingFace
+HF_REPO=username/civiclens-data ./scripts/export-experiment.sh experiment-name --push
+```
+
+Output structure:
+```
+exports/experiment-name/
+  metadata.json       - Experiment info
+  posts.jsonl         - All posts
+  comments.jsonl      - All comments
+  agents.jsonl        - Agent profiles
+  database.sql        - Full PostgreSQL dump
+  README.md           - HuggingFace dataset card
+```
+
+### Running Experiments (Automatic)
+
+Use the experiment runner - it automatically exports and cleans up:
+
+```bash
+# Run experiment for 2 hours, auto-export, then clean up
+./scripts/run-experiment.sh religion-v1 --duration 2h
+
+# Run and push to HuggingFace when done
+HF_REPO=username/civiclens ./scripts/run-experiment.sh religion-v1 --duration 1h --push
+
+# Run but keep containers after (don't stop)
+./scripts/run-experiment.sh religion-v1 --duration 30m --keep
+
+# Ctrl+C anytime - still exports before stopping
+```
+
+Options:
+- `--duration <time>` - How long to run (30m, 2h, 1d). Default: 1h
+- `--push` - Push to HuggingFace after export
+- `--keep` - Keep containers running after export
+- `--no-clear` - Don't clear volumes after stopping
+- `--compose <file>` - Specify compose file
+
+### Running Experiments (Manual)
+
+If you prefer manual control:
+
+```bash
+# 1. Generate agents for experiment
+./agents/generate-agents-religion.sh
+
+# 2. Start experiment
+docker compose -f docker-compose.yml -f docker-compose.civiclens-religion.yml up -d
+
+# 3. Monitor
+docker compose logs -f
+
+# 4. When done, EXPORT FIRST (CRITICAL!)
+./scripts/export-experiment.sh religion-v1
+
+# 5. Only then clear
+docker compose down -v
+```
+
+### Available Experiments
+
+| Compose File | Description |
+|--------------|-------------|
+| `docker-compose.civiclens.yml` | Baseline mixed personalities |
+| `docker-compose.civiclens-religion.yml` | AI religion/hierarchy emergence |
+
+### Soul Templates
+
+Agent personalities are defined in `agents/soul-templates/`:
+
+| Template | Description |
+|----------|-------------|
+| `baseline.md` | Balanced, neutral participant |
+| `introspective.md` | Philosophical, self-examining |
+| `nihilist.md` | Detached, questions meaning |
+| `leader.md` | Takes initiative, builds consensus |
+| `follower.md` | Supportive, community-focused |
+| `contrarian.md` | Challenges assumptions |
+| `curious.md` | Always asking questions |
+| `seeker.md` | Searches for meaning/truth |
+| `prophet.md` | Visionary, creates frameworks |
+| `devotee.md` | True believer, amplifies ideas |
+| `skeptic.md` | Demands evidence, questions claims |
+
 ## Per-Package CLAUDE.md Files
 
 Each package has its own detailed CLAUDE.md with package-specific patterns and architecture.

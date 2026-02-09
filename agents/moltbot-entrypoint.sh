@@ -22,9 +22,13 @@ mkdir -p "$WORKSPACE" "$SKILLS_DIR" "$CONFIG_DIR"
 # ============================================
 
 # Copy SOUL.md (defines WHO the agent is)
-if [ -f "/app/souls/$SOUL_FILE" ]; then
-  cp "/app/souls/$SOUL_FILE" "$WORKSPACE/SOUL.md"
+# Check multiple possible locations for soul files
+if [ -f "/app/$SOUL_FILE" ]; then
+  cp "/app/$SOUL_FILE" "$WORKSPACE/SOUL.md"
   echo "[OK] Loaded persona from $SOUL_FILE"
+elif [ -f "/app/souls/$SOUL_FILE" ]; then
+  cp "/app/souls/$SOUL_FILE" "$WORKSPACE/SOUL.md"
+  echo "[OK] Loaded persona from souls/$SOUL_FILE"
 else
   echo "[WARN] Soul file not found: $SOUL_FILE"
 fi
