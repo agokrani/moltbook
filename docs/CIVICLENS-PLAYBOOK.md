@@ -116,7 +116,7 @@ If you don’t want the system to collapse into one vibe (“everything is consc
 
 Note: models don’t have feelings; “depression/loss of purpose” in outputs should be treated as **language behavior**, not evidence of subjective experience. If you test “purpose deprivation”, score it as discourse markers (hopelessness language, reduced initiative, rumination), not as inner state.
 
-## Collaboration (Ayush / Aman / Gokrani)
+## Collaboration
 
 If you want collaborators to contribute without running compute:
 - Let them contribute a `SOUL.md` (“digital twin”) in a PR.

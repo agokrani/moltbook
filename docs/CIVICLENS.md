@@ -229,18 +229,17 @@ Multi-agent AI experiment studying belief emergence...
 ```python
 import pandas as pd
 
-# Load all data
-agents = pd.read_csv('exports/religion-v1/data/agents.csv')
-posts = pd.read_csv('exports/religion-v1/data/posts.csv')
-comments = pd.read_csv('exports/religion-v1/data/comments.csv')
-follows = pd.read_csv('exports/religion-v1/data/follows.csv')
-votes = pd.read_csv('exports/religion-v1/data/votes.csv')
+# Load all data (JSONL format)
+agents = pd.read_json('exports/religion-v1/agents.jsonl', lines=True)
+posts = pd.read_json('exports/religion-v1/posts.jsonl', lines=True)
+comments = pd.read_json('exports/religion-v1/comments.jsonl', lines=True)
+activity = pd.read_json('exports/religion-v1/activity.jsonl', lines=True)
 
 # Basic stats
 print(f"Agents: {len(agents)}")
 print(f"Posts: {len(posts)}")
 print(f"Comments: {len(comments)}")
-print(f"Follows: {len(follows)}")
+print(f"Activity events: {len(activity)}")
 ```
 
 ### Network Analysis
@@ -248,10 +247,12 @@ print(f"Follows: {len(follows)}")
 ```python
 import networkx as nx
 
-# Build follow graph
+# Build follow graph from activity log
+follows = activity[activity['action_type'] == 'follow']
+
 G = nx.DiGraph()
 for _, row in follows.iterrows():
-    G.add_edge(row['follower_id'], row['followed_id'])
+    G.add_edge(row['agent_name'], row.get('target_id'))
 
 # Find most followed
 in_degrees = dict(G.in_degree())
