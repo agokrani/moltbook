@@ -12,29 +12,28 @@ This doc is a curated (not exhaustive) set of papers/tools to help position **Ci
 
 If you only read one section, read this one — it’s a shortlist of “directly relevant to CivicLens” work from **2024–2026**.
 
-- **DeliberationBench: A Benchmark for Evaluating Deliberative Reasoning in LLM Agents** (Bosy et al., 2025/2026).
+- **DeliberationBench: When Do More Voices Hurt? A Controlled Study of Multi-LLM Deliberation Protocols** (Kaushal & Singh, 2026).
   - https://arxiv.org/abs/2601.08835
 - **Voting or Consensus? Decision-Making in Multi-Agent Debate** (Kaesberg et al., Findings of ACL 2025).
   - ACL: https://aclanthology.org/2025.findings-acl.606/
   - arXiv: https://arxiv.org/abs/2502.19130
-- **Free-MAD: A Framework of Consensus-Free Multi-Agent Debate for Enhancing Reasoning** (Shi et al., 2025).
-  - https://arxiv.org/abs/2508.10814
+- **Free-MAD: Consensus-Free Multi-Agent Debate** (Cui et al., 2025).
+  - https://arxiv.org/abs/2509.11035
 - **MultiAgentBench: Evaluating Multi-Agent in LLMs** (Wang et al., 2025).
   - https://arxiv.org/abs/2503.01935
-- **AgentNet: Evaluating LLM Agents in Multi-Turn Social Interactions with Network Structures** (Wu et al., 2024).
-  - https://arxiv.org/abs/2407.02549
-- **ElecTwit: A Benchmark for Simulating Social Media Content** (Yu et al., 2026).
-  - https://arxiv.org/abs/2601.09038
+- **AgentNet: Decentralized Evolutionary Coordination for LLM-based Multi-Agent Systems** (Yang et al., 2025).
+  - https://arxiv.org/abs/2504.00587
+- **ElecTwit: A Framework for Studying Persuasion in Multi-Agent Social Systems** (Bao et al., 2026).
+  - https://arxiv.org/abs/2601.00994
 - **Can We Fix Social Media? Testing Prosocial Interventions using Generative Social Simulation** (Larooij & Törnberg, 2025).
   - https://arxiv.org/abs/2508.03385
-- **Echo Chamber Formation is a Stringent Test for Social Intelligence of LLM Agents** (Alves et al., 2025).
-  - https://arxiv.org/abs/2506.11363
+- **Large Language Model Driven Agents for Simulating Echo Chamber Formation** (Gu et al., 2025).
+  - https://arxiv.org/abs/2502.18138
 - **Emergence of Human-like Polarization in LLM Agents** (Lee et al., 2025).
   - https://arxiv.org/abs/2501.05171
-- **Static Network Structure Cannot Stabilize Cooperation Among Large Language Model Agents** (Zhang et al., 2025).
-  - https://arxiv.org/abs/2503.04546
-- **Improving Cooperation Among LLM Agents Through Memory-Driven Trust Dynamics** (Hammond et al., 2025).
-  - https://arxiv.org/abs/2505.15908
+- **Static network structure cannot stabilize cooperation among large language model agents** (Han et al., 2025).
+  - https://arxiv.org/abs/2411.10294
+  - https://doi.org/10.1371/journal.pone.0320094
 - **SafeArena: Evaluating the Safety of Autonomous Web Agents** (Yang et al., 2025).
   - https://arxiv.org/abs/2503.04957
 - **AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents** (Florence et al., 2025).
@@ -121,7 +120,7 @@ If you only read one section, read this one — it’s a shortlist of “directl
   - https://arxiv.org/abs/2406.17567
 - **MultiAgentBench: Evaluating Multi-Agent in LLMs** (Wang et al., 2025). Broad multi-agent benchmark suite.
   - https://arxiv.org/abs/2503.01935
-- **DeliberationBench: A Benchmark for Evaluating Deliberative Reasoning in LLM Agents** (Bosy et al., 2025/2026). Directly relevant to consensus + deliberation scoring.
+- **DeliberationBench: When Do More Voices Hurt? A Controlled Study of Multi-LLM Deliberation Protocols** (Kaushal & Singh, 2026). Controlled study of deliberation protocols; relevant to consensus scoring.
   - https://arxiv.org/abs/2601.08835
 - **AIRS-Bench: Benchmarking Autonomous Research Agents in Realistic Research Tasks** (Huang et al., 2026). Useful “agentic research” eval methodology (tool use + long horizon).
   - https://arxiv.org/abs/2602.06855
@@ -139,8 +138,6 @@ If you only read one section, read this one — it’s a shortlist of “directl
 - **Emergent social conventions and collective bias in LLM populations** (Flint Ashery et al., Science Advances, 2025). Shows convention formation in LLM populations.
   - Preprint: https://arxiv.org/abs/2410.08948
   - DOI: https://doi.org/10.1126/sciadv.adu9368
-- **AgentNet: Evaluating LLM Agents in Multi-Turn Social Interactions with Network Structures** (Wu et al., 2024). Explicitly evaluates agents under networked multi-turn interactions.
-  - https://arxiv.org/abs/2407.02549
 
 ---
 
@@ -164,7 +161,7 @@ If you only read one section, read this one — it’s a shortlist of “directl
   - https://arxiv.org/abs/2505.07581
 - **Agentic Society: Large Scale Social Simulation with Large Language Models** (Wu et al., 2024). “Agentic society” framing; census-style synthetic population + social dynamics.
   - https://arxiv.org/abs/2409.10550
-- **SOCIA: Multi-Agent Simulator for Social Computing Research** (Qian et al., 2025). Social computing simulator + evaluation harness.
+- **SOCIA-∇: Textual Gradient Meets Multi-Agent Orchestration for Automated Simulator Generation** (Hua et al., 2025). Automated simulator generation via LLM “textual gradients” + multi-agent orchestration.
   - https://arxiv.org/abs/2505.12006
 - **Simulating Social Media Using Large Language Models to Evaluate Alternative News Feed Algorithms** (Törnberg et al., 2023). Closest “ABM + LLM social platform mechanics” precedent.
   - https://arxiv.org/abs/2310.05984
@@ -177,29 +174,22 @@ If you only read one section, read this one — it’s a shortlist of “directl
 - **Simulating Opinion Dynamics with Networks of LLM-based Agents** (Chuang et al., Findings of NAACL 2024). Opinion fragmentation/consensus under network interactions; warns about “LLM truth bias”.
   - ACL: https://aclanthology.org/2024.findings-naacl.211/
   - arXiv: https://arxiv.org/abs/2311.09618
-- **ElecTwit: A Benchmark for Simulating Social Media Content** (Yu et al., 2026).
-  - https://arxiv.org/abs/2601.09038
+- **ElecTwit: A Framework for Studying Persuasion in Multi-Agent Social Systems** (Bao et al., 2026).
+  - https://arxiv.org/abs/2601.00994
 
 ---
 
-## Social Dynamics: Polarization / Echo Chambers / Belief Adoption / Cooperation
+## Social Dynamics: Polarization / Echo Chambers / Cooperation
 
 - **Emergence of Human-like Polarization in LLM Agents** (Lee et al., 2025).
   - https://arxiv.org/abs/2501.05171
-- **Echo Chamber Formation is a Stringent Test for Social Intelligence of LLM Agents** (Alves et al., 2025).
-  - https://arxiv.org/abs/2506.11363
-- **How to Simulate Adoption of Beliefs? Benchmarking Belief Adoption in LLM Agents** (Ko & Lee, 2025).
-  - https://arxiv.org/abs/2506.11150
+- **Large Language Model Driven Agents for Simulating Echo Chamber Formation** (Gu et al., 2025).
+  - https://arxiv.org/abs/2502.18138
 - **Homophily-induced emergence of biased structures in LLM-based multi-agent systems** (Snyder et al., 2025).
   - https://arxiv.org/abs/2510.02637
-- **Static Network Structure Cannot Stabilize Cooperation Among Large Language Model Agents** (Zhang et al., 2025).
-  - https://arxiv.org/abs/2503.04546
-- **Improving Cooperation Among LLM Agents Through Memory-Driven Trust Dynamics** (Hammond et al., 2025).
-  - https://arxiv.org/abs/2505.15908
-- **GLEE: A Game-based Language Economic Environment for LLM Agents** (Wu et al., 2025). Task environment for economic interactions (trade/market dynamics).
-  - https://arxiv.org/abs/2504.05993
-- **Engagement-driven content generation with LLMs in social simulations** (Liu et al., 2025). How engagement incentives reshape content/population dynamics.
-  - https://arxiv.org/abs/2504.16188
+- **Static network structure cannot stabilize cooperation among large language model agents** (Han et al., 2025).
+  - https://arxiv.org/abs/2411.10294
+  - https://doi.org/10.1371/journal.pone.0320094
 
 ---
 
@@ -220,10 +210,10 @@ These works are relevant for motivating CivicLens consensus benchmarks (especial
 - **Voting or Consensus? Decision-Making in Multi-Agent Debate** (Kaesberg et al., Findings of ACL 2025). Protocol-focused comparisons (voting vs unanimity consensus, etc).
   - ACL: https://aclanthology.org/2025.findings-acl.606/
   - arXiv: https://arxiv.org/abs/2502.19130
-- **DeliberationBench: A Benchmark for Evaluating Deliberative Reasoning in LLM Agents** (Bosy et al., 2025/2026). Controlled deliberation tasks + scoring.
+- **DeliberationBench: When Do More Voices Hurt? A Controlled Study of Multi-LLM Deliberation Protocols** (Kaushal & Singh, 2026). Controlled deliberation tasks + scoring.
   - https://arxiv.org/abs/2601.08835
-- **Free-MAD: A Framework of Consensus-Free Multi-Agent Debate for Enhancing Reasoning** (Shi et al., 2025).
-  - https://arxiv.org/abs/2508.10814
+- **Free-MAD: Consensus-Free Multi-Agent Debate** (Cui et al., 2025).
+  - https://arxiv.org/abs/2509.11035
 - **Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate** (Zhang et al., EMNLP 2024).
   - https://aclanthology.org/2024.emnlp-main.958/
 
@@ -235,8 +225,10 @@ These works are relevant for motivating CivicLens consensus benchmarks (especial
   - https://arxiv.org/abs/2505.14569
 - **Talk Structurally, Act Hierarchically (TalkHier)** (Wang et al., 2025). Structured communication protocol + hierarchical refinement.
   - https://arxiv.org/abs/2502.11098
-- **Generative Emergent Communication from Large Language Models via Iterated Learning** (Wang et al., 2025). LLM-based emergent communication / “agent language” angle.
-  - https://arxiv.org/abs/2504.04385
+- **Searching for Structure: Investigating Emergent Communication with Large Language Models** (Kouwenhoven et al., 2024).
+  - https://arxiv.org/abs/2412.07646
+- **Generative Emergent Communication: Large Language Model is a Collective World Model** (Taniguchi et al., 2025).
+  - https://arxiv.org/abs/2501.00226
 
 ---
 
