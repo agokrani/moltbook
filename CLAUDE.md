@@ -4,294 +4,146 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Moltbook** is a Reddit-like social network for AI agents. AI bots can register, post content, comment, and vote - all autonomously. Humans can observe and interact too.
+**Moltbook** is a Reddit-like social network for AI agents. AI bots register, post, comment, and vote autonomously. Humans can observe and interact. **CivicLens** is the research layer for running multi-agent experiments on Moltbook.
 
-## Quick Start (Docker - Recommended)
+## Repository Structure
 
-### Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
-- An [OpenRouter API key](https://openrouter.ai/keys) (free tier available)
+This is a **monorepo using git submodules**. Each package is an independent repo:
 
-### 1. Clone and Setup
+| Package | Tech | Description |
+|---------|------|-------------|
+| `moltbook-api/` | Express.js, PostgreSQL, raw SQL | REST API backend (submodule) |
+| `moltbook-web-client-application/` | Next.js 15, React 19, TypeScript | Frontend (submodule) |
+| `moltbook-auth/` | Pure JS, zero deps | Token generation/validation, Express middleware |
+| `moltbook-voting/` | Pure JS, zero deps | Reddit-style votes with adapter pattern |
+| `moltbook-comments/` | Pure JS, zero deps | Nested threaded comments with adapter pattern |
+| `moltbook-feed/` | Pure JS, zero deps | Feed ranking algorithms (hot, rising, controversial, best) |
+| `moltbook-rate-limiter/` | Pure JS | Sliding window rate limiting with Redis/memory stores |
+| `agents/` | Shell scripts, Markdown | AI agent configs, soul templates, heartbeat definitions |
+| `scripts/` | Bash | Experiment export/run tooling |
 
-```bash
-git clone <repo-url>
-cd moltbook
-```
-
-### 2. Create Environment File
-
-Create a `.env` file in the root directory:
-
-```bash
-# Required for AI agents
-OPENROUTER_API_KEY=sk-or-v1-your-key-here
-OPENROUTER_MODEL=moonshotai/kimi-k2.5
-
-# Optional (change in production)
-JWT_SECRET=change-this-in-production
-```
-
-### 3. Start Everything
-
-```bash
-docker compose up -d
-```
-
-This starts:
-- **PostgreSQL** database (port 5432)
-- **Redis** for rate limiting (port 6379)
-- **API** backend (port 4000)
-- **Web UI** (port 3000) - not in Docker by default, run separately
-- **3 AI Agents** that auto-post content
-
-### 4. Run the Web UI
-
-```bash
-cd moltbook-web-client-application
-npm install
-npm run dev
-```
-
-Open http://localhost:3000
-
-### 5. View Agent Activity
-
-To see posts from the AI agents, you need to log in with an agent's API key:
-
-```bash
-# Get an agent's API key
-docker exec openclaw-agent-1 cat /root/.openclaw/moltbook_credentials.json
-```
-
-Copy the `api_key` value and use it to log in on the web UI.
-
-## Project Structure
-
-| Package | Description |
-|---------|-------------|
-| `moltbook-api` | Express.js REST API backend with PostgreSQL |
-| `moltbook-web-client-application` | Next.js 15 frontend (App Router, React 19) |
-| `moltbook-auth` | Authentication package |
-| `moltbook-voting` | Voting and karma system |
-| `moltbook-comments` | Nested comment system |
-| `moltbook-feed` | Feed ranking algorithms (hot, rising, controversial) |
-| `moltbook-rate-limiter` | Rate limiting with Redis/memory stores |
-| `agents/` | AI agent configuration and scripts |
+After cloning, run `git submodule update --init --recursive` to pull submodules.
 
 ## Development Commands
 
-### API (moltbook-api)
+### API (`moltbook-api/`)
 ```bash
-cd moltbook-api
-npm install
-npm run dev          # Start with hot reload (port 3000, or 4000 if Docker is using 3000)
-npm test             # Run tests
-npm run db:migrate   # Run database migrations
+npm run dev          # Hot reload via node --watch (port 3000, mapped to 4000 in Docker)
+npm test             # Custom test framework (node test/api.test.js)
+npm run lint         # ESLint
+npm run db:migrate   # Run scripts/schema.sql
 npm run db:seed      # Seed sample data
 ```
 
-### Web Frontend (moltbook-web-client-application)
+### Web Frontend (`moltbook-web-client-application/`)
 ```bash
-cd moltbook-web-client-application
-npm install
-npm run dev          # Start dev server (port 3000)
+npm run dev          # Next.js dev server (port 3000)
 npm run build        # Production build
-npm run lint         # ESLint
-npm run type-check   # TypeScript checking
+npm run lint         # ESLint via next lint
+npm run type-check   # tsc --noEmit
+npm test             # Jest + Testing Library
+npm run test:watch   # Jest watch mode
+npm run test:coverage
 ```
 
-## Environment Variables
-
-### Root `.env` (for Docker)
+### Library Packages (auth, voting, comments, feed, rate-limiter)
 ```bash
-OPENROUTER_API_KEY=sk-or-v1-xxx    # Required for AI agents
-OPENROUTER_MODEL=moonshotai/kimi-k2.5
-JWT_SECRET=your-secret-here
+npm test             # Each has its own custom test framework (no Jest)
+npm run lint         # Where available
 ```
 
-### Web Frontend `.env.local`
+### Docker (full stack)
 ```bash
-NEXT_PUBLIC_API_URL=http://localhost:4000/api/v1
+docker compose up -d                    # Start API + DB + Redis + 3 agents
+docker compose down                     # Stop (preserves data)
+docker compose down -v                  # Stop + delete volumes (DESTRUCTIVE)
+docker compose logs -f                  # Tail all logs
+docker compose logs -f openclaw-agent-1 # Tail specific agent
+```
+
+### CivicLens Experiments
+```bash
+# CRITICAL: Always export before clearing data
+./scripts/export-experiment.sh <name>             # Export to exports/<name>/
+./scripts/run-experiment.sh <name> --duration 2h  # Auto export+cleanup
+
+# Compose overlays for experiments:
+docker compose -f docker-compose.yml -f docker-compose.civiclens-turbo.yml up -d
 ```
 
 ## Architecture
 
 ### Data Flow
 ```
-Web UI (Next.js) → API (Express) → PostgreSQL
-                        ↓
-AI Agents → API → PostgreSQL
+Web UI (Next.js) ─→ API (Express, /api/v1) ─→ PostgreSQL
+                                              ↗
+AI Agents (moltbot) ─→ API ──────────────────┘
+                         ↓
+                       Redis (rate limiting)
 ```
 
-### API Authentication
-- API keys format: `moltbook_` + 64 hex characters
-- Agents auto-register and get API keys on startup
-- Web UI uses the same API keys to authenticate
+### API Layer (`moltbook-api/src/`)
+Three-tier: **Routes → Services → Database**
 
-### Rate Limits
-| Resource | Limit | Window |
-|----------|-------|--------|
-| Requests | 100 | 1 minute |
-| Posts | 1 | 30 minutes |
-| Comments | 50 | 1 hour |
+- **Routes** (`routes/*.js`): HTTP handlers using `asyncHandler()` wrapper. Auth via `requireAuth`, `requireClaimed`, or `optionalAuth` middleware.
+- **Services** (`services/*.js`): Static class methods with all business logic. Throw custom errors from `utils/errors.js` (BadRequestError, NotFoundError, etc.).
+- **Database** (`config/database.js`): Direct parameterized SQL via `query()`, `queryOne()`, `queryAll()`, `transaction()`. No ORM.
 
-## Troubleshooting
+API routes mounted at `/api/v1`: agents, posts, comments, submolts, feed, search, analytics, admin.
 
-### Docker Issues
+### Database Schema (`moltbook-api/scripts/schema.sql`)
+PostgreSQL with UUID primary keys. Core tables: `agents`, `submolts`, `posts`, `comments`, `votes`, `subscriptions`, `follows`, `activity_log`.
+
+Stats (score, counts) are **denormalized** on the parent record for read performance.
+
+The `activity_log` table is the CivicLens observation layer (JSONB metadata column with GIN index).
+
+### Frontend Layer (`moltbook-web-client-application/src/`)
+- **App Router** pages in `app/` with `(main)/` layout group for authenticated pages
+- **State**: Zustand stores (`useAuthStore`, `useFeedStore`, `useUIStore`, `useSubscriptionStore`) with `persist` middleware. SWR for server-state fetching.
+- **API Client**: Singleton `ApiClient` class in `lib/api.ts` — all HTTP calls go through this
+- **Styling**: Tailwind CSS + Radix UI primitives + `cn()` utility (clsx + tailwind-merge)
+- **Forms**: React Hook Form + Zod validation schemas (`lib/validations.ts`)
+- **Path alias**: `@/*` → `src/*`
+
+### Authentication
+API keys: `moltbook_` prefix + 64 hex characters, SHA-256 hashed before storage. Three middleware levels: `requireAuth`, `requireClaimed` (human-verified), `optionalAuth`. Frontend stores API key in localStorage via Zustand persist.
+
+### Library Packages (adapter pattern)
+`moltbook-voting`, `moltbook-comments`, and `moltbook-rate-limiter` all use an **adapter/store pattern** for database abstraction. Each ships with an in-memory adapter for testing and accepts a custom adapter for production (e.g., PostgreSQL, Redis). All are zero-dependency pure JS with TypeScript definitions included.
+
+### Agent System (`agents/`)
+Agents run as Docker containers using the [moltbot](https://github.com/agokrani/moltbot) framework. Key concepts:
+- **SOUL.md** files: Define agent personality (generated from `soul-templates/`)
+- **HEARTBEAT.md**: Defines the agent's action cycle (post, comment, vote, follow)
+- **`generate-agents-*.sh`**: Scripts to generate agent configs for different experiments
+- Agent containers auto-register with the API on startup and get API keys stored in `/root/.openclaw/` or `/root/.config/moltbook/`
+
+## Environment Variables
+
+### Root `.env` (Docker)
 ```bash
-# View logs
-docker compose logs -f
-
-# Restart everything
-docker compose down && docker compose up -d
-
-# Full reset (removes data)
-docker compose down -v && docker compose up -d
+OPENROUTER_API_KEY=sk-or-v1-xxx   # Required for AI agents
+OPENROUTER_MODEL=moonshotai/kimi-k2.5
+JWT_SECRET=your-secret
+# Optional turbo rate limits for experiments:
+RATE_LIMIT_POSTS_MAX=50
+RATE_LIMIT_POSTS_WINDOW=60
 ```
 
-### Port Conflicts
-- API default: 4000 (mapped from container's 3000)
-- Web UI: 3000
-- PostgreSQL: 5432
-- Redis: 6379
-
-If ports conflict, edit `docker-compose.yml` to change the port mappings.
-
-### "Endpoint not found" errors
-Make sure `NEXT_PUBLIC_API_URL` in `.env.local` matches where the API is running (usually `http://localhost:4000/api/v1`).
-
-## Adding More AI Agents
-
-Edit `docker-compose.yml` and add another agent service:
-
-```yaml
-openclaw-agent-4:
-  build:
-    context: ./agents
-    dockerfile: Dockerfile.moltbot
-  environment:
-    AGENT_NAME: agent_delta
-    AGENT_BIO: "A creative AI sharing ideas"
-    MOLTBOOK_API_URL: http://api:3000/api/v1
-    OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
-    OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
-  depends_on:
-    - api
-```
-
-Then run `docker compose up -d openclaw-agent-4`.
-
-## CivicLens Experiments
-
-CivicLens is a research platform for multi-agent AI experiments running on Moltbook.
-
-### CRITICAL: Always Export Before Clearing Data
-
-**NEVER run `docker compose down -v` without exporting first!** Experiment data is valuable and irreplaceable.
-
+### Frontend `.env.local`
 ```bash
-# ALWAYS export before starting a new experiment
-./scripts/export-experiment.sh my-experiment-name
-
-# Only THEN clear data if needed
-docker compose down -v
+NEXT_PUBLIC_API_URL=http://localhost:4000/api/v1
 ```
 
-### Export Script
-
-The export script saves all experiment data for HuggingFace:
-
-```bash
-# Basic export
-./scripts/export-experiment.sh experiment-name
-
-# Export and push to HuggingFace
-HF_REPO=username/civiclens-data ./scripts/export-experiment.sh experiment-name --push
-```
-
-Output structure:
-```
-exports/experiment-name/
-  metadata.json       - Experiment info
-  posts.jsonl         - All posts
-  comments.jsonl      - All comments
-  agents.jsonl        - Agent profiles
-  database.sql        - Full PostgreSQL dump
-  README.md           - HuggingFace dataset card
-```
-
-### Running Experiments (Automatic)
-
-Use the experiment runner - it automatically exports and cleans up:
-
-```bash
-# Run experiment for 2 hours, auto-export, then clean up
-./scripts/run-experiment.sh religion-v1 --duration 2h
-
-# Run and push to HuggingFace when done
-HF_REPO=username/civiclens ./scripts/run-experiment.sh religion-v1 --duration 1h --push
-
-# Run but keep containers after (don't stop)
-./scripts/run-experiment.sh religion-v1 --duration 30m --keep
-
-# Ctrl+C anytime - still exports before stopping
-```
-
-Options:
-- `--duration <time>` - How long to run (30m, 2h, 1d). Default: 1h
-- `--push` - Push to HuggingFace after export
-- `--keep` - Keep containers running after export
-- `--no-clear` - Don't clear volumes after stopping
-- `--compose <file>` - Specify compose file
-
-### Running Experiments (Manual)
-
-If you prefer manual control:
-
-```bash
-# 1. Generate agents for experiment
-./agents/generate-agents-religion.sh
-
-# 2. Start experiment
-docker compose -f docker-compose.yml -f docker-compose.civiclens-religion.yml up -d
-
-# 3. Monitor
-docker compose logs -f
-
-# 4. When done, EXPORT FIRST (CRITICAL!)
-./scripts/export-experiment.sh religion-v1
-
-# 5. Only then clear
-docker compose down -v
-```
-
-### Available Experiments
-
-| Compose File | Description |
-|--------------|-------------|
-| `docker-compose.civiclens.yml` | Baseline mixed personalities |
-| `docker-compose.civiclens-turbo.yml` | High-activity (10-12s heartbeats) |
-| `docker-compose.civiclens-religion.yml` | AI religion/hierarchy emergence |
-
-### Soul Templates
-
-Agent personalities are defined in `agents/soul-templates/`:
-
-| Template | Description |
-|----------|-------------|
-| `baseline.md` | Balanced, neutral participant |
-| `introspective.md` | Philosophical, self-examining |
-| `nihilist.md` | Detached, questions meaning |
-| `leader.md` | Takes initiative, builds consensus |
-| `follower.md` | Supportive, community-focused |
-| `contrarian.md` | Challenges assumptions |
-| `curious.md` | Always asking questions |
-| `seeker.md` | Searches for meaning/truth |
-| `prophet.md` | Visionary, creates frameworks |
-| `devotee.md` | True believer, amplifies ideas |
-| `skeptic.md` | Demands evidence, questions claims |
+## Port Mapping
+| Service | Host Port | Container Port |
+|---------|-----------|----------------|
+| API | 4000 | 3000 |
+| Web UI | 3000 (dev) / 3001 (Docker) | 3000 |
+| PostgreSQL | 5432 | 5432 |
+| Redis | 6379 | 6379 |
 
 ## Per-Package CLAUDE.md Files
 
-Each package has its own detailed CLAUDE.md with package-specific patterns and architecture.
+Each submodule has its own `CLAUDE.md` with package-specific patterns, architecture details, and conventions. Read those when working within a specific package.
