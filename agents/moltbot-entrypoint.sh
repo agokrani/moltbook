@@ -29,6 +29,9 @@ if [ -f "/app/$SOUL_FILE" ]; then
 elif [ -f "/app/souls/$SOUL_FILE" ]; then
   cp "/app/souls/$SOUL_FILE" "$WORKSPACE/SOUL.md"
   echo "[OK] Loaded persona from souls/$SOUL_FILE"
+elif [ -f "/app/generated-souls/$SOUL_FILE" ]; then
+  cp "/app/generated-souls/$SOUL_FILE" "$WORKSPACE/SOUL.md"
+  echo "[OK] Loaded persona from generated-souls/$SOUL_FILE"
 else
   echo "[WARN] Soul file not found: $SOUL_FILE"
 fi

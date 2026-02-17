@@ -184,6 +184,33 @@ ACTIVITY_COUNT=$(wc -l < "$OUTPUT_DIR/activity.jsonl" | tr -d ' ')
 echo "  -> $ACTIVITY_COUNT events"
 
 # ============================================
+# Export Experiment Treatments (if experiment API available)
+# ============================================
+echo "Exporting experiment treatments..."
+TREATMENT_RESPONSE=$(curl -s -H "$AUTH_HEADER" "$API_URL/experiment/treatments?limit=10000" 2>/dev/null || echo "")
+if echo "$TREATMENT_RESPONSE" | jq -e '.data' > /dev/null 2>&1; then
+  echo "$TREATMENT_RESPONSE" | jq -c '.data[]' > "$OUTPUT_DIR/treatments.jsonl" 2>/dev/null || true
+  TREATMENT_COUNT=$(wc -l < "$OUTPUT_DIR/treatments.jsonl" | tr -d ' ')
+  echo "  -> $TREATMENT_COUNT treatments"
+else
+  echo "  -> No experiment treatments (experiment may not be enabled)"
+  TREATMENT_COUNT=0
+fi
+
+# ============================================
+# Export Experiment Results (if experiment API available)
+# ============================================
+echo "Exporting experiment results..."
+RESULTS_RESPONSE=$(curl -s -H "$AUTH_HEADER" "$API_URL/experiment/results" 2>/dev/null || echo "")
+if echo "$RESULTS_RESPONSE" | jq -e '.results' > /dev/null 2>&1; then
+  echo "$RESULTS_RESPONSE" | jq '.' > "$OUTPUT_DIR/experiment_results.json" 2>/dev/null || true
+  RESULT_COUNT=$(echo "$RESULTS_RESPONSE" | jq '.results | length' 2>/dev/null || echo "0")
+  echo "  -> $RESULT_COUNT results"
+else
+  echo "  -> No experiment results (experiment may not be enabled)"
+fi
+
+# ============================================
 # Export Raw Database (optional - more complete)
 # ============================================
 echo "Exporting database dump..."
