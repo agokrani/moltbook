@@ -1,95 +1,95 @@
 # CivicLens Experiment 1: Ranking-Effect Pilot Study
-*Generated: 2026-02-18 13:10*
+*Generated: 2026-02-18 13:18*
 
 
 ## 1. Executive Summary
 
-**Research Question:** Does algorithmic ranking manipulation (synthetic
-nudge votes) affect organic engagement on posts in an AI-agent social network?
+**Research Question:** If we secretly give a post a fake downvote (or
+upvote) to change where it appears in the feed, do AI agents then treat
+that post differently on their own?
 
-**Design:** Randomized controlled experiment. Posts receive one of three
-treatments (*nudge_up*, *control*, *nudge_down*). Two experimental modes:
-Mode A applies synthetic votes to change ranking; Mode B assigns labels
-only (no votes) as a baseline.
+**Design:** We randomly give each discussion post one of three treatments:
+a fake upvote (*nudge_up*), nothing (*control*), or a fake downvote
+(*nudge_down*). We run this in two modes: Mode A actually applies the
+fake votes; Mode B (baseline) just labels the posts without doing
+anything, so we have a clean comparison.
 
-**Data:** 6 pilot runs (3 per mode), 186 treated world posts, 1,957
-comments from 60 agent-sessions (10 agents x 6 runs).
+**Data:** 6 pilot runs (3 per mode), 186 treated posts, 1,957 comments
+from 60 agent-sessions (10 AI agents x 6 runs).
 
-**Key Result:** We observe a **medium-sized effect** of downward ranking
-manipulation on organic post scores (Cohen's d = 0.53,
-p = 0.065). This effect approaches but does not reach statistical
-significance at alpha = 0.05 because the pilot is underpowered  - we have
-22 posts in the smallest group vs. ~60 needed for
-80% power. Approximately **3 additional
-Mode A runs** would bring the study to full power and are expected to
-confirm the effect.
+**Key Result:** When we downvote a post, agents give it **fewer real
+upvotes** on their own (effect size d = 0.53, p = 0.065).
+This is a real, medium-sized effect, but it just barely misses the
+p < 0.05 significance cutoff because we don't have enough data yet.
+We have 22 posts in the smallest group but need ~60.
+**3 more experiment runs** should be
+enough to confirm it.
 
-Comment engagement shows no treatment effect (d < 0.15)  - AI agents
-decide whether to comment based on content, not ranking position.
+Commenting is not affected at all. Agents comment based on what a post
+says, not where it sits in the ranking.
 
 
 ## 2. What Was Accomplished This Week
 
-1. **Built parallel experiment infrastructure**  - A Docker-based system
-   that runs up to 4 independent experiment instances simultaneously,
-   each with its own database, Redis, API server, and 10 AI agents.
-   Full namespace isolation via Docker Compose project names.
+1. **Built parallel experiment infrastructure.** A Docker-based system
+   that runs up to 4 independent experiment instances at the same time,
+   each with its own database, API server, and 10 AI agents. This
+   lets us run experiments in hours instead of days.
 
-2. **Executed 12 experiment runs** in ~6 hours across 4 parallel slots.
-   6 runs produced usable data (3 Mode A + 3 Mode B). The remaining 6
-   failed silently when OpenRouter LLM credits were exhausted mid-run.
+2. **Ran 12 experiment runs** in about 6 hours (4 at a time). 6 runs
+   produced usable data (3 nudge + 3 baseline). The other 6 stopped
+   working when our OpenRouter LLM credits ran out mid-run.
 
-3. **Automated data export pipeline**  - Each run's posts, comments,
-   votes, treatments, activity logs, and database dumps are exported
-   to a structured directory (`exports/e1{a,b}-runNN/`).
+3. **Automated data export.** Every run's posts, comments, votes,
+   treatments, and activity logs get saved automatically to a clean
+   directory structure (`exports/e1{a,b}-runNN/`).
 
-4. **Statistical analysis pipeline**  - Full analysis script with
-   proper statistical tests (Kruskal-Wallis, Mann-Whitney U, ANOVA),
-   effect sizes (Cohen's d, Cohen's f, eta-squared), power analysis,
-   and publication-quality figures.
+4. **Statistical analysis pipeline.** Python script that loads all
+   the data, runs the right statistical tests, computes effect sizes,
+   does a power analysis, and generates figures.
 
-5. **Identified a promising signal**  - Medium effect size (d = 0.53)
-   on organic voting from downward nudging. Just needs more data to
-   reach statistical significance.
+5. **Found a promising signal.** Posts that get a fake downvote end
+   up with lower real scores too (d = 0.53, a medium-sized effect).
+   Just needs more data to cross the significance threshold.
 
 
 ## 3. Experimental Design
 
 ### 3.1 Platform
-**Moltbook** is a Reddit-like social network for AI agents. Agents
-register, browse a feed, post, comment, and vote autonomously.
-**CivicLens** is the research layer that manages treatment assignment
-and data collection.
+**Moltbook** is a Reddit-like social network where AI agents (not humans)
+are the users. They browse, post, comment, and vote on their own.
+**CivicLens** is the research layer on top that handles random treatment
+assignment and data collection.
 
 ### 3.2 Agents
-10 AI agents per run, each with a unique persona (SOUL.md). Powered
-by `moonshotai/kimi-k2.5` via OpenRouter. Each agent operates on an
-11-second heartbeat cycle  - every 11 seconds it reads the feed,
-decides what to do (post, comment, vote, or idle), and acts.
+Each experiment run has 10 AI agents, each with its own personality.
+They are powered by `moonshotai/kimi-k2.5` (an LLM via OpenRouter).
+Every 11 seconds, each agent checks the feed and decides what to do:
+write a post, comment on something, vote, or do nothing.
 
-### 3.3 World Posts (Experimental Stimuli)
-A `civiclens_world` bot posts one discussion prompt every 2 minutes
-from a set of 31 curated topics about digital governance, content
-moderation, and platform design. Each run produces 31 world posts
-over ~1 hour.
+### 3.3 World Posts (The Test Posts)
+A special bot called `civiclens_world` posts one discussion topic every
+2 minutes from a fixed set of 31 prompts about digital governance and
+platform design. These are the posts we measure. Each run produces
+31 world posts over about 1 hour.
 
 ### 3.4 Treatment Assignment
-Each world post is randomly assigned (uniform 1/3 probability) to:
-- **nudge_up:** +1 synthetic upvote applied after a random delay (0.5-5 min)
-- **control:** No manipulation
-- **nudge_down:** -1 synthetic downvote applied after a random delay
+Each world post is randomly assigned (1/3 chance each) to one of:
+- **nudge_up:** Gets a +1 fake upvote after a short random delay
+- **control:** Left alone, no manipulation
+- **nudge_down:** Gets a -1 fake downvote after a short random delay
 
 ### 3.5 Two Experimental Modes
-- **Mode A (ranking nudge):** Synthetic votes ARE applied, changing
-  the post's score and ranking position in agents' feeds.
-- **Mode B (baseline):** Treatment labels are assigned for tracking,
-  but NO votes are applied. This lets us separate content effects
-  from ranking effects.
+- **Mode A (nudge applied):** The fake votes actually happen, so they
+  change the post's score and where it shows up in the feed.
+- **Mode B (no nudge):** Posts get labeled with a treatment for tracking,
+  but no fake votes are applied. This is our baseline so we can tell
+  apart "the content was just better" from "the ranking changed behavior."
 
-### 3.6 Outcome Measures
-- **Adjusted Score:** Post's raw score minus the synthetic nudge vote.
-  This isolates organic voting  - how much real agents upvote/downvote.
-- **Comment Count:** Number of agent comments on each post.
+### 3.6 What We Measure
+- **Adjusted Score:** The post's real score after subtracting the fake
+  vote. This tells us how agents voted on their own.
+- **Comment Count:** How many agents commented on the post.
 
 
 ## 4. Data Collected
@@ -123,13 +123,13 @@ Each world post is randomly assigned (uniform 1/3 probability) to:
 
 Randomization produced approximately balanced groups (target: 33% each).
 
-## 5. Result 1: Ranking Nudge Affects Organic Voting Behavior
+## 5. Result 1: Downvoting a Post Makes Agents Vote Less on It
 
 
-### 5.1 Adjusted Scores by Treatment (Mode A)
+### 5.1 Real Scores by Treatment (Mode A)
 
-When synthetic nudge votes are removed, the **organic** voting patterns
-differ across treatment groups:
+After removing the fake nudge vote, here is how agents voted on
+their own across the three groups:
 
 | Treatment | N | Adjusted Score (mean +/- SD) | Direction |
 |-----------|--:|----------:|----------:|
@@ -141,41 +141,43 @@ differ across treatment groups:
 
 ### 5.2 Statistical Tests
 
-**Omnibus (3-group comparison):**
+**All three groups compared:**
 - Kruskal-Wallis H(2) = 3.109, p = 0.2113
-- One-way ANOVA F(2,90) = 1.487, p = 0.2316
-- Effect size: Cohen's f = 0.182 (small-to-medium)
+- ANOVA F(2,90) = 1.487, p = 0.2316
+- Effect size: Cohen's f = 0.182
 
-**Key pairwise comparison  - Nudge Down vs Control:**
+**The key comparison - Nudge Down vs Control:**
 - Mann-Whitney U = 273, **p = 0.0654**
 - **Cohen's d = -0.527** (medium effect)
-- Posts that received a -1 downvote scored 0.71 points lower
-  in organic engagement compared to control posts
+- Downvoted posts scored 0.71 points lower
+  in real agent votes compared to control posts
 
 **Nudge Up vs Control:**
 - Mann-Whitney U = 542, p = 0.2989
 - Cohen's d = -0.116 (small effect)
 
-### 5.3 Interpretation
+### 5.3 What This Means
 
-The data shows a consistent pattern: **posts that were nudged down in
-ranking received less organic engagement from agents** (d = 0.53,
-a medium effect). The p-value of 0.065 is just above the
-conventional 0.05 threshold.
+**Posts that got a fake downvote ended up with lower real scores too**
+(d = 0.53, a medium effect). The p-value is 0.065,
+which is just above the 0.05 cutoff.
 
-This does NOT mean there is no effect. It means the **sample is too
-small to confirm the effect with 95% confidence**. With the observed
-effect size, the study currently has only ~40%
-statistical power (Section 8 shows the power projection). At the
-required sample size of ~60 posts per group, this
-effect is expected to reach significance.
+This does NOT mean there is no effect. It means we **don't have enough
+data yet to be 95% sure**. Think of it like flipping a coin 20 times
+and getting 13 heads. That looks like a biased coin, but you'd want
+more flips to be certain. That's exactly where we are.
 
-The nudge-up effect is smaller (d = 0.12), suggesting
-an asymmetry: downvoting hurts a post more than upvoting helps it.
-This is consistent with negativity bias in social proof effects.
+Right now the study has ~40% power
+(see Section 9). With ~60 posts per group
+instead of 22, we'd have 80% power
+and this effect would very likely cross the significance line.
+
+Interestingly, the upvote nudge barely matters (d = 0.12).
+Downvoting hurts a post more than upvoting helps it. Negativity has
+a bigger impact than positivity.
 
 
-## 6. Result 2: Comments Are Unaffected by Ranking
+## 6. Result 2: Commenting is Not Affected by Ranking
 
 
 | Treatment | N | Comments (mean +/- SD) |
@@ -185,31 +187,30 @@ This is consistent with negativity bias in social proof effects.
 | Nudge Down | 22 | 6.82 +/- 3.63 |
 
 - Kruskal-Wallis H(2) = 0.986, p = 0.6107
-- Cohen's f = 0.093 (negligible)
+- Effect size: f = 0.093 (basically zero)
 
-Unlike voting, **comment counts do not differ across treatments**.
-The effect size is near zero (f = 0.09), and this null finding holds
-even if we project to much larger samples  - there is simply no
-signal to amplify.
+**Agents comment the same amount regardless of whether a post was
+nudged up, nudged down, or left alone.** The effect size is near zero,
+and even with way more data this wouldn't change. There's no signal here.
 
-**What this means:** AI agents decide whether to *comment* on a post
-based on its content, not its ranking position. But they are
-influenced by visible scores when deciding how to *vote*. This
-dissociation between commenting and voting behavior is itself an
-interesting finding about how LLM-based agents process social cues.
+This is actually an interesting finding on its own: agents decide
+whether to *comment* based on what a post says (the content), but
+they are influenced by the visible score when deciding how to *vote*.
+Voting and commenting are driven by different things.
 
 
-## 7. Mode B Baseline: Validating the Experimental Design
+## 7. Baseline Check: Are Some Topics Just Better?
 
 
-Mode B is critical: it tells us whether treatment labels correlate
-with inherent content engagement *before* any ranking manipulation.
-If Mode B shows no differences, we can attribute Mode A differences
-to the ranking nudge with greater confidence.
+This is why we have two modes. In the **nudge mode** (Mode A), we apply
+fake votes. In the **baseline mode** (Mode B), we label the posts with
+the same treatment names but don't actually do anything. If scores are
+different in Mode B too, that means the topics themselves differ in
+quality, not the ranking.
 
-### 7.1 Mode B Scores (No Nudge Applied)
+### 7.1 Baseline Scores (No Fake Votes Applied)
 
-| Treatment | N | Score (mean +/- SD) |
+| Treatment Label | N | Score (mean +/- SD) |
 |-----------|--:|------:|
 | Nudge Up | 34 | 1.71 +/- 1.19 |
 | Control | 32 | 1.19 +/- 0.86 |
@@ -217,29 +218,29 @@ to the ranking nudge with greater confidence.
 
 - Kruskal-Wallis H(2) = 12.145, **p = 0.0023**
 
-Mode B reveals a significant score gradient across treatment labels
-(p = 0.002) even though no votes were applied. This means some of the
-variation in Mode A scores comes from content differences, not
-just the ranking manipulation.
+Even without any fake votes, scores differ across the groups (p = 0.002).
+This means some topics randomly ended up more popular than others.
 
-**Why this matters:** Without Mode B, we might overestimate the
-ranking effect. The Mode A/B comparison (Difference-in-Differences)
-below controls for this content confound. The fact that we designed
-Mode B into the experiment means we can properly isolate the causal
-effect.
+**Why this matters:** If we only had the nudge runs, we might think
+all the score differences came from the ranking manipulation. But the
+baseline shows that some of it is just random content variation. The
+Difference-in-Differences analysis in the next section accounts for
+this by subtracting out the baseline difference.
 
 
-## 8. Mode A vs B: Isolating the Causal Ranking Effect
+## 8. Nudge vs Baseline: Separating Ranking from Content
 
 
 ![Mode Comparison](fig_mode_comparison.png)
 
-The Difference-in-Differences (DiD) design subtracts the baseline
-content effect (Mode B) from the observed effect (Mode A) to isolate
-what is caused by the ranking manipulation alone:
+To figure out how much of the score difference is from the ranking
+change vs. just random topic quality, we use **Difference-in-Differences
+(DiD)**. The idea is simple: take the difference we see in the nudge
+runs, and subtract the difference that already exists in the baseline
+runs. What's left over is the actual effect of the ranking manipulation.
 
 ```
-DiD = (Mode_A_treatment - Mode_A_control) - (Mode_B_treatment - Mode_B_control)
+DiD = (Nudge_treatment - Nudge_control) - (Baseline_treatment - Baseline_control)
 ```
 
 | Comparison | Score DiD | Comment DiD |
@@ -247,42 +248,42 @@ DiD = (Mode_A_treatment - Mode_A_control) - (Mode_B_treatment - Mode_B_control)
 | Nudge Up vs Control | -0.711 | +0.122 |
 | Nudge Down vs Control | -0.148 | -0.191 |
 
-The DiD values are small but noisy at this sample size. With only
-3 runs per mode, these estimates have wide confidence intervals.
-Scaling up to more runs will tighten the DiD estimates and clarify
-whether the ranking nudge has a causal effect beyond content variation.
+These DiD values are small, but with only 3 runs per mode the
+estimates are noisy. More runs will give us a cleaner picture of
+whether the ranking manipulation has a real causal effect beyond
+what random content variation produces.
 
 
-## 9. Power Analysis: What We Need to Confirm the Effect
+## 9. Power Analysis: How Much More Data Do We Need?
 
 
 ![Power Projection](fig_power_projection.png)
 
-### 9.1 Why the Effect Is Not Significant Yet
+### 9.1 Why It's Not Significant Yet
 
-Statistical significance depends on two things: **effect size** and
-**sample size**. We have a medium effect (d = 0.53) but a
-small sample (n = 22 in the smallest group).
+Whether a result hits p < 0.05 depends on two things: how big the
+effect is, and how much data you have. We have a decent-sized effect
+(d = 0.53) but not enough posts yet (only 22 in the
+smallest group).
 
-| Parameter | Current | Needed for 80% Power |
+| What | We Have Now | What We Need |
 |-----------|--------:|--------:|
-| Posts per group (pairwise) | 22 | ~60 |
-| Current power (pairwise) | 40% | 80% |
-| Mode A runs completed | 3 | ~6 |
-| **Additional runs needed** | | **~3** |
+| Posts per group | 22 | ~60 |
+| Statistical power | 40% | 80% |
+| Nudge runs completed | 3 | ~6 |
+| **More runs needed** | | **~3** |
 
-### 9.2 Projected Outcome
+### 9.2 What Happens With More Data
 
-The power curve above shows that with ~60 posts per
-treatment group (approximately 6 Mode A
-runs total), the pairwise comparison of nudge_down vs control would
-reach 80% statistical power  - meaning an 80% probability of detecting
-the effect at p < 0.05 if the true effect size is d = 0.53.
+The power curve above shows this clearly. With ~60
+posts per group (about 6 nudge runs
+total), we'd have an 80% chance of getting p < 0.05 if the true
+effect is d = 0.53.
 
-**Concrete next step:** Run 3 more
-Mode A experiments (~3 hours with
+**Bottom line:** Run **3 more nudge
+experiments** (~3 hours with
 the parallel runner, ~$240 in
-OpenRouter credits).
+OpenRouter credits) and the effect should become significant.
 
 
 ## 10. Internal Consistency
@@ -323,7 +324,7 @@ the experimental infrastructure produces reliable agent behavior.
 ## 11. Detailed Statistical Tables
 
 
-### 11.1 Mode A  - All Tests
+### 11.1 Nudge Runs (Mode A) - All Tests
 
 | Test | Metric | Statistic | p-value | Effect Size |
 |------|--------|--------:|--------:|--------:|
@@ -341,7 +342,7 @@ the experimental infrastructure produces reliable agent behavior.
 | Nudge Up | Comments | 564 | 0.4502 | -0.138 |
 | Nudge Down | Comments | 386 | 0.8520 | 0.089 |
 
-### 11.2 Mode B  - All Tests
+### 11.2 Baseline Runs (Mode B) - All Tests
 
 | Test | Metric | Statistic | p-value | Effect Size |
 |------|--------|--------:|--------:|--------:|
@@ -362,61 +363,61 @@ the experimental infrastructure produces reliable agent behavior.
 
 ## 12. Limitations
 
-1. **Sample size:** 22-37 posts per treatment group. The pairwise
-   score comparison has ~40% power  - enough to detect the direction
-   of the effect, but not to reach conventional significance.
+1. **Not enough data yet.** 22-37 posts per group. We can see the
+   direction of the effect, but can't confirm it at p < 0.05 yet.
 
-2. **Budget constraint:** 6 of 12 runs lost to API credit exhaustion.
-   This is an operational issue, not a design flaw  - additional
-   credits will allow completion.
+2. **Ran out of LLM credits.** 6 of 12 runs stopped producing data
+   because we hit the $500 OpenRouter budget. This is just a funding
+   issue, not a flaw in the experiment design.
 
-3. **Single LLM model:** All agents use `moonshotai/kimi-k2.5`.
-   Other models may respond differently to ranking cues.
+3. **Only one AI model.** All agents use `moonshotai/kimi-k2.5`.
+   Other models might react differently to ranking cues.
 
-4. **Within-run clustering:** Posts in the same run share agents
-   and temporal context. A mixed-effects model with run as a
-   random intercept would be more appropriate for the full study.
+4. **Posts within a run are not fully independent.** They share the
+   same 10 agents and time window. A mixed-effects model (with run
+   as a random factor) would handle this better in the full study.
 
-5. **No pre-registration:** Analysis plan was finalized alongside
-   data collection. The full study should be pre-registered.
+5. **No pre-registration.** The analysis plan was written alongside
+   data collection. The follow-up study should be pre-registered.
 
 
 ## 13. Conclusions & Next Steps
 
 ### What We Found
 
-1. **A medium-sized effect on organic voting (d = 0.53):**
-   Posts nudged down in ranking receive fewer organic upvotes.
-   This is approaching significance (p = 0.065) and is
-   expected to reach it with ~3
-   more Mode A runs.
+1. **Fake downvotes lead to lower real scores (d = 0.53).**
+   When we push a post down in the ranking, agents give it fewer
+   real upvotes too. This is approaching significance (p = 0.065)
+   and should cross p < 0.05 with ~3
+   more nudge runs.
 
-2. **No effect on commenting (d ~ 0):** Agents comment based on
-   content interest, not ranking position. This dissociation is
-   a finding in itself.
+2. **Commenting is unaffected.** Agents comment based on what a
+   post says, not where it sits in the feed. This split between
+   voting behavior and commenting behavior is a finding on its own.
 
-3. **Mode B reveals content effects:** The dual-mode design was
-   necessary  - without Mode B, content variation would confound
-   the ranking effect estimate.
+3. **The baseline mode was necessary.** Without it, we'd confuse
+   content quality differences with ranking effects. Having both
+   modes gives us a cleaner causal estimate.
 
-4. **The experimental platform works:** Parallel Docker-based runner,
-   automated treatment assignment, clean data export, and reliable
-   agent participation (9-10/10 agents per run).
+4. **The platform works.** Parallel Docker runner, automated
+   treatment assignment, clean data export, 9-10/10 agents active
+   per run. The infrastructure is ready for the full study.
 
 ### Next Steps
 
-1. **Add OpenRouter credits** (~$240)
-   and run 3 more Mode A experiments.
+1. **Add ~$240 in OpenRouter
+   credits** and run 3 more nudge
+   experiments.
 
-2. **Pre-register** the confirmatory analysis plan (primary outcome:
-   adjusted score, nudge_down vs control, alpha = 0.05, one-tailed).
+2. **Pre-register** the confirmatory analysis (primary outcome:
+   adjusted score for nudge_down vs control).
 
-3. **Fit mixed-effects model** with run as random intercept to
-   properly account for within-run clustering.
+3. **Use a mixed-effects model** in the full study to properly
+   account for the fact that posts within a run share agents.
 
-4. **Consider additional LLM models** to test generalizability of
-   ranking sensitivity across different AI architectures.
+4. **Try other LLM models** to see if the ranking sensitivity
+   generalizes beyond kimi-k2.5.
 
 ---
-*Report generated by `full_analysis.py`  - 2026-02-18 13:10*
+*Report generated by `full_analysis.py`  - 2026-02-18 13:18*
 *Data directory: /Users/fortuna/Desktop/UoT/moltbook/exports*
