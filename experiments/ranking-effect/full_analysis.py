@@ -223,8 +223,9 @@ def fig_per_run_consistency(rows, path):
             ax.plot(range(len(runs_list)), means, marker=marker, label=f"Mode {mode}",
                    color=color, linewidth=2, markersize=8)
 
-        ax.set_xticks(range(3))
-        ax.set_xticklabels(["Run 1", "Run 2", "Run 3"])
+        max_runs = max(len(GOOD_RUNS_A), len(GOOD_RUNS_B))
+        ax.set_xticks(range(max_runs))
+        ax.set_xticklabels([f"Run {i+1}" for i in range(max_runs)])
         ax.set_ylabel(label)
         ax.legend()
         ax.set_ylim(bottom=0)
@@ -562,7 +563,7 @@ def generate_report(runs, rows, test_results, power_info):
     # 2. WHAT WAS DONE
     wt("2. What Was Done This Week")
     w("1. Built a parallel Docker runner that runs 4 experiments at the same time (each with its own DB, API, and 10 agents)")
-    w("2. Ran 12 experiments in ~6 hours. 6 produced usable data; the other 6 stopped when OpenRouter credits ran out")
+    w("2. Ran 12 experiments in ~6 hours. 6 produced usable data; the other 6 completed but agents were non-functional (OpenRouter credits exhausted)")
     w("3. Built an automated analysis pipeline (this script) that generates stats, figures, and this report")
     w(f"4. Found a promising signal: fake downvotes reduce real agent scores (d = {d_a:.2f}), but only when just seed posts are nudged")
 
@@ -570,9 +571,9 @@ def generate_report(runs, rows, test_results, power_info):
     wt("3. Design")
     w("**Platform:** Moltbook (Reddit-like social network for AI agents) + CivicLens (research layer for treatment assignment and data collection).")
     w()
-    w("**Agents:** 10 LLM-powered agents (`moonshotai/kimi-k2.5`) that autonomously browse, post, comment, and vote every 10-15 seconds. Each run lasts 3 hours.")
+    w("**Agents:** 10 LLM-powered agents (`moonshotai/kimi-k2.5`) that autonomously browse, post, comment, and vote every 10-15 seconds. Each run lasts 1 hour (planned 3 hours, reduced for this batch).")
     w()
-    w("**World posts:** A bot called `civiclens_world` posts 31 discussion topics per run (drawn from a pool of 90 prompts about online communities, AI, and social platforms). Each is randomly assigned to nudge_up (+1 fake vote), control (nothing), or nudge_down (-1 fake vote).")
+    w("**World posts:** A bot called `civiclens_world` posts one topic every 2 minutes from a pool of 90 prompts about online communities, AI, and social platforms. Each run produces 31 world posts (the same 31 topics every run). Each post is randomly assigned to nudge_up (+1 fake vote), control (nothing), or nudge_down (-1 fake vote).")
     w()
     w("**Two modes:**")
     w("- **Mode A (seed-only):** Only the 31 world posts get nudged. Agent-created posts are untouched.")
@@ -711,10 +712,11 @@ def generate_report(runs, rows, test_results, power_info):
     # 11. LIMITATIONS
     wt("11. Limitations")
     w("1. **Small sample.** ~22 posts per group. Enough to see the direction, not enough for p < 0.05.")
-    w("2. **Credit limit.** 6/12 runs lost to OpenRouter budget ($500). Funding issue, not design flaw.")
-    w("3. **One LLM model.** All agents use kimi-k2.5. Other models may differ.")
-    w("4. **Posts within a run share agents.** A mixed-effects model would be better for the full study.")
-    w("5. **Not pre-registered.** Follow-up should be.")
+    w("2. **Credit exhaustion.** All 12 runs completed their full 1-hour duration, but agents in runs 7-12 produced no content (0 comments, only world posts) because OpenRouter credits (~$500) were depleted. The infrastructure ran; the LLM could not generate agent actions.")
+    w("3. **Shorter than planned.** Runs were 1 hour instead of the planned 3 hours, yielding ~31 world posts per run (~10/group) instead of 90 (~30/group). This reduces per-run statistical power.")
+    w("4. **One LLM model.** All agents use kimi-k2.5. Other models may differ.")
+    w("5. **Posts within a run share agents.** A mixed-effects model would be better for the full study.")
+    w("6. **Not pre-registered.** Follow-up should be.")
 
     # 12. NEXT STEPS
     wt("12. Next Steps")
