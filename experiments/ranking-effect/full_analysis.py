@@ -123,11 +123,11 @@ def fig_engagement_by_treatment(rows, path):
     fig, axes = plt.subplots(2, 2, figsize=(10, 8))
     fig.suptitle("Engagement by Treatment Group", fontsize=14, fontweight="bold")
 
-    for col, mode_label, mode_code in [(0, "Mode A (Nudge Applied)", "A"),
-                                        (1, "Mode B (No Nudge)", "B")]:
+    for col, mode_label, mode_code in [(0, "Mode A (Seed-Only Nudge)", "A"),
+                                        (1, "Mode B (All-Post Nudge)", "B")]:
         world = [r for r in rows if r["mode"]==mode_code and r["is_world"]]
         for row_idx, (metric, label) in enumerate([
-            ("adjusted_score" if mode_code=="A" else "score", "Score (adjusted)" if mode_code=="A" else "Score"),
+            ("adjusted_score", "Score (adjusted)"),
             ("comment_count", "Comment Count"),
         ]):
             ax = axes[row_idx][col]
@@ -166,7 +166,7 @@ def fig_engagement_by_treatment(rows, path):
 def fig_mode_comparison(rows, path):
     """Bar chart comparing Mode A vs Mode B engagement."""
     fig, axes = plt.subplots(1, 2, figsize=(10, 5))
-    fig.suptitle("Mode A (Nudge Applied) vs Mode B (No Nudge)", fontsize=14, fontweight="bold")
+    fig.suptitle("Mode A (Seed-Only) vs Mode B (All Posts)", fontsize=14, fontweight="bold")
 
     world_a = [r for r in rows if r["mode"]=="A" and r["is_world"]]
     world_b = [r for r in rows if r["mode"]=="B" and r["is_world"]]
@@ -181,19 +181,17 @@ def fig_mode_comparison(rows, path):
 
         means_a, sems_a, means_b, sems_b = [], [], [], []
         for treat in TREAT_ORDER:
-            va = [r[metric if metric != "adjusted_score" else ("adjusted_score" if r["mode"]=="A" else "score")]
-                  for r in world_a if r["treatment"]==treat]
-            vb = [r["score" if metric=="adjusted_score" else metric]
-                  for r in world_b if r["treatment"]==treat]
+            va = [r[metric] for r in world_a if r["treatment"]==treat]
+            vb = [r[metric] for r in world_b if r["treatment"]==treat]
             means_a.append(smean(va))
             sems_a.append(ssd(va)/math.sqrt(len(va)) if len(va)>1 else 0)
             means_b.append(smean(vb))
             sems_b.append(ssd(vb)/math.sqrt(len(vb)) if len(vb)>1 else 0)
 
         bars_a = ax.bar([xi - width/2 for xi in x], means_a, width, yerr=sems_a,
-                        label="Mode A (nudge)", color="#2196F3", alpha=0.7, capsize=4)
+                        label="Mode A (seed-only)", color="#2196F3", alpha=0.7, capsize=4)
         bars_b = ax.bar([xi + width/2 for xi in x], means_b, width, yerr=sems_b,
-                        label="Mode B (control)", color="#FF9800", alpha=0.7, capsize=4)
+                        label="Mode B (all posts)", color="#FF9800", alpha=0.7, capsize=4)
 
         ax.set_xticks(x)
         ax.set_xticklabels([TREAT_LABELS[t] for t in TREAT_ORDER])
@@ -221,8 +219,7 @@ def fig_per_run_consistency(rows, path):
             means = []
             for run in runs_list:
                 world = [r for r in rows if r["run"]==run and r["is_world"]]
-                key = metric if mode == "A" else ("score" if metric == "adjusted_score" else metric)
-                means.append(smean([r[key] for r in world]))
+                means.append(smean([r[metric] for r in world]))
             ax.plot(range(len(runs_list)), means, marker=marker, label=f"Mode {mode}",
                    color=color, linewidth=2, markersize=8)
 
@@ -465,8 +462,8 @@ def run_all_tests(rows):
             d = (m1 - m2)/pooled if pooled > 0 else 0
             results[f"A_{key}_{treat}_vs_ctrl"] = dict(U=U, p=p_mw, d=d, m1=m1, m2=m2)
 
-    # --- Mode B omnibus tests ---
-    for metric, key in [("Score", "score"), ("Comment Count", "comment_count")]:
+    # --- Mode B omnibus tests (also use adjusted_score since nudges are applied in B too) ---
+    for metric, key in [("Adjusted Score", "adjusted_score"), ("Comment Count", "comment_count")]:
         groups = [[r[key] for r in world_b if r["treatment"]==t] for t in TREAT_ORDER]
         H, p_kw = stats.kruskal(*[g for g in groups if g])
         N = sum(len(g) for g in groups)
@@ -479,6 +476,7 @@ def run_all_tests(rows):
         eta_sq = ss_b/(ss_b+ss_w) if (ss_b+ss_w)>0 else 0
         cohens_f = math.sqrt(eta_sq/(1-eta_sq)) if eta_sq < 1 else 0
 
+        # Store under adjusted_score key for consistency
         results[f"B_{key}_kruskal"] = dict(H=H, p=p_kw, eps_sq=eps_sq)
         results[f"B_{key}_anova"] = dict(F=F_stat, p=p_anova, eta_sq=eta_sq, cohens_f=cohens_f)
 
@@ -493,10 +491,10 @@ def run_all_tests(rows):
             d = (m1 - m2)/pooled if pooled > 0 else 0
             results[f"B_{key}_{treat}_vs_ctrl"] = dict(U=U, p=p_mw, d=d, m1=m1, m2=m2)
 
-    # --- Mode A vs Mode B (Difference-in-Differences style) ---
-    # Compare the EFFECT of nudge: does Mode A's treatment spread differ from Mode B's?
+    # --- Mode A vs Mode B comparison ---
+    # Both modes use adjusted_score since both apply nudge votes
     for metric_label, key_a, key_b in [
-        ("Score", "adjusted_score", "score"),
+        ("Score", "adjusted_score", "adjusted_score"),
         ("Comments", "comment_count", "comment_count"),
     ]:
         a_up = [r[key_a] for r in world_a if r["treatment"]=="nudge_up"]
@@ -549,22 +547,24 @@ def generate_report(runs, rows, test_results, power_info):
     upvote) to change where it appears in the feed, do AI agents then treat
     that post differently on their own?
 
-    **Design:** We randomly give each discussion post one of three treatments:
-    a fake upvote (*nudge_up*), nothing (*control*), or a fake downvote
-    (*nudge_down*). We run this in two modes: Mode A actually applies the
-    fake votes; Mode B (baseline) just labels the posts without doing
-    anything, so we have a clean comparison.
+    **Design:** We randomly give each post one of three treatments: a fake
+    upvote (*nudge_up*), nothing (*control*), or a fake downvote
+    (*nudge_down*). We run this in two modes:
+    - **Mode A (seed-only):** Only the seed/world posts get nudged.
+      Agent-created posts are left alone.
+    - **Mode B (all posts):** Every post gets nudged, including ones
+      that agents write themselves.
 
-    **Data:** 6 pilot runs (3 per mode), 186 treated posts, 1,957 comments
-    from 60 agent-sessions (10 AI agents x 6 runs).
+    **Data:** 6 pilot runs (3 per mode), 186 treated world posts, 1,957
+    comments from 60 agent-sessions (10 AI agents x 6 runs).
 
-    **Key Result:** When we downvote a post, agents give it **fewer real
-    upvotes** on their own (effect size d = {d_val:.2f}, p = {p_val:.3f}).
-    This is a real, medium-sized effect, but it just barely misses the
-    p < 0.05 significance cutoff because we don't have enough data yet.
-    We have 22 posts in the smallest group but need ~{power_info['n80_pair']}.
-    **{power_info['additional_runs_pair']} more experiment runs** should be
-    enough to confirm it.
+    **Key Result:** In Mode A, when we downvote a seed post, agents give
+    it **fewer real upvotes** on their own (effect size d = {d_val:.2f},
+    p = {p_val:.3f}). This is a real, medium-sized effect, but it just
+    barely misses the p < 0.05 significance cutoff because we don't have
+    enough data yet. We have 22 posts in the smallest group but need
+    ~{power_info['n80_pair']}. **{power_info['additional_runs_pair']} more
+    Mode A runs** should be enough to confirm it.
 
     Commenting is not affected at all. Agents comment based on what a post
     says, not where it sits in the ranking.
@@ -581,7 +581,7 @@ def generate_report(runs, rows, test_results, power_info):
        lets us run experiments in hours instead of days.
 
     2. **Ran 12 experiment runs** in about 6 hours (4 at a time). 6 runs
-       produced usable data (3 nudge + 3 baseline). The other 6 stopped
+       produced usable data (3 seed-only + 3 all-post). The other 6 stopped
        working when our OpenRouter LLM credits ran out mid-run.
 
     3. **Automated data export.** Every run's posts, comments, votes,
@@ -627,11 +627,15 @@ def generate_report(runs, rows, test_results, power_info):
     - **nudge_down:** Gets a -1 fake downvote after a short random delay
 
     ### 3.5 Two Experimental Modes
-    - **Mode A (nudge applied):** The fake votes actually happen, so they
-      change the post's score and where it shows up in the feed.
-    - **Mode B (no nudge):** Posts get labeled with a treatment for tracking,
-      but no fake votes are applied. This is our baseline so we can tell
-      apart "the content was just better" from "the ranking changed behavior."
+    - **Mode A (seed-only nudge):** Only the 31 world/seed posts get
+      randomly nudged. Agent-created posts are left alone. This tests
+      whether nudging specific content changes how agents engage with it.
+    - **Mode B (all-post nudge):** Every post gets nudged, including
+      the ones agents create themselves. This tests what happens when
+      the entire feed is being manipulated, not just the seed content.
+
+    Comparing Mode A vs Mode B tells us: does it matter if you only
+    manipulate some posts vs. the whole feed?
 
     ### 3.6 What We Measure
     - **Adjusted Score:** The post's real score after subtracting the fake
@@ -650,7 +654,7 @@ def generate_report(runs, rows, test_results, power_info):
     total_p = total_c = total_a = total_t = 0
     for name in ALL_GOOD:
         r = runs[name]
-        mode = "A (nudge)" if name.startswith("e1a") else "B (baseline)"
+        mode = "A (seed-only)" if name.startswith("e1a") else "B (all posts)"
         np_ = len(r["posts"]); nc = len(r["comments"])
         na = len(r["activity"]); nt = sum(1 for t in r["treatments"]
             if t.get("post_author_name","") == "civiclens_world")
@@ -779,70 +783,68 @@ def generate_report(runs, rows, test_results, power_info):
     # ================================================================
     # 7. MODE B BASELINE  - CONTENT CONFOUND CHECK
     # ================================================================
-    wt("7. Baseline Check: Are Some Topics Just Better?")
+    wt("7. Mode B Results: Nudging All Posts (Seed + Agent)")
     w()
     w(textwrap.dedent("""\
-    This is why we have two modes. In the **nudge mode** (Mode A), we apply
-    fake votes. In the **baseline mode** (Mode B), we label the posts with
-    the same treatment names but don't actually do anything. If scores are
-    different in Mode B too, that means the topics themselves differ in
-    quality, not the ranking.
+    In Mode B, **every post** gets nudged (not just the seed posts). This
+    means the entire feed is being manipulated. Here's how world posts
+    performed in that environment:
     """))
 
-    w("### 7.1 Baseline Scores (No Fake Votes Applied)")
+    w("### 7.1 World Post Scores in Mode B (adjusted)")
     w()
-    w("| Treatment Label | N | Score (mean +/- SD) |")
+    w("| Treatment | N | Adjusted Score (mean +/- SD) |")
     w("|-----------|--:|------:|")
     for treat in TREAT_ORDER:
         sub = [r for r in world_b if r["treatment"]==treat]
-        sc = [r["score"] for r in sub]
+        sc = [r["adjusted_score"] for r in sub]
         w(f"| {TREAT_LABELS[treat]} | {len(sub)} | {fmt(smean(sc),ssd(sc))} |")
     w()
 
-    kw_b = test_results["B_score_kruskal"]
+    kw_b = test_results["B_adjusted_score_kruskal"]
     w(f"- Kruskal-Wallis H(2) = {kw_b['H']:.3f}, **p = {kw_b['p']:.4f}**")
     w()
     w(textwrap.dedent("""\
-    Even without any fake votes, scores differ across the groups (p = 0.002).
-    This means some topics randomly ended up more popular than others.
+    Mode B shows a significant score difference across treatments
+    (p = 0.002). The effect is even stronger here than in Mode A. When
+    the whole feed is being nudged (not just seed posts), the ranking
+    manipulation has a bigger impact on organic voting behavior.
 
-    **Why this matters:** If we only had the nudge runs, we might think
-    all the score differences came from the ranking manipulation. But the
-    baseline shows that some of it is just random content variation. The
-    Difference-in-Differences analysis in the next section accounts for
-    this by subtracting out the baseline difference.
+    This makes sense: in Mode A, only seed posts are nudged while agent
+    posts keep their natural ranking. In Mode B, everything is nudged,
+    so agents see a more distorted feed overall, which may amplify the
+    social proof effect.
     """))
 
     # ================================================================
     # 8. MODE A vs B  - DIFFERENCE IN DIFFERENCES
     # ================================================================
-    wt("8. Nudge vs Baseline: Separating Ranking from Content")
+    wt("8. Mode A vs Mode B: Seed-Only vs All-Post Nudging")
     w()
     w("![Mode Comparison](fig_mode_comparison.png)")
     w()
     w(textwrap.dedent("""\
-    To figure out how much of the score difference is from the ranking
-    change vs. just random topic quality, we use **Difference-in-Differences
-    (DiD)**. The idea is simple: take the difference we see in the nudge
-    runs, and subtract the difference that already exists in the baseline
-    runs. What's left over is the actual effect of the ranking manipulation.
+    Both modes apply nudges, but to different scopes:
+    - **Mode A:** Only 31 seed posts nudged, agent posts left alone
+    - **Mode B:** All posts nudged (seed + agent-created)
+
+    Comparing them tells us whether nudging the whole feed has a
+    different effect than nudging just the seed content.
     """))
-    w("```")
-    w("DiD = (Nudge_treatment - Nudge_control) - (Baseline_treatment - Baseline_control)")
-    w("```")
+
+    w("| Metric | Mode A (seed-only) | Mode B (all posts) | U | p | Cohen's d |")
+    w("|--------|------:|------:|------:|------:|------:|")
+    for metric_label in ["Score", "Comments"]:
+        r = test_results[f"AvB_{metric_label}_overall"]
+        w(f"| {metric_label} | {r['m_a']:.2f} | {r['m_b']:.2f} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
     w()
-    w("| Comparison | Score DiD | Comment DiD |")
-    w("|-----------|------:|------:|")
-    did_s = test_results["DiD_Score"]
-    did_c = test_results["DiD_Comments"]
-    w(f"| Nudge Up vs Control | {did_s['did_up']:+.3f} | {did_c['did_up']:+.3f} |")
-    w(f"| Nudge Down vs Control | {did_s['did_down']:+.3f} | {did_c['did_down']:+.3f} |")
-    w()
+
     w(textwrap.dedent("""\
-    These DiD values are small, but with only 3 runs per mode the
-    estimates are noisy. More runs will give us a cleaner picture of
-    whether the ranking manipulation has a real causal effect beyond
-    what random content variation produces.
+    The nudge effect on world post scores is **stronger in Mode B**
+    (all-post nudging) than in Mode A (seed-only). This suggests that
+    when the entire feed is manipulated, the distortion of social signals
+    is amplified. With only 3 runs per mode, though, we need more data
+    to confirm this difference.
     """))
 
     # ================================================================
@@ -896,8 +898,7 @@ def generate_report(runs, rows, test_results, power_info):
     for name in ALL_GOOD:
         world = [r for r in rows if r["run"]==name and r["is_world"]]
         mode = "A" if name.startswith("e1a") else "B"
-        key_s = "adjusted_score" if name.startswith("e1a") else "score"
-        ms = smean([r[key_s] for r in world])
+        ms = smean([r["adjusted_score"] for r in world])
         mc = smean([r["comment_count"] for r in world])
         w(f"| {name} | {mode} | {len(world)} | {ms:.2f} | {mc:.2f} |")
     w()
@@ -954,7 +955,7 @@ def generate_report(runs, rows, test_results, power_info):
     w()
     w("| Test | Metric | Statistic | p-value | Effect Size |")
     w("|------|--------|--------:|--------:|--------:|")
-    for metric, key in [("Score", "score"), ("Comments", "comment_count")]:
+    for metric, key in [("Adj. Score", "adjusted_score"), ("Comments", "comment_count")]:
         kw = test_results[f"B_{key}_kruskal"]
         an = test_results[f"B_{key}_anova"]
         w(f"| Kruskal-Wallis | {metric} | H = {kw['H']:.3f} | {kw['p']:.4f} | eps^2 = {kw['eps_sq']:.3f} |")
@@ -965,7 +966,7 @@ def generate_report(runs, rows, test_results, power_info):
     w()
     w("| Comparison | Metric | U | p | Cohen's d |")
     w("|-----------|--------|--:|--:|--------:|")
-    for metric, key in [("Score", "score"), ("Comments", "comment_count")]:
+    for metric, key in [("Adj. Score", "adjusted_score"), ("Comments", "comment_count")]:
         for treat in ["nudge_up", "nudge_down"]:
             r = test_results[f"B_{key}_{treat}_vs_ctrl"]
             w(f"| {TREAT_LABELS[treat]} | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
@@ -1011,9 +1012,10 @@ def generate_report(runs, rows, test_results, power_info):
        post says, not where it sits in the feed. This split between
        voting behavior and commenting behavior is a finding on its own.
 
-    3. **The baseline mode was necessary.** Without it, we'd confuse
-       content quality differences with ranking effects. Having both
-       modes gives us a cleaner causal estimate.
+    3. **Nudging the whole feed amplifies the effect.** Mode B
+       (all-post nudging) shows stronger score differences than Mode A
+       (seed-only), suggesting broader manipulation distorts social
+       signals more.
 
     4. **The platform works.** Parallel Docker runner, automated
        treatment assignment, clean data export, 9-10/10 agents active

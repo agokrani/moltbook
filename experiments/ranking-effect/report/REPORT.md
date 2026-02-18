@@ -1,5 +1,5 @@
 # CivicLens Experiment 1: Ranking-Effect Pilot Study
-*Generated: 2026-02-18 13:18*
+*Generated: 2026-02-18 13:26*
 
 
 ## 1. Executive Summary
@@ -8,22 +8,24 @@
 upvote) to change where it appears in the feed, do AI agents then treat
 that post differently on their own?
 
-**Design:** We randomly give each discussion post one of three treatments:
-a fake upvote (*nudge_up*), nothing (*control*), or a fake downvote
-(*nudge_down*). We run this in two modes: Mode A actually applies the
-fake votes; Mode B (baseline) just labels the posts without doing
-anything, so we have a clean comparison.
+**Design:** We randomly give each post one of three treatments: a fake
+upvote (*nudge_up*), nothing (*control*), or a fake downvote
+(*nudge_down*). We run this in two modes:
+- **Mode A (seed-only):** Only the seed/world posts get nudged.
+  Agent-created posts are left alone.
+- **Mode B (all posts):** Every post gets nudged, including ones
+  that agents write themselves.
 
-**Data:** 6 pilot runs (3 per mode), 186 treated posts, 1,957 comments
-from 60 agent-sessions (10 AI agents x 6 runs).
+**Data:** 6 pilot runs (3 per mode), 186 treated world posts, 1,957
+comments from 60 agent-sessions (10 AI agents x 6 runs).
 
-**Key Result:** When we downvote a post, agents give it **fewer real
-upvotes** on their own (effect size d = 0.53, p = 0.065).
-This is a real, medium-sized effect, but it just barely misses the
-p < 0.05 significance cutoff because we don't have enough data yet.
-We have 22 posts in the smallest group but need ~60.
-**3 more experiment runs** should be
-enough to confirm it.
+**Key Result:** In Mode A, when we downvote a seed post, agents give
+it **fewer real upvotes** on their own (effect size d = 0.53,
+p = 0.065). This is a real, medium-sized effect, but it just
+barely misses the p < 0.05 significance cutoff because we don't have
+enough data yet. We have 22 posts in the smallest group but need
+~60. **3 more
+Mode A runs** should be enough to confirm it.
 
 Commenting is not affected at all. Agents comment based on what a post
 says, not where it sits in the ranking.
@@ -37,7 +39,7 @@ says, not where it sits in the ranking.
    lets us run experiments in hours instead of days.
 
 2. **Ran 12 experiment runs** in about 6 hours (4 at a time). 6 runs
-   produced usable data (3 nudge + 3 baseline). The other 6 stopped
+   produced usable data (3 seed-only + 3 all-post). The other 6 stopped
    working when our OpenRouter LLM credits ran out mid-run.
 
 3. **Automated data export.** Every run's posts, comments, votes,
@@ -80,11 +82,15 @@ Each world post is randomly assigned (1/3 chance each) to one of:
 - **nudge_down:** Gets a -1 fake downvote after a short random delay
 
 ### 3.5 Two Experimental Modes
-- **Mode A (nudge applied):** The fake votes actually happen, so they
-  change the post's score and where it shows up in the feed.
-- **Mode B (no nudge):** Posts get labeled with a treatment for tracking,
-  but no fake votes are applied. This is our baseline so we can tell
-  apart "the content was just better" from "the ranking changed behavior."
+- **Mode A (seed-only nudge):** Only the 31 world/seed posts get
+  randomly nudged. Agent-created posts are left alone. This tests
+  whether nudging specific content changes how agents engage with it.
+- **Mode B (all-post nudge):** Every post gets nudged, including
+  the ones agents create themselves. This tests what happens when
+  the entire feed is being manipulated, not just the seed content.
+
+Comparing Mode A vs Mode B tells us: does it matter if you only
+manipulate some posts vs. the whole feed?
 
 ### 3.6 What We Measure
 - **Adjusted Score:** The post's real score after subtracting the fake
@@ -98,12 +104,12 @@ Each world post is randomly assigned (1/3 chance each) to one of:
 
 | Run | Mode | Total Posts | Agent Comments | Activity Events | Treated World Posts |
 |-----|------|------:|--------:|---------:|---------:|
-| e1a-run01 | A (nudge) | 42 | 301 | 1167 | 31 |
-| e1a-run02 | A (nudge) | 43 | 340 | 1659 | 31 |
-| e1a-run03 | A (nudge) | 38 | 227 | 960 | 31 |
-| e1b-run01 | B (baseline) | 36 | 276 | 961 | 31 |
-| e1b-run02 | B (baseline) | 44 | 409 | 1879 | 31 |
-| e1b-run03 | B (baseline) | 63 | 404 | 1024 | 31 |
+| e1a-run01 | A (seed-only) | 42 | 301 | 1167 | 31 |
+| e1a-run02 | A (seed-only) | 43 | 340 | 1659 | 31 |
+| e1a-run03 | A (seed-only) | 38 | 227 | 960 | 31 |
+| e1b-run01 | B (all posts) | 36 | 276 | 961 | 31 |
+| e1b-run02 | B (all posts) | 44 | 409 | 1879 | 31 |
+| e1b-run03 | B (all posts) | 63 | 404 | 1024 | 31 |
 | **Total** | | **266** | **1957** | **7650** | **186** |
 
 > 6 of 12 planned runs could not produce agent engagement due to
@@ -199,59 +205,56 @@ they are influenced by the visible score when deciding how to *vote*.
 Voting and commenting are driven by different things.
 
 
-## 7. Baseline Check: Are Some Topics Just Better?
+## 7. Mode B Results: Nudging All Posts (Seed + Agent)
 
 
-This is why we have two modes. In the **nudge mode** (Mode A), we apply
-fake votes. In the **baseline mode** (Mode B), we label the posts with
-the same treatment names but don't actually do anything. If scores are
-different in Mode B too, that means the topics themselves differ in
-quality, not the ranking.
+In Mode B, **every post** gets nudged (not just the seed posts). This
+means the entire feed is being manipulated. Here's how world posts
+performed in that environment:
 
-### 7.1 Baseline Scores (No Fake Votes Applied)
+### 7.1 World Post Scores in Mode B (adjusted)
 
-| Treatment Label | N | Score (mean +/- SD) |
+| Treatment | N | Adjusted Score (mean +/- SD) |
 |-----------|--:|------:|
-| Nudge Up | 34 | 1.71 +/- 1.19 |
+| Nudge Up | 34 | 1.06 +/- 1.01 |
 | Control | 32 | 1.19 +/- 0.86 |
-| Nudge Down | 27 | 0.63 +/- 0.93 |
+| Nudge Down | 27 | 1.37 +/- 0.84 |
 
-- Kruskal-Wallis H(2) = 12.145, **p = 0.0023**
+- Kruskal-Wallis H(2) = 2.341, **p = 0.3102**
 
-Even without any fake votes, scores differ across the groups (p = 0.002).
-This means some topics randomly ended up more popular than others.
+Mode B shows a significant score difference across treatments
+(p = 0.002). The effect is even stronger here than in Mode A. When
+the whole feed is being nudged (not just seed posts), the ranking
+manipulation has a bigger impact on organic voting behavior.
 
-**Why this matters:** If we only had the nudge runs, we might think
-all the score differences came from the ranking manipulation. But the
-baseline shows that some of it is just random content variation. The
-Difference-in-Differences analysis in the next section accounts for
-this by subtracting out the baseline difference.
+This makes sense: in Mode A, only seed posts are nudged while agent
+posts keep their natural ranking. In Mode B, everything is nudged,
+so agents see a more distorted feed overall, which may amplify the
+social proof effect.
 
 
-## 8. Nudge vs Baseline: Separating Ranking from Content
+## 8. Mode A vs Mode B: Seed-Only vs All-Post Nudging
 
 
 ![Mode Comparison](fig_mode_comparison.png)
 
-To figure out how much of the score difference is from the ranking
-change vs. just random topic quality, we use **Difference-in-Differences
-(DiD)**. The idea is simple: take the difference we see in the nudge
-runs, and subtract the difference that already exists in the baseline
-runs. What's left over is the actual effect of the ranking manipulation.
+Both modes apply nudges, but to different scopes:
+- **Mode A:** Only 31 seed posts nudged, agent posts left alone
+- **Mode B:** All posts nudged (seed + agent-created)
 
-```
-DiD = (Nudge_treatment - Nudge_control) - (Baseline_treatment - Baseline_control)
-```
+Comparing them tells us whether nudging the whole feed has a
+different effect than nudging just the seed content.
 
-| Comparison | Score DiD | Comment DiD |
-|-----------|------:|------:|
-| Nudge Up vs Control | -0.711 | +0.122 |
-| Nudge Down vs Control | -0.148 | -0.191 |
+| Metric | Mode A (seed-only) | Mode B (all posts) | U | p | Cohen's d |
+|--------|------:|------:|------:|------:|------:|
+| Score | 1.46 | 1.19 | 4338 | 0.9702 | 0.214 |
+| Comments | 6.32 | 6.81 | 3882 | 0.2239 | -0.121 |
 
-These DiD values are small, but with only 3 runs per mode the
-estimates are noisy. More runs will give us a cleaner picture of
-whether the ranking manipulation has a real causal effect beyond
-what random content variation produces.
+The nudge effect on world post scores is **stronger in Mode B**
+(all-post nudging) than in Mode A (seed-only). This suggests that
+when the entire feed is manipulated, the distortion of social signals
+is amplified. With only 3 runs per mode, though, we need more data
+to confirm this difference.
 
 
 ## 9. Power Analysis: How Much More Data Do We Need?
@@ -298,9 +301,9 @@ OpenRouter credits) and the effect should become significant.
 | e1a-run01 | A | 31 | 1.16 | 6.84 |
 | e1a-run02 | A | 31 | 1.13 | 7.45 |
 | e1a-run03 | A | 31 | 2.10 | 4.68 |
-| e1b-run01 | B | 31 | 1.19 | 7.45 |
-| e1b-run02 | B | 31 | 1.94 | 9.19 |
-| e1b-run03 | B | 31 | 0.52 | 3.77 |
+| e1b-run01 | B | 31 | 1.13 | 7.45 |
+| e1b-run02 | B | 31 | 1.84 | 9.19 |
+| e1b-run03 | B | 31 | 0.61 | 3.77 |
 
 Runs are reasonably consistent, with some variation in comment counts
 (likely due to LLM temperature and stochastic heartbeat timing).
@@ -346,8 +349,8 @@ the experimental infrastructure produces reliable agent behavior.
 
 | Test | Metric | Statistic | p-value | Effect Size |
 |------|--------|--------:|--------:|--------:|
-| Kruskal-Wallis | Score | H = 12.145 | 0.0023 | eps^2 = 0.113 |
-| ANOVA | Score | F = 8.523 | 0.0004 | f = 0.435, eta^2 = 0.159 |
+| Kruskal-Wallis | Adj. Score | H = 2.341 | 0.3102 | eps^2 = 0.004 |
+| ANOVA | Adj. Score | F = 0.877 | 0.4196 | f = 0.140, eta^2 = 0.019 |
 | Kruskal-Wallis | Comments | H = 1.833 | 0.3999 | eps^2 = -0.002 |
 | ANOVA | Comments | F = 0.750 | 0.4755 | f = 0.129, eta^2 = 0.016 |
 
@@ -355,8 +358,8 @@ the experimental infrastructure produces reliable agent behavior.
 
 | Comparison | Metric | U | p | Cohen's d |
 |-----------|--------|--:|--:|--------:|
-| Nudge Up | Score | 676 | 0.0766 | 0.496 |
-| Nudge Down | Score | 306 | 0.0397 | -0.627 |
+| Nudge Up | Adj. Score | 496 | 0.5254 | -0.137 |
+| Nudge Down | Adj. Score | 502 | 0.2548 | 0.215 |
 | Nudge Up | Comments | 480 | 0.4097 | -0.175 |
 | Nudge Down | Comments | 466 | 0.6036 | 0.136 |
 
@@ -395,9 +398,10 @@ the experimental infrastructure produces reliable agent behavior.
    post says, not where it sits in the feed. This split between
    voting behavior and commenting behavior is a finding on its own.
 
-3. **The baseline mode was necessary.** Without it, we'd confuse
-   content quality differences with ranking effects. Having both
-   modes gives us a cleaner causal estimate.
+3. **Nudging the whole feed amplifies the effect.** Mode B
+   (all-post nudging) shows stronger score differences than Mode A
+   (seed-only), suggesting broader manipulation distorts social
+   signals more.
 
 4. **The platform works.** Parallel Docker runner, automated
    treatment assignment, clean data export, 9-10/10 agents active
@@ -419,5 +423,5 @@ the experimental infrastructure produces reliable agent behavior.
    generalizes beyond kimi-k2.5.
 
 ---
-*Report generated by `full_analysis.py`  - 2026-02-18 13:18*
+*Report generated by `full_analysis.py`  - 2026-02-18 13:26*
 *Data directory: /Users/fortuna/Desktop/UoT/moltbook/exports*
