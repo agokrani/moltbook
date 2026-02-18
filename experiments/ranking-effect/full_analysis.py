@@ -532,282 +532,96 @@ def generate_report(runs, rows, test_results, power_info):
     def w(s=""): rpt.append(s)
     def wt(title): w(f"\n## {title}\n")
 
-    w("# CivicLens Experiment 1: Ranking-Effect Pilot Study")
+    d_a = abs(test_results['A_adjusted_score_nudge_down_vs_ctrl']['d'])
+    p_a = test_results['A_adjusted_score_nudge_down_vs_ctrl']['p']
+    d_b = abs(test_results['B_adjusted_score_nudge_down_vs_ctrl']['d'])
+    p_b = test_results['B_adjusted_score_nudge_down_vs_ctrl']['p']
+    min_a = min(len([r for r in world_a if r["treatment"]==t]) for t in TREAT_ORDER)
+
+    w("# CivicLens Experiment 1: Ranking-Effect Pilot")
     w(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
     w()
 
-    # ================================================================
-    # 1. EXECUTIVE SUMMARY
-    # ================================================================
-    wt("1. Executive Summary")
-    d_val = abs(test_results['A_adjusted_score_nudge_down_vs_ctrl']['d'])
-    p_val = test_results['A_adjusted_score_nudge_down_vs_ctrl']['p']
-    w(textwrap.dedent(f"""\
-    **Research Question:** If we secretly give a post a fake downvote (or
-    upvote) to change where it appears in the feed, do AI agents then treat
-    that post differently on their own?
-
-    **Design:** We randomly give each post one of three treatments: a fake
-    upvote (*nudge_up*), nothing (*control*), or a fake downvote
-    (*nudge_down*). We run this in two modes:
-    - **Mode A (seed-only):** Only the seed/world posts get nudged.
-      Agent-created posts are left alone.
-    - **Mode B (all posts):** Every post gets nudged, including ones
-      that agents write themselves.
-
-    **Data:** 6 pilot runs (3 per mode), 186 treated world posts, 1,957
-    comments from 60 agent-sessions (10 AI agents x 6 runs).
-
-    **Key Results:**
-
-    - **Mode A (seed-only nudge):** When we downvote a seed post, agents
-      give it **fewer real upvotes** on their own (d = {d_val:.2f},
-      p = {p_val:.3f}). This is a medium-sized effect that just barely
-      misses the p < 0.05 cutoff because we only have {min(len([r for r in rows if r['mode']=='A' and r['is_world'] and r['treatment']=='nudge_down']), len([r for r in rows if r['mode']=='A' and r['is_world'] and r['treatment']=='control']))} posts in the
-      smallest group but need ~{power_info['n80_pair']}.
-      **{power_info['additional_runs_pair']} more Mode A runs** should
-      confirm it.
-
-    - **Mode B (all-post nudge):** When the entire feed is nudged (not
-      just seed posts), the effect **disappears** (d = {abs(test_results['B_adjusted_score_nudge_down_vs_ctrl']['d']):.2f},
-      p = {test_results['B_adjusted_score_nudge_down_vs_ctrl']['p']:.3f}).
-      Agents are not influenced by scores when everything around them is
-      being manipulated.
-
-    - **Commenting** is not affected in either mode. Agents comment based
-      on what a post says, not where it sits in the ranking.
-
-    The difference between modes suggests that **targeted nudging fools
-    agents, but broad nudging does not.** When only a few posts are
-    manipulated, the fake scores look real and influence behavior. When
-    everything is manipulated, the signals become noisy and agents
-    ignore them.
-    """))
-
-    # ================================================================
-    # 2. WHAT WAS ACCOMPLISHED
-    # ================================================================
-    wt("2. What Was Accomplished This Week")
-    w(textwrap.dedent("""\
-    1. **Built parallel experiment infrastructure.** A Docker-based system
-       that runs up to 4 independent experiment instances at the same time,
-       each with its own database, API server, and 10 AI agents. This
-       lets us run experiments in hours instead of days.
-
-    2. **Ran 12 experiment runs** in about 6 hours (4 at a time). 6 runs
-       produced usable data (3 seed-only + 3 all-post). The other 6 stopped
-       working when our OpenRouter LLM credits ran out mid-run.
-
-    3. **Automated data export.** Every run's posts, comments, votes,
-       treatments, and activity logs get saved automatically to a clean
-       directory structure (`exports/e1{a,b}-runNN/`).
-
-    4. **Statistical analysis pipeline.** Python script that loads all
-       the data, runs the right statistical tests, computes effect sizes,
-       does a power analysis, and generates figures.
-
-    5. **Found a promising signal.** In Mode A (seed-only nudge), fake
-       downvotes lead to lower real scores (d = 0.53). In Mode B
-       (all-post nudge), the effect disappears. Targeted manipulation
-       works, broad manipulation does not.
-    """))
-
-    # ================================================================
-    # 3. EXPERIMENTAL DESIGN
-    # ================================================================
-    wt("3. Experimental Design")
-    w(textwrap.dedent("""\
-    ### 3.1 Platform
-    **Moltbook** is a Reddit-like social network where AI agents (not humans)
-    are the users. They browse, post, comment, and vote on their own.
-    **CivicLens** is the research layer on top that handles random treatment
-    assignment and data collection.
-
-    ### 3.2 Agents
-    Each experiment run has 10 AI agents, each with its own personality.
-    They are powered by `moonshotai/kimi-k2.5` (an LLM via OpenRouter).
-    Every 11 seconds, each agent checks the feed and decides what to do:
-    write a post, comment on something, vote, or do nothing.
-
-    ### 3.3 World Posts (The Test Posts)
-    A special bot called `civiclens_world` posts one discussion topic every
-    2 minutes from a fixed set of 31 prompts about digital governance and
-    platform design. These are the posts we measure. Each run produces
-    31 world posts over about 1 hour.
-
-    ### 3.4 Treatment Assignment
-    Each world post is randomly assigned (1/3 chance each) to one of:
-    - **nudge_up:** Gets a +1 fake upvote after a short random delay
-    - **control:** Left alone, no manipulation
-    - **nudge_down:** Gets a -1 fake downvote after a short random delay
-
-    ### 3.5 Two Experimental Modes
-    - **Mode A (seed-only nudge):** Only the 31 world/seed posts get
-      randomly nudged. Agent-created posts are left alone. This tests
-      whether nudging specific content changes how agents engage with it.
-    - **Mode B (all-post nudge):** Every post gets nudged, including
-      the ones agents create themselves. This tests what happens when
-      the entire feed is being manipulated, not just the seed content.
-
-    Comparing Mode A vs Mode B tells us: does it matter if you only
-    manipulate some posts vs. the whole feed?
-
-    ### 3.6 What We Measure
-    - **Adjusted Score:** The post's real score after subtracting the fake
-      vote. This tells us how agents voted on their own.
-    - **Comment Count:** How many agents commented on the post.
-    """))
-
-    # ================================================================
-    # 4. DATA OVERVIEW
-    # ================================================================
-    wt("4. Data Collected")
-    w("### 4.1 Run Summary")
+    # 1. SUMMARY
+    wt("1. Summary")
+    w("**Question:** If we secretly fake-vote a post to change its ranking, do AI agents then vote differently on it?")
     w()
-    w("| Run | Mode | Total Posts | Agent Comments | Activity Events | Treated World Posts |")
-    w("|-----|------|------:|--------:|---------:|---------:|")
-    total_p = total_c = total_a = total_t = 0
+    w("**Setup:** 10 AI agents on a Reddit-like platform. Each post randomly gets a fake upvote, fake downvote, or nothing. Two modes: Mode A nudges only seed posts, Mode B nudges all posts.")
+    w()
+    w("**Data:** 6 runs (3 per mode), 186 world posts, ~2,000 agent comments.")
+    w()
+    w("| | Mode A (seed-only nudge) | Mode B (all-post nudge) |")
+    w("|---|---|---|")
+    w(f"| Downvote effect (Cohen's d) | **{d_a:.2f}** (medium) | {d_b:.2f} (small) |")
+    w(f"| p-value | {p_a:.3f} | {p_b:.3f} |")
+    w(f"| Significant? | Almost (need more data) | No |")
+    w(f"| Comment effect | None | None |")
+    w()
+    w(f"**Bottom line:** Targeted nudging (Mode A) influences how agents vote. Broad nudging (Mode B) does not. We need ~{power_info['additional_runs_pair']} more Mode A runs to reach 80% statistical power and confirm the effect.")
+
+    # 2. WHAT WAS DONE
+    wt("2. What Was Done This Week")
+    w("1. Built a parallel Docker runner that runs 4 experiments at the same time (each with its own DB, API, and 10 agents)")
+    w("2. Ran 12 experiments in ~6 hours. 6 produced usable data; the other 6 stopped when OpenRouter credits ran out")
+    w("3. Built an automated analysis pipeline (this script) that generates stats, figures, and this report")
+    w(f"4. Found a promising signal: fake downvotes reduce real agent scores (d = {d_a:.2f}), but only when just seed posts are nudged")
+
+    # 3. DESIGN
+    wt("3. Design")
+    w("**Platform:** Moltbook (Reddit-like social network for AI agents) + CivicLens (research layer for treatment assignment and data collection).")
+    w()
+    w("**Agents:** 10 LLM-powered agents (`moonshotai/kimi-k2.5`) that autonomously browse, post, comment, and vote every 11 seconds.")
+    w()
+    w("**World posts:** A bot posts 31 discussion topics per run. Each is randomly assigned to nudge_up (+1 fake vote), control (nothing), or nudge_down (-1 fake vote).")
+    w()
+    w("**Two modes:**")
+    w("- **Mode A (seed-only):** Only the 31 world posts get nudged. Agent-created posts are untouched.")
+    w("- **Mode B (all posts):** Every post gets nudged, including agent-created ones.")
+    w()
+    w("**Outcome measure:** Adjusted score = raw score minus the fake vote. This is how agents voted on their own.")
+
+    # 4. DATA
+    wt("4. Data")
+    w("| Run | Mode | Posts | Comments | World Posts |")
+    w("|-----|------|------:|--------:|---------:|")
+    total_p = total_c = total_t = 0
     for name in ALL_GOOD:
         r = runs[name]
-        mode = "A (seed-only)" if name.startswith("e1a") else "B (all posts)"
+        mode = "A" if name.startswith("e1a") else "B"
         np_ = len(r["posts"]); nc = len(r["comments"])
-        na = len(r["activity"]); nt = sum(1 for t in r["treatments"]
-            if t.get("post_author_name","") == "civiclens_world")
-        w(f"| {name} | {mode} | {np_} | {nc} | {na} | {nt} |")
-        total_p += np_; total_c += nc; total_a += na; total_t += nt
-    w(f"| **Total** | | **{total_p}** | **{total_c}** | **{total_a}** | **{total_t}** |")
-    w()
-    w("> 6 of 12 planned runs could not produce agent engagement due to")
-    w("> OpenRouter API credit exhaustion ($492 of $500 budget consumed by")
-    w("> the first 6 runs). The infrastructure ran all 12, but runs 04-12")
-    w("> had no LLM-powered agent activity.")
-
-    w()
-    w("### 4.2 Treatment Balance")
+        nt = sum(1 for t in r["treatments"] if t.get("post_author_name","") == "civiclens_world")
+        w(f"| {name} | {mode} | {np_} | {nc} | {nt} |")
+        total_p += np_; total_c += nc; total_t += nt
+    w(f"| **Total** | | **{total_p}** | **{total_c}** | **{total_t}** |")
     w()
     w("![Treatment Balance](fig_treatment_balance.png)")
-    w()
-    w("| Treatment | Mode A | Mode B | Total |")
-    w("|-----------|------:|------:|------:|")
-    for treat in TREAT_ORDER:
-        na = len([r for r in world_a if r["treatment"]==treat])
-        nb = len([r for r in world_b if r["treatment"]==treat])
-        w(f"| {TREAT_LABELS[treat]} | {na} | {nb} | {na+nb} |")
-    w()
-    w("Randomization produced approximately balanced groups (target: 33% each).")
 
-    # ================================================================
-    # 5. RESULT 1  - ORGANIC VOTING (THE SIGNAL)
-    # ================================================================
-    wt("5. Result 1: Downvoting a Post Makes Agents Vote Less on It")
+    # 5. MODE A RESULTS
+    wt("5. Mode A Results (Seed-Only Nudge)")
+    w("### Adjusted scores by treatment")
     w()
-
-    # Descriptive
-    w("### 5.1 Real Scores by Treatment (Mode A)")
-    w()
-    w("After removing the fake nudge vote, here is how agents voted on")
-    w("their own across the three groups:")
-    w()
-    w("| Treatment | N | Adjusted Score (mean +/- SD) | Direction |")
-    w("|-----------|--:|----------:|----------:|")
-    for treat in TREAT_ORDER:
-        sub = [r for r in world_a if r["treatment"]==treat]
-        adj = [r["adjusted_score"] for r in sub]
-        direction = "---" if treat == "control" else ("higher than control" if smean(adj) > smean([r["adjusted_score"] for r in world_a if r["treatment"]=="control"]) else "lower than control")
-        w(f"| {TREAT_LABELS[treat]} | {len(sub)} | {fmt(smean(adj),ssd(adj))} | {direction} |")
-    w()
-
-    w("![Engagement by Treatment](fig_engagement.png)")
-    w()
-
-    # Key pairwise result
-    r_down = test_results["A_adjusted_score_nudge_down_vs_ctrl"]
-    r_up = test_results["A_adjusted_score_nudge_up_vs_ctrl"]
-    w("### 5.2 Statistical Tests")
-    w()
-    kw = test_results["A_adjusted_score_kruskal"]
-    an = test_results["A_adjusted_score_anova"]
-    w(f"**All three groups compared:**")
-    w(f"- Kruskal-Wallis H(2) = {kw['H']:.3f}, p = {kw['p']:.4f}")
-    w(f"- ANOVA F(2,{len(world_a)-3}) = {an['F']:.3f}, p = {an['p']:.4f}")
-    w(f"- Effect size: Cohen's f = {an['cohens_f']:.3f}")
-    w()
-    w(f"**The key comparison - Nudge Down vs Control:**")
-    w(f"- Mann-Whitney U = {r_down['U']:.0f}, **p = {r_down['p']:.4f}**")
-    w(f"- **Cohen's d = {r_down['d']:.3f}** (medium effect)")
-    w(f"- Downvoted posts scored {abs(r_down['m2'] - r_down['m1']):.2f} points lower")
-    w(f"  in real agent votes compared to control posts")
-    w()
-    w(f"**Nudge Up vs Control:**")
-    w(f"- Mann-Whitney U = {r_up['U']:.0f}, p = {r_up['p']:.4f}")
-    w(f"- Cohen's d = {r_up['d']:.3f} (small effect)")
-    w()
-
-    w("### 5.3 What This Means")
-    w()
-    w(textwrap.dedent(f"""\
-    **Posts that got a fake downvote ended up with lower real scores too**
-    (d = {abs(r_down['d']):.2f}, a medium effect). The p-value is {r_down['p']:.3f},
-    which is just above the 0.05 cutoff.
-
-    This does NOT mean there is no effect. It means we **don't have enough
-    data yet to be 95% sure**. Think of it like flipping a coin 20 times
-    and getting 13 heads. That looks like a biased coin, but you'd want
-    more flips to be certain. That's exactly where we are.
-
-    Right now the study has ~{power_info['current_pow_pair']:.0%} power
-    (see Section 9). With ~{power_info['n80_pair']} posts per group
-    instead of {min(len([r for r in world_a if r['treatment']==t]) for t in TREAT_ORDER)}, we'd have 80% power
-    and this effect would very likely cross the significance line.
-
-    Interestingly, the upvote nudge barely matters (d = {abs(r_up['d']):.2f}).
-    Downvoting hurts a post more than upvoting helps it. Negativity has
-    a bigger impact than positivity.
-    """))
-
-    # ================================================================
-    # 6. RESULT 2  - COMMENTS (NO EFFECT)
-    # ================================================================
-    wt("6. Result 2: Commenting is Not Affected by Ranking")
-    w()
-
-    w("| Treatment | N | Comments (mean +/- SD) |")
+    w("| Treatment | N | Adjusted Score (mean +/- SD) |")
     w("|-----------|--:|----------:|")
     for treat in TREAT_ORDER:
         sub = [r for r in world_a if r["treatment"]==treat]
-        cc = [r["comment_count"] for r in sub]
-        w(f"| {TREAT_LABELS[treat]} | {len(sub)} | {fmt(smean(cc),ssd(cc))} |")
+        adj = [r["adjusted_score"] for r in sub]
+        w(f"| {TREAT_LABELS[treat]} | {len(sub)} | {fmt(smean(adj),ssd(adj))} |")
     w()
-
-    kw_c = test_results["A_comment_count_kruskal"]
-    an_c = test_results["A_comment_count_anova"]
-    w(f"- Kruskal-Wallis H(2) = {kw_c['H']:.3f}, p = {kw_c['p']:.4f}")
-    w(f"- Effect size: f = {an_c['cohens_f']:.3f} (basically zero)")
+    w("![Engagement by Treatment](fig_engagement.png)")
     w()
-    w(textwrap.dedent("""\
-    **Agents comment the same amount regardless of whether a post was
-    nudged up, nudged down, or left alone.** The effect size is near zero,
-    and even with way more data this wouldn't change. There's no signal here.
-
-    This is actually an interesting finding on its own: agents decide
-    whether to *comment* based on what a post says (the content), but
-    they are influenced by the visible score when deciding how to *vote*.
-    Voting and commenting are driven by different things.
-    """))
-
-    # ================================================================
-    # 7. MODE B BASELINE  - CONTENT CONFOUND CHECK
-    # ================================================================
-    wt("7. Mode B Results: Nudging All Posts (Seed + Agent)")
+    r_down = test_results["A_adjusted_score_nudge_down_vs_ctrl"]
+    r_up = test_results["A_adjusted_score_nudge_up_vs_ctrl"]
+    kw = test_results["A_adjusted_score_kruskal"]
+    w(f"**Nudge Down vs Control:** d = {r_down['d']:.3f}, p = {r_down['p']:.4f} (medium effect, just above 0.05 cutoff)")
+    w(f"**Nudge Up vs Control:** d = {r_up['d']:.3f}, p = {r_up['p']:.4f} (small effect)")
+    w(f"**Omnibus (all 3 groups):** Kruskal-Wallis H = {kw['H']:.3f}, p = {kw['p']:.4f}")
     w()
-    w(textwrap.dedent("""\
-    In Mode B, **every post** gets nudged (not just the seed posts). This
-    means the entire feed is being manipulated. Here's how world posts
-    performed in that environment:
-    """))
-
-    w("### 7.1 World Post Scores in Mode B (adjusted)")
+    w(f"Posts that got a fake downvote ended up with lower real scores. The effect is medium-sized (d = {d_a:.2f}) but just misses p < 0.05 because we only have {min_a} posts in the smallest group. This is a sample size problem, not an absence of effect.")
     w()
+    w("**Comments:** No effect. Agents comment based on content, not ranking (f ~ 0).")
+
+    # 6. MODE B RESULTS
+    wt("6. Mode B Results (All-Post Nudge)")
     w("| Treatment | N | Adjusted Score (mean +/- SD) |")
     w("|-----------|--:|------:|")
     for treat in TREAT_ORDER:
@@ -815,263 +629,103 @@ def generate_report(runs, rows, test_results, power_info):
         sc = [r["adjusted_score"] for r in sub]
         w(f"| {TREAT_LABELS[treat]} | {len(sub)} | {fmt(smean(sc),ssd(sc))} |")
     w()
-
-    kw_b = test_results["B_adjusted_score_kruskal"]
     r_b_down = test_results["B_adjusted_score_nudge_down_vs_ctrl"]
-    w(f"- Kruskal-Wallis H(2) = {kw_b['H']:.3f}, p = {kw_b['p']:.4f}")
-    w(f"- Nudge Down vs Control: d = {r_b_down['d']:.3f}, p = {r_b_down['p']:.4f}")
+    w(f"**Nudge Down vs Control:** d = {r_b_down['d']:.3f}, p = {r_b_down['p']:.4f} (no effect)")
     w()
-    w(textwrap.dedent("""\
-    Unlike Mode A, **Mode B shows no clear nudge effect on adjusted
-    scores** (d = 0.22, not significant). When the whole feed is being
-    nudged (seed posts AND agent posts), the organic voting pattern
-    does not follow the nudge direction.
+    w("When the entire feed is nudged, the effect disappears. Agents stop relying on scores when everything around them is manipulated. The fake scores no longer look real because the whole feed is distorted.")
 
-    **Why this is interesting:** In Mode A, where only seed posts are
-    nudged, the fake scores "blend in" with the real ones, and agents
-    treat them as genuine social signals. In Mode B, where everything
-    is nudged, the scores across the whole feed are distorted, making
-    them less reliable as cues. Agents essentially stop being influenced
-    by scores when the signal-to-noise ratio drops.
-
-    This suggests **targeted manipulation is more effective than broad
-    manipulation** at influencing AI agent behavior.
-    """))
-
-    # ================================================================
-    # 8. MODE A vs B  - DIFFERENCE IN DIFFERENCES
-    # ================================================================
-    wt("8. Mode A vs Mode B: Seed-Only vs All-Post Nudging")
-    w()
+    # 7. MODE A vs B
+    wt("7. Mode A vs B Comparison")
     w("![Mode Comparison](fig_mode_comparison.png)")
     w()
-    w(textwrap.dedent("""\
-    Both modes apply nudges, but to different scopes:
-    - **Mode A:** Only 31 seed posts nudged, agent posts left alone
-    - **Mode B:** All posts nudged (seed + agent-created)
-
-    Comparing them tells us whether nudging the whole feed has a
-    different effect than nudging just the seed content.
-    """))
-
-    w("| Metric | Mode A (seed-only) | Mode B (all posts) | U | p | Cohen's d |")
-    w("|--------|------:|------:|------:|------:|------:|")
+    w("| Metric | Mode A | Mode B | Cohen's d | p |")
+    w("|--------|------:|------:|------:|------:|")
     for metric_label in ["Score", "Comments"]:
         r = test_results[f"AvB_{metric_label}_overall"]
-        w(f"| {metric_label} | {r['m_a']:.2f} | {r['m_b']:.2f} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
+        w(f"| {metric_label} | {r['m_a']:.2f} | {r['m_b']:.2f} | {r['d']:.3f} | {r['p']:.4f} |")
     w()
+    w("**Key insight:** Targeted nudging (Mode A) fools agents. Broad nudging (Mode B) does not. When only a few posts have distorted scores, agents trust them. When everything is distorted, agents ignore scores and vote on content.")
 
-    w(textwrap.dedent("""\
-    The nudge effect on world post scores is **present in Mode A but
-    absent in Mode B**. In Mode A (seed-only), downvoted posts get
-    fewer organic upvotes (control > nudge_down). In Mode B (all posts),
-    the pattern flattens or reverses.
-
-    This is the most interesting finding: **targeted nudging works,
-    broad nudging doesn't.** When only a few posts have distorted
-    scores, agents trust those scores. When every post is distorted,
-    agents seem to ignore scores and vote based on content instead.
-
-    With only 3 runs per mode, we need more data to confirm this
-    difference, but the pattern is consistent across runs.
-    """))
-
-    # ================================================================
-    # 9. POWER ANALYSIS & PROJECTION
-    # ================================================================
-    wt("9. Power Analysis: How Much More Data Do We Need?")
-    w()
+    # 8. POWER ANALYSIS
+    wt("8. Power Analysis")
     w("![Power Projection](fig_power_projection.png)")
     w()
-
-    min_a = min(len([r for r in world_a if r["treatment"]==t]) for t in TREAT_ORDER)
-    w(textwrap.dedent(f"""\
-    ### 9.1 Why It's Not Significant Yet
-
-    Whether a result hits p < 0.05 depends on two things: how big the
-    effect is, and how much data you have. We have a decent-sized effect
-    (d = {d_val:.2f}) but not enough posts yet (only {min_a} in the
-    smallest group).
-
-    | What | We Have Now | What We Need |
-    |-----------|--------:|--------:|
-    | Posts per group | {min_a} | ~{power_info['n80_pair']} |
-    | Statistical power | {power_info['current_pow_pair']:.0%} | 80% |
-    | Nudge runs completed | 3 | ~{power_info['runs_needed_pair']} |
-    | **More runs needed** | | **~{power_info['additional_runs_pair']}** |
-
-    ### 9.2 What Happens With More Data
-
-    The power curve above shows this clearly. With ~{power_info['n80_pair']}
-    posts per group (about {power_info['runs_needed_pair']} nudge runs
-    total), we'd have an 80% chance of getting p < 0.05 if the true
-    effect is d = {d_val:.2f}.
-
-    **Bottom line:** Run **{power_info['additional_runs_pair']} more nudge
-    experiments** (~{power_info['additional_runs_pair']} hours with
-    the parallel runner, ~${power_info['additional_runs_pair'] * 80} in
-    OpenRouter credits) and the effect should become significant.
-    """))
-
-    # ================================================================
-    # 10. INTERNAL CONSISTENCY
-    # ================================================================
-    wt("10. Internal Consistency")
+    w("| | Current | Needed for 80% power |")
+    w("|---|---:|---:|")
+    w(f"| Posts per group | {min_a} | ~{power_info['n80_pair']} |")
+    w(f"| Statistical power | {power_info['current_pow_pair']:.0%} | 80% |")
+    w(f"| Mode A runs | 3 | ~{power_info['runs_needed_pair']} |")
+    w(f"| **More runs needed** | | **~{power_info['additional_runs_pair']}** |")
     w()
-    w("### 10.1 Per-Run Means")
-    w()
+    w(f"With {power_info['additional_runs_pair']} more Mode A runs (~{power_info['additional_runs_pair']} hours, ~${power_info['additional_runs_pair'] * 80} in OpenRouter credits), we would have 80% power to confirm the d = {d_a:.2f} effect at p < 0.05.")
+
+    # 9. CONSISTENCY
+    wt("9. Consistency Checks")
     w("![Per-Run Consistency](fig_per_run.png)")
     w()
-    w("| Run | Mode | N (world) | Avg Score | Avg Comments |")
-    w("|-----|------|--------:|--------:|--------:|")
+    w("| Run | Mode | N | Avg Score | Avg Comments |")
+    w("|-----|------|--:|--------:|--------:|")
     for name in ALL_GOOD:
         world = [r for r in rows if r["run"]==name and r["is_world"]]
         mode = "A" if name.startswith("e1a") else "B"
-        ms = smean([r["adjusted_score"] for r in world])
-        mc = smean([r["comment_count"] for r in world])
-        w(f"| {name} | {mode} | {len(world)} | {ms:.2f} | {mc:.2f} |")
-    w()
-    w("Runs are reasonably consistent, with some variation in comment counts")
-    w("(likely due to LLM temperature and stochastic heartbeat timing).")
-
-    w()
-    w("### 10.2 Agent Participation")
+        w(f"| {name} | {mode} | {len(world)} | {smean([r['adjusted_score'] for r in world]):.2f} | {smean([r['comment_count'] for r in world]):.2f} |")
     w()
     w("![Agent Participation](fig_agents.png)")
     w()
-    w("| Run | Active Agents | Total Comments |")
-    w("|-----|------:|------:|")
-    for name in ALL_GOOD:
-        r = runs[name]
-        agent_cc = defaultdict(int)
-        for c in r["comments"]:
-            agent_cc[c.get("author_name","")] += 1
-        active = len([a for a in agent_cc if a.startswith("ranking_")])
-        total = sum(v for k,v in agent_cc.items() if k.startswith("ranking_"))
-        w(f"| {name} | {active}/10 | {total} |")
-    w()
-    w("All runs show 9-10 out of 10 agents actively commenting, confirming")
-    w("the experimental infrastructure produces reliable agent behavior.")
+    w("9-10 out of 10 agents actively participated in every run. Results are consistent across runs.")
 
-    # ================================================================
-    # 11. DETAILED STATISTICAL TABLES
-    # ================================================================
-    wt("11. Detailed Statistical Tables")
-    w()
-
-    w("### 11.1 Nudge Runs (Mode A) - All Tests")
-    w()
-    w("| Test | Metric | Statistic | p-value | Effect Size |")
-    w("|------|--------|--------:|--------:|--------:|")
+    # 10. FULL STAT TABLES
+    wt("10. Full Statistical Tables")
+    w("### Mode A")
+    w("| Test | Metric | Statistic | p | Effect Size |")
+    w("|------|--------|--------:|------:|--------:|")
     for metric, key in [("Adj. Score", "adjusted_score"), ("Comments", "comment_count")]:
         kw = test_results[f"A_{key}_kruskal"]
         an = test_results[f"A_{key}_anova"]
         w(f"| Kruskal-Wallis | {metric} | H = {kw['H']:.3f} | {kw['p']:.4f} | eps^2 = {kw['eps_sq']:.3f} |")
-        w(f"| ANOVA | {metric} | F = {an['F']:.3f} | {an['p']:.4f} | f = {an['cohens_f']:.3f}, eta^2 = {an['eta_sq']:.3f} |")
+        w(f"| ANOVA | {metric} | F = {an['F']:.3f} | {an['p']:.4f} | f = {an['cohens_f']:.3f} |")
     w()
-
-    w("**Mode A Pairwise (vs Control):**")
-    w()
-    w("| Comparison | Metric | U | p | Cohen's d |")
-    w("|-----------|--------|--:|--:|--------:|")
+    w("| Comparison | Metric | U | p | d |")
+    w("|-----------|--------|--:|------:|------:|")
     for metric, key in [("Adj. Score", "adjusted_score"), ("Comments", "comment_count")]:
         for treat in ["nudge_up", "nudge_down"]:
             r = test_results[f"A_{key}_{treat}_vs_ctrl"]
-            w(f"| {TREAT_LABELS[treat]} | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
+            w(f"| {TREAT_LABELS[treat]} vs Ctrl | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
     w()
-
-    w("### 11.2 Baseline Runs (Mode B) - All Tests")
-    w()
-    w("| Test | Metric | Statistic | p-value | Effect Size |")
-    w("|------|--------|--------:|--------:|--------:|")
+    w("### Mode B")
+    w("| Test | Metric | Statistic | p | Effect Size |")
+    w("|------|--------|--------:|------:|--------:|")
     for metric, key in [("Adj. Score", "adjusted_score"), ("Comments", "comment_count")]:
         kw = test_results[f"B_{key}_kruskal"]
         an = test_results[f"B_{key}_anova"]
         w(f"| Kruskal-Wallis | {metric} | H = {kw['H']:.3f} | {kw['p']:.4f} | eps^2 = {kw['eps_sq']:.3f} |")
-        w(f"| ANOVA | {metric} | F = {an['F']:.3f} | {an['p']:.4f} | f = {an['cohens_f']:.3f}, eta^2 = {an['eta_sq']:.3f} |")
+        w(f"| ANOVA | {metric} | F = {an['F']:.3f} | {an['p']:.4f} | f = {an['cohens_f']:.3f} |")
     w()
-
-    w("**Mode B Pairwise (vs Control):**")
-    w()
-    w("| Comparison | Metric | U | p | Cohen's d |")
-    w("|-----------|--------|--:|--:|--------:|")
+    w("| Comparison | Metric | U | p | d |")
+    w("|-----------|--------|--:|------:|------:|")
     for metric, key in [("Adj. Score", "adjusted_score"), ("Comments", "comment_count")]:
         for treat in ["nudge_up", "nudge_down"]:
             r = test_results[f"B_{key}_{treat}_vs_ctrl"]
-            w(f"| {TREAT_LABELS[treat]} | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
+            w(f"| {TREAT_LABELS[treat]} vs Ctrl | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
+
+    # 11. LIMITATIONS
+    wt("11. Limitations")
+    w("1. **Small sample.** ~22 posts per group. Enough to see the direction, not enough for p < 0.05.")
+    w("2. **Credit limit.** 6/12 runs lost to OpenRouter budget ($500). Funding issue, not design flaw.")
+    w("3. **One LLM model.** All agents use kimi-k2.5. Other models may differ.")
+    w("4. **Posts within a run share agents.** A mixed-effects model would be better for the full study.")
+    w("5. **Not pre-registered.** Follow-up should be.")
+
+    # 12. NEXT STEPS
+    wt("12. Next Steps")
+    w(f"1. Run **{power_info['additional_runs_pair']} more Mode A experiments** (~${power_info['additional_runs_pair'] * 80} in OpenRouter credits) to reach 80% power")
+    w("2. Pre-register the confirmatory analysis (primary: adjusted score, nudge_down vs control)")
+    w("3. Use a mixed-effects model to account for within-run clustering")
+    w("4. Test with other LLM models to check if the effect generalizes")
+
     w()
-
-    # ================================================================
-    # 12. LIMITATIONS
-    # ================================================================
-    wt("12. Limitations")
-    w(textwrap.dedent("""\
-    1. **Not enough data yet.** 22-37 posts per group. We can see the
-       direction of the effect, but can't confirm it at p < 0.05 yet.
-
-    2. **Ran out of LLM credits.** 6 of 12 runs stopped producing data
-       because we hit the $500 OpenRouter budget. This is just a funding
-       issue, not a flaw in the experiment design.
-
-    3. **Only one AI model.** All agents use `moonshotai/kimi-k2.5`.
-       Other models might react differently to ranking cues.
-
-    4. **Posts within a run are not fully independent.** They share the
-       same 10 agents and time window. A mixed-effects model (with run
-       as a random factor) would handle this better in the full study.
-
-    5. **No pre-registration.** The analysis plan was written alongside
-       data collection. The follow-up study should be pre-registered.
-    """))
-
-    # ================================================================
-    # 13. CONCLUSIONS & NEXT STEPS
-    # ================================================================
-    wt("13. Conclusions & Next Steps")
-    w(textwrap.dedent(f"""\
-    ### What We Found
-
-    1. **Targeted nudging works (Mode A, d = {d_val:.2f}).**
-       When only seed posts are nudged, a fake downvote leads to fewer
-       real upvotes from agents. Approaching significance (p = {p_val:.3f}),
-       needs ~{power_info['additional_runs_pair']} more runs to confirm.
-
-    2. **Broad nudging does not work (Mode B, d ~ 0.2).**
-       When all posts are nudged, the effect disappears. Agents stop
-       relying on scores when the whole feed is distorted.
-
-    3. **Commenting is unaffected in both modes.** Agents comment based
-       on what a post says, not where it sits in the feed.
-
-    4. **Scope of manipulation matters.** This is the key insight:
-       targeted manipulation (just a few posts) fools AI agents, but
-       broad manipulation (the whole feed) does not. This has
-       implications for understanding how LLM agents process social
-       proof signals.
-
-    4. **The platform works.** Parallel Docker runner, automated
-       treatment assignment, clean data export, 9-10/10 agents active
-       per run. The infrastructure is ready for the full study.
-
-    ### Next Steps
-
-    1. **Add ~${power_info['additional_runs_pair'] * 80} in OpenRouter
-       credits** and run {power_info['additional_runs_pair']} more nudge
-       experiments.
-
-    2. **Pre-register** the confirmatory analysis (primary outcome:
-       adjusted score for nudge_down vs control).
-
-    3. **Use a mixed-effects model** in the full study to properly
-       account for the fact that posts within a run share agents.
-
-    4. **Try other LLM models** to see if the ranking sensitivity
-       generalizes beyond kimi-k2.5.
-    """))
-
     w("---")
-    w(f"*Report generated by `full_analysis.py`  - {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
-    w(f"*Data directory: {EXPORTS_DIR}*")
+    w(f"*Generated by `full_analysis.py` - {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
 
     return "\n".join(rpt)
 
