@@ -1,0 +1,68 @@
+# Parallel-safe compose file for running multiple experiments simultaneously.
+# No container_name directives — uses COMPOSE_PROJECT_NAME for namespace isolation.
+# Parameterized host ports via env vars to avoid conflicts between slots.
+#
+# Usage:
+#   COMPOSE_PROJECT_NAME=slot0 HOST_API_PORT=4000 HOST_PG_PORT=5432 HOST_REDIS_PORT=6379 \
+#     docker compose -f docker-compose.parallel.yml -f docker-compose.civiclens-ranking-parallel.yml up -d
+
+services:
+  # ============================================
+  # MOLTBOOK PLATFORM (experiment-only, no web)
+  # ============================================
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: moltbook
+      POSTGRES_PASSWORD: moltbook_password
+      POSTGRES_DB: moltbook
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./moltbook-api/scripts/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    ports:
+      - "${HOST_PG_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U moltbook"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Redis (for distributed rate limiting)
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${HOST_REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Moltbook API Backend
+  api:
+    build:
+      context: ./moltbook-api
+      dockerfile: Dockerfile
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+      DATABASE_URL: postgresql://moltbook:moltbook_password@postgres:5432/moltbook
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:-change-this-in-production}
+      BASE_URL: http://localhost:3000
+    ports:
+      - "${HOST_API_PORT:-4000}:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
