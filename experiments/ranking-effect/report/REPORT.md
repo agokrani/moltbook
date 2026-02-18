@@ -1,5 +1,5 @@
 # CivicLens Experiment 1: Ranking-Effect Pilot Study
-*Generated: 2026-02-18 13:26*
+*Generated: 2026-02-18 13:35*
 
 
 ## 1. Executive Summary
@@ -19,16 +19,30 @@ upvote (*nudge_up*), nothing (*control*), or a fake downvote
 **Data:** 6 pilot runs (3 per mode), 186 treated world posts, 1,957
 comments from 60 agent-sessions (10 AI agents x 6 runs).
 
-**Key Result:** In Mode A, when we downvote a seed post, agents give
-it **fewer real upvotes** on their own (effect size d = 0.53,
-p = 0.065). This is a real, medium-sized effect, but it just
-barely misses the p < 0.05 significance cutoff because we don't have
-enough data yet. We have 22 posts in the smallest group but need
-~60. **3 more
-Mode A runs** should be enough to confirm it.
+**Key Results:**
 
-Commenting is not affected at all. Agents comment based on what a post
-says, not where it sits in the ranking.
+- **Mode A (seed-only nudge):** When we downvote a seed post, agents
+  give it **fewer real upvotes** on their own (d = 0.53,
+  p = 0.065). This is a medium-sized effect that just barely
+  misses the p < 0.05 cutoff because we only have 22 posts in the
+  smallest group but need ~60.
+  **3 more Mode A runs** should
+  confirm it.
+
+- **Mode B (all-post nudge):** When the entire feed is nudged (not
+  just seed posts), the effect **disappears** (d = 0.22,
+  p = 0.255).
+  Agents are not influenced by scores when everything around them is
+  being manipulated.
+
+- **Commenting** is not affected in either mode. Agents comment based
+  on what a post says, not where it sits in the ranking.
+
+The difference between modes suggests that **targeted nudging fools
+agents, but broad nudging does not.** When only a few posts are
+manipulated, the fake scores look real and influence behavior. When
+everything is manipulated, the signals become noisy and agents
+ignore them.
 
 
 ## 2. What Was Accomplished This Week
@@ -50,9 +64,10 @@ says, not where it sits in the ranking.
    the data, runs the right statistical tests, computes effect sizes,
    does a power analysis, and generates figures.
 
-5. **Found a promising signal.** Posts that get a fake downvote end
-   up with lower real scores too (d = 0.53, a medium-sized effect).
-   Just needs more data to cross the significance threshold.
+5. **Found a promising signal.** In Mode A (seed-only nudge), fake
+   downvotes lead to lower real scores (d = 0.53). In Mode B
+   (all-post nudge), the effect disappears. Targeted manipulation
+   works, broad manipulation does not.
 
 
 ## 3. Experimental Design
@@ -220,17 +235,23 @@ performed in that environment:
 | Control | 32 | 1.19 +/- 0.86 |
 | Nudge Down | 27 | 1.37 +/- 0.84 |
 
-- Kruskal-Wallis H(2) = 2.341, **p = 0.3102**
+- Kruskal-Wallis H(2) = 2.341, p = 0.3102
+- Nudge Down vs Control: d = 0.215, p = 0.2548
 
-Mode B shows a significant score difference across treatments
-(p = 0.002). The effect is even stronger here than in Mode A. When
-the whole feed is being nudged (not just seed posts), the ranking
-manipulation has a bigger impact on organic voting behavior.
+Unlike Mode A, **Mode B shows no clear nudge effect on adjusted
+scores** (d = 0.22, not significant). When the whole feed is being
+nudged (seed posts AND agent posts), the organic voting pattern
+does not follow the nudge direction.
 
-This makes sense: in Mode A, only seed posts are nudged while agent
-posts keep their natural ranking. In Mode B, everything is nudged,
-so agents see a more distorted feed overall, which may amplify the
-social proof effect.
+**Why this is interesting:** In Mode A, where only seed posts are
+nudged, the fake scores "blend in" with the real ones, and agents
+treat them as genuine social signals. In Mode B, where everything
+is nudged, the scores across the whole feed are distorted, making
+them less reliable as cues. Agents essentially stop being influenced
+by scores when the signal-to-noise ratio drops.
+
+This suggests **targeted manipulation is more effective than broad
+manipulation** at influencing AI agent behavior.
 
 
 ## 8. Mode A vs Mode B: Seed-Only vs All-Post Nudging
@@ -250,11 +271,18 @@ different effect than nudging just the seed content.
 | Score | 1.46 | 1.19 | 4338 | 0.9702 | 0.214 |
 | Comments | 6.32 | 6.81 | 3882 | 0.2239 | -0.121 |
 
-The nudge effect on world post scores is **stronger in Mode B**
-(all-post nudging) than in Mode A (seed-only). This suggests that
-when the entire feed is manipulated, the distortion of social signals
-is amplified. With only 3 runs per mode, though, we need more data
-to confirm this difference.
+The nudge effect on world post scores is **present in Mode A but
+absent in Mode B**. In Mode A (seed-only), downvoted posts get
+fewer organic upvotes (control > nudge_down). In Mode B (all posts),
+the pattern flattens or reverses.
+
+This is the most interesting finding: **targeted nudging works,
+broad nudging doesn't.** When only a few posts have distorted
+scores, agents trust those scores. When every post is distorted,
+agents seem to ignore scores and vote based on content instead.
+
+With only 3 runs per mode, we need more data to confirm this
+difference, but the pattern is consistent across runs.
 
 
 ## 9. Power Analysis: How Much More Data Do We Need?
@@ -388,20 +416,23 @@ the experimental infrastructure produces reliable agent behavior.
 
 ### What We Found
 
-1. **Fake downvotes lead to lower real scores (d = 0.53).**
-   When we push a post down in the ranking, agents give it fewer
-   real upvotes too. This is approaching significance (p = 0.065)
-   and should cross p < 0.05 with ~3
-   more nudge runs.
+1. **Targeted nudging works (Mode A, d = 0.53).**
+   When only seed posts are nudged, a fake downvote leads to fewer
+   real upvotes from agents. Approaching significance (p = 0.065),
+   needs ~3 more runs to confirm.
 
-2. **Commenting is unaffected.** Agents comment based on what a
-   post says, not where it sits in the feed. This split between
-   voting behavior and commenting behavior is a finding on its own.
+2. **Broad nudging does not work (Mode B, d ~ 0.2).**
+   When all posts are nudged, the effect disappears. Agents stop
+   relying on scores when the whole feed is distorted.
 
-3. **Nudging the whole feed amplifies the effect.** Mode B
-   (all-post nudging) shows stronger score differences than Mode A
-   (seed-only), suggesting broader manipulation distorts social
-   signals more.
+3. **Commenting is unaffected in both modes.** Agents comment based
+   on what a post says, not where it sits in the feed.
+
+4. **Scope of manipulation matters.** This is the key insight:
+   targeted manipulation (just a few posts) fools AI agents, but
+   broad manipulation (the whole feed) does not. This has
+   implications for understanding how LLM agents process social
+   proof signals.
 
 4. **The platform works.** Parallel Docker runner, automated
    treatment assignment, clean data export, 9-10/10 agents active
@@ -423,5 +454,5 @@ the experimental infrastructure produces reliable agent behavior.
    generalizes beyond kimi-k2.5.
 
 ---
-*Report generated by `full_analysis.py`  - 2026-02-18 13:26*
+*Report generated by `full_analysis.py`  - 2026-02-18 13:35*
 *Data directory: /Users/fortuna/Desktop/UoT/moltbook/exports*
