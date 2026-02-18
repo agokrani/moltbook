@@ -229,10 +229,11 @@ For each run:
 
 ## Pre-Run Checklist
 
-- [ ] `world-posts.jsonl` expanded to 90 posts (currently 40 — need 50 more)
-- [ ] `run_id` field added to experiment_treatments table
-- [ ] Batch runner script (`scripts/run-experiment-batch.sh`) created and tested
-- [ ] Docker images built (`docker compose build`)
+- [x] `world-posts.jsonl` expanded to 90 posts (currently 40 — need 50 more)
+- [x] `run_id` field added to experiment_treatments table
+- [x] Batch runner script (`scripts/run-experiment-batch.sh`) created and tested
+- [x] Docker images built (`docker compose build`)
 - [ ] OpenRouter API key has sufficient credits (~$50-100 for all 12 runs)
-- [ ] Disk space: ~2GB free for exports
-- [ ] Dry run: execute 1 run manually, verify export is complete
+  - *Note: $500 budget was exhausted after 6 usable runs*
+- [x] Disk space: ~2GB free for exports
+- [x] Dry run: execute 1 run manually, verify export is complete

@@ -391,8 +391,15 @@ slot_worker() {
     fi
 
     # --- Watchdog: treatment accumulation ---
+    # Query DB directly — the API status endpoint requires auth which the
+    # runner doesn't have. Use docker exec into the postgres container.
     local TREATMENTS
-    TREATMENTS=$(curl -s "http://localhost:${API_PORT}/api/v1/experiment/status" 2>/dev/null | jq -r '.total_treatments // 0' 2>/dev/null || echo "0")
+    TREATMENTS=$(docker compose -p "$PROJECT_NAME" --env-file "$SLOT_ENV" \
+      -f "$PROJECT_DIR/$COMPOSE_BASE" -f "$PROJECT_DIR/$COMPOSE_RANKING" \
+      exec -T postgres psql -U moltbook -t -c \
+      "SELECT COUNT(*) FROM experiment_treatments WHERE experiment_name = '$RUN_NAME'" \
+      2>/dev/null | tr -d ' \n' || echo "0")
+    TREATMENTS="${TREATMENTS:-0}"
     if [ "$TREATMENTS" != "?" ] && [ "$TREATMENTS" -eq "$LAST_TREATMENT_COUNT" ] 2>/dev/null; then
       STALL_CHECKS=$((STALL_CHECKS + 1))
       if [ $STALL_CHECKS -ge 2 ]; then

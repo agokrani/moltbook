@@ -185,10 +185,23 @@ Week 2 (Tier 2 — robustness):
 
 ## Implementation Checklist
 
-- [ ] Expand `world-posts.jsonl` to 90 posts (currently 40, need 90 for 30/group)
-- [ ] Add run counter / experiment batch ID to treatment records
-- [ ] Create `run-experiment-batch.sh` script to automate sequential runs
-- [ ] Add `run_id` column to `experiment_treatments` table
+- [x] Expand `world-posts.jsonl` to 90 posts (currently 40, need 90 for 30/group)
+- [x] Add run counter / experiment batch ID to treatment records
+- [x] Create `run-experiment-batch.sh` script to automate sequential runs
+- [x] Add `run_id` column to `experiment_treatments` table
 - [ ] Verify all 60-minute nudge delays actually fire (3h run > 60min max delay)
-- [ ] Set up parallel export aggregation across runs
+- [x] Set up parallel export aggregation across runs
 - [ ] Pre-register analysis plan before Tier 1 starts
+
+## Tier 1 Execution Notes (2026-02-18)
+
+**Actual execution differed from plan:** Runs were executed with `--duration 3600` (1 hour)
+instead of the planned 10,800s (3 hours). This resulted in ~31 world posts per run
+(~10 per treatment group) instead of 90 (~30 per group).
+
+- **Runs completed:** 12 (7 Mode A + 5 Mode B), all ran to completion infrastructure-wise
+- **Usable runs:** 6 (runs 1-6). Runs 7-12 completed but agents produced no content because
+  OpenRouter credits were exhausted (~$500 limit reached). The LLM couldn't generate actions.
+- **Actual power:** With ~10 posts/group/run and 3 usable Mode A runs, effective n per group
+  is ~22-37, far below the 187 needed for 80% power at f=0.229.
+- **Observed effect size:** f=0.182 (Mode A omnibus), matching the "conservative" scenario.

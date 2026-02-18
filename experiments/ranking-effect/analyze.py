@@ -5,9 +5,10 @@ Ranking-Effect Experiment Analysis
 Analyzes CivicLens Experiment 1: Does algorithmic ranking nudge
 affect organic engagement on AI-agent social media?
 
-Mode A: Posts randomly assigned to nudge_up / control / nudge_down
-        (actual ranking manipulation via synthetic votes)
-Mode B: Posts randomly assigned but NO nudge applied (baseline)
+Mode A: Only world (seed) posts randomly assigned to nudge_up / control / nudge_down
+        (actual ranking manipulation via synthetic votes on seed posts only)
+Mode B: ALL posts (world + agent-created) randomly assigned to nudge_up / control / nudge_down
+        (ranking manipulation applied to every post in the feed)
 
 Usable runs: e1a-run01..03 (Mode A), e1b-run01..03 (Mode B)
 """
@@ -246,7 +247,7 @@ def main():
     total_posts = total_comments = total_activity = total_treatments = 0
     for name in ALL_GOOD_RUNS:
         r = runs[name]
-        mode = "A (nudge)" if name.startswith("e1a") else "B (ctrl)"
+        mode = "A (seed)" if name.startswith("e1a") else "B (all)"
         n_posts = len(r["posts"])
         n_comments = len(r["comments"])
         n_activity = len(r["activity"])
@@ -403,7 +404,7 @@ def main():
               f"{safe_mean(comments):>5.2f}±{safe_stdev(comments):<4.2f} "
               f"{safe_mean(raw_scores):>5.2f}±{safe_stdev(raw_scores):<4.2f}")
 
-    print(f"\n  Mode B — World Posts Only (n={len(world_b)}) [No nudge applied]")
+    print(f"\n  Mode B — World Posts Only (n={len(world_b)}) [All posts nudged]")
     print(f"  {'Treatment':<12} {'N':>4} {'Score':>10} {'Comments':>10}")
     print(f"  {'':<12} {'':>4} {'mean±sd':>10} {'mean±sd':>10}")
     print(f"  {'-'*42}")
@@ -596,8 +597,8 @@ def main():
         f.write(",".join(headers) + "\n")
         for row in analysis_rows:
             vals = [str(row.get(h, "")) for h in headers]
-            # Escape commas in title
-            vals[-1] = f'"{vals[-1]}"'
+            # Escape commas and quotes in all fields
+            vals = [f'"{v.replace(chr(34), chr(34)+chr(34))}"' if "," in v or '"' in v else v for v in vals]
             f.write(",".join(vals) + "\n")
 
     print(f"  Analysis data exported to: {csv_path}")
