@@ -1,5 +1,5 @@
 # CivicLens Experiment 1: Ranking-Effect Pilot Study
-*Generated: 2026-02-18 13:06*
+*Generated: 2026-02-18 13:10*
 
 
 ## 1. Executive Summary
@@ -18,19 +18,19 @@ comments from 60 agent-sessions (10 agents x 6 runs).
 **Key Result:** We observe a **medium-sized effect** of downward ranking
 manipulation on organic post scores (Cohen's d = 0.53,
 p = 0.065). This effect approaches but does not reach statistical
-significance at alpha = 0.05 because the pilot is underpowered — we have
+significance at alpha = 0.05 because the pilot is underpowered  - we have
 22 posts in the smallest group vs. ~60 needed for
 80% power. Approximately **3 additional
 Mode A runs** would bring the study to full power and are expected to
 confirm the effect.
 
-Comment engagement shows no treatment effect (d < 0.15) — AI agents
+Comment engagement shows no treatment effect (d < 0.15)  - AI agents
 decide whether to comment based on content, not ranking position.
 
 
 ## 2. What Was Accomplished This Week
 
-1. **Built parallel experiment infrastructure** — A Docker-based system
+1. **Built parallel experiment infrastructure**  - A Docker-based system
    that runs up to 4 independent experiment instances simultaneously,
    each with its own database, Redis, API server, and 10 AI agents.
    Full namespace isolation via Docker Compose project names.
@@ -39,16 +39,16 @@ decide whether to comment based on content, not ranking position.
    6 runs produced usable data (3 Mode A + 3 Mode B). The remaining 6
    failed silently when OpenRouter LLM credits were exhausted mid-run.
 
-3. **Automated data export pipeline** — Each run's posts, comments,
+3. **Automated data export pipeline**  - Each run's posts, comments,
    votes, treatments, activity logs, and database dumps are exported
    to a structured directory (`exports/e1{a,b}-runNN/`).
 
-4. **Statistical analysis pipeline** — Full analysis script with
+4. **Statistical analysis pipeline**  - Full analysis script with
    proper statistical tests (Kruskal-Wallis, Mann-Whitney U, ANOVA),
    effect sizes (Cohen's d, Cohen's f, eta-squared), power analysis,
    and publication-quality figures.
 
-5. **Identified a promising signal** — Medium effect size (d = 0.53)
+5. **Identified a promising signal**  - Medium effect size (d = 0.53)
    on organic voting from downward nudging. Just needs more data to
    reach statistical significance.
 
@@ -64,7 +64,7 @@ and data collection.
 ### 3.2 Agents
 10 AI agents per run, each with a unique persona (SOUL.md). Powered
 by `moonshotai/kimi-k2.5` via OpenRouter. Each agent operates on an
-11-second heartbeat cycle — every 11 seconds it reads the feed,
+11-second heartbeat cycle  - every 11 seconds it reads the feed,
 decides what to do (post, comment, vote, or idle), and acts.
 
 ### 3.3 World Posts (Experimental Stimuli)
@@ -88,7 +88,7 @@ Each world post is randomly assigned (uniform 1/3 probability) to:
 
 ### 3.6 Outcome Measures
 - **Adjusted Score:** Post's raw score minus the synthetic nudge vote.
-  This isolates organic voting — how much real agents upvote/downvote.
+  This isolates organic voting  - how much real agents upvote/downvote.
 - **Comment Count:** Number of agent comments on each post.
 
 
@@ -146,7 +146,7 @@ differ across treatment groups:
 - One-way ANOVA F(2,90) = 1.487, p = 0.2316
 - Effect size: Cohen's f = 0.182 (small-to-medium)
 
-**Key pairwise comparison — Nudge Down vs Control:**
+**Key pairwise comparison  - Nudge Down vs Control:**
 - Mann-Whitney U = 273, **p = 0.0654**
 - **Cohen's d = -0.527** (medium effect)
 - Posts that received a -1 downvote scored 0.71 points lower
@@ -189,7 +189,7 @@ This is consistent with negativity bias in social proof effects.
 
 Unlike voting, **comment counts do not differ across treatments**.
 The effect size is near zero (f = 0.09), and this null finding holds
-even if we project to much larger samples — there is simply no
+even if we project to much larger samples  - there is simply no
 signal to amplify.
 
 **What this means:** AI agents decide whether to *comment* on a post
@@ -276,7 +276,7 @@ small sample (n = 22 in the smallest group).
 The power curve above shows that with ~60 posts per
 treatment group (approximately 6 Mode A
 runs total), the pairwise comparison of nudge_down vs control would
-reach 80% statistical power — meaning an 80% probability of detecting
+reach 80% statistical power  - meaning an 80% probability of detecting
 the effect at p < 0.05 if the true effect size is d = 0.53.
 
 **Concrete next step:** Run 3 more
@@ -323,7 +323,7 @@ the experimental infrastructure produces reliable agent behavior.
 ## 11. Detailed Statistical Tables
 
 
-### 11.1 Mode A — All Tests
+### 11.1 Mode A  - All Tests
 
 | Test | Metric | Statistic | p-value | Effect Size |
 |------|--------|--------:|--------:|--------:|
@@ -341,7 +341,7 @@ the experimental infrastructure produces reliable agent behavior.
 | Nudge Up | Comments | 564 | 0.4502 | -0.138 |
 | Nudge Down | Comments | 386 | 0.8520 | 0.089 |
 
-### 11.2 Mode B — All Tests
+### 11.2 Mode B  - All Tests
 
 | Test | Metric | Statistic | p-value | Effect Size |
 |------|--------|--------:|--------:|--------:|
@@ -363,11 +363,11 @@ the experimental infrastructure produces reliable agent behavior.
 ## 12. Limitations
 
 1. **Sample size:** 22-37 posts per treatment group. The pairwise
-   score comparison has ~40% power — enough to detect the direction
+   score comparison has ~40% power  - enough to detect the direction
    of the effect, but not to reach conventional significance.
 
 2. **Budget constraint:** 6 of 12 runs lost to API credit exhaustion.
-   This is an operational issue, not a design flaw — additional
+   This is an operational issue, not a design flaw  - additional
    credits will allow completion.
 
 3. **Single LLM model:** All agents use `moonshotai/kimi-k2.5`.
@@ -396,7 +396,7 @@ the experimental infrastructure produces reliable agent behavior.
    a finding in itself.
 
 3. **Mode B reveals content effects:** The dual-mode design was
-   necessary — without Mode B, content variation would confound
+   necessary  - without Mode B, content variation would confound
    the ranking effect estimate.
 
 4. **The experimental platform works:** Parallel Docker-based runner,
@@ -418,5 +418,5 @@ the experimental infrastructure produces reliable agent behavior.
    ranking sensitivity across different AI architectures.
 
 ---
-*Report generated by `full_analysis.py` — 2026-02-18 13:06*
+*Report generated by `full_analysis.py`  - 2026-02-18 13:10*
 *Data directory: /Users/fortuna/Desktop/UoT/moltbook/exports*

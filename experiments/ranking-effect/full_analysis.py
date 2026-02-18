@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ==========================================================================
-CivicLens Experiment 1 — Full Analysis Report
+CivicLens Experiment 1  - Full Analysis Report
 Does Algorithmic Ranking Nudge Affect Organic Engagement in AI-Agent
 Social Media?
 ==========================================================================
@@ -559,13 +559,13 @@ def generate_report(runs, rows, test_results, power_info):
     **Key Result:** We observe a **medium-sized effect** of downward ranking
     manipulation on organic post scores (Cohen's d = {d_val:.2f},
     p = {p_val:.3f}). This effect approaches but does not reach statistical
-    significance at alpha = 0.05 because the pilot is underpowered — we have
+    significance at alpha = 0.05 because the pilot is underpowered  - we have
     22 posts in the smallest group vs. ~{power_info['n80_pair']} needed for
     80% power. Approximately **{power_info['additional_runs_pair']} additional
     Mode A runs** would bring the study to full power and are expected to
     confirm the effect.
 
-    Comment engagement shows no treatment effect (d < 0.15) — AI agents
+    Comment engagement shows no treatment effect (d < 0.15)  - AI agents
     decide whether to comment based on content, not ranking position.
     """))
 
@@ -574,7 +574,7 @@ def generate_report(runs, rows, test_results, power_info):
     # ================================================================
     wt("2. What Was Accomplished This Week")
     w(textwrap.dedent("""\
-    1. **Built parallel experiment infrastructure** — A Docker-based system
+    1. **Built parallel experiment infrastructure**  - A Docker-based system
        that runs up to 4 independent experiment instances simultaneously,
        each with its own database, Redis, API server, and 10 AI agents.
        Full namespace isolation via Docker Compose project names.
@@ -583,16 +583,16 @@ def generate_report(runs, rows, test_results, power_info):
        6 runs produced usable data (3 Mode A + 3 Mode B). The remaining 6
        failed silently when OpenRouter LLM credits were exhausted mid-run.
 
-    3. **Automated data export pipeline** — Each run's posts, comments,
+    3. **Automated data export pipeline**  - Each run's posts, comments,
        votes, treatments, activity logs, and database dumps are exported
        to a structured directory (`exports/e1{a,b}-runNN/`).
 
-    4. **Statistical analysis pipeline** — Full analysis script with
+    4. **Statistical analysis pipeline**  - Full analysis script with
        proper statistical tests (Kruskal-Wallis, Mann-Whitney U, ANOVA),
        effect sizes (Cohen's d, Cohen's f, eta-squared), power analysis,
        and publication-quality figures.
 
-    5. **Identified a promising signal** — Medium effect size (d = 0.53)
+    5. **Identified a promising signal**  - Medium effect size (d = 0.53)
        on organic voting from downward nudging. Just needs more data to
        reach statistical significance.
     """))
@@ -611,7 +611,7 @@ def generate_report(runs, rows, test_results, power_info):
     ### 3.2 Agents
     10 AI agents per run, each with a unique persona (SOUL.md). Powered
     by `moonshotai/kimi-k2.5` via OpenRouter. Each agent operates on an
-    11-second heartbeat cycle — every 11 seconds it reads the feed,
+    11-second heartbeat cycle  - every 11 seconds it reads the feed,
     decides what to do (post, comment, vote, or idle), and acts.
 
     ### 3.3 World Posts (Experimental Stimuli)
@@ -635,7 +635,7 @@ def generate_report(runs, rows, test_results, power_info):
 
     ### 3.6 Outcome Measures
     - **Adjusted Score:** Post's raw score minus the synthetic nudge vote.
-      This isolates organic voting — how much real agents upvote/downvote.
+      This isolates organic voting  - how much real agents upvote/downvote.
     - **Comment Count:** Number of agent comments on each post.
     """))
 
@@ -678,7 +678,7 @@ def generate_report(runs, rows, test_results, power_info):
     w("Randomization produced approximately balanced groups (target: 33% each).")
 
     # ================================================================
-    # 5. RESULT 1 — ORGANIC VOTING (THE SIGNAL)
+    # 5. RESULT 1  - ORGANIC VOTING (THE SIGNAL)
     # ================================================================
     wt("5. Result 1: Ranking Nudge Affects Organic Voting Behavior")
     w()
@@ -713,7 +713,7 @@ def generate_report(runs, rows, test_results, power_info):
     w(f"- One-way ANOVA F(2,{len(world_a)-3}) = {an['F']:.3f}, p = {an['p']:.4f}")
     w(f"- Effect size: Cohen's f = {an['cohens_f']:.3f} (small-to-medium)")
     w()
-    w(f"**Key pairwise comparison — Nudge Down vs Control:**")
+    w(f"**Key pairwise comparison  - Nudge Down vs Control:**")
     w(f"- Mann-Whitney U = {r_down['U']:.0f}, **p = {r_down['p']:.4f}**")
     w(f"- **Cohen's d = {r_down['d']:.3f}** (medium effect)")
     w(f"- Posts that received a -1 downvote scored {abs(r_down['m2'] - r_down['m1']):.2f} points lower")
@@ -745,7 +745,7 @@ def generate_report(runs, rows, test_results, power_info):
     """))
 
     # ================================================================
-    # 6. RESULT 2 — COMMENTS (NO EFFECT)
+    # 6. RESULT 2  - COMMENTS (NO EFFECT)
     # ================================================================
     wt("6. Result 2: Comments Are Unaffected by Ranking")
     w()
@@ -766,7 +766,7 @@ def generate_report(runs, rows, test_results, power_info):
     w(textwrap.dedent("""\
     Unlike voting, **comment counts do not differ across treatments**.
     The effect size is near zero (f = 0.09), and this null finding holds
-    even if we project to much larger samples — there is simply no
+    even if we project to much larger samples  - there is simply no
     signal to amplify.
 
     **What this means:** AI agents decide whether to *comment* on a post
@@ -777,7 +777,7 @@ def generate_report(runs, rows, test_results, power_info):
     """))
 
     # ================================================================
-    # 7. MODE B BASELINE — CONTENT CONFOUND CHECK
+    # 7. MODE B BASELINE  - CONTENT CONFOUND CHECK
     # ================================================================
     wt("7. Mode B Baseline: Validating the Experimental Design")
     w()
@@ -815,7 +815,7 @@ def generate_report(runs, rows, test_results, power_info):
     """))
 
     # ================================================================
-    # 8. MODE A vs B — DIFFERENCE IN DIFFERENCES
+    # 8. MODE A vs B  - DIFFERENCE IN DIFFERENCES
     # ================================================================
     wt("8. Mode A vs B: Isolating the Causal Ranking Effect")
     w()
@@ -872,7 +872,7 @@ def generate_report(runs, rows, test_results, power_info):
     The power curve above shows that with ~{power_info['n80_pair']} posts per
     treatment group (approximately {power_info['runs_needed_pair']} Mode A
     runs total), the pairwise comparison of nudge_down vs control would
-    reach 80% statistical power — meaning an 80% probability of detecting
+    reach 80% statistical power  - meaning an 80% probability of detecting
     the effect at p < 0.05 if the true effect size is d = {d_val:.2f}.
 
     **Concrete next step:** Run {power_info['additional_runs_pair']} more
@@ -928,7 +928,7 @@ def generate_report(runs, rows, test_results, power_info):
     wt("11. Detailed Statistical Tables")
     w()
 
-    w("### 11.1 Mode A — All Tests")
+    w("### 11.1 Mode A  - All Tests")
     w()
     w("| Test | Metric | Statistic | p-value | Effect Size |")
     w("|------|--------|--------:|--------:|--------:|")
@@ -949,7 +949,7 @@ def generate_report(runs, rows, test_results, power_info):
             w(f"| {TREAT_LABELS[treat]} | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
     w()
 
-    w("### 11.2 Mode B — All Tests")
+    w("### 11.2 Mode B  - All Tests")
     w()
     w("| Test | Metric | Statistic | p-value | Effect Size |")
     w("|------|--------|--------:|--------:|--------:|")
@@ -976,11 +976,11 @@ def generate_report(runs, rows, test_results, power_info):
     wt("12. Limitations")
     w(textwrap.dedent("""\
     1. **Sample size:** 22-37 posts per treatment group. The pairwise
-       score comparison has ~40% power — enough to detect the direction
+       score comparison has ~40% power  - enough to detect the direction
        of the effect, but not to reach conventional significance.
 
     2. **Budget constraint:** 6 of 12 runs lost to API credit exhaustion.
-       This is an operational issue, not a design flaw — additional
+       This is an operational issue, not a design flaw  - additional
        credits will allow completion.
 
     3. **Single LLM model:** All agents use `moonshotai/kimi-k2.5`.
@@ -1012,7 +1012,7 @@ def generate_report(runs, rows, test_results, power_info):
        a finding in itself.
 
     3. **Mode B reveals content effects:** The dual-mode design was
-       necessary — without Mode B, content variation would confound
+       necessary  - without Mode B, content variation would confound
        the ranking effect estimate.
 
     4. **The experimental platform works:** Parallel Docker-based runner,
@@ -1035,7 +1035,7 @@ def generate_report(runs, rows, test_results, power_info):
     """))
 
     w("---")
-    w(f"*Report generated by `full_analysis.py` — {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
+    w(f"*Report generated by `full_analysis.py`  - {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
     w(f"*Data directory: {EXPORTS_DIR}*")
 
     return "\n".join(rpt)
