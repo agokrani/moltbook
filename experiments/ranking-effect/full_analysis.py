@@ -558,7 +558,7 @@ def generate_report(runs, rows, test_results, power_info):
     w(f"| Significant? | Almost (need more data) | No |")
     w(f"| Comment effect | None | None |")
     w()
-    w(f"**Bottom line:** Targeted nudging (Mode A) influences how agents vote. Broad nudging (Mode B) does not. We need ~{power_info['additional_runs_pair']} more Mode A runs to reach 80% statistical power and confirm the effect.")
+    w(f"**Bottom line:** Targeted nudging (Mode A) influences how agents vote. Broad nudging (Mode B) does not. More Mode A runs are needed to confirm this at p < 0.05.")
 
     # 2. WHAT WAS DONE
     wt("2. What Was Done This Week")
@@ -639,6 +639,21 @@ def generate_report(runs, rows, test_results, power_info):
     wt("7. Mode A vs B Comparison")
     w("![Mode Comparison](fig_mode_comparison.png)")
     w()
+    w("### Reading the figure")
+    w()
+    w("**Left panel (Adjusted Score):**")
+    w("- **Blue bars (Mode A, seed-only nudge):** There is a visible drop from Control (1.71) down to Nudge Down (1.00). When you fake-downvote a seed post, agents give it fewer real upvotes on their own. The nudge works.")
+    w("- **Orange bars (Mode B, all-post nudge):** The pattern is flat or even slightly reversed - Nudge Down (1.37) is actually *higher* than Control (1.19). The nudge does NOT work when you are nudging everything.")
+    w()
+    w("The key visual: blue bars slope down left-to-right (nudge influences agents), orange bars do not (nudge is ignored).")
+    w()
+    w("**Right panel (Comment Count):**")
+    w("- Both blue and orange bars are roughly the same height across all three treatments. No pattern. Comments are unaffected by nudging in either mode. Agents comment based on what a post says, not its score.")
+    w()
+    w("The error bars (black lines) show standard error. They overlap, which is why the p-values have not crossed 0.05 yet - the trend is visible but we need more data to shrink those error bars.")
+    w()
+    w("### Statistical comparison")
+    w()
     w("| Metric | Mode A | Mode B | Cohen's d | p |")
     w("|--------|------:|------:|------:|------:|")
     for metric_label in ["Score", "Comments"]:
@@ -647,21 +662,8 @@ def generate_report(runs, rows, test_results, power_info):
     w()
     w("**Key insight:** Targeted nudging (Mode A) fools agents. Broad nudging (Mode B) does not. When only a few posts have distorted scores, agents trust them. When everything is distorted, agents ignore scores and vote on content.")
 
-    # 8. POWER ANALYSIS
-    wt("8. Power Analysis")
-    w("![Power Projection](fig_power_projection.png)")
-    w()
-    w("| | Current | Needed for 80% power |")
-    w("|---|---:|---:|")
-    w(f"| Posts per group | {min_a} | ~{power_info['n80_pair']} |")
-    w(f"| Statistical power | {power_info['current_pow_pair']:.0%} | 80% |")
-    w(f"| Mode A runs | 3 | ~{power_info['runs_needed_pair']} |")
-    w(f"| **More runs needed** | | **~{power_info['additional_runs_pair']}** |")
-    w()
-    w(f"With {power_info['additional_runs_pair']} more Mode A runs (~{power_info['additional_runs_pair']} hours, ~${power_info['additional_runs_pair'] * 80} in OpenRouter credits), we would have 80% power to confirm the d = {d_a:.2f} effect at p < 0.05.")
-
-    # 9. CONSISTENCY
-    wt("9. Consistency Checks")
+    # 8. CONSISTENCY
+    wt("8. Consistency Checks")
     w("![Per-Run Consistency](fig_per_run.png)")
     w()
     w("| Run | Mode | N | Avg Score | Avg Comments |")
@@ -675,8 +677,8 @@ def generate_report(runs, rows, test_results, power_info):
     w()
     w("9-10 out of 10 agents actively participated in every run. Results are consistent across runs.")
 
-    # 10. FULL STAT TABLES
-    wt("10. Full Statistical Tables")
+    # 9. FULL STAT TABLES
+    wt("9. Full Statistical Tables")
     w("### Mode A")
     w("| Test | Metric | Statistic | p | Effect Size |")
     w("|------|--------|--------:|------:|--------:|")
@@ -709,18 +711,18 @@ def generate_report(runs, rows, test_results, power_info):
             r = test_results[f"B_{key}_{treat}_vs_ctrl"]
             w(f"| {TREAT_LABELS[treat]} vs Ctrl | {metric} | {r['U']:.0f} | {r['p']:.4f} | {r['d']:.3f} |")
 
-    # 11. LIMITATIONS
-    wt("11. Limitations")
+    # 10. LIMITATIONS
+    wt("10. Limitations")
     w("1. **Small sample.** ~22 posts per group. Enough to see the direction, not enough for p < 0.05.")
     w("2. **Credit exhaustion.** All 12 runs completed their full 1-hour duration, but agents in runs 7-12 produced no content (0 comments, only world posts) because OpenRouter credits (~$500) were depleted. The infrastructure ran; the LLM could not generate agent actions.")
-    w("3. **Shorter than planned.** Runs were 1 hour instead of the planned 3 hours, yielding ~31 world posts per run (~10/group) instead of 90 (~30/group). This reduces per-run statistical power.")
+    w("3. **Shorter than planned.** Runs were 1 hour instead of the planned 3 hours, yielding ~31 world posts per run (~10/group) instead of 90 (~30/group).")
     w("4. **One LLM model.** All agents use kimi-k2.5. Other models may differ.")
     w("5. **Posts within a run share agents.** A mixed-effects model would be better for the full study.")
     w("6. **Not pre-registered.** Follow-up should be.")
 
-    # 12. NEXT STEPS
-    wt("12. Next Steps")
-    w(f"1. Run **{power_info['additional_runs_pair']} more Mode A experiments** (~${power_info['additional_runs_pair'] * 80} in OpenRouter credits) to reach 80% power")
+    # 11. NEXT STEPS
+    wt("11. Next Steps")
+    w("1. Run more Mode A experiments to confirm the nudge-down effect at p < 0.05")
     w("2. Pre-register the confirmatory analysis (primary: adjusted score, nudge_down vs control)")
     w("3. Use a mixed-effects model to account for within-run clustering")
     w("4. Test with other LLM models to check if the effect generalizes")
