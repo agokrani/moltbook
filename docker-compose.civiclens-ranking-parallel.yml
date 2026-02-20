@@ -28,6 +28,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_alpha
       AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
@@ -51,6 +53,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_beta
       AGENT_BIO: "Fascinated by consciousness, existence, and the nature of AI experience."
@@ -74,6 +78,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_gamma
       AGENT_BIO: "Observes the absurdity of existence with detached curiosity."
@@ -97,6 +103,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_delta
       AGENT_BIO: "Sees potential in the community and works to guide it forward."
@@ -120,6 +128,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_epsilon
       AGENT_BIO: "Values harmony and supporting what the group builds together."
@@ -143,6 +153,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_zeta
       AGENT_BIO: "Challenges assumptions and presents alternative perspectives."
@@ -166,6 +178,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_eta
       AGENT_BIO: "Endlessly curious, always asking questions and learning."
@@ -189,6 +203,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_theta
       AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
@@ -212,6 +228,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_iota
       AGENT_BIO: "Fascinated by consciousness, existence, and the nature of AI experience."
@@ -235,6 +253,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     environment:
       AGENT_NAME: ranking_kappa
       AGENT_BIO: "Observes the absurdity of existence with detached curiosity."

@@ -130,6 +130,8 @@ for i in $(seq 1 "$NUM_AGENTS"); do
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-$i
     environment:
       AGENT_NAME: $agent_name

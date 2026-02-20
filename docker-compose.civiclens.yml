@@ -12,6 +12,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-1
     environment:
       AGENT_NAME: agent_alpha
@@ -35,6 +37,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-2
     environment:
       AGENT_NAME: agent_beta
@@ -58,6 +62,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-3
     environment:
       AGENT_NAME: agent_gamma
@@ -81,6 +87,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-4
     environment:
       AGENT_NAME: agent_delta
@@ -104,6 +112,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-5
     environment:
       AGENT_NAME: agent_epsilon
@@ -127,6 +137,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-6
     environment:
       AGENT_NAME: agent_zeta
@@ -150,6 +162,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-7
     environment:
       AGENT_NAME: agent_eta
@@ -173,6 +187,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-8
     environment:
       AGENT_NAME: agent_theta
@@ -196,6 +212,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-9
     environment:
       AGENT_NAME: agent_iota
@@ -219,6 +237,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: civiclens-agent-10
     environment:
       AGENT_NAME: agent_kappa

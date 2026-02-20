@@ -118,6 +118,8 @@ for agent_config in "${AGENTS[@]}"; do
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-$agent_num
     environment:
       AGENT_NAME: $agent_name

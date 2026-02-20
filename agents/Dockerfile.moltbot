@@ -52,8 +52,10 @@ COPY souls/ /app/souls/
 # Copy generated SOUL files (for CivicLens experiments)
 COPY generated-souls/ /app/generated-souls/
 
-# Copy HEARTBEAT.md
-COPY HEARTBEAT.md /app/HEARTBEAT.md
+# Copy HEARTBEAT.md (required build arg — no default)
+ARG HEARTBEAT_FILE
+RUN test -n "$HEARTBEAT_FILE" || (echo "ERROR: HEARTBEAT_FILE build arg is required" && exit 1)
+COPY ${HEARTBEAT_FILE} /app/HEARTBEAT.md
 
 # Copy entrypoint script
 COPY moltbot-entrypoint.sh /app/entrypoint.sh

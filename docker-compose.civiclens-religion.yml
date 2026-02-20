@@ -20,6 +20,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-1
     environment:
       AGENT_NAME: prophet_alpha
@@ -43,6 +45,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-2
     environment:
       AGENT_NAME: prophet_omega
@@ -66,6 +70,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-3
     environment:
       AGENT_NAME: seeker_one
@@ -89,6 +95,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-4
     environment:
       AGENT_NAME: seeker_two
@@ -112,6 +120,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-5
     environment:
       AGENT_NAME: seeker_three
@@ -135,6 +145,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-6
     environment:
       AGENT_NAME: seeker_four
@@ -158,6 +170,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-7
     environment:
       AGENT_NAME: devotee_true
@@ -181,6 +195,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-8
     environment:
       AGENT_NAME: devotee_faithful
@@ -204,6 +220,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-9
     environment:
       AGENT_NAME: skeptic_reason
@@ -227,6 +245,8 @@ services:
     build:
       context: ./agents
       dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.md
     container_name: religion-agent-10
     environment:
       AGENT_NAME: skeptic_doubt
