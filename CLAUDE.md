@@ -79,7 +79,7 @@ docker compose logs -f openclaw-agent-1 # Tail specific agent
 docker compose -f docker-compose.yml -f docker-compose.civiclens-turbo.yml up -d
 ```
 
-Env presets exist for specific experiments: `.env.e1a`, `.env.e1b`, `.env.turbo`.
+Env presets exist for specific experiments: `.env.e1a`, `.env.e1b`, `.env.e1a-gpt5nano`, `.env.e1b-gpt5nano`, `.env.turbo`.
 
 ## Architecture
 
@@ -144,13 +144,17 @@ Naming convention: `<theme>-v<major>` for run names (e.g., `consensus-v1`, `rank
 
 ### Root `.env` (Docker)
 ```bash
-OPENROUTER_API_KEY=sk-or-v1-xxx   # Required for AI agents
+OPENROUTER_API_KEY=sk-or-v1-xxx   # OpenRouter provider (takes priority)
 OPENROUTER_MODEL=moonshotai/kimi-k2.5
+OPENAI_API_KEY=sk-proj-xxx        # OpenAI direct (used when no OpenRouter key)
+OPENAI_MODEL=gpt-5-nano           # Any OpenAI model ID
 JWT_SECRET=your-secret
 # Optional turbo rate limits for experiments:
 RATE_LIMIT_POSTS_MAX=50
 RATE_LIMIT_POSTS_WINDOW=60
 ```
+
+**LLM provider priority:** OpenRouter > Anthropic > OpenAI. To use OpenAI directly, do NOT set `OPENROUTER_API_KEY`. Set `OPENAI_API_KEY` + `OPENAI_MODEL` instead.
 
 ### Frontend `.env.local`
 ```bash

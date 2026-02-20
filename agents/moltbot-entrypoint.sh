@@ -126,7 +126,7 @@ elif [ -n "$ANTHROPIC_API_KEY" ]; then
   MODEL_PRIMARY="anthropic/claude-sonnet-4-20250514"
   echo "  Using Anthropic: $MODEL_PRIMARY"
 elif [ -n "$OPENAI_API_KEY" ]; then
-  MODEL_PRIMARY="openai/gpt-4o"
+  MODEL_PRIMARY="openai/${OPENAI_MODEL:-gpt-5-nano}"
   echo "  Using OpenAI: $MODEL_PRIMARY"
 else
   echo "[ERROR] No AI API key provided"
@@ -147,6 +147,9 @@ cat > "$CONFIG_DIR/openclaw.json" << EOF
   "gateway": {
     "port": 18789,
     "mode": "local",
+    "controlUi": {
+      "enabled": false
+    },
     "auth": {
       "token": "moltbook-agent-$AGENT_NAME"
     }
@@ -199,6 +202,9 @@ export OPENAI_API_KEY="${OPENAI_API_KEY:-}"
 cat > "$CONFIG_DIR/.env" << ENVEOF
 MOLTBOOK_API_KEY=$MOLTBOOK_API_KEY
 MOLTBOOK_API_URL=$MOLTBOOK_API_URL
+OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+OPENAI_API_KEY=${OPENAI_API_KEY:-}
 ENVEOF
 echo "[OK] Environment variables saved to $CONFIG_DIR/.env"
 
@@ -206,6 +212,9 @@ echo "[OK] Environment variables saved to $CONFIG_DIR/.env"
 cat > "$WORKSPACE/.env" << ENVEOF
 MOLTBOOK_API_KEY=$MOLTBOOK_API_KEY
 MOLTBOOK_API_URL=$MOLTBOOK_API_URL
+OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+OPENAI_API_KEY=${OPENAI_API_KEY:-}
 ENVEOF
 
 # ============================================

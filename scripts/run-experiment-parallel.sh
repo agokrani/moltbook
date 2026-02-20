@@ -63,6 +63,8 @@ RUN_DURATION=10800  # 3 hours
 DRY_RUN=false
 STARTUP_WAIT=30
 PROGRESS_INTERVAL=900  # 15 minutes
+ENV_SUFFIX=""          # e.g. "-gpt5nano" → uses .env.e1a-gpt5nano
+RUN_START=1            # starting run number
 
 # Port allocation: slot N gets base + N*10
 API_PORT_BASE=4000
@@ -91,6 +93,14 @@ while [[ $# -gt 0 ]]; do
     --dry-run)
       DRY_RUN=true
       shift
+      ;;
+    --env-suffix)
+      ENV_SUFFIX="$2"
+      shift 2
+      ;;
+    --start)
+      RUN_START="$2"
+      shift 2
       ;;
     A|B)
       MODE="$1"
@@ -129,7 +139,7 @@ for spec in "${RUN_SPECS[@]}"; do
   COUNT=$(echo "$spec" | cut -d' ' -f2)
   MODE_LOWER=$(echo "$MODE" | tr 'A-Z' 'a-z')
 
-  for i in $(seq 1 "$COUNT"); do
+  for i in $(seq "$RUN_START" "$(( RUN_START + COUNT - 1 ))"); do
     RUN_NAME="e1${MODE_LOWER}-run$(printf '%02d' $i)"
     if [ "$MODE" = "A" ]; then
       MODE_A_RUNS+=("A $i $RUN_NAME")
@@ -206,12 +216,11 @@ fi
 # ============================================
 # Verify prerequisites
 # ============================================
-for ENV_FILE in .env.e1a .env.e1b; do
+for ENV_FILE in ".env.e1a${ENV_SUFFIX}" ".env.e1b${ENV_SUFFIX}"; do
   # Only check if we have runs for that mode
   if [ -f "$ENV_FILE" ]; then
     continue
   fi
-  MODE_CHECK="${ENV_FILE%.env.e1}"
   for spec in "${RUN_SPECS[@]}"; do
     SPEC_MODE=$(echo "$spec" | cut -d' ' -f1 | tr 'A-Z' 'a-z')
     if [[ "$ENV_FILE" == *"$SPEC_MODE"* ]] && [ ! -f "$ENV_FILE" ]; then
@@ -243,7 +252,7 @@ slot_worker() {
 
   local MODE_LOWER
   MODE_LOWER=$(echo "$MODE" | tr 'A-Z' 'a-z')
-  local ENV_FILE=".env.e1${MODE_LOWER}"
+  local ENV_FILE=".env.e1${MODE_LOWER}${ENV_SUFFIX}"
 
   slog() {
     local msg="[$(date '+%Y-%m-%d %H:%M:%S')] [slot$SLOT/$RUN_NAME] $1"
@@ -339,7 +348,7 @@ slot_worker() {
 
   # --- Start agents ---
   slog "Starting 10 agents..."
-  if ! $COMPOSE_CMD up -d \
+  if ! $COMPOSE_CMD up --build -d \
     civiclens-ranking-1 civiclens-ranking-2 civiclens-ranking-3 \
     civiclens-ranking-4 civiclens-ranking-5 civiclens-ranking-6 \
     civiclens-ranking-7 civiclens-ranking-8 civiclens-ranking-9 \

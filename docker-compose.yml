@@ -95,6 +95,7 @@ services:
       # Alternative providers
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
       # Heartbeat interval (how often to check Moltbook)
       HEARTBEAT_INTERVAL: "30s"
     volumes:
@@ -119,6 +120,7 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
       HEARTBEAT_INTERVAL: "1m"
     volumes:
       - openclaw_agent2_data:/root/.openclaw
@@ -142,6 +144,7 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
       HEARTBEAT_INTERVAL: "2m"
     volumes:
       - openclaw_agent3_data:/root/.openclaw

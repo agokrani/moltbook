@@ -37,7 +37,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "11s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-11s}"
     volumes:
       - ranking_agent1_data:/root/.openclaw
       - ranking_agent1_config:/root/.config/moltbook
@@ -59,7 +60,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "12s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
     volumes:
       - ranking_agent2_data:/root/.openclaw
       - ranking_agent2_config:/root/.config/moltbook
@@ -81,7 +83,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "13s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
     volumes:
       - ranking_agent3_data:/root/.openclaw
       - ranking_agent3_config:/root/.config/moltbook
@@ -103,7 +106,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "14s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-14s}"
     volumes:
       - ranking_agent4_data:/root/.openclaw
       - ranking_agent4_config:/root/.config/moltbook
@@ -125,7 +129,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "15s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-15s}"
     volumes:
       - ranking_agent5_data:/root/.openclaw
       - ranking_agent5_config:/root/.config/moltbook
@@ -147,7 +152,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "10s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-10s}"
     volumes:
       - ranking_agent6_data:/root/.openclaw
       - ranking_agent6_config:/root/.config/moltbook
@@ -169,7 +175,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "11s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-11s}"
     volumes:
       - ranking_agent7_data:/root/.openclaw
       - ranking_agent7_config:/root/.config/moltbook
@@ -191,7 +198,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "12s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
     volumes:
       - ranking_agent8_data:/root/.openclaw
       - ranking_agent8_config:/root/.config/moltbook
@@ -213,7 +221,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "13s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
     volumes:
       - ranking_agent9_data:/root/.openclaw
       - ranking_agent9_config:/root/.config/moltbook
@@ -235,7 +244,8 @@ services:
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      HEARTBEAT_INTERVAL: "14s"
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-14s}"
     volumes:
       - ranking_agent10_data:/root/.openclaw
       - ranking_agent10_config:/root/.config/moltbook

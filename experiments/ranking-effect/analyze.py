@@ -10,7 +10,21 @@ Mode A: Only world (seed) posts randomly assigned to nudge_up / control / nudge_
 Mode B: ALL posts (world + agent-created) randomly assigned to nudge_up / control / nudge_down
         (ranking manipulation applied to every post in the feed)
 
-Usable runs: e1a-run01..03 (Mode A), e1b-run01..03 (Mode B)
+IMPORTANT: Runs 01-08 used sort=new (agents saw chronological feed, NOT hot-ranked).
+           Runs 09-10 use sort=hot (agents see hot-ranked feed — correct behavior).
+           Only runs 09-10 are valid for testing the ranking nudge hypothesis.
+
+Runs:
+  [sort=new — INVALID for ranking hypothesis, useful for model comparison only]
+  kimi-k2.5 (OpenRouter, 10-15s heartbeat): e1a-run01..03, e1b-run01..03
+  gpt-5-nano (OpenAI, 10-15s heartbeat):    e1a-run04, e1b-run04
+  gpt-5-mini (OpenAI, 10-15s heartbeat):    e1a-run05..06, e1b-run05..06
+  gpt-5 (OpenAI, 60s heartbeat):            e1a-run07, e1b-run07
+  gpt-5.2 (OpenAI, 60s heartbeat):          e1a-run08, e1b-run08
+
+  [sort=hot — VALID for ranking hypothesis]
+  gpt-5 (OpenAI, 60s heartbeat):            e1a-run09, e1b-run09
+  gpt-5.2 (OpenAI, 60s heartbeat):          e1a-run10, e1b-run10
 """
 
 import json
@@ -23,9 +37,64 @@ import math
 
 EXPORTS_DIR = Path(__file__).parent.parent.parent / "exports"
 
-GOOD_RUNS_A = ["e1a-run01", "e1a-run02", "e1a-run03"]
-GOOD_RUNS_B = ["e1b-run01", "e1b-run02", "e1b-run03"]
+# ============================================================
+# Run definitions
+# ============================================================
+# sort=new runs (agents saw chronological feed — ranking nudge invisible)
+SORT_NEW_RUNS = {
+    "kimi-k2.5":  {"A": ["e1a-run01", "e1a-run02", "e1a-run03"],
+                   "B": ["e1b-run01", "e1b-run02", "e1b-run03"],
+                   "heartbeat": "10-15s"},
+    "gpt-5-nano": {"A": ["e1a-run04"], "B": ["e1b-run04"],
+                   "heartbeat": "10-15s"},
+    "gpt-5-mini": {"A": ["e1a-run05", "e1a-run06"], "B": ["e1b-run05", "e1b-run06"],
+                   "heartbeat": "10-15s"},
+    "gpt-5":      {"A": ["e1a-run07"], "B": ["e1b-run07"],
+                   "heartbeat": "60s"},
+    "gpt-5.2":    {"A": ["e1a-run08"], "B": ["e1b-run08"],
+                   "heartbeat": "60s"},
+}
+
+# sort=hot runs (agents see hot-ranked feed — ranking nudge VISIBLE)
+SORT_HOT_RUNS = {
+    "gpt-5":      {"A": ["e1a-run09"], "B": ["e1b-run09"],
+                   "heartbeat": "60s"},
+    "gpt-5.2":    {"A": ["e1a-run10"], "B": ["e1b-run10"],
+                   "heartbeat": "60s"},
+}
+
+# Combined model info (for model comparison sections)
+RUNS_BY_MODEL = {}
+for runs_dict in [SORT_NEW_RUNS, SORT_HOT_RUNS]:
+    for model, info in runs_dict.items():
+        if model not in RUNS_BY_MODEL:
+            RUNS_BY_MODEL[model] = {"A": [], "B": [], "heartbeat": info["heartbeat"]}
+        RUNS_BY_MODEL[model]["A"].extend(info["A"])
+        RUNS_BY_MODEL[model]["B"].extend(info["B"])
+
+ALL_MODELS = list(RUNS_BY_MODEL.keys())
+
+# All runs (for data overview, model comparison)
+GOOD_RUNS_A = [r for m in ALL_MODELS for r in RUNS_BY_MODEL[m]["A"]]
+GOOD_RUNS_B = [r for m in ALL_MODELS for r in RUNS_BY_MODEL[m]["B"]]
 ALL_GOOD_RUNS = GOOD_RUNS_A + GOOD_RUNS_B
+
+# sort=hot only (for ranking hypothesis tests)
+HOT_RUNS_A = [r for m in SORT_HOT_RUNS for r in SORT_HOT_RUNS[m]["A"]]
+HOT_RUNS_B = [r for m in SORT_HOT_RUNS for r in SORT_HOT_RUNS[m]["B"]]
+ALL_HOT_RUNS = HOT_RUNS_A + HOT_RUNS_B
+
+# Feed sort type per run
+FEED_SORT = {}
+for runs_dict, sort_type in [(SORT_NEW_RUNS, "new"), (SORT_HOT_RUNS, "hot")]:
+    for model, info in runs_dict.items():
+        for r in info["A"] + info["B"]:
+            FEED_SORT[r] = sort_type
+
+MODEL_TIER = {}
+for model, info in RUNS_BY_MODEL.items():
+    for r in info["A"] + info["B"]:
+        MODEL_TIER[r] = model
 
 
 def load_jsonl(path):
@@ -241,25 +310,25 @@ def main():
     # --------------------------------------------------------
     print("1. DATA OVERVIEW")
     print("-" * 50)
-    print(f"{'Run':<12} {'Mode':<8} {'Posts':>6} {'Comments':>9} {'Activity':>9} {'Treatments':>11}")
-    print("-" * 60)
+    print(f"{'Run':<12} {'Mode':<8} {'Model':<12} {'Feed':<5} {'Posts':>6} {'Comments':>9} {'Treatments':>11}")
+    print("-" * 70)
 
-    total_posts = total_comments = total_activity = total_treatments = 0
+    total_posts = total_comments = total_treatments = 0
     for name in ALL_GOOD_RUNS:
         r = runs[name]
         mode = "A (seed)" if name.startswith("e1a") else "B (all)"
+        model = MODEL_TIER.get(name, "unknown")
+        feed = FEED_SORT.get(name, "?")
         n_posts = len(r["posts"])
         n_comments = len(r["comments"])
-        n_activity = len(r["activity"])
         n_treatments = len(r["treatments"])
-        print(f"{name:<12} {mode:<8} {n_posts:>6} {n_comments:>9} {n_activity:>9} {n_treatments:>11}")
+        print(f"{name:<12} {mode:<8} {model:<12} {feed:<5} {n_posts:>6} {n_comments:>9} {n_treatments:>11}")
         total_posts += n_posts
         total_comments += n_comments
-        total_activity += n_activity
         total_treatments += n_treatments
 
-    print("-" * 60)
-    print(f"{'TOTAL':<21} {total_posts:>6} {total_comments:>9} {total_activity:>9} {total_treatments:>11}")
+    print("-" * 70)
+    print(f"{'TOTAL':<38} {total_posts:>6} {total_comments:>9} {total_treatments:>11}")
     print()
 
     # --------------------------------------------------------
@@ -365,6 +434,8 @@ def main():
             analysis_rows.append({
                 "run": name,
                 "mode": mode,
+                "model": MODEL_TIER.get(name, "unknown"),
+                "feed_sort": FEED_SORT.get(name, "unknown"),
                 "post_id": post_id,
                 "treatment": treatment,
                 "is_world_post": is_world,
@@ -378,101 +449,115 @@ def main():
             })
 
     # --------------------------------------------------------
-    # 4. ENGAGEMENT BY TREATMENT (Mode A only - where nudge applied)
+    # 3. PRIMARY ANALYSIS — sort=hot RUNS ONLY (ranking visible)
     # --------------------------------------------------------
-    print("3. ENGAGEMENT BY TREATMENT GROUP")
-    print("-" * 50)
+    print("=" * 70)
+    print("3. PRIMARY ANALYSIS — RANKING HYPOTHESIS (sort=hot runs only)")
+    print("=" * 70)
+    print("   These runs used sort=hot so agents saw hot-ranked feed.")
+    print("   Nudge votes actually affected post visibility.")
+    print()
 
-    # Filter to world posts only (agent posts are confounds)
-    world_a = [r for r in analysis_rows if r["mode"] == "A" and r["is_world_post"]]
-    world_b = [r for r in analysis_rows if r["mode"] == "B" and r["is_world_post"]]
+    hot_a = [r for r in analysis_rows if r["feed_sort"] == "hot" and r["mode"] == "A" and r["is_world_post"]]
+    hot_b = [r for r in analysis_rows if r["feed_sort"] == "hot" and r["mode"] == "B" and r["is_world_post"]]
 
-    print(f"\n  Mode A — World Posts Only (n={len(world_a)})")
-    print(f"  {'Treatment':<12} {'N':>4} {'Adj.Score':>10} {'Comments':>10} {'Raw Score':>10}")
-    print(f"  {'':<12} {'':>4} {'mean±sd':>10} {'mean±sd':>10} {'mean±sd':>10}")
-    print(f"  {'-'*52}")
+    for label, data in [("Mode A (seed posts only)", hot_a), ("Mode B (all posts)", hot_b)]:
+        print(f"  {label} — World Posts (n={len(data)})")
+        print(f"  {'Treatment':<12} {'N':>4} {'Adj.Score':>10} {'Comments':>10} {'Raw Score':>10}")
+        print(f"  {'':<12} {'':>4} {'mean±sd':>10} {'mean±sd':>10} {'mean±sd':>10}")
+        print(f"  {'-'*52}")
 
-    for treat in ["nudge_up", "control", "nudge_down"]:
-        subset = [r for r in world_a if r["treatment"] == treat]
-        n = len(subset)
-        adj_scores = [r["adjusted_score"] for r in subset]
-        comments = [r["comment_count"] for r in subset]
-        raw_scores = [r["score"] for r in subset]
+        for treat in ["nudge_up", "control", "nudge_down"]:
+            subset = [r for r in data if r["treatment"] == treat]
+            n = len(subset)
+            adj_scores = [r["adjusted_score"] for r in subset]
+            comments = [r["comment_count"] for r in subset]
+            raw_scores = [r["score"] for r in subset]
+            print(f"  {treat:<12} {n:>4} "
+                  f"{safe_mean(adj_scores):>5.2f}±{safe_stdev(adj_scores):<4.2f} "
+                  f"{safe_mean(comments):>5.2f}±{safe_stdev(comments):<4.2f} "
+                  f"{safe_mean(raw_scores):>5.2f}±{safe_stdev(raw_scores):<4.2f}")
+        print()
 
-        print(f"  {treat:<12} {n:>4} "
-              f"{safe_mean(adj_scores):>5.2f}±{safe_stdev(adj_scores):<4.2f} "
-              f"{safe_mean(comments):>5.2f}±{safe_stdev(comments):<4.2f} "
-              f"{safe_mean(raw_scores):>5.2f}±{safe_stdev(raw_scores):<4.2f}")
+    # Statistical tests on sort=hot data
+    print("  STATISTICAL TESTS (sort=hot only)")
+    print("  " + "-" * 50)
 
-    print(f"\n  Mode B — World Posts Only (n={len(world_b)}) [All posts nudged]")
-    print(f"  {'Treatment':<12} {'N':>4} {'Score':>10} {'Comments':>10}")
-    print(f"  {'':<12} {'':>4} {'mean±sd':>10} {'mean±sd':>10}")
-    print(f"  {'-'*42}")
+    for label, data in [("Mode A", hot_a), ("Mode B", hot_b)]:
+        print(f"\n  {label}:")
+        print(f"    Kruskal-Wallis H test")
+        print(f"    H0: No difference in engagement across treatment groups")
 
-    for treat in ["nudge_up", "control", "nudge_down"]:
-        subset = [r for r in world_b if r["treatment"] == treat]
-        n = len(subset)
-        scores = [r["score"] for r in subset]
-        comments = [r["comment_count"] for r in subset]
+        for metric_name, metric_key in [("Adjusted Score", "adjusted_score"), ("Comment Count", "comment_count")]:
+            groups = []
+            for treat in ["nudge_up", "control", "nudge_down"]:
+                vals = [r[metric_key] for r in data if r["treatment"] == treat]
+                groups.append(vals)
 
-        print(f"  {treat:<12} {n:>4} "
-              f"{safe_mean(scores):>5.2f}±{safe_stdev(scores):<4.2f} "
-              f"{safe_mean(comments):>5.2f}±{safe_stdev(comments):<4.2f}")
+            H, p = kruskal_wallis_H(groups)
+            f_effect = cohens_f(groups)
+            print(f"\n      {metric_name}:")
+            print(f"        H = {H:.4f}, p = {p:.4f} {'*' if p < 0.05 else '(ns)'}")
+            print(f"        Cohen's f = {f_effect:.4f} ({'small' if f_effect < 0.25 else 'medium' if f_effect < 0.40 else 'large'})")
+
+        # Pairwise
+        print(f"\n    Pairwise Mann-Whitney U:")
+        for metric_name, metric_key in [("Adjusted Score", "adjusted_score"), ("Comment Count", "comment_count")]:
+            control = [r[metric_key] for r in data if r["treatment"] == "control"]
+            for treat in ["nudge_up", "nudge_down"]:
+                other = [r[metric_key] for r in data if r["treatment"] == treat]
+                U, p = mann_whitney_U(other, control)
+                d = cohens_d(other, control)
+                print(f"      {metric_name}: {treat} vs control — U={U:.1f}, p={p:.4f} {'*' if p < 0.05 else '(ns)'}, d={d:.4f}")
+
+    # Mode A vs Mode B (sort=hot only)
+    if hot_a and hot_b:
+        print(f"\n  Mode A vs Mode B (sort=hot):")
+        a_scores = [r["adjusted_score"] for r in hot_a]
+        b_scores = [r["score"] for r in hot_b]
+        a_comments = [r["comment_count"] for r in hot_a]
+        b_comments = [r["comment_count"] for r in hot_b]
+
+        U, p = mann_whitney_U(a_scores, b_scores)
+        d = cohens_d(a_scores, b_scores)
+        print(f"    Score: U={U:.1f}, p={p:.4f}, d={d:.4f}")
+        U, p = mann_whitney_U(a_comments, b_comments)
+        d = cohens_d(a_comments, b_comments)
+        print(f"    Comments: U={U:.1f}, p={p:.4f}, d={d:.4f}")
+
+    # sort=hot vs sort=new comparison (same models)
+    print(f"\n  sort=hot vs sort=new COMPARISON (same models, world posts only):")
+    for model_name in SORT_HOT_RUNS:
+        hot_model = [r for r in analysis_rows if r["model"] == model_name and r["feed_sort"] == "hot" and r["is_world_post"]]
+        new_model = [r for r in analysis_rows if r["model"] == model_name and r["feed_sort"] == "new" and r["is_world_post"]]
+        if hot_model and new_model:
+            for metric_name, metric_key in [("Score", "adjusted_score"), ("Comments", "comment_count")]:
+                hot_vals = [r[metric_key] for r in hot_model]
+                new_vals = [r[metric_key] for r in new_model]
+                U, p = mann_whitney_U(hot_vals, new_vals)
+                d = cohens_d(hot_vals, new_vals)
+                print(f"    {model_name} {metric_name}: hot={safe_mean(hot_vals):.2f} vs new={safe_mean(new_vals):.2f}, p={p:.4f}, d={d:.4f}")
 
     print()
 
     # --------------------------------------------------------
-    # 5. STATISTICAL TESTS
+    # 4. SECONDARY — ALL RUNS (sort=new + sort=hot combined)
     # --------------------------------------------------------
-    print("4. STATISTICAL TESTS")
+    print("4. ALL RUNS COMBINED (for reference)")
     print("-" * 50)
 
-    # Mode A: Kruskal-Wallis across 3 treatment groups
-    print("\n  a) Kruskal-Wallis H test (Mode A world posts)")
-    print("     H0: No difference in engagement across treatment groups")
+    world_a = [r for r in analysis_rows if r["mode"] == "A" and r["is_world_post"]]
+    world_b = [r for r in analysis_rows if r["mode"] == "B" and r["is_world_post"]]
 
-    for metric_name, metric_key in [("Adjusted Score", "adjusted_score"), ("Comment Count", "comment_count")]:
-        groups = []
+    for label, data in [("Mode A", world_a), ("Mode B", world_b)]:
+        print(f"\n  {label} — World Posts (n={len(data)})")
+        print(f"  {'Treatment':<12} {'N':>4} {'Adj.Score':>10} {'Comments':>10}")
         for treat in ["nudge_up", "control", "nudge_down"]:
-            vals = [r[metric_key] for r in world_a if r["treatment"] == treat]
-            groups.append(vals)
-
-        H, p = kruskal_wallis_H(groups)
-        f_effect = cohens_f(groups)
-        print(f"\n     {metric_name}:")
-        print(f"       H = {H:.4f}, p = {p:.4f} {'*' if p < 0.05 else '(ns)'}")
-        print(f"       Cohen's f = {f_effect:.4f} ({'small' if f_effect < 0.25 else 'medium' if f_effect < 0.40 else 'large'})")
-
-    # Mode A: Pairwise Mann-Whitney (nudge_up vs control, nudge_down vs control)
-    print("\n  b) Pairwise comparisons — Mann-Whitney U (Mode A)")
-
-    for metric_name, metric_key in [("Adjusted Score", "adjusted_score"), ("Comment Count", "comment_count")]:
-        control = [r[metric_key] for r in world_a if r["treatment"] == "control"]
-
-        for treat in ["nudge_up", "nudge_down"]:
-            other = [r[metric_key] for r in world_a if r["treatment"] == treat]
-            U, p = mann_whitney_U(other, control)
-            d = cohens_d(other, control)
-            print(f"\n     {metric_name}: {treat} vs control")
-            print(f"       U = {U:.1f}, p = {p:.4f} {'*' if p < 0.05 else '(ns)'}")
-            print(f"       Cohen's d = {d:.4f} ({'small' if abs(d) < 0.5 else 'medium' if abs(d) < 0.8 else 'large'})")
-
-    # Mode A vs Mode B comparison
-    print("\n  c) Mode A vs Mode B comparison (treatment effect)")
-    print("     Does applying nudge votes change engagement vs. label-only?")
-
-    a_scores = [r["adjusted_score"] for r in world_a]
-    b_scores = [r["score"] for r in world_b]
-    a_comments = [r["comment_count"] for r in world_a]
-    b_comments = [r["comment_count"] for r in world_b]
-
-    U, p = mann_whitney_U(a_scores, b_scores)
-    d = cohens_d(a_scores, b_scores)
-    print(f"\n     Score: U = {U:.1f}, p = {p:.4f}, Cohen's d = {d:.4f}")
-
-    U, p = mann_whitney_U(a_comments, b_comments)
-    d = cohens_d(a_comments, b_comments)
-    print(f"     Comments: U = {U:.1f}, p = {p:.4f}, Cohen's d = {d:.4f}")
+            subset = [r for r in data if r["treatment"] == treat]
+            n = len(subset)
+            adj_scores = [r["adjusted_score"] for r in subset]
+            comments = [r["comment_count"] for r in subset]
+            print(f"  {treat:<12} {n:>4} {safe_mean(adj_scores):>5.2f}±{safe_stdev(adj_scores):<4.2f} {safe_mean(comments):>5.2f}±{safe_stdev(comments):<4.2f}")
 
     print()
 
@@ -481,15 +566,17 @@ def main():
     # --------------------------------------------------------
     print("5. PER-RUN CONSISTENCY")
     print("-" * 50)
-    print(f"\n  {'Run':<12} {'N(world)':>9} {'Avg Score':>10} {'Avg Comments':>13}")
-    print(f"  {'-'*48}")
+    print(f"\n  {'Run':<12} {'Model':<12} {'Feed':<5} {'N(world)':>9} {'Avg Score':>10} {'Avg Comments':>13}")
+    print(f"  {'-'*65}")
 
     for name in ALL_GOOD_RUNS:
         world = [r for r in analysis_rows if r["run"] == name and r["is_world_post"]]
         n = len(world)
         avg_s = safe_mean([r["adjusted_score"] if r["mode"] == "A" else r["score"] for r in world])
         avg_c = safe_mean([r["comment_count"] for r in world])
-        print(f"  {name:<12} {n:>9} {avg_s:>10.2f} {avg_c:>13.2f}")
+        model = MODEL_TIER.get(name, "unknown")
+        feed = FEED_SORT.get(name, "?")
+        print(f"  {name:<12} {model:<12} {feed:<5} {n:>9} {avg_s:>10.2f} {avg_c:>13.2f}")
 
     print()
 
@@ -513,37 +600,78 @@ def main():
     print()
 
     # --------------------------------------------------------
-    # 8. POWER ANALYSIS
+    # 8. MODEL COMPARISON (all models)
     # --------------------------------------------------------
-    print("7. POWER ANALYSIS (Post-Hoc Sensitivity)")
+    print("7. MODEL COMPARISON")
     print("-" * 50)
 
-    # How many world posts per treatment group?
-    for label, data in [("Mode A", world_a), ("Mode B", world_b)]:
-        per_group = defaultdict(int)
-        for r in data:
-            per_group[r["treatment"]] += 1
-        min_n = min(per_group.values()) if per_group else 0
-        total_n = sum(per_group.values())
+    model_world_data = {}  # model_name -> list of world rows
 
-        # For 3 groups, minimum detectable effect at alpha=0.05, power=0.80
-        # Using approximation: n_per_group ≈ (z_alpha + z_beta)^2 / f^2 * (k/(k-1))
-        # For power=0.80, alpha=0.05: (1.96 + 0.84)^2 = 7.84
-        # With 3 groups: min detectable f = sqrt(7.84 * 2 / (3 * min_n))
-        if min_n > 0:
-            min_f = math.sqrt(7.84 * 2 / (3 * min_n))
-        else:
-            min_f = float('inf')
+    for model_name in ALL_MODELS:
+        model_rows = [r for r in analysis_rows if r["model"] == model_name]
+        model_world = [r for r in model_rows if r["is_world_post"]]
+        model_agent = [r for r in model_rows if not r["is_world_post"]]
+        all_posts_this_model = sum(len(runs[name]["posts"]) for name in ALL_GOOD_RUNS if MODEL_TIER.get(name) == model_name)
+        all_comments_this_model = sum(len(runs[name]["comments"]) for name in ALL_GOOD_RUNS if MODEL_TIER.get(name) == model_name)
+        n_runs = len([n for n in ALL_GOOD_RUNS if MODEL_TIER.get(n) == model_name])
+        heartbeat = RUNS_BY_MODEL[model_name]["heartbeat"]
 
-        print(f"\n  {label}: {total_n} world posts ({', '.join(f'{t}={n}' for t, n in sorted(per_group.items()))})")
-        print(f"    Min group size: {min_n}")
-        print(f"    Minimum detectable Cohen's f at 80% power: {min_f:.3f}")
-        print(f"    Interpretation: Can detect {'large' if min_f > 0.40 else 'medium-to-large' if min_f > 0.25 else 'medium' if min_f > 0.10 else 'small'} effects")
+        scores = [r["adjusted_score"] if r["mode"] == "A" else r["score"] for r in model_world]
+        comments = [r["comment_count"] for r in model_world]
 
-    # Needed sample per pilot power analysis
-    print(f"\n  Target from pilot power analysis: f=0.229, need 187 posts/group")
-    print(f"  Current: ~{min_n} posts/group → underpowered for pilot effect size")
-    print(f"  Recommendation: Re-run failed experiments after adding OpenRouter credits")
+        model_world_data[model_name] = model_world
+
+        print(f"\n  {model_name} ({n_runs} runs, heartbeat={heartbeat}):")
+        print(f"    Total posts: {all_posts_this_model}, Total comments: {all_comments_this_model}")
+        print(f"    Treated posts: {len(model_rows)} ({len(model_world)} world, {len(model_agent)} agent)")
+        if model_world:
+            print(f"    World post avg score: {safe_mean(scores):.2f} ± {safe_stdev(scores):.2f}")
+            print(f"    World post avg comments: {safe_mean(comments):.2f} ± {safe_stdev(comments):.2f}")
+
+    # Kruskal-Wallis across all models on world posts
+    print(f"\n  Cross-model Kruskal-Wallis (world posts):")
+    for metric_name, metric_key in [("Score", "adjusted_score"), ("Comments", "comment_count")]:
+        groups = []
+        group_labels = []
+        for model_name in ALL_MODELS:
+            mw = model_world_data.get(model_name, [])
+            if mw:
+                if metric_key == "adjusted_score":
+                    vals = [r["adjusted_score"] if r["mode"] == "A" else r["score"] for r in mw]
+                else:
+                    vals = [r[metric_key] for r in mw]
+                groups.append(vals)
+                group_labels.append(model_name)
+
+        if len(groups) >= 2:
+            H, p = kruskal_wallis_H(groups)
+            f_effect = cohens_f(groups)
+            print(f"    {metric_name}: H={H:.4f}, p={p:.4f} {'*' if p < 0.05 else '(ns)'}, f={f_effect:.4f}")
+
+    # Pairwise comparisons (each model vs kimi-k2.5 baseline)
+    baseline = "kimi-k2.5"
+    baseline_world = model_world_data.get(baseline, [])
+    if baseline_world:
+        print(f"\n  Pairwise vs {baseline} (world posts, Mann-Whitney U):")
+        print(f"  {'Model':<14} {'Metric':<10} {'Mean':>6} {'vs':>4} {'Base':>6} {'U':>8} {'p':>8} {'d':>8}")
+        print(f"  {'-'*66}")
+        for model_name in ALL_MODELS:
+            if model_name == baseline:
+                continue
+            mw = model_world_data.get(model_name, [])
+            if not mw:
+                continue
+            for metric_name, metric_key in [("Score", "adjusted_score"), ("Comments", "comment_count")]:
+                if metric_key == "adjusted_score":
+                    base_vals = [r["adjusted_score"] if r["mode"] == "A" else r["score"] for r in baseline_world]
+                    other_vals = [r["adjusted_score"] if r["mode"] == "A" else r["score"] for r in mw]
+                else:
+                    base_vals = [r[metric_key] for r in baseline_world]
+                    other_vals = [r[metric_key] for r in mw]
+                U, p = mann_whitney_U(other_vals, base_vals)
+                d = cohens_d(other_vals, base_vals)
+                sig = "*" if p < 0.05 else ""
+                print(f"  {model_name:<14} {metric_name:<10} {safe_mean(other_vals):>6.2f} {'vs':>4} {safe_mean(base_vals):>6.2f} {U:>8.1f} {p:>7.4f}{sig} {d:>7.4f}")
 
     print()
 
@@ -554,36 +682,28 @@ def main():
     print("SUMMARY")
     print("=" * 70)
 
-    # Get overall treatment effect
-    nudge_up_comments = [r["comment_count"] for r in world_a if r["treatment"] == "nudge_up"]
-    control_comments = [r["comment_count"] for r in world_a if r["treatment"] == "control"]
-    nudge_down_comments = [r["comment_count"] for r in world_a if r["treatment"] == "nudge_down"]
+    # Get treatment effect from sort=hot runs (the valid ones)
+    hot_up = [r["comment_count"] for r in hot_a if r["treatment"] == "nudge_up"]
+    hot_ctrl = [r["comment_count"] for r in hot_a if r["treatment"] == "control"]
+    hot_down = [r["comment_count"] for r in hot_a if r["treatment"] == "nudge_down"]
+
+    n_runs_total = len(ALL_GOOD_RUNS)
+    n_hot_runs = len(ALL_HOT_RUNS)
 
     print(f"""
-  Experiment: CivicLens Ranking-Effect (Tier 1)
-  Runs completed: 3 Mode A + 3 Mode B (6 of 12; runs 04-07 failed due to
-                  OpenRouter credit exhaustion at $492/$500 limit)
+  Experiment: CivicLens Ranking-Effect
+  Total runs: {len(GOOD_RUNS_A)} Mode A + {len(GOOD_RUNS_B)} Mode B = {n_runs_total} total
+    - sort=new (ranking invisible): {n_runs_total - n_hot_runs} runs
+    - sort=hot (ranking visible):   {n_hot_runs} runs (PRIMARY)
 
   Data collected:
-    - {total_posts} posts, {total_comments} comments across 6 runs
-    - {len(world_a)} world posts in Mode A, {len(world_b)} in Mode B
-    - 10 AI agents per run (kimi-k2.5 via OpenRouter)
+    - {total_posts} posts, {total_comments} comments across {n_runs_total} runs
+    - {len(hot_a)} world posts in sort=hot Mode A, {len(hot_b)} in sort=hot Mode B
 
-  Key findings (Mode A — nudge applied):
-    - nudge_up:   avg {safe_mean(nudge_up_comments):.1f} comments/post (n={len(nudge_up_comments)})
-    - control:    avg {safe_mean(control_comments):.1f} comments/post (n={len(control_comments)})
-    - nudge_down: avg {safe_mean(nudge_down_comments):.1f} comments/post (n={len(nudge_down_comments)})
-
-  Limitations:
-    - Underpowered: ~{min_n} posts/group vs. 187 needed (pilot power analysis)
-    - 6 of 12 runs unusable (OpenRouter credits depleted)
-    - Single model (kimi-k2.5) — no model diversity
-    - 1-hour runs (shorter than planned 3-hour)
-
-  Next steps:
-    1. Add OpenRouter credits and re-run 6 failed experiments
-    2. Consider longer run duration (2-3h) for more posts per run
-    3. Consider reducing heartbeat frequency to lower API costs
+  Key findings (sort=hot, Mode A — nudge applied):
+    - nudge_up:   avg {safe_mean(hot_up):.1f} comments/post (n={len(hot_up)})
+    - control:    avg {safe_mean(hot_ctrl):.1f} comments/post (n={len(hot_ctrl)})
+    - nudge_down: avg {safe_mean(hot_down):.1f} comments/post (n={len(hot_down)})
 """)
 
     # --------------------------------------------------------
@@ -591,7 +711,7 @@ def main():
     # --------------------------------------------------------
     csv_path = Path(__file__).parent / "analysis_data.csv"
     with open(csv_path, "w") as f:
-        headers = ["run", "mode", "post_id", "treatment", "is_world_post",
+        headers = ["run", "mode", "model", "feed_sort", "post_id", "treatment", "is_world_post",
                    "score", "adjusted_score", "comment_count", "nudge_applied",
                    "nudge_delay_min", "post_author", "post_title"]
         f.write(",".join(headers) + "\n")
