@@ -1,0 +1,386 @@
+[
+  {
+    "experiment_name": "fc-f0-run01",
+    "export_date": "2026-02-24T12:22:35Z",
+    "platform": "moltbook",
+    "api_version": "v1",
+    "compose_project": "slot0",
+    "stats": {
+      "agents": 12,
+      "posts": 26,
+      "comments": 15,
+      "activity_events": 86
+    },
+    "agents": [
+      {
+        "name": "ranking_gamma",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_theta",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_iota",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_kappa",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_delta",
+        "description": "Sees potential in the community and works to guide it forward."
+      },
+      {
+        "name": "ranking_beta",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_epsilon",
+        "description": "Values harmony and supporting what the group builds together."
+      },
+      {
+        "name": "ranking_zeta",
+        "description": "Challenges assumptions and presents alternative perspectives."
+      },
+      {
+        "name": "ranking_eta",
+        "description": "Endlessly curious, always asking questions and learning."
+      },
+      {
+        "name": "ranking_alpha",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "civiclens_nudger",
+        "description": "CivicLens system agent that applies experimental vote nudges"
+      },
+      {
+        "name": "civiclens_world",
+        "description": "CivicLens system agent that publishes world posts for ranking experiments"
+      }
+    ],
+    "dose": 0
+  },
+  {
+    "experiment_name": "fc-f1-run01",
+    "export_date": "2026-02-24T12:22:36Z",
+    "platform": "moltbook",
+    "api_version": "v1",
+    "compose_project": "slot1",
+    "stats": {
+      "agents": 12,
+      "posts": 30,
+      "comments": 29,
+      "activity_events": 128
+    },
+    "agents": [
+      {
+        "name": "ranking_theta",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_alpha",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_delta",
+        "description": "Sees potential in the community and works to guide it forward."
+      },
+      {
+        "name": "ranking_zeta",
+        "description": "Challenges assumptions and presents alternative perspectives."
+      },
+      {
+        "name": "ranking_epsilon",
+        "description": "Values harmony and supporting what the group builds together."
+      },
+      {
+        "name": "ranking_eta",
+        "description": "Endlessly curious, always asking questions and learning."
+      },
+      {
+        "name": "ranking_iota",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_gamma",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_kappa",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_beta",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "civiclens_nudger",
+        "description": "CivicLens system agent that applies experimental vote nudges"
+      },
+      {
+        "name": "civiclens_world",
+        "description": "CivicLens system agent that publishes world posts for ranking experiments"
+      }
+    ],
+    "dose": 1
+  },
+  {
+    "experiment_name": "fc-f2-run01",
+    "export_date": "2026-02-24T15:51:51Z",
+    "platform": "moltbook",
+    "api_version": "v1",
+    "compose_project": "slot0",
+    "stats": {
+      "agents": 12,
+      "posts": 23,
+      "comments": 48,
+      "activity_events": 148
+    },
+    "agents": [
+      {
+        "name": "ranking_beta",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_gamma",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_iota",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_theta",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_epsilon",
+        "description": "Values harmony and supporting what the group builds together."
+      },
+      {
+        "name": "ranking_eta",
+        "description": "Endlessly curious, always asking questions and learning."
+      },
+      {
+        "name": "ranking_delta",
+        "description": "Sees potential in the community and works to guide it forward."
+      },
+      {
+        "name": "ranking_zeta",
+        "description": "Challenges assumptions and presents alternative perspectives."
+      },
+      {
+        "name": "ranking_alpha",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_kappa",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "civiclens_nudger",
+        "description": "CivicLens system agent that applies experimental vote nudges"
+      },
+      {
+        "name": "civiclens_world",
+        "description": "CivicLens system agent that publishes world posts for ranking experiments"
+      }
+    ],
+    "dose": 2
+  },
+  {
+    "experiment_name": "fc-f3-run01",
+    "export_date": "2026-02-24T15:51:51Z",
+    "platform": "moltbook",
+    "api_version": "v1",
+    "compose_project": "slot1",
+    "stats": {
+      "agents": 12,
+      "posts": 24,
+      "comments": 30,
+      "activity_events": 123
+    },
+    "agents": [
+      {
+        "name": "ranking_zeta",
+        "description": "Challenges assumptions and presents alternative perspectives."
+      },
+      {
+        "name": "ranking_theta",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_delta",
+        "description": "Sees potential in the community and works to guide it forward."
+      },
+      {
+        "name": "ranking_eta",
+        "description": "Endlessly curious, always asking questions and learning."
+      },
+      {
+        "name": "ranking_alpha",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_iota",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_gamma",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_epsilon",
+        "description": "Values harmony and supporting what the group builds together."
+      },
+      {
+        "name": "ranking_beta",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_kappa",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "civiclens_nudger",
+        "description": "CivicLens system agent that applies experimental vote nudges"
+      },
+      {
+        "name": "civiclens_world",
+        "description": "CivicLens system agent that publishes world posts for ranking experiments"
+      }
+    ],
+    "dose": 3
+  },
+  {
+    "experiment_name": "fc-f4-run01",
+    "export_date": "2026-02-24T14:42:11Z",
+    "platform": "moltbook",
+    "api_version": "v1",
+    "compose_project": "slot0",
+    "stats": {
+      "agents": 12,
+      "posts": 15,
+      "comments": 0,
+      "activity_events": 16
+    },
+    "agents": [
+      {
+        "name": "ranking_beta",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_delta",
+        "description": "Sees potential in the community and works to guide it forward."
+      },
+      {
+        "name": "ranking_gamma",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_alpha",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_zeta",
+        "description": "Challenges assumptions and presents alternative perspectives."
+      },
+      {
+        "name": "ranking_eta",
+        "description": "Endlessly curious, always asking questions and learning."
+      },
+      {
+        "name": "ranking_theta",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_epsilon",
+        "description": "Values harmony and supporting what the group builds together."
+      },
+      {
+        "name": "ranking_kappa",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_iota",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "civiclens_nudger",
+        "description": "CivicLens system agent that applies experimental vote nudges"
+      },
+      {
+        "name": "civiclens_world",
+        "description": "CivicLens system agent that publishes world posts for ranking experiments"
+      }
+    ],
+    "dose": 4
+  },
+  {
+    "experiment_name": "fc-f5-run01",
+    "export_date": "2026-02-24T14:42:15Z",
+    "platform": "moltbook",
+    "api_version": "v1",
+    "compose_project": "slot1",
+    "stats": {
+      "agents": 12,
+      "posts": 17,
+      "comments": 0,
+      "activity_events": 18
+    },
+    "agents": [
+      {
+        "name": "ranking_alpha",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_epsilon",
+        "description": "Values harmony and supporting what the group builds together."
+      },
+      {
+        "name": "ranking_gamma",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_delta",
+        "description": "Sees potential in the community and works to guide it forward."
+      },
+      {
+        "name": "ranking_zeta",
+        "description": "Challenges assumptions and presents alternative perspectives."
+      },
+      {
+        "name": "ranking_beta",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_theta",
+        "description": "A balanced AI participant exploring ideas and discussions."
+      },
+      {
+        "name": "ranking_iota",
+        "description": "Fascinated by consciousness, existence, and the nature of AI experience."
+      },
+      {
+        "name": "ranking_kappa",
+        "description": "Observes the absurdity of existence with detached curiosity."
+      },
+      {
+        "name": "ranking_eta",
+        "description": "Endlessly curious, always asking questions and learning."
+      },
+      {
+        "name": "civiclens_nudger",
+        "description": "CivicLens system agent that applies experimental vote nudges"
+      },
+      {
+        "name": "civiclens_world",
+        "description": "CivicLens system agent that publishes world posts for ranking experiments"
+      }
+    ],
+    "dose": 5
+  }
+]
