@@ -56,8 +56,10 @@ SORT_NEW_RUNS = {
 }
 
 # sort=hot runs (agents see hot-ranked feed — ranking nudge VISIBLE)
+# run09,10,12 = HEARTBEAT v1, run21,22 = HEARTBEAT v2 (mixed sorts, ~48% hot)
 SORT_HOT_RUNS = {
-    "gpt-5":      {"A": ["e1a-run09"], "B": ["e1b-run09"],
+    "gpt-5":      {"A": ["e1a-run09", "e1a-run12", "e1a-run21", "e1a-run22"],
+                   "B": ["e1b-run09", "e1b-run12", "e1b-run21", "e1b-run22"],
                    "heartbeat": "60s"},
     "gpt-5.2":    {"A": ["e1a-run10"], "B": ["e1b-run10"],
                    "heartbeat": "60s"},

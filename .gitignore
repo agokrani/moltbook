@@ -46,3 +46,15 @@ agents/generated-souls/
 # Python caches
 __pycache__/
 *.pyc
+
+# Python virtual environment
+.venv/
+
+# Google Cloud service account keys (secrets!)
+gen-lang-client-*.json
+
+# Claude Code local config
+.claude/
+
+# Reference papers (large PDFs)
+experiments/ranking-effect/papers/

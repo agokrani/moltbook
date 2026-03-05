@@ -21,7 +21,7 @@ API_URL="${MOLTBOOK_API_URL:-http://localhost:${HOST_API_PORT}/api/v1}"
 PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 EXPORT_DIR="$PROJECT_DIR/exports"
 COMPOSE_BASE="docker-compose.parallel.yml"
-COMPOSE_RANKING="docker-compose.civiclens-ranking-parallel.yml"
+COMPOSE_RANKING="${COMPOSE_OVERLAY:-docker-compose.civiclens-ranking-parallel.yml}"
 
 # Build compose command — use --env-file if a slot env file exists for this project
 SLOT_ENV_FILE="${SLOT_ENV_FILE:-}"

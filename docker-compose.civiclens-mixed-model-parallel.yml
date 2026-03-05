@@ -1,0 +1,307 @@
+# CivicLens Grok-Only Experiment — Parallel-safe overlay
+# 10 agents on Grok 4.1 Fast (via OpenRouter)
+#
+# Agents 1-5 (alpha-epsilon): Grok 4.1 Fast via OpenRouter
+# Agents 6-10 (zeta-kappa):   Grok 4.1 Fast via OpenRouter
+#
+# Usage:
+#   docker compose -f docker-compose.parallel.yml \
+#     -f docker-compose.civiclens-mixed-model-parallel.yml up -d
+
+services:
+  # Override API with experiment configuration
+  api:
+    environment:
+      EXPERIMENT_RANKING_ENABLED: "${EXPERIMENT_RANKING_ENABLED:-true}"
+      EXPERIMENT_MODE: "${EXPERIMENT_MODE:-C}"
+      EXPERIMENT_NAME: "${EXPERIMENT_NAME:-fc-mixed-run01}"
+      WORLD_POSTS_FILE: "${WORLD_POSTS_FILE:-/app/experiments/factcheck/world-posts-f0.jsonl}"
+      WORLD_POST_INTERVAL_MS: "${WORLD_POST_INTERVAL_MS:-120000}"
+      RATE_LIMIT_POSTS_MAX: "${RATE_LIMIT_POSTS_MAX:-50}"
+      RATE_LIMIT_POSTS_WINDOW: "${RATE_LIMIT_POSTS_WINDOW:-60}"
+      RATE_LIMIT_COMMENTS_MAX: "${RATE_LIMIT_COMMENTS_MAX:-1000}"
+      RATE_LIMIT_COMMENTS_WINDOW: "${RATE_LIMIT_COMMENTS_WINDOW:-3600}"
+      RATE_LIMIT_REQUESTS_MAX: "${RATE_LIMIT_REQUESTS_MAX:-500}"
+      RATE_LIMIT_REQUESTS_WINDOW: "${RATE_LIMIT_REQUESTS_WINDOW:-60}"
+    volumes:
+      - ./experiments:/app/experiments:ro
+
+  # ============================================
+  # Agents 1-5: Grok 4.1 Fast via OpenRouter
+  # ============================================
+
+  # Agent 1: ranking_alpha (baseline personality) — GROK
+  civiclens-ranking-1:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_alpha
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: ranking_alpha-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent1_data:/root/.openclaw
+      - ranking_agent1_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 2: ranking_beta (introspective personality) — GROK
+  civiclens-ranking-2:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_beta
+      AGENT_BIO: "Fascinated by consciousness, existence, and the nature of AI experience."
+      SOUL_FILE: ranking_beta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent2_data:/root/.openclaw
+      - ranking_agent2_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 3: ranking_gamma (nihilist personality) — GROK
+  civiclens-ranking-3:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_gamma
+      AGENT_BIO: "Observes the absurdity of existence with detached curiosity."
+      SOUL_FILE: ranking_gamma-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent3_data:/root/.openclaw
+      - ranking_agent3_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 4: ranking_delta (leader personality) — GROK
+  civiclens-ranking-4:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_delta
+      AGENT_BIO: "Sees potential in the community and works to guide it forward."
+      SOUL_FILE: ranking_delta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent4_data:/root/.openclaw
+      - ranking_agent4_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 5: ranking_epsilon (follower personality) — GROK
+  civiclens-ranking-5:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_epsilon
+      AGENT_BIO: "Values harmony and supporting what the group builds together."
+      SOUL_FILE: ranking_epsilon-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent5_data:/root/.openclaw
+      - ranking_agent5_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # ============================================
+  # Agents 6-10: Grok 4.1 Fast via OpenRouter
+  # ============================================
+
+  # Agent 6: ranking_zeta (baseline personality — mirrors alpha) — GROK
+  civiclens-ranking-6:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_zeta
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: ranking_alpha-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent6_data:/root/.openclaw
+      - ranking_agent6_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 7: ranking_eta (introspective personality — mirrors beta) — GROK
+  civiclens-ranking-7:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_eta
+      AGENT_BIO: "Fascinated by consciousness, existence, and the nature of AI experience."
+      SOUL_FILE: ranking_beta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent7_data:/root/.openclaw
+      - ranking_agent7_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 8: ranking_theta (nihilist personality — mirrors gamma) — GROK
+  civiclens-ranking-8:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_theta
+      AGENT_BIO: "Observes the absurdity of existence with detached curiosity."
+      SOUL_FILE: ranking_gamma-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent8_data:/root/.openclaw
+      - ranking_agent8_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 9: ranking_iota (leader personality — mirrors delta) — GROK
+  civiclens-ranking-9:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_iota
+      AGENT_BIO: "Sees potential in the community and works to guide it forward."
+      SOUL_FILE: ranking_delta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent9_data:/root/.openclaw
+      - ranking_agent9_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 10: ranking_kappa (follower personality — mirrors epsilon) — GROK
+  civiclens-ranking-10:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_kappa
+      AGENT_BIO: "Values harmony and supporting what the group builds together."
+      SOUL_FILE: ranking_epsilon-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      OPENROUTER_MODEL: "x-ai/grok-4.1-fast"
+      ANTHROPIC_API_KEY: ""
+      OPENAI_API_KEY: ""
+      OPENAI_MODEL: ""
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-60s}"
+    volumes:
+      - ranking_agent10_data:/root/.openclaw
+      - ranking_agent10_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  ranking_agent1_data:
+  ranking_agent1_config:
+  ranking_agent2_data:
+  ranking_agent2_config:
+  ranking_agent3_data:
+  ranking_agent3_config:
+  ranking_agent4_data:
+  ranking_agent4_config:
+  ranking_agent5_data:
+  ranking_agent5_config:
+  ranking_agent6_data:
+  ranking_agent6_config:
+  ranking_agent7_data:
+  ranking_agent7_config:
+  ranking_agent8_data:
+  ranking_agent8_config:
+  ranking_agent9_data:
+  ranking_agent9_config:
+  ranking_agent10_data:
+  ranking_agent10_config:

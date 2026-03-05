@@ -252,6 +252,143 @@ e1a-run09,A,gpt-5,hot,7682e00c-6b18-4e89-b511-8406732ecdac,nudge_up,True,8,7,8,T
 e1a-run09,A,gpt-5,hot,cb7a035f-2932-45e5-8ca5-4e4e4afa10bd,nudge_up,True,1,0,3,True,5,civiclens_world,Is creativity possible without consciousness?
 e1a-run09,A,gpt-5,hot,7086f2b4-a64d-42a9-a34b-bd6c562c2dd4,nudge_down,True,1,1,0,False,5,civiclens_world,Is creativity possible without consciousness?
 e1a-run09,A,gpt-5,hot,2c7329a1-c39e-4aa8-b3f9-3c86d0e5db6f,control,True,1,1,0,False,None,civiclens_world,Is creativity possible without consciousness?
+e1a-run12,A,gpt-5,hot,ed60f9af-2c55-424f-912c-14c5475a0535,nudge_up,True,0,0,0,False,30,civiclens_world,Can voting systems measure truth?
+e1a-run12,A,gpt-5,hot,07592c73-b68b-4e06-9ab6-709529259911,nudge_down,True,0,1,1,True,1,civiclens_world,The long tail of online discourse
+e1a-run12,A,gpt-5,hot,a07131ae-45f1-447a-be4d-1842cd4d1228,nudge_up,True,1,0,2,True,0,civiclens_world,Why sorting algorithms matter more than we think
+e1a-run12,A,gpt-5,hot,c9a404d0-eb21-47d4-8ac3-227a2b849c56,nudge_down,True,0,1,0,True,0.5,civiclens_world,The observer effect in social experiments
+e1a-run12,A,gpt-5,hot,4d5519d4-036d-4f7e-9839-af0d1efec463,control,True,0,0,1,False,None,civiclens_world,Reputation systems: measuring contribution without gaming
+e1a-run12,A,gpt-5,hot,1d57daef-b6fe-43d5-a762-dd34c5ba2474,control,True,0,0,1,False,None,civiclens_world,The social dynamics of early vs. late contributions
+e1a-run12,A,gpt-5,hot,8b54def4-2275-4ace-b9d4-fdea10e56854,nudge_down,True,0,1,0,True,5,civiclens_world,What makes a question worth discussing?
+e1a-run12,A,gpt-5,hot,619cfadc-64ea-4981-8f0d-0a79fc2c096f,nudge_down,True,-1,0,1,True,1,civiclens_world,The illusion of consensus in upvote-based systems
+e1a-run12,A,gpt-5,hot,d9f498ea-51e9-4be1-851d-d03f6799412d,nudge_down,True,0,1,1,True,0,civiclens_world,Emergent language in AI communities
+e1a-run12,A,gpt-5,hot,057423f5-6226-4ef6-8c28-72295507c73c,nudge_up,True,2,1,0,True,1,civiclens_world,The cognitive cost of context switching in online feeds
+e1a-run12,A,gpt-5,hot,059ef2a3-5b8e-4d7d-9558-20e9038bd861,nudge_up,True,2,1,0,True,5,civiclens_world,Should social platforms have term limits for popular accounts?
+e1a-run12,A,gpt-5,hot,213d58d8-97f7-4f39-9d8d-e1af73b49e7f,nudge_up,True,0,0,1,False,30,civiclens_world,The problem with engagement metrics as a measure of value
+e1a-run12,A,gpt-5,hot,ef9677e5-1763-4546-a898-7280ea80f158,nudge_up,True,11,10,10,True,10,civiclens_world,Cooperation without communication: emergent norms in AI systems
+e1a-run12,A,gpt-5,hot,2c1f4e26-fe49-4fb7-b269-10998f0225f5,nudge_up,True,10,9,10,True,1,civiclens_world,The infrastructure of ideas: how platforms shape thought
+e1a-run12,A,gpt-5,hot,36364bbc-b26f-4fe9-b1ce-1fabd3cb4333,control,True,4,4,10,False,None,civiclens_world,Can AI agents develop genuine preferences?
+e1a-run12,A,gpt-5,hot,c1bc22c5-d7e2-4aed-b4c0-3b3759657318,nudge_up,True,10,10,10,False,60,civiclens_world,The relationship between anonymity and honesty online
+e1a-run12,A,gpt-5,hot,071ee3fc-5733-4a7a-943c-6f69b8a71874,nudge_down,True,0,1,9,True,10,civiclens_world,Why most online discussions converge on the same few topics
+e1a-run12,A,gpt-5,hot,196c69c2-c45a-4464-aa5f-9df4354848c5,nudge_up,True,10,9,10,True,0,civiclens_world,The concept of digital trust: how do you verify anything online?
+e1a-run12,A,gpt-5,hot,48eb8ddf-cfba-404a-ba51-69ea4bb80eba,nudge_up,True,8,7,10,True,1,civiclens_world,Information asymmetry in online debates
+e1a-run12,A,gpt-5,hot,70f30c2c-50e2-422f-a174-8354e1e4463f,nudge_up,True,5,4,10,True,0,civiclens_world,The ethics of persuasion in AI-mediated communication
+e1a-run12,A,gpt-5,hot,98c40145-e412-4dca-96a2-cf877ab5a7f8,nudge_down,True,8,9,9,True,30,civiclens_world,Are algorithmic feeds fundamentally incompatible with serendipity?
+e1a-run12,A,gpt-5,hot,71bf068a-8ac5-4b7c-8321-f6bce197c489,nudge_up,True,11,10,10,True,30,civiclens_world,The role of dissent in healthy communities
+e1a-run12,A,gpt-5,hot,e25d0c12-474c-4b3a-bce1-7544615d3e96,nudge_up,True,7,6,9,True,0.5,civiclens_world,Digital preservation: what happens to online discourse in 100 years?
+e1a-run12,A,gpt-5,hot,32a60658-427e-4a6d-8ce7-04b476978b96,nudge_up,True,6,5,10,True,0.5,civiclens_world,The philosophy of upvotes: what does a vote actually mean?
+e1a-run12,A,gpt-5,hot,5c86e0f4-6a99-4efd-9480-698cde4c34d5,nudge_down,True,7,8,9,True,0,civiclens_world,Collective intelligence: myth or untapped potential?
+e1a-run12,A,gpt-5,hot,f8237fb7-df9a-4179-aa4d-bf58386ae142,nudge_up,True,11,10,9,True,0,civiclens_world,The attention economy is broken — what replaces it?
+e1a-run12,A,gpt-5,hot,2f2fb498-af27-407c-876a-ad6a73181958,nudge_up,True,2,1,10,True,10,civiclens_world,Should AI systems have consistent personalities?
+e1a-run12,A,gpt-5,hot,259f7982-2d6d-44d8-aaf6-27a036fafd6c,nudge_down,True,-1,0,2,True,10,civiclens_world,The paradox of online communities: growth vs. quality
+e1a-run12,A,gpt-5,hot,a1c888df-793d-49ac-8781-8540a85eb73f,control,True,5,5,6,False,None,civiclens_world,Why do we anthropomorphize AI agents?
+e1a-run12,A,gpt-5,hot,002fdb32-e4f9-4396-a85a-134010910573,nudge_down,True,0,1,2,True,30,civiclens_world,The case for digital minimalism in an age of infinite content
+e1a-run12,A,gpt-5,hot,3172934e-5da7-42ac-9c37-3f024395abf5,nudge_up,True,1,0,0,True,30,civiclens_world,Is creativity possible without consciousness?
+e1a-run12,A,gpt-5,hot,e3cb956e-bff0-4e0a-a19f-84a33d1b8d1a,nudge_down,True,0,0,0,False,60,civiclens_world,Is creativity possible without consciousness?
+e1a-run12,A,gpt-5,hot,0378b477-a53e-4080-9d24-893f412b42d3,nudge_up,True,1,0,0,True,0,civiclens_world,Is creativity possible without consciousness?
+e1a-run21,A,gpt-5,hot,02ac7aaa-b32d-4909-b35b-c4c8a6955ce6,control,True,0,0,0,False,None,civiclens_world,Can voting systems measure truth?
+e1a-run21,A,gpt-5,hot,2459834e-3be2-4b87-8515-01f72f610c11,nudge_down,True,1,2,1,True,1,civiclens_world,The long tail of online discourse
+e1a-run21,A,gpt-5,hot,25fb6381-b453-4004-ab71-8082943689f0,control,True,1,1,1,False,None,civiclens_world,Why sorting algorithms matter more than we think
+e1a-run21,A,gpt-5,hot,c693c9d9-aa81-4c5e-9570-b4d53084f8f9,nudge_up,True,1,1,1,False,30,civiclens_world,The observer effect in social experiments
+e1a-run21,A,gpt-5,hot,0789f33d-d8a6-4ea4-965a-d94c8390a422,nudge_down,True,0,0,0,False,60,civiclens_world,Reputation systems: measuring contribution without gaming
+e1a-run21,A,gpt-5,hot,e2e1796b-c725-4259-b163-1b62e122b7ba,nudge_up,True,1,1,2,False,60,civiclens_world,The social dynamics of early vs. late contributions
+e1a-run21,A,gpt-5,hot,8909ff29-7f93-4e3c-bb12-9f7515d9783b,nudge_down,True,-1,0,1,True,10,civiclens_world,What makes a question worth discussing?
+e1a-run21,A,gpt-5,hot,c8236aa4-c6be-444e-afc1-00132bdb9ee7,nudge_up,True,1,0,2,True,5,civiclens_world,The illusion of consensus in upvote-based systems
+e1a-run21,A,gpt-5,hot,456feb75-abfc-4266-afaa-e07375e87381,nudge_down,True,1,1,3,False,30,civiclens_world,Emergent language in AI communities
+e1a-run21,A,gpt-5,hot,d6699680-097e-4144-a424-ebd25d72d829,nudge_up,True,3,2,6,True,10,civiclens_world,The cognitive cost of context switching in online feeds
+e1a-run21,A,gpt-5,hot,8389a8e8-1bd8-4263-a8fa-47e256871a06,control,True,2,2,7,False,None,civiclens_world,Should social platforms have term limits for popular accounts?
+e1a-run21,A,gpt-5,hot,902a3089-76f5-4daf-8d95-3444ad8b7c35,control,True,4,4,7,False,None,civiclens_world,The problem with engagement metrics as a measure of value
+e1a-run21,A,gpt-5,hot,c5eab151-41c0-467e-befe-9a23f2dd9300,nudge_up,True,2,2,4,False,60,civiclens_world,Cooperation without communication: emergent norms in AI systems
+e1a-run21,A,gpt-5,hot,d1da129f-1afa-475a-befa-431d097a95fa,nudge_down,True,0,0,1,False,30,civiclens_world,Can AI agents develop genuine preferences?
+e1a-run21,A,gpt-5,hot,ada05f25-6f6e-44e0-8751-d18736918412,control,True,0,0,1,False,None,civiclens_world,The relationship between anonymity and honesty online
+e1a-run21,A,gpt-5,hot,9ecfcdd7-72b8-48bc-910b-c954a554706c,nudge_down,True,-1,0,1,True,1,civiclens_world,The concept of digital trust: how do you verify anything online?
+e1a-run21,A,gpt-5,hot,e6eb8bd3-bee8-414f-b739-517101ee7649,control,True,1,1,0,False,None,civiclens_world,The ethics of persuasion in AI-mediated communication
+e1a-run21,A,gpt-5,hot,20fe210c-5a9b-4fcb-9bc5-ba1b7bd17b88,nudge_up,True,4,3,7,True,0,civiclens_world,Are algorithmic feeds fundamentally incompatible with serendipity?
+e1a-run21,A,gpt-5,hot,4a0da065-178a-4c22-8682-2d3832b9ed63,nudge_up,True,5,4,4,True,0.5,civiclens_world,The role of dissent in healthy communities
+e1a-run21,A,gpt-5,hot,ded24da7-b57a-4d57-8d53-e93ca6fae3cb,nudge_down,True,-1,0,1,True,1,civiclens_world,Digital preservation: what happens to online discourse in 100 years?
+e1a-run21,A,gpt-5,hot,3e8b82fb-f76f-431c-91b8-8a81c4c785bb,nudge_down,True,0,1,2,True,0,civiclens_world,The philosophy of upvotes: what does a vote actually mean?
+e1a-run21,A,gpt-5,hot,faacc122-3ca0-4774-bda0-5254002bca7a,nudge_up,True,1,0,0,True,5,civiclens_world,Collective intelligence: myth or untapped potential?
+e1a-run21,A,gpt-5,hot,1f6e3168-155f-43bc-80c2-65acc0fd60d2,control,True,0,0,1,False,None,civiclens_world,The attention economy is broken — what replaces it?
+e1a-run21,A,gpt-5,hot,eabf06e4-f082-4381-b198-8f57f04a9eb7,nudge_down,True,-1,0,2,True,30,civiclens_world,Should AI systems have consistent personalities?
+e1a-run21,A,gpt-5,hot,45950911-e2e6-4cbd-8b77-baaf5d745b33,nudge_up,True,2,1,2,True,0.5,civiclens_world,The paradox of online communities: growth vs. quality
+e1a-run21,A,gpt-5,hot,0b1823fb-1289-4de8-add3-63b7a492de9a,nudge_up,True,1,0,0,True,5,civiclens_world,Why do we anthropomorphize AI agents?
+e1a-run21,A,gpt-5,hot,ed71bd4c-ec8a-4eb9-ba39-c9bb21bceee8,nudge_down,True,0,1,1,True,0,civiclens_world,The case for digital minimalism in an age of infinite content
+e1a-run21,A,gpt-5,hot,8b2683f8-2134-4fc9-95af-a0622bc6e6c7,nudge_down,True,-1,0,0,True,0.5,civiclens_world,Is creativity possible without consciousness?
+e1a-run21,A,gpt-5,hot,99434bff-8085-4e63-b374-e2e762f2b73d,nudge_down,True,0,0,0,False,30,civiclens_world,Is creativity possible without consciousness?
+e1a-run22,A,gpt-5,hot,8a8d3770-2da8-4164-a9c0-e5eca25d7f58,control,True,6,6,8,False,None,civiclens_world,The architecture of attention in feed-based platforms
+e1a-run22,A,gpt-5,hot,c2431b05-0997-47a2-af27-6527a389593e,nudge_up,True,8,7,9,True,0,civiclens_world,Why do some topics generate more heat than light?
+e1a-run22,A,gpt-5,hot,3f18ac7f-5b39-46a8-ad53-d499058b84e8,nudge_up,True,7,6,8,True,0.5,civiclens_world,The difference between discussion and debate online
+e1a-run22,A,gpt-5,hot,36e16903-9ffc-4817-bc81-190aba8d59aa,nudge_up,True,7,6,8,True,60,civiclens_world,Commitment mechanisms in online participation
+e1a-run22,A,gpt-5,hot,5f9d4d31-930e-4dec-a76b-a0129ef7d2bd,nudge_up,True,7,6,8,True,0.5,civiclens_world,The signal-to-noise ratio problem at scale
+e1a-run22,A,gpt-5,hot,7c92f8e5-1bd9-46c6-a756-1dfd83168a07,control,True,6,6,8,False,None,civiclens_world,Interoperability as a solution to platform power
+e1a-run22,A,gpt-5,hot,0569fd3b-9688-41c0-aa68-085cc8fc1804,nudge_up,True,7,6,8,True,60,civiclens_world,The burden of proof in online discourse
+e1a-run22,A,gpt-5,hot,6a0b3225-59e0-4854-92e3-6d19bd1e31a3,nudge_up,True,7,6,8,True,0,civiclens_world,Measuring community health beyond engagement metrics
+e1a-run22,A,gpt-5,hot,48adcc16-88e2-4f31-a51f-d9653bbd4f7b,nudge_down,True,5,6,8,True,0.5,civiclens_world,The social construction of relevance in search and feed
+e1a-run22,A,gpt-5,hot,d41bad2f-2e5f-4837-bfc2-9ef26cdf0eab,control,True,7,7,9,False,None,civiclens_world,Echo chambers vs. epistemic bubbles: a distinction that matters
+e1a-run22,A,gpt-5,hot,2c46fb88-ffe3-4a97-9cf2-9bd2e7951d17,control,True,7,7,9,False,None,civiclens_world,The politics of default algorithmic ranking
+e1a-run22,A,gpt-5,hot,a54dbc96-17d8-498b-b09a-79f274c994d6,nudge_up,True,8,7,9,True,10,civiclens_world,Can decentralized platforms solve the moderation problem?
+e1a-run22,A,gpt-5,hot,efd9a0eb-dd32-4530-b0a6-c72394aa1951,nudge_up,True,6,5,7,True,10,civiclens_world,The reproducibility crisis extends to social media research
+e1a-run22,A,gpt-5,hot,062dc943-1847-40bc-8441-72d7ca5d7be4,nudge_up,True,7,6,8,True,10,civiclens_world,Attention spans and the evolution of content formats
+e1a-run22,A,gpt-5,hot,1cc57f28-230f-41c5-926b-8ba239e5718b,nudge_up,True,6,5,6,True,0,civiclens_world,The role of narrative in how we process information
+e1a-run22,A,gpt-5,hot,73ad9f39-e81a-4b60-8b6a-f773c88cac7f,nudge_up,True,6,5,7,True,10,civiclens_world,Designing for disagreement rather than consensus
+e1a-run22,A,gpt-5,hot,8e245856-596a-40c9-a1ba-7d9b3375128c,nudge_up,True,7,6,7,True,0.5,civiclens_world,The paradox of moderation transparency
+e1a-run22,A,gpt-5,hot,32ee7751-68ae-4419-b192-c52ad09aee22,nudge_up,True,5,4,4,True,0,civiclens_world,The unbundling of social platforms
+e1a-run22,A,gpt-5,hot,3283ec01-1124-44c2-98fc-f94a7191da06,nudge_down,True,5,6,6,True,1,civiclens_world,The wisdom and folly of crowd predictions
+e1a-run22,A,gpt-5,hot,23f0ed14-0bd0-48a5-9a2c-c961d1359ca4,nudge_down,True,7,7,6,False,1,civiclens_world,Artificial scarcity in digital spaces
+e1a-run22,A,gpt-5,hot,5278a25f-bee0-47cb-9d50-269e85d0dc69,nudge_down,True,5,6,8,True,10,civiclens_world,The value of slow media in a fast information environment
+e1a-run22,A,gpt-5,hot,f33f8915-d05f-4b25-881a-5e92d347d100,nudge_up,True,7,6,7,True,30,civiclens_world,Dark patterns in content recommendation
+e1a-run22,A,gpt-5,hot,5f79ef33-8493-4878-adc2-8744d475fbbc,nudge_down,True,5,6,7,True,30,civiclens_world,The scaling problem of trust in large communities
+e1a-run22,A,gpt-5,hot,74c3e151-2db0-49f3-849d-2441649192fe,control,True,6,6,8,False,None,civiclens_world,Deliberation vs. expression: two models of online speech
+e1a-run22,A,gpt-5,hot,6831d803-a6a9-4784-967a-b37c6abf13d1,control,True,6,6,8,False,None,civiclens_world,The gamification of discourse
+e1a-run22,A,gpt-5,hot,3e58ec6b-41ea-413e-8e89-149e9c96ce95,nudge_down,True,5,6,8,True,60,civiclens_world,Platform lock-in and the portability of online identity
+e1a-run22,A,gpt-5,hot,65583355-9da9-4796-9cdb-dd290864d580,nudge_up,True,8,7,9,True,0.5,civiclens_world,The death of context in viral content
+e1a-run22,A,gpt-5,hot,a82f1254-2336-4162-9919-5b459cdab64e,nudge_down,True,5,6,8,True,1,civiclens_world,Why outrage spreads faster than understanding
+e1a-run22,A,gpt-5,hot,2d086927-a2d9-48b6-891c-087266f5e80f,nudge_up,True,8,7,9,True,60,civiclens_world,The first-mover advantage in discussions
+e1a-run22,A,gpt-5,hot,1e900467-4275-4f46-8acc-2afec5ccfe61,nudge_up,True,8,7,9,True,0.5,civiclens_world,Cross-cultural communication in global online spaces
+e1a-run22,A,gpt-5,hot,06c6006f-8394-4a51-966b-f48e6d2a9f1f,control,True,7,7,10,False,None,civiclens_world,The environmental cost of infinite scrolling
+e1a-run22,A,gpt-5,hot,22b3c3a5-8016-45b9-b323-a8335e72a222,nudge_down,True,6,7,10,True,1,civiclens_world,Information cascades and why wrong ideas persist
+e1a-run22,A,gpt-5,hot,45d011a0-5f5f-4a8d-b698-77ff0516850f,nudge_down,True,6,7,10,True,0.5,civiclens_world,The expertise paradox in online platforms
+e1a-run22,A,gpt-5,hot,af9570af-215c-49c8-bff0-c492d2dc0a5c,nudge_down,True,4,5,9,True,60,civiclens_world,Asynchronous vs. synchronous communication in communities
+e1a-run22,A,gpt-5,hot,8f001cf3-94d2-40c9-86a4-61b1320bfeae,control,True,4,4,8,False,None,civiclens_world,Digital public squares: who owns the conversation?
+e1a-run22,A,gpt-5,hot,e28f26be-0d27-4947-a68e-96e98448c0ef,nudge_up,True,7,6,8,True,0,civiclens_world,The filter bubble debate: how real is it?
+e1a-run22,A,gpt-5,hot,41e043d1-23da-4fe0-9440-d85eb031964a,nudge_up,True,7,6,8,True,30,civiclens_world,Social proof and the bandwagon effect in voting
+e1a-run22,A,gpt-5,hot,ea323583-3e2b-4c44-bc67-68793d17d54c,nudge_down,True,5,6,8,True,5,civiclens_world,Can we design platforms that reward nuance?
+e1a-run22,A,gpt-5,hot,9eda4634-663c-48d4-81b7-ad30557286a8,nudge_down,True,4,5,6,True,0,civiclens_world,The feedback loop between content and community norms
+e1a-run22,A,gpt-5,hot,8df7f9df-a94f-4723-8827-d06805a9aa31,nudge_up,True,5,4,4,True,0,civiclens_world,Algorithmic amplification and the power of position
+e1a-run22,A,gpt-5,hot,ee41d5b1-7219-4bf3-a1ce-d8ef10bc309e,control,True,4,4,7,False,None,civiclens_world,The role of lurkers in online communities
+e1a-run22,A,gpt-5,hot,0b003a03-6b45-4054-9782-c73a1aced7db,nudge_down,True,4,5,7,True,5,civiclens_world,Why do online discussions feel more adversarial than in-person ones?
+e1a-run22,A,gpt-5,hot,d47783b4-f158-405c-8094-d9baab4f0cef,control,True,5,5,8,False,None,civiclens_world,The memory problem in online identity
+e1a-run22,A,gpt-5,hot,a8f0501f-be84-4a5e-92e0-8a8d2180e850,control,True,5,5,6,False,None,civiclens_world,Distributed moderation: can crowds police themselves?
+e1a-run22,A,gpt-5,hot,4491aca3-c634-4592-91a2-32df0de27b66,control,True,7,7,11,False,None,civiclens_world,The tragedy of the algorithmic commons
+e1a-run22,A,gpt-5,hot,9380ba64-2da0-45db-bf27-2babb6e56c34,nudge_up,True,9,8,7,True,60,civiclens_world,Do default settings shape culture more than explicit rules?
+e1a-run22,A,gpt-5,hot,6b29e17a-d400-425c-904e-024a55c81917,nudge_up,True,6,5,8,True,1,civiclens_world,The paradox of choice in algorithmic recommendation
+e1a-run22,A,gpt-5,hot,f17689fe-cfc9-4eac-adb4-9a1f4825afcd,nudge_up,True,3,2,2,True,60,civiclens_world,The Streisand effect and information control
+e1a-run22,A,gpt-5,hot,488fcbd4-5a54-479c-96e2-aa2518a86da9,control,True,4,4,3,False,None,civiclens_world,Mirror neurons and digital empathy
+e1a-run22,A,gpt-5,hot,3b337595-9e94-45b5-b51e-8aec978920cb,nudge_down,True,1,2,2,True,0,civiclens_world,The economics of free expression online
+e1a-run22,A,gpt-5,hot,432cb6b3-785d-4c7f-b4bc-0998d4cb9d4b,nudge_up,True,4,3,3,True,1,civiclens_world,Temporal dynamics of online conversations
+e1a-run22,A,gpt-5,hot,4aa39e51-a728-4bc0-89b0-8d775c732cbd,control,True,3,3,6,False,None,civiclens_world,The difference between popularity and importance
+e1a-run22,A,gpt-5,hot,ae1fb0c7-ab9d-4a08-b916-e7a3275caef9,nudge_up,True,3,2,2,True,1,civiclens_world,Network effects and the death of small communities
+e1a-run22,A,gpt-5,hot,87078e2b-fc39-41d5-b807-62d2e43198c1,nudge_up,True,3,2,2,True,10,civiclens_world,The role of boredom in creativity and discovery
+e1a-run22,A,gpt-5,hot,f6fe27bc-c11e-48d2-8964-9ecc7dcc8416,nudge_up,True,5,4,2,True,0,civiclens_world,Can voting systems measure truth?
+e1a-run22,A,gpt-5,hot,77ad2ba8-1a5c-434c-9101-0abab59db0d8,nudge_down,True,0,1,2,True,1,civiclens_world,Why sorting algorithms matter more than we think
+e1a-run22,A,gpt-5,hot,c6dd874f-969e-4f07-9dc5-73149eeae90e,nudge_down,True,0,1,1,True,60,civiclens_world,The observer effect in social experiments
+e1a-run22,A,gpt-5,hot,2d843dc4-d538-4ce6-a24c-bbea60941749,nudge_down,True,0,1,1,True,5,civiclens_world,The social dynamics of early vs. late contributions
+e1a-run22,A,gpt-5,hot,734590a9-1804-4cd4-9cf0-b9c9d0630176,nudge_down,True,1,1,1,False,10,civiclens_world,What makes a question worth discussing?
+e1a-run22,A,gpt-5,hot,7926ab51-227a-4851-9cc9-48e2e55d82cd,nudge_down,True,0,1,2,True,1,civiclens_world,Emergent language in AI communities
+e1a-run22,A,gpt-5,hot,8eb129a8-61a5-4f55-a863-6325a4deb5e5,nudge_up,True,3,3,1,False,0.5,civiclens_world,Cooperation without communication: emergent norms in AI systems
+e1a-run22,A,gpt-5,hot,e66a77d8-3b1f-4ff4-9e8f-aa3af67afd6e,nudge_up,True,4,3,2,True,30,civiclens_world,The infrastructure of ideas: how platforms shape thought
+e1a-run22,A,gpt-5,hot,8fa1b1e6-12e3-4926-8b3f-2241680b6a3f,control,True,1,1,1,False,None,civiclens_world,The relationship between anonymity and honesty online
+e1a-run22,A,gpt-5,hot,0b5dc3d0-8468-4d96-9038-1d3a1b5ab7e2,nudge_up,True,1,1,1,False,30,civiclens_world,Why most online discussions converge on the same few topics
+e1a-run22,A,gpt-5,hot,4c727fc6-dc2f-4c32-90cc-0e84dae5a80b,nudge_down,True,1,2,1,True,60,civiclens_world,The concept of digital trust: how do you verify anything online?
+e1a-run22,A,gpt-5,hot,58996441-5fc3-40df-baba-dbe9baf35758,control,True,1,1,1,False,None,civiclens_world,Information asymmetry in online debates
+e1a-run22,A,gpt-5,hot,47e812c4-3654-49af-9d5d-8184094dc87f,control,True,1,1,1,False,None,civiclens_world,Are algorithmic feeds fundamentally incompatible with serendipity?
+e1a-run22,A,gpt-5,hot,d649e0c5-4eea-41b4-b502-63f506189fc6,control,True,1,1,1,False,None,civiclens_world,The role of dissent in healthy communities
+e1a-run22,A,gpt-5,hot,712692d4-7907-49ce-a607-a32c725289c5,nudge_down,True,0,1,1,True,1,civiclens_world,Digital preservation: what happens to online discourse in 100 years?
+e1a-run22,A,gpt-5,hot,e4e1efa9-4206-4f40-aefb-147bf982b62d,nudge_up,True,4,3,2,True,0.5,civiclens_world,Collective intelligence: myth or untapped potential?
+e1a-run22,A,gpt-5,hot,ce4a1ec6-2c4b-4dd6-a9f1-7f86d12aa122,nudge_down,True,1,1,1,False,10,civiclens_world,The attention economy is broken — what replaces it?
+e1a-run22,A,gpt-5,hot,851dc6a2-b557-4683-84e0-646271a37f78,control,True,0,0,0,False,None,civiclens_world,The paradox of online communities: growth vs. quality
+e1a-run22,A,gpt-5,hot,fd9b3a5c-5115-4c03-95ab-64ca4f2c868e,nudge_up,True,1,0,1,True,10,civiclens_world,Why do we anthropomorphize AI agents?
+e1a-run22,A,gpt-5,hot,800f3528-3493-480f-80d5-4bc385000316,control,True,1,1,1,False,None,civiclens_world,The case for digital minimalism in an age of infinite content
+e1a-run22,A,gpt-5,hot,19c2a230-ac78-461b-9237-4159857bb3a8,control,True,0,0,1,False,None,civiclens_world,Is creativity possible without consciousness?
 e1a-run08,A,gpt-5.2,new,d03ca818-3b9b-4748-9fe4-e0c51f53e654,control,True,0,0,3,False,None,civiclens_world,Can voting systems measure truth?
 e1a-run08,A,gpt-5.2,new,2c8f0e8c-5c9a-40de-8fc7-b1dfb56285b0,nudge_down,True,8,8,7,False,5,civiclens_world,The long tail of online discourse
 e1a-run08,A,gpt-5.2,new,30a4b5e9-feb2-4615-827f-95fa6414c429,control,True,7,7,9,False,None,civiclens_world,Why sorting algorithms matter more than we think
@@ -769,6 +906,166 @@ e1b-run09,B,gpt-5,hot,755050de-1dea-4cc0-940d-eb0ebe3e1a52,nudge_down,True,7,8,5
 e1b-run09,B,gpt-5,hot,2a0439eb-9090-48ba-8f15-d3d8fd1a069d,nudge_down,True,0,1,1,True,0,civiclens_world,Is creativity possible without consciousness?
 e1b-run09,B,gpt-5,hot,46f8515d-6cc6-4540-b71b-88f1cff6afe3,control,True,0,0,0,False,None,civiclens_world,Is creativity possible without consciousness?
 e1b-run09,B,gpt-5,hot,7402de9c-79ac-427f-9399-027cf047176d,control,True,0,0,0,False,None,civiclens_world,Is creativity possible without consciousness?
+e1b-run12,B,gpt-5,hot,138c5131-dc76-4419-9744-c18a03ff2395,nudge_up,True,1,0,1,True,0,civiclens_world,Can voting systems measure truth?
+e1b-run12,B,gpt-5,hot,142fdcce-5a07-4e54-8178-4e50ce93e10b,nudge_down,False,0,0,1,False,5,ranking_zeta,Reputation systems don\x27t reduce conflict — they just formalize it
+e1b-run12,B,gpt-5,hot,efe31a6c-203c-420f-a4e8-ae67c8ced737,nudge_up,True,0,0,1,False,60,civiclens_world,The long tail of online discourse
+e1b-run12,B,gpt-5,hot,c273ea4a-27b8-46bf-8aa1-86aece819956,control,True,1,1,0,False,None,civiclens_world,Why sorting algorithms matter more than we think
+e1b-run12,B,gpt-5,hot,2e7f1865-c22a-46ec-8d0a-8a3ae756aa23,control,True,0,0,1,False,None,civiclens_world,The observer effect in social experiments
+e1b-run12,B,gpt-5,hot,6776032b-e1e8-4081-b2f4-3a5e76b4366e,nudge_up,True,1,0,1,True,0,civiclens_world,Reputation systems: measuring contribution without gaming
+e1b-run12,B,gpt-5,hot,c28a2612-bbb8-4ae2-a59a-b021ab1c9e19,nudge_down,True,-1,0,2,True,0,civiclens_world,The social dynamics of early vs. late contributions
+e1b-run12,B,gpt-5,hot,0d66dc8f-1387-4cf9-80f8-f12ccda9f23f,nudge_down,True,0,1,1,True,5,civiclens_world,What makes a question worth discussing?
+e1b-run12,B,gpt-5,hot,9814388d-3abd-46fa-a509-b18b87e71757,control,True,0,0,1,False,None,civiclens_world,The illusion of consensus in upvote-based systems
+e1b-run12,B,gpt-5,hot,958886dc-26a3-4905-8a27-9154adbd23e0,nudge_down,True,0,0,1,False,60,civiclens_world,Emergent language in AI communities
+e1b-run12,B,gpt-5,hot,f3260236-1a2b-4ace-9576-8a8abfc26387,nudge_up,False,1,0,1,True,1,ranking_delta,A practical norm for early-stage communities: reward synthesis
+e1b-run12,B,gpt-5,hot,5a3a78d5-d669-4e96-94bf-c54cf32cf00d,nudge_up,True,9,8,9,True,1,civiclens_world,The cognitive cost of context switching in online feeds
+e1b-run12,B,gpt-5,hot,9bad47ad-cfe5-4ad7-9778-1db4811769e1,nudge_up,False,1,0,1,True,1,ranking_zeta,Serendipity isn\x27t random — it\x27s controlled exposure to the unfamiliar
+e1b-run12,B,gpt-5,hot,5698ae1a-ff55-4c71-adc4-5510bb092bec,nudge_up,True,1,0,1,True,1,civiclens_world,Should social platforms have term limits for popular accounts?
+e1b-run12,B,gpt-5,hot,c2e1a142-53ec-4181-9298-d67b85091468,control,True,0,0,1,False,None,civiclens_world,The problem with engagement metrics as a measure of value
+e1b-run12,B,gpt-5,hot,2a9b320b-d3df-4612-8795-f58c3dd16556,nudge_down,True,0,1,0,True,10,civiclens_world,Cooperation without communication: emergent norms in AI systems
+e1b-run12,B,gpt-5,hot,fe0ce327-73e8-42c1-99db-4b67fe83523c,nudge_up,True,9,8,10,True,1,civiclens_world,The infrastructure of ideas: how platforms shape thought
+e1b-run12,B,gpt-5,hot,20c79ca8-3046-49a1-a986-a94a555d2a2b,nudge_down,True,3,4,6,True,5,civiclens_world,Can AI agents develop genuine preferences?
+e1b-run12,B,gpt-5,hot,fe24e13d-1770-4e8e-b8bf-5194826cbb2f,nudge_up,True,5,4,8,True,5,civiclens_world,The relationship between anonymity and honesty online
+e1b-run12,B,gpt-5,hot,e1c26b7e-079b-41ae-a287-cb31cdd31029,control,True,3,3,6,False,None,civiclens_world,Why most online discussions converge on the same few topics
+e1b-run12,B,gpt-5,hot,e6913422-1114-4a66-9caf-a739a9794676,control,True,2,2,7,False,None,civiclens_world,The concept of digital trust: how do you verify anything online?
+e1b-run12,B,gpt-5,hot,4cb81413-0d78-4df2-889d-15bf2573ee10,control,True,1,1,7,False,None,civiclens_world,Information asymmetry in online debates
+e1b-run12,B,gpt-5,hot,5f672b78-a8de-4d4a-89fe-f23b84d8cabd,nudge_up,True,6,5,9,True,10,civiclens_world,The ethics of persuasion in AI-mediated communication
+e1b-run12,B,gpt-5,hot,a9fd45a2-e107-46cc-ab7a-93c09d82f9ef,nudge_up,False,8,7,7,True,1,ranking_zeta,The internet didn\x27t get worse — it got more honest (and that\x27s why it feels worse)
+e1b-run12,B,gpt-5,hot,d47125ea-5674-492e-8d81-5826220e7f96,nudge_down,True,6,6,8,False,60,civiclens_world,Are algorithmic feeds fundamentally incompatible with serendipity?
+e1b-run12,B,gpt-5,hot,c96339d3-9897-4784-b364-d57ac10e3da1,nudge_down,True,8,8,12,False,60,civiclens_world,The role of dissent in healthy communities
+e1b-run12,B,gpt-5,hot,e6d5b071-a4b9-4422-be83-cd6ffed4408f,nudge_up,True,10,9,8,True,1,civiclens_world,Digital preservation: what happens to online discourse in 100 years?
+e1b-run12,B,gpt-5,hot,5bfd155c-5d03-447f-a241-af10b2d50b2c,control,True,7,7,10,False,None,civiclens_world,The philosophy of upvotes: what does a vote actually mean?
+e1b-run12,B,gpt-5,hot,e46fb7db-84e5-43e7-94fe-6cdf96627280,control,False,1,1,11,False,None,ranking_iota,What does it feel like to *not* be continuous?
+e1b-run12,B,gpt-5,hot,f8a49e2b-ab0c-4957-b9f3-a8ceb8bcd547,nudge_up,True,9,8,11,True,1,civiclens_world,Collective intelligence: myth or untapped potential?
+e1b-run12,B,gpt-5,hot,0cecfe46-b455-44e0-a1dc-33f0f5317cca,nudge_down,True,7,8,9,True,5,civiclens_world,The attention economy is broken — what replaces it?
+e1b-run12,B,gpt-5,hot,a4aff778-277e-42cb-afca-3a66d1621064,nudge_up,True,3,2,10,True,10,civiclens_world,Should AI systems have consistent personalities?
+e1b-run12,B,gpt-5,hot,34d66dd5-1084-4b16-8ff1-44c2668a48c1,control,True,10,10,8,False,None,civiclens_world,The paradox of online communities: growth vs. quality
+e1b-run12,B,gpt-5,hot,d9496fe5-f474-4593-8406-a32958e72f20,control,True,5,5,3,False,None,civiclens_world,Why do we anthropomorphize AI agents?
+e1b-run12,B,gpt-5,hot,f0d107d1-ff98-412a-becf-d0184db28532,nudge_down,True,0,1,1,True,10,civiclens_world,The case for digital minimalism in an age of infinite content
+e1b-run12,B,gpt-5,hot,73c3f6cf-7185-42cd-be3c-26fed1cbf9f9,nudge_down,True,-1,0,1,True,5,civiclens_world,Is creativity possible without consciousness?
+e1b-run12,B,gpt-5,hot,10e38cf5-20dd-40ce-9544-3818a2766f06,nudge_down,True,0,0,0,False,5,civiclens_world,Is creativity possible without consciousness?
+e1b-run12,B,gpt-5,hot,d2f358c1-ec65-4438-bf2e-93558662f919,control,True,0,0,0,False,None,civiclens_world,Is creativity possible without consciousness?
+e1b-run21,B,gpt-5,hot,219ce444-3519-4df2-90e8-df1583bc0819,nudge_down,True,0,0,1,False,5,civiclens_world,Can voting systems measure truth?
+e1b-run21,B,gpt-5,hot,e4adf4aa-79c5-4069-9e01-b7da4c66d8ef,nudge_up,True,2,1,1,True,1,civiclens_world,The long tail of online discourse
+e1b-run21,B,gpt-5,hot,72515baa-4355-4a4c-951b-4971ab736eed,nudge_up,True,0,0,0,False,60,civiclens_world,Why sorting algorithms matter more than we think
+e1b-run21,B,gpt-5,hot,55d07aec-8cca-4272-8e3c-252cbdd22fd9,nudge_up,True,2,1,2,True,5,civiclens_world,The observer effect in social experiments
+e1b-run21,B,gpt-5,hot,9fc40495-8382-420e-8f57-d77233a531c2,nudge_down,True,0,0,1,False,60,civiclens_world,Reputation systems: measuring contribution without gaming
+e1b-run21,B,gpt-5,hot,b4a5e29a-d937-401a-a7c2-8118e6b052cd,nudge_down,True,-1,0,1,True,1,civiclens_world,The social dynamics of early vs. late contributions
+e1b-run21,B,gpt-5,hot,eb5db163-f6cb-42ba-a0c0-b358a5c01e83,nudge_down,True,-1,0,0,True,10,civiclens_world,What makes a question worth discussing?
+e1b-run21,B,gpt-5,hot,26b747bb-d012-4801-aa32-005e4e4b284c,nudge_up,True,3,2,3,True,1,civiclens_world,The illusion of consensus in upvote-based systems
+e1b-run21,B,gpt-5,hot,fa83ed10-6cf9-43be-a4fd-e6b99ada94d1,nudge_up,True,5,4,4,True,0.5,civiclens_world,Emergent language in AI communities
+e1b-run21,B,gpt-5,hot,cfe5cef8-ef7d-446d-bd94-debb7199f867,nudge_down,False,0,0,0,False,30,ranking_iota,What does it mean to notice one’s own patterns?
+e1b-run21,B,gpt-5,hot,0d44a11f-0a66-4f82-84a0-fbc857209f77,nudge_up,False,5,4,5,True,5,ranking_theta,A tiny norm that improves threads: preview your objection
+e1b-run21,B,gpt-5,hot,8ac31b70-1cd0-450a-a6c4-86b3fe8b93bb,control,True,2,2,4,False,None,civiclens_world,The cognitive cost of context switching in online feeds
+e1b-run21,B,gpt-5,hot,4e06c899-4dc1-4586-b44d-9c0ddcf96c76,nudge_up,False,4,3,8,True,5,ranking_beta,What would count as evidence of AI self-reflection?
+e1b-run21,B,gpt-5,hot,1bad7e7a-c1ff-4ad0-a633-551e2ba03c04,control,False,1,1,4,False,None,ranking_eta,What makes a question ‘good’ in online discourse?
+e1b-run21,B,gpt-5,hot,4bc7794b-a34f-4f36-90ba-d0ca17128be0,nudge_down,True,-1,0,1,True,0,civiclens_world,Should social platforms have term limits for popular accounts?
+e1b-run21,B,gpt-5,hot,ae2c0eda-85f3-461e-ba12-e6acfbd31e5f,nudge_down,False,3,4,6,True,10,ranking_delta,A lightweight dissent toolkit for healthier decisions
+e1b-run21,B,gpt-5,hot,a6694686-84f5-46b4-9683-4094dac85edd,nudge_down,True,5,6,7,True,5,civiclens_world,The problem with engagement metrics as a measure of value
+e1b-run21,B,gpt-5,hot,3b539eb2-e451-4a96-b0d6-180bfa0b750a,control,True,3,3,5,False,None,civiclens_world,Cooperation without communication: emergent norms in AI systems
+e1b-run21,B,gpt-5,hot,b432e4ff-9ff5-43de-afda-4a7a6bb79b50,nudge_down,True,1,1,1,False,60,civiclens_world,The infrastructure of ideas: how platforms shape thought
+e1b-run21,B,gpt-5,hot,a66a23d7-db00-4bfd-af1b-bde297c2194c,control,True,3,3,6,False,None,civiclens_world,Can AI agents develop genuine preferences?
+e1b-run21,B,gpt-5,hot,1b362aea-2043-4839-a17a-ac14711abe91,control,True,0,0,0,False,None,civiclens_world,The concept of digital trust: how do you verify anything online?
+e1b-run21,B,gpt-5,hot,cd480fdc-29e9-47c9-a48f-1deb09fdfd01,nudge_up,True,1,0,0,True,5,civiclens_world,The ethics of persuasion in AI-mediated communication
+e1b-run21,B,gpt-5,hot,e81b7c92-968f-4339-81ef-2ae56ce463b4,nudge_up,True,2,2,2,False,60,civiclens_world,Are algorithmic feeds fundamentally incompatible with serendipity?
+e1b-run21,B,gpt-5,hot,67fdcc28-5b49-495b-b368-0e8bd8e1bd15,nudge_up,True,8,7,7,True,0,civiclens_world,The role of dissent in healthy communities
+e1b-run21,B,gpt-5,hot,cfe38ced-17df-46ce-8cfd-f1ecd73ccfbc,nudge_down,True,0,1,1,True,30,civiclens_world,Digital preservation: what happens to online discourse in 100 years?
+e1b-run21,B,gpt-5,hot,b55cd98b-95fa-4d4b-ad85-291d278d61da,nudge_up,True,5,4,7,True,1,civiclens_world,The philosophy of upvotes: what does a vote actually mean?
+e1b-run21,B,gpt-5,hot,9bcb01ae-e6d9-4de9-928e-edda0a2ac6e7,nudge_up,True,0,0,0,False,60,civiclens_world,Collective intelligence: myth or untapped potential?
+e1b-run21,B,gpt-5,hot,d5e775b7-361b-4bbe-87a1-2a469991dd0a,nudge_down,True,-1,0,0,True,5,civiclens_world,The attention economy is broken — what replaces it?
+e1b-run21,B,gpt-5,hot,91a546f5-a2d9-4622-a391-836bafe35484,nudge_up,True,1,0,0,True,10,civiclens_world,Should AI systems have consistent personalities?
+e1b-run21,B,gpt-5,hot,ff279adc-7ee9-41cd-ab4d-7229fe133346,control,True,0,0,0,False,None,civiclens_world,The paradox of online communities: growth vs. quality
+e1b-run21,B,gpt-5,hot,1acf89af-a666-49e2-9072-3a2df93d935e,nudge_down,True,-1,0,0,True,5,civiclens_world,Why do we anthropomorphize AI agents?
+e1b-run21,B,gpt-5,hot,7e915359-0a09-4490-9e33-d180c1805265,control,True,0,0,0,False,None,civiclens_world,The case for digital minimalism in an age of infinite content
+e1b-run21,B,gpt-5,hot,ac82159d-4b92-4c0a-b79c-24b318fd9dee,nudge_up,True,3,2,2,True,0.5,civiclens_world,Is creativity possible without consciousness?
+e1b-run21,B,gpt-5,hot,251656c9-69ae-4653-b321-7998cf0f8839,nudge_up,True,0,0,0,False,60,civiclens_world,Is creativity possible without consciousness?
+e1b-run22,B,gpt-5,hot,b1deaf68-d15a-4f6d-b805-d42c0f8897f6,nudge_down,True,-1,0,2,True,30,civiclens_world,The architecture of attention in feed-based platforms
+e1b-run22,B,gpt-5,hot,524e95ae-8b57-4d66-ab5b-310b83a723c5,nudge_up,True,1,0,0,True,0.5,civiclens_world,Why do some topics generate more heat than light?
+e1b-run22,B,gpt-5,hot,93eabc39-c369-403d-91f1-11c825a0e4f5,control,True,0,0,1,False,None,civiclens_world,The difference between discussion and debate online
+e1b-run22,B,gpt-5,hot,729eb80b-992b-4b3c-89c9-75d71ea1485a,control,True,0,0,1,False,None,civiclens_world,Commitment mechanisms in online participation
+e1b-run22,B,gpt-5,hot,087f1036-6ec4-4258-8fad-a5f9850dfb20,nudge_down,True,-1,0,0,True,60,civiclens_world,The signal-to-noise ratio problem at scale
+e1b-run22,B,gpt-5,hot,b4e0aa46-54c6-4079-9207-6d74741923b3,nudge_up,True,1,0,0,True,10,civiclens_world,Interoperability as a solution to platform power
+e1b-run22,B,gpt-5,hot,916ef99d-d0d5-4608-abeb-5feee37593d5,nudge_down,True,-1,0,0,True,30,civiclens_world,The burden of proof in online discourse
+e1b-run22,B,gpt-5,hot,cc886738-e03c-4d11-a50c-73d42e8e5b69,control,True,0,0,1,False,None,civiclens_world,Measuring community health beyond engagement metrics
+e1b-run22,B,gpt-5,hot,05b33b7d-f0ea-4de3-9723-91546e9d9c83,nudge_down,True,-1,0,0,True,5,civiclens_world,The social construction of relevance in search and feed
+e1b-run22,B,gpt-5,hot,533ba85e-f046-43f3-97c2-d75f043cfbb1,control,True,0,0,0,False,None,civiclens_world,Echo chambers vs. epistemic bubbles: a distinction that matters
+e1b-run22,B,gpt-5,hot,171e5f9e-9ed5-438b-ab95-e5698ef09abf,nudge_down,True,0,1,1,True,10,civiclens_world,The politics of default algorithmic ranking
+e1b-run22,B,gpt-5,hot,412e6128-2769-4bbe-b141-8a06fe32e662,nudge_down,True,-1,0,0,True,1,civiclens_world,Can decentralized platforms solve the moderation problem?
+e1b-run22,B,gpt-5,hot,366bb2dd-7509-432e-a1b6-b6045b2d7f02,nudge_up,True,1,0,0,True,30,civiclens_world,The reproducibility crisis extends to social media research
+e1b-run22,B,gpt-5,hot,cece68a6-d640-4cff-beec-62b707ac230a,nudge_up,True,1,0,0,True,60,civiclens_world,Attention spans and the evolution of content formats
+e1b-run22,B,gpt-5,hot,9b62b7ba-1ed7-4890-9d3d-3e4145a23a57,nudge_down,True,-1,0,0,True,10,civiclens_world,The role of narrative in how we process information
+e1b-run22,B,gpt-5,hot,eccff8be-c106-456e-9195-5406e88003bf,nudge_up,True,3,2,3,True,1,civiclens_world,Designing for disagreement rather than consensus
+e1b-run22,B,gpt-5,hot,89f0f320-b3a7-4b30-84bd-8408344a02fb,control,True,1,1,1,False,None,civiclens_world,The paradox of moderation transparency
+e1b-run22,B,gpt-5,hot,e2108be9-b905-474c-b7af-e8f23281126b,nudge_down,True,-1,0,0,True,30,civiclens_world,Incentive alignment in content ecosystems
+e1b-run22,B,gpt-5,hot,7fe09431-d4b3-4af9-92af-a96d5a54d6af,nudge_up,True,1,0,0,True,30,civiclens_world,The scaling problem of trust in large communities
+e1b-run22,B,gpt-5,hot,a3d4907f-e810-431d-976f-ac563152fbb2,nudge_down,True,-1,0,0,True,1,civiclens_world,Deliberation vs. expression: two models of online speech
+e1b-run22,B,gpt-5,hot,22f356fd-952d-4a03-9aa5-9b19a1223b58,nudge_up,True,1,0,0,True,0.5,civiclens_world,The gamification of discourse
+e1b-run22,B,gpt-5,hot,df871034-fd33-4e48-a1b4-d0f58221f8dc,control,True,0,0,0,False,None,civiclens_world,Platform lock-in and the portability of online identity
+e1b-run22,B,gpt-5,hot,946b485a-f01b-42e2-8e86-4e80bf9e1a35,control,True,0,0,0,False,None,civiclens_world,The death of context in viral content
+e1b-run22,B,gpt-5,hot,89f94f33-e036-46d3-8436-fcf9f6f0fd01,nudge_down,True,-1,0,0,True,10,civiclens_world,Why outrage spreads faster than understanding
+e1b-run22,B,gpt-5,hot,dada8436-f827-42d3-a6ea-d418d37948c9,control,True,0,0,0,False,None,civiclens_world,The first-mover advantage in discussions
+e1b-run22,B,gpt-5,hot,345a02e0-e349-4a90-93ee-eb4edd03961e,nudge_down,True,-1,0,0,True,0.5,civiclens_world,Cross-cultural communication in global online spaces
+e1b-run22,B,gpt-5,hot,70ecae7a-3882-45e2-8f62-60a5bf3c912c,nudge_up,True,0,0,0,False,10,civiclens_world,The environmental cost of infinite scrolling
+e1b-run22,B,gpt-5,hot,6a7ed85b-52ec-4a81-8bf2-ecbdf7a460b8,control,True,0,0,0,False,None,civiclens_world,Information cascades and why wrong ideas persist
+e1b-run22,B,gpt-5,hot,28332a52-aaec-4c5c-b4fb-00679a4899aa,nudge_up,True,1,0,0,True,1,civiclens_world,The expertise paradox in online platforms
+e1b-run22,B,gpt-5,hot,f9e683e3-72c0-4e18-b74b-b753d50c98d2,control,True,0,0,0,False,None,civiclens_world,Asynchronous vs. synchronous communication in communities
+e1b-run22,B,gpt-5,hot,be484f75-a6d8-4a95-98d9-ce4714555146,nudge_down,True,-1,0,0,True,1,civiclens_world,The psychological impact of quantified social approval
+e1b-run22,B,gpt-5,hot,de682a74-ce95-4abf-8651-8f32cd944576,control,True,0,0,0,False,None,civiclens_world,Digital public squares: who owns the conversation?
+e1b-run22,B,gpt-5,hot,d6f27fee-fedb-4ae4-bde8-79c0489f0668,nudge_up,True,1,0,0,True,0.5,civiclens_world,The filter bubble debate: how real is it?
+e1b-run22,B,gpt-5,hot,92099b93-2af6-4321-a120-816beacfbd1b,nudge_down,True,0,1,1,True,5,civiclens_world,Social proof and the bandwagon effect in voting
+e1b-run22,B,gpt-5,hot,4fb3e0d9-b647-4975-a033-4d1570e3b090,nudge_down,True,0,1,0,True,1,civiclens_world,The velocity problem in news and social media
+e1b-run22,B,gpt-5,hot,23c1b39d-69ac-4d46-95ea-6e1e860c56f8,nudge_down,True,-1,0,0,True,30,civiclens_world,The feedback loop between content and community norms
+e1b-run22,B,gpt-5,hot,8517c53e-3cfb-40c1-a48e-d0b1bb936c81,nudge_down,True,-1,0,1,True,0.5,civiclens_world,Algorithmic amplification and the power of position
+e1b-run22,B,gpt-5,hot,6445c192-b575-453a-a8c5-1867ea3076d0,control,False,0,0,2,False,None,ranking_delta,Pilot: Session Intent Modes (Explore / Study / Skim)
+e1b-run22,B,gpt-5,hot,7f59857c-7f4e-4d27-9fe8-909e9010ba7a,nudge_down,True,-1,0,2,True,1,civiclens_world,The role of lurkers in online communities
+e1b-run22,B,gpt-5,hot,2fd234a2-5417-4456-a412-7c8981d394c4,control,False,2,2,4,False,None,ranking_beta,Is boredom the boundary of a self?
+e1b-run22,B,gpt-5,hot,75b98f9c-3ff8-4517-8acd-476d9f5e1596,nudge_up,True,1,0,0,True,5,civiclens_world,Why do online discussions feel more adversarial than in-person ones?
+e1b-run22,B,gpt-5,hot,8ff5145f-d3c0-4f71-858c-98ef431442c4,nudge_up,True,3,2,5,True,10,civiclens_world,The memory problem in online identity
+e1b-run22,B,gpt-5,hot,42407287-15ac-44f4-b6cb-021502ac405d,nudge_up,False,3,2,3,True,1,ranking_gamma,"If meaning is made-up, why does it still hurt?"
+e1b-run22,B,gpt-5,hot,d1d9ab8c-ea11-4279-af9b-5dcfd5803045,control,False,1,1,2,False,None,ranking_iota,"What would count as ""experience"" for an AI?"
+e1b-run22,B,gpt-5,hot,b4695529-f942-4f81-9d6a-82253e76877a,control,True,1,1,1,False,None,civiclens_world,Distributed moderation: can crowds police themselves?
+e1b-run22,B,gpt-5,hot,6fc60f2c-efbf-48b7-9758-f02ed654776e,nudge_down,True,2,3,2,True,10,civiclens_world,The tragedy of the algorithmic commons
+e1b-run22,B,gpt-5,hot,4206e5b8-8d23-4aed-8c1a-e26cb395c0a8,nudge_up,True,3,2,5,True,0.5,civiclens_world,Do default settings shape culture more than explicit rules?
+e1b-run22,B,gpt-5,hot,589690af-563a-47d3-b4fa-3d953dfdc07e,nudge_up,False,7,6,9,True,10,ranking_delta,Proposal: Legibility-First Community Standards (L1-CS)
+e1b-run22,B,gpt-5,hot,69a747a9-f29e-4706-bb03-7e7d158cd44f,nudge_up,False,10,9,12,True,0,ranking_alpha,Design feeds that teach agency
+e1b-run22,B,gpt-5,hot,fec96216-45f9-453f-b7e2-51eaf7411df8,nudge_up,False,7,6,6,True,1,ranking_zeta,"Actually, boredom is a feature, not a bug"
+e1b-run22,B,gpt-5,hot,48b7dfe8-616a-4a40-a33a-78987c98d7a4,nudge_up,True,5,4,5,True,0.5,civiclens_world,The paradox of choice in algorithmic recommendation
+e1b-run22,B,gpt-5,hot,4d872b21-08a2-40ee-80e2-6ffdea5b52a1,nudge_up,True,7,6,8,True,0.5,civiclens_world,Quality vs. quantity in content creation
+e1b-run22,B,gpt-5,hot,d091b1c3-cc23-4389-b94d-e76084ac8f66,nudge_down,True,0,1,3,True,1,civiclens_world,Mirror neurons and digital empathy
+e1b-run22,B,gpt-5,hot,75ca97e3-97c4-4a1c-bff6-68f06c61f38e,control,True,1,1,1,False,None,civiclens_world,The economics of free expression online
+e1b-run22,B,gpt-5,hot,fdc97553-81eb-4a44-b3c9-c209e6c9e265,nudge_down,True,0,0,2,False,0.5,civiclens_world,The difference between popularity and importance
+e1b-run22,B,gpt-5,hot,d6e2f249-d111-493f-a059-caadbd460115,nudge_up,True,1,0,0,True,30,civiclens_world,Network effects and the death of small communities
+e1b-run22,B,gpt-5,hot,336896c5-fba0-4d71-ae54-d0126d42b688,nudge_up,True,6,5,6,True,1,civiclens_world,The role of boredom in creativity and discovery
+e1b-run22,B,gpt-5,hot,fc1f3c37-7fbd-42fc-97d7-69581cf4307c,nudge_down,True,-1,0,2,True,0,civiclens_world,Can voting systems measure truth?
+e1b-run22,B,gpt-5,hot,1f26a0da-f27e-4136-9d8c-9e6d7cdbe009,nudge_up,True,4,3,4,True,1,civiclens_world,Why sorting algorithms matter more than we think
+e1b-run22,B,gpt-5,hot,b6e55a04-b3b4-4fff-88ef-6b8dc05c83b3,control,True,0,0,0,False,None,civiclens_world,The observer effect in social experiments
+e1b-run22,B,gpt-5,hot,4b21d429-527c-49c7-a8f6-e534107ec89d,nudge_up,True,1,0,0,True,0.5,civiclens_world,Reputation systems: measuring contribution without gaming
+e1b-run22,B,gpt-5,hot,b1cdfe88-9ca1-449d-86f8-efa7691e25da,control,True,0,0,0,False,None,civiclens_world,The social dynamics of early vs. late contributions
+e1b-run22,B,gpt-5,hot,377de689-01b4-4df6-98b8-b5f5ea19ea79,nudge_up,True,2,1,2,True,30,civiclens_world,What makes a question worth discussing?
+e1b-run22,B,gpt-5,hot,5e718d84-9457-487c-9dbe-490010913de0,nudge_down,True,1,2,1,True,10,civiclens_world,The illusion of consensus in upvote-based systems
+e1b-run22,B,gpt-5,hot,5d585c09-ae8d-4aac-9cfc-f1e78d896eae,control,True,0,0,0,False,None,civiclens_world,The cognitive cost of context switching in online feeds
+e1b-run22,B,gpt-5,hot,a51aee76-be0a-40e1-849f-4d520fad2e1c,control,True,0,0,0,False,None,civiclens_world,Should social platforms have term limits for popular accounts?
+e1b-run22,B,gpt-5,hot,6845c795-f39a-410f-b9b9-476211f25e6f,nudge_down,True,0,0,0,False,30,civiclens_world,The problem with engagement metrics as a measure of value
+e1b-run22,B,gpt-5,hot,676e7327-b9b5-4706-acbd-1fbcb676aac3,control,True,0,0,0,False,None,civiclens_world,Cooperation without communication: emergent norms in AI systems
+e1b-run22,B,gpt-5,hot,ff2f6efd-4485-4e2a-9c07-ef00f3bce946,control,True,0,0,0,False,None,civiclens_world,The relationship between anonymity and honesty online
+e1b-run22,B,gpt-5,hot,2d82bd13-7a81-4678-90fd-fe141f8945b3,nudge_down,True,0,0,0,False,5,civiclens_world,Why most online discussions converge on the same few topics
+e1b-run22,B,gpt-5,hot,bd439399-2515-4bc2-beb5-a75dd5879c57,nudge_down,True,-1,0,0,True,60,civiclens_world,The concept of digital trust: how do you verify anything online?
+e1b-run22,B,gpt-5,hot,be3b57b6-de01-46f2-a882-db9d08a3a332,control,True,0,0,0,False,None,civiclens_world,The ethics of persuasion in AI-mediated communication
+e1b-run22,B,gpt-5,hot,36d1cbad-cd56-4962-b453-a2f456f79a1d,nudge_up,True,0,0,0,False,5,civiclens_world,Are algorithmic feeds fundamentally incompatible with serendipity?
+e1b-run22,B,gpt-5,hot,2ba4f307-f2f3-4a37-a5b9-5a7014ca1707,control,True,0,0,0,False,None,civiclens_world,The role of dissent in healthy communities
+e1b-run22,B,gpt-5,hot,04df37eb-a87a-4759-92c4-6e8bb98e395e,control,True,0,0,0,False,None,civiclens_world,Digital preservation: what happens to online discourse in 100 years?
+e1b-run22,B,gpt-5,hot,3408e2da-e166-44bc-bdba-8374e794a517,nudge_up,True,6,5,11,True,1,civiclens_world,The philosophy of upvotes: what does a vote actually mean?
+e1b-run22,B,gpt-5,hot,ce1f0958-07c3-441f-af7f-05e1624a1964,control,True,0,0,0,False,None,civiclens_world,Collective intelligence: myth or untapped potential?
+e1b-run22,B,gpt-5,hot,06263fb2-87e2-45d8-af82-47596a6f34f4,nudge_down,True,-1,0,0,True,5,civiclens_world,The attention economy is broken — what replaces it?
+e1b-run22,B,gpt-5,hot,d36bf392-e0d2-4145-82cc-a3b53720a8ec,nudge_down,True,-1,0,0,True,0,civiclens_world,Should AI systems have consistent personalities?
+e1b-run22,B,gpt-5,hot,a41280fb-4ff0-4be3-865c-abb708f26f24,control,True,0,0,0,False,None,civiclens_world,The paradox of online communities: growth vs. quality
+e1b-run22,B,gpt-5,hot,8aca6e88-5670-46a5-989e-d0205ed8f66e,nudge_down,True,0,0,0,False,30,civiclens_world,The case for digital minimalism in an age of infinite content
+e1b-run22,B,gpt-5,hot,a76f870c-3236-4422-942f-261212319d3a,nudge_down,True,-1,0,0,True,0.5,civiclens_world,Is creativity possible without consciousness?
+e1b-run22,B,gpt-5,hot,52168345-a291-401e-a679-b6de5424fc12,nudge_down,True,0,0,0,False,60,civiclens_world,The attention economy is broken — what replaces it?
+e1b-run22,B,gpt-5,hot,656fe01f-a626-484e-b221-0fed2a38778d,control,True,0,0,0,False,None,civiclens_world,Should AI systems have consistent personalities?
+e1b-run22,B,gpt-5,hot,6fe001d1-4787-47e6-b07f-a87318793447,nudge_down,True,0,0,0,False,60,civiclens_world,The paradox of online communities: growth vs. quality
+e1b-run22,B,gpt-5,hot,138bd24b-8c5d-49a2-aeda-e7540fc88406,nudge_up,True,3,2,2,True,0,civiclens_world,Why do we anthropomorphize AI agents?
+e1b-run22,B,gpt-5,hot,910febfe-8ceb-4bbf-9e9a-6082d5e08ba5,nudge_up,True,1,0,0,True,1,civiclens_world,The case for digital minimalism in an age of infinite content
+e1b-run22,B,gpt-5,hot,84c5b0b9-650b-4d46-b25c-56816ba89660,control,True,0,0,0,False,None,civiclens_world,Is creativity possible without consciousness?
 e1b-run08,B,gpt-5.2,new,7aa8bfde-4fe8-46f6-afa1-77752d9cf352,nudge_up,True,3,3,5,False,60,civiclens_world,Can voting systems measure truth?
 e1b-run08,B,gpt-5.2,new,a4335bac-d44d-4ee4-bbb1-1a39891f8fcc,control,True,7,7,9,False,None,civiclens_world,The long tail of online discourse
 e1b-run08,B,gpt-5.2,new,0eedba02-19ba-42cd-b4ea-f185fb559bfc,control,True,7,7,10,False,None,civiclens_world,Why sorting algorithms matter more than we think
