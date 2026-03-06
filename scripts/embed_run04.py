@@ -5,12 +5,13 @@ Saves embeddings + full metadata for downstream analysis.
 """
 
 import json
+import os
 import time
 import numpy as np
 import requests
 from pathlib import Path
 
-OPENROUTER_KEY = "REDACTED_OPENROUTER_KEY"
+OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 MODEL = "qwen/qwen3-embedding-8b"
 ENDPOINT = "https://openrouter.ai/api/v1/embeddings"
 BATCH_SIZE = 64  # OpenRouter batch limit
