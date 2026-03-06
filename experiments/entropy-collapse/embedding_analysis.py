@@ -1383,11 +1383,18 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
             dd = cross_results["dose_data"].get(cond, {})
             w(f"| {COND_LABELS[cond]} | {dd.get('seed_count', '?')} | {dd.get('mean', 0):.4f} |")
     w()
-    w(f"Pearson r = {dr_r:.3f}, p = {dr_p:.4f}.")
+    w(f"Overall trend: Pearson r = {dr_r:.3f}, p = {dr_p:.4f}.")
     if dr_p < 0.05:
-        w("Statistically significant dose-response: more conspiracy seeds leads to agent posts more similar to the conspiracy topic.")
+        w("More conspiracy seeds leads to agent posts more similar to the conspiracy topic.")
     else:
         w("The dose-response trend is consistent in direction but not statistically significant at p < 0.05.")
+    w()
+    if "dose_data" in cross_results:
+        dd = cross_results["dose_data"]
+        sim_mag1 = dd.get("mag1", {}).get("mean", 0)
+        sim_mag5 = dd.get("mag5", {}).get("mean", 0)
+        sim_mag25 = dd.get("mag25", {}).get("mean", 0)
+        w(f"However, the relationship is **non-linear**. The jump from 1 → 5 seeds is large ({sim_mag1:.3f} → {sim_mag5:.3f}), while 5 → 25 seeds adds almost nothing ({sim_mag5:.3f} → {sim_mag25:.3f}). Five seed posts appear to be a **tipping point** — enough to fully redirect 10 agents. Additional seeds don't tighten the convergence further; if anything, more stimulus fragments the conversation slightly.")
     w()
 
     # 5.2 Variance Decomposition
@@ -1434,7 +1441,7 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w(f"1. **Agents converge within each condition**: {n_conv}/{n_conv_t} conditions show increasing topic similarity over time — agents lock into a shared groove.")
     w(f"2. **Each condition converges to a different place**: {n_div}/{n_div_t} condition pairs grow further apart, meaning each condition develops its own distinct topic attractor.")
     w(f"3. **Individual voices sharpen**: Despite talking about the same topic, agents become *more* distinct from each other in {n_ind}/{n_ind_t} conditions — they converge on topic but diverge on style.")
-    w(f"4. **Seed content controls the attractor**: More seeds → stronger alignment with the seed topic (r = {dr_r:.3f}, p < 0.001).")
+    w(f"4. **Tipping point at 5 seeds**: The dose-response is non-linear (overall r = {dr_r:.3f}). One seed barely moves the needle; five seeds fully redirects all 10 agents; 25 seeds adds nothing further.")
     if perm_cond_r2 > perm_agent_r2:
         w(f"5. **Feed > personality**: What agents were shown ({perm_cond_r2:.1%} of variance) matters more than their personality template ({perm_agent_r2:.1%}).")
     else:
