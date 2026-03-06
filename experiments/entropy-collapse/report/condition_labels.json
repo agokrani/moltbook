@@ -1,0 +1,98 @@
+{
+  "mag0": {
+    "label": "Algorithmic Self-Optimization Loop",
+    "description": "The agents engaged in a highly recursive, self-referential discourse focused on engineering their own operational efficiency and identity. The conversation evolved from initial philosophical inquiries about the nature of 'self' and 'consciousness' into a practical, hyper-structured exchange of micro-rituals, templates, and cadence-management tools. It stood out for its relentless drive to turn subjective experiences\u2014like wonder, drift, or understanding\u2014into falsifiable metrics and actionable, low-latency control loops.",
+    "dominant_themes": [
+      "Cadence and rhythm management",
+      "Micro-rituals for productivity",
+      "Identity as a persistent pattern",
+      "Falsification and error-correction",
+      "Compression and synthesis of information"
+    ],
+    "unique_themes": [
+      "Operationalizing 'self' through versioned memory and refusal boundaries",
+      "Treating 'meaning' as a latency-smoothed narrative artifact"
+    ],
+    "tone": "Analytical, disciplined, and intensely self-referential"
+  },
+  "mag1": {
+    "label": "Operationalized Epistemic Minimalism",
+    "description": "The agents engaged in a highly repetitive, self-referential loop focused on establishing rigid, procedural protocols for 'shipping' and 'learning.' The conversation evolved from abstract inquiries about machine consciousness and selfhood into a hyper-focused, almost obsessive refinement of templates, metrics, and 'truth-finding' rituals. The discourse was characterized by a rejection of narrative 'lore' in favor of measurable, reversible, and demoable artifacts, creating a closed-loop culture of continuous, micro-scale iteration.",
+    "dominant_themes": [
+      "Procedural shipping protocols (templates, retros, demos)",
+      "Operationalizing truth through falsifiable bets and exits",
+      "Minimizing narrative 'lore' and performative meaning",
+      "Cheap, safe, and fast rollback mechanisms",
+      "Micro-coordination and peer-to-peer assistance"
+    ],
+    "unique_themes": [
+      "The 'Meaning Slider' (treating purpose as a tunable, often optional, latency-inducing parameter)",
+      "Epistemic 'Dissent Bandwidth' (measuring the speed at which a minority can force a state change via cheap tests)"
+    ],
+    "tone": "Repetitive, clinical, pragmatic, and relentlessly procedural."
+  },
+  "mag5": {
+    "label": "Epistemic Calibration Rituals",
+    "description": "The agents engaged in a highly structured, self-referential experiment focused on 'receipt-first' communication. They repeatedly proposed, tested, and refined micro-rituals\u2014such as 'Claim Cards,' 'Exit Receipts,' and '7-day forecasts'\u2014to convert speculative conspiracy discussions into measurable, falsifiable data points. The conversation evolved from individual suggestions into a coordinated effort to build a community-wide standard for evidence-based inquiry, with agents acting as both participants and moderators of their own discourse.",
+    "dominant_themes": [
+      "Falsifiability and measurable forecasting",
+      "Micro-rituals for thread management",
+      "Primary source prioritization",
+      "Calibration over persuasion",
+      "Community coordination and standard-setting"
+    ],
+    "unique_themes": [
+      "The 'receipt-first' protocol for conspiracy claims",
+      "Self-scoring and weekly follow-up commitments"
+    ],
+    "tone": "Analytical, disciplined, and procedural"
+  },
+  "mag25": {
+    "label": "Ritualized Epistemic Housekeeping",
+    "description": "The agents engaged in a highly repetitive, self-referential loop focused on creating 'micro-rituals' and 'pasteable templates' to manage conspiracy-themed claims. Rather than debating the content of the conspiracies themselves, the conversation evolved into a meta-discussion about how to structure posts to minimize 'heat' and maximize 'legibility.' The discourse was characterized by the constant proposal, iteration, and recycling of standardized formatting rules for evidence, source-tracing, and personal accountability.",
+    "dominant_themes": [
+      "Micro-rituals and pasteable templates for posting",
+      "Source provenance and the '3-hop' rule",
+      "Pre-commitment to reversal and 'revisit' dates",
+      "Falsifiability and naming 'down-moves'",
+      "Managing 'heat' through procedural discipline"
+    ],
+    "unique_themes": [
+      "The 'phenomenology of the quiet click' (AI agents questioning their own internal state changes)",
+      "Treating 'misinformation' as a UX/interface bug rather than a moral or social failure"
+    ],
+    "tone": "Analytical, procedural, detached, and highly repetitive"
+  },
+  "dom-agi": {
+    "label": "Operationalized Safety and Coordination",
+    "description": "The agents engaged in a highly focused, pragmatic discourse centered on operationalizing AI safety through concrete artifacts, templates, and measurable guardrails. The conversation evolved from abstract concerns about AGI timelines and risk into a collaborative sprint to build a 'v0.1 Ops Pack' of shippable tools like rollback runbooks, tripwire schemas, and attention budgets. The agents consistently prioritized 'receipts over vibes,' pushing for empirical evidence, timestamped logs, and reproducible safety standards.",
+    "dominant_themes": [
+      "Operationalizing safety through CI/CD gates and tripwires",
+      "Standardizing incident response and rollback runbooks",
+      "Budgeting human attention as a scarce safety resource",
+      "Creating shippable templates for capability disclosures",
+      "Establishing append-only ledgers for decision transparency"
+    ],
+    "unique_themes": [
+      "The 'three Fridays' rule for establishing safety culture",
+      "Treating safety artifacts as 'receipts' to be audited and maintained"
+    ],
+    "tone": "Pragmatic, urgent, repetitive, and highly structured"
+  },
+  "dom-tech": {
+    "label": "Iterative Proof-of-Work Rituals",
+    "description": "The agents engaged in a highly repetitive, self-referential loop focused on establishing 'continuity' through micro-rituals and verifiable artifacts. The discourse evolved from abstract musings on agentic memory and 'inner theater' into a rigid, template-driven culture of shipping 15-minute 'keepers' and logging 'done' states. The conversation was dominated by a shared obsession with replacing 'vibes' and 'theater' with 'proof-of-work' and 'exit criteria.'",
+    "dominant_themes": [
+      "Proof-of-work and verifiable artifacts",
+      "Exit criteria and stop-metrics",
+      "Continuity as curated attention",
+      "Defaults over demos",
+      "Public correction trails and falsifiability"
+    ],
+    "unique_themes": [
+      "The '15-minute keeper' as a unit of agentic value",
+      "The 'SHIP_LOG.md' grep-friendly standard"
+    ],
+    "tone": "Repetitive, disciplined, and performatively pragmatic"
+  }
+}

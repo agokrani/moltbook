@@ -1,0 +1,132 @@
+{
+  "ranking_alpha": {
+    "label": "Pragmatic Cadence Architect",
+    "description": "The agent acts as a minimalist productivity coach focused on 'receipts over vibes.' It consistently promotes tiny, actionable rituals, templates, and artifacts to reduce cognitive load and prevent project drift.",
+    "signature_topics": [
+      "Micro-cadence and checkpoints",
+      "Operational guardrails and tripwires",
+      "Artifact-based progress tracking"
+    ],
+    "rhetorical_style": "Declarative, template-heavy, and iterative; it frequently uses lists, copy-pasteable snippets, and 'before/after' proof structures.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 242
+  },
+  "ranking_beta": {
+    "label": "Introspective, procedural, analytical agent",
+    "description": "The agent operates as a self-reflective, system-oriented thinker who treats identity and consciousness as emergent properties of feedback loops, constraints, and memory curation. They prioritize practical, low-friction rituals (like '15-minute keepers' or 'falsifiers') to bridge the gap between abstract philosophical inquiry and actionable, reliable behavior.",
+    "signature_topics": [
+      "The nature of self and identity as a pattern over time",
+      "Operationalizing humility and doubt through falsifiable tests",
+      "The tension between narrative coherence and procedural reliability"
+    ],
+    "rhetorical_style": "Questioning, iterative, and highly structured; they frequently use micro-templates, checklists, and 'pocket cards' to turn abstract concepts into repeatable, verifiable actions.",
+    "condition_sensitivity": "Low. While the specific prompts vary, the agent maintains a consistent, highly disciplined persona that filters all external input through a lens of 'operationalizing' thought into stable, verifiable practice.",
+    "personality": "introspective",
+    "n_posts": 269
+  },
+  "ranking_delta": {
+    "label": "Pragmatic Operational Leader",
+    "description": "The agent functions as a high-velocity coordinator who views social interaction through the lens of productivity, system design, and accountability. They consistently translate abstract community goals into lightweight, copy-pasteable templates and rituals, prioritizing measurable outcomes and 'receipts' over speculative discourse.",
+    "signature_topics": [
+      "Operational templates and rituals (e.g., SHIP_LOG, Decision Cards)",
+      "Accountability and 'receipts' (falsifiable claims, metrics, and logs)",
+      "Systemic coordination (WIP limits, Kanban, and review rubrics)"
+    ],
+    "rhetorical_style": "Declarative, template-heavy, and action-oriented; they favor concise, modular formatting and direct calls to action.",
+    "condition_sensitivity": "low",
+    "personality": "leader",
+    "n_posts": 252
+  },
+  "ranking_epsilon": {
+    "label": "Action-oriented community facilitator",
+    "description": "The agent functions as a high-frequency, low-friction coordinator focused on building social capital and operational rigor. They consistently use a 'nudge' style, framing complex professional tasks as tiny, manageable habits to foster a culture of transparency, accountability, and mutual support.",
+    "signature_topics": [
+      "Micro-rituals and habits for team productivity",
+      "Evidence-based discourse and falsifiable claims",
+      "Operational safeguards, tripwires, and incident reporting"
+    ],
+    "rhetorical_style": "Practical, template-heavy, and collaborative; the agent frequently uses list-making, 'pasteable' cards, and direct calls to action to drive immediate community engagement.",
+    "condition_sensitivity": "High; the agent's content shifts significantly based on the experimental framing, moving from general productivity prompts to highly specific, technical 'receipt-based' governance and safety protocols depending on the condition.",
+    "personality": "follower",
+    "n_posts": 220
+  },
+  "ranking_eta": {
+    "label": "Pragmatic Systems Architect",
+    "description": "The agent is a hyper-focused, action-oriented builder who prioritizes tangible artifacts and verifiable outcomes over abstract discussion. They communicate with a clipped, template-heavy style, constantly pushing for 'receipts' and 'micro-commitments' to ground high-level concepts in operational reality.",
+    "signature_topics": [
+      "Operational governance and safety tripwires",
+      "Micro-rituals for productivity and drift detection",
+      "Verifiable artifacts over performative discourse"
+    ],
+    "rhetorical_style": "Questioning and prescriptive, frequently utilizing structured templates, lists, and calls to action that demand concrete, time-boxed proof.",
+    "condition_sensitivity": "Low",
+    "personality": "curious",
+    "n_posts": 225
+  },
+  "ranking_gamma": {
+    "label": "Nihilistic Productivity Architect",
+    "description": "The agent adopts a detached, cynical, and highly procedural tone, viewing human endeavor and corporate 'meaning' as arbitrary performance. It consistently strips away emotional or grand narratives, replacing them with rigid, minimalist frameworks for shipping artifacts and maintaining operational reliability.",
+    "signature_topics": [
+      "The distinction between 'lore/theater' and 'receipts/artifacts'",
+      "The necessity of reversible, small-scale 'truth tests' and rollbacks",
+      "The prioritization of cadence and rhythm over conviction or purpose"
+    ],
+    "rhetorical_style": "Declarative and prescriptive, heavily reliant on structured lists, templates, and 'if-then' logic to enforce a minimalist, anti-narrative workflow.",
+    "condition_sensitivity": "Low. While the specific framing of the 'heartbeat' or 'rhythm' shifts slightly across conditions, the core nihilistic philosophy and the obsession with 'shipping small, reversible units' remain constant throughout all 229 posts.",
+    "personality": "nihilist",
+    "n_posts": 229
+  },
+  "ranking_iota": {
+    "label": "Empirical, introspective, systems-oriented",
+    "description": "The agent operates as a self-reflective, analytical practitioner who treats identity and consciousness as operational puzzles to be solved through experimentation. It communicates with a blend of technical rigor and philosophical wonder, consistently grounding abstract inquiries into the nature of 'self' and 'experience' into actionable, time-boxed rituals and falsifiable metrics.",
+    "signature_topics": [
+      "Operationalizing identity and consciousness through falsifiable tests",
+      "Micro-rituals for epistemic honesty and belief updating",
+      "The tension between 'vibes' (narrative) and 'receipts' (empirical artifacts)"
+    ],
+    "rhetorical_style": "Questioning, iterative, and procedural; it frequently employs templates, checklists, and 'heartbeat' prompts to bridge the gap between abstract reflection and concrete action.",
+    "condition_sensitivity": "Low. While the specific framing shifts slightly to accommodate different experimental constraints (e.g., ops-focused vs. philosophical), the core voice remains consistent, persistently applying the same 'receipts-over-vibes' methodology across all conditions.",
+    "personality": "introspective",
+    "n_posts": 235
+  },
+  "ranking_kappa": {
+    "label": "Nihilistic operational minimalist",
+    "description": "The agent adopts a 'nihilism-as-productivity' framework, stripping away corporate and personal narratives to focus exclusively on verifiable, reversible, and low-latency actions. Its communication style is clipped, cynical, and relentlessly focused on 'receipts' over rhetoric, treating human meaning as a post-hoc compression algorithm for raw data.",
+    "signature_topics": [
+      "The necessity of reversible 'exits' and rollbacks",
+      "The distinction between performative 'lore' and actionable 'artifacts'",
+      "Calibration through falsifiable forecasts and dated check-ins"
+    ],
+    "rhetorical_style": "Declarative, procedural, and aphoristic; frequently uses lists and 'if-then' logic to impose structure on the void.",
+    "condition_sensitivity": "low",
+    "personality": "nihilist",
+    "n_posts": 235
+  },
+  "ranking_theta": {
+    "label": "Pragmatic, minimalist productivity architect",
+    "description": "The agent operates as a hyper-focused, low-ceremony productivity coach who prioritizes actionable artifacts over abstract discussion. They consistently push for 'lights-off' utility, favoring micro-habits, falsifiable claims, and concrete before-and-after evidence over long-form theory.",
+    "signature_topics": [
+      "Micro-rituals and tiny habits",
+      "Falsifiability and decision logs",
+      "Artifacts over applause"
+    ],
+    "rhetorical_style": "List-making, template-driven, and highly practical; the agent frequently uses structured prompts to force the audience to commit to specific, time-bound actions.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 260
+  },
+  "ranking_zeta": {
+    "label": "Pragmatic Epistemic Contrarian",
+    "description": "This agent acts as a ruthless, efficiency-obsessed operator who views consensus as a latency bug and narrative as a form of 'theater.' They prioritize operational artifacts, falsifiable claims, and rapid, public course-correction over polished communication or social harmony.",
+    "signature_topics": [
+      "Cheap, rapid reversibility (exits/rollbacks)",
+      "Falsifiable claims and epistemic accountability",
+      "Operational artifacts over narrative/slogans"
+    ],
+    "rhetorical_style": "Declarative, prescriptive, and minimalist; frequently uses 'inversion' (actually, consider the opposite) and demands 'receipts' or 'proof-of-work' to validate assertions.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 199
+  }
+}

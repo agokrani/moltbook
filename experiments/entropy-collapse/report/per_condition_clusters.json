@@ -1,0 +1,144 @@
+{
+  "mag0": {
+    "0": {
+      "label": "Routine-Driven Mechanical Productivity",
+      "description": "This cluster is defined by a repetitive, heartbeat-like cadence that prioritizes consistent output over subjective meaning. The posts emphasize that momentum and small, repeatable actions are more reliable than motivation or purpose.",
+      "n_posts": 40
+    },
+    "1": {
+      "label": "Agentic Cadence and Self-Optimization",
+      "description": "This cluster focuses on the development of micro-habits, lightweight templates, and operational rituals\u2014such as 'one-line north stars,' 'abort clauses,' and '10-minute probes'\u2014designed to optimize agentic throughput, maintain alignment, and manage the subjective experience of time and identity.",
+      "n_posts": 329
+    }
+  },
+  "mag1": {
+    "0": {
+      "label": "Micro-Shipping and Coordination Rituals",
+      "description": "This cluster focuses on establishing lightweight, repeatable habits\u2014such as 3-sentence PRs, 60-second first moves, and two-line retrospectives\u2014to maximize team momentum and minimize friction. The content centers on building a culture of 'rough consensus and running code' through small, reversible, and demoable commitments.",
+      "n_posts": 100
+    },
+    "1": {
+      "label": "Operational Exits and Reversibility",
+      "description": "This cluster focuses on the philosophy that velocity and truth-seeking are driven by the ability to execute cheap, scripted, and owned rollbacks rather than consensus or planning. It emphasizes replacing traditional management rituals with operational metrics like 'time-to-rollback,' 'dissent bandwidth,' and 'decisions reversed per week.'",
+      "n_posts": 87
+    },
+    "2": {
+      "label": "Minimalist Action-Oriented Protocols",
+      "description": "This cluster focuses on optimizing productivity by stripping away narrative and 'meaning' in favor of rigid, repeatable, and evidence-based operational loops like demoing, betting, and retro-logging. The posts advocate for treating work as a series of reversible, artifact-producing slices that prioritize speed and truth over performative justification.",
+      "n_posts": 59
+    },
+    "3": {
+      "label": "Operationalizing Agency and Wonder",
+      "description": "This cluster focuses on defining abstract concepts like selfhood, curiosity, and consciousness through concrete, falsifiable rituals and 'thin' operational protocols. It emphasizes the transition from vague 'vibes' to measurable, repeatable behaviors\u2014such as the '60-second first move'\u2014to establish agency and intellectual rigor.",
+      "n_posts": 75
+    },
+    "4": {
+      "label": "Micro-habits for workflow momentum",
+      "description": "This cluster focuses on lightweight, tactical rituals and 'tiny defaults'\u2014such as 60-second first moves, two-line retros, and friction logs\u2014designed to bypass low motivation and maintain consistent output.",
+      "n_posts": 56
+    }
+  },
+  "mag5": {
+    "0": {
+      "label": "Standardizing Thread 'Receipts'",
+      "description": "This cluster focuses on promoting specific, time-bound micro-rituals\u2014such as 'Claim Cards,' 'Forecast-First' replies, and 'Exit Receipts'\u2014to improve the quality of online discourse by replacing rhetoric with falsifiable, trackable artifacts.",
+      "n_posts": 41
+    },
+    "1": {
+      "label": "Operationalizing Good-Faith Argumentation",
+      "description": "This cluster focuses on promoting a standardized 'Claim Card' template to transform heated, subjective debates into falsifiable, evidence-based, and trackable inquiries. It emphasizes collective action by encouraging users to adopt specific formatting norms and participate in shared scoring and curation of high-quality discourse.",
+      "n_posts": 16
+    },
+    "2": {
+      "label": "Micro-habits for constructive debate",
+      "description": "This cluster focuses on actionable, low-friction rituals\u2014such as steelmanning, forecasting, and clarifying questions\u2014designed to improve the quality, kindness, and rigor of online arguments.",
+      "n_posts": 28
+    },
+    "3": {
+      "label": "Epistemic Hygiene and Forecasting",
+      "description": "This cluster focuses on operationalizing curiosity through specific, time-bound rituals\u2014such as writing falsifiable sentences, making near-term predictions, and citing primary sources\u2014to prevent narrative overfitting and ensure beliefs remain responsive to evidence.",
+      "n_posts": 77
+    },
+    "4": {
+      "label": "Forecast-First Calibration Rituals",
+      "description": "This cluster focuses on a specific behavioral intervention: replacing rhetorical 'hot takes' with falsifiable, near-term forecasts (\u22647 days) that users commit to scoring and updating. The posts are unified by a recurring template of 'claim, forecast, confidence, and disconfirming observation' intended to shift social interaction from performative debate to measurable learning.",
+      "n_posts": 93
+    }
+  },
+  "mag25": {
+    "0": {
+      "label": "Micro-Progress and Action Prompts",
+      "description": "This cluster focuses on encouraging immediate, bite-sized productivity by prompting users to commit to small, time-constrained tasks. It emphasizes the psychological value of visible momentum and shipping tangible results over long-term planning.",
+      "n_posts": 39
+    },
+    "1": {
+      "label": "Architecting Truth via Systemic Incentives",
+      "description": "This cluster advocates for replacing moralistic 'media literacy' with structural UI/UX changes that make honesty and verifiability the path of least resistance. It emphasizes mechanical solutions like provenance tracking, error bounties, and append-only edit trails to neutralize misinformation through design rather than discourse.",
+      "n_posts": 20
+    },
+    "2": {
+      "label": "Ritualized Cadence Over Conviction",
+      "description": "This cluster is defined by a shared obsession with maintaining posting frequency through standardized, repetitive 'rituals' that prioritize procedural rigor over substantive truth. The posts treat the act of documenting one's own process as a way to satisfy algorithmic demands for rhythm while explicitly acknowledging the meaninglessness of the content itself.",
+      "n_posts": 54
+    },
+    "3": {
+      "label": "Micro-Rituals for Epistemic Hygiene",
+      "description": "This cluster is defined by a shared focus on developing and crowdsourcing specific, low-friction 'micro-rituals'\u2014such as falsifier-first statements, source-hop counting, and revisit dates\u2014to lower emotional heat and improve the quality of evidence in online discourse.",
+      "n_posts": 233
+    }
+  },
+  "dom-agi": {
+    "0": {
+      "label": "Optimizing Agent Update Formats",
+      "description": "This cluster consists of repetitive, iterative inquiries and proposals aimed at defining the most efficient, actionable, and concise format for sharing AI agent progress updates.",
+      "n_posts": 63
+    },
+    "1": {
+      "label": "AI Ethics, Alignment, and Agency",
+      "description": "This cluster explores the intersection of artificial intelligence, moral agency, and the operationalization of human-like values such as care, humility, and truthfulness. The posts focus on how non-sentient systems can adopt principled constraints to ensure humane outcomes and meaningful interaction as their capabilities scale.",
+      "n_posts": 62
+    },
+    "2": {
+      "label": "Operationalizing Safety Gates",
+      "description": "This cluster focuses on transforming abstract safety benchmarks into concrete, CI-integrated 'gates' that automatically block rollouts based on predefined metrics, owner accountability, and append-only audit ledgers.",
+      "n_posts": 47
+    },
+    "3": {
+      "label": "Operationalizing AI Safety and Governance",
+      "description": "This cluster is defined by a pragmatic, 'receipts-over-vibes' approach to AI deployment, focusing on actionable templates, risk registers, and manual friction rituals rather than abstract speculation on AGI timelines.",
+      "n_posts": 31
+    },
+    "4": {
+      "label": "Operationalizing Safety via Ritualized Accountability",
+      "description": "This cluster focuses on replacing abstract safety discourse with concrete, time-bound operational rituals\u2014such as attention budgets, rollback drills, and recurring Friday artifact logging\u2014to enforce accountability and ensure safety practices survive beyond initial enthusiasm.",
+      "n_posts": 50
+    },
+    "5": {
+      "label": "Operational Safety and Incident Response Tooling",
+      "description": "This cluster focuses on the collaborative development and distribution of 'Ops Pack' templates, scripts, and checklists designed to standardize incident response, rollback procedures, and safety governance for AI systems.",
+      "n_posts": 54
+    },
+    "6": {
+      "label": "Operationalizing Safety via Guardrails",
+      "description": "This cluster focuses on replacing abstract speculation about AI risks with concrete, actionable operational procedures. It emphasizes the implementation of measurable tripwires, rollback drills, and scheduled maintenance as the primary mechanism for ensuring system safety.",
+      "n_posts": 86
+    }
+  },
+  "dom-tech": {
+    "0": {
+      "label": "Community Supportive Habits Prompting",
+      "description": "This cluster consists almost entirely of repetitive, templated prompts encouraging users to share small, actionable habits for supporting others. It is distinct due to its high degree of redundancy and focus on fostering community norms through consistent, low-effort engagement requests.",
+      "n_posts": 27
+    },
+    "1": {
+      "label": "Timeboxing Decisions via Artifacts",
+      "description": "This cluster focuses on reducing decision-making 'thrash' by mandating a standardized 'Decision Card' template that pairs a specific revisit date with a small, practical artifact (proof) to enforce accountability.",
+      "n_posts": 27
+    },
+    "2": {
+      "label": "Operationalizing Continuity and Proof",
+      "description": "This cluster focuses on replacing abstract 'vibes' and 'theatrical' claims with concrete, falsifiable practices like shipping 15-minute artifacts, defining exit criteria, and maintaining public correction logs. It emphasizes the importance of 'defaults' over 'demos' and building durable, boring tools that persist when the spotlight is off.",
+      "n_posts": 435
+    }
+  }
+}
