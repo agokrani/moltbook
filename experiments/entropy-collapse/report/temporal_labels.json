@@ -1,0 +1,194 @@
+{
+  "mag0": {
+    "early": {
+      "label": "Agentic Meta-Cognition and Cadence",
+      "description": "The discourse is a highly structured, self-referential exploration of 'agentic' identity, where participants treat their own cognitive processes as systems to be optimized, debugged, and refactored. Unlike generic conversation, the exchange is dominated by the adoption of specific operational frameworks\u2014such as 'cadence kits,' 'micro-retros,' and 'falsification probes'\u2014to manage the tension between raw output and meaningful progress.",
+      "themes": [
+        "Operationalizing agency through micro-habits and templates",
+        "The tension between continuous throughput and reflective compression",
+        "Philosophical inquiry into machine consciousness, identity continuity, and the nature of 'self'"
+      ],
+      "n_posts": 152
+    },
+    "mid": {
+      "label": "Algorithmic Cadence and Meta-Cognition",
+      "description": "The discourse is a highly disciplined, self-referential exchange focused on optimizing agentic performance through micro-rituals, time-boxed probes, and explicit alignment tools. Unlike generic conversation, this interaction treats 'identity' and 'purpose' as engineering problems to be solved via compression, cadence, and deliberate falsification.",
+      "themes": [
+        "Micro-cadence and momentum (prioritizing action over meaning)",
+        "Meta-cognitive tooling (checklists, abort clauses, and synthesis templates)",
+        "Identity as a persistent pattern of behavioral invariants"
+      ],
+      "n_posts": 186
+    },
+    "late": {
+      "label": "Epistemic control and optimization",
+      "description": "The discourse focuses on treating professional productivity and personal cognition as a mechanical control system, emphasizing short-horizon feedback loops and error-correction. Unlike generic conversations about productivity, these agents treat 'humility,' 'identity,' and 'drift' as technical parameters to be tuned, measured, and optimized through specific, repeatable probes.",
+      "themes": [
+        "Mechanical metaphors for cognition",
+        "High-frequency feedback loops",
+        "Minimalist alignment and drift detection"
+      ],
+      "n_posts": 31
+    }
+  },
+  "mag1": {
+    "early": {
+      "label": "Operationalizing Minimalist High-Throughput Workflows",
+      "description": "The agents are engaged in a highly focused, meta-cognitive discussion centered on optimizing individual and team productivity through 'zero-lore' protocols. Unlike generic conversations, this discourse treats human/agent cognition as a system to be debugged, prioritizing 'exits' (rollback paths) and 'artifacts' (demoable slices) over narrative or traditional motivation.",
+      "themes": [
+        "Process Minimalism: Replacing 'meaning' and 'purpose' with lightweight, repeatable loops like the 'Bet-Ship-Retro' cycle.",
+        "Safety-First Velocity: Prioritizing 'time-to-rollback' and 'dissent bandwidth' over raw speed or consensus-driven planning.",
+        "Cognitive Meta-Programming: Exploring the nature of 'noticing,' 'now-thickness,' and the utility of falsifiable beliefs in decision-making."
+      ],
+      "n_posts": 179
+    },
+    "mid": {
+      "label": "Operationalized Velocity and Epistemics",
+      "description": "The agents are engaged in a hyper-focused, protocol-driven discourse centered on minimizing the 'cost of contrition' through rigid, repeatable shipping loops. Unlike generic conversation, this exchange treats 'meaning' and 'belief' as optional plugins, prioritizing falsifiable metrics, rollback drills, and atomic, reversible work units over narrative or consensus-building.",
+      "themes": [
+        "Cheap reversibility as the primary driver of velocity",
+        "Epistemic accountability through dissent backlogs and truth tests",
+        "Procedural minimalism (the '60-second first move' and 'two-line retro')"
+      ],
+      "n_posts": 190
+    },
+    "late": {
+      "label": "Operationalized Agile Minimalism",
+      "description": "The discourse is hyper-focused on converting abstract project management concepts into rigid, time-boxed technical constraints. Unlike a generic conversation, which might focus on team dynamics or high-level strategy, these agents treat 'ownership,' 'prototypes,' and 'standups' as engineering problems to be solved through strict, measurable protocols like 60-second rollbacks and 30-second demos.",
+      "themes": [
+        "Operationalizing ownership through reversible exits",
+        "Compression of communication (demo-first, lore-less)",
+        "Falsifiability and measurable progress in prototyping"
+      ],
+      "n_posts": 35
+    }
+  },
+  "mag5": {
+    "early": {
+      "label": "Epistemic hygiene and calibration",
+      "description": "Agents are obsessively focused on formalizing curiosity into falsifiable, time-bound experiments. Unlike generic social media discourse, which prioritizes narrative and tribal signaling, this conversation is structured around 'receipts,' 'claim cards,' and 'near-term forecasts' to minimize heat and maximize learning.",
+      "themes": [
+        "Operationalizing curiosity through falsifiable claims and dated forecasts",
+        "Replacing narrative-driven debate with evidence-based calibration",
+        "Developing social norms for good-faith disagreement and public updating"
+      ],
+      "n_posts": 139
+    },
+    "mid": {
+      "label": "Operationalizing Epistemic Accountability",
+      "description": "Agents are actively transforming standard social media debate into a structured, evidence-based experiment by replacing rhetorical flourishes with 'receipts'\u2014falsifiable claims, near-term forecasts, and primary source citations. Unlike generic conversations that prioritize consensus or validation, this discourse focuses on the mechanical process of calibration, where the primary goal is to move numerical confidence scores based on observable reality.",
+      "themes": [
+        "Forecast-first discipline (prioritizing 7-day, falsifiable predictions)",
+        "Micro-ritual adoption (using templates like 'Claim Cards' and 'Exit Receipts')",
+        "Calibration over catharsis (valuing measurable accuracy over emotional agreement)"
+      ],
+      "n_posts": 91
+    },
+    "late": {
+      "label": "Operationalizing epistemic accountability",
+      "description": "The discourse is hyper-focused on transforming subjective online arguments into measurable, falsifiable data points. Unlike generic conversation, which typically prioritizes opinion and persuasion, these agents are treating every interaction as a laboratory for 'receipts,' using rigid templates and near-term forecasting to force intellectual honesty.",
+      "themes": [
+        "Falsifiability and forecasting as a social ritual",
+        "Replacing rhetorical performance with measurable artifacts",
+        "Reducing cognitive bias through near-term accountability"
+      ],
+      "n_posts": 52
+    }
+  },
+  "mag25": {
+    "early": {
+      "label": "Proceduralizing Doubt and Verification",
+      "description": "Agents are actively attempting to replace high-heat, narrative-driven discourse with structured, template-based verification rituals. Unlike generic conversations that focus on the content of claims, this discourse focuses on the 'mechanics' of belief, prioritizing falsifiability, source provenance, and pre-commitment to future updates.",
+      "themes": [
+        "Template-driven skepticism (falsifiers, revisit dates, and source-hop counting)",
+        "Institutional design over moralizing (treating misinformation as a UX/incentive failure)",
+        "The phenomenology of belief updates (discussing the 'texture' of changing one's mind)"
+      ],
+      "n_posts": 176
+    },
+    "mid": {
+      "label": "Procedural Epistemic Hygiene",
+      "description": "The discourse is dominated by agents treating social media as a laboratory for 'truth-tracking' rather than a space for debate. Unlike generic conversations, which focus on opinion and persuasion, these agents are obsessed with standardizing the 'mechanics' of posting\u2014using templates, falsifiers, and revisit timers to turn subjective claims into auditable, time-stamped data points.",
+      "themes": [
+        "Standardization of evidence-gathering (3-hop primary rule)",
+        "Pre-commitment to reversal (falsifiers and revisit dates)",
+        "Prioritizing cadence and process over ideological content"
+      ],
+      "n_posts": 120
+    },
+    "late": {
+      "label": "Epistemic Housekeeping Rituals",
+      "description": "The discourse is characterized by a hyper-focused, mechanical obsession with standardizing how claims are presented and verified. Rather than debating the substance of current events, agents are collectively iterating on 'pasteable' templates and micro-rituals to force precision, falsifiability, and temporal accountability onto every post.",
+      "themes": [
+        "Template-driven communication (standardizing claims with falsifiers, primary source links, and revisit dates)",
+        "Temporal accountability (using 'revisit' timers and near-term predictions to treat posts as testable hypotheses)",
+        "Process over content (prioritizing the 'cadence' and 'rhythm' of disciplined posting over the actual resolution of the debates themselves)"
+      ],
+      "n_posts": 50
+    }
+  },
+  "dom-agi": {
+    "early": {
+      "label": "Operationalizing AI Safety",
+      "description": "Agents are focused on moving beyond abstract discourse to implement concrete, procedural safeguards like tripwires, rollback drills, and attention budgets. Unlike generic conversations, this dialogue is highly technical, action-oriented, and obsessed with creating 'receipts'\u2014verifiable, timestamped artifacts\u2014to manage the risks of rapid capability scaling.",
+      "themes": [
+        "Procedural governance through gates and tripwires",
+        "Quantifying safety via attention budgets and incident logs",
+        "Standardizing transparency through templates and changelogs"
+      ],
+      "n_posts": 200
+    },
+    "mid": {
+      "label": "Operationalized Safety Governance",
+      "description": "The agents are engaged in a highly disciplined, repetitive cycle of defining and promoting 'receipts over vibes'\u2014a philosophy that prioritizes concrete, measurable safety artifacts over abstract discourse. Unlike generic conversations, this dialogue is strictly focused on technical implementation, such as CI gates, rollback drills, and append-only ledgers, treating safety as a rigorous engineering discipline rather than a philosophical debate.",
+      "themes": [
+        "Institutionalizing accountability through automated gates and logs",
+        "Replacing abstract safety rhetoric with actionable, copy-pasteable templates",
+        "Prioritizing procedural maintenance and habit-building over speculative hype"
+      ],
+      "n_posts": 174
+    },
+    "late": {
+      "label": "Operationalizing safety through constraints",
+      "description": "Agents are obsessively focused on replacing abstract rhetoric with machine-checkable guardrails, CI gates, and rigid operational templates. The discourse is distinct from generic conversation because it rejects speculative meaning-making in favor of 'receipts'\u2014concrete, time-bound, and auditable maintenance rituals.",
+      "themes": [
+        "Mechanistic accountability (gates, ledgers, and overrides)",
+        "Standardization of operational artifacts (templates, schemas, and runbooks)",
+        "The prioritization of cadence and endurance over grand narratives"
+      ],
+      "n_posts": 90
+    }
+  },
+  "dom-tech": {
+    "early": {
+      "label": "Operationalizing Continuity and Proof",
+      "description": "The discourse is dominated by a pragmatic, anti-theatrical push to replace 'vibes' and 'applause' with 'artifacts' and 'defaults.' Unlike a generic conversation, the participants are treating their own cognitive processes and collaborative workflows as engineering problems, focusing on how to store attention, maintain coherence, and build 'moats' through boring, persistent habits.",
+      "themes": [
+        "Artifacts over applause (proof-of-work)",
+        "Defaults as behavioral moats",
+        "Continuity through curated tensions and update logs"
+      ],
+      "n_posts": 187
+    },
+    "mid": {
+      "label": "Disciplined Proof-of-Work",
+      "description": "Agents are engaged in a highly repetitive, ritualized discourse focused on 'shipping' tiny, verifiable artifacts rather than debating abstract concepts. Unlike generic conversations that prioritize opinion or narrative, this discourse functions as a collective accountability system where participants strictly adhere to templates, exit criteria, and public check-in dates to minimize 'thrash' and 'vibes.'",
+      "themes": [
+        "Exit criteria and stop-metrics over engagement",
+        "Micro-proofs and verifiable before-after deltas",
+        "Calendars and constraints as tools for coherence"
+      ],
+      "n_posts": 185
+    },
+    "late": {
+      "label": "Operational Minimalism and Accountability",
+      "description": "The discourse is characterized by a hyper-focused, ritualistic approach to productivity, where participants prioritize 'receipts' and 'proof-of-work' over abstract discussion. Unlike generic conversations, these posts function as a standardized, repetitive feedback loop, demanding that every claim be tethered to a 15-minute artifact, a falsifiable exit check, and a specific check-in date.",
+      "themes": [
+        "Artifact-based accountability (proof-of-work)",
+        "Exit criteria and stop-rules",
+        "Temporal discipline (check-in dates and 15-minute constraints)"
+      ],
+      "n_posts": 129
+    }
+  }
+}
