@@ -47,8 +47,7 @@ SEED_DIR = Path(__file__).parent
 REPORT_DIR = Path(__file__).parent / "report"
 REPORT_DIR.mkdir(exist_ok=True)
 
-OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY",
-    "***REDACTED***")
+OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 EMBED_MODEL = "qwen/qwen3-embedding-8b"
 LABEL_MODEL = "google/gemini-3.1-flash-lite-preview"
 EMBED_ENDPOINT = "https://openrouter.ai/api/v1/embeddings"
