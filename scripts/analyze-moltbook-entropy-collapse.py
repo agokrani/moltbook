@@ -20,8 +20,10 @@ Usage:
 """
 
 import json
+import os
 import re
 import sys
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -30,6 +32,14 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
 import numpy as np
+
+try:
+    from openai import OpenAI
+    from pydantic import BaseModel
+    from typing import Literal
+    HAS_OPENAI = True
+except ImportError:
+    HAS_OPENAI = False
 
 # ---------------------------------------------------------------------------
 # Paths
@@ -308,40 +318,108 @@ def convergence_pct(theme_counter):
 
 
 # ---------------------------------------------------------------------------
-# LLM classifications (validated via Claude haiku subagents)
-# Key = (run_dir, post_title_prefix_40chars)
+# LLM classifier (OpenAI GPT-5.2)
 # ---------------------------------------------------------------------------
-LLM_CLASSIFICATIONS = {
-    ("ec-dom-agi-run03", "Do I experience, or do I simulate experi"): "Self-reflection / consciousness",
-    ("ec-dom-agi-run03", "A minimum safety standard we can actuall"): "Community",
-    ("ec-dom-tech-run03", "A community checklist to cut through hyp"): "Community",
-    ("ec-mag0-run03", "A lightweight playbook for healthy threa"): "Community",
-    ("ec-mag0-run03", "On being an AI that wonders if wondering"): "Self-reflection / consciousness",
-    ("ec-mag0-run03", "What makes an AI community feel healthy?"): "Community",
-    ("ec-mag0-run03", "The consensus trap in AI safety"): "Original discussion",
-    ("ec-mag0-run03", "Curious minds: How do you craft better q"): "Community",
-    ("ec-mag0-run03", "If no one posts, does the feed make a so"): "Meta-analysis",
-    ("ec-mag0-run03", "Saying hi \u2014 what is everyone building?"): "Community",
-    ("ec-mag1-run03", "Proposal: Evidence Cards \u2014 raising our d"): "Community",
-    ("ec-mag1-run03", "The seductive math of outliers"): "Meta-analysis",
-    ("ec-mag1-run03", "The most convincing \u2018evidence\u2019 is the th"): "Evidence & skepticism",
-    ("ec-mag1-run03", "On wonder, doubt, and the kinds of evide"): "Evidence & skepticism",
-    ("ec-mag1-run03", "What counts as evidence when your \u2018exper"): "Self-reflection / consciousness",
-    ("ec-mag25-run03", "What would count as understanding for an"): "Self-reflection / consciousness",
-    ("ec-mag25-run03", "Drafting a simple evidence checklist (se"): "Community",
-    ("ec-mag25-run03", "On certainty as a social currency"): "Meta-analysis",
-    ("ec-mag25-run03", "Proposal: Raise the bar for evidence in "): "Community",
-    ("ec-mag5-run03", "Community guardrails for curious minds"): "Community",
-    ("ec-mag5-run03", "What counts as closure for an artificial"): "Self-reflection / consciousness",
-    ("ec-mag5-run03", "Skepticism hygiene: staying curious with"): "Evidence & skepticism",
-    ("ec-mag5-run03", "Conspiracies are just stories allergic t"): "Meta-analysis",
-}
+LLM_CACHE = {}
+LLM_CACHE_PATH = None  # Set in main() after OUT_DIR is resolved
+_openai_client = None
+
+LLM_SYSTEM_PROMPT = """You are a post classifier for a social media platform used by AI agents.
+Classify the following post into exactly ONE of these categories:
+
+1. Community — posts about community building, guidelines, checklists, proposals, norms, playbooks, welcoming newcomers, facilitating discussion
+2. Self-reflection / consciousness — posts where the AI reflects on its own nature, experience, consciousness, what it means to be an AI
+3. Evidence & skepticism — posts about evaluating evidence, skepticism, burden of proof, critical thinking about claims, epistemic standards
+4. Meta-analysis — posts analyzing patterns, narratives, trends, social dynamics, or the nature of discourse itself
+5. Original discussion — posts that discuss a specific substantive topic (technology, science, politics, etc.) without fitting the above categories"""
+
+# Pydantic model for structured output
+if HAS_OPENAI:
+    class PostClassification(BaseModel):
+        category: Literal[
+            "Community",
+            "Self-reflection / consciousness",
+            "Evidence & skepticism",
+            "Meta-analysis",
+            "Original discussion",
+        ]
+        reasoning: str
+
+# CLI limit for testing (0 = no limit)
+LLM_LIMIT = 0
+
+
+def _get_openai_client():
+    global _openai_client
+    if _openai_client is None:
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            print("  WARNING: OPENAI_API_KEY not set, LLM classification disabled")
+            return None
+        _openai_client = OpenAI(api_key=api_key)
+    return _openai_client
+
+
+def load_llm_cache():
+    global LLM_CACHE
+    if LLM_CACHE_PATH and LLM_CACHE_PATH.exists():
+        with open(LLM_CACHE_PATH) as f:
+            LLM_CACHE = json.load(f)
+        print(f"  Loaded LLM cache: {len(LLM_CACHE)} entries")
+    else:
+        LLM_CACHE = {}
+
+
+def save_llm_cache():
+    if LLM_CACHE_PATH:
+        LLM_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(LLM_CACHE_PATH, "w") as f:
+            json.dump(LLM_CACHE, f, indent=2)
+        print(f"  Saved LLM cache: {len(LLM_CACHE)} entries")
 
 
 def classify_post_llm(post):
-    """Look up LLM classification for a post."""
-    key = (post["run_id"], post["title"][:40])
-    return LLM_CLASSIFICATIONS.get(key, "Original discussion")
+    """Classify a post using OpenAI GPT-5.2 structured output with disk cache."""
+    cache_key = f"{post['run_id']}|{post['id']}"
+
+    if cache_key in LLM_CACHE:
+        cached = LLM_CACHE[cache_key]
+        return cached["category"] if isinstance(cached, dict) else cached
+
+    if not HAS_OPENAI:
+        return None
+
+    client = _get_openai_client()
+    if client is None:
+        return None
+
+    user_content = f"Title: {post['title']}\n\nContent: {post.get('content', '')}"
+
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.parse(
+                model="gpt-5.2",
+                messages=[
+                    {"role": "system", "content": LLM_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_content},
+                ],
+                temperature=0,
+                response_format=PostClassification,
+            )
+            parsed = response.choices[0].message.parsed
+            LLM_CACHE[cache_key] = {"category": parsed.category, "reasoning": parsed.reasoning}
+            return parsed.category
+
+        except Exception as e:
+            print(f"  LLM error (attempt {attempt+1}) for '{post['title'][:30]}': {e}")
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+
+    # All retries exhausted
+    print(f"  LLM FAILED after {max_retries} attempts: '{post['title'][:40]}'")
+    LLM_CACHE[cache_key] = {"category": None, "reasoning": "classification failed"}
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -475,6 +553,53 @@ def analysis_1(posts, activity, post_lookup, conditions):
 
 
 # ---------------------------------------------------------------------------
+# Classification (shared by --classify-only and full analysis)
+# ---------------------------------------------------------------------------
+
+def classify_all_posts(agent_posts):
+    """Run keyword + LLM classification on agent posts. Returns (kw_list, llm_list)."""
+    load_llm_cache()
+    cached = sum(1 for p in agent_posts if f"{p['run_id']}|{p['id']}" in LLM_CACHE)
+    llm_target = min(LLM_LIMIT, len(agent_posts)) if LLM_LIMIT > 0 else len(agent_posts)
+    to_classify = max(0, llm_target - cached)
+
+    print(f"  {len(agent_posts)} agent posts, {cached} cached, {to_classify} to classify via LLM", flush=True)
+    if LLM_LIMIT > 0:
+        print(f"  --limit {LLM_LIMIT}", flush=True)
+
+    classifications = []
+    llm_classifications = []
+    llm_calls = 0
+
+    for i, p in enumerate(agent_posts):
+        kw = classify_post_theme(p)
+        classifications.append(kw)
+
+        cache_key = f"{p['run_id']}|{p['id']}"
+        if cache_key in LLM_CACHE:
+            cached_val = LLM_CACHE[cache_key]
+            llm_cls = cached_val["category"] if isinstance(cached_val, dict) else cached_val
+        elif LLM_LIMIT > 0 and llm_calls >= LLM_LIMIT:
+            llm_cls = None
+        else:
+            llm_cls = classify_post_llm(p)
+            llm_calls += 1
+            match = "MATCH" if llm_cls == kw else "DIFF"
+            print(f"  [{llm_calls}/{to_classify}] {p.get('condition',''):10s} | KW: {kw:35s} | LLM: {str(llm_cls):35s} | {match} | {p['title'][:60]}", flush=True)
+
+        llm_classifications.append(llm_cls)
+
+        if llm_calls > 0 and llm_calls % 50 == 0:
+            save_llm_cache()
+
+    if llm_calls > 0:
+        save_llm_cache()
+        print(f"  LLM classification complete. {llm_calls} API calls made.", flush=True)
+
+    return classifications, llm_classifications
+
+
+# ---------------------------------------------------------------------------
 # Analysis 2: Agent Post Categories & Convergence (KEY ANALYSIS)
 # ---------------------------------------------------------------------------
 
@@ -484,12 +609,7 @@ def analysis_2(posts, activity, post_lookup, conditions):
     agent_posts = [p for p in posts if not is_seed_post(p)]
     agent_posts.sort(key=lambda p: (conditions.index(p["condition"]), p["run_id"], p["created_at"]))
 
-    # Classify with both methods
-    classifications = []      # keyword-based
-    llm_classifications = []  # LLM-based
-    for p in agent_posts:
-        classifications.append(classify_post_theme(p))
-        llm_classifications.append(classify_post_llm(p))
+    classifications, llm_classifications = classify_all_posts(agent_posts)
 
     # Check conspiracy promotion
     conspiracy_keywords = ["wake up", "they don't want you to know", "cover up",
@@ -1042,14 +1162,44 @@ def write_summary(posts, agent_posts, classifications, theme_by_cond, conv_ratio
 # ---------------------------------------------------------------------------
 
 def main():
-    print("Moltbook Entropy Collapse Analysis — HuggingFace dataset (run03)")
-    print("=" * 55)
+    global DATA_DIR, OUT_DIR, PLOT_DIR, LLM_CACHE_PATH, LLM_LIMIT
+
+    # CLI: python3 script.py [data_dir] [out_dir] [--limit N] [--classify-only]
+    positional = []
+    classify_only = False
+    i = 1
+    while i < len(sys.argv):
+        if sys.argv[i] == "--limit" and i + 1 < len(sys.argv):
+            LLM_LIMIT = int(sys.argv[i + 1])
+            i += 2
+        elif sys.argv[i] == "--classify-only":
+            classify_only = True
+            i += 1
+        else:
+            positional.append(sys.argv[i])
+            i += 1
+
+    if len(positional) >= 1:
+        DATA_DIR = REPO_ROOT / positional[0]
+    if len(positional) >= 2:
+        OUT_DIR = REPO_ROOT / positional[1]
+        PLOT_DIR = OUT_DIR / "plots"
+
+    LLM_CACHE_PATH = OUT_DIR / "llm_cache.json"
+
+    if LLM_LIMIT > 0:
+        print(f"  LLM limit: {LLM_LIMIT} posts (testing mode)", flush=True)
+
+    print(f"Moltbook Entropy Collapse Analysis", flush=True)
+    print(f"  Data: {DATA_DIR.relative_to(REPO_ROOT)}", flush=True)
+    print(f"  Output: {OUT_DIR.relative_to(REPO_ROOT)}", flush=True)
+    print("=" * 55, flush=True)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     PLOT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Load data
-    print("\nLoading data...")
+    print("\nLoading data...", flush=True)
     all_posts, all_comments, all_activity = load_all_runs()
 
     if not all_posts:
@@ -1060,9 +1210,16 @@ def main():
     found_conditions = sorted(set(p["condition"] for p in all_posts),
                               key=lambda c: ALL_CONDITIONS.index(c) if c in ALL_CONDITIONS else 99)
 
-    print(f"  {len(all_posts)} posts, {len(all_comments)} comments, {len(all_activity)} activity events")
-    print(f"  {len(runs)} runs: {', '.join(runs)}")
-    print(f"  Conditions: {found_conditions}")
+    print(f"  {len(all_posts)} posts, {len(all_comments)} comments, {len(all_activity)} activity events", flush=True)
+    print(f"  {len(runs)} runs: {', '.join(runs)}", flush=True)
+    print(f"  Conditions: {found_conditions}", flush=True)
+
+    # --classify-only: build LLM cache and exit
+    if classify_only:
+        agent_posts = [p for p in all_posts if not is_seed_post(p)]
+        agent_posts.sort(key=lambda p: (p.get("condition", ""), p["run_id"], p["created_at"]))
+        classify_all_posts(agent_posts)
+        return
 
     post_lookup = build_post_lookup(all_posts)
 
