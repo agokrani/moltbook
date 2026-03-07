@@ -417,8 +417,12 @@ def analyze_single_condition(embeddings, meta, condition):
     return results
 
 
-def _plot_condition_umap(X_umap, labels, cond_meta, condition, n_clusters):
-    """Generate per-condition UMAP figure colored by cluster."""
+def _plot_condition_umap(X_umap, labels, cond_meta, condition, n_clusters,
+                         cluster_name_map=None):
+    """Generate per-condition UMAP figure colored by cluster.
+
+    cluster_name_map: optional dict mapping cluster id (str) -> label string
+    """
     n = len(X_umap)
     fig, ax = plt.subplots(figsize=(8, 7))
 
@@ -433,15 +437,26 @@ def _plot_condition_umap(X_umap, labels, cond_meta, condition, n_clusters):
     for i, cl in enumerate(unique_labels):
         cl_mask = labels == cl
         color = CLUSTER_PALETTE[i % len(CLUSTER_PALETTE)]
+        # Use LLM-generated name if available
+        if cluster_name_map and str(cl) in cluster_name_map:
+            cl_name = cluster_name_map[str(cl)].get("label", f"Cluster {cl}")
+        else:
+            cl_name = f"Cluster {cl}"
         ax.scatter(X_umap[cl_mask, 0], X_umap[cl_mask, 1],
                    c=color, alpha=0.5, s=15, edgecolors="none",
-                   label=f"Cluster {cl} ({cl_mask.sum()})")
+                   label=f"{cl_name} ({cl_mask.sum()})")
+        # Add text label at cluster centroid
+        cx = X_umap[cl_mask, 0].mean()
+        cy = X_umap[cl_mask, 1].mean()
+        ax.annotate(cl_name, (cx, cy), fontsize=7, fontweight="bold",
+                    ha="center", va="center",
+                    bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.7))
 
     ax.set_xlabel("UMAP 1")
     ax.set_ylabel("UMAP 2")
     ax.set_title(f"{COND_LABELS[condition]} — {n} posts, {n_clusters} clusters",
                  fontsize=13, fontweight="bold")
-    ax.legend(fontsize=8, markerscale=1.5, loc="best")
+    ax.legend(fontsize=7, markerscale=1.5, loc="best")
     fig.tight_layout()
     fig.savefig(REPORT_DIR / f"fig_cond_{condition}_umap.png", bbox_inches="tight")
     plt.close(fig)
@@ -1528,6 +1543,16 @@ def main():
     agent_labels = label_agents(meta)
     temporal_labels = label_temporal(meta)
     cluster_labels = label_per_condition_clusters(meta, embeddings, per_cond)
+
+    # Re-generate UMAP plots with cluster names
+    print("\n  Re-generating UMAP plots with cluster labels...")
+    for cond in COND_ORDER:
+        pc = per_cond[cond]
+        cond_mask = meta["condition"] == cond
+        cond_meta = {k: meta[k][cond_mask] for k in meta}
+        name_map = cluster_labels.get(cond, {})
+        _plot_condition_umap(pc["X_umap"], pc["cluster_labels"], cond_meta,
+                             cond, pc["n_clusters"], cluster_name_map=name_map)
 
     # Stage 3: Cross-condition comparison (original embedding space)
     cross_results = cross_condition_comparison(embeddings, meta, seed_embs, seed_topics)
