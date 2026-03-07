@@ -755,8 +755,8 @@ def cross_condition_comparison(embeddings, meta, seed_embs, seed_topics):
             results["dose_response_p"] = p
 
             ax.set_xlabel("Number of Conspiracy Seed Posts", fontsize=12)
-            ax.set_ylabel("Mean Cosine Similarity to\nConspiracy Seed Centroid", fontsize=12)
-            ax.set_title(f"Dose-Response: Seed Count vs Topic Similarity\n(Pearson r = {r:.3f}, p = {p:.4f})",
+            ax.set_ylabel("How Similar Posts Are to\nConspiracy Seed Content", fontsize=12)
+            ax.set_title(f"Do More Seeds Make Posts More Conspiracy-Like?\n(correlation r = {r:.3f}, p = {p:.4f})",
                          fontsize=14, fontweight="bold")
             ax.set_xticks(x_vals)
             fig.tight_layout()
@@ -921,8 +921,8 @@ def temporal_dynamics(embeddings, meta):
     ax.set_xticks(range(len(windows)))
     ax.set_xticklabels(win_labels)
     ax.set_xlabel("Time Window", fontsize=12)
-    ax.set_ylabel("Mean Pairwise Cosine Similarity", fontsize=12)
-    ax.set_title("Within-Condition Convergence Over Time", fontsize=14, fontweight="bold")
+    ax.set_ylabel("Topic Similarity (higher = more similar posts)", fontsize=12)
+    ax.set_title("How Similar Are Posts Within Each Condition Over Time?", fontsize=14, fontweight="bold")
     ax.legend(fontsize=9)
     fig.tight_layout()
     fig.savefig(REPORT_DIR / "fig_convergence_over_time.png", bbox_inches="tight")
@@ -951,7 +951,8 @@ def temporal_dynamics(embeddings, meta):
                c1 in late_centroids and c2 in late_centroids:
                 d_early = cosine_dist(early_centroids[c1], early_centroids[c2])
                 d_late = cosine_dist(late_centroids[c1], late_centroids[c2])
-                divergence.append({"pair": f"{c1} vs {c2}", "early": d_early,
+                divergence.append({"pair": f"{COND_LABELS[c1]}\nvs {COND_LABELS[c2]}",
+                                   "early": d_early,
                                    "late": d_late, "change": d_late - d_early})
     results["cross_cond_divergence"] = divergence
 
@@ -964,8 +965,8 @@ def temporal_dynamics(embeddings, meta):
     ax.scatter(early_dists, late_dists, s=80, c="#0277BD", alpha=0.7,
                edgecolors="white", zorder=5)
     for d in divergence:
-        ax.annotate(d["pair"].replace(" vs ", "\nvs "), xy=(d["early"], d["late"]),
-                    fontsize=6.5, ha="center", va="bottom",
+        ax.annotate(d["pair"], xy=(d["early"], d["late"]),
+                    fontsize=5.5, ha="center", va="bottom",
                     xytext=(0, 6), textcoords="offset points")
     n_above = sum(1 for d in divergence if d["change"] > 0)
     ax.set_xlabel("Early-Phase Distance (0-15 min)", fontsize=12)
@@ -1020,8 +1021,8 @@ def temporal_dynamics(embeddings, meta):
                 color="#2E7D32" if change > 0 else "#C62828")
     ax.set_xticks(x)
     ax.set_xticklabels([COND_LABELS[c] for c in COND_ORDER], rotation=20, ha="right")
-    ax.set_ylabel("Mean Inter-Agent Cosine Distance")
-    ax.set_title("Agent Individuality Over Time", fontsize=14, fontweight="bold")
+    ax.set_ylabel("How Different Agents Are From Each Other")
+    ax.set_title("Do Agent Voices Get More Distinct Over Time?", fontsize=14, fontweight="bold")
     ax.legend()
     fig.tight_layout()
     fig.savefig(REPORT_DIR / "fig_agent_individuality.png", bbox_inches="tight")

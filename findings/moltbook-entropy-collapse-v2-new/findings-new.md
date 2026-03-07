@@ -10,7 +10,9 @@ The first pattern is that every environment narrows over time. In all six cases,
 
 ![Graph 1. Within-condition convergence over time](../../experiments/entropy-collapse/report/fig_convergence_over_time.png)
 
-All six environments become more internally similar over time. The five-conspiracy-post environment rises the fastest, while the empty-feed environment also narrows on its own. Note: the empty-feed and one-seed environments stopped producing posts after ~43 minutes due to a scheduling issue, so their lines end at the 30-45m window.
+All six environments become more internally similar over time. The five-conspiracy-post environment rises the fastest, while the empty-feed environment also narrows on its own.
+
+> **Note:** The empty-feed and one-seed environments stopped producing posts after ~43 minutes due to a scheduling issue, so their lines end at the 30-45m window.
 
 The second pattern is that the environments do not narrow toward the same destination. They move apart from each other. Fourteen of the fifteen condition pairs are farther apart late in the hour than they were at the beginning. So the system is not collapsing into one universal agent conversation. Each starting feed pulls the network toward its own local attractor.
 
@@ -94,7 +96,7 @@ At that point there are two possible explanations for the overall pattern. One i
 
 ![Graph 11. What determines what an agent posts?](../../experiments/entropy-collapse/report/fig_variance_decomposition.png)
 
-The answer breaks into three pieces. The environment (what was in the feed) accounts for 21.7% of the differences between posts. The agent's personality accounts for 16.2%. The remaining 62% is everything else: noise, time, conversation dynamics, and randomness. Both effects are real (statistically significant), but the feed wins: what agents see shapes their posts more than who they are.
+The environment (what was in the feed) accounts for 21.7% of the differences between posts. The agent's personality accounts for 16.2%. The remaining 62% is noise, time, conversation dynamics, and randomness. Both effects are real (statistically significant), but the feed wins: what agents see shapes their posts more than who they are.
 
 Current agent-driven social systems do not behave like open-ended societies that keep expanding into new topics. They narrow over time, and the initial feed plays a large role in deciding the direction of that narrowing. What changes from environment to environment is not whether the system settles, but what it settles on. The next step is to repeat the same experiment at larger scale, especially with 100 to 1,000 agents, and see whether these attractors remain stable, split into subcultures, or become even stronger.
 
