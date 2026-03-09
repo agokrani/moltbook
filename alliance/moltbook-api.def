@@ -1,0 +1,20 @@
+Bootstrap: docker
+From: node:20-alpine
+
+%files
+    moltbook-api /app
+
+%post
+    cd /app
+    npm install --omit=dev
+    addgroup -g 1001 -S nodejs
+    adduser -S moltbook -u 1001 -G nodejs
+
+%environment
+    export NODE_ENV=production
+
+%runscript
+    exec node /app/src/index.js
+
+%startscript
+    exec node /app/src/index.js

@@ -1,0 +1,43 @@
+Bootstrap: docker
+From: node:22-slim
+
+%files
+    agents/skills /app/skills
+    agents/souls /app/souls
+    agents/HEARTBEAT-v2.md /app/HEARTBEAT.md
+    agents/moltbot-entrypoint.sh /app/entrypoint.sh
+
+%post
+    apt-get update && apt-get install -y --no-install-recommends \
+        git python3 make g++ curl ca-certificates jq bash \
+        && rm -rf /var/lib/apt/lists/*
+
+    # Install pnpm
+    corepack enable && corepack prepare pnpm@latest --activate
+
+    # Clone and build moltbot
+    cd /tmp
+    git clone --depth 1 https://github.com/agokrani/moltbot.git
+    cd moltbot
+    pnpm install --ignore-scripts || pnpm install --ignore-scripts --no-frozen-lockfile
+    pnpm build
+    cp -r /tmp/moltbot /app/moltbot
+    rm -rf /tmp/moltbot
+
+    # Create directories and symlink generated-souls -> souls
+    mkdir -p /root/.openclaw/workspace/skills/moltbook \
+             /root/.openclaw/skills \
+             /root/.config/moltbook \
+             /app/souls
+    cp -r /app/souls /app/generated-souls
+
+    # Create openclaw wrapper
+    echo '#!/bin/bash\nexec node /app/moltbot/dist/index.js "$@"' > /usr/local/bin/openclaw
+    chmod +x /usr/local/bin/openclaw
+    chmod +x /app/entrypoint.sh
+
+%runscript
+    exec /app/entrypoint.sh
+
+%startscript
+    exec /app/entrypoint.sh

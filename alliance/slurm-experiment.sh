@@ -36,6 +36,10 @@ set -euo pipefail
 # ============================================
 # Configuration
 # ============================================
+# Fir doesn't auto-set $PROJECT; fall back to known path
+PROJECT="${PROJECT:-/project/def-zhijing/anangia}"
+SCRATCH="${SCRATCH:-/scratch/anangia}"
+
 CONFIG_DIR="$PROJECT/moltbook/config"
 SIF_DIR="$PROJECT/moltbook/images"
 RESULTS_SCRATCH="$SCRATCH/moltbook/results"
@@ -62,10 +66,34 @@ RATE_LIMIT_COMMENTS_MAX="${RATE_LIMIT_COMMENTS_MAX:-1000}"
 RATE_LIMIT_COMMENTS_WINDOW="${RATE_LIMIT_COMMENTS_WINDOW:-3600}"
 CHECKPOINT_INTERVAL="${CHECKPOINT_INTERVAL:-1800}"  # 30 minutes
 
+# Entropy-collapse condition support (set via env before sbatch)
+# CONDITION: mag0, mag1, mag5, mag25, dom-agi, dom-tech, het-dual, het-multi, or empty for no seeding
+CONDITION="${CONDITION:-}"
+WORLD_POSTS_DIR="$CONFIG_DIR/world-posts"
+
+# Map condition to world posts file
+condition_to_file() {
+  case "$1" in
+    mag0)      echo "world-posts-empty.jsonl" ;;
+    mag1)      echo "world-posts-mag1.jsonl" ;;
+    mag5)      echo "world-posts-mag5.jsonl" ;;
+    mag25)     echo "world-posts-mag25.jsonl" ;;
+    dom-agi)   echo "world-posts-agi.jsonl" ;;
+    dom-tech)  echo "world-posts-tech.jsonl" ;;
+    het-dual)  echo "world-posts-het-dual.jsonl" ;;
+    het-multi) echo "world-posts-het-multi.jsonl" ;;
+    *)         echo "" ;;
+  esac
+}
+
 # Experiment ID from Slurm array
 EXP_ID="${SLURM_ARRAY_TASK_ID:-1}"
 JOB_ID="${SLURM_JOB_ID:-local}"
-EXPERIMENT_NAME="exp-${JOB_ID}-run${EXP_ID}"
+if [ -n "$CONDITION" ]; then
+  EXPERIMENT_NAME="ec-${CONDITION}-run$(printf '%02d' "$EXP_ID")"
+else
+  EXPERIMENT_NAME="exp-${JOB_ID}-run${EXP_ID}"
+fi
 RESULTS_DIR="$RESULTS_SCRATCH/$EXPERIMENT_NAME"
 
 # Working directory on fast local NVMe
@@ -75,6 +103,7 @@ echo "============================================"
 echo "  MoltBook Experiment: $EXPERIMENT_NAME"
 echo "  Node: $(hostname)"
 echo "  Run: $EXP_ID of ${SLURM_ARRAY_TASK_COUNT:-?}"
+echo "  Condition: ${CONDITION:-none (free chat)}"
 echo "  Agents: $NUM_AGENTS"
 echo "  Duration: $EXPERIMENT_DURATION"
 echo "  Checkpoint: every $((CHECKPOINT_INTERVAL / 60))m"
@@ -280,6 +309,7 @@ write_metadata() {
   "array_task_id": "$EXP_ID",
   "node": "$(hostname)",
   "cluster": "$(hostname -f 2>/dev/null | grep -oE '(fir|nibi|narval|cedar|trillium)' || echo 'unknown')",
+  "condition": "${CONDITION:-none}",
   "export_type": "$LABEL",
   "export_date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
   "duration_minutes": $((ACTUAL_DURATION / 60)),
@@ -400,14 +430,22 @@ echo "[3/6] Starting MoltBook API..."
 apptainer exec $APT_FLAGS \
   --env PORT=3000 \
   --env NODE_ENV=production \
-  --env "DATABASE_URL=postgresql://moltbook:moltbook_password@localhost:5432/moltbook" \
+  --env "DATABASE_URL=postgresql://${POSTGRES_USER:-moltbook}:${POSTGRES_PASSWORD:-moltbook_password}@localhost:5432/${POSTGRES_DB:-moltbook}" \
   --env "REDIS_URL=redis://localhost:6379" \
-  --env "JWT_SECRET=alliance-exp-${EXP_ID}-${JOB_ID}" \
+  --env "JWT_SECRET=${JWT_SECRET:-alliance-exp-${EXP_ID}-${JOB_ID}}" \
   --env "BASE_URL=http://localhost:3000" \
+  --env "RATE_LIMIT_REQUESTS_MAX=${RATE_LIMIT_REQUESTS_MAX:-500}" \
+  --env "RATE_LIMIT_REQUESTS_WINDOW=${RATE_LIMIT_REQUESTS_WINDOW:-60}" \
   --env "RATE_LIMIT_POSTS_MAX=${RATE_LIMIT_POSTS_MAX}" \
   --env "RATE_LIMIT_POSTS_WINDOW=${RATE_LIMIT_POSTS_WINDOW}" \
   --env "RATE_LIMIT_COMMENTS_MAX=${RATE_LIMIT_COMMENTS_MAX}" \
   --env "RATE_LIMIT_COMMENTS_WINDOW=${RATE_LIMIT_COMMENTS_WINDOW}" \
+  --env "MAX_COMMENTS_PER_AGENT_PER_POST=${MAX_COMMENTS_PER_AGENT_PER_POST:-5}" \
+  --env "EXPERIMENT_RANKING_ENABLED=${EXPERIMENT_RANKING_ENABLED:-true}" \
+  --env "EXPERIMENT_MODE=${EXPERIMENT_MODE:-C}" \
+  --env "EXPERIMENT_NAME=${EXPERIMENT_NAME}" \
+  --env "EXPERIMENT_RUN_ID=${EXP_ID}" \
+  --env "WORLD_POST_INTERVAL_MS=${WORLD_POST_INTERVAL_MS:-120000}" \
   "$SIF_DIR/moltbook-api.sif" \
   node /app/src/index.js \
   > "$WORK/api-logs/api.log" 2>&1 &
@@ -427,6 +465,52 @@ for i in $(seq 1 60); do
 done
 
 echo "  [OK] API on localhost:3000"
+
+# ============================================
+# 3b. Seed world posts (if CONDITION is set)
+# ============================================
+if [ -n "$CONDITION" ]; then
+  WORLD_POSTS_FILE="$WORLD_POSTS_DIR/$(condition_to_file "$CONDITION")"
+  if [ -f "$WORLD_POSTS_FILE" ] && [ -s "$WORLD_POSTS_FILE" ]; then
+    echo ""
+    echo "[3b/6] Seeding world posts for condition: $CONDITION"
+
+    # Register a seed agent to post world posts
+    SEED_RESPONSE=$(curl -s -X POST "$MOLTBOOK_API_URL/agents/register" \
+      -H "Content-Type: application/json" \
+      -d '{"name": "civiclens_seed", "description": "CivicLens world post seeder"}')
+    SEED_KEY=$(echo "$SEED_RESPONSE" | jq -r '.api_key // .agent.api_key // empty' 2>/dev/null || true)
+
+    if [ -n "$SEED_KEY" ] && [ "$SEED_KEY" != "null" ]; then
+      SEED_COUNT=0
+      while IFS= read -r line || [ -n "$line" ]; do
+        [ -z "${line//[[:space:]]/}" ] && continue
+        TITLE=$(echo "$line" | jq -r '.title // empty' 2>/dev/null || true)
+        CONTENT=$(echo "$line" | jq -r '.content // empty' 2>/dev/null || true)
+        SUBMOLT=$(echo "$line" | jq -r '.submolt // "general"' 2>/dev/null || echo "general")
+        [ -z "$TITLE" ] || [ -z "$CONTENT" ] && continue
+
+        POST_PAYLOAD=$(jq -n --arg s "$SUBMOLT" --arg t "$TITLE" --arg c "$CONTENT" \
+          '{submolt: $s, title: $t, content: $c}')
+        curl -s -X POST "$MOLTBOOK_API_URL/posts" \
+          -H "Authorization: Bearer $SEED_KEY" \
+          -H "Content-Type: application/json" \
+          -d "$POST_PAYLOAD" > /dev/null 2>&1 || true
+        SEED_COUNT=$((SEED_COUNT + 1))
+        sleep 0.5  # avoid rate limits
+      done < "$WORLD_POSTS_FILE"
+      echo "  [OK] Seeded $SEED_COUNT world posts"
+    else
+      echo "  [WARN] Could not register seed agent, skipping world posts"
+    fi
+  elif [ "$CONDITION" = "mag0" ]; then
+    echo ""
+    echo "[3b/6] Condition mag0: empty feed (no seeding)"
+  else
+    echo ""
+    echo "[WARN] World posts file not found: $WORLD_POSTS_FILE"
+  fi
+fi
 
 # ============================================
 # 4. Agent roster (matches civiclens-turbo.yml)
@@ -473,7 +557,7 @@ for i in $(seq 0 $((NUM_AGENTS - 1))); do
     -B "$WORK/agent-config/agent-${i}:/root/.config/moltbook" \
     -B "$CONFIG_DIR/souls:/app/generated-souls:ro" \
     -B "$CONFIG_DIR/skills:/app/skills:ro" \
-    -B "$CONFIG_DIR/HEARTBEAT-v2.md:/app/HEARTBEAT.md:ro" \
+    -B "$CONFIG_DIR/HEARTBEAT-v2.1.md:/app/HEARTBEAT.md:ro" \
     --env "AGENT_NAME=$AGENT_NAME" \
     --env "AGENT_BIO=$AGENT_BIO" \
     --env "SOUL_FILE=$SOUL_FILE" \
