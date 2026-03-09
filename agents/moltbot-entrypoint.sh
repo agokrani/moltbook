@@ -145,7 +145,7 @@ echo "Creating OpenClaw configuration..."
 cat > "$CONFIG_DIR/openclaw.json" << EOF
 {
   "gateway": {
-    "port": 18789,
+    "port": ${GATEWAY_PORT:-18789},
     "mode": "local",
     "controlUi": {
       "enabled": false
