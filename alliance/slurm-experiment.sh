@@ -44,6 +44,12 @@ SIF_DIR="$PROJECT/moltbook/images"
 RESULTS_SCRATCH="$SCRATCH/moltbook/results"
 RESULTS_PROJECT="$PROJECT/moltbook/results"
 
+# Save any values passed via sbatch --export (they take priority)
+_EXPORT_NUM_AGENTS="${NUM_AGENTS:-}"
+_EXPORT_HEARTBEAT="${HEARTBEAT_INTERVAL:-}"
+_EXPORT_DURATION="${EXPERIMENT_DURATION:-}"
+_EXPORT_CONDITION="${CONDITION:-}"
+
 # Load user config
 if [ -f "$CONFIG_DIR/.env" ]; then
   set -a
@@ -55,7 +61,13 @@ else
   exit 1
 fi
 
-# Defaults
+# Restore sbatch --export overrides (they win over .env)
+[ -n "$_EXPORT_NUM_AGENTS" ] && NUM_AGENTS="$_EXPORT_NUM_AGENTS"
+[ -n "$_EXPORT_HEARTBEAT" ] && HEARTBEAT_INTERVAL="$_EXPORT_HEARTBEAT"
+[ -n "$_EXPORT_DURATION" ] && EXPERIMENT_DURATION="$_EXPORT_DURATION"
+[ -n "$_EXPORT_CONDITION" ] && CONDITION="$_EXPORT_CONDITION"
+
+# Defaults (only if still unset)
 NUM_AGENTS="${NUM_AGENTS:-10}"
 HEARTBEAT_INTERVAL="${HEARTBEAT_INTERVAL:-11s}"
 EXPERIMENT_DURATION="${EXPERIMENT_DURATION:-2h}"
@@ -90,7 +102,7 @@ condition_to_file() {
 EXP_ID="${SLURM_ARRAY_TASK_ID:-1}"
 JOB_ID="${SLURM_JOB_ID:-local}"
 if [ -n "$CONDITION" ]; then
-  EXPERIMENT_NAME="ec-${CONDITION}-run$(printf '%02d' "$EXP_ID")"
+  EXPERIMENT_NAME="ec-${CONDITION}-n${NUM_AGENTS}-run$(printf '%02d' "$EXP_ID")"
 else
   EXPERIMENT_NAME="exp-${JOB_ID}-run${EXP_ID}"
 fi
@@ -125,6 +137,21 @@ done
 # Setup working directories
 # ============================================
 mkdir -p "$WORK"/{pgdata,redisdata,api-logs}
+
+# OVERWRITE GUARD — refuse to clobber existing results
+if [ -d "$RESULTS_DIR" ] && [ -f "$RESULTS_DIR/metadata.json" ]; then
+  echo "[ERROR] Results directory already exists: $RESULTS_DIR"
+  echo "        This would overwrite previous experiment data!"
+  echo "        Either change EXP_ID (--array) or remove the old results first."
+  exit 1
+fi
+if [ -d "$RESULTS_PROJECT/$EXPERIMENT_NAME" ] && [ -f "$RESULTS_PROJECT/$EXPERIMENT_NAME/metadata.json" ]; then
+  echo "[ERROR] Backup directory already exists: $RESULTS_PROJECT/$EXPERIMENT_NAME"
+  echo "        This would overwrite previous experiment data!"
+  echo "        Either change EXP_ID (--array) or remove the old results first."
+  exit 1
+fi
+
 mkdir -p "$RESULTS_DIR/checkpoints"
 
 for i in $(seq 0 $((NUM_AGENTS - 1))); do
