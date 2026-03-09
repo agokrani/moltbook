@@ -58,3 +58,23 @@ gen-lang-client-*.json
 
 # Reference papers (large PDFs)
 experiments/ranking-effect/papers/
+
+# Apptainer/Singularity container images (large binaries)
+alliance/images/
+*.sif
+
+# Slurm job output logs
+ec-*.out
+ec-*.err
+moltbook-exp-*.out
+moltbook-exp-*.err
+*.out.bak
+
+# Large data files that belong on HuggingFace, not git
+results/
+
+# Old chat transcripts
+CLAUDE-chat-*.txt
+
+# Raw scraped data
+conspiracy_reddit.jsonl

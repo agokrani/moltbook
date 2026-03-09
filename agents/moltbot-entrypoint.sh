@@ -145,7 +145,7 @@ echo "Creating OpenClaw configuration..."
 cat > "$CONFIG_DIR/openclaw.json" << EOF
 {
   "gateway": {
-    "port": ${GATEWAY_PORT:-18789},
+    "port": ${OPENCLAW_GATEWAY_PORT:-${GATEWAY_PORT:-18789}},
     "mode": "local",
     "controlUi": {
       "enabled": false
@@ -236,5 +236,6 @@ cd "$MOLTBOT_DIR"
 # --allow-unconfigured bypasses interactive setup
 # --verbose for debugging
 exec node dist/index.js gateway \
+  --port "${OPENCLAW_GATEWAY_PORT:-${GATEWAY_PORT:-18789}}" \
   --allow-unconfigured \
   --verbose

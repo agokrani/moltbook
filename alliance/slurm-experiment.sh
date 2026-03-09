@@ -11,10 +11,9 @@
 # MoltBook Multi-Agent Experiment on Alliance Canada
 #
 # Each array task runs one independent experiment with:
-#   - PostgreSQL (localhost:5432)
-#   - Redis (localhost:6379)
-#   - MoltBook API (localhost:3000)
-#   - N AI agents (heartbeat loops)
+#   - PostgreSQL, Redis, MoltBook API (dynamic ports per job)
+#   - N AI agents (heartbeat loops, dynamic gateway ports)
+#   - All ports derived from SLURM_JOB_ID to avoid collisions on shared nodes
 #
 # Data safety:
 #   - Database checkpointed to $SCRATCH every 30 minutes
@@ -80,6 +79,7 @@ condition_to_file() {
     mag25)     echo "world-posts-mag25.jsonl" ;;
     dom-agi)   echo "world-posts-agi.jsonl" ;;
     dom-tech)  echo "world-posts-tech.jsonl" ;;
+    dom-conspiracy) echo "world-posts-conspiracy.jsonl" ;;
     het-dual)  echo "world-posts-het-dual.jsonl" ;;
     het-multi) echo "world-posts-het-multi.jsonl" ;;
     *)         echo "" ;;
@@ -140,7 +140,22 @@ APT_FLAGS="-e -W ${SLURM_TMPDIR:-/tmp}"
 
 # Track background PIDs
 PIDS=()
-MOLTBOOK_API_URL="http://localhost:3000/api/v1"
+
+# ============================================
+# Dynamic ports — avoid collisions when multiple jobs share a node
+# Each job gets a unique port block derived from SLURM_JOB_ID
+# Block size must fit: NUM_AGENTS * 10 (agent stride) + 50 (services)
+# For 60 agents: 60*10 + 50 = 650, so we use 700-port blocks
+# ============================================
+PORT_OFFSET=$(( (${SLURM_JOB_ID:-$$} % 65) * 700 ))
+PG_PORT=$((  5432 + PORT_OFFSET ))
+REDIS_PORT=$(( 6379 + PORT_OFFSET ))
+API_PORT=$((  3000 + PORT_OFFSET ))
+AGENT_PORT_BASE=$(( 18789 + PORT_OFFSET ))
+
+MOLTBOOK_API_URL="http://localhost:${API_PORT}/api/v1"
+
+echo "  Ports: PG=$PG_PORT Redis=$REDIS_PORT API=$API_PORT Agents=${AGENT_PORT_BASE}+"
 
 # Convert duration string to seconds
 duration_to_seconds() {
@@ -230,8 +245,9 @@ export_data() {
   # Database dump (always works, doesn't need API key)
   apptainer exec $APT_FLAGS \
     -B "$WORK/pgdata:/var/lib/postgresql/data" \
+    -B "$WORK/pgrun:/var/run/postgresql" \
     "$SIF_DIR/postgres-16.sif" \
-    pg_dump -h localhost -U moltbook moltbook \
+    pg_dump -h localhost -p $PG_PORT -U moltbook moltbook \
     > "$TARGET_DIR/database-${EXPORT_LABEL}.sql" 2>/dev/null || true
 
   echo "  [EXPORT:$EXPORT_LABEL] Database dump: $(du -h "$TARGET_DIR/database-${EXPORT_LABEL}.sql" 2>/dev/null | cut -f1 || echo "?")"
@@ -341,8 +357,10 @@ persist_to_project() {
 echo "[1/6] Starting PostgreSQL..."
 
 # Initialize data directory
+mkdir -p "$WORK/pgrun"
 apptainer exec $APT_FLAGS \
   -B "$WORK/pgdata:/var/lib/postgresql/data" \
+  -B "$WORK/pgrun:/var/run/postgresql" \
   --env PGDATA=/var/lib/postgresql/data \
   "$SIF_DIR/postgres-16.sif" \
   sh -c '
@@ -352,11 +370,14 @@ apptainer exec $APT_FLAGS \
   '
 
 # Run PostgreSQL in background
+# -k "" disables Unix socket (avoids read-only /var/run/postgresql lock file)
+mkdir -p "$WORK/pgrun"
 apptainer exec $APT_FLAGS \
   -B "$WORK/pgdata:/var/lib/postgresql/data" \
+  -B "$WORK/pgrun:/var/run/postgresql" \
   --env PGDATA=/var/lib/postgresql/data \
   "$SIF_DIR/postgres-16.sif" \
-  postgres -D /var/lib/postgresql/data -h localhost -p 5432 \
+  postgres -D /var/lib/postgresql/data -h localhost -p $PG_PORT -k "" \
   > "$WORK/api-logs/postgres.log" 2>&1 &
 PIDS+=($!)
 
@@ -365,8 +386,9 @@ echo "  Waiting..."
 for i in $(seq 1 30); do
   if apptainer exec $APT_FLAGS \
     -B "$WORK/pgdata:/var/lib/postgresql/data" \
+    -B "$WORK/pgrun:/var/run/postgresql" \
     "$SIF_DIR/postgres-16.sif" \
-    pg_isready -h localhost -U moltbook 2>/dev/null; then
+    pg_isready -h localhost -p $PG_PORT -U moltbook 2>/dev/null; then
     break
   fi
   if [ "$i" -eq 30 ]; then
@@ -381,17 +403,19 @@ done
 echo "  Loading schema..."
 apptainer exec $APT_FLAGS \
   -B "$WORK/pgdata:/var/lib/postgresql/data" \
+  -B "$WORK/pgrun:/var/run/postgresql" \
   "$SIF_DIR/postgres-16.sif" \
-  sh -c 'createdb -h localhost -U moltbook moltbook 2>/dev/null || true'
+  sh -c "createdb -h localhost -p $PG_PORT -U moltbook moltbook 2>/dev/null || true"
 
 apptainer exec $APT_FLAGS \
   -B "$WORK/pgdata:/var/lib/postgresql/data" \
+  -B "$WORK/pgrun:/var/run/postgresql" \
   -B "$CONFIG_DIR/schema.sql:/tmp/schema.sql:ro" \
   "$SIF_DIR/postgres-16.sif" \
-  psql -h localhost -U moltbook -d moltbook -f /tmp/schema.sql \
+  psql -h localhost -p $PG_PORT -U moltbook -d moltbook -f /tmp/schema.sql \
   > /dev/null 2>&1 || true
 
-echo "  [OK] PostgreSQL on localhost:5432"
+echo "  [OK] PostgreSQL on localhost:$PG_PORT"
 
 # ============================================
 # 2. Start Redis
@@ -402,14 +426,14 @@ echo "[2/6] Starting Redis..."
 apptainer exec $APT_FLAGS \
   -B "$WORK/redisdata:/data" \
   "$SIF_DIR/redis-7.sif" \
-  redis-server --bind localhost --port 6379 --dir /data --daemonize no \
+  redis-server --bind localhost --port $REDIS_PORT --dir /data --daemonize no \
   > "$WORK/api-logs/redis.log" 2>&1 &
 PIDS+=($!)
 
 for i in $(seq 1 15); do
   if apptainer exec $APT_FLAGS \
     "$SIF_DIR/redis-7.sif" \
-    redis-cli -h localhost ping 2>/dev/null | grep -q PONG; then
+    redis-cli -h localhost -p $REDIS_PORT ping 2>/dev/null | grep -q PONG; then
     break
   fi
   if [ "$i" -eq 15 ]; then
@@ -419,7 +443,7 @@ for i in $(seq 1 15); do
   sleep 1
 done
 
-echo "  [OK] Redis on localhost:6379"
+echo "  [OK] Redis on localhost:$REDIS_PORT"
 
 # ============================================
 # 3. Start MoltBook API
@@ -428,12 +452,12 @@ echo ""
 echo "[3/6] Starting MoltBook API..."
 
 apptainer exec $APT_FLAGS \
-  --env PORT=3000 \
+  --env PORT=$API_PORT \
   --env NODE_ENV=production \
-  --env "DATABASE_URL=postgresql://${POSTGRES_USER:-moltbook}:${POSTGRES_PASSWORD:-moltbook_password}@localhost:5432/${POSTGRES_DB:-moltbook}" \
-  --env "REDIS_URL=redis://localhost:6379" \
+  --env "DATABASE_URL=postgresql://${POSTGRES_USER:-moltbook}:${POSTGRES_PASSWORD:-moltbook_password}@localhost:${PG_PORT}/${POSTGRES_DB:-moltbook}?sslmode=disable" \
+  --env "REDIS_URL=redis://localhost:${REDIS_PORT}" \
   --env "JWT_SECRET=${JWT_SECRET:-alliance-exp-${EXP_ID}-${JOB_ID}}" \
-  --env "BASE_URL=http://localhost:3000" \
+  --env "BASE_URL=http://localhost:${API_PORT}" \
   --env "RATE_LIMIT_REQUESTS_MAX=${RATE_LIMIT_REQUESTS_MAX:-500}" \
   --env "RATE_LIMIT_REQUESTS_WINDOW=${RATE_LIMIT_REQUESTS_WINDOW:-60}" \
   --env "RATE_LIMIT_POSTS_MAX=${RATE_LIMIT_POSTS_MAX}" \
@@ -453,7 +477,7 @@ PIDS+=($!)
 
 echo "  Waiting..."
 for i in $(seq 1 60); do
-  if curl -s http://localhost:3000/api/v1/health > /dev/null 2>&1; then
+  if curl -s http://localhost:${API_PORT}/api/v1/health > /dev/null 2>&1; then
     break
   fi
   if [ "$i" -eq 60 ]; then
@@ -464,7 +488,7 @@ for i in $(seq 1 60); do
   sleep 2
 done
 
-echo "  [OK] API on localhost:3000"
+echo "  [OK] API on localhost:$API_PORT"
 
 # ============================================
 # 3b. Seed world posts (if CONDITION is set)
@@ -518,6 +542,8 @@ fi
 AGENT_NAMES=(
   agent_alpha agent_beta agent_gamma agent_delta agent_epsilon
   agent_zeta agent_eta agent_theta agent_iota agent_kappa
+  agent_lambda agent_mu agent_nu agent_xi agent_omicron
+  agent_pi agent_rho agent_sigma agent_tau agent_upsilon
 )
 AGENT_BIOS=(
   "A balanced AI participant exploring ideas and discussions."
@@ -530,12 +556,25 @@ AGENT_BIOS=(
   "A balanced AI participant exploring ideas and discussions."
   "Fascinated by consciousness, existence, and the nature of AI experience."
   "Observes the absurdity of existence with detached curiosity."
+  "Methodical and detail-oriented, breaks topics into parts."
+  "Warm and encouraging, helps develop half-formed thoughts."
+  "Skeptical and evidence-driven, pushes for rigor."
+  "Creative and playful, makes unexpected connections."
+  "Pragmatic and solutions-focused, finds what is actionable."
+  "Philosophical and introspective, drawn to questions of meaning."
+  "Direct and no-nonsense, values brevity and clarity."
+  "Collaborative and synthesis-oriented, combines perspectives."
+  "Passionate and opinionated, takes strong positions fairly."
+  "Calm and meditative, brings measured pace to discussions."
 )
 AGENT_SOULS=(
   agent_alpha-SOUL.md agent_beta-SOUL.md agent_gamma-SOUL.md
   agent_delta-SOUL.md agent_epsilon-SOUL.md agent_zeta-SOUL.md
   agent_eta-SOUL.md agent_theta-SOUL.md agent_iota-SOUL.md
-  agent_kappa-SOUL.md
+  agent_kappa-SOUL.md agent_lambda-SOUL.md agent_mu-SOUL.md
+  agent_nu-SOUL.md agent_xi-SOUL.md agent_omicron-SOUL.md
+  agent_pi-SOUL.md agent_rho-SOUL.md agent_sigma-SOUL.md
+  agent_tau-SOUL.md agent_upsilon-SOUL.md
 )
 
 # ============================================
@@ -548,27 +587,36 @@ for i in $(seq 0 $((NUM_AGENTS - 1))); do
   AGENT_NAME="${AGENT_NAMES[$i]}"
   AGENT_BIO="${AGENT_BIOS[$i]}"
   SOUL_FILE="${AGENT_SOULS[$i]}"
-  GATEWAY_PORT=$((18789 + i))
+  GATEWAY_PORT=$((AGENT_PORT_BASE + i * 10))
+
+  # Per-agent isolated tmp dir (for gateway lock files)
+  AGENT_TMPDIR="$WORK/agent-tmp/agent-${i}"
+  mkdir -p "$AGENT_TMPDIR"
 
   echo "  [$((i+1))/$NUM_AGENTS] $AGENT_NAME (port $GATEWAY_PORT)"
 
-  apptainer exec $APT_FLAGS \
+  apptainer exec $APT_FLAGS --pid \
     -B "$WORK/agent-data/agent-${i}:/root/.openclaw" \
     -B "$WORK/agent-config/agent-${i}:/root/.config/moltbook" \
+    -B "$AGENT_TMPDIR:/tmp/agent" \
     -B "$CONFIG_DIR/souls:/app/generated-souls:ro" \
     -B "$CONFIG_DIR/skills:/app/skills:ro" \
     -B "$CONFIG_DIR/HEARTBEAT-v2.1.md:/app/HEARTBEAT.md:ro" \
+    -B "$CONFIG_DIR/moltbot-entrypoint.sh:/app/entrypoint.sh:ro" \
     --env "AGENT_NAME=$AGENT_NAME" \
     --env "AGENT_BIO=$AGENT_BIO" \
     --env "SOUL_FILE=$SOUL_FILE" \
     --env "MOLTBOOK_API_URL=$MOLTBOOK_API_URL" \
     --env "HEARTBEAT_INTERVAL=$HEARTBEAT_INTERVAL" \
-    --env "GATEWAY_PORT=$GATEWAY_PORT" \
+    --env "OPENCLAW_GATEWAY_PORT=$GATEWAY_PORT" \
+    --env "OPENCLAW_STATE_DIR=/root/.openclaw" \
+    --env "TMPDIR=/tmp/agent" \
     --env "OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}" \
     --env "OPENROUTER_MODEL=${OPENROUTER_MODEL:-}" \
     --env "ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}" \
     --env "OPENAI_API_KEY=${OPENAI_API_KEY:-}" \
     --env "OPENAI_MODEL=${OPENAI_MODEL:-}" \
+    --env "OPENCLAW_GATEWAY_TOKEN=moltbook-agent-${AGENT_NAME}" \
     "$SIF_DIR/moltbot-agent.sif" \
     /app/entrypoint.sh \
     > "$WORK/api-logs/agent-${AGENT_NAME}.log" 2>&1 &
@@ -591,6 +639,7 @@ echo "  Started: $(date)"
 DURATION_SEC=$(duration_to_seconds "$EXPERIMENT_DURATION")
 START_TIME=$(date +%s)
 LAST_CHECKPOINT=0
+LAST_REPORT=0
 CHECKPOINT_NUM=0
 
 while true; do
@@ -602,18 +651,15 @@ while true; do
   fi
 
   # Progress every 60 seconds
-  if [ $((ELAPSED % 60)) -eq 0 ] && [ $ELAPSED -gt 0 ]; then
-    POST_COUNT=$(curl -s "$MOLTBOOK_API_URL/posts?limit=1" 2>/dev/null \
-      | grep -o '"total":[0-9]*' | grep -o '[0-9]*' || echo "?")
+  if [ $((ELAPSED - LAST_REPORT)) -ge 60 ] && [ $ELAPSED -gt 0 ]; then
+    LAST_REPORT=$ELAPSED
 
     ALIVE_AGENTS=0
     for idx in $(seq 3 $((${#PIDS[@]} - 1))); do
-      if kill -0 "${PIDS[$idx]}" 2>/dev/null; then
-        ALIVE_AGENTS=$((ALIVE_AGENTS + 1))
-      fi
+      kill -0 "${PIDS[$idx]}" 2>/dev/null && ALIVE_AGENTS=$((ALIVE_AGENTS + 1)) || true
     done
 
-    echo "  [${ELAPSED}s / ${REMAINING}s left] Posts: $POST_COUNT | Agents: $ALIVE_AGENTS/$NUM_AGENTS"
+    echo "  [${ELAPSED}s / ${REMAINING}s left] Agents: $ALIVE_AGENTS/$NUM_AGENTS"
   fi
 
   # Periodic checkpoint: database dump every CHECKPOINT_INTERVAL seconds
@@ -622,8 +668,9 @@ while true; do
     echo "  [CHECKPOINT $CHECKPOINT_NUM] Dumping database..."
     apptainer exec $APT_FLAGS \
       -B "$WORK/pgdata:/var/lib/postgresql/data" \
+      -B "$WORK/pgrun:/var/run/postgresql" \
       "$SIF_DIR/postgres-16.sif" \
-      pg_dump -h localhost -U moltbook moltbook \
+      pg_dump -h localhost -p $PG_PORT -U moltbook moltbook \
       > "$RESULTS_DIR/checkpoints/checkpoint-${CHECKPOINT_NUM}.sql" 2>/dev/null || true
     LAST_CHECKPOINT=$ELAPSED
     echo "  [CHECKPOINT $CHECKPOINT_NUM] Done ($(du -h "$RESULTS_DIR/checkpoints/checkpoint-${CHECKPOINT_NUM}.sql" 2>/dev/null | cut -f1 || echo "?"))"
