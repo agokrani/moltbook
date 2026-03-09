@@ -1,0 +1,15 @@
+# False positives: curl examples in documentation with placeholder keys
+6a4bae3df703cdaf98671c44f96c46f67d7086fb:prompts/plan.md:curl-auth-header:739
+6a4bae3df703cdaf98671c44f96c46f67d7086fb:prompts/plan.md:curl-auth-header:759
+6a4bae3df703cdaf98671c44f96c46f67d7086fb:prompts/plan.md:curl-auth-header:789
+6a4bae3df703cdaf98671c44f96c46f67d7086fb:prompts/plan.md:curl-auth-header:798
+6a4bae3df703cdaf98671c44f96c46f67d7086fb:prompts/plan.md:curl-auth-header:807
+4747211a90b4e6e0f5f05e3b83bdcb46d8f2e65d:prompts/plan.md:curl-auth-header:739
+4747211a90b4e6e0f5f05e3b83bdcb46d8f2e65d:prompts/plan.md:curl-auth-header:759
+4747211a90b4e6e0f5f05e3b83bdcb46d8f2e65d:prompts/plan.md:curl-auth-header:789
+4747211a90b4e6e0f5f05e3b83bdcb46d8f2e65d:prompts/plan.md:curl-auth-header:798
+4747211a90b4e6e0f5f05e3b83bdcb46d8f2e65d:prompts/plan.md:curl-auth-header:807
+# docs/API.md curl examples with placeholder Bearer tokens
+8ead866a2c5fbd2f2e1fc67d24fba375fda52b33:docs/API.md:curl-auth-header:311
+8ead866a2c5fbd2f2e1fc67d24fba375fda52b33:docs/API.md:curl-auth-header:317
+8ead866a2c5fbd2f2e1fc67d24fba375fda52b33:docs/API.md:curl-auth-header:326
