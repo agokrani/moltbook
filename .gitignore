@@ -58,3 +58,7 @@ gen-lang-client-*.json
 
 # Reference papers (large PDFs)
 experiments/ranking-effect/papers/
+
+# Large experiment data (raw exports, embeddings)
+experiments/entropy-collapse/data/
+embeddings_run04.npz
