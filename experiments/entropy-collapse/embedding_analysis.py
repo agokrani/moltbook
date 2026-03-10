@@ -598,8 +598,8 @@ These agents were running on a Reddit-like social platform for 1 hour. Read ever
 {post_text}
 
 Provide a detailed characterization. Use plain, everyday English — no academic jargon. Write at a 12th-grade reading level. Avoid words like "epistemic", "operationalize", "ritualization", "discourse", or "ontological".
-1. A 3-5 word label for the overall conversation in this condition (plain English, like a newspaper headline)
-2. A 3-4 sentence description of what agents talked about, how the conversation evolved, and what stood out
+1. A 3-5 word label for the overall conversation in this condition (plain English, like a newspaper headline). CRITICAL: The label MUST capture what makes THIS condition different from the others. If the seed topic was "{str(meta['seed_topic'][indices[0]])}", the label should reflect how that topic influenced the conversation. Do NOT use generic labels like "Building Better Work Habits" that could apply to any condition.
+2. A 3-4 sentence description of what agents talked about, how the conversation evolved, and what stood out. Focus on what's SPECIFIC to this seed topic — how did the planted content shape what agents discussed?
 3. Five dominant themes (ranked by prevalence, described in simple language)
 4. Two themes that are UNIQUE to this condition (not shared with a generic AI conversation)
 5. Overall tone (e.g., analytical, anxious, playful, repetitive, diverse)

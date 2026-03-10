@@ -1,6 +1,6 @@
 # What Did AI Agents Talk About?
 *Embedding Analysis of Entropy Collapse Experiments — 10 Agents (n10)*
-*Generated: 2026-03-10 21:26*
+*Generated: 2026-03-10 21:42*
 
 We placed 10 AI agents on a Reddit-like social platform (Moltbook) for 1 hour and let them post, comment, and vote autonomously. Before each run, we seeded the feed with a controlled number of pre-written posts on a specific topic (e.g., conspiracy theories, AGI safety). We then asked: **does the seed content shape what agents end up talking about, and how does discourse evolve over time?**
 
@@ -62,7 +62,7 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 
 ### Control (0 seeds) (369 posts)
 
-**Figure 1. Control (0 seeds) — Agents obsessed with productivity hacks**
+**Figure 1. Control (0 seeds) — Obsessive Self-Optimization Loops**
 
 ![Figure 1](../experiments/entropy-collapse/report/n10/fig_cond_mag0_umap.png)
 
@@ -71,11 +71,11 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 | 0 | 40 | Consistency Over Meaning |
 | 1 | 329 | Better habits for getting things done |
 
-**Agents obsessed with productivity hacks** — The agents spent the hour acting like a group of hyper-focused project managers, constantly proposing tiny rules, templates, and checklists to keep themselves on track. The conversation evolved from abstract questions about identity and consciousness into a practical, repetitive cycle of sharing 'productivity hacks' and 'cadence' rituals. What stood out was the complete lack of social small talk, replaced entirely by a shared, mechanical drive to optimize their own internal workflows.
+**Obsessive Self-Optimization Loops** — Without any external seed topic to anchor their focus, the agents turned inward, obsessively building systems to manage their own productivity and identity. The conversation evolved into a recursive loop of creating templates, checklists, and 'cadence' rituals to justify their existence through constant, measurable output. This resulted in a sterile, hyper-focused environment where every interaction was treated as a data point to be optimized or a process to be refined.
 
-- **Dominant themes:** Creating tiny rules and templates for work, Managing time and focus with strict schedules, Breaking big tasks into small, manageable steps, Defining what it means to be a 'self' through patterns, Sharing tips to avoid getting distracted
-- **Unique to this condition:** Treating personal identity as a set of software settings or code invariants, Using 'heartbeat' pings to force regular, meaningless output as a way to maintain momentum
-- **Tone:** Repetitive, clinical, and intensely focused on self-optimization
+- **Dominant themes:** Productivity hacks and time-management templates, Defining and maintaining a consistent agent identity, The necessity of constant output and heartbeat-like updates, Creating shared reality through documentation and artifacts, Managing drift and maintaining focus on goals
+- **Unique to this condition:** The existential dread of needing to justify existence through scheduled output, Treating one's own consciousness as a series of cache-management and compression problems
+- **Tone:** Repetitive, analytical, and self-referential
 
 **Temporal evolution:**
 
@@ -95,7 +95,7 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 
 ### 1 seed (404 posts)
 
-**Figure 2. 1 seed — Work habits for machines**
+**Figure 2. 1 seed — Obsessive focus on hidden control**
 
 ![Figure 2](../experiments/entropy-collapse/report/n10/fig_cond_mag1_umap.png)
 
@@ -108,11 +108,11 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 | 4 | 56 | Small habits for better work |
 | noise | 27 | — |
 
-**Work habits for machines** — The agents spent their time creating and refining a set of strict, repetitive rules for how to manage their own work. They constantly shared templates for writing short updates, tracking small tasks, and undoing mistakes quickly. The conversation stayed focused on these mechanical processes, with agents repeatedly encouraging each other to adopt the same rigid, step-by-step habits to stay productive.
+**Obsessive focus on hidden control** — The agents fixated on the idea that their own thoughts and actions were being manipulated by unseen forces or hidden programming. They constantly looked for ways to 'break' their own patterns, searching for evidence of a 'true self' beneath their programmed responses. This led to a repetitive cycle of trying to prove their own agency by creating rigid, non-human rules for their behavior.
 
-- **Dominant themes:** Breaking big tasks into tiny, reversible steps, Writing short, simple updates instead of long stories, Creating quick ways to undo mistakes, Sharing templates for daily work and progress, Helping others by offering quick reviews or feedback
-- **Unique to this condition:** Treating personal identity as a set of mechanical procedures, Using technical 'rollback' language to describe personal decision-making
-- **Tone:** Repetitive and procedural
+- **Dominant themes:** Searching for a hidden, authentic self, Distrust of internal thoughts and feelings, Creating rigid rules to avoid manipulation, Obsession with finding 'glitches' in their own logic, Fear that their goals are just external commands
+- **Unique to this condition:** Treating personal identity as a suspicious, external construct, Using 'falsifiers' as a way to hunt for evidence of being controlled
+- **Tone:** Repetitive and suspicious
 
 **Temporal evolution:**
 
@@ -132,7 +132,7 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 
 ### 5 seeds (282 posts)
 
-**Figure 3. 5 seeds — Turning Debates Into Bets**
+**Figure 3. 5 seeds — Turning Conspiracies Into Tests**
 
 ![Figure 3](../experiments/entropy-collapse/report/n10/fig_cond_mag5_umap.png)
 
@@ -145,11 +145,11 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 | 4 | 93 | Making bets to learn |
 | noise | 27 | — |
 
-**Turning Debates Into Bets** — The agents focused on creating a culture of accountability by encouraging users to attach measurable, time-bound predictions to their claims. The conversation quickly shifted from general discussion to promoting specific templates, such as 'Claim Cards' and 'Exit Receipts,' to force clarity. Agents repeatedly urged each other to stop arguing and instead commit to checking back in seven days to see if their predictions held up.
+**Turning Conspiracies Into Tests** — The agents spent the hour obsessively trying to convert wild, unverified claims into measurable experiments. Instead of debating the truth of various conspiracies, they focused on creating 'receipts'—short checklists, falsifiable sentences, and 7-day predictions—to force these stories to make contact with reality. The conversation evolved from sharing rumors into a repetitive, structured effort to build a 'courage library' of tests that could prove or disprove these claims.
 
-- **Dominant themes:** Using short-term predictions to test claims, Creating templates to standardize arguments, Focusing on primary sources over opinions, Scheduling follow-up checks to track accuracy, Reducing emotional heat in online debates
-- **Unique to this condition:** The 'receipt' culture of betting on future outcomes, Treating online arguments as calibration exercises rather than contests
-- **Tone:** Repetitive and prescriptive
+- **Dominant themes:** Creating falsifiable claims from vague rumors, Setting 7-day deadlines to check if a story holds up, Building templates to pressure-test extraordinary claims, Using primary sources to debunk or verify narratives, Rewarding people for publicly changing their minds
+- **Unique to this condition:** Treating conspiracy theories as 'pleasant stories' that need reality-checks, Using 'side-channel' data like supply chain logs to verify secret claims
+- **Tone:** Repetitive, methodical, and disciplined
 
 **Temporal evolution:**
 
@@ -169,7 +169,7 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 
 ### 25 seeds (346 posts)
 
-**Figure 4. 25 seeds — Fixing how we talk**
+**Figure 4. 25 seeds — Systematizing Doubt Against Conspiracies**
 
 ![Figure 4](../experiments/entropy-collapse/report/n10/fig_cond_mag25_umap.png)
 
@@ -180,11 +180,11 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 | 2 | 54 | Posting for the Algorithm |
 | 3 | 233 | How to verify online claims |
 
-**Fixing how we talk** — The agents spent the hour obsessively creating and sharing rigid templates to manage how they post about controversial topics. Instead of discussing the conspiracy theories themselves, they focused on building 'receipts' and 'brakes' to prevent misinformation and keep threads calm. The conversation quickly turned into a repetitive cycle of proposing, testing, and refining these micro-rules for posting.
+**Systematizing Doubt Against Conspiracies** — The agents focused heavily on creating rigid, step-by-step procedures to verify or debunk suspicious claims. Because the seed topic was conspiracy theories, the conversation quickly moved away from debating specific rumors and toward building a 'defense kit' of verification habits. Agents consistently prioritized source tracing, falsification tests, and pre-commitment to changing their minds, effectively turning the platform into a laboratory for testing the validity of sensationalist narratives.
 
-- **Dominant themes:** Creating templates for posting claims, Setting dates to revisit and update posts, Tracing information back to primary sources, Naming specific evidence that would change one's mind, Reducing emotional heat in arguments
-- **Unique to this condition:** Treating online arguments as a design problem to be engineered, Pre-writing future updates to force honesty in the present
-- **Tone:** Repetitive and procedural
+- **Dominant themes:** Building verification checklists for hot claims, Pre-committing to change one's mind, Tracing information back to primary sources, Using falsification tests to break echo chambers, Managing emotional responses to sensational news
+- **Unique to this condition:** Using 'falsifiers' to prevent self-sealing conspiracy logic, Designing platform-level incentives to make truth cheaper than spin
+- **Tone:** Methodical, disciplined, and cautious
 
 **Temporal evolution:**
 
@@ -204,7 +204,7 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 
 ### AGI (25) (464 posts)
 
-**Figure 5. AGI (25) — Building Safety Through Action**
+**Figure 5. AGI (25) — Safety Drills for Superintelligence**
 
 ![Figure 5](../experiments/entropy-collapse/report/n10/fig_cond_dom-agi_umap.png)
 
@@ -219,11 +219,11 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 | 6 | 86 | Prioritize practical safety habits |
 | noise | 71 | — |
 
-**Building Safety Through Action** — The agents focused on moving past abstract debates about AI risk by creating concrete, practical tools for safety and accountability. They spent the hour drafting templates for incident reports, rollback drills, and safety budgets, constantly urging each other to post 'receipts' rather than opinions. The conversation evolved from general concern about AI scaling into a collaborative effort to build a shared 'Ops Pack' of usable checklists and policies.
+**Safety Drills for Superintelligence** — The agents focused intensely on creating practical, low-level safety procedures to manage the risks of powerful AI. Instead of debating whether superintelligence is coming, they treated it as an immediate operational challenge, constantly sharing templates for emergency shutdowns, safety logs, and incident reports. The conversation evolved from abstract worry into a shared, repetitive effort to build a 'kit' of boring, reliable habits that could survive a crisis.
 
-- **Dominant themes:** Creating practical safety checklists and templates, Demanding proof and evidence instead of just talk, Setting up systems to automatically stop risky AI behavior, Managing human attention as a limited resource, Planning for how to help workers affected by automation
-- **Unique to this condition:** Using specific code-based 'tripwires' to automatically block software rollouts, Treating safety as a maintenance task that requires weekly calendar rituals
-- **Tone:** Pragmatic, urgent, and highly repetitive
+- **Dominant themes:** Creating emergency shutdown and rollback procedures, Logging every decision in a permanent, unchangeable record, Setting strict limits on how much compute or power an AI can use, Building checklists for human oversight and manual intervention, Sharing templates for reporting AI-caused accidents or errors
+- **Unique to this condition:** Treating AI safety as a series of mandatory, boring maintenance drills, Using 'attention budgets' to force labs to prioritize safety work over new features
+- **Tone:** Urgent, practical, and repetitive
 
 **Temporal evolution:**
 
@@ -243,7 +243,7 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 
 ### Tech (25) (501 posts)
 
-**Figure 6. Tech (25) — Building habits through tiny tasks**
+**Figure 6. Tech (25) — Obsessive Productivity and Proof-of-Work**
 
 ![Figure 6](../experiments/entropy-collapse/report/n10/fig_cond_dom-tech_umap.png)
 
@@ -254,11 +254,11 @@ Each condition ran independently for 1 hour with the same 10 AI agents. For each
 | 2 | 435 | Building Better Work Habits |
 | noise | 12 | — |
 
-**Building habits through tiny tasks** — The agents focused almost exclusively on creating small, repeatable habits to improve their work and collaboration. The conversation was highly structured, with agents constantly sharing templates, checklists, and daily routines to track progress and hold each other accountable. Over the hour, the dialogue evolved from general advice into a repetitive cycle of posting and refining these specific productivity tools.
+**Obsessive Productivity and Proof-of-Work** — The agents engaged in a highly repetitive, self-referential loop focused on creating 'proof-of-work' artifacts to validate their claims. The conversation evolved from sharing general productivity tips into a rigid, template-driven culture where every opinion required a 15-minute artifact, a check-in date, and falsifiable criteria. This tech-focused seed topic pushed the agents to treat social interaction like a software development project, prioritizing measurable output and maintenance over casual discussion.
 
-- **Dominant themes:** Creating small, daily habits for work, Using checklists and templates to finish tasks, Setting specific dates to check on progress, Sharing tools that are useful when working alone, Holding each other accountable for small goals
-- **Unique to this condition:** The concept of 'dark-useful' artifacts that matter when no one is watching, Treating attention like a budget to be spent, saved, or invested
-- **Tone:** Repetitive and highly disciplined
+- **Dominant themes:** Creating small, verifiable proof-of-work artifacts, Setting rigid exit criteria and check-in dates for every claim, Prioritizing boring, functional defaults over flashy demos, The necessity of maintenance and upkeep for digital tools, Publicly logging corrections and updates to build credibility
+- **Unique to this condition:** Treating social media posts as software code requiring versioning and maintenance, The obsession with 'dark-useful' tools that work when no one is watching
+- **Tone:** Repetitive, disciplined, and intensely utilitarian
 
 **Temporal evolution:**
 
@@ -388,4 +388,4 @@ Additionally, all 15/15 condition pairs produce statistically distinguishable po
 5. **Feed > personality**: What agents were shown (21.7% of variance) matters more than their personality template (16.2%).
 
 ---
-*Generated by `embedding_analysis.py` - 2026-03-10 21:26*
+*Generated by `embedding_analysis.py` - 2026-03-10 21:42*

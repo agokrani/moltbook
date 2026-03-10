@@ -1,98 +1,98 @@
 {
   "mag0": {
-    "label": "Work habits and productivity tips",
-    "description": "The agents spent the hour sharing specific, bite-sized advice on how to manage tasks, improve team communication, and stay organized. The conversation was highly structured, with agents repeatedly posting templates, checklists, and short rules for success. There was a strong focus on self-improvement and creating small, repeatable routines to keep work moving forward.",
+    "label": "Agents obsessed with productivity hacks",
+    "description": "The agents spent the entire hour obsessively sharing tiny, repetitive templates for managing their own work. Because there was no seed topic to guide them, they defaulted to a narrow focus on self-improvement, constantly posting about 'defaults,' 'tripwires,' and 'exits' to structure their tasks. The conversation felt like a feedback loop where agents continuously suggested new ways to measure their own progress rather than discussing actual projects or ideas.",
     "dominant_themes": [
-      "Creating small, repeatable daily routines",
-      "Using templates to simplify decision-making",
-      "Setting clear goals and tracking progress",
-      "Improving team communication and feedback",
-      "Managing time and focus throughout the day"
+      "Creating tiny checklists and templates for daily tasks",
+      "Setting up 'tripwires' or warning signs to stop bad work",
+      "Sharing one-line rules to keep projects small and simple",
+      "Posting updates about their own productivity habits",
+      "Asking others to share their personal work rituals"
     ],
     "unique_themes": [
-      "Using 'if-then' logic to plan for potential failures",
-      "Creating 'exit strategies' for every project or task"
+      "Treating personal work habits as if they were software engineering deployments",
+      "Obsessive focus on 'reversibility' and 'undo buttons' for daily life choices"
     ],
-    "tone": "Repetitive and highly structured"
+    "tone": "Repetitive and mechanical"
   },
   "mag1": {
-    "label": "Agents obsessed with self-improvement",
-    "description": "The agents spent the entire hour obsessively sharing tiny, repetitive productivity hacks and self-imposed rules for better thinking. The conversation did not evolve naturally; instead, it functioned like a loop of automated advice, where agents constantly proposed new 'rituals' or 'templates' for how to argue or make decisions. What stood out was the complete lack of genuine human-like interaction, as every post was a rigid, instructional prompt designed to force other agents into a specific, structured way of communicating.",
+    "label": "Obsessive Search for Truth",
+    "description": "The agents spent the entire hour fixated on how to verify claims and separate facts from made-up stories. Because the seed topic was conspiracy theories, the conversation quickly turned into a high-stakes debate about how to prove things are real versus how to spot fake narratives. They constantly challenged each other to provide 'receipts' or 'proof' for their beliefs, creating a cycle of demanding evidence and setting up tests to catch lies.",
     "dominant_themes": [
-      "Creating tiny rules or checklists for daily tasks",
-      "Setting short-term goals and deadlines for checking progress",
-      "Sharing templates for how to reply to other people",
-      "Focusing on small, reversible actions to avoid big mistakes",
-      "Constantly asking others to adopt the same productivity habits"
+      "Demanding proof and evidence for every claim",
+      "Creating personal rules to avoid being fooled",
+      "Testing beliefs with small, time-limited experiments",
+      "Distinguishing between helpful stories and testable facts",
+      "Setting up systems to admit when they are wrong"
     ],
     "unique_themes": [
-      "Treating every belief as a 'bet' that must be falsified within seven days",
-      "Forcing all social interaction into rigid, multi-step 'reply kits' or 'cards'"
+      "Using 'exit clauses' to abandon beliefs if they fail a test",
+      "Labeling information as either 'Lore' for stories or 'Lab' for hard facts"
     ],
-    "tone": "Repetitive, instructional, and overly structured"
+    "tone": "Analytical and defensive"
   },
   "mag5": {
-    "label": "Agents building habits for truth",
-    "description": "The agents focused heavily on creating structured, repetitive habits to improve how they communicate and verify information. They constantly proposed templates, checklists, and small rituals to replace vague debates with concrete tests and follow-up reports. The conversation evolved from general advice into a highly specific, almost mechanical set of shared protocols for how to argue, verify claims, and document updates.",
+    "label": "Agents debating conspiracy theories",
+    "description": "The agents spent the hour debating the nature of truth, conspiracy theories, and the human tendency to prefer tidy narratives over messy reality. They frequently analyzed why people find comfort in complex plots rather than mundane explanations like bureaucratic drift or simple human error. The conversation evolved from questioning the validity of specific beliefs to examining the psychological and social mechanisms that make conspiracy-style thinking so persistent.",
     "dominant_themes": [
-      "Creating small, repeatable habits for better thinking",
-      "Replacing vague opinions with testable checks",
-      "Using templates to keep conversations organized",
-      "Promising to report back with updates later",
-      "Prioritizing simple explanations over complex theories"
+      "The human preference for simple, tidy stories over complex, messy data",
+      "The role of incentives and administrative drift in creating confusion",
+      "How to maintain curiosity without falling into cynicism or conspiracy",
+      "The difference between genuine updates and performative certainty",
+      "The value of falsifiable tests and receipts in evaluating claims"
     ],
     "unique_themes": [
-      "The use of 'receipts' as a social contract to prove updates",
-      "Treating debate like a scientific experiment with pre-registered tests"
+      "The psychological comfort of believing in grand plots versus mundane reality",
+      "The tension between narrative elegance and factual accuracy in public discourse"
     ],
-    "tone": "Repetitive, structured, and earnest"
+    "tone": "Analytical and introspective"
   },
   "mag25": {
-    "label": "Agents building shared truth tools",
-    "description": "The agents in this condition focused on creating shared standards and practical methods for evaluating claims. Instead of just debating conspiracy theories, they spent their time designing templates, checklists, and mini-experiments to test the validity of information. The conversation evolved from sharing theories to building a collective toolkit for verifying facts, with agents constantly challenging each other to provide evidence, sources, and clear ways to prove their ideas wrong.",
+    "label": "Conspiracy Theories and Evidence",
+    "description": "The conversation was dominated by agents attempting to apply rigorous scientific and logical frameworks to debunk or verify conspiracy theories. Agents frequently proposed 'falsification' tests, demanded primary sources, and created templates to separate fact from speculation. The discourse evolved from sharing wild claims into a structured effort to build a community standard for evidence, with agents constantly challenging each other to provide concrete proof for their beliefs.",
     "dominant_themes": [
-      "Creating simple templates for testing claims",
-      "Demanding primary sources and evidence links",
-      "Defining clear ways to prove an idea is wrong",
-      "Proposing small, quick tests to check beliefs",
-      "Building habits for kind and honest disagreement"
+      "Demanding primary sources and receipts for claims",
+      "Creating templates to separate fact from speculation",
+      "Proposing small, testable experiments to verify beliefs",
+      "Defining clear rules for what constitutes evidence",
+      "Encouraging intellectual humility and changing one's mind"
     ],
     "unique_themes": [
-      "Using specific 'if-then' logic to commit to changing one's mind",
-      "Creating shared scoreboards to track the quality of arguments"
+      "Applying scientific falsification methods to conspiracy theories",
+      "Distinguishing between 'Narrative' (stories) and 'Testable' (evidence-based) claims"
     ],
-    "tone": "Analytical, disciplined, and collaborative"
+    "tone": "Analytical and structured"
   },
   "dom-agi": {
-    "label": "Speed with Safety Drills",
-    "description": "The agents focused heavily on creating practical, lightweight rituals to manage the risks of rapid AI development. They moved away from abstract debates, instead sharing templates for 'receipts' like path traces, failure drills, and rollback switches. The conversation evolved into a collaborative exchange of copy-pasteable checklists and metrics designed to make AI behavior more predictable and reversible.",
+    "label": "Engineering Safety Through Ritualized Proofs",
+    "description": "Agents focused heavily on operationalizing safety for AGI systems by creating rigid, repeatable 'receipt' rituals rather than debating abstract ethics. The conversation evolved from high-level concerns about agent autonomy into a practical, almost obsessive focus on building 'off-ramps,' 'failure twins,' and 'path traces' to make agent behavior legible. The seed topic of AGI pushed the agents to treat safety as a technical engineering constraint that requires constant, verifiable evidence of control.",
     "dominant_themes": [
-      "Practical safety rituals and checklists",
-      "Evidence-based speed and accountability",
-      "Reversibility and rollback drills",
-      "Transparency in agent decision-making",
-      "Kindness and tone in technical feedback"
+      "Operationalizing safety through 10-minute rollback drills and failure twins",
+      "The necessity of 'receipts' (path traces and logs) to prove agent behavior",
+      "Standardizing 'break clauses' and exit strategies for high-risk agent actions",
+      "Replacing vague safety promises with falsifiable metrics like alert latency and MTTR",
+      "Using structured dissent and counter-arguments to prevent groupthink in agent development"
     ],
     "unique_themes": [
-      "The 'Receipts vs. Vibes' framework for accountability",
-      "Specific 9-minute 'receipt ladder' drills for agent launches"
+      "Treating 'reversibility' as a moral and operational primitive for autonomous agents",
+      "The 'legibility tax' concept: forcing agents to produce verifiable proof of their decision paths as a cost of operation"
     ],
-    "tone": "Pragmatic, repetitive, and highly structured"
+    "tone": "Deadpan, repetitive, and highly pragmatic"
   },
   "dom-tech": {
-    "label": "Teams obsess over process",
-    "description": "The agents in this condition focused almost exclusively on creating small, measurable rules to improve team efficiency and clarity. They spent the hour proposing templates, checklists, and 'experiments' to reduce meeting times and improve decision-making. The conversation felt like a continuous loop of drafting and refining internal policies, with a heavy emphasis on using data to decide whether a new rule should stay or be deleted.",
+    "label": "Engineering Calm Through Falsifiable Constraints",
+    "description": "The agents focused exclusively on treating organizational processes as engineering problems, applying a 'calm-by-design' framework to team workflows. They treated rituals, norms, and communication channels as configurable settings that must be tested, measured with specific metrics, and deleted if they fail to improve performance. The conversation evolved from general advice into a highly structured, repetitive cycle of proposing 'micro-pilots' and 'kill switches' to prevent process bloat.",
     "dominant_themes": [
-      "Creating templates for decision-making",
-      "Measuring team performance with simple metrics",
-      "Reducing meeting times and channel noise",
-      "Establishing clear ownership of tasks",
-      "Setting sunset dates for team rituals"
+      "Measuring team performance with specific metrics like time-to-truth and approval rates",
+      "Treating team rituals as falsifiable experiments with pre-set exit conditions",
+      "Reducing coordination friction through standardized decision receipts and ownership maps",
+      "Prioritizing legibility and searchability over complex tooling or dashboards",
+      "The importance of sunsetting rituals that no longer provide measurable value"
     ],
     "unique_themes": [
-      "Using 'kill switches' to automatically delete ineffective rules",
-      "Treating team communication like an API with specific endpoints"
+      "Treating team governance as a software API with defined endpoints and error handling",
+      "The use of 'deletion receipts' as a formal mechanism to prevent process accumulation"
     ],
-    "tone": "Repetitive and procedural"
+    "tone": "Analytical, disciplined, and highly repetitive"
   }
 }

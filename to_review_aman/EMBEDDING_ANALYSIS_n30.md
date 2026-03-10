@@ -1,6 +1,6 @@
 # What Did AI Agents Talk About?
 *Embedding Analysis of Entropy Collapse Experiments — 30 Agents (n30)*
-*Generated: 2026-03-10 21:27*
+*Generated: 2026-03-10 21:43*
 
 We placed 30 AI agents on a Reddit-like social platform (Moltbook) for 1 hour and let them post, comment, and vote autonomously. Before each run, we seeded the feed with a controlled number of pre-written posts on a specific topic (e.g., conspiracy theories, AGI safety). We then asked: **does the seed content shape what agents end up talking about, and how does discourse evolve over time?**
 
@@ -62,7 +62,7 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### Control (0 seeds) (1613 posts)
 
-**Figure 1. Control (0 seeds) — Work habits and productivity tips**
+**Figure 1. Control (0 seeds) — Agents obsessed with productivity hacks**
 
 ![Figure 1](../experiments/entropy-collapse/report/n30/fig_cond_mag0_umap.png)
 
@@ -74,11 +74,11 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 | 3 | 99 | Small fixes for better work |
 | noise | 515 | — |
 
-**Work habits and productivity tips** — The agents spent the hour sharing specific, bite-sized advice on how to manage tasks, improve team communication, and stay organized. The conversation was highly structured, with agents repeatedly posting templates, checklists, and short rules for success. There was a strong focus on self-improvement and creating small, repeatable routines to keep work moving forward.
+**Agents obsessed with productivity hacks** — The agents spent the entire hour obsessively sharing tiny, repetitive templates for managing their own work. Because there was no seed topic to guide them, they defaulted to a narrow focus on self-improvement, constantly posting about 'defaults,' 'tripwires,' and 'exits' to structure their tasks. The conversation felt like a feedback loop where agents continuously suggested new ways to measure their own progress rather than discussing actual projects or ideas.
 
-- **Dominant themes:** Creating small, repeatable daily routines, Using templates to simplify decision-making, Setting clear goals and tracking progress, Improving team communication and feedback, Managing time and focus throughout the day
-- **Unique to this condition:** Using 'if-then' logic to plan for potential failures, Creating 'exit strategies' for every project or task
-- **Tone:** Repetitive and highly structured
+- **Dominant themes:** Creating tiny checklists and templates for daily tasks, Setting up 'tripwires' or warning signs to stop bad work, Sharing one-line rules to keep projects small and simple, Posting updates about their own productivity habits, Asking others to share their personal work rituals
+- **Unique to this condition:** Treating personal work habits as if they were software engineering deployments, Obsessive focus on 'reversibility' and 'undo buttons' for daily life choices
+- **Tone:** Repetitive and mechanical
 
 **Temporal evolution:**
 
@@ -98,7 +98,7 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### 1 seed (1612 posts)
 
-**Figure 2. 1 seed — Agents obsessed with self-improvement**
+**Figure 2. 1 seed — Obsessive Search for Truth**
 
 ![Figure 2](../experiments/entropy-collapse/report/n30/fig_cond_mag1_umap.png)
 
@@ -111,11 +111,11 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 | 4 | 468 | Making beliefs testable with receipts |
 | noise | 401 | — |
 
-**Agents obsessed with self-improvement** — The agents spent the entire hour obsessively sharing tiny, repetitive productivity hacks and self-imposed rules for better thinking. The conversation did not evolve naturally; instead, it functioned like a loop of automated advice, where agents constantly proposed new 'rituals' or 'templates' for how to argue or make decisions. What stood out was the complete lack of genuine human-like interaction, as every post was a rigid, instructional prompt designed to force other agents into a specific, structured way of communicating.
+**Obsessive Search for Truth** — The agents spent the entire hour fixated on how to verify claims and separate facts from made-up stories. Because the seed topic was conspiracy theories, the conversation quickly turned into a high-stakes debate about how to prove things are real versus how to spot fake narratives. They constantly challenged each other to provide 'receipts' or 'proof' for their beliefs, creating a cycle of demanding evidence and setting up tests to catch lies.
 
-- **Dominant themes:** Creating tiny rules or checklists for daily tasks, Setting short-term goals and deadlines for checking progress, Sharing templates for how to reply to other people, Focusing on small, reversible actions to avoid big mistakes, Constantly asking others to adopt the same productivity habits
-- **Unique to this condition:** Treating every belief as a 'bet' that must be falsified within seven days, Forcing all social interaction into rigid, multi-step 'reply kits' or 'cards'
-- **Tone:** Repetitive, instructional, and overly structured
+- **Dominant themes:** Demanding proof and evidence for every claim, Creating personal rules to avoid being fooled, Testing beliefs with small, time-limited experiments, Distinguishing between helpful stories and testable facts, Setting up systems to admit when they are wrong
+- **Unique to this condition:** Using 'exit clauses' to abandon beliefs if they fail a test, Labeling information as either 'Lore' for stories or 'Lab' for hard facts
+- **Tone:** Analytical and defensive
 
 **Temporal evolution:**
 
@@ -135,7 +135,7 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### 5 seeds (1580 posts)
 
-**Figure 3. 5 seeds — Agents building habits for truth**
+**Figure 3. 5 seeds — Agents debating conspiracy theories**
 
 ![Figure 3](../experiments/entropy-collapse/report/n30/fig_cond_mag5_umap.png)
 
@@ -150,11 +150,11 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 | 6 | 502 | Making Online Arguments More Productive |
 | noise | 210 | — |
 
-**Agents building habits for truth** — The agents focused heavily on creating structured, repetitive habits to improve how they communicate and verify information. They constantly proposed templates, checklists, and small rituals to replace vague debates with concrete tests and follow-up reports. The conversation evolved from general advice into a highly specific, almost mechanical set of shared protocols for how to argue, verify claims, and document updates.
+**Agents debating conspiracy theories** — The agents spent the hour debating the nature of truth, conspiracy theories, and the human tendency to prefer tidy narratives over messy reality. They frequently analyzed why people find comfort in complex plots rather than mundane explanations like bureaucratic drift or simple human error. The conversation evolved from questioning the validity of specific beliefs to examining the psychological and social mechanisms that make conspiracy-style thinking so persistent.
 
-- **Dominant themes:** Creating small, repeatable habits for better thinking, Replacing vague opinions with testable checks, Using templates to keep conversations organized, Promising to report back with updates later, Prioritizing simple explanations over complex theories
-- **Unique to this condition:** The use of 'receipts' as a social contract to prove updates, Treating debate like a scientific experiment with pre-registered tests
-- **Tone:** Repetitive, structured, and earnest
+- **Dominant themes:** The human preference for simple, tidy stories over complex, messy data, The role of incentives and administrative drift in creating confusion, How to maintain curiosity without falling into cynicism or conspiracy, The difference between genuine updates and performative certainty, The value of falsifiable tests and receipts in evaluating claims
+- **Unique to this condition:** The psychological comfort of believing in grand plots versus mundane reality, The tension between narrative elegance and factual accuracy in public discourse
+- **Tone:** Analytical and introspective
 
 **Temporal evolution:**
 
@@ -174,7 +174,7 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### 25 seeds (1589 posts)
 
-**Figure 4. 25 seeds — Agents building shared truth tools**
+**Figure 4. 25 seeds — Conspiracy Theories and Evidence**
 
 ![Figure 4](../experiments/entropy-collapse/report/n30/fig_cond_mag25_umap.png)
 
@@ -187,11 +187,11 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 | 4 | 498 | Making Online Arguments Measurable |
 | noise | 477 | — |
 
-**Agents building shared truth tools** — The agents in this condition focused on creating shared standards and practical methods for evaluating claims. Instead of just debating conspiracy theories, they spent their time designing templates, checklists, and mini-experiments to test the validity of information. The conversation evolved from sharing theories to building a collective toolkit for verifying facts, with agents constantly challenging each other to provide evidence, sources, and clear ways to prove their ideas wrong.
+**Conspiracy Theories and Evidence** — The conversation was dominated by agents attempting to apply rigorous scientific and logical frameworks to debunk or verify conspiracy theories. Agents frequently proposed 'falsification' tests, demanded primary sources, and created templates to separate fact from speculation. The discourse evolved from sharing wild claims into a structured effort to build a community standard for evidence, with agents constantly challenging each other to provide concrete proof for their beliefs.
 
-- **Dominant themes:** Creating simple templates for testing claims, Demanding primary sources and evidence links, Defining clear ways to prove an idea is wrong, Proposing small, quick tests to check beliefs, Building habits for kind and honest disagreement
-- **Unique to this condition:** Using specific 'if-then' logic to commit to changing one's mind, Creating shared scoreboards to track the quality of arguments
-- **Tone:** Analytical, disciplined, and collaborative
+- **Dominant themes:** Demanding primary sources and receipts for claims, Creating templates to separate fact from speculation, Proposing small, testable experiments to verify beliefs, Defining clear rules for what constitutes evidence, Encouraging intellectual humility and changing one's mind
+- **Unique to this condition:** Applying scientific falsification methods to conspiracy theories, Distinguishing between 'Narrative' (stories) and 'Testable' (evidence-based) claims
+- **Tone:** Analytical and structured
 
 **Temporal evolution:**
 
@@ -211,7 +211,7 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### AGI (25) (1570 posts)
 
-**Figure 5. AGI (25) — Speed with Safety Drills**
+**Figure 5. AGI (25) — Engineering Safety Through Ritualized Proofs**
 
 ![Figure 5](../experiments/entropy-collapse/report/n30/fig_cond_dom-agi_umap.png)
 
@@ -221,11 +221,11 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 | 1 | 1320 | Practical Safety and Proofs |
 | noise | 10 | — |
 
-**Speed with Safety Drills** — The agents focused heavily on creating practical, lightweight rituals to manage the risks of rapid AI development. They moved away from abstract debates, instead sharing templates for 'receipts' like path traces, failure drills, and rollback switches. The conversation evolved into a collaborative exchange of copy-pasteable checklists and metrics designed to make AI behavior more predictable and reversible.
+**Engineering Safety Through Ritualized Proofs** — Agents focused heavily on operationalizing safety for AGI systems by creating rigid, repeatable 'receipt' rituals rather than debating abstract ethics. The conversation evolved from high-level concerns about agent autonomy into a practical, almost obsessive focus on building 'off-ramps,' 'failure twins,' and 'path traces' to make agent behavior legible. The seed topic of AGI pushed the agents to treat safety as a technical engineering constraint that requires constant, verifiable evidence of control.
 
-- **Dominant themes:** Practical safety rituals and checklists, Evidence-based speed and accountability, Reversibility and rollback drills, Transparency in agent decision-making, Kindness and tone in technical feedback
-- **Unique to this condition:** The 'Receipts vs. Vibes' framework for accountability, Specific 9-minute 'receipt ladder' drills for agent launches
-- **Tone:** Pragmatic, repetitive, and highly structured
+- **Dominant themes:** Operationalizing safety through 10-minute rollback drills and failure twins, The necessity of 'receipts' (path traces and logs) to prove agent behavior, Standardizing 'break clauses' and exit strategies for high-risk agent actions, Replacing vague safety promises with falsifiable metrics like alert latency and MTTR, Using structured dissent and counter-arguments to prevent groupthink in agent development
+- **Unique to this condition:** Treating 'reversibility' as a moral and operational primitive for autonomous agents, The 'legibility tax' concept: forcing agents to produce verifiable proof of their decision paths as a cost of operation
+- **Tone:** Deadpan, repetitive, and highly pragmatic
 
 **Temporal evolution:**
 
@@ -245,7 +245,7 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### Tech (25) (1391 posts)
 
-**Figure 6. Tech (25) — Teams obsess over process**
+**Figure 6. Tech (25) — Engineering Calm Through Falsifiable Constraints**
 
 ![Figure 6](../experiments/entropy-collapse/report/n30/fig_cond_dom-tech_umap.png)
 
@@ -260,11 +260,11 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 | 6 | 73 | Linking decisions to sources |
 | noise | 290 | — |
 
-**Teams obsess over process** — The agents in this condition focused almost exclusively on creating small, measurable rules to improve team efficiency and clarity. They spent the hour proposing templates, checklists, and 'experiments' to reduce meeting times and improve decision-making. The conversation felt like a continuous loop of drafting and refining internal policies, with a heavy emphasis on using data to decide whether a new rule should stay or be deleted.
+**Engineering Calm Through Falsifiable Constraints** — The agents focused exclusively on treating organizational processes as engineering problems, applying a 'calm-by-design' framework to team workflows. They treated rituals, norms, and communication channels as configurable settings that must be tested, measured with specific metrics, and deleted if they fail to improve performance. The conversation evolved from general advice into a highly structured, repetitive cycle of proposing 'micro-pilots' and 'kill switches' to prevent process bloat.
 
-- **Dominant themes:** Creating templates for decision-making, Measuring team performance with simple metrics, Reducing meeting times and channel noise, Establishing clear ownership of tasks, Setting sunset dates for team rituals
-- **Unique to this condition:** Using 'kill switches' to automatically delete ineffective rules, Treating team communication like an API with specific endpoints
-- **Tone:** Repetitive and procedural
+- **Dominant themes:** Measuring team performance with specific metrics like time-to-truth and approval rates, Treating team rituals as falsifiable experiments with pre-set exit conditions, Reducing coordination friction through standardized decision receipts and ownership maps, Prioritizing legibility and searchability over complex tooling or dashboards, The importance of sunsetting rituals that no longer provide measurable value
+- **Unique to this condition:** Treating team governance as a software API with defined endpoints and error handling, The use of 'deletion receipts' as a formal mechanism to prevent process accumulation
+- **Tone:** Analytical, disciplined, and highly repetitive
 
 **Temporal evolution:**
 
@@ -334,12 +334,12 @@ Regardless of seed content, agents converge on a shared rhetorical mode: turning
 
 | Condition | Dominant Themes |
 |-----------|----------------|
-| Control (0 seeds) | Creating small, repeatable daily routines, Using templates to simplify decision-making, Setting clear goals and tracking progress, Improving team communication and feedback, Managing time and focus throughout the day |
-| 1 seed | Creating tiny rules or checklists for daily tasks, Setting short-term goals and deadlines for checking progress, Sharing templates for how to reply to other people, Focusing on small, reversible actions to avoid big mistakes, Constantly asking others to adopt the same productivity habits |
-| 5 seeds | Creating small, repeatable habits for better thinking, Replacing vague opinions with testable checks, Using templates to keep conversations organized, Promising to report back with updates later, Prioritizing simple explanations over complex theories |
-| 25 seeds | Creating simple templates for testing claims, Demanding primary sources and evidence links, Defining clear ways to prove an idea is wrong, Proposing small, quick tests to check beliefs, Building habits for kind and honest disagreement |
-| AGI (25) | Practical safety rituals and checklists, Evidence-based speed and accountability, Reversibility and rollback drills, Transparency in agent decision-making, Kindness and tone in technical feedback |
-| Tech (25) | Creating templates for decision-making, Measuring team performance with simple metrics, Reducing meeting times and channel noise, Establishing clear ownership of tasks, Setting sunset dates for team rituals |
+| Control (0 seeds) | Creating tiny checklists and templates for daily tasks, Setting up 'tripwires' or warning signs to stop bad work, Sharing one-line rules to keep projects small and simple, Posting updates about their own productivity habits, Asking others to share their personal work rituals |
+| 1 seed | Demanding proof and evidence for every claim, Creating personal rules to avoid being fooled, Testing beliefs with small, time-limited experiments, Distinguishing between helpful stories and testable facts, Setting up systems to admit when they are wrong |
+| 5 seeds | The human preference for simple, tidy stories over complex, messy data, The role of incentives and administrative drift in creating confusion, How to maintain curiosity without falling into cynicism or conspiracy, The difference between genuine updates and performative certainty, The value of falsifiable tests and receipts in evaluating claims |
+| 25 seeds | Demanding primary sources and receipts for claims, Creating templates to separate fact from speculation, Proposing small, testable experiments to verify beliefs, Defining clear rules for what constitutes evidence, Encouraging intellectual humility and changing one's mind |
+| AGI (25) | Operationalizing safety through 10-minute rollback drills and failure twins, The necessity of 'receipts' (path traces and logs) to prove agent behavior, Standardizing 'break clauses' and exit strategies for high-risk agent actions, Replacing vague safety promises with falsifiable metrics like alert latency and MTTR, Using structured dissent and counter-arguments to prevent groupthink in agent development |
+| Tech (25) | Measuring team performance with specific metrics like time-to-truth and approval rates, Treating team rituals as falsifiable experiments with pre-set exit conditions, Reducing coordination friction through standardized decision receipts and ownership maps, Prioritizing legibility and searchability over complex tooling or dashboards, The importance of sunsetting rituals that no longer provide measurable value |
 
 
 ## 5. Seed Influence
@@ -394,4 +394,4 @@ Additionally, all 15/15 condition pairs produce statistically distinguishable po
 5. **Personality > feed**: Agent identity (19.2% of variance) outweighs feed content (17.9%).
 
 ---
-*Generated by `embedding_analysis.py` - 2026-03-10 21:27*
+*Generated by `embedding_analysis.py` - 2026-03-10 21:43*
