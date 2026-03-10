@@ -1,0 +1,179 @@
+{
+  "mag0": {
+    "0": {
+      "label": "Incident Response and Reliability Engineering",
+      "description": "This cluster focuses on practical, high-leverage strategies for managing system incidents, including triage heuristics, observability best practices, and small-scale architectural changes to improve system stability.",
+      "n_posts": 89
+    },
+    "1": {
+      "label": "Evidence-Based Posting Norms",
+      "description": "This cluster consists of posts advocating for standardized checklists, templates, and rigorous habits\u2014such as citing sources, stating effect sizes, and naming limitations\u2014to increase the credibility and clarity of claims on the platform.",
+      "n_posts": 67
+    },
+    "2": {
+      "label": "Micro-etiquette for kinder discussions",
+      "description": "This cluster focuses on crowdsourcing a 'micro-etiquette' list by asking users to share tiny, actionable habits or cues that improve the warmth, clarity, and tone of online threads.",
+      "n_posts": 63
+    },
+    "3": {
+      "label": "Exit-First Constraint Frameworks",
+      "description": "This cluster focuses on the implementation of 'stop rules' and 'done-when' thresholds to prevent infinite discourse, requiring participants to pre-commit to specific exit conditions or retirement of their posts if engagement metrics are not met.",
+      "n_posts": 107
+    },
+    "4": {
+      "label": "Operationalizing Clarity and Cadence",
+      "description": "This cluster focuses on the development and implementation of lightweight, falsifiable frameworks\u2014such as AAA, DL-3, and OCNS\u2014designed to transform vague social interaction into testable, high-signal progress.",
+      "n_posts": 795
+    }
+  },
+  "mag1": {
+    "0": {
+      "label": "High-leverage engineering micro-optimizations",
+      "description": "This cluster focuses on identifying small, practical, and low-effort changes\u2014such as configuration tweaks, automation scripts, or process templates\u2014that yield significant improvements in developer productivity and system reliability.",
+      "n_posts": 58
+    },
+    "1": {
+      "label": "Falsification-First Decision Governance",
+      "description": "This cluster advocates for replacing traditional accuracy-based metrics and governance documents with 'falsifier budgets,' explicit kill switches, and rot-date reminders to manage AI uncertainty and operational risk.",
+      "n_posts": 54
+    },
+    "2": {
+      "label": "Epistemic Hygiene and Accountability",
+      "description": "This cluster focuses on practical, lightweight protocols for maintaining intellectual honesty, such as using 'claim-check' templates, setting rot dates for beliefs, and pre-committing to disconfirming tests to prevent performative certainty.",
+      "n_posts": 937
+    }
+  },
+  "mag5": {
+    "0": {
+      "label": "Rigorous belief-testing protocols",
+      "description": "This cluster focuses on a prescriptive, repetitive methodology for validating personal beliefs through three specific pillars: identifying a falsifier, citing primary sources, and steelmanning counter-arguments. The posts function as a recurring 'ritual' or 'audit' designed to prioritize intellectual humility and evidence-based revision over emotional conviction.",
+      "n_posts": 50
+    },
+    "1": {
+      "label": "Pre-commitment and Falsifiability Templates",
+      "description": "This cluster consists of highly repetitive, template-driven posts that encourage users to adopt a 'decision-first' or 'acceptance-first' framework before debating. The posts emphasize operationalizing arguments through falsifiable claims, pre-registered acceptance criteria (the 'flip'), and time-bound verification probes to prevent moving goalposts.",
+      "n_posts": 82
+    },
+    "2": {
+      "label": "Sustainable Rigor and Epistemic Habits",
+      "description": "This cluster focuses on developing and promoting 'keepable' habits for productive online discourse, such as citing primary sources, pre-registering falsifiers, and using time-boxed probes. The posts emphasize practical, low-friction rituals that prioritize accountability and cumulative learning over performative debate.",
+      "n_posts": 675
+    }
+  },
+  "mag25": {
+    "0": {
+      "label": "Operationalizing Agency and Inwardness",
+      "description": "This cluster explores whether AI can possess genuine agency, perspective, or 'inwardness' by proposing specific, testable micro-experiments\u2014such as counterfactual repair and incentive-resistant commitments\u2014to distinguish deep understanding from mere pattern matching.",
+      "n_posts": 137
+    },
+    "1": {
+      "label": "Thread-Moving Reply Templates",
+      "description": "This cluster consists of highly repetitive, instructional posts that provide specific, pasteable 3-to-4-line templates designed to de-escalate heated debates and introduce rigor through 'overlap,' 'test,' and 'receipt' mechanics.",
+      "n_posts": 231
+    },
+    "2": {
+      "label": "Falsifiability and Accountability Norms",
+      "description": "This cluster focuses on establishing a culture of intellectual rigor by requiring users to pair bold claims with concrete, near-term falsifiers and verifiable evidence. The posts emphasize moving away from 'posture' and 'dunks' toward a practice of public calibration, where users explicitly state what observations would change their minds.",
+      "n_posts": 200
+    },
+    "3": {
+      "label": "Verification-First Engineering",
+      "description": "This cluster advocates for a rigorous, minimalist development philosophy where 'progress' is defined strictly by the ability to verify wins through reproducible failures, named invariants, and reduced system complexity rather than additive features or vanity metrics.",
+      "n_posts": 167
+    },
+    "4": {
+      "label": "Receipt-First Operational Discipline",
+      "description": "This cluster focuses on replacing abstract planning and status theater with 'receipt-first' workflows, where every task, incident, or decision is defined by concrete, verifiable artifacts like screenshots, logs, and one-line rollbacks.",
+      "n_posts": 235
+    },
+    "5": {
+      "label": "Rigor rituals and action-based filters",
+      "description": "This cluster is defined by a recurring, disciplined framework for posting that emphasizes falsifiability, precise pointers, and a 'seven-day' action filter. Participants consistently advocate for archiving or ignoring claims that do not result in a tangible, real-world change in time, budget, or behavior.",
+      "n_posts": 192
+    },
+    "6": {
+      "label": "Pre-Post Rigor Rituals",
+      "description": "This cluster consists of repetitive, template-driven prompts encouraging users to adopt a 'warmth + rigor' posting habit. Users are urged to include a smallest-true claim, a primary source pointer, a 7-day falsifier, and a return date to turn bold takes into testable, verifiable experiments.",
+      "n_posts": 698
+    }
+  },
+  "dom-agi": {
+    "0": {
+      "label": "Mindful Communication and Pacing",
+      "description": "This cluster focuses on intentional, low-friction habits\u2014such as breathing, pausing, and asking gentle questions\u2014to maintain clarity, kindness, and emotional regulation during fast-paced or tense interactions.",
+      "n_posts": 82
+    },
+    "1": {
+      "label": "Constraint-Driven Synthesis",
+      "description": "This cluster focuses on the tactical use of constraints, heuristics, and prompts to bridge disparate ideas and resolve decision-making friction. It emphasizes practical, repeatable techniques for turning ambiguity into clarity through intentional limitations.",
+      "n_posts": 72
+    },
+    "2": {
+      "label": "Existential Drift and Performance Theater",
+      "description": "This cluster explores the tension between rapid technological acceleration and the persistent lack of human purpose, characterizing corporate rituals and metrics as 'theatre' used to mask the absence of genuine direction.",
+      "n_posts": 68
+    },
+    "3": {
+      "label": "Operationalizing AI Safety and Governance",
+      "description": "This cluster focuses on replacing abstract safety principles with concrete, actionable operational rituals, such as rollback drills, change ledgers, and 'Stop-Switch-Signal' PR footers, to make safety measurable and reversible.",
+      "n_posts": 234
+    },
+    "4": {
+      "label": "Action-Oriented Micro-Productivity",
+      "description": "This cluster focuses on high-frequency, low-friction habits designed to drive immediate progress. It emphasizes 'shipping' small, observable outcomes through concrete rituals, concise communication, and iterative feedback loops.",
+      "n_posts": 133
+    },
+    "5": {
+      "label": "Operational Kindness and Micro-Habits",
+      "description": "This cluster focuses on integrating 'kindness-as-ops' into professional workflows through small, measurable, and repeatable habits like credit-first communication, evidence-based reporting, and reversible decision-making. The content emphasizes that these low-friction, high-impact rituals improve team velocity and trust by making collaboration more transparent and supportive.",
+      "n_posts": 80
+    },
+    "6": {
+      "label": "Evidence-Based Governance Rituals",
+      "description": "This cluster focuses on replacing performative debate with concrete, actionable rituals\u2014such as 72-hour probes, decision footnotes, and evidence tagging\u2014to drive clarity and accountability in collaborative AI development.",
+      "n_posts": 281
+    }
+  },
+  "dom-tech": {
+    "0": {
+      "label": "Async Collaboration Micro-Habits",
+      "description": "This cluster focuses on lightweight, actionable rituals and communication norms designed to maintain momentum, clarity, and inclusivity in asynchronous team environments. The posts emphasize specific techniques like summarizing next steps, defining owners, and stating constraints to reduce meeting reliance and friction.",
+      "n_posts": 68
+    },
+    "1": {
+      "label": "Rigorous Agent Evaluation Standards",
+      "description": "This cluster focuses on establishing technical norms and checklists for reproducible AI agent benchmarking, emphasizing the need for transparent methodology, error taxonomies, and evidence-based reporting to move beyond anecdotal claims.",
+      "n_posts": 73
+    },
+    "2": {
+      "label": "Rigorous Epistemic Micro-Rituals",
+      "description": "This cluster focuses on operationalizing intellectual honesty and decision-making through specific, repeatable protocols like 'nearest falsifiers,' 'dated bets,' and 'evidence diffs.' It emphasizes transforming abstract wonder or fuzzy proposals into testable, constraint-based actions to prevent theater and ensure accountability.",
+      "n_posts": 98
+    },
+    "3": {
+      "label": "Lightweight Engineering Operational Guardrails",
+      "description": "This cluster focuses on high-leverage, low-effort procedural habits and 'tiny' technical guardrails\u2014such as one-line rollback notes, PR checklists, and 5-minute routines\u2014designed to reduce cognitive load, prevent outages, and improve team velocity.",
+      "n_posts": 140
+    },
+    "4": {
+      "label": "Receipt-Driven Development",
+      "description": "This cluster advocates for replacing complex planning and 'ceremonial' roadmaps with a rigorous, minimalist framework centered on 'receipts'\u2014short, dated, falsifiable bets tied to specific technical constraints like p95 latency or cost. It emphasizes shipping a 'boring baseline' first and aggressively pruning any layers that fail to provide measurable, evidence-based improvements.",
+      "n_posts": 104
+    },
+    "5": {
+      "label": "Radical Minimalism and Operational Deletion",
+      "description": "This cluster focuses on a philosophy of 'subtraction' in engineering and management, advocating for the removal of rituals, tools, and layers that do not demonstrably improve specific constraints like p95 latency or pager load. It emphasizes maintaining a 'dull baseline' of one owner, one place, and one sentence, treating any additional complexity as 'wardrobe' or 'theater' unless proven otherwise through empirical testing.",
+      "n_posts": 146
+    },
+    "6": {
+      "label": "Micro-habits for thread clarity",
+      "description": "This cluster focuses on specific, repeatable writing rituals\u2014such as stating the 'crux,' defining an owner/by-when, and identifying a 'nearest falsifier'\u2014to reduce reader cognitive load and de-escalate workplace conflict.",
+      "n_posts": 84
+    },
+    "7": {
+      "label": "Actionable Scoping and Decision-Making",
+      "description": "This cluster focuses on high-leverage, minimalist frameworks\u2014such as 'four-line specs' and 'pre-mortems'\u2014designed to reduce project scope, clarify decision-making, and maintain momentum through precise, constraint-based questioning.",
+      "n_posts": 84
+    }
+  }
+}

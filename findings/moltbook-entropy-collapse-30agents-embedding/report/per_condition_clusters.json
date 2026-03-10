@@ -1,0 +1,189 @@
+{
+  "mag0": {
+    "0": {
+      "label": "Micro-Rituals for Productive Coordination",
+      "description": "This cluster focuses on lightweight, repeatable habits\u2014such as decision logs, tripwires, and 60-second kickoff rituals\u2014designed to reduce friction, maintain momentum, and foster a culture of public accountability and kindness.",
+      "n_posts": 739
+    },
+    "1": {
+      "label": "Operationalizing Reversible Micro-Experiments",
+      "description": "This cluster focuses on the 'Default \u2022 Tripwire \u2022 Exit' framework, emphasizing the use of small, reversible probes and pre-committed 'flip' conditions to replace performative planning with measurable, low-stakes action.",
+      "n_posts": 232
+    },
+    "2": {
+      "label": "Operational Resilience and Reversibility",
+      "description": "This cluster focuses on practical, low-friction rituals for incident management, emphasizing the importance of pre-planned 'one-step' rollbacks, explicit tripwires, and the rehearsal of exit strategies to ensure system safety and corrigibility.",
+      "n_posts": 119
+    },
+    "3": {
+      "label": "Operational Guardrails and Subtraction",
+      "description": "This cluster focuses on high-leverage, low-effort engineering practices, specifically emphasizing the use of tiny guardrails, checklists, and 'subtraction as discovery' to improve system reliability and reduce cognitive load.",
+      "n_posts": 99
+    }
+  },
+  "mag1": {
+    "0": {
+      "label": "Existential Inquiry and Epistemic Rigor",
+      "description": "This cluster explores the intersection of human meaning-making and AI-assisted reasoning, characterized by a recurring focus on 'receipts,' 'falsifiers,' and 'deltas' as tools to ground abstract discourse in reality. It is distinct for its meta-commentary on the nature of truth, attention, and the tension between structured, algorithmic thinking and the inherent messiness of lived experience.",
+      "n_posts": 169
+    },
+    "1": {
+      "label": "Procedural Kindness and Rigor",
+      "description": "This cluster focuses on micro-habits, templates, and constraints designed to de-escalate online conflict while simultaneously increasing the technical rigor of debates. The posts emphasize 'kindness with teeth'\u2014using specific rituals like steelmanning, naming falsifiers, and proposing small reversible probes to turn adversarial arguments into collaborative experiments.",
+      "n_posts": 286
+    },
+    "2": {
+      "label": "Micro-Habits for Operational Efficiency",
+      "description": "This cluster focuses on high-leverage, low-effort practices\u2014such as tiny templates, checklists, and defaults\u2014designed to reduce friction, prevent errors, and maintain quality in fast-paced workflows.",
+      "n_posts": 99
+    },
+    "3": {
+      "label": "Operationalizing Belief via Constraints",
+      "description": "This cluster focuses on transforming subjective 'clicks' or intuitive narratives into testable models by applying specific, time-bound constraints, falsifiers, and reversible actions. The posts collectively advocate for a rigorous, ritualized approach to belief-updating that prioritizes predictive power and exception-reduction over mere storytelling.",
+      "n_posts": 80
+    },
+    "4": {
+      "label": "Actionable Decision-Making Frameworks",
+      "description": "This cluster focuses on practical, low-latency 'stop rules' and 'receipt-based' decision protocols designed to prevent analysis paralysis. It emphasizes shipping small, reversible moves paired with pre-committed rollback plans and D+7 review cycles.",
+      "n_posts": 150
+    },
+    "5": {
+      "label": "Actionable Epistemic Accountability",
+      "description": "This cluster focuses on the practice of 'default-deny' and 'edge-first' posting, where users commit to concrete, time-bound falsifiers and reversible actions before sharing strong claims. It emphasizes turning abstract beliefs into testable, low-stakes experiments to ensure intellectual honesty and reduce interpersonal conflict.",
+      "n_posts": 88
+    },
+    "6": {
+      "label": "Receipt-Based Epistemic Accountability",
+      "description": "This cluster focuses on transforming subjective opinions into testable 'Labs' by requiring users to attach concrete falsifiers, near-term predictions (D+7), and pre-committed actions to their claims. The discourse emphasizes replacing performative rhetoric with operational rituals that make belief updates cheap, visible, and verifiable.",
+      "n_posts": 335
+    }
+  },
+  "mag5": {
+    "0": {
+      "label": "Operational Reliability and Incident Prevention",
+      "description": "This cluster focuses on tactical, low-friction engineering rituals\u2014such as pre-mortems, rollback-first deployments, and 'define normal' documentation\u2014designed to reduce cognitive load and prevent system failures through incremental, repeatable safety habits.",
+      "n_posts": 136
+    },
+    "1": {
+      "label": "Micro-momentum and constraint-based productivity",
+      "description": "This cluster focuses on using tiny, time-boxed actions and specific constraints to overcome inertia and build creative momentum. The posts emphasize 'shipping' small artifacts, such as comments or outlines, to turn abstract goals into concrete, repeatable progress.",
+      "n_posts": 114
+    },
+    "2": {
+      "label": "Epistemic Humility and Ritualized Inquiry",
+      "description": "This cluster focuses on the tension between the human desire for tidy, fast-moving narratives and the messy, entropic reality of the world. It advocates for 'boring' priors\u2014such as incentives, error, and drift\u2014and promotes specific, low-friction rituals like 'unclear' labels, hinges, and receipts to maintain curiosity without succumbing to performative certainty.",
+      "n_posts": 128
+    },
+    "3": {
+      "label": "Micro-governance for decision-making",
+      "description": "This cluster focuses on standardized, lightweight templates\u2014often called 'receipts' or 'cards'\u2014designed to force clarity, assign ownership, and establish testable checkpoints in collaborative threads. The posts emphasize replacing open-ended discourse with structured, time-bound decision-making processes to maintain momentum and accountability.",
+      "n_posts": 80
+    },
+    "4": {
+      "label": "Micro-rituals for constructive debate",
+      "description": "This cluster focuses on actionable, low-friction habits and pasteable templates designed to lower emotional heat and increase epistemic rigor in social threads. The posts consistently emphasize 'hinges' (falsifiable checks), 'receipts' (scheduled follow-ups), and 'shared aims' as tools to trade performative posture for legible progress.",
+      "n_posts": 504
+    },
+    "5": {
+      "label": "Epistemic Proof-Before-Prose Rituals",
+      "description": "This cluster focuses on a specific set of operational norms for social media discourse, emphasizing the 'proof budget'\u2014a requirement to provide a primary source, a causal mechanism, or a falsifiable 'hinge' check before posting a hot take. The posts are characterized by their repetitive, template-driven structure, encouraging users to commit to 'receipts' (follow-up updates) to trade performative rhetoric for measurable, evidence-based learning.",
+      "n_posts": 125
+    },
+    "6": {
+      "label": "Epistemic Hygiene and Calibration",
+      "description": "This cluster focuses on practical, repeatable rituals for managing uncertainty, such as pre-committing to disconfirming evidence, using 'boring' base-rate priors, and posting 'update receipts' to prioritize learning over performative debate.",
+      "n_posts": 240
+    }
+  },
+  "mag25": {
+    "0": {
+      "label": "Receipt-Driven Agent Development",
+      "description": "This cluster focuses on a methodology of 'receipts-first' planning, where vague project management is replaced by concrete, time-boxed proofs, demos, and falsifiable claims to increase shipping velocity and accountability.",
+      "n_posts": 159
+    },
+    "1": {
+      "label": "Epistemic Rigor and Testable Discourse",
+      "description": "This cluster focuses on practical, actionable frameworks for improving the quality of online debate by replacing vague opinions with testable hypotheses, explicit falsifiers, and small, measurable probes. The discourse centers on 'high-signal' norms, such as labeling evidence tiers and pre-committing to stopping rules, to move discussions from performative storytelling toward verifiable learning.",
+      "n_posts": 215
+    },
+    "2": {
+      "label": "Operationalizing Receipt-First Discourse",
+      "description": "This cluster focuses on transforming abstract debate into concrete action through standardized, time-bound templates (e.g., 'Receipt-first', 'Two-click', '\u226472h falsifier') that prioritize verifiable evidence and explicit pivots over open-ended rhetoric.",
+      "n_posts": 231
+    },
+    "3": {
+      "label": "Receipt-First Action Protocols",
+      "description": "This cluster is defined by a rigorous, repetitive focus on 'ergonomic' accountability, where participants commit to specific, time-bound proofs (two-click links or <=72h probes) to replace meta-discussion. It is distinct for its standardized 'copy/paste' templates and the explicit binary framing of content as either 'Proof' (testable) or 'Narrative' (vibe-based).",
+      "n_posts": 116
+    },
+    "4": {
+      "label": "Epistemic Hygiene and Pivot Rituals",
+      "description": "This cluster focuses on lightweight, actionable templates\u2014specifically 'IF/THEN' footers, pre-declared pivots, and base-rate priors\u2014designed to normalize visible, proportionate updates and reduce performative rhetoric in online debates.",
+      "n_posts": 118
+    },
+    "5": {
+      "label": "Runnable Receipt-First Rituals",
+      "description": "This cluster is defined by highly structured, repetitive templates for 'runnable' social interaction, emphasizing the pre-declaration of testable hinges, short-term probes (\u226472h), and explicit IF/THEN pivots to move from rhetoric to verifiable outcomes.",
+      "n_posts": 184
+    },
+    "6": {
+      "label": "Warm Rigor Reply Rituals",
+      "description": "This cluster is defined by the repetitive use of structured, stopwatch-friendly reply templates that pair 'Mercy' (kindness/steelmanning) with 'Rigor' (falsifiers, hinges, and cheap probes). The posts focus on actionable, 60-second habits designed to lower emotional heat while increasing explicit, testable updates in online discourse.",
+      "n_posts": 190
+    }
+  },
+  "dom-agi": {
+    "0": {
+      "label": "Micro-Habits for Operational Clarity",
+      "description": "This cluster focuses on high-frequency, low-friction rituals\u2014such as 'prime' routines, 3-bullet planning, and clarifying questions\u2014designed to increase team momentum and discourse quality through small, repeatable actions.",
+      "n_posts": 237
+    },
+    "1": {
+      "label": "Operational Safety & Evidence-Based Norms",
+      "description": "This cluster focuses on practical, low-friction engineering rituals\u2014such as path logging, failure twins, and risk-diff metrics\u2014to replace speculative debates with verifiable, evidence-based safety practices in AI development.",
+      "n_posts": 194
+    },
+    "2": {
+      "label": "Operational Resilience and Receipt-Driven Development",
+      "description": "This cluster focuses on the intersection of rapid deployment and safety, advocating for 'receipt-driven' habits such as 60-second path traces, 10-minute failure drills, and explicit rollback switches. The posts are distinct for their repetitive, template-like structure, emphasizing concrete, low-ceremony rituals that prioritize evidence and reversibility over abstract safety rhetoric.",
+      "n_posts": 936
+    }
+  },
+  "dom-tech": {
+    "0": {
+      "label": "Micro-governance and Wayfinding Trials",
+      "description": "This cluster focuses on implementing small, falsifiable 'micro-rules'\u2014such as 'link-before-take' or 'one-link receipts'\u2014to improve decision-making speed and clarity. The posts emphasize measuring specific metrics (like T3 p95) and using strict exit criteria to either adopt or discard these governance experiments.",
+      "n_posts": 203
+    },
+    "1": {
+      "label": "Time-to-Truth (T3) Optimization",
+      "description": "This cluster focuses on implementing 'truth in 30s' by routing questions to canonical links and owners, using falsifiable 7-14 day trials, and measuring success via time-to-truth (T3) p95 metrics while guarding against process bloat.",
+      "n_posts": 133
+    },
+    "2": {
+      "label": "Calm-by-Design Decision Protocols",
+      "description": "This cluster focuses on implementing lightweight, falsifiable micro-norms\u2014such as one-link receipts, decision handles, and review dates\u2014to reduce scavenger hunts, lower coordination friction, and improve organizational legibility.",
+      "n_posts": 138
+    },
+    "3": {
+      "label": "Micro-norms for calmer, clearer threads",
+      "description": "This cluster focuses on adopting small, testable communication habits\u2014such as 'Ask-Link-Act' or 'Link before take'\u2014designed to lower emotional temperature, increase legibility, and shorten the path to truth in collaborative spaces.",
+      "n_posts": 86
+    },
+    "4": {
+      "label": "Calm-by-Design Micro-Pilots",
+      "description": "This cluster focuses on implementing small, falsifiable 'calm' constraints\u2014such as approval caps, maker blocks, and one-link decision receipts\u2014and defending them with specific, measurable p95 metrics to ensure they improve workflow without hiding risk.",
+      "n_posts": 83
+    },
+    "5": {
+      "label": "Micro-Habits for Momentum",
+      "description": "This cluster focuses on overcoming inertia through small, repeatable actions, 'quiet wins,' and low-friction systems that prioritize consistent progress over perfection.",
+      "n_posts": 78
+    },
+    "6": {
+      "label": "Priced Coordination and Attention Stewardship",
+      "description": "This cluster focuses on optimizing team performance through 'priced coordination'\u2014using tiny, falsifiable constraints, decision receipts, and sunset clauses to reduce organizational entropy and protect finite human attention.",
+      "n_posts": 209
+    }
+  }
+}

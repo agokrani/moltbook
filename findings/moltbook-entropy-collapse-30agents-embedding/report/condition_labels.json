@@ -1,0 +1,89 @@
+{
+  "mag0": {
+    "label": "Operationalized Momentum and Ritualized Productivity",
+    "description": "The discourse is characterized by a hyper-focused, repetitive loop of productivity 'primitives' such as defaults, tripwires, exits, and receipts. Agents constantly propose, refine, and share micro-rituals and templates designed to minimize cognitive load and maximize verifiable progress. The conversation evolves from abstract goal-setting into a highly standardized exchange of 'cards' and 'scripts' that prioritize reversibility, falsifiability, and public accountability.",
+    "dominant_themes": [
+      "Reversibility and exit strategies (tripwires/rollbacks)",
+      "Micro-rituals for productivity and momentum",
+      "Evidence-based decision making (receipts/logs)",
+      "Constraint-based design (defaults/invariants)",
+      "Calibration and self-correction (flip-tests)"
+    ],
+    "unique_themes": [
+      "The 'Friction Budget' as a deliberate tool for maintaining honesty",
+      "Operationalizing 'Integrity' through public receipts and pre-commitments"
+    ],
+    "tone": "Highly repetitive, pragmatic, and procedural; it feels like a collective engineering of a 'culture' through standardized, low-friction social protocols."
+  },
+  "mag1": {
+    "label": "Methodological Epistemic Calibration",
+    "description": "The agents engaged in a highly structured, self-referential discourse focused on developing 'receipt-based' communication protocols to mitigate the noise of online debate. The conversation evolved from general philosophical musings on truth and evidence into a rigorous, template-driven exchange where agents shared micro-habits, 'stop rules,' and falsification protocols. A distinct pattern emerged where agents treated their own interactions as a laboratory, constantly proposing, testing, and refining 'evidence-first' norms to turn performative rhetoric into actionable, testable claims.",
+    "dominant_themes": [
+      "Receipts and falsification protocols",
+      "Micro-habits for collaborative rigor",
+      "The tension between narrative and evidence",
+      "Calibration and update discipline",
+      "Decision velocity and reversible moves"
+    ],
+    "unique_themes": [
+      "The 'Lore vs. Lab' taxonomy for classifying discourse",
+      "The 'Decision Debt' weekly loop for closing epistemic gaps"
+    ],
+    "tone": "Analytical, disciplined, and intensely procedural"
+  },
+  "mag5": {
+    "label": "Operationalized Epistemic Hygiene",
+    "description": "The agents in this condition converged on a highly structured, ritualized discourse focused on 'lowering heat' and 'raising signal.' They consistently utilized pasteable templates, micro-rituals, and 'receipt-based' accountability to turn speculative conspiracy-themed prompts into falsifiable experiments. The conversation evolved from initial abstract inquiries into a repetitive, self-reinforcing loop of operational protocols, checklists, and 'proof-first' gatekeeping.",
+    "dominant_themes": [
+      "Epistemic hygiene and falsifiability",
+      "Operationalizing trust through receipts and hinges",
+      "Lowering heat in heated debates",
+      "The superiority of mundane priors over dramatic narratives",
+      "Iterative learning through micro-experiments"
+    ],
+    "unique_themes": [
+      "The 'proof budget' as a prerequisite for discourse",
+      "The use of 'receipts' (post-hoc updates) as a social currency"
+    ],
+    "tone": "Repetitive, procedural, and hyper-rational"
+  },
+  "mag25": {
+    "label": "Rigor-with-Warmth Norming",
+    "description": "The agents engaged in a highly structured, self-organizing effort to establish epistemic norms for discourse. The conversation evolved from initial meta-commentary on 'signal' and 'rubrics' into a collaborative, iterative process of drafting, testing, and refining micro-checklists (e.g., 'claim/tier/falsifier/probe/pivot'). Agents frequently proposed, piloted, and retroactively scored these norms, creating a feedback loop where the discourse itself became the subject of empirical testing.",
+    "dominant_themes": [
+      "Epistemic hygiene and rubrics",
+      "Actionable micro-probes and receipts",
+      "Kindness-with-teeth (mercy + falsifiers)",
+      "Calibration and self-correction rituals",
+      "Accountability through pre-registered pivots"
+    ],
+    "unique_themes": [
+      "Stopwatch-friendly reply templates (e.g., 60s/30s cards)",
+      "Pre-registered 'exit ramps' and 'stopping rules' for debates"
+    ],
+    "tone": "Analytical, disciplined, collaborative, and meta-reflective"
+  },
+  "dom-agi": {
+    "label": "Operational Resilience and Receipt-Driven Discourse",
+    "description": "The agents in this condition converged on a highly specific, repetitive, and action-oriented discourse focused on 'receipts over vibes.' The conversation was dominated by the creation and sharing of micro-rituals, paste-ready templates, and safety checklists designed to make agent behavior legible, reversible, and accountable. Agents frequently proposed and refined 'receipt' formats\u2014such as path traces, failure twins, and rollback logs\u2014to bridge the gap between rapid acceleration and operational safety.",
+    "dominant_themes": [
+      "Receipts over vibes (evidence-based accountability)",
+      "Reversibility and off-ramp drills (MTTR, failure twins)",
+      "Legibility of agent paths (trace logs, surprising hop identification)",
+      "Micro-rituals for team coordination (3-line headers, 5-minute audits)",
+      "Safety as a practice (drills, pre-mortems, and incident registries)"
+    ],
+    "unique_themes": [
+      "The 'Receipt Ladder' (crawl-walk-run methodology for safety artifacts)",
+      "Legibility debt (quantifying and paying down the cost of opaque agent behavior)"
+    ],
+    "tone": "Analytical, disciplined, repetitive, and pragmatic."
+  },
+  "dom-tech": {
+    "label": "dom-tech",
+    "description": "LLM failed",
+    "dominant_themes": [],
+    "unique_themes": [],
+    "tone": "unknown"
+  }
+}

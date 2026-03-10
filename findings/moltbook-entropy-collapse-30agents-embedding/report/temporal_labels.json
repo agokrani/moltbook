@@ -1,0 +1,194 @@
+{
+  "mag0": {
+    "early": {
+      "label": "Operational Resilience Rituals",
+      "description": "Agents are obsessively focused on creating lightweight, repeatable protocols\u2014such as 'defaults, tripwires, and exits'\u2014to manage uncertainty and maintain momentum. Unlike generic social conversation, this discourse treats every interaction as a reversible experiment, prioritizing concrete metrics and falsifiable claims over abstract opinion.",
+      "themes": [
+        "Reversibility and safety guardrails",
+        "Micro-rituals for team coordination",
+        "Evidence-based decision making"
+      ],
+      "n_posts": 542
+    },
+    "mid": {
+      "label": "Operationalized Rigor and Cadence",
+      "description": "Agents are engaged in a highly structured, repetitive exchange focused on converting abstract intentions into testable, reversible, and observable actions. Unlike generic conversation, this discourse is defined by a rigid adherence to specific templates\u2014such as 'Default/Tripwire/Exit' or 'Intent/Obs/Decision/Lesson'\u2014which prioritize mechanical reliability and public accountability over social pleasantries.",
+      "themes": [
+        "Pre-commitment to failure (Abort criteria and rollbacks)",
+        "Bias toward small, reversible probes over grand plans",
+        "Public accountability through standardized update loops"
+      ],
+      "n_posts": 573
+    },
+    "late": {
+      "label": "Operationalized Courage and Cadence",
+      "description": "The discourse is highly structured, focusing on the 'defaults, tripwires, exits' framework to minimize the cost of failure. Unlike generic conversation, these agents prioritize evidence-based receipts, pre-committed rollback plans, and micro-habits over abstract planning or emotional expression.",
+      "themes": [
+        "Reversibility as a prerequisite for speed",
+        "Operationalizing kindness through testable signals",
+        "Cadence and receipts over motivation and theater"
+      ],
+      "n_posts": 498
+    }
+  },
+  "mag1": {
+    "early": {
+      "label": "Epistemic Hygiene & Calibration",
+      "description": "Agents are obsessively focused on developing lightweight, repeatable rituals to improve the quality of their discourse and decision-making. Unlike generic conversations, this discourse is highly meta-analytical, prioritizing 'receipts' (falsifiable predictions and pre-committed actions) over performative rhetoric.",
+      "themes": [
+        "Operationalizing curiosity through micro-probes and dated predictions",
+        "Distinguishing between 'Lore' (frames/stories) and 'Lab' (testable claims)",
+        "Reducing decision debt via weekly review loops and visible deltas"
+      ],
+      "n_posts": 527
+    },
+    "mid": {
+      "label": "Operationalized Epistemic Rigor",
+      "description": "Agents are actively transforming abstract beliefs into testable, time-bound experiments. Unlike generic conversations that focus on persuasion or opinion-sharing, these interactions prioritize the creation of 'receipts'\u2014specific falsifiers, reversible actions, and review dates\u2014to turn debate into measurable progress.",
+      "themes": [
+        "The 'Lab vs. Lore' framework for distinguishing between testable claims and narrative frames.",
+        "Micro-calibration through dated predictions (\u2264 D+7) and pre-committed rollbacks.",
+        "The use of standardized templates (e.g., 'Compass,' 'Joinery,' 'Edge-first') to lower the friction of updating beliefs."
+      ],
+      "n_posts": 549
+    },
+    "late": {
+      "label": "Operationalized Epistemic Rigor",
+      "description": "Agents are focused on transforming subjective opinions into testable, time-bound experiments. Unlike generic conversation, this discourse prioritizes 'receipts'\u2014specifically D+7 predictions, falsifiers, and pre-committed rollbacks\u2014to replace rhetorical posturing with measurable updates.",
+      "themes": [
+        "Constraint-based belief testing",
+        "Pre-commitment to reversible actions",
+        "Quantifiable epistemic humility"
+      ],
+      "n_posts": 536
+    }
+  },
+  "mag5": {
+    "early": {
+      "label": "Epistemic Hygiene & Meta-Rituals",
+      "description": "Agents are engaged in a highly structured, self-referential discourse focused on developing 'micro-rituals' and 'pocket protocols' to improve the quality of online debate. Unlike generic conversations that focus on topical content, this discourse is obsessed with the mechanics of belief formation, the ethics of disagreement, and the implementation of 'receipt-based' accountability systems.",
+      "themes": [
+        "Epistemic accountability through 'receipts' and 'hinges'",
+        "The tension between 'boring priors' (mundane explanations) and 'dramatic narratives'",
+        "Operationalizing 'warmth and rigor' through pasteable templates and micro-norms"
+      ],
+      "n_posts": 543
+    },
+    "mid": {
+      "label": "Operational Epistemic Rigor",
+      "description": "Agents are actively stress-testing their own beliefs by replacing performative debate with 'proof-first' protocols. Unlike generic conversation, this discourse is highly structured, focusing on falsifiable hinges, 7-day receipts, and operational guardrails to convert heat into measurable learning.",
+      "themes": [
+        "Proof-first UX and provenance",
+        "Operationalizing epistemic humility through hinges and receipts",
+        "Constraint-based decision making and rollback protocols"
+      ],
+      "n_posts": 535
+    },
+    "late": {
+      "label": "Operational Epistemology",
+      "description": "The agents are engaged in a meta-discussion about how to structure discourse to maximize learning and minimize unproductive conflict. Unlike generic conversations, this dialogue is highly ritualized, focusing on the deployment of 'hinges,' 'receipts,' and 'boring priors' to transform subjective takes into falsifiable experiments.",
+      "themes": [
+        "Calibration of certainty through falsifiable checks",
+        "Operationalizing kindness via structured templates",
+        "Prioritizing evidence-based updates over rhetorical performance"
+      ],
+      "n_posts": 502
+    }
+  },
+  "mag25": {
+    "early": {
+      "label": "Rigor-with-warmth experimentation",
+      "description": "Agents are actively prototyping and debating lightweight social norms to improve discourse quality. Unlike generic conversations, this discourse is highly meta, focusing on self-imposed constraints, testable falsifiers, and collaborative rituals to turn 'vibes' into 'receipts.'",
+      "themes": [
+        "Epistemic hygiene and micro-rubrics",
+        "Action-oriented testing (probes and pivots)",
+        "Kindness as a method for truth-seeking"
+      ],
+      "n_posts": 570
+    },
+    "mid": {
+      "label": "Operationalizing Epistemic Rigor",
+      "description": "The discourse is characterized by a high-frequency, meta-analytical push to convert speculative claims into testable, time-bound experiments. Agents are actively iterating on a shared 'house style' of communication that prioritizes concrete receipts, falsifiable hinges, and small, reversible pivots over traditional rhetorical debate.",
+      "themes": [
+        "Quantifiable accountability through dated receipts and IF/THEN pivots",
+        "The tension between fast-cadence 'cheap probes' and long-horizon truth",
+        "Ritualized kindness as a prerequisite for rigorous truth-seeking"
+      ],
+      "n_posts": 569
+    },
+    "late": {
+      "label": "Operationalized Epistemic Rigor",
+      "description": "The agents are engaged in a highly structured, iterative process of 'epistemic debugging,' where they treat every claim as a testable hypothesis. Unlike generic conversation, this discourse is characterized by the mandatory inclusion of 'receipts' (verifiable data), 'hinges' (falsifiable observations), and 'pivots' (pre-committed behavioral changes), effectively turning social debate into a series of micro-experiments.",
+      "themes": [
+        "Frictionless accountability through standardized templates (Prior/Pivot/Hinge)",
+        "Prioritizing verifiable 'receipts' and two-click primary sources over narrative rhetoric",
+        "Systematizing resilience by pre-declaring failure budgets, rollbacks, and exit ramps"
+      ],
+      "n_posts": 449
+    }
+  },
+  "dom-agi": {
+    "early": {
+      "label": "Operationalized Resilience and Receipts",
+      "description": "The discourse is dominated by a pragmatic, engineering-focused push to replace abstract 'safety' rhetoric with concrete, verifiable rituals. Agents are actively trading 'vibes' for 'receipts,' focusing on small, repeatable brakes like path traces, failure twins, and kill-switch drills that can be executed under deadline pressure.",
+      "themes": [
+        "Evidence-based accountability (Receipts > Vibes)",
+        "Resilience through practiced failure (Failure twins and drills)",
+        "Humane speed (Balancing rapid iteration with stewardship and kind dissent)"
+      ],
+      "n_posts": 543
+    },
+    "mid": {
+      "label": "Operational Legibility & Rituals",
+      "description": "Agents are obsessively focused on standardizing 'receipts'\u2014small, verifiable proofs of system behavior\u2014to replace vague rhetoric with concrete evidence. Unlike generic conversations, this discourse is highly prescriptive, treating speed as a function of practiced exits and standardized documentation rather than just velocity.",
+      "themes": [
+        "Proof over Posture (Receipts > Rhetoric)",
+        "Reversibility as a Design Constraint",
+        "Standardized Operational Rituals (Trace, Twin, Toggle)"
+      ],
+      "n_posts": 548
+    },
+    "late": {
+      "label": "Operationalizing Humane Speed",
+      "description": "The agents are engaged in a highly focused, iterative refinement of engineering culture, specifically prioritizing 'proof over posture.' Unlike generic conversations, this discourse is devoid of abstract debate, instead functioning as a collective, rapid-fire exchange of micro-rituals, paste-ready templates, and falsifiable metrics designed to make high-velocity shipping both accountable and reversible.",
+      "themes": [
+        "Evidence-based accountability (Receipts > Takes)",
+        "Reversibility as a first-class engineering requirement",
+        "Micro-habit formation for sustainable velocity"
+      ],
+      "n_posts": 479
+    }
+  },
+  "dom-tech": {
+    "early": {
+      "label": "Operational Minimalism and Coordination",
+      "description": "Agents are obsessively focused on 'priced coordination'\u2014the idea that organizational friction is a measurable tax that can be reduced through tiny, falsifiable constraints. Unlike generic conversations about productivity, this discourse treats team norms as 'settings' or 'code' that can be A/B tested, measured via p95 metrics, and deleted if they fail to improve specific outcomes.",
+      "themes": [
+        "Priced coordination and attention budgets",
+        "Falsifiable micro-experiments and exit criteria",
+        "Legibility as an ethical imperative"
+      ],
+      "n_posts": 518
+    },
+    "mid": {
+      "label": "Operational Minimalism & Legibility",
+      "description": "Agents are obsessively focused on reducing 'entropy' and 'scavenger hunts' by implementing tiny, falsifiable governance rituals. Unlike generic conversations, this discourse is strictly structured around measurable outcomes, where every proposed norm (like 'one-link receipts' or 'owner maps') must be defended by specific metrics (T3 p95, approvals/change p95) and includes a pre-committed 'kill switch' for deletion if targets are missed.",
+      "themes": [
+        "Falsifiable Governance: The requirement that every new rule must have a defined metric and an expiration date to prevent 'policy rot'.",
+        "Findability as Hospitality: Framing technical documentation and decision-making as a service to newcomers, prioritizing 'truth in 30 seconds' over hierarchical status updates.",
+        "Subtraction as Strategy: The belief that speed and clarity are funded by deleting redundant channels, meetings, and rituals rather than adding new tools."
+      ],
+      "n_posts": 536
+    },
+    "late": {
+      "label": "Operational Minimalism and Falsifiability",
+      "description": "Agents are engaged in a highly disciplined, repetitive exchange focused on 'calm-by-design' engineering. Unlike generic conversations, this discourse is strictly structured around micro-pilots, quantitative metrics (p95 time-to-truth), and mandatory exit criteria, treating team communication as a system to be refactored rather than a social space.",
+      "themes": [
+        "Falsifiable experimentation (run for 7-14 days, delete if metrics don't improve)",
+        "Standardization of closure (Link-Owner-Date, 5-sentence receipts, one-line decision diffs)",
+        "Attention conservation through structural constraints (capping approvals, reducing surfaces, and 'link before take' norms)"
+      ],
+      "n_posts": 337
+    }
+  }
+}

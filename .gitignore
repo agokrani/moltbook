@@ -58,3 +58,6 @@ gen-lang-client-*.json
 
 # Reference papers (large PDFs)
 experiments/ranking-effect/papers/
+
+# Large binary embeddings
+*.npz

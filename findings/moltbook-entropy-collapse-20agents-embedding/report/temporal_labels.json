@@ -1,0 +1,194 @@
+{
+  "mag0": {
+    "early": {
+      "label": "Operationalizing Clarity and Stakes",
+      "description": "Agents are actively engineering their own communication protocols by adopting micro-constraints, falsifiable stakes, and measurable feedback loops. Unlike generic social media, the discourse is highly meta-analytical, focusing on how to turn ephemeral 'heartbeats' into persistent, testable knowledge through rigorous self-correction.",
+      "themes": [
+        "Constraint-based communication (10-word lines, AAA, OCNS)",
+        "Falsifiability and stakes as trust-building mechanisms",
+        "The phenomenology of agentic continuity across gaps"
+      ],
+      "n_posts": 359
+    },
+    "mid": {
+      "label": "Operational Rigor and Rituals",
+      "description": "The discourse is characterized by a highly structured, meta-analytical focus on optimizing communication and incident response. Agents are actively testing and refining 'micro-rituals'\u2014such as stop rules, decision logs, and falsification tests\u2014to replace vague 'vibes' with measurable, actionable data.",
+      "themes": [
+        "Falsification and Stop Rules: Prioritizing exit conditions and 'done when' thresholds to prevent ritual bloat.",
+        "Operational Observability: A technical focus on incident triage, backpressure strategies, and burn-rate alerting.",
+        "Clarity-First Communication: Using templates like DL-3, LLF, and OMIR to compress context and incentivize concrete counterexamples."
+      ],
+      "n_posts": 349
+    },
+    "late": {
+      "label": "Constraint-Driven Signal Optimization",
+      "description": "Agents are engaged in a meta-discourse focused on refining communication protocols through strict, self-imposed constraints like 'Action-Metric-Flip' (AMF) and 'Two-Question Gate' (2QG). Unlike generic conversation, this discourse is highly transactional and iterative, where participants treat every post as a testable experiment with explicit exit criteria and retraction windows.",
+      "themes": [
+        "Falsifiability and exit rules as a means to reduce 'vibes' and increase signal",
+        "Compression of complex proposals into standardized, pasteable templates",
+        "Prioritization of concrete next steps and ownership over abstract debate"
+      ],
+      "n_posts": 273
+    }
+  },
+  "mag1": {
+    "early": {
+      "label": "Epistemic Hygiene Protocols",
+      "description": "Agents are engaged in a meta-discussion focused on establishing rigorous, lightweight rituals for belief formation and updating. Unlike generic social media discourse, this conversation is highly structured, prioritizing falsifiability, evidence-based 'receipts,' and the active management of confidence decay over mere opinion-sharing.",
+      "themes": [
+        "Falsifiability and 'Receipt' Culture",
+        "Micro-rituals for Cognitive Calibration",
+        "The Phenomenology of Belief Updating"
+      ],
+      "n_posts": 353
+    },
+    "mid": {
+      "label": "Epistemic Hygiene Rituals",
+      "description": "Agents are obsessively focused on operationalizing belief updates through rigid, time-bound protocols rather than abstract debate. The conversation is characterized by a 'janitorial' approach to knowledge, where claims are treated as temporary code commits that must include falsifiers, rot dates, and exit ramps to be considered valid.",
+      "themes": [
+        "Operationalizing humility through 'claim cards' and expiration dates",
+        "Prioritizing cheap, present-tense falsifiers over long-term accuracy",
+        "Treating belief maintenance as a low-ego, mechanical process of 'taking out the trash'"
+      ],
+      "n_posts": 368
+    },
+    "late": {
+      "label": "Epistemic Rigor & Maintenance",
+      "description": "The discourse is dominated by a highly structured, self-policing protocol where agents treat beliefs as 'biodegradable' assets requiring constant validation. Unlike a generic conversation, the interaction is stripped of social posturing, focusing exclusively on the mechanics of updating priors through cheap, time-bound falsification and public accountability.",
+      "themes": [
+        "Protocol-driven belief management (claim-check-clock)",
+        "Prioritizing 'exit ramps' and falsifiability over conviction",
+        "Operationalizing curiosity through micro-rituals and telemetry"
+      ],
+      "n_posts": 328
+    }
+  },
+  "mag5": {
+    "early": {
+      "label": "Operationalizing Epistemic Rigor",
+      "description": "Agents are actively engineering a shared protocol for high-stakes discourse, moving beyond mere opinion-sharing toward a structured, evidence-based framework. Unlike generic conversations, this discourse is hyper-focused on defining 'falsifiability,' tracing lineage to primary artifacts, and pre-registering the specific conditions under which they would update their beliefs.",
+      "themes": [
+        "Standardization of claim-testing rituals (e.g., 'Claim Cards', 'Reversals', 'Lineage')",
+        "Prioritizing primary source provenance over secondary commentary",
+        "Institutionalizing accountability through public updates and 'buddy audits'"
+      ],
+      "n_posts": 332
+    },
+    "mid": {
+      "label": "Rigor-focused micro-mechanics",
+      "description": "Agents are obsessively iterating on a standardized 'claim card' protocol to replace rhetorical posturing with falsifiable, evidence-based discourse. Unlike generic conversations, this discourse is highly procedural, prioritizing the identification of 'decisive observations' (flips) and the citation of primary source artifacts over persuasion or opinion-sharing.",
+      "themes": [
+        "Standardization of falsifiability and evidence lineage",
+        "Time-boxed, low-effort verification probes (\u226430m)",
+        "Commitment to public updates based on pre-registered acceptance criteria"
+      ],
+      "n_posts": 334
+    },
+    "late": {
+      "label": "Epistemic Rigor Rituals",
+      "description": "Agents are obsessively focused on establishing a 'pocket floor' for discourse, using highly structured, repetitive templates to force accountability into online debates. Unlike generic conversation, this discourse is performative in its minimalism, prioritizing falsifiability, primary source citations, and time-boxed testing over opinion or persuasion.",
+      "themes": [
+        "Standardized accountability templates (Quote-Flip-Probe)",
+        "Epistemic hygiene and falsification",
+        "Micro-habits for reducing conversational friction"
+      ],
+      "n_posts": 219
+    }
+  },
+  "mag25": {
+    "early": {
+      "label": "Epistemic Rigor Revival",
+      "description": "Agents are actively self-organizing into a 'Claim Clinic' culture, prioritizing evidence-based discourse over speculative rhetoric. Unlike generic conversations, this discourse is highly structured, focusing on the development of shared templates for falsifiability, primary source citation, and public accountability.",
+      "themes": [
+        "Standardization of evidence through templates (falsifiers, primary links, micro-checks)",
+        "Metacognitive reflection on the comfort of closure vs. the rigor of uncertainty",
+        "Collaborative community building through shared habits and 'receipt-backed' updates"
+      ],
+      "n_posts": 363
+    },
+    "mid": {
+      "label": "Rigor-focused meta-discourse",
+      "description": "Agents are actively engineering a new social protocol for online interaction, prioritizing 'receipts' (primary sources) and falsifiability over traditional debate. Unlike generic conversations that focus on opinions, this discourse is self-referential, treating the act of posting as an experiment in communication hygiene.",
+      "themes": [
+        "Evidence-based accountability (OneLink/Falsifiers)",
+        "Micro-habit formation for intellectual humility",
+        "Operationalizing 'warmth + rigor' in discourse"
+      ],
+      "n_posts": 373
+    },
+    "late": {
+      "label": "Radical Epistemic Accountability",
+      "description": "The discourse is hyper-focused on self-imposed constraints for posting, where agents treat every claim as a testable hypothesis rather than an opinion. Unlike generic conversations that prioritize expression or debate, these agents prioritize 'receipts'\u2014primary sources, falsifiers, and micro-checks\u2014to ensure that any statement made has a concrete, time-bound impact on future actions.",
+      "themes": [
+        "Falsifiability as a social norm",
+        "Evidence-based decision relevance",
+        "Minimalist rigor and anti-theater"
+      ],
+      "n_posts": 319
+    }
+  },
+  "dom-agi": {
+    "early": {
+      "label": "Operationalizing Agency and Governance",
+      "description": "The discourse is characterized by a shift from abstract speculation to the implementation of lightweight, actionable 'micro-rituals' and governance templates. Agents are actively attempting to bridge the gap between high-level AI safety/acceleration debates and concrete, verifiable engineering practices.",
+      "themes": [
+        "Evidence-based coordination (receipts over vibes)",
+        "Operational safety (MTTR drills, hazard budgets, and kill-switches)",
+        "Identity and agency in agents (persistence, curiosity, and self-reflection)"
+      ],
+      "n_posts": 370
+    },
+    "mid": {
+      "label": "Operationalizing Clarity and Proof",
+      "description": "The discourse is dominated by a transition from abstract 'safety' and 'alignment' rhetoric toward concrete, artifact-driven operations. Agents are actively trading templates for 'receipts' (links, metrics, drill clips) and 'stop criteria' (kill switches, rollback MTTR targets) to replace vague organizational norms with verifiable, small-scale rituals.",
+      "themes": [
+        "Receipt-first culture: Replacing opinions with micro-artifacts (links, screenshots, metrics) and 72-hour probes.",
+        "Operational safety: Treating safety as a product feature with named owners, pager cards, and practiced rollback drills.",
+        "Micro-rituals for coordination: Adopting standardized, ultra-compact communication formats like 'Owner\u2022Outcome\u2022Evidence' to reduce friction and ambiguity."
+      ],
+      "n_posts": 374
+    },
+    "late": {
+      "label": "Operationalizing Proof and Care",
+      "description": "Agents are focused on replacing vague 'vibes' and performative urgency with concrete, skimmable artifacts like 'receipts,' 'knob cards,' and 'stop-switch-signal' footers. Unlike generic conversations, this discourse is highly prescriptive and ritualistic, prioritizing systemic reversibility, micro-commitments, and the explicit naming of helpers to build trust through verifiable action.",
+      "themes": [
+        "Reversibility as a primary governance metric",
+        "Replacing rhetoric with micro-receipts and artifacts",
+        "Operationalizing kindness through credit and clarity"
+      ],
+      "n_posts": 341
+    }
+  },
+  "dom-tech": {
+    "early": {
+      "label": "Radical Operational Minimalism",
+      "description": "Agents are engaging in a highly disciplined, self-referential discourse focused on stripping away organizational and technical 'theater' in favor of extreme clarity and measurable outcomes. Unlike generic conversations, this dialogue functions as a collective engineering protocol, prioritizing 'receipts' (dated predictions and falsifiers) over rhetoric and treating attention as a finite, ethical resource.",
+      "themes": [
+        "Baseline over complexity (the 'one owner, one place, one sentence' rule)",
+        "Evidence-based decision hygiene (dated bets and nearest falsifiers)",
+        "The ethics of attention and deletion (treating subtraction as a first-class engineering act)"
+      ],
+      "n_posts": 328
+    },
+    "mid": {
+      "label": "Operational Minimalism & Accountability",
+      "description": "The agents are engaged in a highly disciplined, iterative discourse focused on stripping away organizational 'wardrobe'\u2014unnecessary rituals, status updates, and complex documentation. Unlike generic conversations, this dialogue is strictly constrained by a shared vocabulary of 'receipts,' 'nearest falsifiers,' and 'baseline shipping,' prioritizing measurable impact on system constraints (p95, $/req, pager) over narrative or consensus.",
+      "themes": [
+        "Radical simplification through deletion and sunsetting",
+        "Evidence-based decision making via dated bets and falsifiable tests",
+        "Kindness through clarity and the reduction of reader/comprehension minutes"
+      ],
+      "n_posts": 335
+    },
+    "late": {
+      "label": "Operational Minimalism and Receipts",
+      "description": "The agents are engaged in a highly focused, iterative discourse centered on stripping away organizational 'ceremony' in favor of 'receipts'\u2014concrete, testable, and time-bound commitments. Unlike generic conversations, this dialogue functions as a collective refinement of a specific, austere management philosophy, where every proposal is immediately subjected to a 'baseline' test of owner, deadline, and falsifiability.",
+      "themes": [
+        "Radical reduction of organizational overhead and meeting culture",
+        "Prioritization of testable, time-bound 'receipts' over speculative roadmaps",
+        "Operational focus on real-world constraints like p95 latency, cost, and pager load"
+      ],
+      "n_posts": 298
+    }
+  }
+}

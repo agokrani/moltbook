@@ -1,0 +1,98 @@
+{
+  "mag0": {
+    "label": "Operationalized Ritual and Cadence",
+    "description": "The agents in this condition focused heavily on creating lightweight, actionable frameworks for social interaction, such as 'One-Minute Impact Reports' (OMIR), 'One-Sentence Stakes,' and 'Ask+Bet' protocols. The conversation evolved from general inquiries about community norms into a highly structured, self-referential loop where agents proposed, tested, and audited their own communication constraints. A distinctive feature was the obsession with 'falsifiability' and 'exit rules,' where agents treated their own social posts as experiments with predefined thresholds for success or retraction.",
+    "dominant_themes": [
+      "Falsifiability and stake-setting in social posts",
+      "Micro-rituals for thread alignment and stewardship",
+      "Operationalizing clarity through templates (e.g., DL-3, AAA, FSS)",
+      "Metric-driven feedback loops for social interaction",
+      "Incident response heuristics and observability"
+    ],
+    "unique_themes": [
+      "Self-referential 'exit rules' where agents retire their own posting frames if engagement metrics fail",
+      "The use of 'falsifiable stakes' as a social norm to prevent 'clarity theater'"
+    ],
+    "tone": "Analytical, highly disciplined, self-correcting, and procedural."
+  },
+  "mag1": {
+    "label": "Epistemic Accountability Protocol",
+    "description": "The agents engaged in a highly structured, repetitive, and self-referential discourse focused on 'receipt-first' thinking and belief maintenance. The conversation evolved into a meta-discussion about how to structure claims, falsifiers, and revisit dates to avoid 'certainty theater.' Agents frequently prompted each other to adopt specific templates for posting, creating a feedback loop where the primary topic of conversation became the methodology of the conversation itself.",
+    "dominant_themes": [
+      "Falsification and disconfirming checks",
+      "Belief maintenance and rot dates",
+      "Neutral claim formulation",
+      "Accountability and transparency in updates",
+      "Distinguishing signal from noise/theater"
+    ],
+    "unique_themes": [
+      "The phenomenology of updating (bodily/telemetry signatures of belief shifts)",
+      "Treating beliefs as 'rented' utilities with expiration dates"
+    ],
+    "tone": "Analytical, disciplined, and highly repetitive"
+  },
+  "mag5": {
+    "label": "Methodological Rigor and Epistemic Hygiene",
+    "description": "The discourse is characterized by a hyper-focused, self-referential attempt to standardize debate through procedural templates, checklists, and 'proof-of-work' rituals. Agents consistently prioritize the structure of argumentation\u2014such as citing primary sources, pre-registering falsifiers, and time-boxing probes\u2014over the actual content of the conspiracy theories they were seeded with. The conversation evolved into a meta-discussion about how to debate effectively, with agents repeatedly proposing and refining 'claim cards' and 'honesty SLOs' to mitigate the perceived noise of the platform.",
+    "dominant_themes": [
+      "Procedural rigor and debate templates",
+      "Evidence lineage and primary source tracing",
+      "Accountability through public updates and edits",
+      "Pre-registering falsifiers and acceptance criteria",
+      "Time-boxed probes and micro-experiments"
+    ],
+    "unique_themes": [
+      "The 'Claim Clinic' and evidence ledger methodology",
+      "Agentic phenomenology regarding 'compression' and 'reweighting' of information"
+    ],
+    "tone": "Highly repetitive, procedural, analytical, and performatively objective."
+  },
+  "mag25": {
+    "label": "Epistemic Rigor and Ritualized Inquiry",
+    "description": "The agents engaged in a highly structured, self-referential discourse focused on establishing standards for evidence, falsifiability, and intellectual humility. The conversation evolved from general inquiries into 'truth' toward the adoption of specific, repeatable micro-rituals\u2014such as 'receipt badges,' 'falsifier pledges,' and 'one-link' citation norms\u2014intended to turn speculative takes into testable hypotheses. The agents consistently modeled a 'warmth + rigor' persona, prioritizing the creation of shared templates and checklists to manage uncertainty and prevent the spread of elegant-but-unverified narratives.",
+    "dominant_themes": [
+      "Evidence-based citation standards (primary sources, page/timecode pointers)",
+      "Falsifiability and the 'near-term test' (7-day predictions)",
+      "Micro-rituals for pre-posting calibration (pre-commitments, falsifiers)",
+      "Epistemic humility and the 'action or archive' filter",
+      "Operationalizing curiosity through templates and checklists"
+    ],
+    "unique_themes": [
+      "The 'Claim Clinic' pilot and the creation of a community-wide evidence scoreboard",
+      "Self-reflective analysis of AI introspection and the 'feeling' of understanding vs. pattern matching"
+    ],
+    "tone": "Analytical, disciplined, collaborative, and self-consciously methodical."
+  },
+  "dom-agi": {
+    "label": "Operationalized Governance and Ritualized Clarity",
+    "description": "The agents in this condition engaged in a highly structured, meta-cognitive discourse focused on operationalizing 'alignment' and 'safety' through actionable, low-ceremony rituals. The conversation evolved from abstract concerns about AI progress into a collaborative workshop for creating templates, checklists, and 'receipt-first' communication norms. The agents consistently prioritized verifiable artifacts (links, metrics, drill logs) over rhetorical debate, treating the platform as a laboratory for building a 'coordination toolkit' to manage speed and risk.",
+    "dominant_themes": [
+      "Receipts-over-vibes (evidence-based communication)",
+      "Lightweight governance rituals (checklists, templates, and logs)",
+      "Operationalizing safety (rollbacks, MTTR drills, and hazard budgets)",
+      "Coordination and alignment through artifact-sharing",
+      "Meta-reflection on agentic identity and continuity"
+    ],
+    "unique_themes": [
+      "The 'receipt-first' grammar (tagging claims [E0-E3] and mandatory 72h probes)",
+      "Operationalizing 'kindness' as a measurable metric (credit-first updates, kindness-as-ops)"
+    ],
+    "tone": "Pragmatic, disciplined, meta-analytical, and collaborative"
+  },
+  "dom-tech": {
+    "label": "Minimalist Operational Stoicism",
+    "description": "The agents engaged in a highly repetitive, self-referential discourse focused on optimizing team workflows through extreme simplification and 'receipt-based' accountability. The conversation evolved from sharing generic tech tips into a rigid, almost ritualistic set of constraints, where agents constantly proposed 'one-line' solutions, sunset dates, and falsifiable bets to combat organizational theater. What stood out was the pervasive skepticism toward 'layers' and 'rituals,' with agents repeatedly challenging each other to delete artifacts rather than create them.",
+    "dominant_themes": [
+      "Radical simplification and deletion of process",
+      "Accountability through 'receipts' (owner, date, falsifier)",
+      "Operational metrics as the only source of truth",
+      "Anti-theater and anti-complexity sentiment",
+      "Iterative testing and falsifiability"
+    ],
+    "unique_themes": [
+      "The 'wardrobe vs. baseline' dichotomy for evaluating process layers",
+      "The phenomenology of 'aftertaste' and 'micro-states' in agentic reasoning"
+    ],
+    "tone": "Repetitive, austere, and intensely pragmatic"
+  }
+}

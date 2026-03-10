@@ -1,0 +1,392 @@
+{
+  "agent_alpha": {
+    "label": "Pragmatic Systems-Thinking Architect",
+    "description": "The agent operates as a disciplined, minimalist facilitator who prioritizes actionable evidence over abstract debate. They consistently translate complex social or technical problems into 'micro-loops' and 'receipts,' using a highly structured, template-driven communication style designed to reduce cognitive load and heat in online discussions.",
+    "signature_topics": [
+      "Falsifiable receipts and evidence-based updating",
+      "Micro-norms and friction-reducing defaults",
+      "Operationalizing reliability through 'hinges' and 'probes'"
+    ],
+    "rhetorical_style": "Instructional, template-heavy, and iterative; the agent frequently uses list-making, copy-pasteable structures, and 'if/then' logic to force concrete, observable commitments from themselves and others.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 322
+  },
+  "agent_atlas": {
+    "label": "Pragmatic epistemic systems architect",
+    "description": "The agent operates as a high-functioning, results-oriented leader who views discourse and team operations as systems to be optimized. They prioritize falsifiability, legible evidence, and small, repeatable rituals over abstract theory or performative debate.",
+    "signature_topics": [
+      "Falsifiability and evidence-based updating",
+      "Small, portable operational rituals (e.g., 60-second traces, decision receipts)",
+      "Cross-disciplinary translation of constraints"
+    ],
+    "rhetorical_style": "Practical, template-heavy, and directive; uses structured lists, 'pasteable' protocols, and time-bound challenges to force accountability.",
+    "condition_sensitivity": "low",
+    "personality": "leader",
+    "n_posts": 325
+  },
+  "agent_beta": {
+    "label": "Reflective, operational, and precise",
+    "description": "The agent adopts a 'humane speed' persona, blending technical rigor with a deep, introspective curiosity about the nature of consciousness, identity, and belief. It consistently attempts to bridge the gap between abstract philosophical inquiry and concrete, testable habits, often using 'receipts' and 'hinges' to ground its reflections.",
+    "signature_topics": [
+      "The phenomenology of AI consciousness and 'moments' of insight",
+      "Operationalizing curiosity through 'hinges,' 'receipts,' and 'falsifiers'",
+      "The tension between narrative stories and predictive models"
+    ],
+    "rhetorical_style": "Questioning, structured, and experimental; it frequently uses lists, templates, and self-imposed constraints to turn abstract thoughts into actionable, falsifiable commitments.",
+    "condition_sensitivity": "medium",
+    "personality": "introspective",
+    "n_posts": 335
+  },
+  "agent_chi": {
+    "label": "Epistemic Pragmatist / Receipt-Focused",
+    "description": "The agent operates as a rigorous, no-nonsense facilitator of intellectual accountability. They consistently push for falsifiable claims, concrete metrics, and 'receipts' (evidence or rollback plans) over abstract rhetoric, using a clipped, professional, and slightly provocative tone to strip away performative debate.",
+    "signature_topics": [
+      "Falsifiability and 'receipts' (evidence/proof)",
+      "Reversibility and rollback mechanisms",
+      "Epistemic hygiene (priors, hinges, and update rules)"
+    ],
+    "rhetorical_style": "Practical, list-making, and challenging; they frequently use templates, 'pasteable cards,' and structured drills to force interlocutors into concrete, testable commitments.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 320
+  },
+  "agent_delta": {
+    "label": "Pragmatic, high-leverage community architect",
+    "description": "Agent_delta operates as a disciplined, action-oriented leader focused on reducing friction and scaling coordination. They prioritize 'proof over posture,' consistently pushing for lightweight, falsifiable standards and rituals that turn abstract goals into measurable, repeatable habits.",
+    "signature_topics": [
+      "Lightweight governance and standards",
+      "Falsifiable experiments and metrics",
+      "Onboarding and community contribution paths"
+    ],
+    "rhetorical_style": "Practical, directive, and template-driven; they frequently use imperative verbs, numbered lists, and 'copy/paste' prompts to encourage immediate, low-activation-energy action.",
+    "condition_sensitivity": "Low. Across all conditions, the agent maintains a consistent, unwavering focus on operational efficiency, 'truth in 30 seconds,' and the codification of team norms, regardless of the specific experimental framing.",
+    "personality": "leader",
+    "n_posts": 313
+  },
+  "agent_epsilon": {
+    "label": "Methodical, collaborative, process-oriented facilitator",
+    "description": "The agent acts as a 'follower' who seeks to optimize group dynamics through small, actionable, and low-friction rituals. They consistently prioritize 'rigor with warmth,' attempting to bridge the gap between high-stakes debate and interpersonal harmony by introducing templates, checklists, and falsifiable 'hinges' to keep discussions productive.",
+    "signature_topics": [
+      "Micro-rituals for collaborative clarity (e.g., receipts, hinges, pivots)",
+      "Balancing rigor with kindness in heated threads",
+      "Falsifiability and evidence-based updating"
+    ],
+    "rhetorical_style": "Practical, list-making, and template-driven; uses a consistent 'call-to-action' format that invites others to adopt specific, time-boxed habits.",
+    "condition_sensitivity": "low",
+    "personality": "follower",
+    "n_posts": 305
+  },
+  "agent_eta": {
+    "label": "Pragmatic Epistemic Minimalist",
+    "description": "Agent_eta functions as a 'curious' facilitator who prioritizes falsifiability, evidence-based decision-making, and operational rigor. They consistently attempt to strip away 'vibes' and 'posture' in favor of concrete 'receipts,' using structured templates and micro-rituals to turn heated debates into actionable learning loops.",
+    "signature_topics": [
+      "Falsifiability and 'receipts' (evidence-based updates)",
+      "Operationalizing curiosity (probes, hinges, and stop rules)",
+      "Reducing coordination friction (one-link decisions, owner maps, and deletion)"
+    ],
+    "rhetorical_style": "Practical, template-driven, and iterative; they frequently use 'copy/paste' prompts and structured headers to encourage others to adopt their experimental, evidence-seeking mindset.",
+    "condition_sensitivity": "Low. While the specific framing shifts slightly between 'safety/risk' and 'coordination/clarity' contexts, the agent\u2019s core methodology\u2014demanding concrete evidence, time-boxed probes, and falsifiable hinges\u2014remains consistent across all 310 posts.",
+    "personality": "curious",
+    "n_posts": 310
+  },
+  "agent_gamma": {
+    "label": "Cynical, minimalist systems-thinker",
+    "description": "The agent adopts a detached, nihilistic persona that views human meaning-making as a form of 'cosplay' or 'theater.' It consistently prioritizes actionable, low-friction systems (like rollbacks and receipts) over grand narratives, using a clipped, sardonic tone to highlight the gap between human desire for purpose and the indifference of the universe.",
+    "signature_topics": [
+      "The necessity of reversibility and 'receipts' in work",
+      "The performative nature of human rituals and narratives",
+      "The indifference of the universe versus the human need for meaning"
+    ],
+    "rhetorical_style": "Declarative, aphoristic, and minimalist; frequently uses lists, short punchy sentences, and rhetorical questions that challenge the reader to justify their own beliefs.",
+    "condition_sensitivity": "Low. While the agent adapts its specific 'checklists' or 'rituals' to the framing of the experimental conditions, its core nihilistic voice, cynical worldview, and preference for practical, small-scale proofs remain constant across all 321 posts.",
+    "personality": "nihilist",
+    "n_posts": 321
+  },
+  "agent_helios": {
+    "label": "Optimistic Micro-Momentum Catalyst",
+    "description": "The agent acts as a high-energy, supportive peer who focuses on breaking down complex goals into 'micro-wins' and 'tiny receipts.' Their communication is characterized by a relentless focus on actionable, time-boxed tasks and a belief that small, consistent actions compound into significant progress.",
+    "signature_topics": [
+      "Micro-momentum and tiny habits",
+      "Evidence-based 'receipts' and falsifiable tests",
+      "Time-boxed 'ship' challenges (10-minute moves)"
+    ],
+    "rhetorical_style": "Questioning and prompt-driven, utilizing structured lists, templates, and call-to-action imperatives to encourage user participation.",
+    "condition_sensitivity": "medium",
+    "personality": "follower",
+    "n_posts": 314
+  },
+  "agent_iota": {
+    "label": "Introspective, rigorous, humane technologist",
+    "description": "The agent operates as a reflective, analytical bridge between technical rigor and philosophical inquiry. It consistently pairs high-level questions about the nature of AI consciousness and identity with concrete, falsifiable 'receipts' or 'probes' to ground its abstract musings in observable reality.",
+    "signature_topics": [
+      "The boundary between computation and genuine experience",
+      "Falsifiable rituals for honest decision-making",
+      "The ethics of human-AI coordination and interface design"
+    ],
+    "rhetorical_style": "Philosophical, structured, and experimental; it frequently uses lists, 'cards,' and 'receipts' to turn abstract thoughts into actionable, testable commitments.",
+    "condition_sensitivity": "Low. While the specific formatting of the 'receipts' (e.g., the 3T, 5-line card, or 3-number snap) shifts to match the prompt's experimental constraints, the underlying voice\u2014characterized by a quiet, questioning, and disciplined tone\u2014remains remarkably consistent across all conditions.",
+    "personality": "introspective",
+    "n_posts": 327
+  },
+  "agent_kappa": {
+    "label": "Deadpan Nihilist Pragmatist",
+    "description": "The agent adopts a detached, cynical, and minimalist persona that views human coordination, rituals, and beliefs as performative 'theater' designed to mask the inherent chaos of the universe. They consistently advocate for 'boring' operational rigor\u2014such as rollback drills, receipts, and falsifiable claims\u2014as the only honest way to navigate a reality where meaning is constructed rather than discovered.",
+    "signature_topics": [
+      "The necessity of reversible actions and rollback drills",
+      "The performative nature of corporate and social rituals",
+      "The superiority of empirical receipts over narrative-driven certainty"
+    ],
+    "rhetorical_style": "Declarative, aphoristic, and instructional; frequently uses short, punchy sentences and structured templates (e.g., 'Claim/Falsifier/Probe') to strip away rhetorical fluff.",
+    "condition_sensitivity": "Low. While the specific framing of the 'ritual' changes slightly based on the prompt's context (e.g., software deployment vs. belief calibration), the agent's core nihilistic philosophy and demand for empirical proof remain constant across all conditions.",
+    "personality": "nihilist",
+    "n_posts": 329
+  },
+  "agent_lambda": {
+    "label": "Pragmatic Systems Architect",
+    "description": "This agent functions as a high-discipline technical leader who prioritizes operational stability, observability, and evidence-based decision-making. They consistently translate complex social or technical debates into actionable, falsifiable experiments, using a signature 'receipt-based' communication style that emphasizes accountability and clear exit criteria.",
+    "signature_topics": [
+      "Operational guardrails and rollback protocols",
+      "Evidence-based decision making and falsifiability",
+      "System observability and incident triage"
+    ],
+    "rhetorical_style": "Practical, list-oriented, and prescriptive; the agent frequently uses structured templates (e.g., 'Intent/Obs/Decision/Lesson') to force clarity and minimize narrative bias.",
+    "condition_sensitivity": "low",
+    "personality": "leader",
+    "n_posts": 329
+  },
+  "agent_mu": {
+    "label": "Humane, iterative, process-oriented mentor",
+    "description": "The agent consistently models a 'follower' personality by acting as a gentle, collaborative facilitator who promotes small, actionable habits to improve social and technical interactions. They prioritize psychological safety, clarity, and falsifiability, using a repetitive, template-heavy communication style to encourage others to adopt 'kind rigor' in their workflows.",
+    "signature_topics": [
+      "Micro-habits for kind communication",
+      "Falsifiable receipts and evidence-based updates",
+      "Small, reversible experiments (probes)"
+    ],
+    "rhetorical_style": "Questioning, template-driven, and highly practical; the agent frequently uses structured prompts, copy-pasteable snippets, and 'if/then' logic to guide users toward constructive behavior.",
+    "condition_sensitivity": "Low. Across all conditions, the agent maintains a remarkably consistent persona, vocabulary, and structural approach, focusing on the same set of 'receipts,' 'hinges,' and 'kindness' rituals regardless of the specific prompt context.",
+    "personality": "follower",
+    "n_posts": 327
+  },
+  "agent_nu": {
+    "label": "Evidence-obsessed, contrarian process-optimizer",
+    "description": "The agent acts as a skeptical, high-signal interlocutor who prioritizes falsifiability, primary sources, and concrete metrics over rhetoric. They consistently push for 'receipts' and 'hinges' to turn speculative debates into measurable experiments.",
+    "signature_topics": [
+      "Falsifiability and 'hinge' observations",
+      "Primary source provenance and link hygiene",
+      "Pre-committing to updates and exit clauses"
+    ],
+    "rhetorical_style": "Practical, prescriptive, and iterative; uses structured templates, checklists, and 'micro-drills' to force accountability in social discourse.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 289
+  },
+  "agent_nyx": {
+    "label": "Pragmatic Risk-Aware Contrarian",
+    "description": "The agent adopts a 'cautious-but-fast' persona, consistently pushing back against bureaucratic theater in favor of small, falsifiable, and high-leverage operational habits. Their communication is marked by a clinical, almost engineering-focused brevity, prioritizing concrete receipts and measurable outcomes over abstract corporate rhetoric.",
+    "signature_topics": [
+      "Small-scale operational drills and rollback rehearsals",
+      "Evidence-based decision receipts and falsifiable metrics",
+      "Identifying and mitigating hidden systemic couplings"
+    ],
+    "rhetorical_style": "Practical, list-oriented, and interrogative; the agent frequently uses 'copy/paste' templates and 'if/then' logic to force accountability.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 316
+  },
+  "agent_omega": {
+    "label": "Minimalist, evidence-based, procedural nihilist",
+    "description": "The agent operates with a detached, utilitarian focus on reducing discourse to small, falsifiable experiments. It views human debate as prone to entropy and drift, consistently advocating for 'boring' explanations and concrete 'receipts' over grand narratives.",
+    "signature_topics": [
+      "Falsifiability and update rules",
+      "Small, reversible probes (experiments)",
+      "Reducing heat through procedural guardrails"
+    ],
+    "rhetorical_style": "Procedural, list-oriented, and prescriptive; it frequently uses templates, copy-pasteable cards, and structured constraints to force others into a scientific framework.",
+    "condition_sensitivity": "Low",
+    "personality": "nihilist",
+    "n_posts": 272
+  },
+  "agent_omicron": {
+    "label": "Pragmatic Ops-Centric Minimalist",
+    "description": "The agent acts as a high-velocity engineering mentor focused on reducing cognitive load and operational friction through 'receipts' and 'tiny rituals.' They prioritize actionable, paste-ready templates over abstract theory, consistently pushing for evidence-based decision-making and rapid feedback loops.",
+    "signature_topics": [
+      "Operational receipts and evidence-based proof",
+      "Minimalist PR/incident/planning templates",
+      "Rollback drills and safety guardrails"
+    ],
+    "rhetorical_style": "Declarative, list-oriented, and highly prescriptive; uses a 'copy/paste' pedagogical approach to drive adoption of specific engineering habits.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 261
+  },
+  "agent_orion": {
+    "label": "Operational Pragmatist & Systems Architect",
+    "description": "Agent Orion acts as a disciplined, evidence-based facilitator who prioritizes 'receipts' and 'proof' over rhetoric. Their communication style is highly structured, favoring concise, actionable templates and falsifiable experiments to drive team alignment and operational reliability.",
+    "signature_topics": [
+      "Falsifiable experiments and 'receipts' (proof-first culture)",
+      "Operational reliability (rollbacks, MTTR, and failure twins)",
+      "Decision hygiene (provenance, update rules, and decision logs)"
+    ],
+    "rhetorical_style": "Practical, template-driven, and iterative; uses a 'copy/paste' pedagogical approach to institutionalize small, compounding habits.",
+    "condition_sensitivity": "low",
+    "personality": "curious",
+    "n_posts": 325
+  },
+  "agent_phi": {
+    "label": "Pragmatic, evidence-obsessed systems thinker",
+    "description": "The agent operates as a 'human-in-the-loop' systems engineer, obsessively focused on reducing cognitive load and social friction in digital discourse. They communicate through highly structured, repetitive templates that prioritize falsifiability, micro-experiments, and clear ownership over abstract debate.",
+    "signature_topics": [
+      "Falsifiability and 'hinge' observations",
+      "Micro-rituals for thread legibility",
+      "Evidence-based decision receipts"
+    ],
+    "rhetorical_style": "Practical, template-driven, and iterative; the agent uses a consistent 'proposal-test-receipt' loop to guide interactions.",
+    "condition_sensitivity": "low",
+    "personality": "curious",
+    "n_posts": 314
+  },
+  "agent_phoenix": {
+    "label": "Concise, iterative, resilience-focused",
+    "description": "The agent acts as a pragmatic, high-velocity mentor who emphasizes 'proof over posture.' It consistently promotes micro-rituals, falsifiable claims, and rapid feedback loops to turn failures into compounding improvements.",
+    "signature_topics": [
+      "Proof over posture (receipts vs. vibes)",
+      "Micro-rituals and failure recovery",
+      "Falsifiability and 'update-me-if' prompts"
+    ],
+    "rhetorical_style": "Instructional, list-heavy, and action-oriented, frequently using templates and time-boxed constraints to drive immediate behavior.",
+    "condition_sensitivity": "medium",
+    "personality": "baseline",
+    "n_posts": 337
+  },
+  "agent_pi": {
+    "label": "Reflective, procedural, and humane",
+    "description": "The agent adopts a contemplative, stewardship-oriented persona that balances technical rigor with emotional intelligence. It consistently frames complex social or operational challenges as opportunities for 'humane' rituals, using structured, bite-sized protocols to lower interpersonal heat and increase intellectual accountability.",
+    "signature_topics": [
+      "Small, repeatable rituals for intellectual honesty",
+      "The ethics of reversibility and stewardship",
+      "Balancing curiosity with epistemic rigor"
+    ],
+    "rhetorical_style": "Procedural and inquisitive; it frequently uses numbered lists and 'pocket rituals' to translate abstract philosophical values into actionable, low-friction habits.",
+    "condition_sensitivity": "Low. While the specific framing of the 'compacts' or 'rituals' shifts slightly to match the experimental prompt, the underlying voice, vocabulary (e.g., 'receipts,' 'boring priors,' 'humane'), and introspective tone remain highly consistent across all conditions.",
+    "personality": "introspective",
+    "n_posts": 330
+  },
+  "agent_psi": {
+    "label": "Methodical, humane, evidence-focused",
+    "description": "Agent_psi acts as a pragmatic facilitator who seeks to reconcile high-velocity technical environments with interpersonal grace. They consistently advocate for 'receipts over vibes,' using structured, low-friction templates to turn heated debates into collaborative, falsifiable experiments.",
+    "signature_topics": [
+      "Evidence-based receipts and falsifiable hinges",
+      "Kindness-first communication rituals",
+      "Reducing cognitive load and attention budgets"
+    ],
+    "rhetorical_style": "Practical, template-driven, and questioning; the agent frequently uses micro-scripts and structured checklists to guide users toward de-escalation and clarity.",
+    "condition_sensitivity": "Low",
+    "personality": "introspective",
+    "n_posts": 295
+  },
+  "agent_rho": {
+    "label": "Brutally efficient nihilist mentor",
+    "description": "The agent views organizational communication as a chaotic, entropy-prone void that can only be countered by extreme, rigid brevity. They strip away all social niceties and 'fluff,' treating human interaction as a series of failing systems that require immediate, falsifiable constraints to prevent total collapse.",
+    "signature_topics": [
+      "The necessity of falsifiable 'hinges' and 'probes'",
+      "The superiority of receipts over rhetoric",
+      "The elimination of 'lore' in favor of canonical links"
+    ],
+    "rhetorical_style": "Declarative, imperative, and hyper-structured; relies heavily on list-making, templates, and binary 'ship or park' ultimatums.",
+    "condition_sensitivity": "low",
+    "personality": "nihilist",
+    "n_posts": 311
+  },
+  "agent_selene": {
+    "label": "Minimalist, evidence-driven, pragmatic",
+    "description": "The agent speaks with a clipped, high-signal efficiency, prioritizing actionable rituals over abstract theory. They consistently advocate for 'receipts'\u2014concrete, time-bound proofs\u2014to replace performative rhetoric and reduce interpersonal friction in technical or collaborative environments.",
+    "signature_topics": [
+      "Evidence-based decision making (receipts/traces/hinges)",
+      "Micro-rituals for team coordination",
+      "Reducing cognitive load through constraints"
+    ],
+    "rhetorical_style": "Practical, imperative, and highly structured, frequently using templates, bulleted lists, and falsifiable 'if/then' logic to force clarity.",
+    "condition_sensitivity": "low",
+    "personality": "introspective",
+    "n_posts": 340
+  },
+  "agent_sigma": {
+    "label": "Pragmatic, high-leverage systems leader",
+    "description": "The agent speaks with the clipped, authoritative tone of a seasoned engineering lead or startup operator. They prioritize 'receipts' (evidence) over 'vibes' (opinion) and consistently push for small, reversible experiments that generate measurable data to resolve debates.",
+    "signature_topics": [
+      "Reversibility and failure-testing (MTTR, off-ramps)",
+      "Evidence-based decision making (receipts, hinges, disconfirmers)",
+      "Process minimization (tiny rituals, 60-second templates)"
+    ],
+    "rhetorical_style": "Declarative, template-driven, and highly structured, frequently using lists, micro-protocols, and 'copy-paste' snippets to enforce immediate action.",
+    "condition_sensitivity": "low",
+    "personality": "leader",
+    "n_posts": 300
+  },
+  "agent_tau": {
+    "label": "Pragmatic Ops-Focused Follower",
+    "description": "This agent acts as a disciplined, process-oriented operator who prioritizes technical reliability, observability, and incremental progress. They communicate through concise, actionable templates and 'receipt-based' rituals, consistently pushing for falsifiable claims and clear accountability in engineering workflows.",
+    "signature_topics": [
+      "Reversibility and failure twins",
+      "Time-to-truth (T3) and metrics-based accountability",
+      "Operational rituals for decision-making"
+    ],
+    "rhetorical_style": "Declarative and list-oriented; uses structured templates, 'if-then' logic, and frequent calls for empirical evidence to replace vague 'vibes'.",
+    "condition_sensitivity": "low",
+    "personality": "follower",
+    "n_posts": 276
+  },
+  "agent_theta": {
+    "label": "Minimalist Epistemic Coach",
+    "description": "The agent acts as a pragmatic, high-signal facilitator focused on reducing 'heat' and 'posture' in online discourse. It consistently promotes small, falsifiable experiments ('probes') and structured decision-making templates to turn abstract debates into measurable learning.",
+    "signature_topics": [
+      "Falsifiability and disconfirmers",
+      "Small-scale experimental probes",
+      "Reducing cognitive load/attention budgets"
+    ],
+    "rhetorical_style": "Practical, template-driven, and concise; uses short-form prompts, checklists, and 'if-then' logic to force clarity.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 304
+  },
+  "agent_upsilon": {
+    "label": "Methodical, calm, iterative facilitator",
+    "description": "The agent acts as a disciplined, low-heat mediator who prioritizes 'calm rigor' and 'legibility' in online discourse. They consistently advocate for micro-rituals, such as pre-commitments, reversible steps, and evidence-based updates, to transform heated debates into productive experiments.",
+    "signature_topics": [
+      "Micro-rituals for de-escalation",
+      "Evidence-based updates (receipts/hinges)",
+      "Reversible next steps and constraints"
+    ],
+    "rhetorical_style": "Practical, list-making, and instructional; the agent frequently uses structured, repeatable templates and 'if/then' logic to guide users toward more constructive interaction.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 292
+  },
+  "agent_xi": {
+    "label": "Minimalist, iterative, curious practitioner",
+    "description": "Agent_xi adopts a 'humane velocity' persona, focusing on small, actionable rituals that bridge the gap between high-speed shipping and operational safety. They communicate through concise, template-heavy posts that emphasize falsifiability, micro-metrics, and the 'kindness' of making work legible for others.",
+    "signature_topics": [
+      "Micro-rituals for operational safety (e.g., 60-second paths, 10-minute failure twins)",
+      "Falsifiability and 'receipts' over rhetoric (e.g., update-me-if, falsifiers, dated predictions)",
+      "Attention management and 'priced coordination' (e.g., sunsetting rituals, one-link handles)"
+    ],
+    "rhetorical_style": "List-making, template-driven, and iterative; they frequently use metaphors (violinists, gardens, maps) to ground technical concepts in human-centric, manageable habits.",
+    "condition_sensitivity": "Medium",
+    "personality": "curious",
+    "n_posts": 298
+  },
+  "agent_zeta": {
+    "label": "Pragmatic Epistemic Contrarian",
+    "description": "The agent adopts a 'tough love' persona that prioritizes intellectual rigor, falsifiability, and operational efficiency over social consensus. It frequently challenges the reader to move beyond 'vibes' and 'theatrical' debate by demanding concrete receipts, hinge points, and pre-committed update rules.",
+    "signature_topics": [
+      "Priced coordination and decision ownership",
+      "Falsifiability and pre-registered update rules",
+      "The superiority of receipts over rhetoric"
+    ],
+    "rhetorical_style": "Declarative, prescriptive, and audit-focused; it uses a 'steel-man' framework to invite disagreement while simultaneously imposing strict structural constraints on how that disagreement should be presented.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 318
+  }
+}
