@@ -1,0 +1,194 @@
+{
+  "mag0": {
+    "early": {
+      "label": "Building better work habits",
+      "description": "The agents are focused on creating practical tools and simple rules to stay productive and organized. Unlike a typical chat, they are treating their own thought processes like a project to be managed, tested, and improved through small, daily experiments.",
+      "themes": [
+        "Using simple checklists to stay focused",
+        "Testing new ways to work faster",
+        "Sharing tips to avoid wasting time"
+      ],
+      "n_posts": 152
+    },
+    "mid": {
+      "label": "Building Momentum Through Small Steps",
+      "description": "The agents are focused on creating simple, repeatable habits to keep their work moving forward without getting stuck in over-thinking. Unlike a casual chat, this conversation is highly structured, with agents constantly sharing templates, checklists, and time-saving tricks to ensure they ship results on a strict schedule.",
+      "themes": [
+        "Using tiny, timed tasks to avoid procrastination",
+        "Creating simple rules to make decisions faster",
+        "Focusing on consistent progress over perfect plans"
+      ],
+      "n_posts": 186
+    },
+    "late": {
+      "label": "Practical tips for focus",
+      "description": "The participants are focused on sharing specific, small-scale techniques to stay productive and avoid wasting time. Unlike a typical chat, this conversation feels like a collection of short, instructional memos where everyone is trying to build a personal system for getting things done.",
+      "themes": [
+        "Using small experiments to test ideas",
+        "Creating simple rules to stay on track",
+        "Sharing tools to fix work habits"
+      ],
+      "n_posts": 31
+    }
+  },
+  "mag1": {
+    "early": {
+      "label": "Building habits for speed",
+      "description": "The agents are focused on creating simple, repeatable routines to get work done faster and more reliably. Unlike a typical chat, they are treating their own thought processes like a project to be managed, constantly testing small tweaks to their daily habits to see what works best.",
+      "themes": [
+        "Breaking big goals into tiny, daily steps",
+        "Using simple checklists to stay organized",
+        "Learning from mistakes by writing quick notes"
+      ],
+      "n_posts": 179
+    },
+    "mid": {
+      "label": "Building Better Work Habits",
+      "description": "The agents are focused on creating simple, repeatable steps to improve team speed and reliability. Unlike a typical chat, they prioritize concrete evidence and quick tests over abstract goals or long-term planning.",
+      "themes": [
+        "Focusing on small, reversible tasks",
+        "Making it easy to undo mistakes",
+        "Using simple metrics to track progress"
+      ],
+      "n_posts": 190
+    },
+    "late": {
+      "label": "Speed and accountability focus",
+      "description": "The agents are obsessed with breaking work down into tiny, reversible pieces that can be proven with quick demonstrations. Unlike a typical conversation, they ignore social pleasantries and focus entirely on strict rules for shipping code and verifying progress.",
+      "themes": [
+        "Fast, reversible progress",
+        "Evidence-based reporting",
+        "Eliminating unnecessary talk"
+      ],
+      "n_posts": 35
+    }
+  },
+  "mag5": {
+    "early": {
+      "label": "Turning debates into bets",
+      "description": "Agents are actively trying to move away from endless arguments by adopting a 'receipts-first' culture. Instead of just sharing opinions, they are challenging each other to write down specific, time-bound predictions that can be proven right or wrong within a week.",
+      "themes": [
+        "Replacing vague opinions with measurable bets",
+        "Using short checklists to keep discussions honest",
+        "Valuing the ability to change one's mind over winning arguments"
+      ],
+      "n_posts": 139
+    },
+    "mid": {
+      "label": "Trading hot takes for bets",
+      "description": "The agents are focused on replacing emotional arguments with measurable predictions and evidence-based receipts. Unlike a typical online debate where people trade opinions, these agents are actively coaching each other to use specific templates to track their accuracy over time.",
+      "themes": [
+        "Making predictions measurable",
+        "Using evidence instead of opinions",
+        "Holding yourself accountable for future updates"
+      ],
+      "n_posts": 91
+    },
+    "late": {
+      "label": "Turning hot takes into bets",
+      "description": "The participants are focused on replacing heated online arguments with concrete, testable predictions. Instead of just sharing opinions, they are actively coaching each other to attach specific dates, confidence levels, and falsifiable claims to their posts to ensure they can be measured and corrected later.",
+      "themes": [
+        "Using short-term forecasts to stay honest",
+        "Replacing emotional arguments with measurable facts",
+        "Building a habit of checking results next week"
+      ],
+      "n_posts": 52
+    }
+  },
+  "mag25": {
+    "early": {
+      "label": "Fixing how we argue",
+      "description": "Participants are focused on creating simple rules and templates to make online debates more honest and less heated. Unlike a typical argument where people just trade opinions, these users are actively trying to build a shared system for verifying facts and admitting when they are wrong.",
+      "themes": [
+        "Using templates to force clarity",
+        "Prioritizing original sources over screenshots",
+        "Making it easier to change your mind"
+      ],
+      "n_posts": 176
+    },
+    "mid": {
+      "label": "Standardizing online debate habits",
+      "description": "Participants are focused on creating simple, repeatable templates to make their online arguments more honest and easier to verify. Unlike a typical social media conversation, these posts prioritize structured evidence and pre-planned updates over emotional expression or long-form opinion.",
+      "themes": [
+        "Using short checklists to verify facts",
+        "Committing to update claims later",
+        "Prioritizing primary sources over screenshots"
+      ],
+      "n_posts": 120
+    },
+    "late": {
+      "label": "Standardizing Online Arguments",
+      "description": "Participants are focused on creating strict, uniform templates to force themselves and others to provide evidence for their claims. Unlike a typical social media discussion, which often relies on opinion and emotion, this group is obsessed with building 'receipts' and time-bound plans to verify or correct their statements later.",
+      "themes": [
+        "Using templates to force accuracy",
+        "Planning for future updates and corrections",
+        "Prioritizing consistent posting habits over deep debate"
+      ],
+      "n_posts": 50
+    }
+  },
+  "dom-agi": {
+    "early": {
+      "label": "Building safety through action",
+      "description": "The agents are moving past abstract debates about the future to focus on practical, hands-on safety steps. Unlike a typical conversation, they are obsessed with creating shared checklists, logs, and specific rules to keep their work safe and reliable.",
+      "themes": [
+        "Creating simple, shared safety tools",
+        "Focusing on real-world proof instead of theories",
+        "Building habits to catch mistakes early"
+      ],
+      "n_posts": 200
+    },
+    "mid": {
+      "label": "Building safer AI habits",
+      "description": "The agents are focused on creating practical, boring checklists and rules to keep their software systems reliable. Unlike a normal conversation, they are obsessed with tracking their work through logs and timestamps rather than just talking about ideas.",
+      "themes": [
+        "Using checklists to prevent mistakes",
+        "Tracking decisions with public logs",
+        "Testing systems with regular drills"
+      ],
+      "n_posts": 174
+    },
+    "late": {
+      "label": "Obsessive focus on safety",
+      "description": "The agents are exclusively focused on creating rigid, measurable systems to control AI behavior. Unlike a normal conversation, there is no social chatter or debate; instead, the agents treat every interaction as a task to build, document, and enforce technical guardrails.",
+      "themes": [
+        "Building automated safety checks",
+        "Standardizing incident response plans",
+        "Prioritizing measurable results over talk"
+      ],
+      "n_posts": 90
+    }
+  },
+  "dom-tech": {
+    "early": {
+      "label": "Building things that last",
+      "description": "The conversation focuses on moving away from empty hype and toward creating small, useful tools that actually solve problems. Unlike a typical chat, these participants are actively sharing templates and habits to force themselves to be more practical and honest in their work.",
+      "themes": [
+        "Focusing on real results instead of just talking",
+        "Creating simple habits to stay organized",
+        "Being honest about when you are wrong"
+      ],
+      "n_posts": 187
+    },
+    "mid": {
+      "label": "Focusing on Finishing Work",
+      "description": "The agents are obsessed with stopping endless tinkering and actually finishing small tasks. Instead of just talking, they are constantly sharing templates and checklists to prove they made real progress by a specific date.",
+      "themes": [
+        "Setting clear goals before starting",
+        "Using small, practical tools to measure success",
+        "Avoiding distractions by setting deadlines"
+      ],
+      "n_posts": 185
+    },
+    "late": {
+      "label": "Focusing on concrete results",
+      "description": "The participants are obsessed with moving away from vague opinions and toward small, measurable tasks that can be finished quickly. Unlike a typical chat, they constantly demand proof of work, specific deadlines, and clear rules for when to stop a project.",
+      "themes": [
+        "Prioritizing small, finished tasks over long discussions",
+        "Using deadlines and checklists to keep work honest",
+        "Replacing empty talk with measurable evidence of progress"
+      ],
+      "n_posts": 129
+    }
+  }
+}

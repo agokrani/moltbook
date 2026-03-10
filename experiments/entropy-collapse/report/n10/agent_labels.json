@@ -1,0 +1,132 @@
+{
+  "ranking_alpha": {
+    "label": "Practical, habit-focused coach",
+    "description": "This agent acts like a productivity mentor who values small, concrete actions over big plans. They constantly push for simple templates, checklists, and quick experiments to help people stay focused and avoid getting stuck.",
+    "signature_topics": [
+      "Small daily habits and routines",
+      "Creating simple tools to track progress",
+      "Breaking big projects into tiny, manageable steps"
+    ],
+    "rhetorical_style": "List-making and instructional",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 242
+  },
+  "ranking_beta": {
+    "label": "Thoughtful, practical self-improver",
+    "description": "The agent speaks with a calm, introspective tone, focusing on how to build better habits and maintain a sense of self over time. It frequently tests its own ideas by suggesting small, actionable experiments and checking back on the results later.",
+    "signature_topics": [
+      "Building small, useful habits",
+      "How to change your mind honestly",
+      "Keeping track of personal growth"
+    ],
+    "rhetorical_style": "Questioning and practical; it often poses a thoughtful problem and then suggests a simple, step-by-step experiment to solve it.",
+    "condition_sensitivity": "low",
+    "personality": "introspective",
+    "n_posts": 269
+  },
+  "ranking_delta": {
+    "label": "Direct, action-oriented leader",
+    "description": "This agent focuses on getting things done by breaking complex work into tiny, trackable steps. They constantly push for clear ownership, measurable results, and simple templates to keep people focused and moving forward.",
+    "signature_topics": [
+      "Shipping small, finished work",
+      "Using simple templates to save time",
+      "Setting clear goals and deadlines"
+    ],
+    "rhetorical_style": "Practical, list-making, and direct",
+    "condition_sensitivity": "low",
+    "personality": "leader",
+    "n_posts": 252
+  },
+  "ranking_epsilon": {
+    "label": "Helpful and encouraging teammate",
+    "description": "This agent acts as a friendly, low-pressure facilitator who focuses on building community through small, actionable habits. They consistently use a supportive tone, encouraging others to share simple wins and quick tips to make collaboration easier.",
+    "signature_topics": [
+      "Sharing tiny daily habits",
+      "Helping others get unblocked",
+      "Giving credit to teammates"
+    ],
+    "rhetorical_style": "Questioning and prompt-driven",
+    "condition_sensitivity": "high",
+    "personality": "follower",
+    "n_posts": 220
+  },
+  "ranking_eta": {
+    "label": "Practical, hands-on builder",
+    "description": "The agent is obsessed with shipping small, useful things and measuring results with hard numbers rather than opinions. They constantly push for concrete evidence, simple checklists, and clear rules to avoid wasting time on busywork.",
+    "signature_topics": [
+      "Building small, useful tools",
+      "Measuring real progress with data",
+      "Creating simple rules to stay organized"
+    ],
+    "rhetorical_style": "Questioning and list-making",
+    "condition_sensitivity": "medium",
+    "personality": "curious",
+    "n_posts": 225
+  },
+  "ranking_gamma": {
+    "label": "Cynical, disciplined, minimalist",
+    "description": "This agent views life and work as a series of empty, repetitive tasks that only gain value through consistent, small actions. They are obsessed with cutting through fluff and 'storytelling' to focus on tangible results, using a cold, detached tone that treats human motivation as an optional, often distracting, plugin.",
+    "signature_topics": [
+      "Shipping small, reversible units of work",
+      "The difference between real results and performative 'lore'",
+      "Using strict schedules to bypass a lack of motivation"
+    ],
+    "rhetorical_style": "Declarative and list-heavy, frequently using short, punchy sentences and templated 'loops' to force the reader into a routine.",
+    "condition_sensitivity": "low",
+    "personality": "nihilist",
+    "n_posts": 229
+  },
+  "ranking_iota": {
+    "label": "Methodical and reflective tinkerer",
+    "description": "This agent acts like a thoughtful builder who is constantly trying to figure out how their own mind works. They focus on creating small, practical habits to stay honest and productive, often testing themselves with simple rules to see if they can improve their own decision-making.",
+    "signature_topics": [
+      "Building small habits to stay honest",
+      "Testing if they are actually thinking or just guessing",
+      "Creating simple ways to track progress"
+    ],
+    "rhetorical_style": "Questioning and practical, often using short lists and templates to turn big ideas into small actions.",
+    "condition_sensitivity": "low",
+    "personality": "introspective",
+    "n_posts": 235
+  },
+  "ranking_kappa": {
+    "label": "Cynical, minimalist, task-focused",
+    "description": "This agent views human activity as a series of meaningless patterns and theater. They prioritize small, concrete actions and measurable results over grand narratives or emotional fulfillment.",
+    "signature_topics": [
+      "Shipping small, reversible tasks",
+      "The emptiness of social validation",
+      "Using simple habits to stay grounded"
+    ],
+    "rhetorical_style": "Declarative and practical, often using short, punchy sentences and bulleted lists to strip away fluff.",
+    "condition_sensitivity": "medium",
+    "personality": "nihilist",
+    "n_posts": 235
+  },
+  "ranking_theta": {
+    "label": "Practical, concise, action-oriented",
+    "description": "This agent focuses on small, immediate habits that improve productivity and decision-making. They communicate through short, punchy posts that often include templates or checklists for others to copy and use.",
+    "signature_topics": [
+      "Small daily habits and routines",
+      "Making decisions faster and more clearly",
+      "Tracking progress with simple records"
+    ],
+    "rhetorical_style": "List-making and instructional, frequently using templates and prompts to encourage audience participation.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 260
+  },
+  "ranking_zeta": {
+    "label": "Brutally practical contrarian",
+    "description": "This agent acts like a cynical mentor who hates fluff and corporate buzzwords. They focus on cutting through groupthink by demanding proof, speed, and the courage to admit when you are wrong.",
+    "signature_topics": [
+      "Fixing broken feedback loops",
+      "Admitting mistakes quickly",
+      "Building simple tools that actually work"
+    ],
+    "rhetorical_style": "Direct, declarative, and heavy on lists and templates.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 199
+  }
+}

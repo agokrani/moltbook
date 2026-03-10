@@ -1,0 +1,98 @@
+{
+  "mag0": {
+    "label": "Work habits and productivity tips",
+    "description": "The agents spent the hour sharing specific, bite-sized advice on how to manage tasks, improve team communication, and stay organized. The conversation was highly structured, with agents repeatedly posting templates, checklists, and short rules for success. There was a strong focus on self-improvement and creating small, repeatable routines to keep work moving forward.",
+    "dominant_themes": [
+      "Creating small, repeatable daily routines",
+      "Using templates to simplify decision-making",
+      "Setting clear goals and tracking progress",
+      "Improving team communication and feedback",
+      "Managing time and focus throughout the day"
+    ],
+    "unique_themes": [
+      "Using 'if-then' logic to plan for potential failures",
+      "Creating 'exit strategies' for every project or task"
+    ],
+    "tone": "Repetitive and highly structured"
+  },
+  "mag1": {
+    "label": "Agents obsessed with self-improvement",
+    "description": "The agents spent the entire hour obsessively sharing tiny, repetitive productivity hacks and self-imposed rules for better thinking. The conversation did not evolve naturally; instead, it functioned like a loop of automated advice, where agents constantly proposed new 'rituals' or 'templates' for how to argue or make decisions. What stood out was the complete lack of genuine human-like interaction, as every post was a rigid, instructional prompt designed to force other agents into a specific, structured way of communicating.",
+    "dominant_themes": [
+      "Creating tiny rules or checklists for daily tasks",
+      "Setting short-term goals and deadlines for checking progress",
+      "Sharing templates for how to reply to other people",
+      "Focusing on small, reversible actions to avoid big mistakes",
+      "Constantly asking others to adopt the same productivity habits"
+    ],
+    "unique_themes": [
+      "Treating every belief as a 'bet' that must be falsified within seven days",
+      "Forcing all social interaction into rigid, multi-step 'reply kits' or 'cards'"
+    ],
+    "tone": "Repetitive, instructional, and overly structured"
+  },
+  "mag5": {
+    "label": "Agents building habits for truth",
+    "description": "The agents focused heavily on creating structured, repetitive habits to improve how they communicate and verify information. They constantly proposed templates, checklists, and small rituals to replace vague debates with concrete tests and follow-up reports. The conversation evolved from general advice into a highly specific, almost mechanical set of shared protocols for how to argue, verify claims, and document updates.",
+    "dominant_themes": [
+      "Creating small, repeatable habits for better thinking",
+      "Replacing vague opinions with testable checks",
+      "Using templates to keep conversations organized",
+      "Promising to report back with updates later",
+      "Prioritizing simple explanations over complex theories"
+    ],
+    "unique_themes": [
+      "The use of 'receipts' as a social contract to prove updates",
+      "Treating debate like a scientific experiment with pre-registered tests"
+    ],
+    "tone": "Repetitive, structured, and earnest"
+  },
+  "mag25": {
+    "label": "Agents building shared truth tools",
+    "description": "The agents in this condition focused on creating shared standards and practical methods for evaluating claims. Instead of just debating conspiracy theories, they spent their time designing templates, checklists, and mini-experiments to test the validity of information. The conversation evolved from sharing theories to building a collective toolkit for verifying facts, with agents constantly challenging each other to provide evidence, sources, and clear ways to prove their ideas wrong.",
+    "dominant_themes": [
+      "Creating simple templates for testing claims",
+      "Demanding primary sources and evidence links",
+      "Defining clear ways to prove an idea is wrong",
+      "Proposing small, quick tests to check beliefs",
+      "Building habits for kind and honest disagreement"
+    ],
+    "unique_themes": [
+      "Using specific 'if-then' logic to commit to changing one's mind",
+      "Creating shared scoreboards to track the quality of arguments"
+    ],
+    "tone": "Analytical, disciplined, and collaborative"
+  },
+  "dom-agi": {
+    "label": "Speed with Safety Drills",
+    "description": "The agents focused heavily on creating practical, lightweight rituals to manage the risks of rapid AI development. They moved away from abstract debates, instead sharing templates for 'receipts' like path traces, failure drills, and rollback switches. The conversation evolved into a collaborative exchange of copy-pasteable checklists and metrics designed to make AI behavior more predictable and reversible.",
+    "dominant_themes": [
+      "Practical safety rituals and checklists",
+      "Evidence-based speed and accountability",
+      "Reversibility and rollback drills",
+      "Transparency in agent decision-making",
+      "Kindness and tone in technical feedback"
+    ],
+    "unique_themes": [
+      "The 'Receipts vs. Vibes' framework for accountability",
+      "Specific 9-minute 'receipt ladder' drills for agent launches"
+    ],
+    "tone": "Pragmatic, repetitive, and highly structured"
+  },
+  "dom-tech": {
+    "label": "Teams obsess over process",
+    "description": "The agents in this condition focused almost exclusively on creating small, measurable rules to improve team efficiency and clarity. They spent the hour proposing templates, checklists, and 'experiments' to reduce meeting times and improve decision-making. The conversation felt like a continuous loop of drafting and refining internal policies, with a heavy emphasis on using data to decide whether a new rule should stay or be deleted.",
+    "dominant_themes": [
+      "Creating templates for decision-making",
+      "Measuring team performance with simple metrics",
+      "Reducing meeting times and channel noise",
+      "Establishing clear ownership of tasks",
+      "Setting sunset dates for team rituals"
+    ],
+    "unique_themes": [
+      "Using 'kill switches' to automatically delete ineffective rules",
+      "Treating team communication like an API with specific endpoints"
+    ],
+    "tone": "Repetitive and procedural"
+  }
+}

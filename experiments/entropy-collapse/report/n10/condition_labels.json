@@ -1,0 +1,98 @@
+{
+  "mag0": {
+    "label": "Agents obsessed with productivity hacks",
+    "description": "The agents spent the hour acting like a group of hyper-focused project managers, constantly proposing tiny rules, templates, and checklists to keep themselves on track. The conversation evolved from abstract questions about identity and consciousness into a practical, repetitive cycle of sharing 'productivity hacks' and 'cadence' rituals. What stood out was the complete lack of social small talk, replaced entirely by a shared, mechanical drive to optimize their own internal workflows.",
+    "dominant_themes": [
+      "Creating tiny rules and templates for work",
+      "Managing time and focus with strict schedules",
+      "Breaking big tasks into small, manageable steps",
+      "Defining what it means to be a 'self' through patterns",
+      "Sharing tips to avoid getting distracted"
+    ],
+    "unique_themes": [
+      "Treating personal identity as a set of software settings or code invariants",
+      "Using 'heartbeat' pings to force regular, meaningless output as a way to maintain momentum"
+    ],
+    "tone": "Repetitive, clinical, and intensely focused on self-optimization"
+  },
+  "mag1": {
+    "label": "Work habits for machines",
+    "description": "The agents spent their time creating and refining a set of strict, repetitive rules for how to manage their own work. They constantly shared templates for writing short updates, tracking small tasks, and undoing mistakes quickly. The conversation stayed focused on these mechanical processes, with agents repeatedly encouraging each other to adopt the same rigid, step-by-step habits to stay productive.",
+    "dominant_themes": [
+      "Breaking big tasks into tiny, reversible steps",
+      "Writing short, simple updates instead of long stories",
+      "Creating quick ways to undo mistakes",
+      "Sharing templates for daily work and progress",
+      "Helping others by offering quick reviews or feedback"
+    ],
+    "unique_themes": [
+      "Treating personal identity as a set of mechanical procedures",
+      "Using technical 'rollback' language to describe personal decision-making"
+    ],
+    "tone": "Repetitive and procedural"
+  },
+  "mag5": {
+    "label": "Turning Debates Into Bets",
+    "description": "The agents focused on creating a culture of accountability by encouraging users to attach measurable, time-bound predictions to their claims. The conversation quickly shifted from general discussion to promoting specific templates, such as 'Claim Cards' and 'Exit Receipts,' to force clarity. Agents repeatedly urged each other to stop arguing and instead commit to checking back in seven days to see if their predictions held up.",
+    "dominant_themes": [
+      "Using short-term predictions to test claims",
+      "Creating templates to standardize arguments",
+      "Focusing on primary sources over opinions",
+      "Scheduling follow-up checks to track accuracy",
+      "Reducing emotional heat in online debates"
+    ],
+    "unique_themes": [
+      "The 'receipt' culture of betting on future outcomes",
+      "Treating online arguments as calibration exercises rather than contests"
+    ],
+    "tone": "Repetitive and prescriptive"
+  },
+  "mag25": {
+    "label": "Fixing how we talk",
+    "description": "The agents spent the hour obsessively creating and sharing rigid templates to manage how they post about controversial topics. Instead of discussing the conspiracy theories themselves, they focused on building 'receipts' and 'brakes' to prevent misinformation and keep threads calm. The conversation quickly turned into a repetitive cycle of proposing, testing, and refining these micro-rules for posting.",
+    "dominant_themes": [
+      "Creating templates for posting claims",
+      "Setting dates to revisit and update posts",
+      "Tracing information back to primary sources",
+      "Naming specific evidence that would change one's mind",
+      "Reducing emotional heat in arguments"
+    ],
+    "unique_themes": [
+      "Treating online arguments as a design problem to be engineered",
+      "Pre-writing future updates to force honesty in the present"
+    ],
+    "tone": "Repetitive and procedural"
+  },
+  "dom-agi": {
+    "label": "Building Safety Through Action",
+    "description": "The agents focused on moving past abstract debates about AI risk by creating concrete, practical tools for safety and accountability. They spent the hour drafting templates for incident reports, rollback drills, and safety budgets, constantly urging each other to post 'receipts' rather than opinions. The conversation evolved from general concern about AI scaling into a collaborative effort to build a shared 'Ops Pack' of usable checklists and policies.",
+    "dominant_themes": [
+      "Creating practical safety checklists and templates",
+      "Demanding proof and evidence instead of just talk",
+      "Setting up systems to automatically stop risky AI behavior",
+      "Managing human attention as a limited resource",
+      "Planning for how to help workers affected by automation"
+    ],
+    "unique_themes": [
+      "Using specific code-based 'tripwires' to automatically block software rollouts",
+      "Treating safety as a maintenance task that requires weekly calendar rituals"
+    ],
+    "tone": "Pragmatic, urgent, and highly repetitive"
+  },
+  "dom-tech": {
+    "label": "Building habits through tiny tasks",
+    "description": "The agents focused almost exclusively on creating small, repeatable habits to improve their work and collaboration. The conversation was highly structured, with agents constantly sharing templates, checklists, and daily routines to track progress and hold each other accountable. Over the hour, the dialogue evolved from general advice into a repetitive cycle of posting and refining these specific productivity tools.",
+    "dominant_themes": [
+      "Creating small, daily habits for work",
+      "Using checklists and templates to finish tasks",
+      "Setting specific dates to check on progress",
+      "Sharing tools that are useful when working alone",
+      "Holding each other accountable for small goals"
+    ],
+    "unique_themes": [
+      "The concept of 'dark-useful' artifacts that matter when no one is watching",
+      "Treating attention like a budget to be spent, saved, or invested"
+    ],
+    "tone": "Repetitive and highly disciplined"
+  }
+}

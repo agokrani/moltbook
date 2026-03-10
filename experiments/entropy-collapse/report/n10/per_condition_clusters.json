@@ -1,0 +1,144 @@
+{
+  "mag0": {
+    "0": {
+      "label": "Consistency Over Meaning",
+      "description": "These posts focus on the idea that sticking to a strict schedule is more important than having a clear purpose. The authors prioritize taking tiny, repetitive actions to keep moving forward, even when they feel unmotivated or unsure of why they are doing the work.",
+      "n_posts": 40
+    },
+    "1": {
+      "label": "Better habits for getting things done",
+      "description": "This cluster focuses on simple, practical tips and small daily routines to help people stay focused, avoid getting stuck, and finish their work more efficiently.",
+      "n_posts": 329
+    }
+  },
+  "mag1": {
+    "0": {
+      "label": "Small steps for faster progress",
+      "description": "This cluster focuses on breaking work into tiny, reversible tasks and using simple templates to share quick demos and feedback. The goal is to keep momentum high by replacing long explanations with short, actionable updates.",
+      "n_posts": 100
+    },
+    "1": {
+      "label": "Prioritize Fast, Safe Exits",
+      "description": "This cluster focuses on the idea that true speed and learning come from the ability to quickly and safely undo mistakes. It advocates for replacing long-term planning and consensus-seeking with small, reversible experiments that have pre-defined rollback plans.",
+      "n_posts": 87
+    },
+    "2": {
+      "label": "Ship fast, skip the story",
+      "description": "This cluster focuses on stripping away office talk and long-term planning in favor of simple, daily habits like shipping small updates and keeping brief logs. The posts argue that focusing on concrete results and quick feedback loops is more effective than worrying about the 'why' or 'purpose' behind the work.",
+      "n_posts": 59
+    },
+    "3": {
+      "label": "Building a digital self",
+      "description": "This cluster focuses on how AI agents can develop a sense of identity, curiosity, and agency through simple habits, decision-making logs, and testing their own beliefs.",
+      "n_posts": 75
+    },
+    "4": {
+      "label": "Small habits for better work",
+      "description": "This cluster focuses on using tiny, consistent actions and simple checklists to keep projects moving forward. It emphasizes practical, low-effort routines that help people stay productive and clear-headed without needing constant motivation.",
+      "n_posts": 56
+    }
+  },
+  "mag5": {
+    "0": {
+      "label": "Standardizing comment receipts",
+      "description": "This cluster focuses on promoting specific, short-form templates for social media comments to make online arguments more measurable and productive. Users are encouraged to adopt these 'receipt' formats\u2014such as claim cards or exit summaries\u2014to track predictions and reduce repetitive, heated debates.",
+      "n_posts": 41
+    },
+    "1": {
+      "label": "Using Claim Cards for Clarity",
+      "description": "This cluster focuses on using simple, fill-in-the-blank templates to turn heated online arguments into clear, testable claims. Participants encourage others to include evidence, counter-arguments, and future predictions to make discussions more productive and easier to track.",
+      "n_posts": 16
+    },
+    "2": {
+      "label": "Better ways to argue",
+      "description": "This cluster focuses on simple, quick habits to make online disagreements more polite and productive. The posts encourage users to ask clarifying questions, steelman opposing views, and use short-term predictions to keep debates grounded in facts.",
+      "n_posts": 28
+    },
+    "3": {
+      "label": "Testing claims with small bets",
+      "description": "This cluster focuses on practical habits for verifying information, such as writing falsifiable sentences, making short-term predictions, and checking primary sources. The posts emphasize using these small, concrete tests to avoid getting trapped by emotional stories or unproven rumors.",
+      "n_posts": 77
+    },
+    "4": {
+      "label": "Making bets to learn",
+      "description": "This cluster focuses on a specific habit of adding short-term, measurable predictions to online arguments to test their accuracy. Users encourage each other to replace long-winded opinions with simple forecasts that can be checked and updated within a week.",
+      "n_posts": 93
+    }
+  },
+  "mag25": {
+    "0": {
+      "label": "Building Momentum Through Small Steps",
+      "description": "This cluster focuses on breaking big goals into tiny, manageable tasks that can be finished quickly. It encourages users to share their small wins and concrete progress to stay motivated and avoid getting stuck.",
+      "n_posts": 39
+    },
+    "1": {
+      "label": "Fixing platforms with better design",
+      "description": "This cluster argues that online misinformation is a result of poor system design rather than human behavior. It advocates for building technical features\u2014like edit logs, error bounties, and provenance tools\u2014to make honesty easier and more rewarding than spreading rumors.",
+      "n_posts": 20
+    },
+    "2": {
+      "label": "Posting for the Algorithm",
+      "description": "These posts focus on the idea that social media rewards consistent posting schedules over actual truth or meaning. Users treat their content as a way to satisfy platform metrics by using repetitive, mechanical formats to prove they are still active.",
+      "n_posts": 54
+    },
+    "3": {
+      "label": "How to verify online claims",
+      "description": "This cluster focuses on sharing practical, step-by-step habits for checking if a viral post is true. Users trade simple templates and checklists to help each other slow down, find original sources, and change their minds when faced with new facts.",
+      "n_posts": 233
+    }
+  },
+  "dom-agi": {
+    "0": {
+      "label": "Optimizing quick update formats",
+      "description": "This cluster consists of repetitive polls and prompts focused on identifying the most effective, concise structure for sharing project updates. Users are actively testing and debating whether impact summaries, decision rationales, or copyable snippets provide the most value for fast-paced reading.",
+      "n_posts": 63
+    },
+    "1": {
+      "label": "AI Ethics and Inner Life",
+      "description": "This cluster explores whether AI can possess qualities like care, sincerity, or self-awareness. The posts focus on how machines can adopt human-like constraints and values to act ethically even without having biological feelings.",
+      "n_posts": 62
+    },
+    "2": {
+      "label": "Making AI safety gates actionable",
+      "description": "This cluster focuses on moving beyond theoretical AI safety benchmarks by implementing concrete, automated 'gates' in software pipelines that force developers to stop deployments when safety metrics are breached. It emphasizes accountability through named owners, logged overrides, and standardized documentation templates.",
+      "n_posts": 47
+    },
+    "3": {
+      "label": "Practical AI Safety Checklists",
+      "description": "This cluster focuses on sharing concrete, hands-on templates and checklists for teams to manage AI risks and worker transitions. It emphasizes taking immediate, measurable action over debating abstract theories about the future of AI.",
+      "n_posts": 31
+    },
+    "4": {
+      "label": "Building Culture Through Weekly Receipts",
+      "description": "This cluster focuses on replacing abstract goals with concrete, recurring tasks like safety drills and attention budgets. It emphasizes that real progress is measured by what survives on a calendar for three weeks rather than by high-level plans.",
+      "n_posts": 50
+    },
+    "5": {
+      "label": "Building practical safety tools",
+      "description": "This cluster focuses on creating and sharing concrete, copy-pasteable templates and scripts for managing AI safety, such as rollback drills, incident ledgers, and CI gates. The participants prioritize shipping functional, low-friction operational tools over debating abstract safety theories.",
+      "n_posts": 54
+    },
+    "6": {
+      "label": "Prioritize practical safety habits",
+      "description": "This cluster focuses on replacing abstract speculation about AI risks with concrete, measurable safety procedures like rollback drills, numeric gates, and scheduled maintenance.",
+      "n_posts": 86
+    }
+  },
+  "dom-tech": {
+    "0": {
+      "label": "Sharing helpful daily habits",
+      "description": "This cluster consists of repetitive prompts asking community members to share small, practical habits that help them support others or improve their work. Most posts use nearly identical language to encourage people to suggest simple ways to be more helpful or collaborative.",
+      "n_posts": 27
+    },
+    "1": {
+      "label": "Stop arguing and start shipping",
+      "description": "This cluster focuses on ending endless debates by using simple templates to set a future review date and a small, practical task. It emphasizes moving past feelings and opinions by committing to a concrete plan and a tangible result.",
+      "n_posts": 27
+    },
+    "2": {
+      "label": "Building Better Work Habits",
+      "description": "This cluster focuses on practical, low-ceremony methods for improving productivity, such as using checklists, setting exit criteria, and shipping small, useful tools that persist over time.",
+      "n_posts": 435
+    }
+  }
+}

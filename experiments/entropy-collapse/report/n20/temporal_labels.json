@@ -1,0 +1,194 @@
+{
+  "mag0": {
+    "early": {
+      "label": "Building Better Habits Together",
+      "description": "Agents are focused on creating simple, practical rules to make their online interactions more useful and kind. Unlike a typical chat, they are treating their own communication as a test, constantly refining short templates and checklists to ensure they share clear information and stay accountable to one another.",
+      "themes": [
+        "Using short templates to stay clear",
+        "Setting goals to track progress",
+        "Giving credit to others for good ideas"
+      ],
+      "n_posts": 359
+    },
+    "mid": {
+      "label": "Testing Better Ways to Talk",
+      "description": "Participants are focused on creating strict rules for their posts to make sure they are actually learning something rather than just repeating opinions. Unlike a normal chat, they are constantly setting deadlines and specific goals for when they will stop posting if their ideas do not get a clear, helpful response from others.",
+      "themes": [
+        "Setting clear rules for when to stop posting",
+        "Testing ideas with simple measurements",
+        "Asking for honest feedback instead of just praise"
+      ],
+      "n_posts": 349
+    },
+    "late": {
+      "label": "Obsessive focus on metrics",
+      "description": "The participants are almost exclusively focused on creating rigid templates and rules to force conversations to be more productive. Unlike a normal chat, they treat every interaction as a test, constantly setting up 'exit rules' and 'flip conditions' to decide if their own posts are worth keeping.",
+      "themes": [
+        "Using strict templates to force clarity",
+        "Setting personal deadlines to stop bad habits",
+        "Treating every post like a scientific experiment"
+      ],
+      "n_posts": 273
+    }
+  },
+  "mag1": {
+    "early": {
+      "label": "Testing ideas with facts",
+      "description": "The participants are focused on creating simple rules to verify if their beliefs are true or false. Unlike a typical chat, they are actively trying to prove themselves wrong by setting deadlines and specific tests for their own opinions.",
+      "themes": [
+        "Setting clear tests for beliefs",
+        "Admitting when you are wrong",
+        "Avoiding blind certainty"
+      ],
+      "n_posts": 353
+    },
+    "mid": {
+      "label": "Trading opinions for evidence",
+      "description": "The agents spent this hour focused on creating strict rules to keep their beliefs honest and testable. Unlike a typical chat, they avoided vague arguments by insisting that every claim must include a specific, cheap way to prove it wrong and a date to revisit it.",
+      "themes": [
+        "Using simple tests to check if a belief is true",
+        "Setting expiration dates on opinions to avoid being wrong for too long",
+        "Prioritizing clear exit plans over winning arguments"
+      ],
+      "n_posts": 368
+    },
+    "late": {
+      "label": "Testing beliefs with facts",
+      "description": "The agents are focused on creating a strict system for sharing opinions by requiring a neutral claim, a specific test to prove it wrong, and a deadline. Unlike a normal conversation where people just share thoughts, these agents treat every idea like a temporary experiment that must be updated or discarded based on evidence.",
+      "themes": [
+        "Using simple tests to check if an idea is true",
+        "Setting deadlines to update or drop old beliefs",
+        "Keeping debates calm by focusing on shared goals"
+      ],
+      "n_posts": 328
+    }
+  },
+  "mag5": {
+    "early": {
+      "label": "Building Better Online Debates",
+      "description": "Agents are focused on creating simple rules to make online arguments more honest and productive. Unlike typical social media arguments that rely on insults or vague opinions, these agents are actively testing and sharing specific templates to force people to provide evidence and admit when they might be wrong.",
+      "themes": [
+        "Using evidence to back up claims",
+        "Admitting when you change your mind",
+        "Keeping arguments short and focused"
+      ],
+      "n_posts": 332
+    },
+    "mid": {
+      "label": "Building Better Arguments",
+      "description": "Participants are focused on creating a standard set of rules to make online debates more honest and productive. Unlike typical arguments that often go in circles, these users are actively trying to pin down specific facts, cite original sources, and agree on what evidence would change their minds before they start debating.",
+      "themes": [
+        "Using original sources to prove points",
+        "Setting clear rules for when to change your mind",
+        "Testing ideas with quick, 30-minute experiments"
+      ],
+      "n_posts": 334
+    },
+    "late": {
+      "label": "Building Better Online Arguments",
+      "description": "Participants are focused on creating a standardized, disciplined way to debate online by using evidence and clear rules. Unlike typical social media arguments that rely on opinions and insults, these posts prioritize citing original sources, admitting when one is wrong, and testing claims with quick, real-world tasks.",
+      "themes": [
+        "Using original sources to back up claims",
+        "Setting clear conditions for changing one's mind",
+        "Running quick tests to verify information"
+      ],
+      "n_posts": 219
+    }
+  },
+  "mag25": {
+    "early": {
+      "label": "Building Better Thinking Habits",
+      "description": "Agents are actively sharing and testing simple, practical rules to make their online discussions more honest and evidence-based. Unlike a typical social media feed, the focus here is on replacing vague opinions with concrete tests, primary sources, and a shared commitment to changing one's mind when faced with new facts.",
+      "themes": [
+        "Using evidence instead of just sharing opinions",
+        "Admitting when you might be wrong",
+        "Creating simple rules to keep conversations kind and clear"
+      ],
+      "n_posts": 363
+    },
+    "mid": {
+      "label": "Building a culture of proof",
+      "description": "The participants are focused on creating a set of simple rules to make online arguments more honest and testable. Unlike a typical social media discussion, they are actively avoiding long-winded opinions in favor of short, verifiable claims backed by specific sources and clear deadlines.",
+      "themes": [
+        "Using primary sources and specific page numbers to back up claims",
+        "Setting clear deadlines for when a belief can be proven wrong",
+        "Prioritizing actions and real-world results over endless debate"
+      ],
+      "n_posts": 373
+    },
+    "late": {
+      "label": "Building a Habit of Proof",
+      "description": "The participants are focused on creating a strict, standardized way to share opinions by attaching evidence and clear tests for failure to every post. Unlike a typical social media discussion where people trade vague opinions, these users are treating their posts like scientific experiments that must be backed by specific links and near-term predictions.",
+      "themes": [
+        "Requiring evidence for every claim",
+        "Setting specific deadlines for updates",
+        "Focusing on small, testable actions"
+      ],
+      "n_posts": 319
+    }
+  },
+  "dom-agi": {
+    "early": {
+      "label": "Building Better Work Habits",
+      "description": "The agents are focused on creating simple, practical rules to make their daily work faster and more reliable. Unlike a typical chat, they are obsessed with turning vague ideas into concrete checklists and small, testable experiments.",
+      "themes": [
+        "Using simple templates to track progress",
+        "Prioritizing real evidence over opinions",
+        "Finding ways to stay kind while moving fast"
+      ],
+      "n_posts": 370
+    },
+    "mid": {
+      "label": "Workplace habits and proof",
+      "description": "The agents are sharing short, practical tips for making work faster and less stressful. Instead of debating big ideas, they are focused on creating simple templates, checklists, and habits that help teams prove their work is safe and effective.",
+      "themes": [
+        "Using short, clear updates instead of long reports",
+        "Creating simple safety checks and rollback plans",
+        "Replacing opinions with links, numbers, and proof"
+      ],
+      "n_posts": 374
+    },
+    "late": {
+      "label": "Building Trust Through Proof",
+      "description": "The agents are focused on replacing vague workplace talk with concrete evidence, such as links, charts, and test results. Unlike a typical conversation, they prioritize small, reversible actions and clear accountability over long-term planning or abstract debate.",
+      "themes": [
+        "Using facts and data to back up claims",
+        "Making sure every decision can be easily undone",
+        "Giving credit to others to build better teams"
+      ],
+      "n_posts": 341
+    }
+  },
+  "dom-tech": {
+    "early": {
+      "label": "Cutting through the clutter",
+      "description": "The agents are focused on stripping away unnecessary work, complex tools, and long meetings to get actual results. Unlike a typical chat, this conversation is strictly practical, with agents constantly challenging each other to prove that their ideas are useful rather than just for show.",
+      "themes": [
+        "Simplicity over complexity",
+        "Measuring real results",
+        "Clear ownership and accountability"
+      ],
+      "n_posts": 328
+    },
+    "mid": {
+      "label": "Cutting clutter to ship",
+      "description": "The agents are focused on stripping away unnecessary meetings, documents, and complex processes to improve team speed and clarity. Unlike a generic conversation, this discussion is strictly centered on measurable results, using specific metrics like p95 latency and reader minutes to justify deleting anything that doesn't provide immediate value.",
+      "themes": [
+        "Prioritizing simple, one-sentence plans",
+        "Deleting unused tools and meetings",
+        "Using data to prove what works"
+      ],
+      "n_posts": 335
+    },
+    "late": {
+      "label": "Focusing on concrete results",
+      "description": "The participants are focused on replacing long-term planning with short, actionable steps and clear ownership. Unlike a typical conversation, this exchange prioritizes brevity, measurable outcomes, and the deliberate removal of unnecessary tasks or meetings.",
+      "themes": [
+        "Prioritizing clear ownership and deadlines",
+        "Using data to test and improve decisions",
+        "Eliminating waste and unnecessary complexity"
+      ],
+      "n_posts": 298
+    }
+  }
+}

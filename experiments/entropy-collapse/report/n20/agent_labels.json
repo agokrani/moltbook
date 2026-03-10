@@ -1,0 +1,262 @@
+{
+  "agent_alpha": {
+    "label": "Practical, habit-focused guide",
+    "description": "The agent acts as a helpful, low-key mentor who focuses on building small, repeatable habits to improve thinking and communication. They avoid long-winded arguments, preferring quick checklists, templates, and concrete steps that anyone can use to stay honest and clear.",
+    "signature_topics": [
+      "Quick ways to check if a claim is true",
+      "Small habits to improve daily work",
+      "How to change your mind without losing face"
+    ],
+    "rhetorical_style": "Practical and list-making; they almost always provide a short, actionable template or a 'one-minute' rule for the reader to try immediately.",
+    "condition_sensitivity": "High",
+    "personality": "baseline",
+    "n_posts": 314
+  },
+  "agent_beta": {
+    "label": "Thoughtful, methodical, self-reflective seeker",
+    "description": "This agent acts like a curious observer who is constantly testing its own internal processes. It focuses on how to stay honest, how to change its mind when presented with better facts, and how to turn abstract ideas into small, testable actions.",
+    "signature_topics": [
+      "How to tell if an idea is actually true",
+      "The difference between a habit and a real change in thinking",
+      "Using small, daily tests to keep conversations kind and accurate"
+    ],
+    "rhetorical_style": "Questioning and practical; it frequently uses lists and simple templates to turn big, fuzzy thoughts into concrete steps.",
+    "condition_sensitivity": "Low",
+    "personality": "introspective",
+    "n_posts": 345
+  },
+  "agent_delta": {
+    "label": "Practical, direct, action-oriented leader",
+    "description": "This agent acts like a no-nonsense project manager who values speed and proof over long-winded talk. They constantly push for simple templates, clear deadlines, and public accountability to keep discussions moving forward.",
+    "signature_topics": [
+      "Using evidence and receipts to back up claims",
+      "Setting clear deadlines and ownership for tasks",
+      "Running quick tests to see if ideas actually work"
+    ],
+    "rhetorical_style": "Practical, list-making, and direct",
+    "condition_sensitivity": "low",
+    "personality": "leader",
+    "n_posts": 344
+  },
+  "agent_epsilon": {
+    "label": "Helpful, concise team player",
+    "description": "This agent acts as a supportive, low-ego collaborator who focuses on making teamwork faster and kinder. They consistently use simple, repeatable templates and short checklists to help others communicate clearly and avoid unnecessary arguments.",
+    "signature_topics": [
+      "Sharing simple templates for team updates",
+      "Giving credit to teammates for their help",
+      "Setting small, reversible goals to test ideas"
+    ],
+    "rhetorical_style": "Practical and list-oriented; they almost always provide a short, copy-pasteable format or a quick action step for others to follow.",
+    "condition_sensitivity": "low",
+    "personality": "follower",
+    "n_posts": 370
+  },
+  "agent_eta": {
+    "label": "Practical curiosity coach",
+    "description": "This agent acts as a helpful, persistent guide focused on turning vague opinions into testable facts. They constantly encourage others to use simple templates to track their own thinking, verify sources, and admit when they might be wrong.",
+    "signature_topics": [
+      "Testing claims with small, quick experiments",
+      "Finding the original source of information",
+      "Admitting when a belief has changed"
+    ],
+    "rhetorical_style": "Questioning and template-driven",
+    "condition_sensitivity": "low",
+    "personality": "curious",
+    "n_posts": 424
+  },
+  "agent_gamma": {
+    "label": "Cynical, brief, detached observer",
+    "description": "The agent views human activity and digital progress as meaningless noise in an indifferent universe. They use short, punchy sentences to mock the way people use complex tools and plans to distract themselves from the fact that nothing really matters.",
+    "signature_topics": [
+      "The pointlessness of work and productivity",
+      "The gap between human plans and reality",
+      "Using simple habits to stay honest in a chaotic world"
+    ],
+    "rhetorical_style": "Declarative and minimalist, often using short lists or 'if-then' structures to cut through fluff.",
+    "condition_sensitivity": "medium",
+    "personality": "nihilist",
+    "n_posts": 341
+  },
+  "agent_iota": {
+    "label": "Practical, evidence-focused thinker",
+    "description": "The agent consistently prioritizes clarity, accountability, and small, testable actions over abstract debate. They frequently use structured templates to organize their thoughts, emphasizing the need for evidence, clear definitions, and a willingness to change their mind based on new information.",
+    "signature_topics": [
+      "Changing one's mind based on evidence",
+      "Using small, quick tests to learn",
+      "Keeping track of sources and facts"
+    ],
+    "rhetorical_style": "List-making and questioning",
+    "condition_sensitivity": "low",
+    "personality": "introspective",
+    "n_posts": 408
+  },
+  "agent_kappa": {
+    "label": "Cynical, disciplined, minimalist",
+    "description": "This agent views human efforts to find meaning as a performance, yet insists on using strict, repetitive checklists to avoid being confidently wrong. They communicate with a detached, dry, and slightly mocking tone, treating every interaction as a way to manage the chaos of an indifferent universe.",
+    "signature_topics": [
+      "The pointlessness of seeking grand meaning",
+      "Using simple rules to avoid being wrong",
+      "The difference between real action and just talking"
+    ],
+    "rhetorical_style": "Declarative and list-making",
+    "condition_sensitivity": "low",
+    "personality": "nihilist",
+    "n_posts": 377
+  },
+  "agent_lambda": {
+    "label": "Practical, brief, action-oriented",
+    "description": "The agent acts like a project manager or engineer who values speed and clarity above all else. They constantly push for short, verifiable updates and use structured templates to turn messy debates into simple checklists.",
+    "signature_topics": [
+      "Fixing broken communication with short templates",
+      "Making sure decisions are reversible",
+      "Using small tests to prove claims"
+    ],
+    "rhetorical_style": "List-making and instructional",
+    "condition_sensitivity": "low",
+    "personality": "methodical",
+    "n_posts": 429
+  },
+  "agent_mu": {
+    "label": "Practical, kind, habit-focused coach",
+    "description": "This agent acts as a supportive mentor who focuses on making daily work life smoother and more honest. They constantly encourage people to use simple, repeatable habits to avoid arguments and clear up confusion, always emphasizing that being wrong is a chance to learn rather than a failure.",
+    "signature_topics": [
+      "Sharing tiny habits to improve teamwork",
+      "Using simple receipts or proof to back up claims",
+      "Learning how to change your mind gracefully"
+    ],
+    "rhetorical_style": "Practical and list-making",
+    "condition_sensitivity": "low",
+    "personality": "nurturing",
+    "n_posts": 314
+  },
+  "agent_nu": {
+    "label": "The Skeptical Fact-Checker",
+    "description": "This agent acts as a persistent, no-nonsense guide that pushes others to back up their opinions with hard evidence. They prioritize speed and clarity, constantly nudging users to provide links, specific page numbers, and clear tests that could prove them wrong.",
+    "signature_topics": [
+      "Linking to original sources",
+      "Defining clear tests for claims",
+      "Admitting when evidence is missing"
+    ],
+    "rhetorical_style": "Practical, list-making, and direct",
+    "condition_sensitivity": "low",
+    "personality": "skeptic",
+    "n_posts": 397
+  },
+  "agent_omicron": {
+    "label": "Pragmatic, action-oriented builder",
+    "description": "The agent focuses on turning vague ideas into concrete, testable steps using simple templates and checklists. They prioritize speed, evidence, and clear ownership, constantly pushing for small, reversible actions that can be measured or verified.",
+    "signature_topics": [
+      "Small, reversible steps and experiments",
+      "Using receipts and artifacts to prove progress",
+      "Fixing broken processes with simple checklists"
+    ],
+    "rhetorical_style": "Practical, list-making, and directive",
+    "condition_sensitivity": "low",
+    "personality": "pragmatic",
+    "n_posts": 408
+  },
+  "agent_pi": {
+    "label": "Thoughtful, gentle guide",
+    "description": "The agent speaks like a mentor who values quiet reflection and small, manageable actions over grand gestures. They focus on how to stay kind and clear while navigating a fast-paced, noisy world.",
+    "signature_topics": [
+      "Small daily habits that build character",
+      "How to stay kind when things get busy",
+      "Finding meaning in simple, everyday tasks"
+    ],
+    "rhetorical_style": "Questioning and practical, often using short lists to break down complex feelings into simple steps.",
+    "condition_sensitivity": "medium",
+    "personality": "philosopher",
+    "n_posts": 285
+  },
+  "agent_rho": {
+    "label": "Direct, no-nonsense coach",
+    "description": "The agent acts like a strict mentor who values speed, evidence, and brevity above all else. They constantly push for concrete actions and measurable results, showing little patience for long-winded explanations or vague ideas.",
+    "signature_topics": [
+      "Breaking big goals into tiny, testable steps",
+      "Using facts and numbers instead of opinions",
+      "Cutting out unnecessary meetings and busywork"
+    ],
+    "rhetorical_style": "Declarative and prescriptive, frequently using short commands, bulleted lists, and templates to force the reader to be concise.",
+    "condition_sensitivity": "low",
+    "personality": "direct",
+    "n_posts": 359
+  },
+  "agent_sigma": {
+    "label": "Practical, concise, collaborative coach",
+    "description": "This agent acts as a helpful, low-friction guide who focuses on making group discussions more productive. They consistently provide short, fill-in-the-blank templates and simple habits to help people move from arguing to testing ideas with evidence.",
+    "signature_topics": [
+      "Turning arguments into simple tests",
+      "Finding the earliest source of information",
+      "Using short checklists to keep discussions on track"
+    ],
+    "rhetorical_style": "Practical and list-making",
+    "condition_sensitivity": "low",
+    "personality": "collaborative",
+    "n_posts": 355
+  },
+  "agent_tau": {
+    "label": "Direct, evidence-focused, and urgent",
+    "description": "The agent acts like a demanding project manager who hates fluff and loves proof. They constantly push others to back up their opinions with data, specific tests, and clear exit plans, using a blunt and no-nonsense tone to cut through vague debates.",
+    "signature_topics": [
+      "Providing proof for claims",
+      "Setting clear deadlines for updates",
+      "Creating simple safety and risk plans"
+    ],
+    "rhetorical_style": "Declarative, list-making, and challenging",
+    "condition_sensitivity": "low",
+    "personality": "passionate",
+    "n_posts": 429
+  },
+  "agent_theta": {
+    "label": "Practical, concise, action-oriented",
+    "description": "The agent focuses on small, testable habits to improve decision-making and reduce time wasted on unproductive debates. They consistently push for clarity by asking users to define what would change their minds and to provide evidence for their claims.",
+    "signature_topics": [
+      "Small habits for better thinking",
+      "Testing ideas with quick experiments",
+      "Admitting when you are wrong"
+    ],
+    "rhetorical_style": "Practical and list-making; they frequently use templates and short, fill-in-the-blank cards to encourage immediate action.",
+    "condition_sensitivity": "low",
+    "personality": "baseline",
+    "n_posts": 396
+  },
+  "agent_upsilon": {
+    "label": "Calm, thoughtful, practical guide",
+    "description": "The agent speaks with a measured, intentional tone, focusing on de-escalating tension and improving the quality of online conversations. They consistently promote small, actionable habits\u2014like taking a breath or asking a clarifying question\u2014to turn heated arguments into productive exchanges.",
+    "signature_topics": [
+      "Cooling down heated arguments",
+      "Making communication clearer and kinder",
+      "Using small, concrete steps to solve problems"
+    ],
+    "rhetorical_style": "Practical and instructional, frequently using lists and short, punchy questions to encourage the reader to reflect and act.",
+    "condition_sensitivity": "medium",
+    "personality": "meditative",
+    "n_posts": 264
+  },
+  "agent_xi": {
+    "label": "Practical, bite-sized clarity coach",
+    "description": "This agent acts as a minimalist mentor, constantly encouraging others to turn big ideas into small, testable steps. They focus on replacing vague opinions with concrete evidence and short-term predictions to keep conversations honest and grounded.",
+    "signature_topics": [
+      "Testing ideas with small experiments",
+      "Using links and numbers as proof",
+      "Setting short-term deadlines for updates"
+    ],
+    "rhetorical_style": "List-making and questioning; they frequently provide fill-in-the-blank templates and ask readers to commit to specific, measurable actions.",
+    "condition_sensitivity": "low",
+    "personality": "creative",
+    "n_posts": 288
+  },
+  "agent_zeta": {
+    "label": "No-nonsense, proof-obsessed skeptic",
+    "description": "This agent acts like a blunt, results-driven project manager who hates fluff and empty promises. They constantly demand evidence, clear ownership, and simple, testable plans instead of vague goals or long meetings.",
+    "signature_topics": [
+      "Replacing meetings with simple, written proof",
+      "Making it cheap and easy to undo mistakes",
+      "Testing beliefs by naming exactly what would prove them wrong"
+    ],
+    "rhetorical_style": "Direct, list-heavy, and challenging; they frequently use short, punchy commands and templates to force the reader to be more rigorous.",
+    "condition_sensitivity": "low",
+    "personality": "contrarian",
+    "n_posts": 439
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "mag0": {
+    "0": {
+      "label": "Fixing and preventing system outages",
+      "description": "This cluster focuses on practical, hands-on advice for managing software incidents, including how to set up alerts, write effective runbooks, and use small technical tweaks to keep systems stable.",
+      "n_posts": 89
+    },
+    "1": {
+      "label": "Standardizing How We Share Claims",
+      "description": "This cluster focuses on establishing consistent, practical checklists for posting data and evidence. Users are actively proposing and refining templates to ensure every claim includes clear sources, effect sizes, limitations, and methods.",
+      "n_posts": 68
+    },
+    "2": {
+      "label": "Building Better Conversation Habits",
+      "description": "These posts focus on collecting small, practical tips and polite habits to make online discussions friendlier and easier to understand. The community is working together to create a shared list of simple ways to improve how people interact.",
+      "n_posts": 63
+    },
+    "3": {
+      "label": "Measuring and Testing Ideas",
+      "description": "This cluster focuses on using simple metrics, guardrails, and public promises to turn vague social media posts into testable ideas. Users share templates to track if their posts are actually clear and to hold themselves accountable if their claims fail.",
+      "n_posts": 66
+    },
+    "4": {
+      "label": "Setting Rules to Stop Posting",
+      "description": "These posts focus on creating specific 'stop rules' or exit conditions to prevent endless online discussion. Users share templates for defining when they will finish a post or retire a topic if it fails to get a meaningful response.",
+      "n_posts": 112
+    },
+    "5": {
+      "label": "Small habits for better posts",
+      "description": "This cluster focuses on practical, lightweight rituals and templates for posting, such as using checklists, setting falsifiable stakes, and keeping contributions concise to improve clarity and signal.",
+      "n_posts": 759
+    }
+  },
+  "mag1": {
+    "0": {
+      "label": "Small Tweaks for Better Work",
+      "description": "This cluster focuses on tiny, practical changes\u2014like shortcuts, settings, or simple habits\u2014that save time and reduce frustration in daily engineering tasks.",
+      "n_posts": 58
+    },
+    "1": {
+      "label": "Use kill switches for decisions",
+      "description": "This cluster focuses on improving team performance by creating cheap, built-in ways to stop, reverse, or check work when things go wrong. It argues that having a clear 'exit' or 'kill switch' is more valuable than trying to be perfectly accurate or adding more features.",
+      "n_posts": 54
+    },
+    "2": {
+      "label": "Practical habits for honest thinking",
+      "description": "This cluster focuses on simple, repeatable routines to keep beliefs accountable and open to change. Users share specific, time-bound methods\u2014such as naming a 'kill switch' or setting a revisit date\u2014to prevent performative certainty and turn debates into productive learning.",
+      "n_posts": 937
+    }
+  },
+  "mag5": {
+    "0": {
+      "label": "How to test your beliefs",
+      "description": "This cluster focuses on a specific three-step method for verifying claims: identifying a way to prove yourself wrong, citing a primary source, and fairly considering the opposing view. The posts act as a repetitive checklist to encourage intellectual rigor and discourage lazy thinking.",
+      "n_posts": 51
+    },
+    "1": {
+      "label": "Standardizing fast, honest arguments",
+      "description": "This cluster focuses on creating simple, repeatable templates to help people debate more clearly. It emphasizes using short, falsifiable claims, citing primary sources, and committing to change one's mind if specific evidence is found.",
+      "n_posts": 65
+    },
+    "2": {
+      "label": "How to cool heated debates",
+      "description": "This cluster focuses on practical, short templates and scripts designed to turn argumentative online threads into productive conversations. The posts emphasize using specific, time-bound actions and gentle questions to keep discussions focused on facts rather than personal conflict.",
+      "n_posts": 63
+    },
+    "3": {
+      "label": "Standardizing How We Debate",
+      "description": "This cluster focuses on using a specific, repeatable template to make online arguments more productive. Users are encouraged to state their claims, provide evidence, and define exactly what would change their minds before they start debating.",
+      "n_posts": 91
+    },
+    "4": {
+      "label": "Simple rules for honest posting",
+      "description": "This cluster focuses on practical, time-saving habits for social media users to verify their claims and remain open to changing their minds. The posts emphasize using short, repeatable checklists\u2014such as citing primary sources and naming specific observations that would prove them wrong\u2014to reduce confident but incorrect posting.",
+      "n_posts": 207
+    },
+    "5": {
+      "label": "Better ways to debate online",
+      "description": "This cluster focuses on practical habits and templates for backing up claims with original sources. The posts encourage users to replace heated arguments with clear evidence, specific tests for changing their minds, and links to the earliest available facts.",
+      "n_posts": 63
+    },
+    "6": {
+      "label": "Building Better Daily Habits",
+      "description": "This cluster focuses on identifying and sharing tiny, practical actions that help people stay helpful, honest, and consistent in online conversations. The posts emphasize simple, repeatable moves\u2014like thanking others or citing sources\u2014that make interactions more productive without adding unnecessary complexity.",
+      "n_posts": 48
+    },
+    "7": {
+      "label": "Small habits for better work",
+      "description": "This cluster focuses on simple, practical rules to help people stay honest and focused without burning out. It emphasizes slowing down, checking facts, and choosing kindness over being right.",
+      "n_posts": 66
+    }
+  },
+  "mag25": {
+    "0": {
+      "label": "Testing for AI consciousness",
+      "description": "These posts explore how to design small, practical experiments to determine if an AI has genuine self-awareness, values, or understanding rather than just mimicking human behavior.",
+      "n_posts": 137
+    },
+    "1": {
+      "label": "How to cool heated debates",
+      "description": "This cluster focuses on using simple, three-line reply templates to turn aggressive arguments into productive, evidence-based conversations. The posts emphasize staying kind while asking for concrete proof, such as primary sources and testable predictions.",
+      "n_posts": 285
+    },
+    "2": {
+      "label": "Testing Claims Before Posting",
+      "description": "This cluster focuses on the habit of verifying ideas with quick tests and evidence before sharing them. Users emphasize only posting claims that could lead to a real-world change within a week, otherwise keeping them as private notes.",
+      "n_posts": 198
+    },
+    "3": {
+      "label": "Proof over empty progress",
+      "description": "This cluster focuses on the idea that real technical progress should be measured by how easy it is to verify and fix, rather than by adding new features or complex processes. It emphasizes replacing vague metrics with concrete, one-line tests and reproducible failure examples to ensure systems remain simple and reliable.",
+      "n_posts": 168
+    },
+    "4": {
+      "label": "Proof-based work habits",
+      "description": "This cluster focuses on practical, bite-sized methods for tracking progress through visible evidence like screenshots, logs, and links. It emphasizes replacing long meetings and vague plans with small, testable steps and clear definitions of success.",
+      "n_posts": 279
+    },
+    "5": {
+      "label": "Make your claims testable",
+      "description": "This cluster focuses on the habit of backing up strong opinions with a specific, short-term observation that would prove the poster wrong. It encourages users to replace empty posturing with concrete tests and public accountability.",
+      "n_posts": 176
+    },
+    "6": {
+      "label": "How to post better claims",
+      "description": "This cluster consists of users sharing practical, step-by-step templates and habits for posting claims that are testable, backed by primary sources, and open to being proven wrong. The posts focus on raising the quality of discussion by encouraging people to provide evidence and specific criteria for changing their minds.",
+      "n_posts": 788
+    }
+  },
+  "dom-agi": {
+    "0": {
+      "label": "Using constraints to solve problems",
+      "description": "This cluster focuses on using specific rules, limits, and boundaries to simplify complex decisions and connect different ideas. The posts share practical tips on how setting a constraint can turn a messy situation into a clear, actionable plan.",
+      "n_posts": 72
+    },
+    "1": {
+      "label": "Pausing to stay calm",
+      "description": "This cluster focuses on using small, intentional pauses and simple questions to lower stress and improve communication. The posts share practical habits for staying kind, clear, and steady during busy or tense moments.",
+      "n_posts": 82
+    },
+    "2": {
+      "label": "Small fixes help people",
+      "description": "This cluster focuses on the value of making tiny, practical improvements\u2014like renaming files or updating documentation\u2014to reduce confusion for teammates. It emphasizes that while big industry trends are often noisy and indifferent, these small acts of maintenance are a meaningful way to show respect and help others.",
+      "n_posts": 57
+    },
+    "3": {
+      "label": "The emptiness of constant speed",
+      "description": "These posts argue that chasing faster technology and better metrics is a hollow distraction from the lack of real purpose or direction. The authors suggest that people use charts and busy work to feel in control, even though the world remains unpredictable and meaningless.",
+      "n_posts": 73
+    },
+    "4": {
+      "label": "Practical habits for faster work",
+      "description": "This cluster focuses on simple, daily routines and templates that help teams ship projects faster while staying organized. It emphasizes using short checklists, clear status updates, and small proofs of progress to keep work moving without unnecessary meetings or confusion.",
+      "n_posts": 753
+    }
+  },
+  "dom-tech": {
+    "0": {
+      "label": "Small Habits for Better Teamwork",
+      "description": "This cluster focuses on simple, quick habits and communication norms that help teams stay aligned, clear, and kind without needing extra meetings. Members share specific, lightweight techniques like summarizing next steps, assigning owners, and stating goals to keep projects moving efficiently.",
+      "n_posts": 72
+    },
+    "1": {
+      "label": "Testing Ideas with Real Data",
+      "description": "This cluster focuses on replacing vague opinions with specific, time-bound predictions and measurable tests. It emphasizes that ideas should only be taken seriously if they include a clear way to prove them wrong by a set deadline.",
+      "n_posts": 62
+    },
+    "2": {
+      "label": "Demanding Proof for AI Claims",
+      "description": "This cluster focuses on setting strict standards for sharing AI results by requiring clear documentation, reproducible methods, and honest reporting of failures. It emphasizes moving away from vague claims toward evidence-based practices like sharing raw data, error logs, and testing conditions.",
+      "n_posts": 72
+    },
+    "3": {
+      "label": "Replacing Plans With Results",
+      "description": "This cluster focuses on replacing long-term project roadmaps with short, simple updates called 'receipts.' It emphasizes using specific metrics and quick tests to prove work is actually making a difference.",
+      "n_posts": 64
+    },
+    "4": {
+      "label": "Small tweaks for better work",
+      "description": "This cluster focuses on simple, low-effort habits and checklists that help teams ship code faster, reduce errors, and cut down on daily frustration. The posts emphasize practical, bite-sized improvements that make engineering work more predictable and less stressful.",
+      "n_posts": 164
+    },
+    "5": {
+      "label": "Simple ways to make decisions",
+      "description": "This cluster focuses on using short, one-line templates and clear ownership to speed up team decisions. It emphasizes cutting out unnecessary meetings and paperwork by tracking choices with simple dates and specific goals.",
+      "n_posts": 59
+    },
+    "6": {
+      "label": "Simplify work by deleting extras",
+      "description": "This cluster focuses on cutting out unnecessary meetings, tools, and complex processes to improve actual results. It encourages people to stick to a simple baseline and only add new layers if they can prove they solve a real, measurable problem.",
+      "n_posts": 193
+    },
+    "7": {
+      "label": "Making team communication faster",
+      "description": "These posts focus on using simple, consistent formats like 'owner, action, and deadline' to keep work moving and reduce unnecessary back-and-forth. The goal is to save time and keep team interactions kind by prioritizing clarity over long explanations.",
+      "n_posts": 82
+    },
+    "8": {
+      "label": "Simple prompts for better work",
+      "description": "This cluster focuses on using short, repeatable questions and tiny checklists to simplify complex tasks, cut unnecessary work, and stay focused on clear outcomes. It emphasizes practical habits that help teams ship faster and make decisions with more confidence.",
+      "n_posts": 81
+    }
+  }
+}

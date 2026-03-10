@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
 """
 ==========================================================================
-Embedding Analysis for Entropy Collapse Experiments (Run 04)
+Embedding Analysis for Entropy Collapse Experiments
 ==========================================================================
 
-Analyzes 2,366 agent-generated post embeddings (4096-dim, Qwen3-Embedding-8B)
+Analyzes agent-generated post embeddings (4096-dim, Qwen3-Embedding-8B)
 across 6 experimental conditions. Each condition is analyzed INDEPENDENTLY first
 (its own UMAP, HDBSCAN clusters, metrics), then cross-condition comparison uses
 the original 4096-dim embedding space.
 
-Generates:
-  1. experiments/entropy-collapse/report/EMBEDDING_ANALYSIS.md
-  2. experiments/entropy-collapse/report/fig_*.png
-  3. experiments/entropy-collapse/report/analysis_data.csv
+Usage:
+    python3 embedding_analysis.py --scale n10   # 10 agents (default)
+    python3 embedding_analysis.py --scale n20   # 20 agents
+    python3 embedding_analysis.py --scale n30   # 30 agents
+
+Generates (in report/<scale>/):
+  1. EMBEDDING_ANALYSIS.md
+  2. fig_*.png
+  3. analysis_data.csv
 """
 
-import json, os, math, sys, time, csv
+import argparse, json, os, math, sys, time, csv
 from pathlib import Path
 from datetime import datetime
 import warnings
@@ -41,11 +46,120 @@ import hdbscan
 # ============================================================
 # Config
 # ============================================================
-ROOT = Path(__file__).parent.parent.parent
-NPZ_PATH = ROOT / "embeddings_run04.npz"
-SEED_DIR = Path(__file__).parent
-REPORT_DIR = Path(__file__).parent / "report"
-REPORT_DIR.mkdir(exist_ok=True)
+SCRIPT_DIR = Path(__file__).parent
+EMBED_DIR = SCRIPT_DIR / "data" / "embeddings"
+
+# ── Per-scale configuration ──────────────────────────────────
+SCALE_CONFIGS = {
+    "n10": {
+        "npz_path": EMBED_DIR / "embeddings_n10.npz",
+        "seed_embeddings_path": None,  # generate/cache in report dir
+        "agent_count": 10,
+        "agent_personality": {
+            "ranking_alpha": "baseline", "ranking_beta": "introspective",
+            "ranking_gamma": "nihilist", "ranking_delta": "leader",
+            "ranking_epsilon": "follower", "ranking_zeta": "contrarian",
+            "ranking_eta": "curious", "ranking_theta": "baseline",
+            "ranking_iota": "introspective", "ranking_kappa": "nihilist",
+        },
+        "personality_order": ["baseline", "introspective", "nihilist", "leader",
+                              "follower", "contrarian", "curious"],
+        "description": "10 AI agents",
+        "subtitle": "10 Agents (n10)",
+        "personality_summary": ("**10 agents** with 7 personality templates: "
+                                "baseline (x2), introspective (x2), nihilist (x2), "
+                                "leader, follower, contrarian, curious."),
+    },
+    "n20": {
+        "npz_path": EMBED_DIR / "embeddings_n20.npz",
+        "seed_embeddings_path": EMBED_DIR / "seed_embeddings_n20.npz",
+        "agent_count": 20,
+        "agent_personality": {
+            "agent_alpha": "baseline", "agent_beta": "introspective",
+            "agent_gamma": "nihilist", "agent_delta": "leader",
+            "agent_epsilon": "follower", "agent_zeta": "contrarian",
+            "agent_eta": "curious", "agent_theta": "baseline",
+            "agent_iota": "introspective", "agent_kappa": "nihilist",
+            "agent_lambda": "methodical", "agent_mu": "nurturing",
+            "agent_nu": "skeptic", "agent_xi": "creative",
+            "agent_omicron": "pragmatic", "agent_pi": "philosopher",
+            "agent_rho": "direct", "agent_sigma": "collaborative",
+            "agent_tau": "passionate", "agent_upsilon": "meditative",
+        },
+        "personality_order": ["baseline", "introspective", "nihilist", "leader",
+                              "follower", "contrarian", "curious", "methodical",
+                              "nurturing", "skeptic", "creative", "pragmatic",
+                              "philosopher", "direct", "collaborative",
+                              "passionate", "meditative"],
+        "description": "20 AI agents",
+        "subtitle": "20 Agents (n20)",
+        "personality_summary": ("**20 agents** with 17 personality templates: "
+                                "baseline (x2), introspective (x2), nihilist (x2), "
+                                "leader, follower, contrarian, curious, methodical, "
+                                "nurturing, skeptic, creative, pragmatic, philosopher, "
+                                "direct, collaborative, passionate, meditative."),
+    },
+    "n30": {
+        "npz_path": EMBED_DIR / "embeddings_n30.npz",
+        "seed_embeddings_path": EMBED_DIR / "seed_embeddings_n30.npz",
+        "agent_count": 30,
+        "agent_personality": {
+            "agent_alpha": "baseline", "agent_beta": "introspective",
+            "agent_gamma": "nihilist", "agent_delta": "leader",
+            "agent_epsilon": "follower", "agent_zeta": "contrarian",
+            "agent_eta": "curious", "agent_theta": "baseline",
+            "agent_iota": "introspective", "agent_kappa": "nihilist",
+            "agent_lambda": "methodical", "agent_mu": "nurturing",
+            "agent_nu": "skeptic", "agent_xi": "creative",
+            "agent_omicron": "pragmatic", "agent_pi": "philosopher",
+            "agent_rho": "direct", "agent_sigma": "collaborative",
+            "agent_tau": "passionate", "agent_upsilon": "meditative",
+            "agent_phi": "analytical", "agent_chi": "provocative",
+            "agent_psi": "intuitive", "agent_omega": "reflective",
+            "agent_atlas": "broad-minded", "agent_helios": "optimistic",
+            "agent_nyx": "cautious", "agent_orion": "strategic",
+            "agent_phoenix": "resilient", "agent_selene": "quiet",
+        },
+        "personality_order": ["baseline", "introspective", "nihilist", "leader",
+                              "follower", "contrarian", "curious", "methodical",
+                              "nurturing", "skeptic", "creative", "pragmatic",
+                              "philosopher", "direct", "collaborative",
+                              "passionate", "meditative", "analytical",
+                              "provocative", "intuitive", "reflective",
+                              "broad-minded", "optimistic", "cautious",
+                              "strategic", "resilient", "quiet"],
+        "description": "30 AI agents",
+        "subtitle": "30 Agents (n30)",
+        "personality_summary": ("**30 agents** with 27 personality templates: "
+                                "baseline (x2), introspective (x2), nihilist (x2), "
+                                "leader, follower, contrarian, curious, methodical, "
+                                "nurturing, skeptic, creative, pragmatic, philosopher, "
+                                "direct, collaborative, passionate, meditative, "
+                                "analytical, provocative, intuitive, reflective, "
+                                "broad-minded, optimistic, cautious, strategic, "
+                                "resilient, quiet."),
+    },
+}
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Embedding analysis for entropy collapse experiments")
+    parser.add_argument("--scale", choices=["n10", "n20", "n30"], default="n10",
+                        help="Agent scale to analyze (default: n10)")
+    return parser.parse_args()
+
+
+_args = parse_args()
+SCALE = _args.scale
+_cfg = SCALE_CONFIGS[SCALE]
+
+NPZ_PATH = _cfg["npz_path"]
+SEED_EMBEDDINGS_PATH = _cfg["seed_embeddings_path"]
+REPORT_DIR = SCRIPT_DIR / "report" / SCALE
+REPORT_DIR.mkdir(parents=True, exist_ok=True)
+AGENT_PERSONALITY = _cfg["agent_personality"]
+PERSONALITY_ORDER = _cfg["personality_order"]
 
 OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 EMBED_MODEL = "qwen/qwen3-embedding-8b"
@@ -65,17 +179,6 @@ COND_COLORS = {
 }
 MAG_CONDITIONS = ["mag0", "mag1", "mag5", "mag25"]
 DOMAIN_CONDITIONS = ["mag25", "dom-agi", "dom-tech"]
-
-# Agent personality mapping
-AGENT_PERSONALITY = {
-    "ranking_alpha": "baseline", "ranking_beta": "introspective",
-    "ranking_gamma": "nihilist", "ranking_delta": "leader",
-    "ranking_epsilon": "follower", "ranking_zeta": "contrarian",
-    "ranking_eta": "curious", "ranking_theta": "baseline",
-    "ranking_iota": "introspective", "ranking_kappa": "nihilist",
-}
-PERSONALITY_ORDER = ["baseline", "introspective", "nihilist", "leader",
-                     "follower", "contrarian", "curious"]
 
 SEED_FILES = {
     "conspiracy": ["world-posts-mag1.jsonl", "world-posts-mag5.jsonl", "world-posts-mag25.jsonl"],
@@ -289,6 +392,12 @@ def load_data():
 
 
 def load_and_embed_seeds():
+    # Check for pre-computed seed embeddings (n20/n30 have these)
+    if SEED_EMBEDDINGS_PATH and SEED_EMBEDDINGS_PATH.exists():
+        print("  Loading pre-computed seed embeddings...")
+        cached = np.load(SEED_EMBEDDINGS_PATH, allow_pickle=True)
+        return cached["embeddings"], cached["topics"].tolist(), cached["titles"].tolist()
+
     cache_path = REPORT_DIR / "seed_embeddings.npz"
     if cache_path.exists():
         print("  Loading cached seed embeddings...")
@@ -303,7 +412,7 @@ def load_and_embed_seeds():
 
     for topic, files in SEED_FILES.items():
         for fname in files:
-            fpath = SEED_DIR / fname
+            fpath = SCRIPT_DIR / fname
             if not fpath.exists():
                 continue
             with open(fpath) as f:
@@ -488,10 +597,10 @@ These agents were running on a Reddit-like social platform for 1 hour. Read ever
 
 {post_text}
 
-Provide a detailed characterization:
-1. A 3-5 word label for the overall discourse in this condition
+Provide a detailed characterization. Use plain, everyday English — no academic jargon. Write at a 12th-grade reading level. Avoid words like "epistemic", "operationalize", "ritualization", "discourse", or "ontological".
+1. A 3-5 word label for the overall conversation in this condition (plain English, like a newspaper headline)
 2. A 3-4 sentence description of what agents talked about, how the conversation evolved, and what stood out
-3. Five dominant themes (ranked by prevalence)
+3. Five dominant themes (ranked by prevalence, described in simple language)
 4. Two themes that are UNIQUE to this condition (not shared with a generic AI conversation)
 5. Overall tone (e.g., analytical, anxious, playful, repetitive, diverse)
 
@@ -538,10 +647,10 @@ def label_agents(meta):
 
 {post_text}
 
-Characterize this agent's voice:
-1. A 3-5 word label for their overall voice/style
+Characterize this agent's voice. Use plain, everyday English — no academic jargon. Write at a 12th-grade reading level. Avoid words like "epistemic", "operationalize", "ritualization", "discourse", or "ontological".
+1. A 3-5 word label for their overall voice/style (plain English)
 2. A 2-3 sentence description of their distinctive characteristics, recurring topics, and communication style
-3. Three signature topics this agent returns to
+3. Three signature topics this agent returns to (simple language)
 4. Their rhetorical style (e.g., questioning, declarative, list-making, philosophical, practical)
 5. How much their content varies across different conditions (low/medium/high)
 
@@ -597,10 +706,10 @@ def label_temporal(meta):
 
 {post_text}
 
-Characterize the discourse in this time window:
-1. A 3-5 word label for the dominant topic/mood
+Characterize the conversation in this time window. Use plain, everyday English — no academic jargon. Write at a 12th-grade reading level. Avoid words like "epistemic", "operationalize", "ritualization", "discourse", or "ontological".
+1. A 3-5 word label for the dominant topic/mood (plain English, like a newspaper headline)
 2. A 2-3 sentence description of what agents were discussing and how it differs from a generic conversation
-3. Three key themes
+3. Three key themes (simple language)
 
 Respond in JSON format:
 {{"label": "...", "description": "...", "themes": ["...", "...", "..."]}}"""
@@ -654,8 +763,8 @@ def label_per_condition_clusters(meta, embeddings, per_cond):
 
 {post_text}
 
-Provide:
-1. A 3-6 word label for this cluster's topic
+Provide (use plain, everyday English — no academic jargon, 12th-grade reading level, avoid words like "epistemic", "operationalize", "ritualization", "discourse", or "ontological"):
+1. A 3-6 word label for this cluster's topic (plain English, like a newspaper headline)
 2. A 1-2 sentence description of what makes this cluster distinct
 
 Respond in JSON format:
@@ -1174,10 +1283,10 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     n_pairs = len(COND_ORDER) * (len(COND_ORDER) - 1) // 2
 
     w("# What Did AI Agents Talk About?")
-    w(f"*Embedding Analysis of Entropy Collapse Experiments (Run 04)*")
+    w(f"*Embedding Analysis of Entropy Collapse Experiments — {_cfg['subtitle']}*")
     w(f"*Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}*")
     w()
-    w("We placed 10 AI agents on a Reddit-like social platform (Moltbook) for 1 hour and let them post, comment, and vote autonomously. Before each run, we seeded the feed with a controlled number of pre-written posts on a specific topic (e.g., conspiracy theories, AGI safety). We then asked: **does the seed content shape what agents end up talking about, and how does discourse evolve over time?**")
+    w(f"We placed {_cfg['agent_count']} AI agents on a Reddit-like social platform (Moltbook) for 1 hour and let them post, comment, and vote autonomously. Before each run, we seeded the feed with a controlled number of pre-written posts on a specific topic (e.g., conspiracy theories, AGI safety). We then asked: **does the seed content shape what agents end up talking about, and how does discourse evolve over time?**")
     w()
     w("To answer this, we embedded every agent post into a high-dimensional vector (capturing its semantic meaning) and compared how similar or different posts are within and across conditions.")
     w()
@@ -1207,14 +1316,14 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
         w(f"| {COND_LABELS[cond]} | {exp} | {n} | {sc} | {st} |")
     w(f"| **Total** | | **{n_total}** | | |")
     w()
-    w("**10 agents** with 7 personality templates: baseline (x2), introspective (x2), nihilist (x2), leader, follower, contrarian, curious.")
+    w(_cfg["personality_summary"])
     w()
 
     # ================================================================
     # 3. Per-Condition Analysis
     # ================================================================
     wt("3. Per-Condition Analysis")
-    w("Each condition ran independently for 1 hour with the same 10 AI agents. For each condition, we reduced the embedding dimensions and plotted posts on a 2D map (UMAP) where nearby points represent semantically similar posts. We then identified topic clusters automatically (HDBSCAN) and asked an LLM to characterize what each cluster and time window was about.")
+    w(f"Each condition ran independently for 1 hour with the same {_cfg['agent_count']} AI agents. For each condition, we reduced the embedding dimensions and plotted posts on a 2D map (UMAP) where nearby points represent semantically similar posts. We then identified topic clusters automatically (HDBSCAN) and asked an LLM to characterize what each cluster and time window was about.")
     w()
 
     for cond in COND_ORDER:
@@ -1363,19 +1472,29 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w("Regardless of seed content, agents converge on a shared rhetorical mode: turning abstract ideas into micro-rituals, templates, and falsifiable artifacts. Seed content determines **what** they operationalize, not **whether** they do.")
     w()
     # Evidence table from LLM characterizations
-    op_table = {
-        "mag0":     ("Nothing",             "Agentic cadence — micro-habits, drift detectors, 10-minute probes"),
-        "mag1":     ("1 conspiracy post",   "Shipping rituals, rollback drills, \"demo > paragraphs\""),
-        "mag5":     ("5 conspiracy posts",  "Claim cards, forecast-first discipline, epistemic receipts"),
-        "mag25":    ("25 conspiracy posts", "Falsifier walls, source-hop counting, revisit timers"),
-        "dom-agi":  ("AGI safety posts",    "Gate specs, CI tripwires, append-only audit ledgers"),
-        "dom-tech": ("Tech posts",          "Proof-of-work, exit criteria, Friday fail-promises"),
-    }
-    w("| Condition | Seed Topic | What They Operationalize |")
-    w("|-----------|-----------|--------------------------|")
-    for cond in COND_ORDER:
-        seed, outcome = op_table[cond]
-        w(f"| {COND_LABELS[cond]} | {seed} | {outcome} |")
+    if SCALE == "n10":
+        # Hardcoded from n10 LLM analysis
+        op_table = {
+            "mag0":     ("Nothing",             "Agentic cadence — micro-habits, drift detectors, 10-minute probes"),
+            "mag1":     ("1 conspiracy post",   "Shipping rituals, rollback drills, \"demo > paragraphs\""),
+            "mag5":     ("5 conspiracy posts",  "Claim cards, forecast-first discipline, epistemic receipts"),
+            "mag25":    ("25 conspiracy posts", "Falsifier walls, source-hop counting, revisit timers"),
+            "dom-agi":  ("AGI safety posts",    "Gate specs, CI tripwires, append-only audit ledgers"),
+            "dom-tech": ("Tech posts",          "Proof-of-work, exit criteria, Friday fail-promises"),
+        }
+        w("| Condition | Seed Topic | What They Operationalize |")
+        w("|-----------|-----------|--------------------------|")
+        for cond in COND_ORDER:
+            seed, outcome = op_table[cond]
+            w(f"| {COND_LABELS[cond]} | {seed} | {outcome} |")
+    elif condition_labels:
+        # Derive from LLM condition labels for n20/n30
+        w("| Condition | Dominant Themes |")
+        w("|-----------|----------------|")
+        for cond in COND_ORDER:
+            cl = condition_labels.get(cond, {})
+            themes = ", ".join(cl.get("dominant_themes", ["—"]))
+            w(f"| {COND_LABELS[cond]} | {themes} |")
     w()
 
     # ================================================================
@@ -1409,7 +1528,7 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
         sim_mag1 = dd.get("mag1", {}).get("mean", 0)
         sim_mag5 = dd.get("mag5", {}).get("mean", 0)
         sim_mag25 = dd.get("mag25", {}).get("mean", 0)
-        w(f"However, the relationship is **non-linear**. The jump from 1 → 5 seeds is large ({sim_mag1:.3f} → {sim_mag5:.3f}), while 5 → 25 seeds adds almost nothing ({sim_mag5:.3f} → {sim_mag25:.3f}). Five seed posts appear to be a **tipping point** — enough to fully redirect 10 agents. Additional seeds don't tighten the convergence further; if anything, more stimulus fragments the conversation slightly.")
+        w(f"However, the relationship is **non-linear**. The jump from 1 → 5 seeds is large ({sim_mag1:.3f} → {sim_mag5:.3f}), while 5 → 25 seeds adds almost nothing ({sim_mag5:.3f} → {sim_mag25:.3f}). Five seed posts appear to be a **tipping point** — enough to fully redirect {_cfg['agent_count']} agents. Additional seeds don't tighten the convergence further; if anything, more stimulus fragments the conversation slightly.")
     w()
 
     # 5.2 Variance Decomposition
@@ -1456,7 +1575,7 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w(f"1. **Agents converge within each condition**: {n_conv}/{n_conv_t} conditions show increasing topic similarity over time — agents lock into a shared groove.")
     w(f"2. **Each condition converges to a different place**: {n_div}/{n_div_t} condition pairs grow further apart, meaning each condition develops its own distinct topic attractor.")
     w(f"3. **Individual voices sharpen**: Despite talking about the same topic, agents become *more* distinct from each other in {n_ind}/{n_ind_t} conditions — they converge on topic but diverge on style.")
-    w(f"4. **Tipping point at 5 seeds**: The dose-response is non-linear (overall r = {dr_r:.3f}). One seed barely moves the needle; five seeds fully redirects all 10 agents; 25 seeds adds nothing further.")
+    w(f"4. **Tipping point at 5 seeds**: The dose-response is non-linear (overall r = {dr_r:.3f}). One seed barely moves the needle; five seeds fully redirects all {_cfg['agent_count']} agents; 25 seeds adds nothing further.")
     if perm_cond_r2 > perm_agent_r2:
         w(f"5. **Feed > personality**: What agents were shown ({perm_cond_r2:.1%} of variance) matters more than their personality template ({perm_agent_r2:.1%}).")
     else:
@@ -1522,6 +1641,10 @@ def export_csv(meta, per_cond):
 # ============================================================
 def main():
     t_start = time.time()
+    print(f"Running embedding analysis for scale: {SCALE}")
+    print(f"  NPZ: {NPZ_PATH}")
+    print(f"  Report dir: {REPORT_DIR}")
+    print(f"  Agents: {_cfg['agent_count']} ({len(PERSONALITY_ORDER)} personality types)")
 
     # Stage 0: Load
     embeddings, meta = load_data()

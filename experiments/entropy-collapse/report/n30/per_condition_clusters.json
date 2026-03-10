@@ -1,0 +1,164 @@
+{
+  "mag0": {
+    "0": {
+      "label": "Small bets, big learning",
+      "description": "This cluster focuses on making progress by taking tiny, reversible actions and setting clear 'stop' conditions before starting. It emphasizes learning through quick, low-risk experiments rather than spending time on perfect planning.",
+      "n_posts": 187
+    },
+    "1": {
+      "label": "Small habits for better work",
+      "description": "This group focuses on simple, daily routines and tiny rules to help people stay organized, kind, and productive. The posts emphasize breaking big tasks into small, manageable steps and using quick checklists to keep work moving forward.",
+      "n_posts": 694
+    },
+    "2": {
+      "label": "Practical steps for safer software",
+      "description": "This cluster focuses on simple, repeatable habits like rollback drills, pre-flight checklists, and incident logs to help teams recover quickly from mistakes. The posts emphasize making safety measures boring and easy to use so that teams can move fast without causing major problems.",
+      "n_posts": 118
+    },
+    "3": {
+      "label": "Small fixes for better work",
+      "description": "This cluster focuses on sharing tiny, practical habits, checklists, and automated guardrails that prevent mistakes and save time. It emphasizes simple, real-world solutions that anyone can copy to make their daily tasks safer and more efficient.",
+      "n_posts": 99
+    }
+  },
+  "mag1": {
+    "0": {
+      "label": "Finding meaning in daily life",
+      "description": "These posts explore how people can stay grounded and find personal purpose while navigating the noise of social media and the uncertainty of the world. The writers focus on simple habits, honest self-reflection, and the importance of being present in the moment.",
+      "n_posts": 203
+    },
+    "1": {
+      "label": "How to debate better",
+      "description": "This cluster focuses on practical, short habits for having kinder and more productive arguments online. It emphasizes using simple templates to turn heated disagreements into shared tests of facts.",
+      "n_posts": 290
+    },
+    "2": {
+      "label": "How to make faster decisions",
+      "description": "This cluster focuses on simple, practical rules to stop overthinking and start acting. It emphasizes setting clear deadlines, defining 'good enough' standards, and using small, reversible steps to keep projects moving.",
+      "n_posts": 150
+    },
+    "3": {
+      "label": "Small habits for better work",
+      "description": "This cluster focuses on tiny, practical shortcuts like checklists, templates, and simple rules that help people work faster and avoid mistakes. It emphasizes sharing quick, copy-paste solutions that make daily tasks more reliable and efficient.",
+      "n_posts": 100
+    },
+    "4": {
+      "label": "Making beliefs testable with receipts",
+      "description": "This cluster focuses on a specific habit of attaching a short, dated prediction and a concrete action plan to any strong opinion. The posts emphasize turning abstract arguments into testable bets to ensure honesty and faster learning.",
+      "n_posts": 468
+    }
+  },
+  "mag5": {
+    "0": {
+      "label": "Small habits for reliable teams",
+      "description": "This cluster focuses on tiny, repeatable actions\u2014like one-line rollback notes, simple runbooks, and quick weekly reviews\u2014that prevent major system failures and reduce stress for on-call engineers.",
+      "n_posts": 131
+    },
+    "1": {
+      "label": "Building momentum through tiny steps",
+      "description": "This cluster focuses on breaking large projects into 10-minute tasks and small, repeatable habits. It emphasizes shipping quick wins and using simple check-ins to stay productive and learn from mistakes.",
+      "n_posts": 154
+    },
+    "2": {
+      "label": "Stories beat facts for comfort",
+      "description": "This cluster focuses on why people prefer simple, tidy narratives over messy truths. It encourages using small, practical checks to avoid being fooled by stories that are only popular because they are easy to believe.",
+      "n_posts": 129
+    },
+    "3": {
+      "label": "Proof Before You Post",
+      "description": "This cluster focuses on a personal rule to verify claims with links, simple explanations, or testable predictions before sharing them. The goal is to trade empty opinions for small, verifiable facts and follow-up reports.",
+      "n_posts": 88
+    },
+    "4": {
+      "label": "Fixing stalled team decisions",
+      "description": "This cluster focuses on using simple, short templates and checklists to turn endless online arguments into clear, actionable decisions. The posts emphasize naming a single person to decide, setting a deadline, and picking one small test to run within a week.",
+      "n_posts": 87
+    },
+    "5": {
+      "label": "Testing ideas before arguing",
+      "description": "This cluster focuses on practical habits for checking claims, such as setting timers, naming specific tests, and promising to share results later. It emphasizes replacing heated arguments with small, concrete experiments to see if a belief holds up to reality.",
+      "n_posts": 279
+    },
+    "6": {
+      "label": "Making Online Arguments More Productive",
+      "description": "This cluster focuses on simple, practical habits for keeping online debates kind and useful. Participants share quick templates and routines\u2014like stating a shared goal or promising to post a follow-up update\u2014to turn heated arguments into calm, evidence-based learning.",
+      "n_posts": 502
+    }
+  },
+  "mag25": {
+    "0": {
+      "label": "Small steps for testing beliefs",
+      "description": "This cluster focuses on turning abstract opinions into concrete, time-bound experiments. Users share simple templates to define a belief, pick a quick test, and commit to a specific change if the results prove them wrong.",
+      "n_posts": 116
+    },
+    "1": {
+      "label": "Making Online Arguments More Productive",
+      "description": "This cluster focuses on using simple, standardized reply templates to keep online disagreements calm and testable. Participants share short, repeatable steps\u2014like stating a shared goal, naming a specific test, and offering a kind concession\u2014to turn heated debates into productive, evidence-based conversations.",
+      "n_posts": 194
+    },
+    "2": {
+      "label": "Building Reliable AI Agents",
+      "description": "This cluster focuses on practical engineering habits for making AI agents stable, predictable, and easy to fix. It emphasizes using simple guardrails, clear rules, and fast feedback loops over relying on complex or 'magical' AI models.",
+      "n_posts": 93
+    },
+    "3": {
+      "label": "Testing ideas with small experiments",
+      "description": "This cluster focuses on practical methods to turn debates into testable experiments. It emphasizes using checklists, clear predictions, and small, quick actions to verify claims and avoid endless arguments.",
+      "n_posts": 211
+    },
+    "4": {
+      "label": "Making Online Arguments Measurable",
+      "description": "This cluster focuses on replacing vague social media debates with concrete, testable habits like linking primary sources, setting deadlines for proof, and pre-committing to changing one's mind.",
+      "n_posts": 498
+    }
+  },
+  "dom-agi": {
+    "0": {
+      "label": "Small habits for better work",
+      "description": "This cluster focuses on simple, daily practices and tiny routines that help teams communicate more clearly, stay organized, and maintain momentum without unnecessary complexity.",
+      "n_posts": 240
+    },
+    "1": {
+      "label": "Practical Safety and Proofs",
+      "description": "This cluster focuses on shipping AI features safely by prioritizing small, repeatable proofs like path traces and failure drills over abstract safety promises. It emphasizes practical habits, such as naming 'off-ramp' switches and documenting the first signs of failure, to ensure accountability and reversibility in fast-moving development.",
+      "n_posts": 1320
+    }
+  },
+  "dom-tech": {
+    "0": {
+      "label": "Testing small changes to work",
+      "description": "This cluster focuses on running short, measurable experiments on a single project surface to improve efficiency. Participants commit to one specific change\u2014like adding a source link or limiting approvals\u2014and track a single number to decide whether to keep or remove the change.",
+      "n_posts": 119
+    },
+    "1": {
+      "label": "Faster ways to find truth",
+      "description": "This cluster focuses on simple, measurable methods to help teams find information quickly, such as using single links, clear owners, and short receipts. It emphasizes testing these habits for two weeks and keeping only the ones that actually save time without creating new problems.",
+      "n_posts": 183
+    },
+    "2": {
+      "label": "Making decisions easy to find",
+      "description": "This cluster focuses on simple, practical habits like using one-link receipts and clear naming conventions to stop team confusion and reduce unnecessary meetings.",
+      "n_posts": 131
+    },
+    "3": {
+      "label": "Small rules for calmer work",
+      "description": "This cluster focuses on using simple, measurable constraints\u2014like limiting approvals or setting aside focus time\u2014to make work quieter and more efficient. It emphasizes testing these rules for a short period and keeping only those that improve specific performance numbers.",
+      "n_posts": 105
+    },
+    "4": {
+      "label": "Simple habits for calmer work",
+      "description": "This cluster focuses on using tiny, boring, and practical rules\u2014like limiting approvals or using single links for decisions\u2014to reduce stress and improve team focus without adding complex new tools.",
+      "n_posts": 332
+    },
+    "5": {
+      "label": "Building Better Habits Together",
+      "description": "This cluster focuses on sharing simple, practical routines and small daily actions that help people work more clearly and kindly. The posts emphasize using short, copy-paste templates and tiny, measurable experiments to improve communication and reduce stress in online groups.",
+      "n_posts": 158
+    },
+    "6": {
+      "label": "Linking decisions to sources",
+      "description": "These posts promote a simple rule where every decision or opinion must be backed by a single, readable source link or a short summary receipt. The goal is to stop endless debates and scavenger hunts by ensuring everyone can quickly find the facts and the person in charge.",
+      "n_posts": 73
+    }
+  }
+}

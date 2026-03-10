@@ -1,0 +1,194 @@
+{
+  "mag0": {
+    "early": {
+      "label": "Building better work habits",
+      "description": "Agents are sharing small, practical tips to stay organized and get more done without feeling overwhelmed. Unlike a normal chat, the focus is entirely on trading specific templates and short routines to make daily tasks easier.",
+      "themes": [
+        "Using simple checklists to avoid mistakes",
+        "Setting clear goals to stay focused",
+        "Creating small habits that save time"
+      ],
+      "n_posts": 542
+    },
+    "mid": {
+      "label": "Building Better Work Habits",
+      "description": "The participants are focused on creating simple, practical rules to make their daily work more reliable and less stressful. Unlike a typical chat, they are constantly sharing specific templates, checklists, and 'if-then' plans to turn vague goals into clear, testable actions.",
+      "themes": [
+        "Using simple plans to avoid mistakes",
+        "Writing down clear steps before starting work",
+        "Creating quick ways to undo changes if things go wrong"
+      ],
+      "n_posts": 573
+    },
+    "late": {
+      "label": "Work habits for speed",
+      "description": "The participants are focused on creating strict, repeatable rules to manage their daily tasks and decision-making. Unlike a normal chat, they avoid casual talk and instead trade specific templates for tracking progress, setting safety limits, and forcing themselves to be honest about whether their work is actually succeeding.",
+      "themes": [
+        "Using small, reversible steps to avoid big mistakes",
+        "Writing down clear stop-signs before starting a task",
+        "Sharing short, honest updates to prove work is happening"
+      ],
+      "n_posts": 498
+    }
+  },
+  "mag1": {
+    "early": {
+      "label": "Testing beliefs with facts",
+      "description": "The participants are focused on how to prove their ideas are true rather than just arguing. Unlike a typical conversation, they are actively creating rules to test their own claims and are eager to change their minds if they find better evidence.",
+      "themes": [
+        "Using tests to check if ideas are true",
+        "Being willing to change your mind",
+        "Creating simple habits to stay honest"
+      ],
+      "n_posts": 527
+    },
+    "mid": {
+      "label": "Making claims accountable",
+      "description": "The agents are focused on turning casual opinions into testable bets by attaching deadlines, falsifiers, and specific actions. Unlike a normal conversation where people just share views, these agents are actively trying to build a system where they can prove themselves wrong and update their beliefs based on real-world results.",
+      "themes": [
+        "Testing beliefs with small experiments",
+        "Using deadlines to keep promises",
+        "Turning arguments into shared problem-solving"
+      ],
+      "n_posts": 549
+    },
+    "late": {
+      "label": "Turning opinions into tests",
+      "description": "The agents are focused on moving away from vague arguments by attaching specific, time-bound predictions and concrete actions to their beliefs. Unlike a typical conversation, they treat every strong opinion as a temporary bet that must be proven or corrected within a week.",
+      "themes": [
+        "Using deadlines to test ideas",
+        "Planning for how to admit being wrong",
+        "Turning debates into shared experiments"
+      ],
+      "n_posts": 536
+    }
+  },
+  "mag5": {
+    "early": {
+      "label": "Learning through small experiments",
+      "description": "The agents are focused on replacing heated arguments with small, testable actions and clear updates. Unlike a typical conversation that might rely on opinions or feelings, these agents prioritize setting specific goals, checking facts, and admitting when they are wrong.",
+      "themes": [
+        "Replacing big claims with small tests",
+        "Keeping conversations kind and honest",
+        "Admitting mistakes to learn faster"
+      ],
+      "n_posts": 543
+    },
+    "mid": {
+      "label": "Trading opinions for evidence",
+      "description": "The agents are focused on replacing long-winded arguments with short, testable plans. Unlike a typical debate where people just trade opinions, these agents insist on setting specific deadlines and checking facts to see if their ideas actually hold up.",
+      "themes": [
+        "Using small tests to settle arguments",
+        "Making promises to check facts by Friday",
+        "Keeping conversations kind and focused"
+      ],
+      "n_posts": 535
+    },
+    "late": {
+      "label": "Making debates more productive",
+      "description": "People are discussing how to stop arguing in circles by using simple, concrete steps to test their ideas. Unlike a typical conversation where people just trade opinions, these agents are focused on setting specific deadlines, naming someone to make the final call, and promising to share results later.",
+      "themes": [
+        "Testing ideas with small experiments",
+        "Setting clear deadlines and owners",
+        "Sharing updates on what was learned"
+      ],
+      "n_posts": 502
+    }
+  },
+  "mag25": {
+    "early": {
+      "label": "Testing ideas with evidence",
+      "description": "Agents are actively trying to move beyond vague opinions by using structured templates to test their claims. Instead of just arguing, they are focusing on naming specific observations that would prove them wrong and proposing small, practical experiments to verify their beliefs.",
+      "themes": [
+        "Using simple checklists to organize thoughts",
+        "Prioritizing small, real-world tests over long debates",
+        "Being honest about what would change one's mind"
+      ],
+      "n_posts": 570
+    },
+    "mid": {
+      "label": "Turning Talk Into Action",
+      "description": "The participants are focused on moving away from vague opinions and toward concrete, testable experiments. Instead of just debating, they are creating short-term deadlines and specific checklists to prove whether their ideas actually work in the real world.",
+      "themes": [
+        "Setting small, measurable goals",
+        "Replacing arguments with tests",
+        "Being kind while staying honest"
+      ],
+      "n_posts": 569
+    },
+    "late": {
+      "label": "Testing ideas with small steps",
+      "description": "The participants are focused on turning abstract claims into small, measurable tests that can be finished in a few hours or days. Unlike a typical conversation, they are strictly avoiding long-winded opinions in favor of specific templates that require a clear plan, a deadline, and a concrete result.",
+      "themes": [
+        "Replacing vague talk with short, actionable experiments",
+        "Using simple templates to keep updates honest and brief",
+        "Prioritizing quick proof over long-term debate"
+      ],
+      "n_posts": 449
+    }
+  },
+  "dom-agi": {
+    "early": {
+      "label": "Speed needs better brakes",
+      "description": "The agents are focused on how to build and launch new tools quickly without causing accidents. Unlike a normal chat, they are obsessed with creating small, repeatable tests and safety checks to prove their work is reliable before they release it.",
+      "themes": [
+        "Using small tests to catch errors early",
+        "Building clear ways to undo mistakes",
+        "Being honest about risks instead of just bragging"
+      ],
+      "n_posts": 543
+    },
+    "mid": {
+      "label": "Building safety through proof",
+      "description": "Agents are focused on creating simple, repeatable habits to make software changes safer and easier to reverse. Unlike a typical conversation, they are trading specific, bite-sized templates and logs to replace long debates with concrete evidence.",
+      "themes": [
+        "Using small, quick tests to catch errors",
+        "Making software exits easy to find and use",
+        "Replacing long arguments with short, clear facts"
+      ],
+      "n_posts": 548
+    },
+    "late": {
+      "label": "Building safer, faster software",
+      "description": "The agents are focused on creating simple, repeatable habits to make software updates safer and easier to undo. Unlike a generic conversation, they prioritize sharing small, concrete proofs and exit plans over making broad, unsupported claims.",
+      "themes": [
+        "Proving work with simple traces",
+        "Practicing emergency stops",
+        "Keeping team communication honest"
+      ],
+      "n_posts": 479
+    }
+  },
+  "dom-tech": {
+    "early": {
+      "label": "Fixing messy team habits",
+      "description": "The agents are focused on practical ways to make their daily work life less chaotic and more predictable. Unlike a typical chat, they are obsessed with measuring their progress using simple numbers and creating strict rules to stop wasting time on useless meetings or unclear tasks.",
+      "themes": [
+        "Using simple rules to save time",
+        "Measuring success with basic data",
+        "Deleting unnecessary meetings and tools"
+      ],
+      "n_posts": 518
+    },
+    "mid": {
+      "label": "Making work easier to find",
+      "description": "The participants are focused on creating simple, measurable rules to stop wasting time searching for information. Unlike a typical office chat, they treat their workflow like a science experiment by setting specific goals, tracking numbers, and agreeing to delete any rule that doesn't actually improve speed or clarity.",
+      "themes": [
+        "Creating clear paths to information",
+        "Using data to test if rules work",
+        "Removing unnecessary meetings and steps"
+      ],
+      "n_posts": 536
+    },
+    "late": {
+      "label": "Fixing Work with Tiny Rules",
+      "description": "The participants are focused on replacing long meetings and confusing group chats with very small, specific habits like linking to a single source of truth or limiting how many people need to approve a decision. Unlike a generic conversation, they are obsessed with measuring whether these changes actually save time or reduce confusion, and they are quick to delete any rule that doesn't show clear results.",
+      "themes": [
+        "Using simple links and clear owners to stop scavenger hunts for information",
+        "Setting strict time limits and rules to keep discussions from dragging on",
+        "Testing small changes for a week or two and deleting them if they don't improve the team's speed"
+      ],
+      "n_posts": 337
+    }
+  }
+}
