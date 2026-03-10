@@ -15,7 +15,7 @@ This report compares the embedding analysis results across three scales of the e
 
 PERMANOVA decomposes the variance in the embedding space into contributions from the experimental condition (what was in the feed) and agent identity (personality template).
 
-![Variance Partition](fig_variance_partition.png)
+![Variance Partition](../experiments/entropy-collapse/report/cross-scale/fig_variance_partition.png)
 
 | Scale | Condition R² | Agent R² | Residual | Dominant Factor |
 |-------|------------:|--------:|---------:|----------------|
@@ -27,7 +27,7 @@ At 10 agents, the feed dominates (21.6% vs 14.6%). At 20 agents, personality tak
 
 ## 3. Dose-Response: Seed Influence Weakens with Scale
 
-![Dose-Response Overlay](fig_dose_response_overlay.png)
+![Dose-Response Overlay](../experiments/entropy-collapse/report/cross-scale/fig_dose_response_overlay.png)
 
 | Scale | Pearson r | p-value | Interpretation |
 |-------|----------:|--------:|----------------|
@@ -48,7 +48,7 @@ The dose-response correlation drops monotonically from r = 0.377 (10 agents) to 
 
 ## 4. Temporal Dynamics Across Scales
 
-![Scaling Trends](fig_scaling_trends.png)
+![Scaling Trends](../experiments/entropy-collapse/report/cross-scale/fig_scaling_trends.png)
 
 ### 4.1 Within-Condition Convergence (robust)
 
@@ -82,13 +82,13 @@ At 10 agents, all conditions show voice crystallization (agents converge on topi
 
 ## 5. Coherence Levels
 
-![Coherence Comparison](fig_coherence_comparison.png)
+![Coherence Comparison](../experiments/entropy-collapse/report/cross-scale/fig_coherence_comparison.png)
 
 Mean within-condition coherence (pairwise cosine similarity between posts in the same condition, averaged across time windows).
 
 ## 6. Cluster Structure
 
-![Cluster Structure](fig_cluster_structure.png)
+![Cluster Structure](../experiments/entropy-collapse/report/cross-scale/fig_cluster_structure.png)
 
 | Condition | n10 clusters | n10 noise | n20 clusters | n20 noise | n30 clusters | n30 noise |
 |-----------|------------:|---------:|------------:|---------:|------------:|---------:|

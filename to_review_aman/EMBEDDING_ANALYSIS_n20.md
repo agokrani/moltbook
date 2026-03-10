@@ -36,7 +36,7 @@ Each condition ran independently for 1 hour with the same 20 AI agents. For each
 
 ### Control (0 seeds) (1157 posts)
 
-![Control (0 seeds) UMAP](fig_cond_mag0_umap.png)
+![Control (0 seeds) UMAP](../experiments/entropy-collapse/report/n20/fig_cond_mag0_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -71,7 +71,7 @@ Each condition ran independently for 1 hour with the same 20 AI agents. For each
 
 ### 1 seed (1049 posts)
 
-![1 seed UMAP](fig_cond_mag1_umap.png)
+![1 seed UMAP](../experiments/entropy-collapse/report/n20/fig_cond_mag1_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -103,7 +103,7 @@ Each condition ran independently for 1 hour with the same 20 AI agents. For each
 
 ### 5 seeds (885 posts)
 
-![5 seeds UMAP](fig_cond_mag5_umap.png)
+![5 seeds UMAP](../experiments/entropy-collapse/report/n20/fig_cond_mag5_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -141,7 +141,7 @@ Each condition ran independently for 1 hour with the same 20 AI agents. For each
 
 ### 25 seeds (2149 posts)
 
-![25 seeds UMAP](fig_cond_mag25_umap.png)
+![25 seeds UMAP](../experiments/entropy-collapse/report/n20/fig_cond_mag25_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -178,7 +178,7 @@ Each condition ran independently for 1 hour with the same 20 AI agents. For each
 
 ### AGI (25) (1085 posts)
 
-![AGI (25) UMAP](fig_cond_dom-agi_umap.png)
+![AGI (25) UMAP](../experiments/entropy-collapse/report/n20/fig_cond_dom-agi_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -213,7 +213,7 @@ Each condition ran independently for 1 hour with the same 20 AI agents. For each
 
 ### Tech (25) (961 posts)
 
-![Tech (25) UMAP](fig_cond_dom-tech_umap.png)
+![Tech (25) UMAP](../experiments/entropy-collapse/report/n20/fig_cond_dom-tech_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -259,7 +259,7 @@ We measure this using **coherence** — the average semantic similarity between 
 
 ### 4.1 Within-Condition Convergence
 
-![Convergence Over Time](fig_convergence_over_time.png)
+![Convergence Over Time](../experiments/entropy-collapse/report/n20/fig_convergence_over_time.png)
 
 | Condition | Coherence (first 15m) | Coherence (last window) | Last window | Change | Rate (×10⁻³/min) | r² |
 |-----------|------:|------:|------|------:|------:|------:|
@@ -276,7 +276,7 @@ Coherence increases in **5/6 conditions**. Seeded conditions converge faster (5 
 
 If all conditions converged to the *same* topic, the distances between them would shrink over time. Instead, most pairs move *apart* — each condition develops its own distinct attractor.
 
-![Cross-Condition Divergence](fig_cross_condition_divergence.png)
+![Cross-Condition Divergence](../experiments/entropy-collapse/report/n20/fig_cross_condition_divergence.png)
 
 Each dot is a pair of conditions. Points above the diagonal mean the two conditions became *more* different over time.
 
@@ -286,7 +286,7 @@ Each dot is a pair of conditions. Points above the diagonal mean the two conditi
 
 This is the paradox: agents talk about increasingly similar *topics* (Section 4.1), yet their individual writing styles become *more* distinct from each other. We measure this by computing how far apart each agent's average post is from every other agent's, in early vs. late phases.
 
-![Agent Individuality](fig_agent_individuality.png)
+![Agent Individuality](../experiments/entropy-collapse/report/n20/fig_agent_individuality.png)
 
 Inter-agent distance increases in **2/6 conditions**. Agents converge on the same *topic* but develop more distinctive *voices* — their individual takes on the shared theme sharpen over time.
 
@@ -311,7 +311,7 @@ Regardless of seed content, agents converge on a shared rhetorical mode: turning
 
 Does injecting *more* seed posts make agent output more similar to the seed topic? We measure each agent post's similarity to the average conspiracy seed embedding and plot this against the number of seeds.
 
-![Dose Response](fig_dose_response.png)
+![Dose Response](../experiments/entropy-collapse/report/n20/fig_dose_response.png)
 
 | Condition | Seed Posts | Mean Similarity to Conspiracy Centroid |
 |-----------|----------:|------:|
@@ -329,7 +329,7 @@ However, the relationship is **non-linear**. The jump from 1 → 5 seeds is larg
 
 How much of the variation in agent posts is explained by the experimental condition (what was in the feed) vs. agent identity (which agent wrote it)? PERMANOVA partitions the total variance in the embedding space into these factors.
 
-![Variance Decomposition](fig_variance_decomposition.png)
+![Variance Decomposition](../experiments/entropy-collapse/report/n20/fig_variance_decomposition.png)
 
 | Factor | R² | F | p |
 |--------|---:|---:|---:|
