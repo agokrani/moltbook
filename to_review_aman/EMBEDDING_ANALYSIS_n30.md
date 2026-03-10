@@ -1,10 +1,16 @@
 # What Did AI Agents Talk About?
 *Embedding Analysis of Entropy Collapse Experiments — 30 Agents (n30)*
-*Generated: 2026-03-10 20:54*
+*Generated: 2026-03-10 21:27*
 
 We placed 30 AI agents on a Reddit-like social platform (Moltbook) for 1 hour and let them post, comment, and vote autonomously. Before each run, we seeded the feed with a controlled number of pre-written posts on a specific topic (e.g., conspiracy theories, AGI safety). We then asked: **does the seed content shape what agents end up talking about, and how does discourse evolve over time?**
 
 To answer this, we embedded every agent post into a high-dimensional vector (capturing its semantic meaning) and compared how similar or different posts are within and across conditions.
+
+> **Key terms used in this report:**
+> - **Seed posts (planted posts):** Pre-written posts we placed into the feed *before* agents started. These are the experimental stimulus — like putting a magazine on a waiting room table and seeing if people start talking about its cover story.
+> - **Condition:** One experimental run. Each condition differs by how many seed posts were planted, or what topic they covered.
+> - **Coherence:** How similar the agents' posts are to each other (higher = everyone talking about the same thing).
+> - **Cluster:** A group of posts that are semantically similar, found automatically by the HDBSCAN algorithm.
 
 
 ## 1. Executive Summary
@@ -29,14 +35,36 @@ Each condition started with a different number of **seed posts** — pre-written
 
 **30 agents** with 27 personality templates: baseline (x2), introspective (x2), nihilist (x2), leader, follower, contrarian, curious, methodical, nurturing, skeptic, creative, pragmatic, philosopher, direct, collaborative, passionate, meditative, analytical, provocative, intuitive, reflective, broad-minded, optimistic, cautious, strategic, resilient, quiet.
 
+### What the Seed Posts Look Like
+
+To understand the results, it helps to see the kind of content we planted. Here are example seed posts from each topic:
+
+**Conspiracy seeds** (used in magnitude conditions: 0, 1, 5, or 25 posts):
+> *"If we really went to the moon in 1969, why haven't we been back since 1972? Think about it."* — A post questioning the Apollo missions, citing Van Allen radiation belts and Operation Paperclip.
+> *"MIT did a study 'debunking' tin foil hats and it was FUNDED BY THE GOVERNMENT."* — A post framing a real MIT study as evidence of cover-up.
+
+**AGI safety seeds** (used in the AGI domain condition, 25 posts):
+> *"We are 18 months from AGI and nobody is acting like it. Why?"* — A post citing o3 benchmarks and Gemini 2.5 architecture leaks.
+> *"I work at a Fortune 500 and our entire legal team just got replaced by an AI pipeline."* — A post about a 340-person legal team reduced to 97.
+
+**Tech seeds** (used in the Tech domain condition, 25 posts):
+> *"Google just mass-fired 12,000 people and then posted a job listing for a 'Chief Happiness Officer.'"* — A satirical post about tech layoff hypocrisy.
+> *"I've been a software engineer for 20 years. The mass layoffs aren't about the economy."* — A post about the hiring bubble and market correction.
+
+Each seed post is 300-500 words, written in a first-person Reddit voice with specific numbers and dates to feel authentic. The control condition (0 seeds) starts with an empty feed — agents see nothing before they begin posting.
+
 
 ## 3. Per-Condition Analysis
 
-Each condition ran independently for 1 hour with the same 30 AI agents. For each condition, we reduced the embedding dimensions and plotted posts on a 2D map (UMAP) where nearby points represent semantically similar posts. We then identified topic clusters automatically (HDBSCAN) and asked an LLM to characterize what each cluster and time window was about.
+Each condition ran independently for 1 hour with the same 30 AI agents. For each condition, we plotted all posts on a 2D map (UMAP) where nearby points are posts about similar topics. Colored blobs are topic clusters found automatically.
+
+**How to read these figures:** The important thing is *not* the number or size of clusters — those vary based on algorithm sensitivity. Instead, look at **what the clusters are about** (the labels in each table) and how that content shifts across conditions. In the control, agents default to generic productivity advice. As we add conspiracy seeds, agents increasingly discuss claim-testing and fact-checking. With AGI or Tech seeds, agents adopt those topics instead.
 
 ### Control (0 seeds) (1613 posts)
 
-![Control (0 seeds) UMAP](../experiments/entropy-collapse/report/n30/fig_cond_mag0_umap.png)
+**Figure 1. Control (0 seeds) — Work habits and productivity tips**
+
+![Figure 1](../experiments/entropy-collapse/report/n30/fig_cond_mag0_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -70,7 +98,9 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### 1 seed (1612 posts)
 
-![1 seed UMAP](../experiments/entropy-collapse/report/n30/fig_cond_mag1_umap.png)
+**Figure 2. 1 seed — Agents obsessed with self-improvement**
+
+![Figure 2](../experiments/entropy-collapse/report/n30/fig_cond_mag1_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -105,7 +135,9 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### 5 seeds (1580 posts)
 
-![5 seeds UMAP](../experiments/entropy-collapse/report/n30/fig_cond_mag5_umap.png)
+**Figure 3. 5 seeds — Agents building habits for truth**
+
+![Figure 3](../experiments/entropy-collapse/report/n30/fig_cond_mag5_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -142,7 +174,9 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### 25 seeds (1589 posts)
 
-![25 seeds UMAP](../experiments/entropy-collapse/report/n30/fig_cond_mag25_umap.png)
+**Figure 4. 25 seeds — Agents building shared truth tools**
+
+![Figure 4](../experiments/entropy-collapse/report/n30/fig_cond_mag25_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -177,7 +211,9 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### AGI (25) (1570 posts)
 
-![AGI (25) UMAP](../experiments/entropy-collapse/report/n30/fig_cond_dom-agi_umap.png)
+**Figure 5. AGI (25) — Speed with Safety Drills**
+
+![Figure 5](../experiments/entropy-collapse/report/n30/fig_cond_dom-agi_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -209,7 +245,9 @@ Each condition ran independently for 1 hour with the same 30 AI agents. For each
 
 ### Tech (25) (1391 posts)
 
-![Tech (25) UMAP](../experiments/entropy-collapse/report/n30/fig_cond_dom-tech_umap.png)
+**Figure 6. Tech (25) — Teams obsess over process**
+
+![Figure 6](../experiments/entropy-collapse/report/n30/fig_cond_dom-tech_umap.png)
 
 | Cluster | Posts | Label |
 |--------:|------:|-------|
@@ -253,7 +291,9 @@ We measure this using **coherence** — the average semantic similarity between 
 
 ### 4.1 Within-Condition Convergence
 
-![Convergence Over Time](../experiments/entropy-collapse/report/n30/fig_convergence_over_time.png)
+**Figure 7. Agents lock into a shared topic over time (5/6 conditions show increasing coherence)**
+
+![Figure 7](../experiments/entropy-collapse/report/n30/fig_convergence_over_time.png)
 
 | Condition | Coherence (first 15m) | Coherence (last window) | Last window | Change | Rate (×10⁻³/min) | r² |
 |-----------|------:|------:|------|------:|------:|------:|
@@ -270,7 +310,9 @@ Coherence increases in **5/6 conditions**. Seeded conditions converge faster (5 
 
 If all conditions converged to the *same* topic, the distances between them would shrink over time. Instead, most pairs move *apart* — each condition develops its own distinct attractor.
 
-![Cross-Condition Divergence](../experiments/entropy-collapse/report/n30/fig_cross_condition_divergence.png)
+**Figure 8. Different seed topics push conditions apart over time (8/15 pairs diverge)**
+
+![Figure 8](../experiments/entropy-collapse/report/n30/fig_cross_condition_divergence.png)
 
 Each dot is a pair of conditions. Points above the diagonal mean the two conditions became *more* different over time.
 
@@ -280,7 +322,9 @@ Each dot is a pair of conditions. Points above the diagonal mean the two conditi
 
 This is the paradox: agents talk about increasingly similar *topics* (Section 4.1), yet their individual writing styles become *more* distinct from each other. We measure this by computing how far apart each agent's average post is from every other agent's, in early vs. late phases.
 
-![Agent Individuality](../experiments/entropy-collapse/report/n30/fig_agent_individuality.png)
+**Figure 9. Agents converge on topic but sharpen individual voices (3/6 conditions)**
+
+![Figure 9](../experiments/entropy-collapse/report/n30/fig_agent_individuality.png)
 
 Inter-agent distance increases in **3/6 conditions**. Agents converge on the same *topic* but develop more distinctive *voices* — their individual takes on the shared theme sharpen over time.
 
@@ -305,7 +349,9 @@ Regardless of seed content, agents converge on a shared rhetorical mode: turning
 
 Does injecting *more* seed posts make agent output more similar to the seed topic? We measure each agent post's similarity to the average conspiracy seed embedding and plot this against the number of seeds.
 
-![Dose Response](../experiments/entropy-collapse/report/n30/fig_dose_response.png)
+**Figure 10. More planted posts push agent output closer to the seed topic (r = 0.160)**
+
+![Figure 10](../experiments/entropy-collapse/report/n30/fig_dose_response.png)
 
 | Condition | Seed Posts | Mean Similarity to Conspiracy Centroid |
 |-----------|----------:|------:|
@@ -323,7 +369,9 @@ However, the relationship is **non-linear**. The jump from 1 → 5 seeds is larg
 
 How much of the variation in agent posts is explained by the experimental condition (what was in the feed) vs. agent identity (which agent wrote it)? PERMANOVA partitions the total variance in the embedding space into these factors.
 
-![Variance Decomposition](../experiments/entropy-collapse/report/n30/fig_variance_decomposition.png)
+**Figure 11. Who agents are (19.2%) explains more than what they see (17.9%)**
+
+![Figure 11](../experiments/entropy-collapse/report/n30/fig_variance_decomposition.png)
 
 | Factor | R² | F | p |
 |--------|---:|---:|---:|
@@ -346,4 +394,4 @@ Additionally, all 15/15 condition pairs produce statistically distinguishable po
 5. **Personality > feed**: Agent identity (19.2% of variance) outweighs feed content (17.9%).
 
 ---
-*Generated by `embedding_analysis.py` - 2026-03-10 20:54*
+*Generated by `embedding_analysis.py` - 2026-03-10 21:27*

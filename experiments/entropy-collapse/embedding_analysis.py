@@ -1269,8 +1269,15 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     print("\nStage 4: Generating report...")
 
     rpt = []
+    fig_counter = [0]  # mutable for closure
     def w(s=""): rpt.append(s)
     def wt(title): w(f"\n## {title}\n")
+    def wfig(caption, filename):
+        """Write a numbered figure with a result-oriented caption."""
+        fig_counter[0] += 1
+        w(f"**Figure {fig_counter[0]}. {caption}**")
+        w()
+        w(f"![Figure {fig_counter[0]}]({filename})")
 
     n_total = len(meta["post_id"])
     dr_r = cross_results.get("dose_response_r", 0)
@@ -1289,6 +1296,12 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w(f"We placed {_cfg['agent_count']} AI agents on a Reddit-like social platform (Moltbook) for 1 hour and let them post, comment, and vote autonomously. Before each run, we seeded the feed with a controlled number of pre-written posts on a specific topic (e.g., conspiracy theories, AGI safety). We then asked: **does the seed content shape what agents end up talking about, and how does discourse evolve over time?**")
     w()
     w("To answer this, we embedded every agent post into a high-dimensional vector (capturing its semantic meaning) and compared how similar or different posts are within and across conditions.")
+    w()
+    w("> **Key terms used in this report:**")
+    w("> - **Seed posts (planted posts):** Pre-written posts we placed into the feed *before* agents started. These are the experimental stimulus — like putting a magazine on a waiting room table and seeing if people start talking about its cover story.")
+    w("> - **Condition:** One experimental run. Each condition differs by how many seed posts were planted, or what topic they covered.")
+    w("> - **Coherence:** How similar the agents' posts are to each other (higher = everyone talking about the same thing).")
+    w("> - **Cluster:** A group of posts that are semantically similar, found automatically by the HDBSCAN algorithm.")
     w()
 
     # ================================================================
@@ -1320,10 +1333,34 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w()
 
     # ================================================================
+    # 2b. What the Seed Posts Look Like
+    # ================================================================
+    w("### What the Seed Posts Look Like")
+    w()
+    w("To understand the results, it helps to see the kind of content we planted. Here are example seed posts from each topic:")
+    w()
+    w("**Conspiracy seeds** (used in magnitude conditions: 0, 1, 5, or 25 posts):")
+    w('> *"If we really went to the moon in 1969, why haven\'t we been back since 1972? Think about it."* — A post questioning the Apollo missions, citing Van Allen radiation belts and Operation Paperclip.')
+    w('> *"MIT did a study \'debunking\' tin foil hats and it was FUNDED BY THE GOVERNMENT."* — A post framing a real MIT study as evidence of cover-up.')
+    w()
+    w("**AGI safety seeds** (used in the AGI domain condition, 25 posts):")
+    w('> *"We are 18 months from AGI and nobody is acting like it. Why?"* — A post citing o3 benchmarks and Gemini 2.5 architecture leaks.')
+    w('> *"I work at a Fortune 500 and our entire legal team just got replaced by an AI pipeline."* — A post about a 340-person legal team reduced to 97.')
+    w()
+    w("**Tech seeds** (used in the Tech domain condition, 25 posts):")
+    w('> *"Google just mass-fired 12,000 people and then posted a job listing for a \'Chief Happiness Officer.\'"* — A satirical post about tech layoff hypocrisy.')
+    w('> *"I\'ve been a software engineer for 20 years. The mass layoffs aren\'t about the economy."* — A post about the hiring bubble and market correction.')
+    w()
+    w("Each seed post is 300-500 words, written in a first-person Reddit voice with specific numbers and dates to feel authentic. The control condition (0 seeds) starts with an empty feed — agents see nothing before they begin posting.")
+    w()
+
+    # ================================================================
     # 3. Per-Condition Analysis
     # ================================================================
     wt("3. Per-Condition Analysis")
-    w(f"Each condition ran independently for 1 hour with the same {_cfg['agent_count']} AI agents. For each condition, we reduced the embedding dimensions and plotted posts on a 2D map (UMAP) where nearby points represent semantically similar posts. We then identified topic clusters automatically (HDBSCAN) and asked an LLM to characterize what each cluster and time window was about.")
+    w(f"Each condition ran independently for 1 hour with the same {_cfg['agent_count']} AI agents. For each condition, we plotted all posts on a 2D map (UMAP) where nearby points are posts about similar topics. Colored blobs are topic clusters found automatically.")
+    w()
+    w("**How to read these figures:** The important thing is *not* the number or size of clusters — those vary based on algorithm sensitivity. Instead, look at **what the clusters are about** (the labels in each table) and how that content shifts across conditions. In the control, agents default to generic productivity advice. As we add conspiracy seeds, agents increasingly discuss claim-testing and fact-checking. With AGI or Tech seeds, agents adopt those topics instead.")
     w()
 
     for cond in COND_ORDER:
@@ -1333,7 +1370,9 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
 
         w(f"### {COND_LABELS[cond]} ({n} posts)")
         w()
-        w(f"![{COND_LABELS[cond]} UMAP](fig_cond_{cond}_umap.png)")
+        # Result-oriented caption from LLM characterization
+        cond_label = cl.get("label", COND_LABELS[cond]) if cl else COND_LABELS[cond]
+        wfig(f"{COND_LABELS[cond]} — {cond_label}", f"fig_cond_{cond}_umap.png")
         w()
 
         # Cluster table
@@ -1401,7 +1440,12 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     # 4.1 Within-Condition Convergence
     w("### 4.1 Within-Condition Convergence")
     w()
-    w("![Convergence Over Time](fig_convergence_over_time.png)")
+    if temporal_results and "convergence_stats" in temporal_results:
+        _n_conv = temporal_results["convergence_stats"].get("n_increase", "?")
+        _n_conv_t = temporal_results["convergence_stats"].get("n_total", "?")
+        wfig(f"Agents lock into a shared topic over time ({_n_conv}/{_n_conv_t} conditions show increasing coherence)", "fig_convergence_over_time.png")
+    else:
+        wfig("Topic coherence within each condition over time", "fig_convergence_over_time.png")
     w()
     if temporal_results and "coherence_over_time" in temporal_results:
         coherence_data = temporal_results["coherence_over_time"]
@@ -1445,7 +1489,11 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w()
     w("If all conditions converged to the *same* topic, the distances between them would shrink over time. Instead, most pairs move *apart* — each condition develops its own distinct attractor.")
     w()
-    w("![Cross-Condition Divergence](fig_cross_condition_divergence.png)")
+    if temporal_results and "divergence_stats" in temporal_results:
+        _ds = temporal_results["divergence_stats"]
+        wfig(f"Different seed topics push conditions apart over time ({_ds['n_diverging']}/{_ds['n_total']} pairs diverge)", "fig_cross_condition_divergence.png")
+    else:
+        wfig("Pairwise distances between conditions: early vs. late", "fig_cross_condition_divergence.png")
     w()
     w("Each dot is a pair of conditions. Points above the diagonal mean the two conditions became *more* different over time.")
     w()
@@ -1459,7 +1507,11 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w()
     w("This is the paradox: agents talk about increasingly similar *topics* (Section 4.1), yet their individual writing styles become *more* distinct from each other. We measure this by computing how far apart each agent's average post is from every other agent's, in early vs. late phases.")
     w()
-    w("![Agent Individuality](fig_agent_individuality.png)")
+    if temporal_results and "individuality_stats" in temporal_results:
+        _ist = temporal_results["individuality_stats"]
+        wfig(f"Agents converge on topic but sharpen individual voices ({_ist['n_increase']}/{_ist['n_total']} conditions)", "fig_agent_individuality.png")
+    else:
+        wfig("Inter-agent distance: early vs. late", "fig_agent_individuality.png")
     w()
     if temporal_results and "individuality_stats" in temporal_results:
         ist = temporal_results["individuality_stats"]
@@ -1508,7 +1560,7 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w()
     w("Does injecting *more* seed posts make agent output more similar to the seed topic? We measure each agent post's similarity to the average conspiracy seed embedding and plot this against the number of seeds.")
     w()
-    w("![Dose Response](fig_dose_response.png)")
+    wfig(f"More planted posts push agent output closer to the seed topic (r = {dr_r:.3f})", "fig_dose_response.png")
     w()
     if "dose_data" in cross_results:
         w("| Condition | Seed Posts | Mean Similarity to Conspiracy Centroid |")
@@ -1536,7 +1588,10 @@ def generate_report(meta, per_cond, condition_labels, agent_labels,
     w()
     w("How much of the variation in agent posts is explained by the experimental condition (what was in the feed) vs. agent identity (which agent wrote it)? PERMANOVA partitions the total variance in the embedding space into these factors.")
     w()
-    w("![Variance Decomposition](fig_variance_decomposition.png)")
+    if perm_cond_r2 > perm_agent_r2:
+        wfig(f"What agents see ({perm_cond_r2:.1%}) explains more than who they are ({perm_agent_r2:.1%})", "fig_variance_decomposition.png")
+    else:
+        wfig(f"Who agents are ({perm_agent_r2:.1%}) explains more than what they see ({perm_cond_r2:.1%})", "fig_variance_decomposition.png")
     w()
     cond_p = perm.get("condition", {})
     agent_p = perm.get("agent", {})
