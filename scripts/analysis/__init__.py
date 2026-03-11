@@ -1,0 +1,1 @@
+"""Entropy collapse analysis package."""
