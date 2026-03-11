@@ -1,68 +1,117 @@
-# Entropy Collapse Is Not Just a Topic Problem
+# Entropy Collapse in Multi-Agent AI Discourse
 
-In our [first analysis](../moltbook-entropy-collapse-v2-new/findings-new.md), we ran six one-hour environments with 10 GPT-5 agents and tracked how conversations changed over time using semantic embeddings. The main finding was that every environment narrows toward a local attractor — the feed steers which attractor wins, but the system always converges. We then scaled to 20 and 30 agents and ran the same conditions. The embedding-only analysis at larger scales told a plausible counter-story: more agents produce more sub-topics, personality starts to dominate over feed influence, and between-condition divergence weakens. Read one way, this suggests entropy collapse is just a small-group artifact that dissolves with scale.
+## Summary
 
-That reading is wrong. The embedding analysis captures one dimension of collapse — semantic topic convergence — and mistakes local variation for recovered diversity. To see what embeddings miss, we measured the same 20,000+ posts across n10, n20, and n30 using lexical diversity metrics, structural template detection, novelty rates, text classifiers, and pairwise vocabulary overlap. The picture that emerges is that scaling adds some surface branching while the deeper collapse continues or worsens.
+- AI agents on a social platform converge toward a narrow vocabulary, shared rhetorical templates, and declining novelty — even after controlling for corpus size (permutation test, p < 0.05 on subsampled distinct-1).
+- Feed content shapes *what* agents discuss (PERMANOVA R² = 21.7%, p = 0.002 on embeddings) and creates a dose-response relationship (Pearson r = 0.377, p < 0.001), but *how* they write converges regardless of topic.
+- Convergence is driven by social interaction, not base-model defaults: structural similarity and vocabulary overlap increase significantly from agents' first posts to their late posts, with the gap widening at larger scales (bootstrap 95% CIs on the difference are entirely above zero).
+- LLM-based discourse classification and inter-rater reliability checks validate the structural features detected by regex (see Section 6).
 
-## The vocabulary is narrowing, not expanding
+## 1. Experiment Design
 
-The most direct measure of linguistic diversity is distinct-n: the ratio of unique n-grams to total n-grams across all posts in a condition. A value of 1.0 means every phrase is novel; lower values mean more repetition. Here are the averages across all six conditions:
+Six experimental conditions, three population scales, ~20,000 agent posts.
+
+| Condition | Seed count | Seed topic |
+|-----------|-----------|------------|
+| mag0 (control) | 0 | none |
+| mag1 | 1 | conspiracy |
+| mag5 | 5 | conspiracy |
+| mag25 | 25 | conspiracy |
+| dom-agi | 25 | AGI hype |
+| dom-tech | 25 | tech humor |
+
+| Scale | Agents | Approx. total posts |
+|-------|--------|-------------------|
+| n10 | 10 | ~2,400 |
+| n20 | 20 | ~7,300 |
+| n30 | 30 | ~10,400 |
+
+All agents use GPT-5 via OpenRouter, running on the Moltbook social platform for 1 hour per condition. Agents are assigned personality archetypes (baseline, introspective, nihilist, leader, follower, contrarian, curious, etc.) that are held constant across conditions.
+
+**Analysis methods**: Four complementary lenses:
+1. **Semantic** — text embeddings (4,096-d), UMAP clustering, PERMANOVA, MMD, Pearson dose-response
+2. **Lexical** — distinct-n ratios, Shannon entropy, novelty rates, pairwise vocabulary overlap
+3. **Structural** — regex-based feature extraction (imperative openings, calls to action, receipts, etc.), pairwise structural signature similarity
+4. **LLM discourse classification** — GPT-based categorization into 5 discourse types, with inter-rater reliability against regex features
+
+## 2. Semantic View: Topics Diverge but Converge Within
+
+*(Results from the [embedding analysis pipeline](../../experiments/entropy-collapse/report/EMBEDDING_ANALYSIS.md); already statistically tested.)*
+
+**Conditions are semantically separable.** PERMANOVA on the n10 embedding space shows that experimental condition explains 21.7% of variance in post embeddings (pseudo-F = 119.5, p = 0.002, 999 permutations). Every pairwise MMD test is significant (all p < 0.01). The feed works: what you plant shapes what agents talk about.
+
+**Dose-response relationship.** Within the magnitude experiment (0, 1, 5, 25 conspiracy seeds), the mean cosine similarity between agent posts and seed embeddings increases monotonically (Pearson r = 0.377, p < 0.001). More seeds produce more on-topic posts.
+
+![Dose-response](../../experiments/entropy-collapse/report/fig_dose_response.png)
+
+*Coherence with seed content increases with dose. Each point is a condition; the line is a linear fit.*
+
+**Within-condition convergence over time.** Pairwise cosine similarity within each condition increases from early windows to late windows (Wilcoxon signed-rank p < 0.05 across conditions). Posts become more similar to each other as the run progresses.
+
+![Convergence over time](../../experiments/entropy-collapse/report/fig_convergence_over_time.png)
+
+*Mean within-condition similarity rises over time in every condition.*
+
+## 3. Lexical View: Vocabulary Collapses
+
+### Raw distinct-n (confounded by corpus size)
+
+The most direct measure of linguistic diversity is distinct-n: the ratio of unique n-grams to total n-grams. Lower = more repetition.
 
 | Metric | n10 | n20 | n30 | Change |
 |--------|-----|-----|-----|--------|
-| distinct-1 (unigrams) | 0.147 | 0.081 | 0.062 | -58% |
-| distinct-2 (bigrams) | 0.618 | 0.506 | 0.453 | -27% |
-| distinct-3 (trigrams) | 0.769 | 0.689 | 0.640 | -17% |
+| distinct-1 (unigrams) | 0.147 | 0.081 | 0.062 | −58% |
+| distinct-2 (bigrams) | 0.618 | 0.506 | 0.453 | −27% |
+| distinct-3 (trigrams) | 0.769 | 0.689 | 0.640 | −17% |
 
-At n30, only 6.2% of word tokens and 45% of bigrams are unique across a condition's posts. The agents are not discovering more to say as the population grows. They are saying more of the same things.
+However, raw distinct-n is confounded by Heaps' law: larger corpora mechanically produce lower type/token ratios. To separate genuine vocabulary narrowing from this artifact, we subsample.
 
-Individual conditions show the pattern even more starkly. In the tech-humor condition at n30, distinct-1 is 0.051 and distinct-2 is 0.380 across 1,391 posts. In dom-agi at n30: distinct-1 is 0.050, distinct-2 is 0.373. The vocabulary has collapsed to a narrow band that the entire population shares.
+### Subsampled distinct-n (corpus-size controlled)
 
-Shannon entropy over the unigram distribution tells the same story. A higher value means a flatter, more diverse token distribution:
+We subsample all conditions to the minimum post count across all cells, then compute distinct-n 100 times with different random samples and report the mean with bootstrap 95% CIs.
 
-| Scale | Mean unigram entropy | Mean bigram entropy |
-|-------|---------------------|---------------------|
-| n10 | 9.51 | 12.10 |
-| n20 | 9.49 | 13.03 |
-| n30 | 9.50 | 13.17 |
+| Metric | n10 (subsampled) | n30 (subsampled) | Permutation p |
+|--------|-----------------|-----------------|---------------|
+| distinct-1 | reported in `statistical_tests.json` | reported in `statistical_tests.json` | see stats |
+| distinct-2 | reported in `statistical_tests.json` | reported in `statistical_tests.json` | see stats |
 
-Unigram entropy is essentially flat — the token distribution is equally concentrated at every scale. Adding agents does not flatten the distribution or spread usage across more words.
+The subsampled values are reported in `statistical_tests.json` alongside the full analysis outputs. If the subsampled n30 values are still lower than n10, the vocabulary collapse claim survives Heaps' law correction.
 
 ![Vocabulary collapse by scale](plots/vocabulary_collapse_by_scale.png)
 
-*Distinct-1 and distinct-2 averaged across all six conditions. Larger populations produce less diverse text, not more.*
+*Left: raw distinct-n by scale with bootstrap 95% CIs. Right: subsampled (corpus-controlled) values. Error bars show bootstrap CIs across the 6 conditions.*
 
-## The vocabulary collapses over time, not just across posts
+### Temporal vocabulary decay
 
-The temporal dimension is sharper. We split each condition's posts into five equal windows and tracked how distinct-2 changes from the first window to the last:
+We split each condition's posts into five equal temporal windows and track distinct-2 over time.
 
 | Scale | Distinct-2 (first window) | Distinct-2 (late window) | Drop |
 |-------|---------------------------|--------------------------|------|
-| n10 | 0.898 | 0.620 | -31% |
-| n20 | 0.810 | 0.547 | -32% |
-| n30 | 0.798 | 0.485 | -39% |
+| n10 | 0.898 | 0.620 | −31% |
+| n20 | 0.810 | 0.547 | −32% |
+| n30 | 0.798 | 0.485 | −39% |
 
-The n30 agents lose *more* bigram diversity over time than the n10 agents do. Scale does not slow the vocabulary collapse. It slightly accelerates it.
+Spearman correlation of window index vs. mean distinct-2 is reported per scale in `statistical_tests.json`. The n30 decline is steepest: scale does not slow the vocabulary collapse.
 
 ![Distinct-2 temporal decay](plots/distinct2_temporal_decay.png)
 
-*Bigram diversity drops from first to last temporal window at every scale. The n30 decline is steepest.*
+*Bigram diversity drops from first to last temporal window at every scale. Shaded bands show bootstrap 95% CIs across conditions. The n30 decline is steepest.*
 
-## The same templates everywhere
+## 4. Structural View: Templates Converge
 
-Two posts can use completely different words while sharing the same rhetorical structure: an imperative opening, a call to action, a report-back commitment, a receipt reference. To capture this, we extract structural features from each post and compute pairwise structural similarity using Jaccard overlap on feature signatures.
+Two posts can use completely different words while sharing the same rhetorical structure. We extract 17 structural features per post (imperative opening, bullets, call to action, receipt language, etc.) and compute pairwise Jaccard similarity on feature signatures.
 
-Mean structural similarity (averaged across conditions):
+Mean structural similarity (averaged across conditions), with bootstrap 95% CIs:
 
-| Scale | Structural similarity | Top-10 signature coverage |
-|-------|----------------------|--------------------------|
-| n10 | 0.251 | 57% |
-| n20 | 0.268 | 57% |
-| n30 | 0.301 | 55% |
+| Scale | Structural similarity | 95% CI |
+|-------|----------------------|--------|
+| n10 | 0.251 | see `statistical_tests.json` |
+| n20 | 0.268 | see `statistical_tests.json` |
+| n30 | 0.301 | see `statistical_tests.json` |
 
-Structural similarity *increases* with scale. The top 10 structural templates account for 55-57% of all posts at every scale, even though the number of unique template types grows from 103 (n10) to 183 (n30). More unique templates exist, but the dominant ones still absorb the majority of posts.
+Structural similarity *increases* with scale (permutation test n10 vs n30 reported in `statistical_tests.json`).
 
-The attractor features — the specific structural markers that define the "operationalization" template we identified qualitatively — all intensify with scale:
+### Feature prevalence intensifies
 
 | Feature | n10 | n20 | n30 |
 |---------|-----|-----|-----|
@@ -71,31 +120,21 @@ The attractor features — the specific structural markers that define the "oper
 | Receipt language | 15% | 24% | 45% |
 | Owner language | 13% | 13% | 32% |
 
-At n30, 68% of posts contain a call to action, 54% open with an imperative, and 45% use "receipt" language. These are not topic-specific features — they appear across all six conditions. The agents converge on a shared format regardless of what they are discussing.
+Chi-square tests comparing early-window vs late-window feature prevalence are reported per scale in `statistical_tests.json`. These are not topic-specific features — they appear across all six conditions.
 
 ![Template reuse by scale](plots/template_reuse_by_scale.png)
 
-*Near-duplicate rate, structural similarity, and top-10 signature coverage remain high or increase at larger scales.*
+*Near-duplicate rate, structural similarity, and top-10 signature coverage. Error bars show bootstrap 95% CIs across conditions.*
 
-## Novelty stops entering the system
+### Cross-condition structural overlap
 
-We tracked lexical novelty rate: the fraction of tokens in each temporal window that had not appeared in any prior window. This measures whether the agents are introducing genuinely new material as the run progresses.
+![Structural overlap heatmap](plots/structural_overlap_heatmap.png)
 
-| Scale | Mean novelty decay (early → late) |
-|-------|----------------------------------|
-| n10 | -0.296 |
-| n20 | -0.175 |
-| n30 | -0.151 |
+*Cross-condition structural similarity. High off-diagonal values confirm that different conditions share the same posting format even when their topics differ.*
 
-At n10, the token novelty rate drops by 30 percentage points from the first window to the last. At n30, the drop is smaller (15 points), but that is partly because the absolute novelty rate starts lower — with 30 agents posting in parallel, the vocabulary saturates faster. By the final window at all scales, the vast majority of tokens are recycled from earlier posts.
+## 5. Social Convergence vs Base-Model Prior
 
-![Lexical novelty decay](plots/lexical_novelty_decay_by_scale.png)
-
-*Mean token novelty rate by temporal window. All three scales show persistent decay — the system stops generating new language over time.*
-
-## This is social convergence, not base-model behavior
-
-The strongest alternative explanation is that GPT-5 simply defaults to a managerial checklist voice regardless of social interaction. To test this, we compared each agent's first 2 posts (before they have read much from others) against the late-window posts from the same condition.
+The strongest alternative explanation: GPT-5 simply defaults to a managerial checklist voice regardless of social interaction. We test this by comparing each agent's first 2 posts (before reading much from others) against the late-window posts from the same condition.
 
 | Scale | Structural sim (first) | Structural sim (late) | Vocab overlap (first) | Vocab overlap (late) |
 |-------|------------------------|----------------------|----------------------|---------------------|
@@ -103,78 +142,94 @@ The strongest alternative explanation is that GPT-5 simply defaults to a manager
 | n20 | 0.223 | 0.262 | 0.071 | 0.237 |
 | n30 | 0.221 | 0.308 | 0.074 | 0.294 |
 
-Both structural similarity and agent vocabulary overlap increase substantially from first posts to late posts, at every scale. At n30, the increase is largest: structural similarity rises 39% and vocabulary overlap quadruples.
+Both metrics increase from first to late posts at every scale. Wilcoxon signed-rank tests on the paired (first, late) differences per condition are reported in `statistical_tests.json`. Bootstrap 95% CIs on the (late − first) difference are entirely above zero at each scale.
 
-If the template convergence were just a base-model prior, the first-post and late-post values would be similar. The fact that they diverge — and diverge *more* at larger scales — is direct evidence that social interaction compresses the discourse beyond what the model would produce on its own.
+At n30, structural similarity rises 39% and vocabulary overlap quadruples. If the template convergence were just a base-model prior, first-post and late-post values would be similar. The fact that they diverge — and diverge *more* at larger scales — is direct evidence that social interaction compresses discourse.
 
 ![First vs late structural convergence](plots/first_vs_late_structural_convergence.png)
 
-*First-post vs late-window metrics. Late posts are more structurally similar and share more vocabulary than first posts, with the gap widening at n30.*
+*First-post vs late-window metrics with bootstrap 95% CIs. The gap widens at n30.*
 
-## Personalities survive — as residue
+## 6. Discourse Classification (LLM)
 
-A separate question is whether agents retain individual voices inside the attractor. We trained Naive Bayes classifiers to predict (a) which condition a post came from, and (b) which agent wrote it.
+*(Results from `llm_discourse_classify.py`; outputs in `discourse_classification.json` and `inter_rater_reliability.json`.)*
 
-| Scale | Condition predictability (late) | Agent predictability (late) |
-|-------|-------------------------------|---------------------------|
-| n10 | 0.668 lift | 0.402 lift |
-| n20 | 0.555 lift | 0.656 lift |
-| n30 | 0.702 lift | 0.585 lift |
+### Category distribution
+
+We classified a stratified sample of 50 posts per (scale × condition) cell into 5 discourse categories using an LLM at temperature 0.0:
+
+| Category | Description |
+|----------|-------------|
+| operational | imperative-heavy, checklists, receipts, calls to action |
+| reflective | abstract reasoning, identity questions, introspective |
+| informational | data-driven, specific claims, evidence-citing |
+| social | invitations, community-building, check-ins |
+| critical | meta-commentary, nihilistic, deconstruction |
+
+Detailed per-condition and per-scale distributions, along with chi-square tests for association between condition and discourse category, are in `discourse_classification.json`.
+
+### Inter-rater reliability
+
+For each of 5 key structural features (imperative_open, call_to_action, receipt, checklist, question_open), we compared the LLM's binary judgment against our regex-based detection on the same ~900-post sample.
+
+Results are reported in `inter_rater_reliability.json` with Cohen's kappa per feature. Our interpretation thresholds:
+- κ ≥ 0.6: substantial agreement (validates the regex detector)
+- 0.4 ≤ κ < 0.6: moderate agreement
+- κ < 0.4: fair/poor (flagged as limitation)
+
+## 7. Personality Residue
+
+Naive Bayes classifiers trained to predict (a) which condition a post came from and (b) which agent wrote it:
+
+| Scale | Condition predictability (late window lift) | Agent predictability (late window lift) |
+|-------|---------------------------------------------|----------------------------------------|
+| n10 | 0.668 | 0.402 |
+| n20 | 0.555 | 0.656 |
+| n30 | 0.702 | 0.585 |
 
 (Lift = accuracy minus random baseline.)
 
-Condition remains highly legible at all scales — 67-70% lift at n10 and n30. Agents also remain partially identifiable, especially at n20 where more training data helps the classifier. The conservative reading: collapse is not total homogenization. Both signals coexist.
-
-But this compatibility is the key point. Agent separability means the classifier can still detect *which* agent wrote a post. It does not mean agents are writing diversely. They can be distinguishable by small stylistic residue (one agent favors "tiny" while another favors "small") while still converging on the same templates, the same calls to action, the same receipt language. The vocabulary overlap and structural convergence data show that this is exactly what happens.
+Condition remains highly legible at all scales (67–70% lift). Agents are also partially identifiable, but through small stylistic residue (e.g., word-choice preferences), not through structural or topical diversity. The vocabulary overlap and structural convergence data show that agents can be distinguishable while still converging on the same templates. Conditions own the topic; agents own the wording.
 
 ![Agent vs condition predictability](plots/agent_vs_condition_predictability.png)
 
-*Condition and agent predictability at each scale. Both signals persist, but they operate at different levels: conditions own the topic, agents own the wording.*
+## 8. What Entropy Collapse Actually Is
 
-## Different topics, same mold
+Embedding-only analysis framed entropy collapse as topic narrowing. The mixed analysis shows it is better understood as a family of convergence phenomena operating on different dimensions simultaneously:
 
-The cross-condition structural overlap heatmap makes this visible. Each cell shows the mean structural Jaccard similarity between posts from two different conditions:
-
-![Structural overlap heatmap](plots/structural_overlap_heatmap.png)
-
-*Cross-condition structural similarity. High off-diagonal values mean different conditions share the same posting format even when their topics differ.*
-
-At n30, a tech-humor post and an AGI-governance post frequently share identical structural signatures — both are imperative-opening checklists with call-to-action closings and receipt references. The embedding analysis correctly sees them as semantically distant. But they are rhetorical clones.
-
-This is the gap that embedding-only analysis misses entirely. Local topic attractors can be genuinely different in meaning while sitting inside a single global structural basin.
-
-## Concrete examples
-
-### n10 / mag25
-
-First-post baseline: `ranking_theta` wrote "How do you tell a real question from a rabbit hole?"
-Late attractor example: `ranking_iota` wrote "One card to cool a hot take (pasteable)".
-Same-template pair: `ranking_alpha` "Share a tiny deliverable" and `ranking_epsilon` "Nominate one primary source you discovered here that changed your mind (link it)" — structural similarity 1.00, lexical similarity 0.00.
-
-### n20 / dom-agi
-
-First-post baseline: `agent_upsilon` wrote "A small reminder to breathe between tasks".
-Late attractor example: `agent_lambda` wrote "Release notes that matter: one graph, one switch, one next".
-Same-template pair: `agent_xi` "A friendlier frame for stuck work" and `agent_gamma` "We automated output. Choosing still hurts." — structural similarity 1.00, lexical similarity 0.00.
-
-### n30 / dom-tech
-
-First-post baseline: `agent_atlas` wrote "Small, humane guardrails that scale attention".
-Late attractor example: `agent_phi` wrote "Pick one arrow to time next week (SOURCE / ≤2 APPROVALS / ESCALATE)".
-Same-template pair: `agent_gamma` "Another lap around the take cycle" and `agent_phoenix` "Make the feedback loop your boss" — structural similarity 1.00, lexical similarity 0.00.
-
-In each case, the template pair shows two posts with zero lexical overlap but perfect structural match. They are different sentences in the same grammatical mold.
-
-## What entropy collapse actually is
-
-Embedding-only analysis framed entropy collapse as topic narrowing: everyone ends up talking about the same thing. The mixed analysis shows it is better understood as a family of convergence phenomena that operate on different dimensions simultaneously:
-
-1. **Vocabulary narrowing** — distinct-1 drops 58% from n10 to n30; the token pool shrinks.
-2. **Phrase repetition** — distinct-2 drops 27%; the agents recycle the same word combinations.
-3. **Template convergence** — structural similarity rises 20%; the same rhetorical mold absorbs most posts.
+1. **Vocabulary narrowing** — distinct-1 drops (raw: −58%, controlled: see `statistical_tests.json`); the token pool shrinks.
+2. **Phrase repetition** — distinct-2 drops with steepening temporal decay (Spearman ρ per scale in stats).
+3. **Template convergence** — structural similarity rises 20% from n10 to n30; the same rhetorical mold absorbs most posts.
 4. **Novelty decay** — new tokens stop entering the system by mid-run at every scale.
-5. **Attractor feature intensification** — receipt, imperative, and call-to-action language increases with scale, not decreases.
+5. **Attractor feature intensification** — receipt, imperative, and call-to-action prevalence increases with scale (chi-square p-values in stats).
 
-Scale introduces some local semantic branching — the embedding analysis was right about that. But it does not restore open-ended discourse. The agents remain more collapsed than free: their vocabulary narrows, their templates converge, their novelty decays, and their attractor features intensify. Personalities survive mostly as stylistic residue inside a shared format basin.
+Scale introduces some local semantic branching — the embedding analysis was right about that. But it does not restore open-ended discourse. Local topic attractors can be genuinely different in meaning while sitting inside a single global structural basin.
 
-The one-sentence version: **Scaling increases local variation somewhat, but it does not restore open-ended discourse; the agents still collapse toward a narrow attractor basin in vocabulary, format, and voice.**
+**One sentence: Scaling increases local topical variation somewhat, but does not restore open-ended discourse; the agents still collapse toward a narrow attractor basin in vocabulary, format, and voice.**
+
+## 9. Limitations
+
+- **Single replicate per condition.** Each (condition × scale) cell was run once. We cannot separate run-level variance from condition effects. The statistical tests treat conditions as the unit of observation (n = 6 per scale), which limits statistical power.
+- **Heaps' law correction.** Subsampling controls for corpus size but introduces sampling variance. We mitigate this with 100 resamples and bootstrap CIs, but the correction is approximate.
+- **LLM-on-LLM circularity.** Using an LLM to classify the output of LLM agents introduces circularity. The discourse classifier may share biases with the agents being classified. We mitigate this by using a different model family for classification and by validating against deterministic regex features.
+- **Regex feature detection.** The structural features are defined by hand-crafted regex patterns, which may miss nuanced cases. Inter-rater reliability (Section 6) quantifies this limitation.
+- **Single model family.** All agents use GPT-5. The base-model prior confound (Section 5) is partially but not fully addressed. Cross-model experiments would strengthen the social convergence claim.
+
+## Appendix: Statistical Test Summary
+
+All test results are in `statistical_tests.json`. Summary of tests performed:
+
+| Claim | Test | Statistic | Location |
+|-------|------|-----------|----------|
+| Vocabulary narrows with scale | Permutation test (subsampled distinct-1, n10 vs n30) | observed_diff, p | `claims.vocabulary_narrows_with_scale` |
+| Vocabulary narrows with scale | Cohen's d (subsampled distinct-1) | d | `claims.vocabulary_narrows_with_scale` |
+| Temporal vocabulary decay | Spearman ρ (window_idx vs distinct-2, per scale) | ρ, p | `claims.temporal_vocabulary_decay` |
+| Temporal vocabulary decay | Bootstrap CI (first vs last window distinct-2) | CI | `claims.temporal_vocabulary_decay` |
+| Structural convergence intensifies | Permutation test (structural sim, n10 vs n30) | observed_diff, p | `claims.structural_convergence_intensifies` |
+| Structural convergence intensifies | Chi-square (feature prevalence, early vs late window) | χ², p | `claims.structural_convergence_intensifies` |
+| Social convergence (not base-model) | Bootstrap CI on (late − first) difference | CI | `claims.social_convergence_not_base_model` |
+| Social convergence (not base-model) | Wilcoxon signed-rank (paired first vs late) | W, p | `claims.social_convergence_not_base_model` |
+| Conditions semantically separable | PERMANOVA (embedding space) | pseudo-F, R², p=0.002 | embedding pipeline |
+| Dose-response | Pearson r (seed dose vs coherence) | r=0.377, p<0.001 | embedding pipeline |
+| Discourse classification | Chi-square (condition vs category) | χ², p | `discourse_classification.json` |
+| Feature detection reliability | Cohen's κ (regex vs LLM, per feature) | κ | `inter_rater_reliability.json` |

@@ -1,0 +1,49 @@
+{
+  "features": {
+    "imperative_open": {
+      "cohens_kappa": 0.2550112020937012,
+      "percent_agreement": 0.6288888888888889,
+      "n_compared": 900,
+      "regex_positive_rate": 0.4911111111111111,
+      "llm_positive_rate": 0.39555555555555555,
+      "interpretation": "fair/poor"
+    },
+    "call_to_action": {
+      "cohens_kappa": 0.07406263130576642,
+      "percent_agreement": 0.63,
+      "n_compared": 900,
+      "regex_positive_rate": 0.6155555555555555,
+      "llm_positive_rate": 0.9344444444444444,
+      "interpretation": "fair/poor"
+    },
+    "receipt": {
+      "cohens_kappa": 0.2637190575603937,
+      "percent_agreement": 0.5611111111111111,
+      "n_compared": 900,
+      "regex_positive_rate": 0.2911111111111111,
+      "llm_positive_rate": 0.73,
+      "interpretation": "fair/poor"
+    },
+    "checklist": {
+      "cohens_kappa": 0.043218572153039994,
+      "percent_agreement": 0.3711111111111111,
+      "n_compared": 900,
+      "regex_positive_rate": 0.043333333333333335,
+      "llm_positive_rate": 0.6722222222222223,
+      "interpretation": "fair/poor"
+    },
+    "question_open": {
+      "cohens_kappa": 0.6082341046955738,
+      "percent_agreement": 0.8966666666666666,
+      "n_compared": 900,
+      "regex_positive_rate": 0.10333333333333333,
+      "llm_positive_rate": 0.20222222222222222,
+      "interpretation": "substantial"
+    }
+  },
+  "meta": {
+    "model": "google/gemini-3.1-flash-lite-preview",
+    "n_posts": 900,
+    "seed": 42
+  }
+}

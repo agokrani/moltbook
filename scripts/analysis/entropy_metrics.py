@@ -625,6 +625,40 @@ def multinomial_nb_accuracy(
     }
 
 
+def subsampled_distinct_n(
+    posts: Sequence[PreparedPost],
+    n: int,
+    target_size: int,
+    n_samples: int = 100,
+    seed: int = 42,
+) -> dict[str, float | list[float]]:
+    """Compute distinct-n at fixed corpus size via repeated subsampling.
+
+    Controls for Heaps' law confound by equalizing corpus sizes before
+    measuring lexical diversity.
+
+    Returns: {"mean": float, "ci_lo": float, "ci_hi": float, "samples": list}
+    """
+    if len(posts) <= target_size:
+        val = distinct_n(posts, n)
+        return {"mean": val, "ci_lo": val, "ci_hi": val, "samples": [val]}
+    rng = random.Random(seed)
+    samples: list[float] = []
+    posts_list = list(posts)
+    for _ in range(n_samples):
+        subset = rng.sample(posts_list, target_size)
+        samples.append(distinct_n(subset, n))
+    samples.sort()
+    lo_idx = int(0.025 * len(samples))
+    hi_idx = int(0.975 * len(samples))
+    return {
+        "mean": sum(samples) / len(samples),
+        "ci_lo": samples[lo_idx],
+        "ci_hi": samples[hi_idx],
+        "samples": samples,
+    }
+
+
 def condition_metrics(posts: Sequence[PreparedPost], *, seed: int = 1337) -> dict:
     tokens = token_counter(posts)
     bigrams = ngram_counter(posts, 2)

@@ -28,11 +28,13 @@ if str(SCRIPT_DIR) not in sys.path:
 from entropy_metrics import (  # noqa: E402
     condition_metrics,
     cross_group_similarity,
+    distinct_n,
     first_posts_per_agent,
     last_posts_per_agent,
     multinomial_nb_accuracy,
     novelty_rates,
     prepare_posts,
+    subsampled_distinct_n,
     window_posts,
 )
 from load_entropy_data import (  # noqa: E402
@@ -40,6 +42,14 @@ from load_entropy_data import (  # noqa: E402
     CONDITION_ORDER,
     SCALE_CONFIG,
     load_all_scales,
+)
+from stat_utils import (  # noqa: E402
+    bootstrap_ci,
+    chi_square_proportions,
+    cohens_d,
+    permutation_test_means,
+    spearman_trend,
+    wilcoxon_signed_rank,
 )
 
 DEFAULT_OUT_DIR = Path("findings/entropy-collapse-multiscale")
@@ -131,7 +141,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 
 def plot_novelty_decay(window_rows: list[dict], plots_dir: Path) -> None:
-    plt.figure(figsize=(9, 5))
+    fig, ax = plt.subplots(figsize=(9, 5))
     for scale in sorted({row["scale"] for row in window_rows}):
         rows = [row for row in window_rows if row["scale"] == scale]
         if not rows:
@@ -139,19 +149,26 @@ def plot_novelty_decay(window_rows: list[dict], plots_dir: Path) -> None:
         max_window = max(int(row["window_idx"]) for row in rows)
         x = list(range(max_window + 1))
         y = []
+        y_lo = []
+        y_hi = []
         for window_idx in x:
             subset = [row["token_novelty_rate"] for row in rows if int(row["window_idx"]) == window_idx]
-            y.append(safe_mean(subset))
-        plt.plot(x, y, marker="o", linewidth=2.2, label=scale, color=PLOT_COLORS.get(scale))
-    plt.xticks(range(max(int(row["window_idx"]) for row in window_rows) + 1))
-    plt.xlabel("Temporal Window")
-    plt.ylabel("Mean Token Novelty Rate")
-    plt.title("Lexical Novelty Decays Over Time")
-    plt.grid(alpha=0.3)
-    plt.legend()
-    plt.tight_layout()
-    plt.savefig(plots_dir / "lexical_novelty_decay_by_scale.png", dpi=180)
-    plt.close()
+            ci = bootstrap_ci(subset)
+            y.append(ci["mean"])
+            y_lo.append(ci["ci_lo"])
+            y_hi.append(ci["ci_hi"])
+        color = PLOT_COLORS.get(scale)
+        ax.plot(x, y, marker="o", linewidth=2.2, label=scale, color=color)
+        ax.fill_between(x, y_lo, y_hi, alpha=0.15, color=color)
+    ax.set_xticks(range(max(int(row["window_idx"]) for row in window_rows) + 1))
+    ax.set_xlabel("Temporal Window")
+    ax.set_ylabel("Mean Token Novelty Rate")
+    ax.set_title("Lexical Novelty Decays Over Time")
+    ax.grid(alpha=0.3)
+    ax.legend()
+    fig.tight_layout()
+    fig.savefig(plots_dir / "lexical_novelty_decay_by_scale.png", dpi=180)
+    plt.close(fig)
 
 
 def plot_first_vs_late(first_vs_late_rows: list[dict], plots_dir: Path) -> None:
@@ -169,13 +186,23 @@ def plot_first_vs_late(first_vs_late_rows: list[dict], plots_dir: Path) -> None:
     for ax, (metric_key, title) in zip(axes, metrics):
         first_vals = []
         late_vals = []
+        first_errs = [[], []]
+        late_errs = [[], []]
         for scale in scales:
             first_subset = [row[metric_key] for row in first_vs_late_rows if row["scale"] == scale and row["segment"] == "first_agent_posts"]
             late_subset = [row[metric_key] for row in first_vs_late_rows if row["scale"] == scale and row["segment"] == "late_window"]
-            first_vals.append(safe_mean(first_subset))
-            late_vals.append(safe_mean(late_subset))
-        ax.bar(x - width / 2, first_vals, width, label="First posts", color="#4c78a8")
-        ax.bar(x + width / 2, late_vals, width, label="Late posts", color="#e15759")
+            f_ci = bootstrap_ci(first_subset)
+            l_ci = bootstrap_ci(late_subset)
+            first_vals.append(f_ci["mean"])
+            late_vals.append(l_ci["mean"])
+            first_errs[0].append(f_ci["mean"] - f_ci["ci_lo"])
+            first_errs[1].append(f_ci["ci_hi"] - f_ci["mean"])
+            late_errs[0].append(l_ci["mean"] - l_ci["ci_lo"])
+            late_errs[1].append(l_ci["ci_hi"] - l_ci["mean"])
+        ax.bar(x - width / 2, first_vals, width, yerr=first_errs, capsize=4,
+               label="First posts", color="#4c78a8")
+        ax.bar(x + width / 2, late_vals, width, yerr=late_errs, capsize=4,
+               label="Late posts", color="#e15759")
         ax.set_xticks(x)
         ax.set_xticklabels(scales)
         ax.set_title(title)
@@ -272,10 +299,16 @@ def plot_template_reuse(summary_rows: list[dict], plots_dir: Path) -> None:
     x = np.arange(len(scales))
     for ax, (metric_key, title) in zip(axes, metrics):
         values = []
+        err_lo = []
+        err_hi = []
         for scale in scales:
             subset = [row[metric_key] for row in summary_rows if row["scale"] == scale]
-            values.append(safe_mean(subset))
-        ax.bar(x, values, color=[PLOT_COLORS.get(scale, "#777777") for scale in scales])
+            ci = bootstrap_ci(subset)
+            values.append(ci["mean"])
+            err_lo.append(ci["mean"] - ci["ci_lo"])
+            err_hi.append(ci["ci_hi"] - ci["mean"])
+        ax.bar(x, values, yerr=[err_lo, err_hi], capsize=4,
+               color=[PLOT_COLORS.get(scale, "#777777") for scale in scales])
         ax.set_xticks(x)
         ax.set_xticklabels(scales)
         ax.set_title(title)
@@ -310,31 +343,90 @@ def plot_structural_overlap_heatmap(cross_condition: dict, plots_dir: Path) -> N
     plt.close(fig)
 
 
-def plot_vocabulary_collapse(summary_rows: list[dict], plots_dir: Path) -> None:
-    """Grouped bar chart: mean distinct-1 and distinct-2 averaged across conditions, for each scale."""
+def plot_vocabulary_collapse(summary_rows: list[dict], plots_dir: Path, subsampled: dict | None = None) -> None:
+    """Grouped bar chart: mean distinct-1 and distinct-2 averaged across conditions, for each scale.
+
+    If subsampled data is provided, adds a second panel showing corpus-controlled values with CIs.
+    """
     scales = sorted({row["scale"] for row in summary_rows})
     d1_vals = []
     d2_vals = []
+    d1_cis = []
+    d2_cis = []
     for scale in scales:
         subset = [row for row in summary_rows if row["scale"] == scale]
-        d1_vals.append(safe_mean([row["distinct_1"] for row in subset]))
-        d2_vals.append(safe_mean([row["distinct_2"] for row in subset]))
+        d1_list = [row["distinct_1"] for row in subset]
+        d2_list = [row["distinct_2"] for row in subset]
+        d1_vals.append(safe_mean(d1_list))
+        d2_vals.append(safe_mean(d2_list))
+        d1_ci = bootstrap_ci(d1_list)
+        d2_ci = bootstrap_ci(d2_list)
+        d1_cis.append((d1_ci["ci_lo"], d1_ci["ci_hi"]))
+        d2_cis.append((d2_ci["ci_lo"], d2_ci["ci_hi"]))
+
+    has_subsampled = subsampled and all(s in subsampled for s in scales)
+    n_panels = 2 if has_subsampled else 1
+    fig, axes = plt.subplots(1, n_panels, figsize=(7 * n_panels, 5))
+    if n_panels == 1:
+        axes = [axes]
 
     x = np.arange(len(scales))
     width = 0.35
-    fig, ax = plt.subplots(figsize=(7, 5))
-    ax.bar(x - width / 2, d1_vals, width, label="distinct-1 (unigrams)", color="#4c78a8")
-    ax.bar(x + width / 2, d2_vals, width, label="distinct-2 (bigrams)", color="#e15759")
+
+    # Panel 1: raw values with error bars
+    ax = axes[0]
+    d1_err = [[v - lo for v, (lo, _) in zip(d1_vals, d1_cis)],
+              [hi - v for v, (_, hi) in zip(d1_vals, d1_cis)]]
+    d2_err = [[v - lo for v, (lo, _) in zip(d2_vals, d2_cis)],
+              [hi - v for v, (_, hi) in zip(d2_vals, d2_cis)]]
+    ax.bar(x - width / 2, d1_vals, width, yerr=d1_err, capsize=4,
+           label="distinct-1 (unigrams)", color="#4c78a8")
+    ax.bar(x + width / 2, d2_vals, width, yerr=d2_err, capsize=4,
+           label="distinct-2 (bigrams)", color="#e15759")
     ax.set_xticks(x)
     ax.set_xticklabels(scales)
     ax.set_ylabel("Mean distinct-n ratio")
-    ax.set_title("Vocabulary Collapse by Scale")
+    ax.set_title("Raw Vocabulary Collapse by Scale")
     ax.legend()
     ax.grid(alpha=0.25, axis="y")
-
     for i, (v1, v2) in enumerate(zip(d1_vals, d2_vals)):
-        ax.text(i - width / 2, v1 + 0.008, f"{v1:.3f}", ha="center", va="bottom", fontsize=8)
-        ax.text(i + width / 2, v2 + 0.008, f"{v2:.3f}", ha="center", va="bottom", fontsize=8)
+        ax.text(i - width / 2, v1 + d1_err[1][i] + 0.005, f"{v1:.3f}", ha="center", va="bottom", fontsize=8)
+        ax.text(i + width / 2, v2 + d2_err[1][i] + 0.005, f"{v2:.3f}", ha="center", va="bottom", fontsize=8)
+
+    # Panel 2: subsampled values with CIs
+    if has_subsampled:
+        ax2 = axes[1]
+        sub_d1_vals = []
+        sub_d2_vals = []
+        sub_d1_cis = []
+        sub_d2_cis = []
+        for scale in scales:
+            conds = subsampled[scale]
+            d1_means = [v["distinct_1"]["mean"] for v in conds.values()]
+            d2_means = [v["distinct_2"]["mean"] for v in conds.values()]
+            sub_d1_vals.append(safe_mean(d1_means))
+            sub_d2_vals.append(safe_mean(d2_means))
+            d1_ci = bootstrap_ci(d1_means)
+            d2_ci = bootstrap_ci(d2_means)
+            sub_d1_cis.append((d1_ci["ci_lo"], d1_ci["ci_hi"]))
+            sub_d2_cis.append((d2_ci["ci_lo"], d2_ci["ci_hi"]))
+        sd1_err = [[v - lo for v, (lo, _) in zip(sub_d1_vals, sub_d1_cis)],
+                   [hi - v for v, (_, hi) in zip(sub_d1_vals, sub_d1_cis)]]
+        sd2_err = [[v - lo for v, (lo, _) in zip(sub_d2_vals, sub_d2_cis)],
+                   [hi - v for v, (_, hi) in zip(sub_d2_vals, sub_d2_cis)]]
+        ax2.bar(x - width / 2, sub_d1_vals, width, yerr=sd1_err, capsize=4,
+                label="distinct-1 (subsampled)", color="#4c78a8", alpha=0.7)
+        ax2.bar(x + width / 2, sub_d2_vals, width, yerr=sd2_err, capsize=4,
+                label="distinct-2 (subsampled)", color="#e15759", alpha=0.7)
+        ax2.set_xticks(x)
+        ax2.set_xticklabels(scales)
+        ax2.set_ylabel("Mean distinct-n ratio (corpus-controlled)")
+        ax2.set_title("Subsampled Vocabulary Collapse (Heaps' Law Controlled)")
+        ax2.legend()
+        ax2.grid(alpha=0.25, axis="y")
+        for i, (v1, v2) in enumerate(zip(sub_d1_vals, sub_d2_vals)):
+            ax2.text(i - width / 2, v1 + sd1_err[1][i] + 0.005, f"{v1:.3f}", ha="center", va="bottom", fontsize=8)
+            ax2.text(i + width / 2, v2 + sd2_err[1][i] + 0.005, f"{v2:.3f}", ha="center", va="bottom", fontsize=8)
 
     fig.tight_layout()
     fig.savefig(plots_dir / "vocabulary_collapse_by_scale.png", dpi=180)
@@ -342,7 +434,7 @@ def plot_vocabulary_collapse(summary_rows: list[dict], plots_dir: Path) -> None:
 
 
 def plot_distinct2_temporal_decay(window_rows: list[dict], plots_dir: Path) -> None:
-    """Line chart: mean distinct-2 per window index, one line per scale (averaged across conditions)."""
+    """Line chart: mean distinct-2 per window index, one line per scale, with CI bands."""
     scales = sorted({row["scale"] for row in window_rows})
     fig, ax = plt.subplots(figsize=(9, 5))
     for scale in scales:
@@ -352,10 +444,17 @@ def plot_distinct2_temporal_decay(window_rows: list[dict], plots_dir: Path) -> N
         max_window = max(int(row["window_idx"]) for row in rows)
         x = list(range(max_window + 1))
         y = []
+        y_lo = []
+        y_hi = []
         for window_idx in x:
             subset = [row["distinct_2"] for row in rows if int(row["window_idx"]) == window_idx]
-            y.append(safe_mean(subset))
-        ax.plot(x, y, marker="o", linewidth=2.2, label=scale, color=PLOT_COLORS.get(scale))
+            ci = bootstrap_ci(subset)
+            y.append(ci["mean"])
+            y_lo.append(ci["ci_lo"])
+            y_hi.append(ci["ci_hi"])
+        color = PLOT_COLORS.get(scale)
+        ax.plot(x, y, marker="o", linewidth=2.2, label=scale, color=color)
+        ax.fill_between(x, y_lo, y_hi, alpha=0.15, color=color)
     ax.set_xticks(range(max(int(row["window_idx"]) for row in window_rows) + 1))
     ax.set_xlabel("Temporal Window")
     ax.set_ylabel("Mean Distinct-2 (bigram diversity)")
@@ -416,6 +515,201 @@ def plot_local_vs_global(summary_rows: list[dict], cross_condition: dict, plots_
     fig.tight_layout()
     fig.savefig(plots_dir / "local_attractors_vs_global_basin.png", dpi=180)
     plt.close(fig)
+
+
+def compute_statistical_tests(
+    grouped: dict[tuple[str, str], list],
+    by_scale: dict[str, list],
+    summary_rows: list[dict],
+    window_rows: list[dict],
+    first_vs_late_rows: list[dict],
+    scales: list[str],
+    seed: int,
+) -> dict:
+    """Compute statistical tests for the 4 testable headline claims.
+
+    Returns a dict ready for JSON serialization.
+    """
+    results: dict = {"claims": {}}
+
+    # ── Claim 1: Vocabulary narrows with scale ──
+    # Find minimum post count across all conditions at each scale for subsampling
+    min_posts_per_scale: dict[str, int] = {}
+    for scale in scales:
+        counts = [len(posts) for (s, _), posts in grouped.items() if s == scale]
+        min_posts_per_scale[scale] = min(counts) if counts else 0
+    global_min = min(min_posts_per_scale.values()) if min_posts_per_scale else 0
+
+    subsampled: dict[str, dict[str, dict]] = {}  # scale -> condition -> {d1, d2}
+    for scale in scales:
+        subsampled[scale] = {}
+        for (s, condition), posts in grouped.items():
+            if s != scale:
+                continue
+            d1 = subsampled_distinct_n(posts, 1, global_min, seed=seed)
+            d2 = subsampled_distinct_n(posts, 2, global_min, seed=seed)
+            subsampled[scale][condition] = {"distinct_1": d1, "distinct_2": d2}
+
+    # Permutation test: n10 vs n30 subsampled distinct-1
+    if "n10" in subsampled and "n30" in subsampled:
+        n10_d1 = [v["distinct_1"]["mean"] for v in subsampled["n10"].values()]
+        n30_d1 = [v["distinct_1"]["mean"] for v in subsampled["n30"].values()]
+        n10_d2 = [v["distinct_2"]["mean"] for v in subsampled["n10"].values()]
+        n30_d2 = [v["distinct_2"]["mean"] for v in subsampled["n30"].values()]
+        perm_d1 = permutation_test_means(n10_d1, n30_d1, seed=seed)
+        perm_d2 = permutation_test_means(n10_d2, n30_d2, seed=seed)
+        effect_d1 = cohens_d(n10_d1, n30_d1)
+        effect_d2 = cohens_d(n10_d2, n30_d2)
+    else:
+        perm_d1 = perm_d2 = {"observed_diff": 0, "p_value": 1}
+        effect_d1 = effect_d2 = 0.0
+
+    results["claims"]["vocabulary_narrows_with_scale"] = {
+        "description": "Vocabulary diversity (distinct-n) decreases from n10 to n30, controlled for corpus size",
+        "subsampled_target_size": global_min,
+        "subsampled_values": {
+            scale: {
+                cond: {
+                    "distinct_1": vals["distinct_1"]["mean"],
+                    "distinct_1_ci": [vals["distinct_1"]["ci_lo"], vals["distinct_1"]["ci_hi"]],
+                    "distinct_2": vals["distinct_2"]["mean"],
+                    "distinct_2_ci": [vals["distinct_2"]["ci_lo"], vals["distinct_2"]["ci_hi"]],
+                }
+                for cond, vals in conds.items()
+            }
+            for scale, conds in subsampled.items()
+        },
+        "permutation_test_d1_n10_vs_n30": perm_d1,
+        "permutation_test_d2_n10_vs_n30": perm_d2,
+        "cohens_d_d1": effect_d1,
+        "cohens_d_d2": effect_d2,
+    }
+
+    # ── Claim 2: Temporal vocabulary decay ──
+    temporal_decay: dict[str, dict] = {}
+    for scale in scales:
+        scale_windows = [r for r in window_rows if r["scale"] == scale]
+        if not scale_windows:
+            continue
+        window_indices = sorted({int(r["window_idx"]) for r in scale_windows})
+        # Mean distinct-2 per window (averaged across conditions)
+        mean_d2_per_window = []
+        for w in window_indices:
+            vals = [r["distinct_2"] for r in scale_windows if int(r["window_idx"]) == w]
+            mean_d2_per_window.append(safe_mean(vals))
+        spearman = spearman_trend(
+            [float(w) for w in window_indices],
+            mean_d2_per_window,
+        )
+        # Bootstrap CI on first vs last window difference
+        first_vals = [r["distinct_2"] for r in scale_windows if int(r["window_idx"]) == window_indices[0]]
+        last_vals = [r["distinct_2"] for r in scale_windows if int(r["window_idx"]) == window_indices[-1]]
+        first_ci = bootstrap_ci(first_vals, seed=seed)
+        last_ci = bootstrap_ci(last_vals, seed=seed)
+        temporal_decay[scale] = {
+            "spearman": spearman,
+            "first_window_d2": first_ci,
+            "last_window_d2": last_ci,
+            "mean_d2_per_window": mean_d2_per_window,
+        }
+
+    results["claims"]["temporal_vocabulary_decay"] = {
+        "description": "Distinct-2 declines over temporal windows within each scale",
+        "per_scale": temporal_decay,
+    }
+
+    # ── Claim 3: Structural template convergence intensifies ──
+    struct_convergence: dict[str, dict] = {}
+    for scale in scales:
+        struct_sims = [r["mean_structural_similarity"] for r in summary_rows if r["scale"] == scale]
+        struct_convergence[scale] = {
+            "structural_similarity": bootstrap_ci(struct_sims, seed=seed),
+        }
+
+    # Permutation test: n10 vs n30 structural similarity
+    if "n10" in struct_convergence and "n30" in struct_convergence:
+        n10_ss = [r["mean_structural_similarity"] for r in summary_rows if r["scale"] == "n10"]
+        n30_ss = [r["mean_structural_similarity"] for r in summary_rows if r["scale"] == "n30"]
+        perm_struct = permutation_test_means(n30_ss, n10_ss, seed=seed)
+        effect_struct = cohens_d(n30_ss, n10_ss)
+    else:
+        perm_struct = {"observed_diff": 0, "p_value": 1}
+        effect_struct = 0.0
+
+    # Chi-square on feature prevalence: early vs late windows per scale
+    feature_chi2: dict[str, dict] = {}
+    key_features = ["imperative_open", "call_to_action", "receipt"]
+    for scale in scales:
+        scale_windows = [r for r in window_rows if r["scale"] == scale]
+        if not scale_windows:
+            continue
+        window_indices = sorted({int(r["window_idx"]) for r in scale_windows})
+        early_rows = [r for r in scale_windows if int(r["window_idx"]) == window_indices[0]]
+        late_rows = [r for r in scale_windows if int(r["window_idx"]) == window_indices[-1]]
+        chi2_results = {}
+        for feat in key_features:
+            feat_col = f"feature_{feat}"
+            if feat_col not in early_rows[0]:
+                continue
+            # Convert prevalence to approximate counts
+            early_n = sum(r["n_posts"] for r in early_rows)
+            late_n = sum(r["n_posts"] for r in late_rows)
+            early_present = int(sum(r[feat_col] * r["n_posts"] for r in early_rows))
+            late_present = int(sum(r[feat_col] * r["n_posts"] for r in late_rows))
+            counts_present = [early_present, late_present]
+            counts_absent = [early_n - early_present, late_n - late_present]
+            chi2_results[feat] = chi_square_proportions(counts_present, counts_absent)
+        feature_chi2[scale] = chi2_results
+
+    results["claims"]["structural_convergence_intensifies"] = {
+        "description": "Structural similarity increases from n10 to n30; key features intensify over time",
+        "per_scale_structural_sim": {
+            scale: data["structural_similarity"] for scale, data in struct_convergence.items()
+        },
+        "permutation_test_struct_sim_n10_vs_n30": perm_struct,
+        "cohens_d_structural_sim": effect_struct,
+        "feature_chi_square_early_vs_late": feature_chi2,
+    }
+
+    # ── Claim 4: Social convergence, not base-model prior ──
+    social_convergence: dict[str, dict] = {}
+    for scale in scales:
+        first_rows = [r for r in first_vs_late_rows if r["scale"] == scale and r["segment"] == "first_agent_posts"]
+        late_rows = [r for r in first_vs_late_rows if r["scale"] == scale and r["segment"] == "late_window"]
+        if not first_rows or not late_rows:
+            continue
+        # Match conditions for paired test
+        conditions = sorted(set(r["condition"] for r in first_rows) & set(r["condition"] for r in late_rows))
+        first_struct = [next(r["mean_structural_similarity"] for r in first_rows if r["condition"] == c) for c in conditions]
+        late_struct = [next(r["mean_structural_similarity"] for r in late_rows if r["condition"] == c) for c in conditions]
+        first_vocab = [next(r["mean_top20_vocab_overlap"] for r in first_rows if r["condition"] == c) for c in conditions]
+        late_vocab = [next(r["mean_top20_vocab_overlap"] for r in late_rows if r["condition"] == c) for c in conditions]
+
+        # Paired differences with bootstrap CIs
+        struct_diffs = [l - f for f, l in zip(first_struct, late_struct)]
+        vocab_diffs = [l - f for f, l in zip(first_vocab, late_vocab)]
+
+        social_convergence[scale] = {
+            "n_conditions": len(conditions),
+            "structural_sim_first": bootstrap_ci(first_struct, seed=seed),
+            "structural_sim_late": bootstrap_ci(late_struct, seed=seed),
+            "structural_sim_diff": bootstrap_ci(struct_diffs, seed=seed),
+            "vocab_overlap_first": bootstrap_ci(first_vocab, seed=seed),
+            "vocab_overlap_late": bootstrap_ci(late_vocab, seed=seed),
+            "vocab_overlap_diff": bootstrap_ci(vocab_diffs, seed=seed),
+            "wilcoxon_structural": wilcoxon_signed_rank(late_struct, first_struct),
+            "wilcoxon_vocab": wilcoxon_signed_rank(late_vocab, first_vocab),
+        }
+
+    results["claims"]["social_convergence_not_base_model"] = {
+        "description": "Late posts are more structurally similar and share more vocabulary than first posts",
+        "per_scale": social_convergence,
+    }
+
+    # Store subsampled data for plotting
+    results["subsampled"] = subsampled
+
+    return results
 
 
 def main() -> None:
@@ -620,6 +914,23 @@ def main() -> None:
                 }
             )
 
+    # ── Statistical tests ──
+    print("Computing statistical tests...")
+    stat_results = compute_statistical_tests(
+        grouped=grouped,
+        by_scale=by_scale,
+        summary_rows=summary_rows,
+        window_rows=window_rows,
+        first_vs_late_rows=first_vs_late_rows,
+        scales=scales,
+        seed=args.seed,
+    )
+    # Write separate stats JSON (without non-serializable samples lists)
+    stat_output = {k: v for k, v in stat_results.items() if k != "subsampled"}
+    with (out_dir / "statistical_tests.json").open("w") as handle:
+        json.dump(stat_output, handle, indent=2)
+    print(f"  Wrote statistical_tests.json")
+
     metrics_json["summary_rows"] = summary_rows
     metrics_json["window_rows"] = window_rows
     metrics_json["first_vs_late_rows"] = first_vs_late_rows
@@ -640,7 +951,7 @@ def main() -> None:
     plot_template_reuse(summary_rows, plots_dir)
     plot_structural_overlap_heatmap(cross_condition, plots_dir)
     plot_local_vs_global(summary_rows, cross_condition, plots_dir)
-    plot_vocabulary_collapse(summary_rows, plots_dir)
+    plot_vocabulary_collapse(summary_rows, plots_dir, stat_results.get("subsampled"))
     plot_distinct2_temporal_decay(window_rows, plots_dir)
 
     print(f"Wrote analysis outputs to {out_dir}")
