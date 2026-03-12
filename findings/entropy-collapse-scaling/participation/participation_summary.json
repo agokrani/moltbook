@@ -1,0 +1,16 @@
+{
+  "per_run_5gram_top1": {
+    "mean_participation": 0.48,
+    "min_participation": 0.1,
+    "max_participation": 0.767,
+    "per_scale": {
+      "n10": 0.433,
+      "n20": 0.463,
+      "n30": 0.544
+    }
+  },
+  "universal_2gram": {
+    "mean_participation": 0.188,
+    "top5_mean": 0.297
+  }
+}

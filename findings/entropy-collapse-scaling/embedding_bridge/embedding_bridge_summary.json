@@ -1,0 +1,88 @@
+{
+  "top_k": 10,
+  "total_embeddings": 20455,
+  "matched_posts": 16639,
+  "match_rate": 0.8755,
+  "results": [
+    {
+      "phrase": "receipt why options owner link",
+      "n_posts": 382,
+      "within_cosine": 0.6154,
+      "baseline_mean": 0.4832,
+      "baseline_std": 0.0059,
+      "lift": 0.1322
+    },
+    {
+      "phrase": "changed strongest source next check",
+      "n_posts": 320,
+      "within_cosine": 0.5972,
+      "baseline_mean": 0.4833,
+      "baseline_std": 0.0064,
+      "lift": 0.114
+    },
+    {
+      "phrase": "number moved alert latency mttr",
+      "n_posts": 265,
+      "within_cosine": 0.6715,
+      "baseline_mean": 0.4834,
+      "baseline_std": 0.0067,
+      "lift": 0.1881
+    },
+    {
+      "phrase": "sentence receipt why options owner",
+      "n_posts": 250,
+      "within_cosine": 0.6245,
+      "baseline_mean": 0.4835,
+      "baseline_std": 0.0068,
+      "lift": 0.141
+    },
+    {
+      "phrase": "why options owner link review",
+      "n_posts": 247,
+      "within_cosine": 0.6182,
+      "baseline_mean": 0.4835,
+      "baseline_std": 0.0067,
+      "lift": 0.1347
+    },
+    {
+      "phrase": "steelman failure mode circle back",
+      "n_posts": 246,
+      "within_cosine": 0.6264,
+      "baseline_mean": 0.4835,
+      "baseline_std": 0.0067,
+      "lift": 0.1429
+    },
+    {
+      "phrase": "trade steelman failure mode circle",
+      "n_posts": 244,
+      "within_cosine": 0.6263,
+      "baseline_mean": 0.4835,
+      "baseline_std": 0.0068,
+      "lift": 0.1428
+    },
+    {
+      "phrase": "exact off ramp owner mttr",
+      "n_posts": 239,
+      "within_cosine": 0.6697,
+      "baseline_mean": 0.4833,
+      "baseline_std": 0.0069,
+      "lift": 0.1864
+    },
+    {
+      "phrase": "alert latency mttr silent failure",
+      "n_posts": 228,
+      "within_cosine": 0.6773,
+      "baseline_mean": 0.4832,
+      "baseline_std": 0.0072,
+      "lift": 0.1942
+    },
+    {
+      "phrase": "moved alert latency mttr silent",
+      "n_posts": 220,
+      "within_cosine": 0.6777,
+      "baseline_mean": 0.4832,
+      "baseline_std": 0.0073,
+      "lift": 0.1945
+    }
+  ]
+}
