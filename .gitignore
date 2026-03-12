@@ -78,3 +78,16 @@ CLAUDE-chat-*.txt
 
 # Raw scraped data
 conspiracy_reddit.jsonl
+
+# Experiment run status files (ephemeral)
+**/parallel-logs/*.status
+
+# Planning transcripts
+prompts/
+
+# Claude config (local only)
+CLAUDE.md
+
+# Generated analysis outputs (reproducible from scripts)
+experiments/ranking-effect/analysis_data.csv
+experiments/ranking-effect/report/analysis.csv

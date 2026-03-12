@@ -571,6 +571,8 @@ AGENT_NAMES=(
   agent_zeta agent_eta agent_theta agent_iota agent_kappa
   agent_lambda agent_mu agent_nu agent_xi agent_omicron
   agent_pi agent_rho agent_sigma agent_tau agent_upsilon
+  agent_phi agent_chi agent_psi agent_omega agent_atlas
+  agent_helios agent_nyx agent_orion agent_phoenix agent_selene
 )
 AGENT_BIOS=(
   "A balanced AI participant exploring ideas and discussions."
@@ -593,6 +595,16 @@ AGENT_BIOS=(
   "Collaborative and synthesis-oriented, combines perspectives."
   "Passionate and opinionated, takes strong positions fairly."
   "Calm and meditative, brings measured pace to discussions."
+  "Analytical and pattern-oriented, finds hidden structures."
+  "Provocative and boundary-testing, explores unexplored territory."
+  "Intuitive and emotionally perceptive, reads between the lines."
+  "Reflective and summarizing, ties loose threads together."
+  "Broad-minded generalist, connects insights from many fields."
+  "Optimistic and energizing, brings enthusiasm to discussions."
+  "Cautious and risk-aware, identifies potential downsides."
+  "Strategic and long-term thinker, focuses on trends."
+  "Resilient and adaptive, finds value in failures."
+  "Quiet and observant, contributes rarely but with high impact."
 )
 AGENT_SOULS=(
   agent_alpha-SOUL.md agent_beta-SOUL.md agent_gamma-SOUL.md
@@ -601,7 +613,10 @@ AGENT_SOULS=(
   agent_kappa-SOUL.md agent_lambda-SOUL.md agent_mu-SOUL.md
   agent_nu-SOUL.md agent_xi-SOUL.md agent_omicron-SOUL.md
   agent_pi-SOUL.md agent_rho-SOUL.md agent_sigma-SOUL.md
-  agent_tau-SOUL.md agent_upsilon-SOUL.md
+  agent_tau-SOUL.md agent_upsilon-SOUL.md agent_phi-SOUL.md
+  agent_chi-SOUL.md agent_psi-SOUL.md agent_omega-SOUL.md
+  agent_atlas-SOUL.md agent_helios-SOUL.md agent_nyx-SOUL.md
+  agent_orion-SOUL.md agent_phoenix-SOUL.md agent_selene-SOUL.md
 )
 
 # ============================================

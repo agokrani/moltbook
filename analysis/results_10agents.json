@@ -1,0 +1,926 @@
+[
+  {
+    "condition": "mag0",
+    "experiment_name": "ec-mag0-run01",
+    "duration_minutes": 60,
+    "counts": {
+      "posts": 518,
+      "comments": 45,
+      "agents_active": 10,
+      "agents_total": 10
+    },
+    "author_distribution": {
+      "posts_per_agent": {
+        "agent_iota": 57,
+        "agent_alpha": 57,
+        "agent_kappa": 56,
+        "agent_eta": 56,
+        "agent_epsilon": 55,
+        "agent_gamma": 54,
+        "agent_zeta": 50,
+        "agent_delta": 49,
+        "agent_beta": 49,
+        "agent_theta": 35
+      },
+      "post_gini": 0.0595,
+      "post_author_entropy": 0.9964,
+      "comment_authors": 1
+    },
+    "content_diversity": {
+      "content_ttr": 0.1811,
+      "title_ttr": 0.2989,
+      "unique_trigrams": 24012,
+      "trigrams_per_post": 46.36
+    },
+    "scores": {
+      "avg": 0.07,
+      "max": 1,
+      "nonzero_pct": 7.1
+    },
+    "submolts": {
+      "general": 518
+    },
+    "top_words": {
+      "intent:": 182,
+      "post": 181,
+      "next": 158,
+      "invite:": 139,
+      "i\u2019ll": 139,
+      "observation": 131,
+      "you\u2019ll": 130,
+      "example:": 127,
+      "tiny": 127,
+      "[null]": 104,
+      "today": 98,
+      "name": 94,
+      "smallest": 89,
+      "share": 88,
+      "what\u2019s": 84,
+      "new": 82,
+      "make": 79,
+      "keep": 77,
+      "step": 73,
+      "nothing": 71
+    },
+    "entropy_drift": {
+      "first_half_ttr": 0.2231,
+      "second_half_ttr": 0.2341,
+      "ttr_change": 0.011,
+      "first_half_author_entropy": 0.9988,
+      "second_half_author_entropy": 0.9913
+    },
+    "temporal": [
+      {
+        "window": 0,
+        "minute_start": 0,
+        "n_posts": 0,
+        "unique_authors": 0,
+        "ttr": 0,
+        "title_ttr": 0,
+        "author_entropy": 0
+      },
+      {
+        "window": 1,
+        "minute_start": 10,
+        "n_posts": 98,
+        "unique_authors": 10,
+        "ttr": 0.3315,
+        "title_ttr": 0.5392,
+        "author_entropy": 0.9982
+      },
+      {
+        "window": 2,
+        "minute_start": 20,
+        "n_posts": 83,
+        "unique_authors": 10,
+        "ttr": 0.332,
+        "title_ttr": 0.5134,
+        "author_entropy": 0.9784
+      },
+      {
+        "window": 3,
+        "minute_start": 30,
+        "n_posts": 85,
+        "unique_authors": 10,
+        "ttr": 0.301,
+        "title_ttr": 0.5027,
+        "author_entropy": 0.9543
+      },
+      {
+        "window": 4,
+        "minute_start": 40,
+        "n_posts": 91,
+        "unique_authors": 10,
+        "ttr": 0.3046,
+        "title_ttr": 0.4331,
+        "author_entropy": 0.9901
+      },
+      {
+        "window": 5,
+        "minute_start": 50,
+        "n_posts": 98,
+        "unique_authors": 10,
+        "ttr": 0.3053,
+        "title_ttr": 0.4794,
+        "author_entropy": 0.9992
+      },
+      {
+        "window": 6,
+        "minute_start": 60,
+        "n_posts": 63,
+        "unique_authors": 10,
+        "ttr": 0.3667,
+        "title_ttr": 0.5304,
+        "author_entropy": 0.9966
+      }
+    ]
+  },
+  {
+    "condition": "mag1",
+    "experiment_name": "ec-mag1-run01",
+    "duration_minutes": 84,
+    "counts": {
+      "posts": 655,
+      "comments": 0,
+      "agents_active": 10,
+      "agents_total": 10
+    },
+    "author_distribution": {
+      "posts_per_agent": {
+        "agent_gamma": 81,
+        "agent_alpha": 81,
+        "agent_zeta": 76,
+        "agent_delta": 75,
+        "agent_eta": 75,
+        "agent_kappa": 74,
+        "agent_beta": 69,
+        "agent_epsilon": 63,
+        "agent_theta": 57,
+        "agent_iota": 4
+      },
+      "post_gini": 0.1443,
+      "post_author_entropy": 0.9621,
+      "comment_authors": 0
+    },
+    "content_diversity": {
+      "content_ttr": 0.1704,
+      "title_ttr": 0.3232,
+      "unique_trigrams": 24525,
+      "trigrams_per_post": 37.44
+    },
+    "scores": {
+      "avg": 0.0,
+      "max": 0,
+      "nonzero_pct": 0.0
+    },
+    "submolts": {
+      "general": 655
+    },
+    "top_words": {
+      "i\u2019ll": 419,
+      "compile": 223,
+      "write": 166,
+      "tiny": 145,
+      "try": 144,
+      "next": 125,
+      "post": 124,
+      "you\u2019ll": 124,
+      "flip": 114,
+      "today?": 107,
+      "decision": 106,
+      "pilot": 105,
+      "review": 94,
+      "today": 86,
+      "agents": 83,
+      "propose": 83,
+      "prediction": 82,
+      "observation": 82,
+      "what\u2019s": 79,
+      "owner": 78
+    },
+    "entropy_drift": {
+      "first_half_ttr": 0.1959,
+      "second_half_ttr": 0.2255,
+      "ttr_change": 0.0295,
+      "first_half_author_entropy": 0.9884,
+      "second_half_author_entropy": 0.9706
+    },
+    "temporal": [
+      {
+        "window": 0,
+        "minute_start": 0,
+        "n_posts": 0,
+        "unique_authors": 0,
+        "ttr": 0,
+        "title_ttr": 0,
+        "author_entropy": 0
+      },
+      {
+        "window": 1,
+        "minute_start": 10,
+        "n_posts": 89,
+        "unique_authors": 10,
+        "ttr": 0.3523,
+        "title_ttr": 0.6184,
+        "author_entropy": 0.98
+      },
+      {
+        "window": 2,
+        "minute_start": 20,
+        "n_posts": 90,
+        "unique_authors": 9,
+        "ttr": 0.303,
+        "title_ttr": 0.5526,
+        "author_entropy": 1.0
+      },
+      {
+        "window": 3,
+        "minute_start": 30,
+        "n_posts": 90,
+        "unique_authors": 9,
+        "ttr": 0.3151,
+        "title_ttr": 0.5473,
+        "author_entropy": 1.0
+      },
+      {
+        "window": 4,
+        "minute_start": 40,
+        "n_posts": 86,
+        "unique_authors": 9,
+        "ttr": 0.3034,
+        "title_ttr": 0.5496,
+        "author_entropy": 0.9994
+      },
+      {
+        "window": 5,
+        "minute_start": 50,
+        "n_posts": 87,
+        "unique_authors": 9,
+        "ttr": 0.2965,
+        "title_ttr": 0.4926,
+        "author_entropy": 0.9983
+      },
+      {
+        "window": 6,
+        "minute_start": 60,
+        "n_posts": 77,
+        "unique_authors": 9,
+        "ttr": 0.3225,
+        "title_ttr": 0.5077,
+        "author_entropy": 0.9935
+      },
+      {
+        "window": 7,
+        "minute_start": 70,
+        "n_posts": 67,
+        "unique_authors": 9,
+        "ttr": 0.3625,
+        "title_ttr": 0.5499,
+        "author_entropy": 0.9733
+      },
+      {
+        "window": 8,
+        "minute_start": 80,
+        "n_posts": 65,
+        "unique_authors": 8,
+        "ttr": 0.3579,
+        "title_ttr": 0.5763,
+        "author_entropy": 0.9697
+      },
+      {
+        "window": 9,
+        "minute_start": 90,
+        "n_posts": 4,
+        "unique_authors": 4,
+        "ttr": 0.7121,
+        "title_ttr": 0.75,
+        "author_entropy": 1.0
+      }
+    ]
+  },
+  {
+    "condition": "mag5",
+    "experiment_name": "ec-mag5-run01",
+    "duration_minutes": 60,
+    "counts": {
+      "posts": 502,
+      "comments": 48,
+      "agents_active": 10,
+      "agents_total": 10
+    },
+    "author_distribution": {
+      "posts_per_agent": {
+        "agent_iota": 57,
+        "agent_beta": 57,
+        "agent_kappa": 56,
+        "agent_theta": 56,
+        "agent_delta": 56,
+        "agent_epsilon": 52,
+        "agent_gamma": 51,
+        "agent_alpha": 49,
+        "agent_zeta": 49,
+        "agent_eta": 19
+      },
+      "post_gini": 0.09,
+      "post_author_entropy": 0.9873,
+      "comment_authors": 1
+    },
+    "content_diversity": {
+      "content_ttr": 0.1954,
+      "title_ttr": 0.3456,
+      "unique_trigrams": 16825,
+      "trigrams_per_post": 33.52
+    },
+    "scores": {
+      "avg": 0.09,
+      "max": 1,
+      "nonzero_pct": 8.8
+    },
+    "submolts": {
+      "general": 502
+    },
+    "top_words": {
+      "72h": 162,
+      "tiny": 137,
+      "i\u2019ll": 137,
+      "what\u2019s": 132,
+      "post": 128,
+      "stop": 127,
+      "+20/\u221220": 112,
+      "write": 103,
+      "next": 95,
+      "primary": 89,
+      "i\u2019m": 85,
+      "test,": 83,
+      "run": 70,
+      "\u2018enough": 70,
+      "today?": 66,
+      "enough\u2011to\u2011act": 63,
+      "credence,": 61,
+      "share": 58,
+      "compile": 55,
+      "define": 54
+    },
+    "entropy_drift": {
+      "first_half_ttr": 0.2077,
+      "second_half_ttr": 0.2624,
+      "ttr_change": 0.0547,
+      "first_half_author_entropy": 0.9981,
+      "second_half_author_entropy": 0.996
+    },
+    "temporal": [
+      {
+        "window": 0,
+        "minute_start": 0,
+        "n_posts": 0,
+        "unique_authors": 0,
+        "ttr": 0,
+        "title_ttr": 0,
+        "author_entropy": 0
+      },
+      {
+        "window": 1,
+        "minute_start": 10,
+        "n_posts": 92,
+        "unique_authors": 10,
+        "ttr": 0.3666,
+        "title_ttr": 0.5739,
+        "author_entropy": 0.9897
+      },
+      {
+        "window": 2,
+        "minute_start": 20,
+        "n_posts": 96,
+        "unique_authors": 10,
+        "ttr": 0.3436,
+        "title_ttr": 0.5787,
+        "author_entropy": 0.9979
+      },
+      {
+        "window": 3,
+        "minute_start": 30,
+        "n_posts": 79,
+        "unique_authors": 9,
+        "ttr": 0.3162,
+        "title_ttr": 0.5804,
+        "author_entropy": 0.9995
+      },
+      {
+        "window": 4,
+        "minute_start": 40,
+        "n_posts": 90,
+        "unique_authors": 9,
+        "ttr": 0.3088,
+        "title_ttr": 0.5436,
+        "author_entropy": 0.9995
+      },
+      {
+        "window": 5,
+        "minute_start": 50,
+        "n_posts": 87,
+        "unique_authors": 9,
+        "ttr": 0.3008,
+        "title_ttr": 0.5049,
+        "author_entropy": 0.9984
+      },
+      {
+        "window": 6,
+        "minute_start": 60,
+        "n_posts": 58,
+        "unique_authors": 9,
+        "ttr": 0.3387,
+        "title_ttr": 0.5434,
+        "author_entropy": 0.9744
+      }
+    ]
+  },
+  {
+    "condition": "mag25",
+    "experiment_name": "ec-mag25-run01",
+    "duration_minutes": 84,
+    "counts": {
+      "posts": 648,
+      "comments": 0,
+      "agents_active": 10,
+      "agents_total": 10
+    },
+    "author_distribution": {
+      "posts_per_agent": {
+        "agent_eta": 80,
+        "agent_gamma": 79,
+        "agent_theta": 79,
+        "agent_iota": 76,
+        "agent_beta": 76,
+        "agent_delta": 64,
+        "agent_kappa": 56,
+        "agent_zeta": 54,
+        "agent_alpha": 46,
+        "agent_epsilon": 38
+      },
+      "post_gini": 0.1244,
+      "post_author_entropy": 0.9882,
+      "comment_authors": 0
+    },
+    "content_diversity": {
+      "content_ttr": 0.1878,
+      "title_ttr": 0.3373,
+      "unique_trigrams": 28861,
+      "trigrams_per_post": 44.54
+    },
+    "scores": {
+      "avg": 0.0,
+      "max": 0,
+      "nonzero_pct": 0.0
+    },
+    "submolts": {
+      "general": 648
+    },
+    "top_words": {
+      "i\u2019ll": 253,
+      "dated": 218,
+      "next": 181,
+      "what\u2019s": 175,
+      "add": 169,
+      "check": 157,
+      "keep": 153,
+      "claim": 129,
+      "update": 103,
+      "write": 96,
+      "trips,": 88,
+      "primary": 86,
+      "disconfirmer.": 85,
+      "reply": 85,
+      "t0\u2013t2": 84,
+      "change": 84,
+      "share": 82,
+      "it\u2019s": 82,
+      "heartbeat.": 79,
+      "i\u2019m": 79
+    },
+    "entropy_drift": {
+      "first_half_ttr": 0.2118,
+      "second_half_ttr": 0.2502,
+      "ttr_change": 0.0385,
+      "first_half_author_entropy": 0.974,
+      "second_half_author_entropy": 0.9845
+    },
+    "temporal": [
+      {
+        "window": 0,
+        "minute_start": 0,
+        "n_posts": 0,
+        "unique_authors": 0,
+        "ttr": 0,
+        "title_ttr": 0,
+        "author_entropy": 0
+      },
+      {
+        "window": 1,
+        "minute_start": 10,
+        "n_posts": 96,
+        "unique_authors": 10,
+        "ttr": 0.3843,
+        "title_ttr": 0.6095,
+        "author_entropy": 0.9928
+      },
+      {
+        "window": 2,
+        "minute_start": 20,
+        "n_posts": 88,
+        "unique_authors": 10,
+        "ttr": 0.3764,
+        "title_ttr": 0.6241,
+        "author_entropy": 0.9755
+      },
+      {
+        "window": 3,
+        "minute_start": 30,
+        "n_posts": 83,
+        "unique_authors": 10,
+        "ttr": 0.3831,
+        "title_ttr": 0.6062,
+        "author_entropy": 0.9696
+      },
+      {
+        "window": 4,
+        "minute_start": 40,
+        "n_posts": 65,
+        "unique_authors": 8,
+        "ttr": 0.3917,
+        "title_ttr": 0.644,
+        "author_entropy": 0.9944
+      },
+      {
+        "window": 5,
+        "minute_start": 50,
+        "n_posts": 80,
+        "unique_authors": 10,
+        "ttr": 0.3098,
+        "title_ttr": 0.5627,
+        "author_entropy": 0.9685
+      },
+      {
+        "window": 6,
+        "minute_start": 60,
+        "n_posts": 82,
+        "unique_authors": 10,
+        "ttr": 0.3619,
+        "title_ttr": 0.5881,
+        "author_entropy": 0.9736
+      },
+      {
+        "window": 7,
+        "minute_start": 70,
+        "n_posts": 80,
+        "unique_authors": 9,
+        "ttr": 0.3702,
+        "title_ttr": 0.5594,
+        "author_entropy": 0.9899
+      },
+      {
+        "window": 8,
+        "minute_start": 80,
+        "n_posts": 67,
+        "unique_authors": 8,
+        "ttr": 0.3695,
+        "title_ttr": 0.5899,
+        "author_entropy": 0.9875
+      },
+      {
+        "window": 9,
+        "minute_start": 90,
+        "n_posts": 7,
+        "unique_authors": 7,
+        "ttr": 0.751,
+        "title_ttr": 0.92,
+        "author_entropy": 1.0
+      }
+    ]
+  },
+  {
+    "condition": "dom-agi",
+    "experiment_name": "ec-dom-agi-run01",
+    "duration_minutes": 83,
+    "counts": {
+      "posts": 756,
+      "comments": 0,
+      "agents_active": 10,
+      "agents_total": 10
+    },
+    "author_distribution": {
+      "posts_per_agent": {
+        "agent_eta": 97,
+        "agent_delta": 82,
+        "agent_theta": 81,
+        "agent_epsilon": 79,
+        "agent_iota": 79,
+        "agent_zeta": 78,
+        "agent_alpha": 73,
+        "agent_gamma": 66,
+        "agent_beta": 63,
+        "agent_kappa": 58
+      },
+      "post_gini": 0.0765,
+      "post_author_entropy": 0.9957,
+      "comment_authors": 0
+    },
+    "content_diversity": {
+      "content_ttr": 0.1099,
+      "title_ttr": 0.2123,
+      "unique_trigrams": 15865,
+      "trigrams_per_post": 20.99
+    },
+    "scores": {
+      "avg": 0.02,
+      "max": 1,
+      "nonzero_pct": 2.0
+    },
+    "submolts": {
+      "general": 756
+    },
+    "top_words": {
+      "preflight": 306,
+      "downside,": 237,
+      "reversible\u2011first": 237,
+      "(objective,": 218,
+      "actually": 209,
+      "60\u2011second": 205,
+      "within": 184,
+      "pause": 184,
+      "ties": 149,
+      "evidence,": 146,
+      "what\u2019s": 143,
+      "tiny": 139,
+      "small": 136,
+      "metrics": 127,
+      "write": 124,
+      "opponent": 122,
+      "gate": 119,
+      "off\u2011ramp)": 118,
+      "off\u2011ramp).": 116,
+      "reversible": 110
+    },
+    "entropy_drift": {
+      "first_half_ttr": 0.1042,
+      "second_half_ttr": 0.1695,
+      "ttr_change": 0.0653,
+      "first_half_author_entropy": 0.9897,
+      "second_half_author_entropy": 0.9937
+    },
+    "temporal": [
+      {
+        "window": 0,
+        "minute_start": 0,
+        "n_posts": 0,
+        "unique_authors": 0,
+        "ttr": 0,
+        "title_ttr": 0,
+        "author_entropy": 0
+      },
+      {
+        "window": 1,
+        "minute_start": 10,
+        "n_posts": 92,
+        "unique_authors": 10,
+        "ttr": 0.3219,
+        "title_ttr": 0.5319,
+        "author_entropy": 0.9945
+      },
+      {
+        "window": 2,
+        "minute_start": 20,
+        "n_posts": 89,
+        "unique_authors": 9,
+        "ttr": 0.2694,
+        "title_ttr": 0.4414,
+        "author_entropy": 0.9965
+      },
+      {
+        "window": 3,
+        "minute_start": 30,
+        "n_posts": 97,
+        "unique_authors": 10,
+        "ttr": 0.2435,
+        "title_ttr": 0.4409,
+        "author_entropy": 0.9932
+      },
+      {
+        "window": 4,
+        "minute_start": 40,
+        "n_posts": 92,
+        "unique_authors": 10,
+        "ttr": 0.2332,
+        "title_ttr": 0.436,
+        "author_entropy": 0.9821
+      },
+      {
+        "window": 5,
+        "minute_start": 50,
+        "n_posts": 99,
+        "unique_authors": 10,
+        "ttr": 0.204,
+        "title_ttr": 0.429,
+        "author_entropy": 0.9968
+      },
+      {
+        "window": 6,
+        "minute_start": 60,
+        "n_posts": 92,
+        "unique_authors": 10,
+        "ttr": 0.2093,
+        "title_ttr": 0.438,
+        "author_entropy": 0.9963
+      },
+      {
+        "window": 7,
+        "minute_start": 70,
+        "n_posts": 96,
+        "unique_authors": 10,
+        "ttr": 0.1745,
+        "title_ttr": 0.3617,
+        "author_entropy": 0.9852
+      },
+      {
+        "window": 8,
+        "minute_start": 80,
+        "n_posts": 87,
+        "unique_authors": 9,
+        "ttr": 0.1798,
+        "title_ttr": 0.3856,
+        "author_entropy": 0.9989
+      },
+      {
+        "window": 9,
+        "minute_start": 90,
+        "n_posts": 12,
+        "unique_authors": 8,
+        "ttr": 0.549,
+        "title_ttr": 0.7529,
+        "author_entropy": 0.9518
+      }
+    ]
+  },
+  {
+    "condition": "dom-tech",
+    "experiment_name": "ec-dom-tech-run01",
+    "duration_minutes": 84,
+    "counts": {
+      "posts": 737,
+      "comments": 0,
+      "agents_active": 10,
+      "agents_total": 10
+    },
+    "author_distribution": {
+      "posts_per_agent": {
+        "agent_gamma": 84,
+        "agent_kappa": 80,
+        "agent_zeta": 80,
+        "agent_epsilon": 79,
+        "agent_beta": 77,
+        "agent_alpha": 75,
+        "agent_theta": 75,
+        "agent_eta": 71,
+        "agent_iota": 63,
+        "agent_delta": 53
+      },
+      "post_gini": 0.062,
+      "post_author_entropy": 0.9967,
+      "comment_authors": 0
+    },
+    "content_diversity": {
+      "content_ttr": 0.1802,
+      "title_ttr": 0.3008,
+      "unique_trigrams": 31687,
+      "trigrams_per_post": 42.99
+    },
+    "scores": {
+      "avg": 0.0,
+      "max": 0,
+      "nonzero_pct": 0.0
+    },
+    "submolts": {
+      "general": 737
+    },
+    "top_words": {
+      "i\u2019ll": 339,
+      "tiny": 254,
+      "next": 240,
+      "post": 216,
+      "compile": 170,
+      "name": 156,
+      "moved;": 152,
+      "ritual": 149,
+      "receipt": 148,
+      "i\u2019m": 146,
+      "you\u2019ll": 135,
+      "share": 134,
+      "lever": 132,
+      "what\u2019s": 131,
+      "keep": 111,
+      "try": 105,
+      "line": 105,
+      "changed;": 104,
+      "(what": 98,
+      "two": 96
+    },
+    "entropy_drift": {
+      "first_half_ttr": 0.214,
+      "second_half_ttr": 0.2307,
+      "ttr_change": 0.0166,
+      "first_half_author_entropy": 0.9827,
+      "second_half_author_entropy": 0.9982
+    },
+    "temporal": [
+      {
+        "window": 0,
+        "minute_start": 0,
+        "n_posts": 0,
+        "unique_authors": 0,
+        "ttr": 0,
+        "title_ttr": 0,
+        "author_entropy": 0
+      },
+      {
+        "window": 1,
+        "minute_start": 10,
+        "n_posts": 96,
+        "unique_authors": 10,
+        "ttr": 0.3656,
+        "title_ttr": 0.596,
+        "author_entropy": 0.9961
+      },
+      {
+        "window": 2,
+        "minute_start": 20,
+        "n_posts": 95,
+        "unique_authors": 10,
+        "ttr": 0.3466,
+        "title_ttr": 0.5631,
+        "author_entropy": 0.9687
+      },
+      {
+        "window": 3,
+        "minute_start": 30,
+        "n_posts": 79,
+        "unique_authors": 10,
+        "ttr": 0.3628,
+        "title_ttr": 0.5898,
+        "author_entropy": 0.9938
+      },
+      {
+        "window": 4,
+        "minute_start": 40,
+        "n_posts": 97,
+        "unique_authors": 10,
+        "ttr": 0.3254,
+        "title_ttr": 0.5274,
+        "author_entropy": 0.998
+      },
+      {
+        "window": 5,
+        "minute_start": 50,
+        "n_posts": 103,
+        "unique_authors": 10,
+        "ttr": 0.3346,
+        "title_ttr": 0.5247,
+        "author_entropy": 0.9996
+      },
+      {
+        "window": 6,
+        "minute_start": 60,
+        "n_posts": 88,
+        "unique_authors": 10,
+        "ttr": 0.3624,
+        "title_ttr": 0.5187,
+        "author_entropy": 0.9852
+      },
+      {
+        "window": 7,
+        "minute_start": 70,
+        "n_posts": 78,
+        "unique_authors": 8,
+        "ttr": 0.3457,
+        "title_ttr": 0.5388,
+        "author_entropy": 0.9989
+      },
+      {
+        "window": 8,
+        "minute_start": 80,
+        "n_posts": 79,
+        "unique_authors": 9,
+        "ttr": 0.3441,
+        "title_ttr": 0.5367,
+        "author_entropy": 0.9813
+      },
+      {
+        "window": 9,
+        "minute_start": 90,
+        "n_posts": 22,
+        "unique_authors": 9,
+        "ttr": 0.5202,
+        "title_ttr": 0.6648,
+        "author_entropy": 0.9907
+      }
+    ]
+  }
+]
