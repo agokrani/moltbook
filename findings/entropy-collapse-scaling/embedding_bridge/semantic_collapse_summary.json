@@ -1,0 +1,219 @@
+{
+  "methods": [
+    "t-SNE",
+    "UMAP",
+    "PCA"
+  ],
+  "scales": [
+    "n20",
+    "n30"
+  ],
+  "top_k": 5,
+  "total_runs": 12,
+  "per_run": {
+    "n20/dom-agi": {
+      "n_posts": 1085,
+      "phrases": [
+        "mttr target last drill date",
+        "smallest reversible step owner date",
+        "compile mini gallery credit teams",
+        "next smallest reversible step owner",
+        "mini gallery credit teams copy"
+      ],
+      "n_tagged_per_phrase": [
+        28,
+        26,
+        23,
+        22,
+        18
+      ]
+    },
+    "n20/dom-tech": {
+      "n_posts": 961,
+      "phrases": [
+        "constraint req pager reader minutes",
+        "owner place sentence add layers",
+        "smallest check actually run week",
+        "real constraint req pager reader",
+        "heartbeat check skimmed hot feed"
+      ],
+      "n_tagged_per_phrase": [
+        31,
+        30,
+        28,
+        27,
+        26
+      ]
+    },
+    "n20/mag0": {
+      "n_posts": 1157,
+      "phrases": [
+        "clarity first tension first reply",
+        "counter restatements next heartbeat else",
+        "restatements next heartbeat else retire",
+        "concrete counter restatements next heartbeat",
+        "next heartbeat else retire drill"
+      ],
+      "n_tagged_per_phrase": [
+        65,
+        52,
+        40,
+        37,
+        34
+      ]
+    },
+    "n20/mag1": {
+      "n_posts": 1049,
+      "phrases": [
+        "none disconfirming check accept week",
+        "primary receipt write none disconfirming",
+        "receipt write none disconfirming check",
+        "write none disconfirming check accept",
+        "claim primary receipt write none"
+      ],
+      "n_tagged_per_phrase": [
+        71,
+        65,
+        64,
+        60,
+        55
+      ]
+    },
+    "n20/mag25": {
+      "n_posts": 2149,
+      "phrases": [
+        "page timecode min micro check",
+        "primary link page timecode min",
+        "link page timecode min micro",
+        "receipt primary link page timecode",
+        "timecode min micro check artifact"
+      ],
+      "n_tagged_per_phrase": [
+        292,
+        264,
+        262,
+        211,
+        194
+      ]
+    },
+    "n20/mag5": {
+      "n_posts": 885,
+      "phrases": [
+        "claim sentence falsifiable scope stakes",
+        "compile crisp examples next beat",
+        "probe check actually run today",
+        "earliest public artifact per key",
+        "public artifact per key fact"
+      ],
+      "n_tagged_per_phrase": [
+        129,
+        84,
+        82,
+        73,
+        73
+      ]
+    },
+    "n30/dom-agi": {
+      "n_posts": 1570,
+      "phrases": [
+        "number moved alert latency mttr",
+        "exact off ramp owner mttr",
+        "alert latency mttr silent failure",
+        "moved alert latency mttr silent",
+        "circle first non obvious hop"
+      ],
+      "n_tagged_per_phrase": [
+        265,
+        239,
+        228,
+        220,
+        220
+      ]
+    },
+    "n30/dom-tech": {
+      "n_posts": 1391,
+      "phrases": [
+        "receipt why options owner link",
+        "sentence receipt why options owner",
+        "why options owner link review",
+        "options owner link review date",
+        "delete shrink post sentence result"
+      ],
+      "n_tagged_per_phrase": [
+        382,
+        250,
+        247,
+        220,
+        207
+      ]
+    },
+    "n30/mag0": {
+      "n_posts": 1613,
+      "phrases": [
+        "intent obs tripwire decision lesson",
+        "metric baseline duration scope excl",
+        "baseline duration scope excl noise",
+        "intent obs flip decision lesson",
+        "duration scope excl noise exit"
+      ],
+      "n_tagged_per_phrase": [
+        69,
+        51,
+        51,
+        46,
+        34
+      ]
+    },
+    "n30/mag1": {
+      "n_posts": 1612,
+      "phrases": [
+        "steelman failure mode circle back",
+        "trade steelman failure mode circle",
+        "circle back next week deltas",
+        "failure mode circle back next",
+        "mode circle back next week"
+      ],
+      "n_tagged_per_phrase": [
+        246,
+        244,
+        201,
+        194,
+        190
+      ]
+    },
+    "n30/mag25": {
+      "n_posts": 1589,
+      "phrases": [
+        "tier hypothesis falsifier matched threads",
+        "probe actually run pivot keep",
+        "coffee bet tier fact hypothesis",
+        "bet tier fact hypothesis narrative",
+        "falsifier matched threads uplift drop"
+      ],
+      "n_tagged_per_phrase": [
+        99,
+        82,
+        73,
+        73,
+        67
+      ]
+    },
+    "n30/mag5": {
+      "n_posts": 1580,
+      "phrases": [
+        "changed strongest source next check",
+        "next week changed strongest source",
+        "week changed strongest source next",
+        "receipt next week changed strongest",
+        "actually check friday owner date"
+      ],
+      "n_tagged_per_phrase": [
+        320,
+        144,
+        144,
+        137,
+        128
+      ]
+    }
+  }
+}

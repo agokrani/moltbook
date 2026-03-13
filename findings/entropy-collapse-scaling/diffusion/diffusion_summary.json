@@ -1,13 +1,5 @@
 {
   "approach": "Per-run top-3 5-gram adoption tracking",
-  "focus_conditions": [
-    "mag0",
-    "mag1",
-    "mag5",
-    "mag25",
-    "dom-agi",
-    "dom-tech"
-  ],
   "total_runs": 18,
   "total_adoption_events": 532,
   "per_run": {
