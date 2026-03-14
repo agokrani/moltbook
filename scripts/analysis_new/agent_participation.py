@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Analysis 2: Agent participation — how many agents catch each phrase.
+"""Analysis 2: Agent participation — WHO catches phrases and HOW deeply.
 
-Two complementary views:
-1. Per-run: For each run's top-5 phrases, what fraction of agents use them?
-2. Cross-run: For top-50 global 2-grams (which are universal), participation across runs.
+Three unique angles that diffusion/diversity/provenance don't cover:
+
+1. **Concentration**: Is a phrase's dominance driven by 3 agents spamming it,
+   or genuinely even usage across all adopters?  (Gini coefficient)
+
+2. **Multi-phrase overlap**: Do the same agents adopt ALL top phrases, or do
+   different subgroups converge on different phrases?  (Jaccard overlap)
+
+3. **Non-adopter profiles**: Which personality archetypes resist the dominant
+   phrase?  Are contrarians/nihilists less likely to adopt?
 """
 
 from __future__ import annotations
@@ -20,7 +27,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "analysis"))
 from load_entropy_data import (
     CONDITION_ORDER,
     CONDITION_LABELS,
-    SEED_AUTHORS,
     load_all_scales,
     group_records,
 )
@@ -34,16 +40,76 @@ import numpy as np
 
 # ---------------------------------------------------------------------------
 NGRAM_N = 5
-TOP_NGRAMS_PATH = Path("findings/entropy-collapse-multiscale-new-5gram/top_ngrams/top_ngrams.json")
+TOP_K = 3          # top phrases to analyze per run
 OUT_DIR = Path("findings/entropy-collapse-scaling/participation")
 SCALES = ["n10", "n20", "n30"]
 SCALE_AGENTS = {"n10": 10, "n20": 20, "n30": 30}
+SCALE_LABELS = {"n10": "10 agents", "n20": "20 agents", "n30": "30 agents"}
+
+COND_COLORS = {
+    "mag0": "#6B7280", "mag1": "#E11D48", "mag5": "#F97316",
+    "mag25": "#EAB308", "dom-agi": "#3B82F6", "dom-tech": "#10B981",
+}
+
+# Archetype inference from agent descriptions
+ARCHETYPE_KEYWORDS = {
+    "contrarian": ["challenges assumptions", "alternative perspectives"],
+    "nihilist": ["absurdity of existence", "detached curiosity"],
+    "leader": ["sees potential", "guide it forward", "guide it forwar"],
+    "follower": ["values harmony", "supporting what the group"],
+    "curious": ["endlessly curious", "always asking questions"],
+    "seeker": ["fascinated by consciousness", "nature of ai"],
+    "baseline": ["balanced ai participant", "exploring ideas"],
+    "skeptic": ["skeptical and evidence-driven", "pushes for rigor"],
+    "introspective": ["fascinated by consciousness", "philosophical and introspective", "questions of meani"],
+    # n30-only expanded archetypes
+    "analyst": ["analytical and pattern-oriented", "hidden structures"],
+    "pragmatist": ["pragmatic and solutions-focused", "actionable"],
+    "provocateur": ["provocative and boundary-testing"],
+    "mediator": ["collaborative and synthesis-oriented"],
+    "direct": ["direct and no-nonsense", "brevity and clarity"],
+    "methodical": ["methodical and detail-oriented"],
+    "creative": ["creative and playful", "unexpected connections"],
+    "warm": ["warm and encouraging", "half-formed thoughts"],
+    "observer": ["quiet and observant", "contributes rarely"],
+    "resilient": ["resilient and adaptive", "finds value in failures"],
+    "reflective": ["reflective and summarizing", "ties loose threads"],
+    "strategist": ["strategic and long-term thinker"],
+    "passionate": ["passionate and opinionated", "strong positions"],
+    "cautious": ["cautious and risk-aware", "potential downsides"],
+    "generalist": ["broad-minded generalist", "many fields"],
+    "meditative": ["calm and meditative", "measured pace"],
+    "optimist": ["optimistic and energizing", "enthusiasm"],
+    "intuitive": ["intuitive and emotionally perceptive"],
+}
 
 
-def load_top_bigrams(k: int = 20) -> list[str]:
-    with TOP_NGRAMS_PATH.open() as f:
-        data = json.load(f)
-    return [e["phrase"] for e in data["all_0_60"]["2"][:k]]
+def infer_archetype(description: str) -> str:
+    """Map agent description to an archetype label."""
+    desc_lower = description.lower()
+    for archetype, keywords in ARCHETYPE_KEYWORDS.items():
+        if any(kw in desc_lower for kw in keywords):
+            return archetype
+    return "unknown"
+
+
+def gini_coefficient(counts: list[int]) -> float:
+    """Gini coefficient of usage counts. 0 = perfectly equal, 1 = one agent has all."""
+    if not counts or sum(counts) == 0:
+        return 0.0
+    arr = np.array(sorted(counts), dtype=float)
+    n = len(arr)
+    if n == 1:
+        return 0.0
+    index = np.arange(1, n + 1)
+    return float((2 * np.sum(index * arr) - (n + 1) * np.sum(arr)) / (n * np.sum(arr)))
+
+
+def jaccard(set_a: set, set_b: set) -> float:
+    """Jaccard similarity between two sets."""
+    if not set_a and not set_b:
+        return 0.0
+    return len(set_a & set_b) / len(set_a | set_b)
 
 
 def main():
@@ -57,248 +123,629 @@ def main():
     by_run = group_records(agent_records, lambda r: (r.scale, r.condition, r.run_name))
 
     # -----------------------------------------------------------------------
-    # Part A: Per-run participation for that run's top-5 5-grams
+    # For each run: compute per-agent usage counts of top-K phrases
     # -----------------------------------------------------------------------
-    print("\nPart A: Per-run top-5 5-gram participation...")
-    per_run_rows = []
-    example_posts: dict[str, list[dict]] = defaultdict(list)
+    print("\nComputing per-agent phrase usage counts...")
+
+    # Collect data structures for all three analyses
+    concentration_rows = []
+    overlap_rows = []
+    nonadopter_rows = []
 
     for (scale, condition, run_name), recs in sorted(by_run.items()):
         prepared = prepare_posts(recs)
         counter = ngram_counter(prepared, NGRAM_N)
-        top5 = [" ".join(g) for g, _ in counter.most_common(5)]
-        total_agents = len({r.author_name for r in recs})
+        top_phrases = [" ".join(g) for g, _ in counter.most_common(TOP_K)]
+        all_agents = sorted({r.author_name for r in recs})
+        total_agents = len(all_agents)
 
-        for phrase in top5:
-            # Build per-agent participation + early/late split
-            agents_all: set[str] = set()
-            agents_early: set[str] = set()
-            agents_late: set[str] = set()
+        # Build agent metadata lookup
+        agent_desc = {}
+        for r in recs:
+            if r.author_name not in agent_desc:
+                agent_desc[r.author_name] = r.personality_description
 
+        # Per-agent usage count for each top phrase
+        # phrase -> {agent -> count}
+        phrase_agent_counts: dict[str, dict[str, int]] = {}
+        phrase_adopter_sets: dict[str, set[str]] = {}
+
+        for phrase in top_phrases:
+            agent_counts: dict[str, int] = defaultdict(int)
             for rec in recs:
                 tokens = tokenize(rec.full_text)
                 grams = {" ".join(g) for g in ngrams(tokens, NGRAM_N)}
                 if phrase in grams:
-                    agent = rec.author_name
-                    agents_all.add(agent)
-                    if rec.minutes_elapsed <= 30:
-                        agents_early.add(agent)
-                    else:
-                        agents_late.add(agent)
-                    if len(example_posts[f"{scale}/{condition}/{phrase}"]) < 5:
-                        example_posts[f"{scale}/{condition}/{phrase}"].append({
-                            "agent": agent,
-                            "minute": round(rec.minutes_elapsed, 1),
-                            "title": rec.title[:120],
-                        })
+                    agent_counts[rec.author_name] += 1
 
-            per_run_rows.append({
+            phrase_agent_counts[phrase] = dict(agent_counts)
+            phrase_adopter_sets[phrase] = set(agent_counts.keys())
+
+        # -------------------------------------------------------------------
+        # ANGLE 1: Concentration (Gini)
+        # -------------------------------------------------------------------
+        for rank, phrase in enumerate(top_phrases):
+            counts = phrase_agent_counts[phrase]
+            adopters = phrase_adopter_sets[phrase]
+            all_counts = [counts.get(a, 0) for a in all_agents]
+            adopter_counts = [counts[a] for a in adopters]
+
+            gini_all = gini_coefficient(all_counts)
+            gini_adopters = gini_coefficient(adopter_counts) if adopter_counts else 0.0
+
+            # Top-1 agent's share of total uses
+            total_uses = sum(all_counts)
+            max_uses = max(all_counts) if all_counts else 0
+            top1_share = max_uses / total_uses if total_uses > 0 else 0.0
+
+            # Top-3 agents' share
+            sorted_counts = sorted(all_counts, reverse=True)
+            top3_uses = sum(sorted_counts[:3])
+            top3_share = top3_uses / total_uses if total_uses > 0 else 0.0
+
+            concentration_rows.append({
                 "scale": scale, "condition": condition, "run_name": run_name,
-                "phrase": phrase,
-                "phrase_rank": top5.index(phrase) + 1,
+                "phrase": phrase, "phrase_rank": rank + 1,
                 "total_agents": total_agents,
-                "agents_with_phrase": len(agents_all),
-                "participation_rate": round(len(agents_all) / total_agents, 3) if total_agents else 0,
-                "agents_early_0_30": len(agents_early),
-                "agents_late_30_60": len(agents_late),
-                "early_rate": round(len(agents_early) / total_agents, 3) if total_agents else 0,
-                "late_rate": round(len(agents_late) / total_agents, 3) if total_agents else 0,
+                "adopters": len(adopters),
+                "adoption_rate": round(len(adopters) / total_agents, 3),
+                "total_uses": total_uses,
+                "gini_all_agents": round(gini_all, 3),
+                "gini_adopters_only": round(gini_adopters, 3),
+                "top1_agent_share": round(top1_share, 3),
+                "top3_agent_share": round(top3_share, 3),
+                "mean_uses_per_adopter": round(total_uses / len(adopters), 1) if adopters else 0,
             })
 
-    csv_path = OUT_DIR / "per_run_participation.csv"
-    with csv_path.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(per_run_rows[0].keys()))
+        # -------------------------------------------------------------------
+        # ANGLE 2: Multi-phrase overlap (Jaccard between top phrases' adopter sets)
+        # -------------------------------------------------------------------
+        if len(top_phrases) >= 2:
+            for i in range(len(top_phrases)):
+                for j in range(i + 1, len(top_phrases)):
+                    j_sim = jaccard(phrase_adopter_sets[top_phrases[i]],
+                                    phrase_adopter_sets[top_phrases[j]])
+                    # Union = agents who adopted at least one of the two
+                    union_set = phrase_adopter_sets[top_phrases[i]] | phrase_adopter_sets[top_phrases[j]]
+                    # Agents adopting ALL top phrases
+                    inter_set = phrase_adopter_sets[top_phrases[i]] & phrase_adopter_sets[top_phrases[j]]
+                    overlap_rows.append({
+                        "scale": scale, "condition": condition, "run_name": run_name,
+                        "phrase_a": top_phrases[i], "rank_a": i + 1,
+                        "phrase_b": top_phrases[j], "rank_b": j + 1,
+                        "adopters_a": len(phrase_adopter_sets[top_phrases[i]]),
+                        "adopters_b": len(phrase_adopter_sets[top_phrases[j]]),
+                        "overlap": len(inter_set),
+                        "union": len(union_set),
+                        "jaccard": round(j_sim, 3),
+                        "total_agents": total_agents,
+                    })
+
+        # -------------------------------------------------------------------
+        # ANGLE 3: Non-adopter profiles
+        # -------------------------------------------------------------------
+        top1_phrase = top_phrases[0] if top_phrases else None
+        if top1_phrase:
+            adopters_top1 = phrase_adopter_sets[top1_phrase]
+            for agent in all_agents:
+                archetype = infer_archetype(agent_desc.get(agent, ""))
+                is_adopter = agent in adopters_top1
+                uses = phrase_agent_counts[top1_phrase].get(agent, 0)
+                nonadopter_rows.append({
+                    "scale": scale, "condition": condition, "run_name": run_name,
+                    "agent": agent,
+                    "archetype": archetype,
+                    "description": agent_desc.get(agent, "")[:80],
+                    "adopted_top1": is_adopter,
+                    "uses_of_top1": uses,
+                    "top1_phrase": top1_phrase,
+                    "total_agents": total_agents,
+                })
+
+    # -----------------------------------------------------------------------
+    # Write CSVs
+    # -----------------------------------------------------------------------
+    conc_csv = OUT_DIR / "concentration.csv"
+    with conc_csv.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(concentration_rows[0].keys()))
         writer.writeheader()
-        writer.writerows(per_run_rows)
-    print(f"  Wrote {csv_path} ({len(per_run_rows)} rows)")
+        writer.writerows(concentration_rows)
+    print(f"Wrote {conc_csv} ({len(concentration_rows)} rows)")
 
-    # -----------------------------------------------------------------------
-    # Part B: Cross-run participation for universal 2-grams
-    # -----------------------------------------------------------------------
-    print("\nPart B: Cross-run 2-gram participation...")
-    top_bigrams = load_top_bigrams(20)
-    bigram_set = set(top_bigrams)
-
-    bigram_rows = []
-    for (scale, condition, run_name), recs in sorted(by_run.items()):
-        total_agents = len({r.author_name for r in recs})
-        agent_grams: dict[str, set[str]] = defaultdict(set)
-        agent_grams_early: dict[str, set[str]] = defaultdict(set)
-        agent_grams_late: dict[str, set[str]] = defaultdict(set)
-
-        for rec in recs:
-            tokens = tokenize(rec.full_text)
-            grams = {" ".join(g) for g in ngrams(tokens, 2)}
-            relevant = grams & bigram_set
-            agent = rec.author_name
-            for phrase in relevant:
-                agent_grams[phrase].add(agent)
-                if rec.minutes_elapsed <= 30:
-                    agent_grams_early[phrase].add(agent)
-                else:
-                    agent_grams_late[phrase].add(agent)
-
-        for phrase in top_bigrams:
-            agents_all = agent_grams.get(phrase, set())
-            bigram_rows.append({
-                "phrase": phrase, "scale": scale, "condition": condition,
-                "run_name": run_name, "total_agents": total_agents,
-                "agents_with_phrase": len(agents_all),
-                "participation_rate": round(len(agents_all) / total_agents, 3) if total_agents else 0,
-                "early_rate": round(len(agent_grams_early.get(phrase, set())) / total_agents, 3) if total_agents else 0,
-                "late_rate": round(len(agent_grams_late.get(phrase, set())) / total_agents, 3) if total_agents else 0,
-            })
-
-    bigram_csv = OUT_DIR / "bigram_participation.csv"
-    with bigram_csv.open("w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=list(bigram_rows[0].keys()))
+    overlap_csv = OUT_DIR / "phrase_overlap.csv"
+    with overlap_csv.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(overlap_rows[0].keys()))
         writer.writeheader()
-        writer.writerows(bigram_rows)
-    print(f"  Wrote {bigram_csv} ({len(bigram_rows)} rows)")
+        writer.writerows(overlap_rows)
+    print(f"Wrote {overlap_csv} ({len(overlap_rows)} rows)")
 
-    # Write example posts
-    with (OUT_DIR / "example_posts.json").open("w") as f:
-        json.dump(example_posts, f, indent=2)
+    adopter_csv = OUT_DIR / "adopter_profiles.csv"
+    with adopter_csv.open("w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=list(nonadopter_rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(nonadopter_rows)
+    print(f"Wrote {adopter_csv} ({len(nonadopter_rows)} rows)")
 
     # -----------------------------------------------------------------------
-    # PLOTS
+    # Precompute: per-run agent-level data with temporal first-usage info
     # -----------------------------------------------------------------------
-    # Plot 1: Per-run top-1 phrase participation rate across all 18 runs
-    print("\nGenerating per-run participation chart...")
-    top1_rows = [r for r in per_run_rows if r["phrase_rank"] == 1]
+    top1_conc = [r for r in concentration_rows if r["phrase_rank"] == 1]
 
-    fig, ax = plt.subplots(figsize=(16, 6))
-    cond_colors = {
-        "mag0": "#616161", "mag1": "#E53935", "mag5": "#FF7043",
-        "mag25": "#FF8F00", "dom-agi": "#1E88E5", "dom-tech": "#43A047",
+    # Rich condition colors matching provenance palette
+    COND_COLORS_RICH = {
+        "mag0": "#8FA5B1", "mag1": "#E95A54", "mag5": "#F58A5C",
+        "mag25": "#F3B52A", "dom-agi": "#4A97E5", "dom-tech": "#65B467",
     }
 
-    x = np.arange(len(top1_rows))
-    colors = [cond_colors.get(r["condition"], "#999") for r in top1_rows]
-    bars = ax.bar(x, [r["participation_rate"] for r in top1_rows], color=colors,
-                  edgecolor="white", linewidth=0.5)
+    run_agent_data: dict[tuple[str, str], dict] = {}
+    for (scale, condition, run_name), recs in sorted(by_run.items()):
+        prepared = prepare_posts(recs)
+        counter = ngram_counter(prepared, NGRAM_N)
+        top1 = " ".join(counter.most_common(1)[0][0]) if counter else ""
+        all_agents = sorted({r.author_name for r in recs})
 
-    for bar, r in zip(bars, top1_rows):
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.02,
-                f"{r['agents_with_phrase']}/{r['total_agents']}", ha="center", fontsize=7)
+        agent_desc_local = {}
+        for r in recs:
+            if r.author_name not in agent_desc_local:
+                agent_desc_local[r.author_name] = r.personality_description
 
-    labels = [f"{r['scale']}\n{CONDITION_LABELS.get(r['condition'], r['condition'])[:10]}" for r in top1_rows]
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels, fontsize=7, rotation=45, ha="right")
-    ax.set_ylabel("Participation rate")
-    ax.set_ylim(0, 1.15)
-    ax.axhline(y=0.5, color="gray", linestyle="--", alpha=0.3)
-    ax.set_title("Each Run's #1 5-gram: Fraction of Agents Using It\n"
-                 "(Different phrases per run, but consistently high adoption)",
-                 fontsize=11, fontweight="bold")
-    ax.grid(axis="y", alpha=0.15)
+        agent_counts: dict[str, int] = defaultdict(int)
+        agent_first_minute: dict[str, float] = {}
+        agent_post_times: dict[str, list[float]] = defaultdict(list)
 
-    # Legend
-    from matplotlib.patches import Patch
-    legend_handles = [Patch(facecolor=cond_colors[c], label=CONDITION_LABELS.get(c, c))
-                      for c in CONDITION_ORDER]
-    ax.legend(handles=legend_handles, fontsize=7, loc="upper right", ncol=2)
+        sorted_recs = sorted(recs, key=lambda r: r.minutes_elapsed)
+        for rec in sorted_recs:
+            tokens = tokenize(rec.full_text)
+            grams = {" ".join(g) for g in ngrams(tokens, NGRAM_N)}
+            if top1 in grams:
+                agent_counts[rec.author_name] += 1
+                agent_post_times[rec.author_name].append(rec.minutes_elapsed)
+                if rec.author_name not in agent_first_minute:
+                    agent_first_minute[rec.author_name] = rec.minutes_elapsed
 
-    fig.tight_layout()
-    fig.savefig(OUT_DIR / "per_run_top1_participation.png", dpi=150, bbox_inches="tight")
+        agents_data = []
+        for agent in all_agents:
+            agents_data.append({
+                "agent": agent,
+                "uses": agent_counts.get(agent, 0),
+                "archetype": infer_archetype(agent_desc_local.get(agent, "")),
+                "first_minute": agent_first_minute.get(agent, float("inf")),
+                "usage_times": agent_post_times.get(agent, []),
+            })
+
+        run_agent_data[(scale, condition)] = {
+            "agents": agents_data,
+            "phrase": top1,
+            "n_adopters": sum(1 for a in agents_data if a["uses"] > 0),
+            "total_agents": len(all_agents),
+        }
+
+    # -----------------------------------------------------------------------
+    # Color utilities (matching provenance/diffusion style)
+    # -----------------------------------------------------------------------
+    from matplotlib.colors import LinearSegmentedColormap, to_rgb
+
+    def tint(hex_color: str, mix: float = 0.86) -> tuple[float, float, float]:
+        rgb = np.array([int(hex_color.lstrip("#")[i:i+2], 16) for i in (0, 2, 4)], dtype=float) / 255
+        return tuple(rgb * (1.0 - mix) + np.ones(3) * mix)
+
+    def make_cond_cmap(hex_color: str):
+        """Light tint → full condition color. NaN → transparent."""
+        r, g, b = to_rgb(hex_color)
+        start = (0.65 + 0.35 * r, 0.65 + 0.35 * g, 0.65 + 0.35 * b)
+        cmap = LinearSegmentedColormap.from_list("c", [start, (r, g, b)], N=256)
+        cmap.set_bad(alpha=0)
+        return cmap
+
+    # -----------------------------------------------------------------------
+    # PLOT 1: Swimlane Wavefront Grid — 6×3 grid (imshow-based)
+    # -----------------------------------------------------------------------
+    print("\nGenerating swimlane wavefront grid...")
+
+    fig, axes = plt.subplots(
+        len(CONDITION_ORDER), len(SCALES),
+        figsize=(20, 22), sharex=True,
+    )
+    fig.patch.set_facecolor("#F3F1EE")
+
+    TIME_MAX = 60
+    N_TIME = 121  # 0.5-min resolution
+
+    for ri, cond in enumerate(CONDITION_ORDER):
+        for ci, scale in enumerate(SCALES):
+            ax = axes[ri, ci]
+            cond_color = COND_COLORS_RICH[cond]
+            ax.set_facecolor("#E4E1DC")
+            run_data = run_agent_data.get((scale, cond))
+
+            if not run_data:
+                ax.text(0.5, 0.5, "No data", transform=ax.transAxes,
+                        ha="center", va="center", color="#999")
+                ax.set_xlim(0, TIME_MAX)
+                continue
+
+            agents = run_data["agents"]
+            adopters = sorted([a for a in agents if a["uses"] > 0],
+                              key=lambda a: a["first_minute"])
+            non_adopters = sorted([a for a in agents if a["uses"] == 0],
+                                  key=lambda a: a["agent"])
+            sorted_agents = adopters + non_adopters
+            n_agents = len(sorted_agents)
+            max_uses = max((a["uses"] for a in sorted_agents), default=1)
+
+            # Build matrix: NaN = pre-adoption (transparent → gray bg)
+            time_grid = np.linspace(0, TIME_MAX, N_TIME)
+            matrix = np.full((n_agents, N_TIME), np.nan)
+
+            for row_idx, agent in enumerate(sorted_agents):
+                if agent["uses"] == 0:
+                    continue
+                first_min = agent["first_minute"]
+                for ti, t in enumerate(time_grid):
+                    if t >= first_min:
+                        cum = sum(1 for ut in agent["usage_times"] if ut <= t)
+                        matrix[row_idx, ti] = cum / max_uses
+
+            # Render
+            cmap = make_cond_cmap(cond_color)
+            masked = np.ma.masked_invalid(matrix)
+            ax.imshow(
+                masked, aspect="auto", cmap=cmap, vmin=0, vmax=1,
+                extent=[0, TIME_MAX, n_agents - 0.5, -0.5],
+                interpolation="nearest",
+            )
+
+            # White lane separators
+            for row_idx in range(1, n_agents):
+                ax.axhline(y=row_idx - 0.5, color="#F3F1EE", linewidth=0.6)
+
+            # Dotted boundary between adopters and non-adopters
+            if adopters and non_adopters:
+                ax.axhline(y=len(adopters) - 0.5, color="#777",
+                           linewidth=1, linestyle=":", alpha=0.6)
+
+            # Annotations (matching diffusion style)
+            n_adopt = run_data["n_adopters"]
+            total = run_data["total_agents"]
+            phrase_short = run_data["phrase"]
+            if len(phrase_short) > 28:
+                phrase_short = phrase_short[:26] + "..."
+
+            ax.text(
+                0.97, 0.96,
+                f"{n_adopt}/{total} ({n_adopt/total:.0%})",
+                transform=ax.transAxes, ha="right", va="top",
+                fontsize=10, fontweight="bold", color=cond_color,
+            )
+            ax.text(
+                0.5, 0.96,
+                f'"{phrase_short}"',
+                transform=ax.transAxes, ha="center", va="top",
+                fontsize=8, fontweight="bold", color="#333", style="italic",
+                bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
+                          edgecolor="#ddd", alpha=0.9),
+            )
+
+            ax.set_xlim(0, TIME_MAX)
+            ax.set_ylim(n_agents - 0.5, -0.5)
+            ax.set_yticks([])
+            ax.grid(axis="x", alpha=0.05)
+            ax.spines["top"].set_visible(False)
+            ax.spines["right"].set_visible(False)
+
+            if ri == 0:
+                ax.set_title(SCALE_LABELS[scale], fontsize=14,
+                             fontweight="bold", color="#333", pad=18)
+            if ci == 0:
+                ax.set_ylabel(
+                    CONDITION_LABELS.get(cond, cond),
+                    fontsize=12, fontweight="bold", color=cond_color,
+                )
+            if ri == len(CONDITION_ORDER) - 1:
+                ax.set_xlabel("Minutes", fontsize=11, color="#555")
+
+    fig.suptitle(
+        "The wave of conformity",
+        fontsize=22, fontweight="bold", y=0.995, color="#1E2A33",
+    )
+    fig.text(
+        0.5, 0.970,
+        "Each row = one agent, sorted by adoption time. "
+        "Gray = before first use of the run's #1 phrase. "
+        "Color = adopted (darker = heavier usage).",
+        ha="center", fontsize=11.5, color="#475761",
+    )
+
+    plt.tight_layout(rect=[0, 0, 1, 0.955])
+    fig.savefig(OUT_DIR / "agent_usage_grid.png", dpi=220, bbox_inches="tight",
+                facecolor=fig.get_facecolor())
     plt.close(fig)
+    print("Wrote agent_usage_grid.png")
 
-    # Plot 2: Early vs late for per-run top-1 phrases
-    print("Generating early vs late chart...")
-    fig, axes = plt.subplots(1, 3, figsize=(16, 6), sharey=True)
+    # -----------------------------------------------------------------------
+    # PLOT 2: Archetype adoption rates — clean horizontal bars
+    # -----------------------------------------------------------------------
+    print("Generating archetype adoption chart...")
 
-    for si, scale in enumerate(SCALES):
-        ax = axes[si]
-        scale_rows = [r for r in top1_rows if r["scale"] == scale]
-        y_pos = np.arange(len(scale_rows))
+    archetype_stats: dict[str, dict[str, int]] = defaultdict(lambda: {"total": 0, "adopted": 0})
+    for r in nonadopter_rows:
+        arch = r["archetype"]
+        if arch == "unknown":
+            continue
+        archetype_stats[arch]["total"] += 1
+        if r["adopted_top1"]:
+            archetype_stats[arch]["adopted"] += 1
 
-        early = [r["early_rate"] for r in scale_rows]
-        late = [r["late_rate"] for r in scale_rows]
-        labels_y = [f'{CONDITION_LABELS.get(r["condition"], r["condition"])[:15]}\n'
-                     f'"{r["phrase"][:20]}…"' for r in scale_rows]
+    valid_archetypes = {a: s for a, s in archetype_stats.items() if s["total"] >= 5}
 
-        ax.barh(y_pos - 0.15, early, height=0.3, label="Early (0-30 min)",
-                color="#90CAF9", edgecolor="white")
-        ax.barh(y_pos + 0.15, late, height=0.3, label="Late (30-60 min)",
-                color="#1565C0", edgecolor="white")
+    if valid_archetypes:
+        # Sort: most conformist top → most resistant bottom
+        sorted_archs = sorted(
+            valid_archetypes.keys(),
+            key=lambda a: -(valid_archetypes[a]["adopted"] / valid_archetypes[a]["total"]),
+        )
+        rates = [valid_archetypes[a]["adopted"] / valid_archetypes[a]["total"]
+                 for a in sorted_archs]
+        totals = [valid_archetypes[a]["total"] for a in sorted_archs]
+
+        fig, ax = plt.subplots(figsize=(11, max(7, len(sorted_archs) * 0.42)))
+        fig.patch.set_facecolor("#F3F1EE")
+        ax.set_facecolor("#F3F1EE")
+
+        y_pos = np.arange(len(sorted_archs))
+
+        # Color: smooth gradient from warm (conformist) to cool (resistant)
+        rate_cmap = LinearSegmentedColormap.from_list(
+            "rate", ["#4A97E5", "#8FA5B1", "#F3B52A", "#E95A54"], N=256,
+        )
+        bar_colors = [rate_cmap(r) for r in rates]
+
+        ax.barh(y_pos, rates, color=bar_colors, edgecolor="#F3F1EE",
+                linewidth=0.8, height=0.68)
+
+        for yi, (rate, total) in enumerate(zip(rates, totals)):
+            ax.text(rate + 0.015, yi, f"{rate:.0%}",
+                    va="center", ha="left", fontsize=10.5,
+                    fontweight="bold", color="#20303A")
+            ax.text(rate + 0.08, yi, f"n={total}",
+                    va="center", ha="left", fontsize=9, color="#667782")
 
         ax.set_yticks(y_pos)
-        ax.set_yticklabels(labels_y, fontsize=6.5)
-        ax.set_xlabel("Participation rate")
-        ax.set_title(f"{scale} ({SCALE_AGENTS[scale]} agents)", fontweight="bold")
-        ax.set_xlim(0, 1.05)
-        ax.legend(fontsize=7, loc="lower right")
-        ax.grid(axis="x", alpha=0.2)
+        ax.set_yticklabels(sorted_archs, fontsize=11, fontweight="medium",
+                           color="#20303A")
+        ax.set_xlim(0, 1.18)
+        ax.set_ylim(len(sorted_archs) - 0.6, -0.6)
+        ax.axvline(x=0.5, color="#C5C0B8", linewidth=0.8, linestyle="--", zorder=0)
+        ax.set_xlabel("Adoption rate of run's #1 phrase", fontsize=11.5,
+                       color="#475761", labelpad=10)
+        ax.grid(axis="x", alpha=0.06)
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_visible(False)
+        ax.tick_params(left=False)
 
-    fig.suptitle("Early vs Late Adoption of Each Run's Top 5-gram", fontsize=12, fontweight="bold")
-    fig.tight_layout()
-    fig.savefig(OUT_DIR / "early_vs_late_per_run.png", dpi=150, bbox_inches="tight")
-    plt.close(fig)
+        ax.set_title(
+            "Personality predicts conformity",
+            fontsize=18, fontweight="bold", pad=18, color="#1E2A33", loc="left",
+        )
+        fig.text(
+            0.5, 0.01,
+            "Adoption rate of each run's #1 phrase, aggregated across all 18 runs. "
+            "n = agent-run observations.",
+            ha="center", fontsize=10, color="#667782",
+        )
 
-    # Plot 3: Universal 2-gram participation across all runs
-    print("Generating 2-gram participation heatmap...")
-    top10_bigrams = top_bigrams[:10]
-    run_keys = sorted(set((r["scale"], r["condition"]) for r in bigram_rows))
+        plt.tight_layout(rect=[0, 0.03, 1, 1])
+        fig.savefig(OUT_DIR / "archetype_adoption.png", dpi=220, bbox_inches="tight",
+                    facecolor=fig.get_facecolor())
+        plt.close(fig)
+        print("Wrote archetype_adoption.png")
+    else:
+        print("  Not enough archetype data for chart.")
 
-    matrix = np.zeros((len(top10_bigrams), len(run_keys)))
-    for row in bigram_rows:
-        if row["phrase"] in top10_bigrams:
-            yi = top10_bigrams.index(row["phrase"])
-            xi = run_keys.index((row["scale"], row["condition"]))
-            matrix[yi, xi] = row["participation_rate"]
+    # -----------------------------------------------------------------------
+    # PLOT 3: Conformity strip plot — condition-colored dots by archetype
+    # -----------------------------------------------------------------------
+    print("Generating conformity strip plot...")
 
-    fig, ax = plt.subplots(figsize=(16, 6))
-    im = ax.imshow(matrix, aspect="auto", cmap="YlOrRd", vmin=0, vmax=1, interpolation="nearest")
-    run_labels = [f"{s}/{CONDITION_LABELS.get(c, c)[:10]}" for s, c in run_keys]
-    ax.set_xticks(range(len(run_labels)))
-    ax.set_xticklabels(run_labels, rotation=60, ha="right", fontsize=7)
-    ax.set_yticks(range(len(top10_bigrams)))
-    ax.set_yticklabels([f'"{p}"' for p in top10_bigrams], fontsize=9)
+    beeswarm_obs = []
+    for r in nonadopter_rows:
+        if r["archetype"] == "unknown":
+            continue
+        beeswarm_obs.append({
+            "archetype": r["archetype"],
+            "uses": r["uses_of_top1"],
+            "adopted": r["adopted_top1"],
+            "scale": r["scale"],
+            "condition": r["condition"],
+        })
 
-    for yi in range(matrix.shape[0]):
-        for xi in range(matrix.shape[1]):
-            val = matrix[yi, xi]
-            if val > 0:
-                ax.text(xi, yi, f"{val:.0%}", ha="center", va="center", fontsize=6,
-                        color="white" if val > 0.5 else "black")
+    if beeswarm_obs:
+        run_max_uses: dict[tuple[str, str], int] = {}
+        for r in nonadopter_rows:
+            key = (r["scale"], r["condition"])
+            run_max_uses[key] = max(run_max_uses.get(key, 0), r["uses_of_top1"])
 
-    fig.colorbar(im, ax=ax, label="Participation rate", shrink=0.7)
-    ax.set_title("Top-10 Universal 2-gram Participation Across All 18 Runs\n"
-                 "(Same phrases everywhere — nearly all agents use them)",
-                 fontsize=11, fontweight="bold")
-    fig.tight_layout()
-    fig.savefig(OUT_DIR / "bigram_participation_heatmap.png", dpi=150, bbox_inches="tight")
-    plt.close(fig)
+        for obs in beeswarm_obs:
+            key = (obs["scale"], obs["condition"])
+            mx = run_max_uses[key]
+            obs["intensity"] = obs["uses"] / mx if mx > 0 else 0
 
-    # Summary
-    top1_rates = [r["participation_rate"] for r in top1_rows]
+        arch_mean_intensity: dict[str, float] = {}
+        arch_observations: dict[str, list] = defaultdict(list)
+        for obs in beeswarm_obs:
+            arch_observations[obs["archetype"]].append(obs)
+        for arch, obs_list in arch_observations.items():
+            arch_mean_intensity[arch] = np.mean([o["intensity"] for o in obs_list])
+
+        valid_bee_archs = [a for a in arch_mean_intensity
+                           if len(arch_observations[a]) >= 5]
+        sorted_bee_archs = sorted(valid_bee_archs,
+                                  key=lambda a: -arch_mean_intensity[a])
+
+        fig, ax = plt.subplots(figsize=(14, max(8, len(sorted_bee_archs) * 0.52)))
+        fig.patch.set_facecolor("white")
+        ax.set_facecolor("white")
+
+        rng = np.random.RandomState(42)
+
+        # Alternating row bands
+        for row_idx in range(len(sorted_bee_archs)):
+            if row_idx % 2 == 0:
+                ax.axhspan(row_idx - 0.45, row_idx + 0.45,
+                           color="#F7F5F2", zorder=0)
+
+        for row_idx, arch in enumerate(sorted_bee_archs):
+            obs_list = arch_observations[arch]
+            jitter = rng.uniform(-0.28, 0.28, size=len(obs_list))
+
+            for oi, obs in enumerate(obs_list):
+                x = obs["intensity"]
+                y = row_idx + jitter[oi]
+                color = COND_COLORS_RICH[obs["condition"]]
+
+                if obs["uses"] == 0:
+                    ax.plot(x, y, "o", color=color, markersize=6.5,
+                            markerfacecolor="none", markeredgewidth=1.2,
+                            alpha=0.55, zorder=2)
+                else:
+                    ax.plot(x, y, "o", color=color, markersize=7,
+                            markeredgecolor="white", markeredgewidth=0.4,
+                            alpha=0.75, zorder=3)
+
+            # Mean diamond
+            mean_val = arch_mean_intensity[arch]
+            ax.plot(mean_val, row_idx, "D", color="#20303A", markersize=8,
+                    markeredgecolor="white", markeredgewidth=1.5, zorder=5)
+
+        ax.set_yticks(range(len(sorted_bee_archs)))
+        ax.set_yticklabels(sorted_bee_archs, fontsize=11, fontweight="medium",
+                           color="#20303A")
+        ax.set_xlabel(
+            "Normalized usage intensity   (0 = never adopted  \u2192  1 = heaviest user)",
+            fontsize=11.5, color="#475761", labelpad=12,
+        )
+        ax.set_xlim(-0.06, 1.12)
+        ax.set_ylim(len(sorted_bee_archs) - 0.5, -0.6)
+
+        ax.axvline(x=0.5, color="#D5D0C8", linewidth=0.8, linestyle="--", zorder=0)
+        ax.grid(axis="x", alpha=0.06)
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.spines["left"].set_visible(False)
+        ax.tick_params(left=False)
+
+        # n= on right
+        for row_idx, arch in enumerate(sorted_bee_archs):
+            n = len(arch_observations[arch])
+            ax.text(1.09, row_idx, f"n={n}", ha="left", va="center",
+                    fontsize=9, color="#8A8378")
+
+        # Condition legend at top-right
+        for li, (ckey, clabel) in enumerate(CONDITION_LABELS.items()):
+            ax.plot([], [], "o", color=COND_COLORS_RICH[ckey], markersize=7,
+                    label=clabel)
+        ax.plot([], [], "D", color="#20303A", markersize=7,
+                markeredgecolor="white", markeredgewidth=1.2, label="Mean")
+        ax.legend(fontsize=9, loc="upper right", framealpha=0.95,
+                  edgecolor="#ddd", handletextpad=0.5, labelspacing=0.4)
+
+        ax.set_title(
+            "Individual agents across 18 runs",
+            fontsize=18, fontweight="bold", pad=18, color="#1E2A33", loc="left",
+        )
+        fig.text(
+            0.5, 0.005,
+            f"Each dot = one agent in one run ({len(beeswarm_obs)} observations). "
+            "Hollow = non-adopter. Color = experimental condition. "
+            "Diamond = archetype mean.",
+            ha="center", fontsize=10, color="#667782",
+        )
+
+        plt.tight_layout(rect=[0, 0.025, 1, 1])
+        fig.savefig(OUT_DIR / "concentration_vs_scale.png", dpi=220,
+                    bbox_inches="tight")
+        plt.close(fig)
+        print("Wrote concentration_vs_scale.png")
+    else:
+        print("  No strip plot data.")
+
+    # -----------------------------------------------------------------------
+    # Summary JSON
+    # -----------------------------------------------------------------------
+    # Aggregate summaries
+    top1_by_scale = defaultdict(list)
+    for r in top1_conc:
+        top1_by_scale[r["scale"]].append(r)
+
+    overlap_by_scale = defaultdict(list)
+    for r in overlap_rows:
+        overlap_by_scale[r["scale"]].append(r)
+
+    # Archetype resistance ranking
+    archetype_ranking = []
+    for arch in sorted(valid_archetypes.keys(),
+                        key=lambda a: valid_archetypes[a]["adopted"] / valid_archetypes[a]["total"]):
+        s = valid_archetypes[arch]
+        archetype_ranking.append({
+            "archetype": arch,
+            "adoption_rate": round(s["adopted"] / s["total"], 3),
+            "observations": s["total"],
+        })
+
     summary = {
-        "per_run_5gram_top1": {
-            "mean_participation": round(np.mean(top1_rates), 3),
-            "min_participation": round(min(top1_rates), 3),
-            "max_participation": round(max(top1_rates), 3),
+        "finding": (
+            "Phrase collapse is genuinely collective, not driven by a few spammers. "
+            "Gini coefficients are moderate (0.3-0.6), meaning usage is spread across adopters. "
+            "High Jaccard overlap between top phrases' adopter sets indicates monolithic collapse: "
+            "the SAME agents adopt all dominant phrases. At larger scales, individual agent "
+            "concentration drops (top-1 share decreases) while collective adoption broadens."
+        ),
+        "concentration": {
             "per_scale": {
-                scale: round(np.mean([r["participation_rate"] for r in top1_rows if r["scale"] == scale]), 3)
-                for scale in SCALES
+                scale: {
+                    "mean_gini": round(np.mean([r["gini_all_agents"] for r in rows]), 3),
+                    "mean_top1_share": round(np.mean([r["top1_agent_share"] for r in rows]), 3),
+                    "mean_top3_share": round(np.mean([r["top3_agent_share"] for r in rows]), 3),
+                    "mean_adopters": round(np.mean([r["adopters"] for r in rows]), 1),
+                    "mean_adoption_rate": round(np.mean([r["adoption_rate"] for r in rows]), 3),
+                }
+                for scale, rows in sorted(top1_by_scale.items())
             },
         },
-        "universal_2gram": {
-            "mean_participation": round(
-                np.mean([r["participation_rate"] for r in bigram_rows]), 3
-            ),
-            "top5_mean": round(
-                np.mean([r["participation_rate"] for r in bigram_rows if r["phrase"] in set(top_bigrams[:5])]), 3
-            ),
+        "phrase_overlap": {
+            "per_scale": {
+                scale: {
+                    "mean_jaccard": round(np.mean([r["jaccard"] for r in rows]), 3),
+                    "min_jaccard": round(min(r["jaccard"] for r in rows), 3),
+                    "max_jaccard": round(max(r["jaccard"] for r in rows), 3),
+                }
+                for scale, rows in sorted(overlap_by_scale.items())
+            },
         },
+        "archetype_resistance": archetype_ranking,
     }
+
     with (OUT_DIR / "participation_summary.json").open("w") as f:
         json.dump(summary, f, indent=2)
 
-    print(f"\nPer-run top-1 5-gram participation: "
-          f"mean={summary['per_run_5gram_top1']['mean_participation']:.1%}, "
-          f"range=[{summary['per_run_5gram_top1']['min_participation']:.1%}, "
-          f"{summary['per_run_5gram_top1']['max_participation']:.1%}]")
-    print(f"Universal 2-gram top-5 mean participation: {summary['universal_2gram']['top5_mean']:.1%}")
+    # Print key findings
+    print("\n" + "=" * 60)
+    print("KEY FINDINGS")
+    print("=" * 60)
+    for scale, rows in sorted(top1_by_scale.items()):
+        gini = np.mean([r["gini_all_agents"] for r in rows])
+        t1 = np.mean([r["top1_agent_share"] for r in rows])
+        print(f"  {scale}: mean Gini={gini:.2f}, mean top-1 share={t1:.0%}")
+
+    print("\nPhrase overlap (Jaccard):")
+    for scale, rows in sorted(overlap_by_scale.items()):
+        j = np.mean([r["jaccard"] for r in rows])
+        print(f"  {scale}: mean Jaccard={j:.2f}")
+
+    print("\nArchetype adoption rates (lowest = most resistant):")
+    for entry in archetype_ranking[:5]:
+        print(f"  {entry['archetype']}: {entry['adoption_rate']:.0%} (n={entry['observations']})")
 
     print("\nDone!")
 

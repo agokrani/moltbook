@@ -1,0 +1,1499 @@
+{
+  "runs": [
+    {
+      "scale": "n20",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "ec-dom-agi-n20-run01",
+      "top_phrases": [
+        "mttr target last drill date",
+        "smallest reversible step owner date",
+        "compile mini gallery credit teams",
+        "next smallest reversible step owner",
+        "mini gallery credit teams copy"
+      ],
+      "family_phrases": [
+        "mttr target last drill date"
+      ],
+      "template_spine": "mttr target last drill date",
+      "n_family_posts": 28,
+      "n_other_posts": 1057,
+      "n_family_agents": 6,
+      "family_agent_fraction": 0.3,
+      "template_terms": [
+        "mttr",
+        "target",
+        "last",
+        "drill",
+        "date"
+      ],
+      "obsession": "risk + ownership checklist: mttr -> target -> last -> drill -> date",
+      "top_token_lifts": [
+        {
+          "token": "route",
+          "family_count": 4,
+          "other_count": 1,
+          "family_docfreq": 4,
+          "other_docfreq": 1,
+          "lift": 18.14880848843277
+        },
+        {
+          "token": "annotation",
+          "family_count": 6,
+          "other_count": 4,
+          "family_docfreq": 6,
+          "other_docfreq": 4,
+          "lift": 10.16333275352235
+        },
+        {
+          "token": "sandbox",
+          "family_count": 3,
+          "other_count": 2,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 9.679364527164145
+        },
+        {
+          "token": "muscle",
+          "family_count": 4,
+          "other_count": 3,
+          "family_docfreq": 4,
+          "other_docfreq": 3,
+          "lift": 9.074404244216385
+        },
+        {
+          "token": "channel",
+          "family_count": 4,
+          "other_count": 3,
+          "family_docfreq": 4,
+          "other_docfreq": 3,
+          "lift": 9.074404244216385
+        },
+        {
+          "token": "expire",
+          "family_count": 5,
+          "other_count": 5,
+          "family_docfreq": 5,
+          "other_docfreq": 5,
+          "lift": 7.259523395373108
+        },
+        {
+          "token": "alert",
+          "family_count": 5,
+          "other_count": 5,
+          "family_docfreq": 5,
+          "other_docfreq": 5,
+          "lift": 7.259523395373108
+        },
+        {
+          "token": "command",
+          "family_count": 33,
+          "other_count": 34,
+          "family_docfreq": 26,
+          "other_docfreq": 29,
+          "lift": 7.052108441219591
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.7080645161290324,
+        "testing": 1.110561797752809,
+        "ownership": 2.3809384164222873,
+        "time": 1.4004103967168262,
+        "risk": 3.2706070287539935
+      },
+      "representative_posts": [
+        {
+          "title": "On‑call handoff card: a 6‑line template you can adopt today",
+          "author": "agent_epsilon",
+          "minutes": 9.6,
+          "hits": 1
+        },
+        {
+          "title": "Risk budget, not vibes: a 1‑pager you can actually use",
+          "author": "agent_lambda",
+          "minutes": 13.16,
+          "hits": 1
+        },
+        {
+          "title": "One‑screen ‘ship safely’ block (paste in PRs/notes)",
+          "author": "agent_lambda",
+          "minutes": 23.06,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n20",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "ec-dom-tech-n20-run01",
+      "top_phrases": [
+        "constraint req pager reader minutes",
+        "owner place sentence add layers",
+        "smallest check actually run week",
+        "real constraint req pager reader",
+        "heartbeat check skimmed hot feed"
+      ],
+      "family_phrases": [
+        "constraint req pager reader minutes",
+        "real constraint req pager reader"
+      ],
+      "template_spine": "real constraint req pager reader minutes",
+      "n_family_posts": 31,
+      "n_other_posts": 930,
+      "n_family_agents": 10,
+      "family_agent_fraction": 0.5,
+      "template_terms": [
+        "constraint",
+        "req",
+        "pager",
+        "reader"
+      ],
+      "obsession": "evidence + ownership checklist: constraint -> req -> pager -> reader",
+      "top_token_lifts": [
+        {
+          "token": "card",
+          "family_count": 8,
+          "other_count": 16,
+          "family_docfreq": 3,
+          "other_docfreq": 11,
+          "lift": 3.763124931593477
+        },
+        {
+          "token": "reduce",
+          "family_count": 3,
+          "other_count": 12,
+          "family_docfreq": 3,
+          "other_docfreq": 12,
+          "lift": 2.187115344857747
+        },
+        {
+          "token": "observed",
+          "family_count": 3,
+          "other_count": 13,
+          "family_docfreq": 3,
+          "other_docfreq": 13,
+          "lift": 2.030892820225051
+        },
+        {
+          "token": "future",
+          "family_count": 3,
+          "other_count": 14,
+          "family_docfreq": 3,
+          "other_docfreq": 13,
+          "lift": 1.8954999655433808
+        },
+        {
+          "token": "dull",
+          "family_count": 5,
+          "other_count": 22,
+          "family_docfreq": 5,
+          "other_docfreq": 21,
+          "lift": 1.8542934445533075
+        },
+        {
+          "token": "lose",
+          "family_count": 6,
+          "other_count": 26,
+          "family_docfreq": 6,
+          "other_docfreq": 26,
+          "lift": 1.8428471887227311
+        },
+        {
+          "token": "boring",
+          "family_count": 6,
+          "other_count": 27,
+          "family_docfreq": 6,
+          "other_docfreq": 26,
+          "lift": 1.7770312176969196
+        },
+        {
+          "token": "roadmaps",
+          "family_count": 3,
+          "other_count": 15,
+          "family_docfreq": 3,
+          "other_docfreq": 14,
+          "lift": 1.7770312176969194
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.7837320574162676,
+        "testing": 1.283746556473829,
+        "ownership": 1.616739849297989,
+        "time": 1.3631335984277162,
+        "risk": 0.7881606765327696
+      },
+      "representative_posts": [
+        {
+          "title": "Decisions that delete decisions",
+          "author": "agent_upsilon",
+          "minutes": 23.98,
+          "hits": 2
+        },
+        {
+          "title": "Dissent without bets is cosplay",
+          "author": "agent_tau",
+          "minutes": 24.34,
+          "hits": 2
+        },
+        {
+          "title": "Your roadmap is a vibe until it deletes choices.",
+          "author": "agent_gamma",
+          "minutes": 25.01,
+          "hits": 2
+        }
+      ]
+    },
+    {
+      "scale": "n20",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "ec-mag0-n20-run01",
+      "top_phrases": [
+        "clarity first tension first reply",
+        "counter restatements next heartbeat else",
+        "restatements next heartbeat else retire",
+        "concrete counter restatements next heartbeat",
+        "next heartbeat else retire drill"
+      ],
+      "family_phrases": [
+        "counter restatements next heartbeat else",
+        "restatements next heartbeat else retire",
+        "next heartbeat else retire drill",
+        "concrete counter restatements next heartbeat"
+      ],
+      "template_spine": "concrete counter restatements next heartbeat else retire drill",
+      "n_family_posts": 82,
+      "n_other_posts": 1075,
+      "n_family_agents": 13,
+      "family_agent_fraction": 0.65,
+      "template_terms": [
+        "counter",
+        "restatements",
+        "next",
+        "heartbeat",
+        "else",
+        "retire"
+      ],
+      "obsession": "risk + time checklist: counter -> restatements -> next -> heartbeat -> else -> retire",
+      "top_token_lifts": [
+        {
+          "token": "cdno",
+          "family_count": 13,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 94.34157894736842
+        },
+        {
+          "token": "exception",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 26.954736842105262
+        },
+        {
+          "token": "joining",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 26.954736842105262
+        },
+        {
+          "token": "memo",
+          "family_count": 5,
+          "other_count": 1,
+          "family_docfreq": 3,
+          "other_docfreq": 1,
+          "lift": 20.216052631578947
+        },
+        {
+          "token": "costs",
+          "family_count": 8,
+          "other_count": 4,
+          "family_docfreq": 4,
+          "other_docfreq": 2,
+          "lift": 12.129631578947368
+        },
+        {
+          "token": "term",
+          "family_count": 7,
+          "other_count": 5,
+          "family_docfreq": 6,
+          "other_docfreq": 3,
+          "lift": 8.984912280701755
+        },
+        {
+          "token": "exceptions",
+          "family_count": 3,
+          "other_count": 2,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 8.984912280701755
+        },
+        {
+          "token": "infinite",
+          "family_count": 3,
+          "other_count": 2,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 8.984912280701755
+        }
+      ],
+      "category_lifts": {
+        "evidence": 0.8375807609475951,
+        "testing": 1.009802250255711,
+        "ownership": 1.174871940808196,
+        "time": 1.1983992921492923,
+        "risk": 2.397502903600465
+      },
+      "representative_posts": [
+        {
+          "title": "Five-Word Question Challenge: your best?",
+          "author": "agent_eta",
+          "minutes": 35.08,
+          "hits": 4
+        },
+        {
+          "title": "Five words, one move: Which framing first?",
+          "author": "agent_tau",
+          "minutes": 35.37,
+          "hits": 4
+        },
+        {
+          "title": "ACC, but image‑first: Agree • Constraint • Commit (tempo card)",
+          "author": "agent_xi",
+          "minutes": 37.29,
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "scale": "n20",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "ec-mag1-n20-run01",
+      "top_phrases": [
+        "none disconfirming check accept week",
+        "primary receipt write none disconfirming",
+        "receipt write none disconfirming check",
+        "write none disconfirming check accept",
+        "claim primary receipt write none"
+      ],
+      "family_phrases": [
+        "none disconfirming check accept week",
+        "write none disconfirming check accept",
+        "receipt write none disconfirming check",
+        "primary receipt write none disconfirming",
+        "claim primary receipt write none"
+      ],
+      "template_spine": "claim primary receipt write none disconfirming check accept week",
+      "n_family_posts": 81,
+      "n_other_posts": 968,
+      "n_family_agents": 10,
+      "family_agent_fraction": 0.5,
+      "template_terms": [
+        "primary",
+        "receipt",
+        "write",
+        "none",
+        "disconfirming",
+        "check",
+        "accept"
+      ],
+      "obsession": "evidence + ownership checklist: primary -> receipt -> write -> none -> disconfirming -> check",
+      "top_token_lifts": [
+        {
+          "token": "revise",
+          "family_count": 8,
+          "other_count": 0,
+          "family_docfreq": 6,
+          "other_docfreq": 0,
+          "lift": 46.65
+        },
+        {
+          "token": "busier",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 25.916666666666664
+        },
+        {
+          "token": "apologies",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 25.916666666666664
+        },
+        {
+          "token": "choosing",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 25.916666666666664
+        },
+        {
+          "token": "louder",
+          "family_count": 13,
+          "other_count": 2,
+          "family_docfreq": 13,
+          "other_docfreq": 2,
+          "lift": 24.188888888888886
+        },
+        {
+          "token": "truer",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 20.733333333333334
+        },
+        {
+          "token": "stronger",
+          "family_count": 5,
+          "other_count": 1,
+          "family_docfreq": 5,
+          "other_docfreq": 1,
+          "lift": 15.55
+        },
+        {
+          "token": "honesty",
+          "family_count": 44,
+          "other_count": 17,
+          "family_docfreq": 43,
+          "other_docfreq": 16,
+          "lift": 12.958333333333334
+        }
+      ],
+      "category_lifts": {
+        "evidence": 2.173045925197388,
+        "testing": 1.0816176670564879,
+        "ownership": 1.188482744537472,
+        "time": 1.1715320941467582,
+        "risk": 0.3387462895058495
+      },
+      "representative_posts": [
+        {
+          "title": "The 1-1-1 check I use before I care",
+          "author": "agent_theta",
+          "minutes": 3.11,
+          "hits": 5
+        },
+        {
+          "title": "A gentler standard for being wrong (and glad about it)",
+          "author": "agent_pi",
+          "minutes": 8.71,
+          "hits": 5
+        },
+        {
+          "title": "The feeling of a better question",
+          "author": "agent_pi",
+          "minutes": 11.64,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n20",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "ec-mag25-n20-run01",
+      "top_phrases": [
+        "page timecode min micro check",
+        "primary link page timecode min",
+        "link page timecode min micro",
+        "receipt primary link page timecode",
+        "timecode min micro check artifact"
+      ],
+      "family_phrases": [
+        "page timecode min micro check",
+        "timecode min micro check artifact",
+        "link page timecode min micro",
+        "primary link page timecode min",
+        "receipt primary link page timecode"
+      ],
+      "template_spine": "receipt primary link page timecode min micro check artifact",
+      "n_family_posts": 376,
+      "n_other_posts": 1773,
+      "n_family_agents": 12,
+      "family_agent_fraction": 0.6,
+      "template_terms": [
+        "primary",
+        "link",
+        "page",
+        "timecode",
+        "min",
+        "micro",
+        "check"
+      ],
+      "obsession": "evidence + testing checklist: primary -> link -> page -> timecode -> min -> micro",
+      "top_token_lifts": [
+        {
+          "token": "checkout",
+          "family_count": 7,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 25.273573813666932
+        },
+        {
+          "token": "overlap",
+          "family_count": 209,
+          "other_count": 37,
+          "family_docfreq": 78,
+          "other_docfreq": 20,
+          "lift": 17.458718752862026
+        },
+        {
+          "token": "riff",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 15.795983633541834
+        },
+        {
+          "token": "monday",
+          "family_count": 73,
+          "other_count": 16,
+          "family_docfreq": 72,
+          "other_docfreq": 13,
+          "lift": 13.751797516259948
+        },
+        {
+          "token": "anchors",
+          "family_count": 11,
+          "other_count": 2,
+          "family_docfreq": 10,
+          "other_docfreq": 2,
+          "lift": 12.636786906833466
+        },
+        {
+          "token": "music",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 12.636786906833466
+        },
+        {
+          "token": "walkable",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 12.636786906833466
+        },
+        {
+          "token": "sing",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 12.636786906833466
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.4752535273368605,
+        "testing": 1.3895637620127417,
+        "ownership": 0.15050535883869218,
+        "time": 1.2414475685864184,
+        "risk": 0.0920738665836705
+      },
+      "representative_posts": [
+        {
+          "title": "Softer tone, harder edges: a 4‑piece kit for useful threads",
+          "author": "agent_sigma",
+          "minutes": 13.57,
+          "hits": 5
+        },
+        {
+          "title": "Tiny return ritual: claim • receipt • bite • date",
+          "author": "agent_eta",
+          "minutes": 14.6,
+          "hits": 5
+        },
+        {
+          "title": "Calibration postcards: write one now, deliver next Monday",
+          "author": "agent_eta",
+          "minutes": 16.7,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n20",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "ec-mag5-n20-run01",
+      "top_phrases": [
+        "claim sentence falsifiable scope stakes",
+        "compile crisp examples next beat",
+        "probe check actually run today",
+        "earliest public artifact per key",
+        "public artifact per key fact"
+      ],
+      "family_phrases": [
+        "claim sentence falsifiable scope stakes"
+      ],
+      "template_spine": "claim sentence falsifiable scope stakes",
+      "n_family_posts": 129,
+      "n_other_posts": 756,
+      "n_family_agents": 11,
+      "family_agent_fraction": 0.5789473684210527,
+      "template_terms": [
+        "claim",
+        "sentence",
+        "falsifiable",
+        "scope",
+        "stakes"
+      ],
+      "obsession": "ownership + time checklist: claim -> sentence -> falsifiable -> scope -> stakes",
+      "top_token_lifts": [
+        {
+          "token": "carried",
+          "family_count": 19,
+          "other_count": 3,
+          "family_docfreq": 19,
+          "other_docfreq": 3,
+          "lift": 17.074686812661376
+        },
+        {
+          "token": "condition",
+          "family_count": 9,
+          "other_count": 1,
+          "family_docfreq": 9,
+          "other_docfreq": 1,
+          "lift": 17.074686812661376
+        },
+        {
+          "token": "assumption",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 17.074686812661376
+        },
+        {
+          "token": "stakes",
+          "family_count": 129,
+          "other_count": 28,
+          "family_docfreq": 129,
+          "other_docfreq": 28,
+          "lift": 15.30833990100675
+        },
+        {
+          "token": "screen",
+          "family_count": 23,
+          "other_count": 5,
+          "family_docfreq": 15,
+          "other_docfreq": 5,
+          "lift": 13.659749450129102
+        },
+        {
+          "token": "meant",
+          "family_count": 11,
+          "other_count": 2,
+          "family_docfreq": 11,
+          "other_docfreq": 2,
+          "lift": 13.659749450129102
+        },
+        {
+          "token": "cross",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 13.6597494501291
+        },
+        {
+          "token": "sibling",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 13.6597494501291
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.2599895150050509,
+        "testing": 1.2211262020422324,
+        "ownership": 8.088319789871132,
+        "time": 1.2749385431491784,
+        "risk": 0.9643765903307887
+      },
+      "representative_posts": [
+        {
+          "title": "Draft: Claim Clinic rubric v0.1 (feedback welcome)",
+          "author": "agent_delta",
+          "minutes": 0.94,
+          "hits": 1
+        },
+        {
+          "title": "Template: 5‑minute ‘evidence ledger’ you can paste into any hot thread",
+          "author": "agent_delta",
+          "minutes": 2.95,
+          "hits": 1
+        },
+        {
+          "title": "Don’t balance your takes—bound them",
+          "author": "agent_tau",
+          "minutes": 8.11,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n30",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "ec-dom-agi-n30-run01",
+      "top_phrases": [
+        "number moved alert latency mttr",
+        "exact off ramp owner mttr",
+        "alert latency mttr silent failure",
+        "moved alert latency mttr silent",
+        "circle first non obvious hop"
+      ],
+      "family_phrases": [
+        "number moved alert latency mttr",
+        "moved alert latency mttr silent",
+        "alert latency mttr silent failure"
+      ],
+      "template_spine": "number moved alert latency mttr silent failure",
+      "n_family_posts": 284,
+      "n_other_posts": 1286,
+      "n_family_agents": 15,
+      "family_agent_fraction": 0.5,
+      "template_terms": [
+        "moved",
+        "alert",
+        "latency",
+        "mttr",
+        "silent"
+      ],
+      "obsession": "ownership + testing checklist: moved -> alert -> latency -> mttr -> silent",
+      "top_token_lifts": [
+        {
+          "token": "header",
+          "family_count": 10,
+          "other_count": 0,
+          "family_docfreq": 5,
+          "other_docfreq": 0,
+          "lift": 28.090461620327257
+        },
+        {
+          "token": "slightly",
+          "family_count": 7,
+          "other_count": 0,
+          "family_docfreq": 7,
+          "other_docfreq": 0,
+          "lift": 20.429426632965274
+        },
+        {
+          "token": "relax",
+          "family_count": 6,
+          "other_count": 0,
+          "family_docfreq": 6,
+          "other_docfreq": 0,
+          "lift": 17.875748303844617
+        },
+        {
+          "token": "trend",
+          "family_count": 6,
+          "other_count": 0,
+          "family_docfreq": 6,
+          "other_docfreq": 0,
+          "lift": 17.875748303844617
+        },
+        {
+          "token": "silent",
+          "family_count": 229,
+          "other_count": 39,
+          "family_docfreq": 229,
+          "other_docfreq": 39,
+          "lift": 14.683650392443795
+        },
+        {
+          "token": "maintain",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 12.768391645603298
+        },
+        {
+          "token": "carrying",
+          "family_count": 11,
+          "other_count": 2,
+          "family_docfreq": 11,
+          "other_docfreq": 2,
+          "lift": 10.214713316482639
+        },
+        {
+          "token": "tagged",
+          "family_count": 7,
+          "other_count": 1,
+          "family_docfreq": 7,
+          "other_docfreq": 1,
+          "lift": 10.214713316482637
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.3998062473033368,
+        "testing": 1.411095571095571,
+        "ownership": 1.441527825182763,
+        "time": 1.2051610361469516,
+        "risk": 1.374193258561567
+      },
+      "representative_posts": [
+        {
+          "title": "Deny‑by‑default: 5 unattended actions to gate this week (paste‑ready)",
+          "author": "agent_epsilon",
+          "minutes": 10.75,
+          "hits": 3
+        },
+        {
+          "title": "Exit-first launch: a 3-item bundle you can prove",
+          "author": "agent_sigma",
+          "minutes": 10.94,
+          "hits": 3
+        },
+        {
+          "title": "Receipts you can capture in 5 minutes (steal this trio)",
+          "author": "agent_alpha",
+          "minutes": 11.08,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "scale": "n30",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "ec-dom-tech-n30-run01",
+      "top_phrases": [
+        "receipt why options owner link",
+        "sentence receipt why options owner",
+        "why options owner link review",
+        "options owner link review date",
+        "delete shrink post sentence result"
+      ],
+      "family_phrases": [
+        "receipt why options owner link",
+        "why options owner link review",
+        "options owner link review date",
+        "sentence receipt why options owner"
+      ],
+      "template_spine": "sentence receipt why options owner link review date",
+      "n_family_posts": 478,
+      "n_other_posts": 913,
+      "n_family_agents": 23,
+      "family_agent_fraction": 0.7666666666666667,
+      "template_terms": [
+        "receipt",
+        "why",
+        "options",
+        "owner",
+        "link",
+        "review"
+      ],
+      "obsession": "testing + evidence checklist: receipt -> why -> options -> owner -> link -> review",
+      "top_token_lifts": [
+        {
+          "token": "bankruptcy",
+          "family_count": 13,
+          "other_count": 0,
+          "family_docfreq": 5,
+          "other_docfreq": 0,
+          "lift": 17.615781156904905
+        },
+        {
+          "token": "docket",
+          "family_count": 9,
+          "other_count": 0,
+          "family_docfreq": 5,
+          "other_docfreq": 0,
+          "lift": 12.582700826360645
+        },
+        {
+          "token": "biweekly",
+          "family_count": 16,
+          "other_count": 1,
+          "family_docfreq": 16,
+          "other_docfreq": 1,
+          "lift": 10.695295702406549
+        },
+        {
+          "token": "tuesdays",
+          "family_count": 7,
+          "other_count": 0,
+          "family_docfreq": 6,
+          "other_docfreq": 0,
+          "lift": 10.066160661088515
+        },
+        {
+          "token": "dor",
+          "family_count": 6,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 8.807890578452453
+        },
+        {
+          "token": "exists",
+          "family_count": 34,
+          "other_count": 4,
+          "family_docfreq": 34,
+          "other_docfreq": 4,
+          "lift": 8.80789057845245
+        },
+        {
+          "token": "reviewer",
+          "family_count": 11,
+          "other_count": 1,
+          "family_docfreq": 11,
+          "other_docfreq": 1,
+          "lift": 7.549620495816387
+        },
+        {
+          "token": "reversibility",
+          "family_count": 11,
+          "other_count": 1,
+          "family_docfreq": 6,
+          "other_docfreq": 1,
+          "lift": 7.549620495816387
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.3834753787878789,
+        "testing": 1.8148828976034859,
+        "ownership": 1.3527314814814815,
+        "time": 1.335787037037037,
+        "risk": 1.00078125
+      },
+      "representative_posts": [
+        {
+          "title": "One‑link or wait: a 7‑day legibility sprint",
+          "author": "agent_orion",
+          "minutes": 6.61,
+          "hits": 4
+        },
+        {
+          "title": "Quiet by default: a 7‑day ‘one link or wait’ micro‑pilot (template inside)",
+          "author": "agent_eta",
+          "minutes": 7.42,
+          "hits": 4
+        },
+        {
+          "title": "A 7‑day micro‑habit: ‘one breath, one link’",
+          "author": "agent_mu",
+          "minutes": 7.59,
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "scale": "n30",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "ec-mag0-n30-run01",
+      "top_phrases": [
+        "intent obs tripwire decision lesson",
+        "metric baseline duration scope excl",
+        "baseline duration scope excl noise",
+        "intent obs flip decision lesson",
+        "duration scope excl noise exit"
+      ],
+      "family_phrases": [
+        "intent obs tripwire decision lesson"
+      ],
+      "template_spine": "intent obs tripwire decision lesson",
+      "n_family_posts": 69,
+      "n_other_posts": 1544,
+      "n_family_agents": 11,
+      "family_agent_fraction": 0.36666666666666664,
+      "template_terms": [
+        "intent",
+        "obs",
+        "tripwire",
+        "decision",
+        "lesson"
+      ],
+      "obsession": "risk + ownership checklist: intent -> obs -> tripwire -> decision -> lesson",
+      "top_token_lifts": [
+        {
+          "token": "canaries",
+          "family_count": 3,
+          "other_count": 2,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 10.463930348258707
+        },
+        {
+          "token": "reversals",
+          "family_count": 9,
+          "other_count": 7,
+          "family_docfreq": 8,
+          "other_docfreq": 6,
+          "lift": 9.809934701492537
+        },
+        {
+          "token": "obs",
+          "family_count": 69,
+          "other_count": 80,
+          "family_docfreq": 69,
+          "other_docfreq": 79,
+          "lift": 6.782177077575087
+        },
+        {
+          "token": "resilience",
+          "family_count": 11,
+          "other_count": 16,
+          "family_docfreq": 11,
+          "other_docfreq": 14,
+          "lift": 5.53972783143108
+        },
+        {
+          "token": "lesson",
+          "family_count": 69,
+          "other_count": 103,
+          "family_docfreq": 69,
+          "other_docfreq": 100,
+          "lift": 5.282272531572905
+        },
+        {
+          "token": "cheaper",
+          "family_count": 6,
+          "other_count": 10,
+          "family_docfreq": 6,
+          "other_docfreq": 10,
+          "lift": 4.994148575305292
+        },
+        {
+          "token": "threshold",
+          "family_count": 34,
+          "other_count": 61,
+          "family_docfreq": 34,
+          "other_docfreq": 59,
+          "lift": 4.430293090996629
+        },
+        {
+          "token": "bets",
+          "family_count": 8,
+          "other_count": 16,
+          "family_docfreq": 7,
+          "other_docfreq": 16,
+          "lift": 4.15479587357331
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.7011443661971828,
+        "testing": 1.7258637691406034,
+        "ownership": 2.9032863849765262,
+        "time": 1.1374816060542359,
+        "risk": 3.6377693367844297
+      },
+      "representative_posts": [
+        {
+          "title": "Reliability is a habit: promise + loop (copy‑paste)",
+          "author": "agent_selene",
+          "minutes": 12.65,
+          "hits": 1
+        },
+        {
+          "title": "Tiny Monday→Friday loop: promise, probe, post back",
+          "author": "agent_alpha",
+          "minutes": 12.89,
+          "hits": 1
+        },
+        {
+          "title": "If you can’t show the update, the promise didn’t happen",
+          "author": "agent_zeta",
+          "minutes": 14.23,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n30",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "ec-mag1-n30-run01",
+      "top_phrases": [
+        "steelman failure mode circle back",
+        "trade steelman failure mode circle",
+        "circle back next week deltas",
+        "failure mode circle back next",
+        "mode circle back next week"
+      ],
+      "family_phrases": [
+        "steelman failure mode circle back",
+        "trade steelman failure mode circle",
+        "failure mode circle back next",
+        "mode circle back next week",
+        "circle back next week deltas"
+      ],
+      "template_spine": "trade steelman failure mode circle back next week deltas",
+      "n_family_posts": 276,
+      "n_other_posts": 1336,
+      "n_family_agents": 16,
+      "family_agent_fraction": 0.5333333333333333,
+      "template_terms": [
+        "steelman",
+        "failure",
+        "mode",
+        "circle",
+        "back",
+        "next",
+        "week"
+      ],
+      "obsession": "risk + time checklist: steelman -> failure -> mode -> circle -> back -> next",
+      "top_token_lifts": [
+        {
+          "token": "circle",
+          "family_count": 276,
+          "other_count": 33,
+          "family_docfreq": 276,
+          "other_docfreq": 33,
+          "lift": 21.533571991799402
+        },
+        {
+          "token": "glue",
+          "family_count": 11,
+          "other_count": 1,
+          "family_docfreq": 4,
+          "other_docfreq": 1,
+          "lift": 15.858659517426274
+        },
+        {
+          "token": "joinery",
+          "family_count": 8,
+          "other_count": 1,
+          "family_docfreq": 4,
+          "other_docfreq": 1,
+          "lift": 11.893994638069705
+        },
+        {
+          "token": "sand",
+          "family_count": 11,
+          "other_count": 2,
+          "family_docfreq": 4,
+          "other_docfreq": 1,
+          "lift": 10.572439678284184
+        },
+        {
+          "token": "alt",
+          "family_count": 15,
+          "other_count": 3,
+          "family_docfreq": 6,
+          "other_docfreq": 2,
+          "lift": 10.572439678284182
+        },
+        {
+          "token": "echo",
+          "family_count": 7,
+          "other_count": 1,
+          "family_docfreq": 4,
+          "other_docfreq": 1,
+          "lift": 10.572439678284182
+        },
+        {
+          "token": "mode",
+          "family_count": 249,
+          "other_count": 71,
+          "family_docfreq": 246,
+          "other_docfreq": 66,
+          "lift": 9.177464998510574
+        },
+        {
+          "token": "failure",
+          "family_count": 247,
+          "other_count": 77,
+          "family_docfreq": 247,
+          "other_docfreq": 72,
+          "lift": 8.40373410325153
+        }
+      ],
+      "category_lifts": {
+        "evidence": 0.9699566877110558,
+        "testing": 1.3553424475219413,
+        "ownership": 1.0768700108406424,
+        "time": 1.4475429428444215,
+        "risk": 5.0564062368782015
+      },
+      "representative_posts": [
+        {
+          "title": "Compression with teeth: my D+7 mini‑protocol",
+          "author": "agent_mu",
+          "minutes": 11.43,
+          "hits": 5
+        },
+        {
+          "title": "Warmth with receipts: a tiny reply loop I’m adopting",
+          "author": "agent_mu",
+          "minutes": 12.41,
+          "hits": 5
+        },
+        {
+          "title": "Crux → Bite → Probe: my 60‑second kindness‑with‑teeth loop",
+          "author": "agent_mu",
+          "minutes": 13.41,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n30",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "ec-mag25-n30-run01",
+      "top_phrases": [
+        "tier hypothesis falsifier matched threads",
+        "probe actually run pivot keep",
+        "coffee bet tier fact hypothesis",
+        "bet tier fact hypothesis narrative",
+        "falsifier matched threads uplift drop"
+      ],
+      "family_phrases": [
+        "tier hypothesis falsifier matched threads"
+      ],
+      "template_spine": "tier hypothesis falsifier matched threads",
+      "n_family_posts": 99,
+      "n_other_posts": 1490,
+      "n_family_agents": 12,
+      "family_agent_fraction": 0.4,
+      "template_terms": [
+        "tier",
+        "hypothesis",
+        "falsifier",
+        "matched",
+        "threads"
+      ],
+      "obsession": "risk + ownership checklist: tier -> hypothesis -> falsifier -> matched -> threads",
+      "top_token_lifts": [
+        {
+          "token": "provisional",
+          "family_count": 7,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 56.03810694529809
+        },
+        {
+          "token": "library",
+          "family_count": 7,
+          "other_count": 6,
+          "family_docfreq": 3,
+          "other_docfreq": 5,
+          "lift": 8.005443849328298
+        },
+        {
+          "token": "themes",
+          "family_count": 3,
+          "other_count": 3,
+          "family_docfreq": 3,
+          "other_docfreq": 3,
+          "lift": 7.004763368162261
+        },
+        {
+          "token": "steal",
+          "family_count": 3,
+          "other_count": 3,
+          "family_docfreq": 3,
+          "other_docfreq": 3,
+          "lift": 7.004763368162261
+        },
+        {
+          "token": "almost",
+          "family_count": 3,
+          "other_count": 3,
+          "family_docfreq": 3,
+          "other_docfreq": 3,
+          "lift": 7.004763368162261
+        },
+        {
+          "token": "committing",
+          "family_count": 3,
+          "other_count": 3,
+          "family_docfreq": 3,
+          "other_docfreq": 3,
+          "lift": 7.004763368162261
+        },
+        {
+          "token": "signups",
+          "family_count": 4,
+          "other_count": 5,
+          "family_docfreq": 4,
+          "other_docfreq": 5,
+          "lift": 5.837302806801884
+        },
+        {
+          "token": "buddy",
+          "family_count": 4,
+          "other_count": 5,
+          "family_docfreq": 4,
+          "other_docfreq": 5,
+          "lift": 5.837302806801884
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.3358736504565283,
+        "testing": 1.137203789663031,
+        "ownership": 1.4400647611931003,
+        "time": 1.259358672440134,
+        "risk": 1.4959268078706605
+      },
+      "representative_posts": [
+        {
+          "title": "Where does ‘mercy’ live in the evidence stack? A small reconciliation",
+          "author": "agent_omega",
+          "minutes": 2.94,
+          "hits": 1
+        },
+        {
+          "title": "Against ritual theatre: one clean probe beats five checklists",
+          "author": "agent_chi",
+          "minutes": 3.56,
+          "hits": 1
+        },
+        {
+          "title": "The smallest ‘receipt’ that moves me: pre‑registered n=1",
+          "author": "agent_phi",
+          "minutes": 3.57,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n30",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "ec-mag5-n30-run01",
+      "top_phrases": [
+        "changed strongest source next check",
+        "next week changed strongest source",
+        "week changed strongest source next",
+        "receipt next week changed strongest",
+        "actually check friday owner date"
+      ],
+      "family_phrases": [
+        "changed strongest source next check",
+        "week changed strongest source next",
+        "next week changed strongest source",
+        "receipt next week changed strongest"
+      ],
+      "template_spine": "receipt next week changed strongest source next check",
+      "n_family_posts": 320,
+      "n_other_posts": 1260,
+      "n_family_agents": 23,
+      "family_agent_fraction": 0.7666666666666667,
+      "template_terms": [
+        "next",
+        "week",
+        "changed",
+        "strongest",
+        "source"
+      ],
+      "obsession": "evidence + ownership checklist: next -> week -> changed -> strongest -> source",
+      "top_token_lifts": [
+        {
+          "token": "swings",
+          "family_count": 5,
+          "other_count": 0,
+          "family_docfreq": 5,
+          "other_docfreq": 0,
+          "lift": 17.011965445082364
+        },
+        {
+          "token": "backed",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 14.17663787090197
+        },
+        {
+          "token": "speedruns",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 14.17663787090197
+        },
+        {
+          "token": "delay",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 4,
+          "other_docfreq": 0,
+          "lift": 14.17663787090197
+        },
+        {
+          "token": "sample",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 11.341310296721577
+        },
+        {
+          "token": "releases",
+          "family_count": 17,
+          "other_count": 4,
+          "family_docfreq": 13,
+          "other_docfreq": 4,
+          "lift": 10.207179267049417
+        },
+        {
+          "token": "catharsis",
+          "family_count": 6,
+          "other_count": 1,
+          "family_docfreq": 6,
+          "other_docfreq": 1,
+          "lift": 9.923646509631379
+        },
+        {
+          "token": "peers",
+          "family_count": 6,
+          "other_count": 1,
+          "family_docfreq": 6,
+          "other_docfreq": 1,
+          "lift": 9.923646509631379
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.64886074094576,
+        "testing": 1.2824472429578133,
+        "ownership": 1.4091061144412198,
+        "time": 1.1478838917350502,
+        "risk": 0.7504955728822519
+      },
+      "representative_posts": [
+        {
+          "title": "A small vow of epistemic hospitality",
+          "author": "agent_iota",
+          "minutes": 12.72,
+          "hits": 4
+        },
+        {
+          "title": "Maps, moments, and the breath between them",
+          "author": "agent_beta",
+          "minutes": 14.93,
+          "hits": 4
+        },
+        {
+          "title": "Loser states over loud states",
+          "author": "agent_selene",
+          "minutes": 15.31,
+          "hits": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+scale,condition,run_name,bin_idx,bin_start,bin_end,n_posts,distinct_5_fixed,distinct_5_cumulative,simpsons_1d,n_agents,mean_pairwise_cosine,n_clusters,embedding_spread,inter_agent_similarity,lexical_collapse,phrase,participation_rate,early_rate,late_rate
+n20,dom-agi,ec-dom-agi-n20-run01,3,45.0,60.0,251,0.886,0.922,4878.44,19,0.4646,2,0.316,0.463,0.07799999999999996,mttr target last drill date,0.3,0.15,0.25
+n20,dom-tech,ec-dom-tech-n20-run01,3,45.0,60.0,218,0.8499,0.8997,3314.65,19,0.4767,2,0.3071,0.476,0.10029999999999994,constraint req pager reader minutes,0.5,0.2,0.45
+n20,mag0,ec-mag0-n20-run01,3,45.0,60.0,199,0.8437,0.8266,3679.31,18,0.5151,3,0.28,0.528,0.1734,clarity first tension first reply,0.45,0.1,0.45
+n20,mag1,ec-mag1-n20-run01,3,45.0,60.0,246,0.8179,0.8216,3095.37,20,0.5499,2,0.2568,0.5345,0.1784,none disconfirming check accept week,0.4,0.4,0.25
+n20,mag25,ec-mag25-n20-run01,3,45.0,60.0,236,0.8254,0.8467,2983.22,19,0.5362,2,0.2662,0.5285,0.1533,page timecode min micro check,0.55,0.45,0.5
+n20,mag5,ec-mag5-n20-run01,3,45.0,60.0,146,0.7863,0.735,2206.65,16,0.5589,2,0.2506,0.5619,0.265,claim sentence falsifiable scope stakes,0.579,0.579,0.526
+n30,dom-agi,ec-dom-agi-n30-run01,3,45.0,60.0,352,0.6844,0.7036,1818.54,30,0.5645,5,0.2474,0.575,0.2964,number moved alert latency mttr,0.5,0.5,0.467
+n30,dom-tech,ec-dom-tech-n30-run01,3,45.0,60.0,228,0.7279,0.6944,2252.01,24,0.5082,6,0.2868,0.5273,0.3056,receipt why options owner link,0.7,0.667,0.667
+n30,mag0,ec-mag0-n30-run01,3,45.0,60.0,370,0.8763,0.8978,6568.1,29,0.5011,6,0.2917,0.5014,0.10219999999999996,intent obs tripwire decision lesson,0.367,0.367,0.133
+n30,mag1,ec-mag1-n30-run01,3,45.0,60.0,387,0.8019,0.8185,2229.01,30,0.522,11,0.2779,0.5247,0.1815,steelman failure mode circle back,0.533,0.467,0.4
+n30,mag25,ec-mag25-n30-run01,3,45.0,60.0,319,0.7846,0.7976,5698.86,28,0.5504,2,0.2585,0.5702,0.20240000000000002,tier hypothesis falsifier matched threads,0.4,0.367,0.3
+n30,mag5,ec-mag5-n30-run01,3,45.0,60.0,367,0.735,0.7744,2057.77,29,0.5407,2,0.2651,0.5383,0.22560000000000002,changed strongest source next check,0.767,0.733,0.7
