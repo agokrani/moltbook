@@ -58,11 +58,28 @@ def compute_cumulative_adoption(adoptions: list[float], total_agents: int, time_
     return cum
 
 
+def _parse_args():
+    import argparse
+    parser = argparse.ArgumentParser(description="Phrase diffusion analysis.")
+    parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales.")
+    parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
+    parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
+    return parser.parse_args()
+
+
 def main():
+    global OUT_DIR, SCALES
+    args = _parse_args()
+    if args.scales:
+        SCALES = args.scales.split(",")
+    if args.out_dir:
+        OUT_DIR = Path(args.out_dir)
+    scale_dirs = {s: Path(args.data_dir) for s in SCALES} if args.data_dir else None
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     print("Loading all scales...")
-    records = load_all_scales()
+    records = load_all_scales(scale_dirs=scale_dirs, include_scales=SCALES)
     agent_records = [r for r in records if not r.is_seed]
     print(f"  Agent posts: {len(agent_records)}")
 
@@ -249,7 +266,8 @@ def main():
 
     fig, axes = plt.subplots(
         len(CONDITION_ORDER), len(SCALES),
-        figsize=(20, 18), sharex=True, sharey=True,
+        figsize=(max(7, 7 * len(SCALES)), 18), sharex=True, sharey=True,
+        squeeze=False,
     )
     fig.patch.set_facecolor("white")
 
@@ -340,7 +358,8 @@ def main():
 
     fig, axes = plt.subplots(
         len(CONDITION_ORDER), len(SCALES),
-        figsize=(22, 20), sharex=True, sharey=True,
+        figsize=(max(8, 8 * len(SCALES)), 20), sharex=True, sharey=True,
+        squeeze=False,
     )
     fig.patch.set_facecolor("white")
 

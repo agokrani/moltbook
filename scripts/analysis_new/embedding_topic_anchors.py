@@ -82,8 +82,8 @@ COND_ORDER = {cond: idx for idx, cond in enumerate(CONDITION_ORDER)}
 SCALE_MARKERS = {"n10": "^", "n20": "o", "n30": "s"}
 
 
-def load_embeddings(scale: str) -> dict[str, np.ndarray]:
-    data = np.load(Path(f"embeddings_{scale}.npz"), allow_pickle=True)
+def load_embeddings(scale: str, prefix: str = "embeddings") -> dict[str, np.ndarray]:
+    data = np.load(Path(f"{prefix}_{scale}.npz"), allow_pickle=True)
     ids = data["post_id"]
     embs = data["embeddings"]
     return {str(pid): embs[idx] for idx, pid in enumerate(ids)}
@@ -363,7 +363,7 @@ def plot_anchor_cluster_grid(assignment_rows: list[dict], run_summary_rows: list
     }
 
     fig_height = 3.0 * len(SCALES) + 2.0
-    fig, axes = plt.subplots(len(SCALES), len(CONDITION_ORDER), figsize=(22, fig_height), sharex=True, sharey=True)
+    fig, axes = plt.subplots(len(SCALES), len(CONDITION_ORDER), figsize=(22, fig_height), sharex=True, sharey=True, squeeze=False)
     fig.patch.set_facecolor("white")
 
     for row_idx, scale in enumerate(SCALES):
@@ -600,16 +600,34 @@ def plot_centroids_pca(late_centroid_rows: list[dict], anchors: dict[str, np.nda
     plt.close(fig)
 
 
+def parse_args():
+    import argparse
+    parser = argparse.ArgumentParser(description="Embedding topic-anchor analysis.")
+    parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales (default: n10,n20,n30).")
+    parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
+    parser.add_argument("--emb-prefix", type=str, default="embeddings", help="Embedding file prefix (default: 'embeddings' → embeddings_n10.npz).")
+    parser.add_argument("--data-dir", type=str, default=None, help="Override data directory (all scales read from this single dir).")
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
+    scales = args.scales.split(",") if args.scales else SCALES
+    global OUT_DIR
+    if args.out_dir:
+        OUT_DIR = Path(args.out_dir)
+    emb_prefix = args.emb_prefix
+    scale_dirs = {s: Path(args.data_dir) for s in scales} if args.data_dir else None
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    records = [record for record in load_all_scales(include_scales=SCALES) if not record.is_seed]
+    records = [record for record in load_all_scales(scale_dirs=scale_dirs, include_scales=scales) if not record.is_seed]
     prepared_posts = prepare_posts(records)
     prepared_by_id = {post.record.post_id: post for post in prepared_posts}
 
     emb_map = {}
-    for scale in SCALES:
-        emb_map.update(load_embeddings(scale))
+    for scale in scales:
+        emb_map.update(load_embeddings(scale, prefix=emb_prefix))
     norm_emb_map = {post_id: normalize(vector) for post_id, vector in emb_map.items()}
 
     anchors, anchor_counts = build_topic_anchors(prepared_posts, emb_map)

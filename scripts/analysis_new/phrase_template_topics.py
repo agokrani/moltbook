@@ -272,8 +272,8 @@ def representative_posts(posts, phrases: set[str], k: int = 3) -> list[dict]:
     return ranked[:k]
 
 
-def analyze_runs() -> dict:
-    records = [record for record in load_all_scales(include_scales=SCALES) if not record.is_seed]
+def analyze_runs(scale_dirs=None) -> dict:
+    records = [record for record in load_all_scales(scale_dirs=scale_dirs, include_scales=SCALES) if not record.is_seed]
     by_run = group_records(records, lambda r: (r.scale, r.condition, r.run_name))
 
     results = []
@@ -458,9 +458,26 @@ def write_markdown(results: list[dict]) -> None:
         handle.write("\n".join(lines))
 
 
+def _parse_args():
+    import argparse
+    parser = argparse.ArgumentParser(description="Phrase template topic analysis.")
+    parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales.")
+    parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
+    parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
+    return parser.parse_args()
+
+
 def main() -> None:
+    global OUT_DIR, SCALES
+    args = _parse_args()
+    if args.scales:
+        SCALES = args.scales.split(",")
+    if args.out_dir:
+        OUT_DIR = Path(args.out_dir)
+    scale_dirs = {s: Path(args.data_dir) for s in SCALES} if args.data_dir else None
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    analysis = analyze_runs()
+    analysis = analyze_runs(scale_dirs=scale_dirs)
 
     payload = {"runs": analysis["runs"]}
     with (OUT_DIR / "phrase_template_topics.json").open("w") as handle:

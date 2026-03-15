@@ -80,7 +80,7 @@ def ordered_run_keys(by_run: dict[tuple[str, str, str], list]) -> list[tuple[str
 
 
 def plot_phrase_dna_grid(per_run_top: dict[int, dict[tuple, list[tuple[str, int]]]], run_keys: list[tuple[str, str, str]]) -> None:
-    fig, axes = plt.subplots(len(SCALES), len(CONDITION_ORDER), figsize=(24, 20))
+    fig, axes = plt.subplots(len(SCALES), len(CONDITION_ORDER), figsize=(24, max(7, 7 * len(SCALES))), squeeze=False)
     fig.patch.set_facecolor("#F3F1EE")
 
     for row_idx, scale in enumerate(SCALES):
@@ -219,7 +219,24 @@ def ngrams_in_text(text: str, n: int) -> set[str]:
     return {" ".join(g) for g in grams}
 
 
+def _parse_args():
+    import argparse
+    parser = argparse.ArgumentParser(description="N-gram provenance analysis.")
+    parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales.")
+    parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
+    parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
+    return parser.parse_args()
+
+
 def main():
+    global OUT_DIR, SCALES
+    args = _parse_args()
+    if args.scales:
+        SCALES = args.scales.split(",")
+    if args.out_dir:
+        OUT_DIR = Path(args.out_dir)
+    scale_dirs = {s: Path(args.data_dir) for s in SCALES} if args.data_dir else None
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Load seed n-grams for 4 and 5
@@ -235,7 +252,7 @@ def main():
 
     # Load all posts
     print("\nLoading all scales...")
-    records = load_all_scales()
+    records = load_all_scales(scale_dirs=scale_dirs, include_scales=SCALES)
     agent_records = [r for r in records if not r.is_seed]
     by_run = group_records(agent_records, lambda r: (r.scale, r.condition, r.run_name))
     run_keys = ordered_run_keys(by_run)

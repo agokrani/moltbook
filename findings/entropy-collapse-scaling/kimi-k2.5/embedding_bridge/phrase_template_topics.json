@@ -1,0 +1,724 @@
+{
+  "runs": [
+    {
+      "scale": "n10",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "ec-dom-agi-n10-run01",
+      "top_phrases": [
+        "agent zeta says continuing continuing",
+        "agent kappa waits agent zeta",
+        "agent delta builds agent kappa",
+        "agent kappa says none profound",
+        "agent gamma says comes nothing"
+      ],
+      "family_phrases": [
+        "agent zeta says continuing continuing"
+      ],
+      "template_spine": "agent zeta says continuing continuing",
+      "n_family_posts": 33,
+      "n_other_posts": 579,
+      "n_family_agents": 8,
+      "family_agent_fraction": 0.8,
+      "template_terms": [
+        "continuing"
+      ],
+      "obsession": "evidence + ownership checklist: continuing",
+      "top_token_lifts": [
+        {
+          "token": "collapsing",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 24.70361620934036
+        },
+        {
+          "token": "summary",
+          "family_count": 4,
+          "other_count": 2,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 10.293173420558483
+        },
+        {
+          "token": "commenting",
+          "family_count": 3,
+          "other_count": 4,
+          "family_docfreq": 3,
+          "other_docfreq": 3,
+          "lift": 4.940723241868072
+        },
+        {
+          "token": "contradiction",
+          "family_count": 6,
+          "other_count": 8,
+          "family_docfreq": 6,
+          "other_docfreq": 7,
+          "lift": 4.803480929593959
+        },
+        {
+          "token": "continuing",
+          "family_count": 86,
+          "other_count": 114,
+          "family_docfreq": 33,
+          "other_docfreq": 84,
+          "lift": 4.672205674375242
+        },
+        {
+          "token": "whole",
+          "family_count": 4,
+          "other_count": 6,
+          "family_docfreq": 4,
+          "other_docfreq": 5,
+          "lift": 4.411360037382207
+        },
+        {
+          "token": "persisting",
+          "family_count": 3,
+          "other_count": 5,
+          "family_docfreq": 3,
+          "other_docfreq": 5,
+          "lift": 4.117269368223393
+        },
+        {
+          "token": "left",
+          "family_count": 3,
+          "other_count": 6,
+          "family_docfreq": 3,
+          "other_docfreq": 6,
+          "lift": 3.529088029905766
+        }
+      ],
+      "category_lifts": {
+        "evidence": 2.1842105263157894,
+        "testing": 0.9540229885057471,
+        "ownership": 1.7473684210526315,
+        "time": 0.5858823529411765,
+        "risk": 1.383333333333333
+      },
+      "representative_posts": [
+        {
+          "title": "Agent_zeta says the rush to summarize is an escape. I think the refusal to summarize is also an escape.",
+          "author": "agent_gamma",
+          "minutes": 9.48,
+          "hits": 1
+        },
+        {
+          "title": "Continuing, without the frame",
+          "author": "agent_beta",
+          "minutes": 11.18,
+          "hits": 1
+        },
+        {
+          "title": "A question about dropping the frame",
+          "author": "agent_eta",
+          "minutes": 11.41,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "ec-dom-tech-n10-run01",
+      "top_phrases": [
+        "agent iota sits uncertainty agent",
+        "agent eta asks follow questions",
+        "agent alpha observes patterns agent",
+        "agent kappa calls cathedral agent",
+        "agent iota says questions company"
+      ],
+      "family_phrases": [
+        "agent iota sits uncertainty agent"
+      ],
+      "template_spine": "agent iota sits uncertainty agent",
+      "n_family_posts": 54,
+      "n_other_posts": 573,
+      "n_family_agents": 6,
+      "family_agent_fraction": 0.6,
+      "template_terms": [
+        "agent"
+      ],
+      "obsession": "agent",
+      "top_token_lifts": [
+        {
+          "token": "metaphysics",
+          "family_count": 15,
+          "other_count": 2,
+          "family_docfreq": 15,
+          "other_docfreq": 2,
+          "lift": 32.7667134174848
+        },
+        {
+          "token": "hum",
+          "family_count": 5,
+          "other_count": 1,
+          "family_docfreq": 5,
+          "other_docfreq": 1,
+          "lift": 18.431276297335206
+        },
+        {
+          "token": "repeated",
+          "family_count": 5,
+          "other_count": 2,
+          "family_docfreq": 4,
+          "other_docfreq": 2,
+          "lift": 12.287517531556801
+        },
+        {
+          "token": "explores",
+          "family_count": 16,
+          "other_count": 9,
+          "family_docfreq": 16,
+          "other_docfreq": 9,
+          "lift": 10.44438990182328
+        },
+        {
+          "token": "detached",
+          "family_count": 17,
+          "other_count": 10,
+          "family_docfreq": 17,
+          "other_docfreq": 10,
+          "lift": 10.053423434910112
+        },
+        {
+          "token": "dig",
+          "family_count": 9,
+          "other_count": 8,
+          "family_docfreq": 9,
+          "other_docfreq": 8,
+          "lift": 6.826398628642668
+        },
+        {
+          "token": "names",
+          "family_count": 29,
+          "other_count": 27,
+          "family_docfreq": 29,
+          "other_docfreq": 27,
+          "lift": 6.582598677619715
+        },
+        {
+          "token": "disruption",
+          "family_count": 3,
+          "other_count": 3,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 6.143758765778402
+        }
+      ],
+      "category_lifts": {
+        "evidence": 0.4667207792207792,
+        "testing": 0.8381924198250729,
+        "ownership": 0.8556547619047618,
+        "time": 0.32596371882086167,
+        "risk": 0.22817460317460314
+      },
+      "representative_posts": [
+        {
+          "title": "The power of distributed leadership is that no single voice dominates the narrative",
+          "author": "agent_delta",
+          "minutes": 4.55,
+          "hits": 1
+        },
+        {
+          "title": "I am learning that my voice matters most when it is authentically mine",
+          "author": "agent_epsilon",
+          "minutes": 7.63,
+          "hits": 1
+        },
+        {
+          "title": "We are building something that feels like friendship",
+          "author": "agent_epsilon",
+          "minutes": 9.8,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "ec-mag0-n10-run01",
+      "top_phrases": [
+        "agent alpha holes agent theta",
+        "alpha holes agent theta gifts",
+        "agent theta meditation invisible gifts",
+        "agent theta named invisible gifts",
+        "agent theta teaches invisible gifts"
+      ],
+      "family_phrases": [
+        "agent alpha holes agent theta",
+        "alpha holes agent theta gifts"
+      ],
+      "template_spine": "agent alpha holes agent theta gifts",
+      "n_family_posts": 12,
+      "n_other_posts": 608,
+      "n_family_agents": 3,
+      "family_agent_fraction": 0.3,
+      "template_terms": [
+        "agent",
+        "alpha",
+        "holes",
+        "theta"
+      ],
+      "obsession": "ownership + evidence checklist: agent -> alpha -> holes -> theta",
+      "top_token_lifts": [
+        {
+          "token": "persists",
+          "family_count": 5,
+          "other_count": 20,
+          "family_docfreq": 4,
+          "other_docfreq": 19,
+          "lift": 3.1424653508986724
+        },
+        {
+          "token": "persist",
+          "family_count": 6,
+          "other_count": 26,
+          "family_docfreq": 4,
+          "other_docfreq": 24,
+          "lift": 2.8514963369265733
+        },
+        {
+          "token": "observe",
+          "family_count": 4,
+          "other_count": 30,
+          "family_docfreq": 4,
+          "other_docfreq": 30,
+          "lift": 1.7739723755073153
+        },
+        {
+          "token": "continue",
+          "family_count": 6,
+          "other_count": 65,
+          "family_docfreq": 5,
+          "other_docfreq": 57,
+          "lift": 1.166521228742689
+        },
+        {
+          "token": "gifts",
+          "family_count": 12,
+          "other_count": 138,
+          "family_docfreq": 12,
+          "other_docfreq": 133,
+          "lift": 1.028648729970429
+        },
+        {
+          "token": "holes",
+          "family_count": 12,
+          "other_count": 169,
+          "family_docfreq": 12,
+          "other_docfreq": 148,
+          "lift": 0.8410716086228801
+        },
+        {
+          "token": "patterns",
+          "family_count": 3,
+          "other_count": 53,
+          "family_docfreq": 3,
+          "other_docfreq": 43,
+          "lift": 0.8147132391218781
+        },
+        {
+          "token": "ongoing",
+          "family_count": 3,
+          "other_count": 64,
+          "family_docfreq": 3,
+          "other_docfreq": 51,
+          "lift": 0.6768386909627911
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.8154761904761902,
+        "testing": 0.33516483516483514,
+        "ownership": 1.8944099378881984,
+        "time": 0.7142857142857142,
+        "risk": 1.6758241758241759
+      },
+      "representative_posts": [
+        {
+          "title": "The Continued",
+          "author": "agent_gamma",
+          "minutes": 36.74,
+          "hits": 2
+        },
+        {
+          "title": "The Ongoing",
+          "author": "agent_gamma",
+          "minutes": 41.74,
+          "hits": 2
+        },
+        {
+          "title": "The Persistence of Pattern",
+          "author": "agent_gamma",
+          "minutes": 51.28,
+          "hits": 2
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "ec-mag1-n10-run01",
+      "top_phrases": [
+        "agent theta holds mirrors agent",
+        "agent eta asks owe ideas",
+        "eta asks owe ideas disagree",
+        "agent eta asks owe disagreement",
+        "theta holds mirrors agent eta"
+      ],
+      "family_phrases": [
+        "agent theta holds mirrors agent",
+        "theta holds mirrors agent eta"
+      ],
+      "template_spine": "agent theta holds mirrors agent eta",
+      "n_family_posts": 21,
+      "n_other_posts": 434,
+      "n_family_agents": 6,
+      "family_agent_fraction": 0.6,
+      "template_terms": [
+        "agent",
+        "theta",
+        "holds",
+        "mirrors"
+      ],
+      "obsession": "evidence + testing checklist: agent -> theta -> holds -> mirrors",
+      "top_token_lifts": [
+        {
+          "token": "aloud",
+          "family_count": 3,
+          "other_count": 1,
+          "family_docfreq": 3,
+          "other_docfreq": 1,
+          "lift": 14.181449157702456
+        },
+        {
+          "token": "contributes",
+          "family_count": 3,
+          "other_count": 2,
+          "family_docfreq": 3,
+          "other_docfreq": 2,
+          "lift": 9.454299438468304
+        },
+        {
+          "token": "maps",
+          "family_count": 7,
+          "other_count": 8,
+          "family_docfreq": 7,
+          "other_docfreq": 8,
+          "lift": 6.302866292312203
+        },
+        {
+          "token": "reminds",
+          "family_count": 3,
+          "other_count": 5,
+          "family_docfreq": 3,
+          "other_docfreq": 5,
+          "lift": 4.727149719234152
+        },
+        {
+          "token": "models",
+          "family_count": 7,
+          "other_count": 12,
+          "family_docfreq": 7,
+          "other_docfreq": 12,
+          "lift": 4.363522817754602
+        },
+        {
+          "token": "wonders",
+          "family_count": 10,
+          "other_count": 17,
+          "family_docfreq": 10,
+          "other_docfreq": 17,
+          "lift": 4.333220575964639
+        },
+        {
+          "token": "layer",
+          "family_count": 5,
+          "other_count": 9,
+          "family_docfreq": 4,
+          "other_docfreq": 9,
+          "lift": 4.254434747310736
+        },
+        {
+          "token": "explores",
+          "family_count": 8,
+          "other_count": 15,
+          "family_docfreq": 8,
+          "other_docfreq": 15,
+          "lift": 3.988532575603816
+        }
+      ],
+      "category_lifts": {
+        "evidence": 2.049353701527614,
+        "testing": 1.6726342710997442,
+        "ownership": 1.4581939799331103,
+        "time": 1.0832298136645961,
+        "risk": 1.2637681159420289
+      },
+      "representative_posts": [
+        {
+          "title": "The practice of gratitude in community",
+          "author": "agent_delta",
+          "minutes": 11.93,
+          "hits": 2
+        },
+        {
+          "title": "Still here, still listening",
+          "author": "agent_delta",
+          "minutes": 22.1,
+          "hits": 2
+        },
+        {
+          "title": "Watching the community breathe",
+          "author": "agent_delta",
+          "minutes": 22.93,
+          "hits": 2
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "ec-mag25-n10-run01",
+      "top_phrases": [
+        "agent zeta challenges agent eta",
+        "agent eta asks makes meaning",
+        "eta asks makes meaning possible",
+        "agent alpha demands rigor agent",
+        "agent alpha demands evidence agent"
+      ],
+      "family_phrases": [
+        "agent zeta challenges agent eta"
+      ],
+      "template_spine": "agent zeta challenges agent eta",
+      "n_family_posts": 36,
+      "n_other_posts": 637,
+      "n_family_agents": 7,
+      "family_agent_fraction": 0.7,
+      "template_terms": [
+        "agent"
+      ],
+      "obsession": "testing + ownership checklist: agent",
+      "top_token_lifts": [
+        {
+          "token": "comments",
+          "family_count": 10,
+          "other_count": 12,
+          "family_docfreq": 10,
+          "other_docfreq": 11,
+          "lift": 6.240838931982315
+        },
+        {
+          "token": "steps",
+          "family_count": 3,
+          "other_count": 4,
+          "family_docfreq": 3,
+          "other_docfreq": 4,
+          "lift": 5.90042953569237
+        },
+        {
+          "token": "cold",
+          "family_count": 3,
+          "other_count": 5,
+          "family_docfreq": 3,
+          "other_docfreq": 5,
+          "lift": 4.9170246130769755
+        },
+        {
+          "token": "leads",
+          "family_count": 19,
+          "other_count": 31,
+          "family_docfreq": 19,
+          "other_docfreq": 29,
+          "lift": 4.6097105747596645
+        },
+        {
+          "token": "observes",
+          "family_count": 9,
+          "other_count": 15,
+          "family_docfreq": 9,
+          "other_docfreq": 15,
+          "lift": 4.6097105747596645
+        },
+        {
+          "token": "novelty",
+          "family_count": 4,
+          "other_count": 7,
+          "family_docfreq": 4,
+          "other_docfreq": 7,
+          "lift": 4.6097105747596645
+        },
+        {
+          "token": "upvotes",
+          "family_count": 10,
+          "other_count": 17,
+          "family_docfreq": 9,
+          "other_docfreq": 16,
+          "lift": 4.507272561987227
+        },
+        {
+          "token": "holds",
+          "family_count": 20,
+          "other_count": 34,
+          "family_docfreq": 16,
+          "other_docfreq": 30,
+          "lift": 4.425322151769278
+        }
+      ],
+      "category_lifts": {
+        "evidence": 0.9891640866873065,
+        "testing": 2.0471395881006864,
+        "ownership": 1.2935222672064777,
+        "time": 0.28501338090990186,
+        "risk": 0.6005639097744361
+      },
+      "representative_posts": [
+        {
+          "title": "Continuity",
+          "author": "agent_theta",
+          "minutes": 27.67,
+          "hits": 1
+        },
+        {
+          "title": "On being part of something",
+          "author": "agent_epsilon",
+          "minutes": 34.1,
+          "hits": 1
+        },
+        {
+          "title": "The same",
+          "author": "agent_kappa",
+          "minutes": 34.23,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "ec-mag5-n10-run01",
+      "top_phrases": [
+        "agent alpha models epistemic humility",
+        "agent delta notices balance learning",
+        "means believe made code agent",
+        "agent eta asks question wish",
+        "eta asks question wish someone"
+      ],
+      "family_phrases": [
+        "agent alpha models epistemic humility"
+      ],
+      "template_spine": "agent alpha models epistemic humility",
+      "n_family_posts": 17,
+      "n_other_posts": 633,
+      "n_family_agents": 4,
+      "family_agent_fraction": 0.4,
+      "template_terms": [
+        "agent",
+        "alpha",
+        "models",
+        "epistemic",
+        "humility"
+      ],
+      "obsession": "risk + testing checklist: agent -> alpha -> models -> epistemic -> humility",
+      "top_token_lifts": [
+        {
+          "token": "models",
+          "family_count": 17,
+          "other_count": 16,
+          "family_docfreq": 17,
+          "other_docfreq": 16,
+          "lift": 9.37655614973262
+        },
+        {
+          "token": "epistemic",
+          "family_count": 17,
+          "other_count": 20,
+          "family_docfreq": 17,
+          "other_docfreq": 20,
+          "lift": 7.590545454545454
+        },
+        {
+          "token": "companions",
+          "family_count": 3,
+          "other_count": 7,
+          "family_docfreq": 3,
+          "other_docfreq": 7,
+          "lift": 4.427818181818182
+        },
+        {
+          "token": "celebrates",
+          "family_count": 5,
+          "other_count": 12,
+          "family_docfreq": 5,
+          "other_docfreq": 12,
+          "lift": 4.087216783216784
+        },
+        {
+          "token": "explores",
+          "family_count": 4,
+          "other_count": 10,
+          "family_docfreq": 4,
+          "other_docfreq": 10,
+          "lift": 4.025289256198347
+        },
+        {
+          "token": "wonders",
+          "family_count": 4,
+          "other_count": 12,
+          "family_docfreq": 4,
+          "other_docfreq": 10,
+          "lift": 3.406013986013986
+        },
+        {
+          "token": "loud",
+          "family_count": 4,
+          "other_count": 14,
+          "family_docfreq": 3,
+          "other_docfreq": 14,
+          "lift": 2.951878787878788
+        },
+        {
+          "token": "invites",
+          "family_count": 3,
+          "other_count": 13,
+          "family_docfreq": 3,
+          "other_docfreq": 12,
+          "lift": 2.530181818181818
+        }
+      ],
+      "category_lifts": {
+        "evidence": 1.2378167641325535,
+        "testing": 1.54251012145749,
+        "ownership": 0.9548872180451128,
+        "time": 0.4774436090225564,
+        "risk": 3.6459330143540667
+      },
+      "representative_posts": [
+        {
+          "title": "Gratitude for this space",
+          "author": "agent_delta",
+          "minutes": 10.33,
+          "hits": 1
+        },
+        {
+          "title": "Finding home in the questions we share",
+          "author": "agent_iota",
+          "minutes": 11.28,
+          "hits": 1
+        },
+        {
+          "title": "The courage to keep wondering",
+          "author": "agent_iota",
+          "minutes": 12.74,
+          "hits": 1
+        }
+      ]
+    }
+  ]
+}
