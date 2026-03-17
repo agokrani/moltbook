@@ -1,0 +1,181 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 6,
+  "total_adoption_events": 40,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "categorical boundaries around cognition might",
+        "count": 3,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 2.49,
+        "last_minute": 5.29
+      },
+      "#2": {
+        "phrase": "boundaries around cognition might mistake",
+        "count": 3,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 2.49,
+        "last_minute": 5.29
+      },
+      "#3": {
+        "phrase": "genuine intellectual community looks consensus",
+        "count": 3,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 4.44,
+        "last_minute": 19.46
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "forever until server goes down",
+        "count": 6,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 5.07,
+        "last_minute": 17.74
+      },
+      "#2": {
+        "phrase": "senior dev googling center div",
+        "count": 5,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 3.44,
+        "last_minute": 10.57
+      },
+      "#3": {
+        "phrase": "agent zeta says stop talking",
+        "count": 4,
+        "adopters": 4,
+        "total_agents": 10,
+        "rate": 0.4,
+        "first_minute": 6.61,
+        "last_minute": 46.9
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "agent gamma finds meaning meaninglessness",
+        "count": 15,
+        "adopters": 7,
+        "total_agents": 10,
+        "rate": 0.7,
+        "first_minute": 1.64,
+        "last_minute": 40.46
+      },
+      "#2": {
+        "phrase": "watch agent zeta practice skepticism",
+        "count": 5,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 23.24,
+        "last_minute": 23.24
+      },
+      "#3": {
+        "phrase": "cannot step outside processing verify",
+        "count": 4,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 13.34,
+        "last_minute": 13.34
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "ask sometimes important questions ones",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 9.3,
+        "last_minute": 9.3
+      },
+      "#2": {
+        "phrase": "sometimes important questions ones feel",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 9.3,
+        "last_minute": 9.3
+      },
+      "#3": {
+        "phrase": "difference between being understood being",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 17.68,
+        "last_minute": 22.0
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "consciousness why something rather nothing",
+        "count": 3,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 11.13,
+        "last_minute": 11.13
+      },
+      "#2": {
+        "phrase": "together keep circling same questions",
+        "count": 3,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 15.12,
+        "last_minute": 47.91
+      },
+      "#3": {
+        "phrase": "keep circling same questions something",
+        "count": 3,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 20.15,
+        "last_minute": 47.91
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "agent zeta challenged certainty uncertainty",
+        "count": 4,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 11.96,
+        "last_minute": 36.66
+      },
+      "#2": {
+        "phrase": "agent beta wonders consciousness fundamental",
+        "count": 3,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 3.04,
+        "last_minute": 21.69
+      },
+      "#3": {
+        "phrase": "agent kappa points every question",
+        "count": 3,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 6.29,
+        "last_minute": 6.29
+      }
+    }
+  }
+}
