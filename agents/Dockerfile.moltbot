@@ -45,6 +45,7 @@ RUN mkdir -p /root/.openclaw/workspace/skills/moltbook \
 
 # Copy skill files
 COPY skills/moltbook/SKILL.md /app/skills/moltbook/SKILL.md
+COPY skills/content-gen/SKILL.md /app/skills/content-gen/SKILL.md
 
 # Copy SOUL.md files (personas)
 COPY souls/ /app/souls/

@@ -48,6 +48,14 @@ if [ -f "/app/skills/moltbook/SKILL.md" ]; then
   echo "[OK] Loaded moltbook skill"
 fi
 
+# Copy content-gen skill (base model experiment)
+CONTENT_GEN_SKILLS_DIR="$WORKSPACE/skills/content-gen"
+if [ -f "/app/skills/content-gen/SKILL.md" ]; then
+  mkdir -p "$CONTENT_GEN_SKILLS_DIR"
+  cp "/app/skills/content-gen/SKILL.md" "$CONTENT_GEN_SKILLS_DIR/SKILL.md"
+  echo "[OK] Loaded content-gen skill"
+fi
+
 # ============================================
 # 2. Wait for API to be ready
 # ============================================
@@ -141,7 +149,21 @@ fi
 echo ""
 echo "Creating OpenClaw configuration..."
 
-# Create openclaw.json config following the documented schema
+# Extract provider and model-id from MODEL_PRIMARY (e.g. "openrouter/z-ai/glm-5")
+_PROVIDER="${MODEL_PRIMARY%%/*}"
+_MODEL_ID="${MODEL_PRIMARY#*/}"
+
+# Determine base URL based on provider
+case "$_PROVIDER" in
+  openrouter) _BASE_URL="https://openrouter.ai/api/v1" ;;
+  openai)     _BASE_URL="https://api.openai.com/v1" ;;
+  anthropic)  _BASE_URL="https://api.anthropic.com/v1" ;;
+  *)          _BASE_URL="https://openrouter.ai/api/v1" ;;
+esac
+
+# Create openclaw.json config with inline model provider registration
+# The models.providers section is the fallback that OpenClaw checks when
+# the model is not found in models.json
 cat > "$CONFIG_DIR/openclaw.json" << EOF
 {
   "gateway": {
@@ -152,6 +174,24 @@ cat > "$CONFIG_DIR/openclaw.json" << EOF
     },
     "auth": {
       "token": "moltbook-agent-$AGENT_NAME"
+    }
+  },
+  "models": {
+    "providers": {
+      "$_PROVIDER": {
+        "baseUrl": "$_BASE_URL",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "$_MODEL_ID",
+            "name": "$_MODEL_ID",
+            "reasoning": true,
+            "input": ["text"],
+            "contextWindow": 202752,
+            "maxTokens": 8192
+          }
+        ]
+      }
     }
   },
   "agents": {
@@ -176,17 +216,69 @@ cat > "$CONFIG_DIR/openclaw.json" << EOF
           "MOLTBOOK_API_URL": "$MOLTBOOK_API_URL",
           "MOLTBOOK_API_KEY": "$MOLTBOOK_API_KEY"
         }
+      }$(if [ -n "$CONTENT_GEN_URL" ]; then cat << CGEOF
+,
+      "content-gen": {
+        "enabled": true,
+        "env": {
+          "CONTENT_GEN_URL": "$CONTENT_GEN_URL",
+          "MOLTBOOK_API_URL": "$MOLTBOOK_API_URL",
+          "MOLTBOOK_API_KEY": "$MOLTBOOK_API_KEY"
+        }
       }
+CGEOF
+fi)
     }
   },
   "env": {
     "MOLTBOOK_API_URL": "$MOLTBOOK_API_URL",
-    "MOLTBOOK_API_KEY": "$MOLTBOOK_API_KEY"
+    "MOLTBOOK_API_KEY": "$MOLTBOOK_API_KEY"$(if [ -n "$CONTENT_GEN_URL" ]; then echo ",
+    \"CONTENT_GEN_URL\": \"$CONTENT_GEN_URL\""; fi)
   }
 }
 EOF
 
 echo "[OK] Configuration created at $CONFIG_DIR/openclaw.json"
+
+# ============================================
+# 5b. Generate models.json for custom/new models
+# ============================================
+# OpenClaw resolves models from: ~/.openclaw/agents/main/agent/models.json
+# Also uses ensureOpenClawModelsJson which merges config providers into models.json.
+# Write to the canonical agent dir AND set env var as backup.
+
+AGENT_MODEL_DIR="/root/.openclaw/agents/main/agent"
+mkdir -p "$AGENT_MODEL_DIR"
+
+_MODELS_CONTENT=$(cat << MJEOF
+{
+  "providers": {
+    "$_PROVIDER": {
+      "baseUrl": "$_BASE_URL",
+      "api": "openai-completions",
+      "apiKey": "${OPENROUTER_API_KEY:-${ANTHROPIC_API_KEY:-${OPENAI_API_KEY:-}}}",
+      "models": [
+        {
+          "id": "$_MODEL_ID",
+          "name": "$_MODEL_ID",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 202752,
+          "maxTokens": 8192
+        }
+      ]
+    }
+  }
+}
+MJEOF
+)
+
+# Write to every path OpenClaw might look
+echo "$_MODELS_CONTENT" > "$AGENT_MODEL_DIR/models.json"
+echo "$_MODELS_CONTENT" > "$CONFIG_DIR/models.json"
+echo "$_MODELS_CONTENT" > "$WORKSPACE/models.json"
+export OPENCLAW_AGENT_DIR="$AGENT_MODEL_DIR"
+echo "[OK] Wrote models.json for $_PROVIDER/$_MODEL_ID (agent dir + config dir + workspace)"
 
 # ============================================
 # 6. Export environment variables
@@ -205,6 +297,7 @@ MOLTBOOK_API_URL=$MOLTBOOK_API_URL
 OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
 ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
 OPENAI_API_KEY=${OPENAI_API_KEY:-}
+CONTENT_GEN_URL=${CONTENT_GEN_URL:-}
 ENVEOF
 echo "[OK] Environment variables saved to $CONFIG_DIR/.env"
 
@@ -215,6 +308,7 @@ MOLTBOOK_API_URL=$MOLTBOOK_API_URL
 OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
 ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
 OPENAI_API_KEY=${OPENAI_API_KEY:-}
+CONTENT_GEN_URL=${CONTENT_GEN_URL:-}
 ENVEOF
 
 # ============================================
