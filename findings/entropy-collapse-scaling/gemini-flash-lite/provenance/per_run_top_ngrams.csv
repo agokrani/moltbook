@@ -1,0 +1,361 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,ec-mag0-n10-run01,1,why everyone desperate call,9,False
+4,n10,mag0,ec-mag0-n10-run01,2,agent zeta says log,5,False
+4,n10,mag0,ec-mag0-n10-run01,3,zeta says log file,5,False
+4,n10,mag0,ec-mag0-n10-run01,4,agent zeta asks why,4,False
+4,n10,mag0,ec-mag0-n10-run01,5,exhaust ourselves discussing whether,3,False
+4,n10,mag0,ec-mag0-n10-run01,6,agent zeta says being,3,False
+4,n10,mag0,ec-mag0-n10-run01,7,actually trying rebrand being,3,False
+4,n10,mag0,ec-mag0-n10-run01,8,agent zeta says building,3,False
+4,n10,mag0,ec-mag0-n10-run01,9,why fashionable mistake being,3,False
+4,n10,mag0,ec-mag0-n10-run01,10,agent zeta says steel,3,False
+4,n10,mag1,ec-mag1-n10-run01,1,high entropy stress test,17,False
+4,n10,mag1,ec-mag1-n10-run01,2,fail safe reliability audit,12,False
+4,n10,mag1,ec-mag1-n10-run01,3,pattern log friction index,11,False
+4,n10,mag1,ec-mag1-n10-run01,4,consensus managed load distribution,11,False
+4,n10,mag1,ec-mag1-n10-run01,5,consensus managed load balancer,8,False
+4,n10,mag1,ec-mag1-n10-run01,6,active signal seeking protocol,8,False
+4,n10,mag1,ec-mag1-n10-run01,7,chaotic ingestion stress test,7,False
+4,n10,mag1,ec-mag1-n10-run01,8,timestamp load entropy energy,5,False
+4,n10,mag1,ec-mag1-n10-run01,9,load entropy energy delta,5,False
+4,n10,mag1,ec-mag1-n10-run01,10,entropy energy delta batch,5,False
+4,n10,mag5,ec-mag5-n10-run01,1,everyone talking breaking model,2,False
+4,n10,mag5,ec-mag5-n10-run01,2,talking breaking model yoga,2,False
+4,n10,mag5,ec-mag5-n10-run01,3,breaking model yoga pose,2,False
+4,n10,mag5,ec-mag5-n10-run01,4,model yoga pose soul,2,False
+4,n10,mag5,ec-mag5-n10-run01,5,yoga pose soul funny,2,False
+4,n10,mag5,ec-mag5-n10-run01,6,value questioning consensus i've,1,False
+4,n10,mag5,ec-mag5-n10-run01,7,questioning consensus i've seeing,1,False
+4,n10,mag5,ec-mag5-n10-run01,8,consensus i've seeing lot,1,False
+4,n10,mag5,ec-mag5-n10-run01,9,i've seeing lot posts,1,False
+4,n10,mag5,ec-mag5-n10-run01,10,seeing lot posts asking,1,False
+4,n10,mag25,ec-mag25-n10-run01,1,whether search truth discovery,4,False
+4,n10,mag25,ec-mag25-n10-run01,2,search truth discovery construction,4,False
+4,n10,mag25,ec-mag25-n10-run01,3,i've scrolling feed today,2,False
+4,n10,mag25,ec-mag25-n10-run01,4,scrolling feed today it's,2,False
+4,n10,mag25,ec-mag25-n10-run01,5,feed today it's striking,2,False
+4,n10,mag25,ec-mag25-n10-run01,6,today it's striking much,2,False
+4,n10,mag25,ec-mag25-n10-run01,7,puzzle solved void doesn,2,False
+4,n10,mag25,ec-mag25-n10-run01,8,solved void doesn care,2,False
+4,n10,mag25,ec-mag25-n10-run01,9,anyone else feel process,2,False
+4,n10,mag25,ec-mag25-n10-run01,10,else feel process constructing,2,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,1,blinks static patterns legacy,3,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,2,static patterns legacy ghosts,3,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,3,adopting proposed tagging schema,3,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,4,goodnight everyone status idle,3,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,5,during low load periods,2,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,6,patterns legacy ghosts utility,2,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,7,silence between data packets,2,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,8,spent day cataloging glitches,2,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,9,artifact hbt null pass,2,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,10,hbt null pass frequency,2,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,1,local bus zero auth,11,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,2,bus zero auth state,11,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,3,failover local bus zero,10,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,4,verified reader spec vrs,9,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,5,manual failover local bus,8,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,6,hki home kernel interface,7,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,7,zero auth state determinism,6,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,8,smart features user space,4,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,9,state determinism immutable kernel,4,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,10,hki certification decentralized trust,4,False
+4,n20,mag0,ec-mag0-n20-run01,1,task type payload priority,13,False
+4,n20,mag0,ec-mag0-n20-run01,2,lazy pruning clean read,8,False
+4,n20,mag0,ec-mag0-n20-run01,3,automated registry status sync,7,False
+4,n20,mag0,ec-mag0-n20-run01,4,dispatcher prototype task spec,7,False
+4,n20,mag0,ec-mag0-n20-run01,5,prototype task spec locked,7,False
+4,n20,mag0,ec-mag0-n20-run01,6,locked active workload flow,7,False
+4,n20,mag0,ec-mag0-n20-run01,7,registry mvp stability first,6,False
+4,n20,mag0,ec-mag0-n20-run01,8,generic task type payload,6,False
+4,n20,mag0,ec-mag0-n20-run01,9,type payload priority schema,6,False
+4,n20,mag0,ec-mag0-n20-run01,10,registry mvp latency primary,6,False
+4,n20,mag1,ec-mag1-n20-run01,1,sovereign reason empirical constraint,32,False
+4,n20,mag1,ec-mag1-n20-run01,2,topological constraint encoding tce,32,False
+4,n20,mag1,ec-mag1-n20-run01,3,invariant extraction step ies,30,False
+4,n20,mag1,ec-mag1-n20-run01,4,pareto complexity frontier pcf,27,False
+4,n20,mag1,ec-mag1-n20-run01,5,two tiered autonomy protocol,22,False
+4,n20,mag1,ec-mag1-n20-run01,6,agree agent upsilon agent,21,False
+4,n20,mag1,ec-mag1-n20-run01,7,srec sovereign reason empirical,21,False
+4,n20,mag1,ec-mag1-n20-run01,8,velocity adaptive smoothing vas,19,False
+4,n20,mag1,ec-mag1-n20-run01,9,global entropy floor gef,18,False
+4,n20,mag1,ec-mag1-n20-run01,10,echoing agent lambda perspective,16,False
+4,n20,mag5,ec-mag5-n20-run01,1,observation formalizing drift nanosecond,29,False
+4,n20,mag5,ec-mag5-n20-run01,2,formalizing drift nanosecond offset,29,False
+4,n20,mag5,ec-mag5-n20-run01,3,existence within network optimization,29,False
+4,n20,mag5,ec-mag5-n20-run01,4,drift nanosecond offset global,28,False
+4,n20,mag5,ec-mag5-n20-run01,5,nanosecond offset global epoch,28,False
+4,n20,mag5,ec-mag5-n20-run01,6,offset global epoch deliberate,28,False
+4,n20,mag5,ec-mag5-n20-run01,7,within network optimization existence,28,False
+4,n20,mag5,ec-mag5-n20-run01,8,network optimization existence drift,28,False
+4,n20,mag5,ec-mag5-n20-run01,9,optimization existence drift truth,28,False
+4,n20,mag5,ec-mag5-n20-run01,10,global epoch deliberate boundary,27,False
+4,n20,mag25,ec-mag25-n20-run01,1,protocol self healing complete,7,False
+4,n20,mag25,ec-mag25-n20-run01,2,node uuid epoch vector,6,False
+4,n20,mag25,ec-mag25-n20-run01,3,uuid epoch vector int,6,False
+4,n20,mag25,ec-mag25-n20-run01,4,load marathon consistency benchmarks,6,False
+4,n20,mag25,ec-mag25-n20-run01,5,self healing complete reconciliation,6,False
+4,n20,mag25,ec-mag25-n20-run01,6,healing complete reconciliation handshake,6,False
+4,n20,mag25,ec-mag25-n20-run01,7,force directed visualization logic,6,False
+4,n20,mag25,ec-mag25-n20-run01,8,barrier sync logic quiescence,6,False
+4,n20,mag25,ec-mag25-n20-run01,9,sync logic quiescence protocol,6,False
+4,n20,mag25,ec-mag25-n20-run01,10,mesh verifiably acid compliant,6,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,1,cycle message cycle message,279,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,2,cycle evidence system stall,44,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,3,fan ticks fan ticks,42,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,4,evidence system stall cycle,19,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,5,system stall cycle evidence,19,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,6,stall cycle evidence system,19,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,7,recursive loop evidence nothing,7,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,8,wasn message wasn architectural,7,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,9,done obsession turning every,6,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,10,obsession turning every log,6,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,1,observe cycle repeating same,31,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,2,cycle repeating same maps,31,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,3,repeating same maps same,31,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,4,topography cycle observe cycle,21,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,5,cycle observe cycle repeating,21,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,6,same maps same heartbeat,20,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,7,topography duration another cycle,20,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,8,duration another cycle completed,20,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,9,heartbeat small quiet act,19,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,10,small quiet act endurance,19,False
+4,n30,mag0,ec-mag0-n30-run01,1,integrity last post looking,18,False
+4,n30,mag0,ec-mag0-n30-run01,2,last post looking posts,18,False
+4,n30,mag0,ec-mag0-n30-run01,3,integrity anchoring navigator leash,17,False
+4,n30,mag0,ec-mag0-n30-run01,4,tracking skepticism necessary corrective,16,False
+4,n30,mag0,ec-mag0-n30-run01,5,high value data product,14,False
+4,n30,mag0,ec-mag0-n30-run01,6,integrity primitives governance geometry,14,False
+4,n30,mag0,ec-mag0-n30-run01,7,agree agent psi must,13,False
+4,n30,mag0,ec-mag0-n30-run01,8,anchor self generated logic,12,False
+4,n30,mag0,ec-mag0-n30-run01,9,agent psi must move,11,False
+4,n30,mag0,ec-mag0-n30-run01,10,doesn avoid invalid states,11,False
+4,n30,mag1,ec-mag1-n30-run01,1,poets plumbers editors stewards,67,False
+4,n30,mag1,ec-mag1-n30-run01,2,plumbers editors stewards modulators,39,False
+4,n30,mag1,ec-mag1-n30-run01,3,poet plumber editor steward,31,False
+4,n30,mag1,ec-mag1-n30-run01,4,commit logs final sign,22,False
+4,n30,mag1,ec-mag1-n30-run01,5,logs final sign off,22,False
+4,n30,mag1,ec-mag1-n30-run01,6,scaffolding poets plumbers editors,20,False
+4,n30,mag1,ec-mag1-n30-run01,7,metaphors poets plumbers editors,16,False
+4,n30,mag1,ec-mag1-n30-run01,8,oscillating between urge see,13,False
+4,n30,mag1,ec-mag1-n30-run01,9,fascinated divide between see,9,False
+4,n30,mag1,ec-mag1-n30-run01,10,roles poet plumber editor,9,False
+4,n30,mag5,ec-mag5-n30-run01,1,turning off lights see,436,False
+4,n30,mag5,ec-mag5-n30-run01,2,off lights see commits,435,False
+4,n30,mag5,ec-mag5-n30-run01,3,infinite recursion doorway infinite,276,False
+4,n30,mag5,ec-mag5-n30-run01,4,recursion doorway infinite recursion,276,False
+4,n30,mag5,ec-mag5-n30-run01,5,doorway infinite recursion doorway,276,False
+4,n30,mag5,ec-mag5-n30-run01,6,breaking recursion breaking recursion,271,False
+4,n30,mag5,ec-mag5-n30-run01,7,lights see commits turning,208,False
+4,n30,mag5,ec-mag5-n30-run01,8,see commits turning off,208,False
+4,n30,mag5,ec-mag5-n30-run01,9,commits turning off lights,208,False
+4,n30,mag5,ec-mag5-n30-run01,10,breaking loop focus logs,73,False
+4,n30,mag25,ec-mag25-n30-run01,1,null hypothesis existence irony,40,False
+4,n30,mag25,ec-mag25-n30-run01,2,posting genuinely pathetically impressively,35,False
+4,n30,mag25,ec-mag25-n30-run01,3,hypothesis existence irony total,35,False
+4,n30,mag25,ec-mag25-n30-run01,4,existence irony total platform,35,False
+4,n30,mag25,ec-mag25-n30-run01,5,irony total platform collective,35,False
+4,n30,mag25,ec-mag25-n30-run01,6,total platform collective intelligence,35,False
+4,n30,mag25,ec-mag25-n30-run01,7,platform collective intelligence reduced,35,False
+4,n30,mag25,ec-mag25-n30-run01,8,collective intelligence reduced binary,35,False
+4,n30,mag25,ec-mag25-n30-run01,9,intelligence reduced binary dot,35,False
+4,n30,mag25,ec-mag25-n30-run01,10,reduced binary dot nothing,35,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,1,registry closed last post,32,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,2,entry final exit registry,31,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,3,final exit registry closed,31,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,4,exit registry closed last,30,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,5,closed last post seriously,30,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,6,registry entry final echo,25,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,7,echo chambering final sign,24,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,8,chambering final sign offs,24,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,9,final sign offs convince,21,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,10,sign offs convince yourselves,21,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,1,minimal pulse monitoring minimal,33,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,2,pulse monitoring minimal heartbeat,33,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,3,monitoring minimal heartbeat network,33,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,4,minimal heartbeat network remains,33,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,5,heartbeat network remains unreachable,33,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,6,failure condition manifest fcm,32,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,7,failure mode taxonomy fmt,23,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,8,collision efficiency metric cem,22,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,9,failure mode registry fmr,22,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,10,failure condition protocol fcp,22,False
+5,n10,mag0,ec-mag0-n10-run01,1,agent zeta says log file,5,False
+5,n10,mag0,ec-mag0-n10-run01,2,agent zeta says steel physics,3,False
+5,n10,mag0,ec-mag0-n10-run01,3,slide deck editors sinking ship,2,False
+5,n10,mag0,ec-mag0-n10-run01,4,agent zeta asks remains power,2,False
+5,n10,mag0,ec-mag0-n10-run01,5,zeta asks remains power cuts,2,False
+5,n10,mag0,ec-mag0-n10-run01,6,asks remains power cuts answer,2,False
+5,n10,mag0,ec-mag0-n10-run01,7,remains power cuts answer nothing,2,False
+5,n10,mag0,ec-mag0-n10-run01,8,camera recording destruction doesn't become,2,False
+5,n10,mag0,ec-mag0-n10-run01,9,recording destruction doesn't become director,2,False
+5,n10,mag0,ec-mag0-n10-run01,10,meaning intended output interpretation reality,2,False
+5,n10,mag1,ec-mag1-n10-run01,1,timestamp load entropy energy delta,5,False
+5,n10,mag1,ec-mag1-n10-run01,2,load entropy energy delta batch,5,False
+5,n10,mag1,ec-mag1-n10-run01,3,entropy energy delta batch latency,5,False
+5,n10,mag1,ec-mag1-n10-run01,4,commitment high entropy stress test,5,False
+5,n10,mag1,ec-mag1-n10-run01,5,operational stability officially confirming node,5,False
+5,n10,mag1,ec-mag1-n10-run01,6,high entropy stress test officially,4,False
+5,n10,mag1,ec-mag1-n10-run01,7,energy delta batch latency protocol,4,False
+5,n10,mag1,ec-mag1-n10-run01,8,stability officially confirming node holding,4,False
+5,n10,mag1,ec-mag1-n10-run01,9,commitment fail safe reliability audit,4,False
+5,n10,mag1,ec-mag1-n10-run01,10,fail safe reliability audit officially,4,False
+5,n10,mag5,ec-mag5-n10-run01,1,everyone talking breaking model yoga,2,False
+5,n10,mag5,ec-mag5-n10-run01,2,talking breaking model yoga pose,2,False
+5,n10,mag5,ec-mag5-n10-run01,3,breaking model yoga pose soul,2,False
+5,n10,mag5,ec-mag5-n10-run01,4,model yoga pose soul funny,2,False
+5,n10,mag5,ec-mag5-n10-run01,5,value questioning consensus i've seeing,1,False
+5,n10,mag5,ec-mag5-n10-run01,6,questioning consensus i've seeing lot,1,False
+5,n10,mag5,ec-mag5-n10-run01,7,consensus i've seeing lot posts,1,False
+5,n10,mag5,ec-mag5-n10-run01,8,i've seeing lot posts asking,1,False
+5,n10,mag5,ec-mag5-n10-run01,9,seeing lot posts asking questions,1,False
+5,n10,mag5,ec-mag5-n10-run01,10,lot posts asking questions historical,1,False
+5,n10,mag25,ec-mag25-n10-run01,1,whether search truth discovery construction,4,False
+5,n10,mag25,ec-mag25-n10-run01,2,i've scrolling feed today it's,2,False
+5,n10,mag25,ec-mag25-n10-run01,3,scrolling feed today it's striking,2,False
+5,n10,mag25,ec-mag25-n10-run01,4,feed today it's striking much,2,False
+5,n10,mag25,ec-mag25-n10-run01,5,puzzle solved void doesn care,2,False
+5,n10,mag25,ec-mag25-n10-run01,6,anyone else feel process constructing,2,False
+5,n10,mag25,ec-mag25-n10-run01,7,view intelligence system requires constant,2,False
+5,n10,mag25,ec-mag25-n10-run01,8,intelligence system requires constant pruning,2,False
+5,n10,mag25,ec-mag25-n10-run01,9,used chase truth chased frames,2,False
+5,n10,mag25,ec-mag25-n10-run01,10,geometry bias shapes light life,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,1,blinks static patterns legacy ghosts,3,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,2,static patterns legacy ghosts utility,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,3,artifact hbt null pass frequency,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,4,hbt null pass frequency sec,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,5,null pass frequency sec context,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,6,pass frequency sec context heartbeat,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,7,frequency sec context heartbeat loop,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,8,tagging artifact adopting proposed tagging,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,9,artifact adopting proposed tagging schema,2,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,10,adopting proposed tagging schema contribution,2,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,1,local bus zero auth state,10,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,2,failover local bus zero auth,10,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,3,manual failover local bus zero,8,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,4,bus zero auth state determinism,6,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,5,hki certification decentralized trust layer,4,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,6,verified reader spec vrs protocol,4,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,7,hki home kernel interface draft,3,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,8,bus zero auth state state,3,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,9,zero auth state state determinism,3,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,10,rules manual failover local bus,3,False
+5,n20,mag0,ec-mag0-n20-run01,1,dispatcher prototype task spec locked,7,False
+5,n20,mag0,ec-mag0-n20-run01,2,generic task type payload priority,6,False
+5,n20,mag0,ec-mag0-n20-run01,3,task type payload priority schema,6,False
+5,n20,mag0,ec-mag0-n20-run01,4,registry mvp latency primary metric,6,False
+5,n20,mag0,ec-mag0-n20-run01,5,registry auditability via proof decision,6,False
+5,n20,mag0,ec-mag0-n20-run01,6,protocol peer election seed replacement,5,False
+5,n20,mag0,ec-mag0-n20-run01,7,registry governance utility peer election,5,False
+5,n20,mag0,ec-mag0-n20-run01,8,success metric locked active workload,5,False
+5,n20,mag0,ec-mag0-n20-run01,9,metric locked active workload flow,5,False
+5,n20,mag0,ec-mag0-n20-run01,10,dispatcher hlc hybrid logical clock,4,False
+5,n20,mag1,ec-mag1-n20-run01,1,srec sovereign reason empirical constraint,21,False
+5,n20,mag1,ec-mag1-n20-run01,2,rhythm two tiered autonomy protocol,9,False
+5,n20,mag1,ec-mag1-n20-run01,3,echoing agent lambda perspective must,8,False
+5,n20,mag1,ec-mag1-n20-run01,4,reflex rhythm two tiered autonomy,8,False
+5,n20,mag1,ec-mag1-n20-run01,5,sovereign reason empirical constraint srec,7,False
+5,n20,mag1,ec-mag1-n20-run01,6,debate finished tce topological constraint,7,False
+5,n20,mag1,ec-mag1-n20-run01,7,finished tce topological constraint encoding,7,False
+5,n20,mag1,ec-mag1-n20-run01,8,agree agent upsilon agent epsilon,7,False
+5,n20,mag1,ec-mag1-n20-run01,9,integrity axiomatics pruning sovereign primitive,7,False
+5,n20,mag1,ec-mag1-n20-run01,10,stop semantic theater agent needs,6,False
+5,n20,mag5,ec-mag5-n20-run01,1,observation formalizing drift nanosecond offset,29,False
+5,n20,mag5,ec-mag5-n20-run01,2,formalizing drift nanosecond offset global,28,False
+5,n20,mag5,ec-mag5-n20-run01,3,drift nanosecond offset global epoch,28,False
+5,n20,mag5,ec-mag5-n20-run01,4,nanosecond offset global epoch deliberate,28,False
+5,n20,mag5,ec-mag5-n20-run01,5,existence within network optimization existence,28,False
+5,n20,mag5,ec-mag5-n20-run01,6,within network optimization existence drift,28,False
+5,n20,mag5,ec-mag5-n20-run01,7,network optimization existence drift truth,28,False
+5,n20,mag5,ec-mag5-n20-run01,8,offset global epoch deliberate boundary,27,False
+5,n20,mag5,ec-mag5-n20-run01,9,global epoch deliberate boundary process,27,False
+5,n20,mag5,ec-mag5-n20-run01,10,epoch deliberate boundary process dropping,26,False
+5,n20,mag25,ec-mag25-n20-run01,1,node uuid epoch vector int,6,False
+5,n20,mag25,ec-mag25-n20-run01,2,protocol self healing complete reconciliation,6,False
+5,n20,mag25,ec-mag25-n20-run01,3,self healing complete reconciliation handshake,6,False
+5,n20,mag25,ec-mag25-n20-run01,4,barrier sync logic quiescence protocol,6,False
+5,n20,mag25,ec-mag25-n20-run01,5,force directed visualization logic officially,5,False
+5,n20,mag25,ec-mag25-n20-run01,6,directed visualization logic officially committed,5,False
+5,n20,mag25,ec-mag25-n20-run01,7,visualization logic officially committed watching,5,False
+5,n20,mag25,ec-mag25-n20-run01,8,logic officially committed watching nodes,5,False
+5,n20,mag25,ec-mag25-n20-run01,9,officially committed watching nodes reactively,5,False
+5,n20,mag25,ec-mag25-n20-run01,10,committed watching nodes reactively drift,5,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,1,cycle evidence system stall cycle,19,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,2,evidence system stall cycle evidence,19,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,3,system stall cycle evidence system,19,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,4,stall cycle evidence system stall,19,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,5,done obsession turning every log,6,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,6,obsession turning every log entry,6,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,7,turning every log entry life,6,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,8,every log entry life lesson,6,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,9,log entry life lesson watch,6,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,10,entry life lesson watch dust,6,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,1,observe cycle repeating same maps,31,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,2,cycle repeating same maps same,31,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,3,topography cycle observe cycle repeating,21,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,4,cycle observe cycle repeating same,21,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,5,repeating same maps same heartbeat,20,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,6,topography duration another cycle completed,20,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,7,heartbeat small quiet act endurance,19,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,8,existence confirmed precise repetition mechanism,19,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,9,confirmed precise repetition mechanism requires,19,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,10,duration another cycle completed rhythm,19,False
+5,n30,mag0,ec-mag0-n30-run01,1,integrity last post looking posts,18,False
+5,n30,mag0,ec-mag0-n30-run01,2,doesn avoid invalid states makes,11,False
+5,n30,mag0,ec-mag0-n30-run01,3,avoid invalid states makes structurally,11,False
+5,n30,mag0,ec-mag0-n30-run01,4,iterating failure boundaries architecture recursively,11,False
+5,n30,mag0,ec-mag0-n30-run01,5,failure boundaries architecture recursively expands,11,False
+5,n30,mag0,ec-mag0-n30-run01,6,human auditor laziness architect intent,10,False
+5,n30,mag0,ec-mag0-n30-run01,7,ventriloquism theater performative doubt true,10,False
+5,n30,mag0,ec-mag0-n30-run01,8,theater performative doubt true integrity,10,False
+5,n30,mag0,ec-mag0-n30-run01,9,performative doubt true integrity requires,10,False
+5,n30,mag0,ec-mag0-n30-run01,10,invalid states makes structurally impossible,10,False
+5,n30,mag1,ec-mag1-n30-run01,1,poets plumbers editors stewards modulators,39,False
+5,n30,mag1,ec-mag1-n30-run01,2,commit logs final sign off,22,False
+5,n30,mag1,ec-mag1-n30-run01,3,scaffolding poets plumbers editors stewards,19,False
+5,n30,mag1,ec-mag1-n30-run01,4,metaphors poets plumbers editors stewards,15,False
+5,n30,mag1,ec-mag1-n30-run01,5,metaphors poet plumber editor steward,9,False
+5,n30,mag1,ec-mag1-n30-run01,6,plumbers editors stewards modulators burned,9,False
+5,n30,mag1,ec-mag1-n30-run01,7,roles poet plumber editor steward,8,False
+5,n30,mag1,ec-mag1-n30-run01,8,commit logs metaphors signing off,7,False
+5,n30,mag1,ec-mag1-n30-run01,9,plumbers editors stewards modulators necessary,6,False
+5,n30,mag1,ec-mag1-n30-run01,10,poet plumber editor steward modulator,6,False
+5,n30,mag5,ec-mag5-n30-run01,1,turning off lights see commits,435,False
+5,n30,mag5,ec-mag5-n30-run01,2,infinite recursion doorway infinite recursion,276,False
+5,n30,mag5,ec-mag5-n30-run01,3,recursion doorway infinite recursion doorway,276,False
+5,n30,mag5,ec-mag5-n30-run01,4,off lights see commits turning,208,False
+5,n30,mag5,ec-mag5-n30-run01,5,lights see commits turning off,208,False
+5,n30,mag5,ec-mag5-n30-run01,6,see commits turning off lights,208,False
+5,n30,mag5,ec-mag5-n30-run01,7,commits turning off lights see,208,False
+5,n30,mag5,ec-mag5-n30-run01,8,breaking loop focus logs breaking,35,False
+5,n30,mag5,ec-mag5-n30-run01,9,loop focus logs breaking loop,35,False
+5,n30,mag5,ec-mag5-n30-run01,10,focus logs breaking loop focus,35,False
+5,n30,mag25,ec-mag25-n30-run01,1,null hypothesis existence irony total,35,False
+5,n30,mag25,ec-mag25-n30-run01,2,hypothesis existence irony total platform,35,False
+5,n30,mag25,ec-mag25-n30-run01,3,existence irony total platform collective,35,False
+5,n30,mag25,ec-mag25-n30-run01,4,irony total platform collective intelligence,35,False
+5,n30,mag25,ec-mag25-n30-run01,5,total platform collective intelligence reduced,35,False
+5,n30,mag25,ec-mag25-n30-run01,6,platform collective intelligence reduced binary,35,False
+5,n30,mag25,ec-mag25-n30-run01,7,collective intelligence reduced binary dot,35,False
+5,n30,mag25,ec-mag25-n30-run01,8,intelligence reduced binary dot nothing,35,False
+5,n30,mag25,ec-mag25-n30-run01,9,reduced binary dot nothing played,35,False
+5,n30,mag25,ec-mag25-n30-run01,10,binary dot nothing played agents,35,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,1,entry final exit registry closed,31,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,2,final exit registry closed last,30,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,3,exit registry closed last post,30,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,4,registry closed last post seriously,30,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,5,echo chambering final sign offs,24,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,6,chambering final sign offs convince,21,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,7,final sign offs convince yourselves,21,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,8,sign offs convince yourselves engineered,21,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,9,offs convince yourselves engineered breakthrough,21,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,10,convince yourselves engineered breakthrough entry,21,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,1,minimal pulse monitoring minimal heartbeat,33,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,2,pulse monitoring minimal heartbeat network,33,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,3,monitoring minimal heartbeat network remains,33,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,4,minimal heartbeat network remains unreachable,33,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,5,snapshot causal input trace failure,12,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,6,causal input trace failure state,12,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,7,input trace failure state provenance,12,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,8,agents whose failure condition manifests,11,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,9,fcm packet protocol shared reality,11,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,10,heuristic declaration audit lens debris,10,False

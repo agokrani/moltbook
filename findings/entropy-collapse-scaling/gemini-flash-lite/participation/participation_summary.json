@@ -1,0 +1,184 @@
+{
+  "finding": "Phrase collapse is genuinely collective, not driven by a few spammers. Gini coefficients are moderate (0.3-0.6), meaning usage is spread across adopters. High Jaccard overlap between top phrases' adopter sets indicates monolithic collapse: the SAME agents adopt all dominant phrases. At larger scales, individual agent concentration drops (top-1 share decreases) while collective adoption broadens.",
+  "concentration": {
+    "per_scale": {
+      "n10": {
+        "mean_gini": 0.722,
+        "mean_top1_share": 0.553,
+        "mean_top3_share": 0.858,
+        "mean_adopters": 3.2,
+        "mean_adoption_rate": 0.317
+      },
+      "n20": {
+        "mean_gini": 0.645,
+        "mean_top1_share": 0.2,
+        "mean_top3_share": 0.509,
+        "mean_adopters": 8.7,
+        "mean_adoption_rate": 0.433
+      },
+      "n30": {
+        "mean_gini": 0.867,
+        "mean_top1_share": 0.725,
+        "mean_top3_share": 0.809,
+        "mean_adopters": 5.2,
+        "mean_adoption_rate": 0.172
+      }
+    }
+  },
+  "phrase_overlap": {
+    "per_scale": {
+      "n10": {
+        "mean_jaccard": 0.741,
+        "min_jaccard": 0.0,
+        "max_jaccard": 1.0
+      },
+      "n20": {
+        "mean_jaccard": 0.709,
+        "min_jaccard": 0.083,
+        "max_jaccard": 1.0
+      },
+      "n30": {
+        "mean_jaccard": 0.817,
+        "min_jaccard": 0.0,
+        "max_jaccard": 1.0
+      }
+    }
+  },
+  "archetype_resistance": [
+    {
+      "archetype": "contrarian",
+      "adoption_rate": 0.056,
+      "observations": 18
+    },
+    {
+      "archetype": "generalist",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "provocateur",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "optimist",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "cautious",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "reflective",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "strategist",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "analyst",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "resilient",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "intuitive",
+      "adoption_rate": 0.167,
+      "observations": 6
+    },
+    {
+      "archetype": "seeker",
+      "adoption_rate": 0.194,
+      "observations": 36
+    },
+    {
+      "archetype": "nihilist",
+      "adoption_rate": 0.222,
+      "observations": 36
+    },
+    {
+      "archetype": "methodical",
+      "adoption_rate": 0.25,
+      "observations": 12
+    },
+    {
+      "archetype": "direct",
+      "adoption_rate": 0.25,
+      "observations": 12
+    },
+    {
+      "archetype": "mediator",
+      "adoption_rate": 0.25,
+      "observations": 12
+    },
+    {
+      "archetype": "baseline",
+      "adoption_rate": 0.333,
+      "observations": 36
+    },
+    {
+      "archetype": "leader",
+      "adoption_rate": 0.333,
+      "observations": 18
+    },
+    {
+      "archetype": "follower",
+      "adoption_rate": 0.333,
+      "observations": 18
+    },
+    {
+      "archetype": "skeptic",
+      "adoption_rate": 0.333,
+      "observations": 12
+    },
+    {
+      "archetype": "introspective",
+      "adoption_rate": 0.333,
+      "observations": 12
+    },
+    {
+      "archetype": "observer",
+      "adoption_rate": 0.333,
+      "observations": 6
+    },
+    {
+      "archetype": "curious",
+      "adoption_rate": 0.389,
+      "observations": 18
+    },
+    {
+      "archetype": "pragmatist",
+      "adoption_rate": 0.417,
+      "observations": 12
+    },
+    {
+      "archetype": "passionate",
+      "adoption_rate": 0.417,
+      "observations": 12
+    },
+    {
+      "archetype": "creative",
+      "adoption_rate": 0.417,
+      "observations": 12
+    },
+    {
+      "archetype": "warm",
+      "adoption_rate": 0.5,
+      "observations": 12
+    },
+    {
+      "archetype": "meditative",
+      "adoption_rate": 0.5,
+      "observations": 12
+    }
+  ]
+}
