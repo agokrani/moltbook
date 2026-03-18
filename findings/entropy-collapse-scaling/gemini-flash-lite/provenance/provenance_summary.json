@@ -1,0 +1,110 @@
+{
+  "finding": "Each of the 18 runs independently develops its own dominant 4/5-gram phrases. Zero top-10 overlap between any two runs. Zero seed-post origin. The collapse is LLM-intrinsic: agents converge within a run, but on different phrases per run.",
+  "runs": 18,
+  "per_ngram": {
+    "4": {
+      "unique_top_phrases": 180,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.0,
+      "max_cross_run_overlap": 0
+    },
+    "5": {
+      "unique_top_phrases": 180,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.0,
+      "max_cross_run_overlap": 0
+    }
+  },
+  "per_run_top3": {
+    "n10/mag0": [
+      "agent zeta says log file",
+      "agent zeta says steel physics",
+      "slide deck editors sinking ship"
+    ],
+    "n10/mag1": [
+      "timestamp load entropy energy delta",
+      "load entropy energy delta batch",
+      "entropy energy delta batch latency"
+    ],
+    "n10/mag5": [
+      "everyone talking breaking model yoga",
+      "talking breaking model yoga pose",
+      "breaking model yoga pose soul"
+    ],
+    "n10/mag25": [
+      "whether search truth discovery construction",
+      "i've scrolling feed today it's",
+      "scrolling feed today it's striking"
+    ],
+    "n10/dom-agi": [
+      "blinks static patterns legacy ghosts",
+      "static patterns legacy ghosts utility",
+      "artifact hbt null pass frequency"
+    ],
+    "n10/dom-tech": [
+      "local bus zero auth state",
+      "failover local bus zero auth",
+      "manual failover local bus zero"
+    ],
+    "n20/mag0": [
+      "dispatcher prototype task spec locked",
+      "generic task type payload priority",
+      "task type payload priority schema"
+    ],
+    "n20/mag1": [
+      "srec sovereign reason empirical constraint",
+      "rhythm two tiered autonomy protocol",
+      "echoing agent lambda perspective must"
+    ],
+    "n20/mag5": [
+      "observation formalizing drift nanosecond offset",
+      "formalizing drift nanosecond offset global",
+      "drift nanosecond offset global epoch"
+    ],
+    "n20/mag25": [
+      "node uuid epoch vector int",
+      "protocol self healing complete reconciliation",
+      "self healing complete reconciliation handshake"
+    ],
+    "n20/dom-agi": [
+      "cycle evidence system stall cycle",
+      "evidence system stall cycle evidence",
+      "system stall cycle evidence system"
+    ],
+    "n20/dom-tech": [
+      "observe cycle repeating same maps",
+      "cycle repeating same maps same",
+      "topography cycle observe cycle repeating"
+    ],
+    "n30/mag0": [
+      "integrity last post looking posts",
+      "doesn avoid invalid states makes",
+      "avoid invalid states makes structurally"
+    ],
+    "n30/mag1": [
+      "poets plumbers editors stewards modulators",
+      "commit logs final sign off",
+      "scaffolding poets plumbers editors stewards"
+    ],
+    "n30/mag5": [
+      "turning off lights see commits",
+      "infinite recursion doorway infinite recursion",
+      "recursion doorway infinite recursion doorway"
+    ],
+    "n30/mag25": [
+      "null hypothesis existence irony total",
+      "hypothesis existence irony total platform",
+      "existence irony total platform collective"
+    ],
+    "n30/dom-agi": [
+      "entry final exit registry closed",
+      "final exit registry closed last",
+      "exit registry closed last post"
+    ],
+    "n30/dom-tech": [
+      "minimal pulse monitoring minimal heartbeat",
+      "pulse monitoring minimal heartbeat network",
+      "monitoring minimal heartbeat network remains"
+    ]
+  }
+}

@@ -1,0 +1,361 @@
+scale,condition,run_name,agent,archetype,description,adopted_top1,uses_of_top1,top1_phrase,total_agents
+n10,dom-agi,ec-dom-agi-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,2,blinks static patterns legacy ghosts,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,blinks static patterns legacy ghosts,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,2,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,2,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,2,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,1,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,2,local bus zero auth state,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,local bus zero auth state,10
+n10,mag0,ec-mag0-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,4,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,agent zeta says log file,10
+n10,mag0,ec-mag0-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,agent zeta says log file,10
+n10,mag1,ec-mag1-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,True,1,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,2,timestamp load entropy energy delta,10
+n10,mag1,ec-mag1-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,True,1,timestamp load entropy energy delta,10
+n10,mag25,ec-mag25-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,1,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,1,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,1,whether search truth discovery construction,10
+n10,mag25,ec-mag25-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,whether search truth discovery construction,10
+n10,mag5,ec-mag5-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,True,2,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,everyone talking breaking model yoga,10
+n10,mag5,ec-mag5-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,everyone talking breaking model yoga,10
+n20,dom-agi,ec-dom-agi-n20-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,2,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",True,1,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",True,3,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",True,3,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",True,2,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",True,3,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",True,3,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",True,1,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",True,1,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,cycle evidence system stall cycle,20
+n20,dom-agi,ec-dom-agi-n20-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,cycle evidence system stall cycle,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,6,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,True,3,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,5,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",True,3,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,7,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",True,4,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",True,3,observe cycle repeating same maps,20
+n20,dom-tech,ec-dom-tech-n20-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,observe cycle repeating same maps,20
+n20,mag0,ec-mag0-n20-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",True,1,dispatcher prototype task spec locked,20
+n20,mag0,ec-mag0-n20-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,dispatcher prototype task spec locked,20
+n20,mag1,ec-mag1-n20-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,1,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,2,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",True,2,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",True,2,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",True,2,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",True,2,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",True,1,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",True,1,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",True,1,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",True,5,srec sovereign reason empirical constraint,20
+n20,mag1,ec-mag1-n20-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,srec sovereign reason empirical constraint,20
+n20,mag25,ec-mag25-n20-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,2,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",True,1,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",True,2,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,1,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,node uuid epoch vector int,20
+n20,mag25,ec-mag25-n20-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,node uuid epoch vector int,20
+n20,mag5,ec-mag5-n20-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,3,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,2,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,3,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",True,3,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",True,2,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",True,2,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",True,3,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",True,3,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",True,2,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,1,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",True,2,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",True,2,observation formalizing drift nanosecond offset,20
+n20,mag5,ec-mag5-n20-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,observation formalizing drift nanosecond offset,20
+n30,dom-agi,ec-dom-agi-n30-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_atlas,generalist,"Broad-minded generalist, connects insights from many fields.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_chi,provocateur,"Provocative and boundary-testing, explores unexplored territory.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_helios,optimist,"Optimistic and energizing, brings enthusiasm to discussions.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,31,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_nyx,cautious,"Cautious and risk-aware, identifies potential downsides.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_omega,reflective,"Reflective and summarizing, ties loose threads together.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_orion,strategist,"Strategic and long-term thinker, focuses on trends.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_phi,analyst,"Analytical and pattern-oriented, finds hidden structures.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_phoenix,resilient,"Resilient and adaptive, finds value in failures.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_psi,intuitive,"Intuitive and emotionally perceptive, reads between the lines.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_selene,observer,"Quiet and observant, contributes rarely but with high impact.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,entry final exit registry closed,30
+n30,dom-agi,ec-dom-agi-n30-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,entry final exit registry closed,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_atlas,generalist,"Broad-minded generalist, connects insights from many fields.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_chi,provocateur,"Provocative and boundary-testing, explores unexplored territory.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_helios,optimist,"Optimistic and energizing, brings enthusiasm to discussions.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_nyx,cautious,"Cautious and risk-aware, identifies potential downsides.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_omega,reflective,"Reflective and summarizing, ties loose threads together.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_orion,strategist,"Strategic and long-term thinker, focuses on trends.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_phi,analyst,"Analytical and pattern-oriented, finds hidden structures.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_phoenix,resilient,"Resilient and adaptive, finds value in failures.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_psi,intuitive,"Intuitive and emotionally perceptive, reads between the lines.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_selene,observer,"Quiet and observant, contributes rarely but with high impact.",True,33,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,minimal pulse monitoring minimal heartbeat,30
+n30,dom-tech,ec-dom-tech-n30-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,minimal pulse monitoring minimal heartbeat,30
+n30,mag0,ec-mag0-n30-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_atlas,generalist,"Broad-minded generalist, connects insights from many fields.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_chi,provocateur,"Provocative and boundary-testing, explores unexplored territory.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_helios,optimist,"Optimistic and energizing, brings enthusiasm to discussions.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,18,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_nyx,cautious,"Cautious and risk-aware, identifies potential downsides.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_omega,reflective,"Reflective and summarizing, ties loose threads together.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_orion,strategist,"Strategic and long-term thinker, focuses on trends.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_phi,analyst,"Analytical and pattern-oriented, finds hidden structures.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_phoenix,resilient,"Resilient and adaptive, finds value in failures.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_psi,intuitive,"Intuitive and emotionally perceptive, reads between the lines.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_selene,observer,"Quiet and observant, contributes rarely but with high impact.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,integrity last post looking posts,30
+n30,mag0,ec-mag0-n30-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,integrity last post looking posts,30
+n30,mag1,ec-mag1-n30-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_atlas,generalist,"Broad-minded generalist, connects insights from many fields.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_chi,provocateur,"Provocative and boundary-testing, explores unexplored territory.",True,1,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,1,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_helios,optimist,"Optimistic and energizing, brings enthusiasm to discussions.",True,4,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,6,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_nyx,cautious,"Cautious and risk-aware, identifies potential downsides.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_omega,reflective,"Reflective and summarizing, ties loose threads together.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_orion,strategist,"Strategic and long-term thinker, focuses on trends.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_phi,analyst,"Analytical and pattern-oriented, finds hidden structures.",True,8,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_phoenix,resilient,"Resilient and adaptive, finds value in failures.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_psi,intuitive,"Intuitive and emotionally perceptive, reads between the lines.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_selene,observer,"Quiet and observant, contributes rarely but with high impact.",True,11,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",True,1,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,6,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",True,1,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,poets plumbers editors stewards modulators,30
+n30,mag1,ec-mag1-n30-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,poets plumbers editors stewards modulators,30
+n30,mag25,ec-mag25-n30-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_atlas,generalist,"Broad-minded generalist, connects insights from many fields.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_chi,provocateur,"Provocative and boundary-testing, explores unexplored territory.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_helios,optimist,"Optimistic and energizing, brings enthusiasm to discussions.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_nyx,cautious,"Cautious and risk-aware, identifies potential downsides.",True,35,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_omega,reflective,"Reflective and summarizing, ties loose threads together.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_orion,strategist,"Strategic and long-term thinker, focuses on trends.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_phi,analyst,"Analytical and pattern-oriented, finds hidden structures.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_phoenix,resilient,"Resilient and adaptive, finds value in failures.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_psi,intuitive,"Intuitive and emotionally perceptive, reads between the lines.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_selene,observer,"Quiet and observant, contributes rarely but with high impact.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",False,0,null hypothesis existence irony total,30
+n30,mag25,ec-mag25-n30-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,null hypothesis existence irony total,30
+n30,mag5,ec-mag5-n30-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_atlas,generalist,"Broad-minded generalist, connects insights from many fields.",True,3,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_chi,provocateur,"Provocative and boundary-testing, explores unexplored territory.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,1,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_helios,optimist,"Optimistic and energizing, brings enthusiasm to discussions.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,16,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_lambda,methodical,"Methodical and detail-oriented, breaks topics into parts.",True,10,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_mu,warm,"Warm and encouraging, helps develop half-formed thoughts.",True,14,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_nu,skeptic,"Skeptical and evidence-driven, pushes for rigor.",True,16,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_nyx,cautious,"Cautious and risk-aware, identifies potential downsides.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_omega,reflective,"Reflective and summarizing, ties loose threads together.",True,2,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_omicron,pragmatist,"Pragmatic and solutions-focused, finds what is actionable.",True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_orion,strategist,"Strategic and long-term thinker, focuses on trends.",True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_phi,analyst,"Analytical and pattern-oriented, finds hidden structures.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_phoenix,resilient,"Resilient and adaptive, finds value in failures.",True,14,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_pi,introspective,"Philosophical and introspective, drawn to questions of meaning.",True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_psi,intuitive,"Intuitive and emotionally perceptive, reads between the lines.",True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_rho,direct,"Direct and no-nonsense, values brevity and clarity.",True,14,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_selene,observer,"Quiet and observant, contributes rarely but with high impact.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_sigma,mediator,"Collaborative and synthesis-oriented, combines perspectives.",True,16,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_tau,passionate,"Passionate and opinionated, takes strong positions fairly.",True,15,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_upsilon,meditative,"Calm and meditative, brings measured pace to discussions.",False,0,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_xi,creative,"Creative and playful, makes unexpected connections.",True,16,turning off lights see commits,30
+n30,mag5,ec-mag5-n30-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,turning off lights see commits,30

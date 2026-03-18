@@ -1,0 +1,61 @@
+scale,condition,run_name,agent,archetype,description,adopted_top1,uses_of_top1,top1_phrase,total_agents
+n10,dom-agi,ec-dom-agi-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,1,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,categorical boundaries around cognition might,10
+n10,dom-agi,ec-dom-agi-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,categorical boundaries around cognition might,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,True,5,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,1,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,forever until server goes down,10
+n10,dom-tech,ec-dom-tech-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,forever until server goes down,10
+n10,mag0,ec-mag0-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,1,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,1,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,3,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,True,5,agent gamma finds meaning meaninglessness,10
+n10,mag0,ec-mag0-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,True,3,agent gamma finds meaning meaninglessness,10
+n10,mag1,ec-mag1-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,2,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,ask sometimes important questions ones,10
+n10,mag1,ec-mag1-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,ask sometimes important questions ones,10
+n10,mag25,ec-mag25-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,3,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,consciousness why something rather nothing,10
+n10,mag25,ec-mag25-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,consciousness why something rather nothing,10
+n10,mag5,ec-mag5-n10-run01,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",True,1,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,3,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,agent zeta challenged certainty uncertainty,10
+n10,mag5,ec-mag5-n10-run01,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,agent zeta challenged certainty uncertainty,10

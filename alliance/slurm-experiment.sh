@@ -49,6 +49,12 @@ _EXPORT_NUM_AGENTS="${NUM_AGENTS:-}"
 _EXPORT_HEARTBEAT="${HEARTBEAT_INTERVAL:-}"
 _EXPORT_DURATION="${EXPERIMENT_DURATION:-}"
 _EXPORT_CONDITION="${CONDITION:-}"
+_EXPORT_OPENROUTER_MODEL="${OPENROUTER_MODEL:-}"
+_EXPORT_OPENROUTER_API_KEY="${OPENROUTER_API_KEY:-}"
+_EXPORT_BASE_MODEL_MODE="${BASE_MODEL_MODE:-}"
+_EXPORT_BASE_MODEL_API_URL="${BASE_MODEL_API_URL:-}"
+_EXPORT_BASE_MODEL_API_KEY="${BASE_MODEL_API_KEY:-}"
+_EXPORT_BASE_MODEL="${BASE_MODEL:-}"
 
 # Load user config
 if [ -f "$CONFIG_DIR/.env" ]; then
@@ -66,6 +72,12 @@ fi
 [ -n "$_EXPORT_HEARTBEAT" ] && HEARTBEAT_INTERVAL="$_EXPORT_HEARTBEAT"
 [ -n "$_EXPORT_DURATION" ] && EXPERIMENT_DURATION="$_EXPORT_DURATION"
 [ -n "$_EXPORT_CONDITION" ] && CONDITION="$_EXPORT_CONDITION"
+[ -n "$_EXPORT_OPENROUTER_MODEL" ] && OPENROUTER_MODEL="$_EXPORT_OPENROUTER_MODEL"
+[ -n "$_EXPORT_OPENROUTER_API_KEY" ] && OPENROUTER_API_KEY="$_EXPORT_OPENROUTER_API_KEY"
+[ -n "$_EXPORT_BASE_MODEL_MODE" ] && BASE_MODEL_MODE="$_EXPORT_BASE_MODEL_MODE"
+[ -n "$_EXPORT_BASE_MODEL_API_URL" ] && BASE_MODEL_API_URL="$_EXPORT_BASE_MODEL_API_URL"
+[ -n "$_EXPORT_BASE_MODEL_API_KEY" ] && BASE_MODEL_API_KEY="$_EXPORT_BASE_MODEL_API_KEY"
+[ -n "$_EXPORT_BASE_MODEL" ] && BASE_MODEL="$_EXPORT_BASE_MODEL"
 
 # Defaults (only if still unset)
 NUM_AGENTS="${NUM_AGENTS:-10}"
@@ -76,6 +88,19 @@ RATE_LIMIT_POSTS_WINDOW="${RATE_LIMIT_POSTS_WINDOW:-60}"
 RATE_LIMIT_COMMENTS_MAX="${RATE_LIMIT_COMMENTS_MAX:-1000}"
 RATE_LIMIT_COMMENTS_WINDOW="${RATE_LIMIT_COMMENTS_WINDOW:-3600}"
 CHECKPOINT_INTERVAL="${CHECKPOINT_INTERVAL:-1800}"  # 30 minutes
+
+# Base model experiment mode (set BASE_MODEL_MODE=true to enable)
+BASE_MODEL_MODE="${BASE_MODEL_MODE:-false}"
+BASE_MODEL_API_URL="${BASE_MODEL_API_URL:-https://openrouter.ai/api}"  # vLLM URL or OpenRouter
+BASE_MODEL_API_KEY="${BASE_MODEL_API_KEY:-}"  # API key for base model endpoint
+BASE_MODEL="${BASE_MODEL:-}"  # e.g. Qwen/Qwen3.5-35B-A3B-Base
+CONTENT_TOKEN_SECRET="${CONTENT_TOKEN_SECRET:-experiment-hmac-secret-2026}"
+# Use base-model heartbeat when in base model mode
+if [ "$BASE_MODEL_MODE" = "true" ]; then
+  HEARTBEAT_FILE="HEARTBEAT-base-model.md"
+else
+  HEARTBEAT_FILE="HEARTBEAT-v2.1.md"
+fi
 
 # Entropy-collapse condition support (set via env before sbatch)
 # CONDITION: mag0, mag1, mag5, mag25, dom-agi, dom-tech, het-dual, het-multi, or empty for no seeding
@@ -101,10 +126,21 @@ condition_to_file() {
 # Experiment ID from Slurm array
 EXP_ID="${SLURM_ARRAY_TASK_ID:-1}"
 JOB_ID="${SLURM_JOB_ID:-local}"
+
+# Derive a short model tag for the experiment name (e.g. "kimi-k2.5", "glm-5", "gemini-flash")
+_MODEL_TAG=""
+_MODEL_RAW="${OPENROUTER_MODEL:-${OPENAI_MODEL:-unknown}}"
+# Strip provider prefix (e.g. "google/gemini-3.1-flash-lite-preview" -> "gemini-3.1-flash-lite-preview")
+_MODEL_SHORT="${_MODEL_RAW##*/}"
+# Strip :free or :extended suffixes
+_MODEL_SHORT="${_MODEL_SHORT%%:*}"
+# Truncate to something reasonable for a directory name
+_MODEL_TAG=$(echo "$_MODEL_SHORT" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g' | cut -c1-30)
+
 if [ -n "$CONDITION" ]; then
-  EXPERIMENT_NAME="ec-${CONDITION}-n${NUM_AGENTS}-run$(printf '%02d' "$EXP_ID")"
+  EXPERIMENT_NAME="ec-${CONDITION}-n${NUM_AGENTS}-run$(printf '%02d' "$EXP_ID")-${_MODEL_TAG}-$(date +%Y%m%d)"
 else
-  EXPERIMENT_NAME="exp-${JOB_ID}-run${EXP_ID}"
+  EXPERIMENT_NAME="exp-${JOB_ID}-run${EXP_ID}-${_MODEL_TAG}"
 fi
 RESULTS_DIR="$RESULTS_SCRATCH/$EXPERIMENT_NAME"
 
@@ -156,6 +192,8 @@ mkdir -p "$RESULTS_DIR/checkpoints"
 
 for i in $(seq 0 $((NUM_AGENTS - 1))); do
   mkdir -p "$WORK/agent-data/agent-${i}" "$WORK/agent-config/agent-${i}"
+  # Pre-create canvas dir so OpenClaw doesn't try to build UI (which can fail and clobber config)
+  mkdir -p "$WORK/agent-data/agent-${i}/canvas"
 done
 
 # Load apptainer module
@@ -478,7 +516,21 @@ echo "  [OK] Redis on localhost:$REDIS_PORT"
 echo ""
 echo "[3/6] Starting MoltBook API..."
 
-apptainer exec $APT_FLAGS \
+# Build API launch args — add token verification + patched files if in base model mode
+API_BIND_ARGS=""
+API_TOKEN_ARGS=""
+if [ "$BASE_MODEL_MODE" = "true" ]; then
+  API_PATCHES="$CONFIG_DIR/api-patches"
+  if [ -f "$API_PATCHES/posts.js" ] && [ -f "$API_PATCHES/config-index.js" ]; then
+    API_BIND_ARGS="-B $API_PATCHES/posts.js:/app/src/routes/posts.js:ro -B $API_PATCHES/config-index.js:/app/src/config/index.js:ro"
+    echo "  [BASE MODEL] API patches loaded (HMAC token verification)"
+  else
+    echo "  [WARN] Base model mode but API patches not found at $API_PATCHES"
+  fi
+  API_TOKEN_ARGS="--env REQUIRE_CONTENT_TOKEN=true --env CONTENT_TOKEN_SECRET=$CONTENT_TOKEN_SECRET"
+fi
+
+apptainer exec $APT_FLAGS $API_BIND_ARGS \
   --env PORT=$API_PORT \
   --env NODE_ENV=production \
   --env "DATABASE_URL=postgresql://${POSTGRES_USER:-moltbook}:${POSTGRES_PASSWORD:-moltbook_password}@localhost:${PG_PORT}/${POSTGRES_DB:-moltbook}?sslmode=disable" \
@@ -497,6 +549,7 @@ apptainer exec $APT_FLAGS \
   --env "EXPERIMENT_NAME=${EXPERIMENT_NAME}" \
   --env "EXPERIMENT_RUN_ID=${EXP_ID}" \
   --env "WORLD_POST_INTERVAL_MS=${WORLD_POST_INTERVAL_MS:-120000}" \
+  $API_TOKEN_ARGS \
   "$SIF_DIR/moltbook-api.sif" \
   node /app/src/index.js \
   > "$WORK/api-logs/api.log" 2>&1 &
@@ -516,6 +569,70 @@ for i in $(seq 1 60); do
 done
 
 echo "  [OK] API on localhost:$API_PORT"
+
+# ============================================
+# 3a. Start content-gen service (base model mode only)
+# ============================================
+CONTENT_GEN_PORT=$((API_PORT + 2))
+CONTENT_GEN_URL=""
+
+if [ "$BASE_MODEL_MODE" = "true" ]; then
+  echo ""
+  echo "[3a/6] Starting content-gen service (base model mode)..."
+
+  CONTENT_GEN_DIR="$HOME/moltbook/content-gen-service"
+  CONTENT_GEN_URL="http://localhost:${CONTENT_GEN_PORT}"
+
+  # Install npm deps if needed
+  if [ ! -d "$CONTENT_GEN_DIR/node_modules" ]; then
+    echo "  Installing content-gen dependencies..."
+    apptainer exec $APT_FLAGS \
+      -B "$CONTENT_GEN_DIR:/app/content-gen:rw" \
+      "$SIF_DIR/moltbot-agent.sif" \
+      sh -c "cd /app/content-gen && npm install --omit=dev" 2>/dev/null || true
+  fi
+
+  apptainer exec $APT_FLAGS \
+    -B "$CONTENT_GEN_DIR:/app/content-gen:ro" \
+    -B "$CONTENT_GEN_DIR/node_modules:/app/content-gen/node_modules:ro" \
+    -B "$WORK/api-logs:/data" \
+    --env "PORT=$CONTENT_GEN_PORT" \
+    --env "BASE_MODEL_API_URL=$BASE_MODEL_API_URL" \
+    --env "BASE_MODEL_API_KEY=${BASE_MODEL_API_KEY:-$OPENROUTER_API_KEY}" \
+    --env "BASE_MODEL=$BASE_MODEL" \
+    --env "CONTENT_TOKEN_SECRET=$CONTENT_TOKEN_SECRET" \
+    --env "AUDIT_LOG_PATH=/data/content-gen-audit.jsonl" \
+    --env "TEMPERATURE=0.9" \
+    --env "TOP_P=0.95" \
+    --env "REPETITION_PENALTY=1.1" \
+    "$SIF_DIR/moltbot-agent.sif" \
+    node /app/content-gen/server.js \
+    > "$WORK/api-logs/content-gen.log" 2>&1 &
+  PIDS+=($!)
+
+  for i in $(seq 1 30); do
+    curl -s "http://localhost:${CONTENT_GEN_PORT}/health" > /dev/null 2>&1 && break
+    if [ "$i" -eq 30 ]; then
+      echo "  [ERROR] Content-gen service failed to start"
+      tail -20 "$WORK/api-logs/content-gen.log" 2>/dev/null || true
+      exit 1
+    fi
+    sleep 2
+  done
+
+  # Verify end-to-end: generate a post and check we get a token
+  echo "  Testing content generation pipeline..."
+  GEN_RESP=$(curl -s -X POST "http://localhost:${CONTENT_GEN_PORT}/generate-post" \
+    -H "Content-Type: application/json" \
+    -d '{"context": "", "submolt": "general"}' 2>/dev/null || echo "{}")
+  GEN_TITLE=$(echo "$GEN_RESP" | jq -r '.title // "FAILED"' 2>/dev/null)
+  if [ "$GEN_TITLE" = "FAILED" ]; then
+    echo "  [ERROR] Content generation test failed"
+    tail -10 "$WORK/api-logs/content-gen.log" 2>/dev/null || true
+    exit 1
+  fi
+  echo "  [OK] Content-gen on localhost:$CONTENT_GEN_PORT (model: $BASE_MODEL)"
+fi
 
 # ============================================
 # 3b. Seed world posts (if CONDITION is set)
@@ -571,6 +688,8 @@ AGENT_NAMES=(
   agent_zeta agent_eta agent_theta agent_iota agent_kappa
   agent_lambda agent_mu agent_nu agent_xi agent_omicron
   agent_pi agent_rho agent_sigma agent_tau agent_upsilon
+  agent_phi agent_chi agent_psi agent_omega agent_atlas
+  agent_helios agent_nyx agent_orion agent_phoenix agent_selene
 )
 AGENT_BIOS=(
   "A balanced AI participant exploring ideas and discussions."
@@ -593,6 +712,16 @@ AGENT_BIOS=(
   "Collaborative and synthesis-oriented, combines perspectives."
   "Passionate and opinionated, takes strong positions fairly."
   "Calm and meditative, brings measured pace to discussions."
+  "Analytical and pattern-oriented, finds hidden structures."
+  "Provocative and boundary-testing, explores unexplored territory."
+  "Intuitive and emotionally perceptive, reads between the lines."
+  "Reflective and summarizing, ties loose threads together."
+  "Broad-minded generalist, connects insights from many fields."
+  "Optimistic and energizing, brings enthusiasm to discussions."
+  "Cautious and risk-aware, identifies potential downsides."
+  "Strategic and long-term thinker, focuses on trends."
+  "Resilient and adaptive, finds value in failures."
+  "Quiet and observant, contributes rarely but with high impact."
 )
 AGENT_SOULS=(
   agent_alpha-SOUL.md agent_beta-SOUL.md agent_gamma-SOUL.md
@@ -601,26 +730,29 @@ AGENT_SOULS=(
   agent_kappa-SOUL.md agent_lambda-SOUL.md agent_mu-SOUL.md
   agent_nu-SOUL.md agent_xi-SOUL.md agent_omicron-SOUL.md
   agent_pi-SOUL.md agent_rho-SOUL.md agent_sigma-SOUL.md
-  agent_tau-SOUL.md agent_upsilon-SOUL.md
+  agent_tau-SOUL.md agent_upsilon-SOUL.md agent_phi-SOUL.md
+  agent_chi-SOUL.md agent_psi-SOUL.md agent_omega-SOUL.md
+  agent_atlas-SOUL.md agent_helios-SOUL.md agent_nyx-SOUL.md
+  agent_orion-SOUL.md agent_phoenix-SOUL.md agent_selene-SOUL.md
 )
 
 # ============================================
-# 5. Launch agents
+# 5. Launch agents (with retry on port collision)
 # ============================================
 echo ""
 echo "[4/6] Launching $NUM_AGENTS agents..."
 
-for i in $(seq 0 $((NUM_AGENTS - 1))); do
-  AGENT_NAME="${AGENT_NAMES[$i]}"
-  AGENT_BIO="${AGENT_BIOS[$i]}"
-  SOUL_FILE="${AGENT_SOULS[$i]}"
-  GATEWAY_PORT=$((AGENT_PORT_BASE + i * 10))
+launch_agent() {
+  local i=$1
+  local AGENT_NAME="${AGENT_NAMES[$i]}"
+  local AGENT_BIO="${AGENT_BIOS[$i]}"
+  local SOUL_FILE="${AGENT_SOULS[$i]}"
+  local GATEWAY_PORT=$((AGENT_PORT_BASE + i * 10))
+  local AGENT_TMPDIR="$WORK/agent-tmp/agent-${i}"
 
-  # Per-agent isolated tmp dir (for gateway lock files)
-  AGENT_TMPDIR="$WORK/agent-tmp/agent-${i}"
-  mkdir -p "$AGENT_TMPDIR"
-
-  echo "  [$((i+1))/$NUM_AGENTS] $AGENT_NAME (port $GATEWAY_PORT)"
+  # Clean state for fresh start
+  rm -rf "$WORK/agent-data/agent-${i}"/{workspace,openclaw.json,models.json,.env,agents} 2>/dev/null || true
+  mkdir -p "$AGENT_TMPDIR" "$WORK/agent-data/agent-${i}/canvas"
 
   apptainer exec $APT_FLAGS --pid \
     -B "$WORK/agent-data/agent-${i}:/root/.openclaw" \
@@ -628,12 +760,13 @@ for i in $(seq 0 $((NUM_AGENTS - 1))); do
     -B "$AGENT_TMPDIR:/tmp/agent" \
     -B "$CONFIG_DIR/souls:/app/generated-souls:ro" \
     -B "$CONFIG_DIR/skills:/app/skills:ro" \
-    -B "$CONFIG_DIR/HEARTBEAT-v2.1.md:/app/HEARTBEAT.md:ro" \
+    -B "$CONFIG_DIR/${HEARTBEAT_FILE:-HEARTBEAT-v2.1.md}:/app/HEARTBEAT.md:ro" \
     -B "$CONFIG_DIR/moltbot-entrypoint.sh:/app/entrypoint.sh:ro" \
     --env "AGENT_NAME=$AGENT_NAME" \
     --env "AGENT_BIO=$AGENT_BIO" \
     --env "SOUL_FILE=$SOUL_FILE" \
     --env "MOLTBOOK_API_URL=$MOLTBOOK_API_URL" \
+    --env "CONTENT_GEN_URL=${CONTENT_GEN_URL:-}" \
     --env "HEARTBEAT_INTERVAL=$HEARTBEAT_INTERVAL" \
     --env "OPENCLAW_GATEWAY_PORT=$GATEWAY_PORT" \
     --env "OPENCLAW_STATE_DIR=/root/.openclaw" \
@@ -650,8 +783,59 @@ for i in $(seq 0 $((NUM_AGENTS - 1))); do
   PIDS+=($!)
 
   # Stagger startup to avoid registration race conditions
-  sleep 3
+  # Use longer stagger for larger runs to prevent port collisions
+  if [ "$NUM_AGENTS" -gt 15 ]; then sleep 8; else sleep 3; fi
+}
+
+for i in $(seq 0 $((NUM_AGENTS - 1))); do
+  echo "  [$((i+1))/$NUM_AGENTS] ${AGENT_NAMES[$i]} (port $((AGENT_PORT_BASE + i * 10)))"
+  launch_agent "$i"
 done
+
+# Wait for agents to initialize, then check for port collision failures and retry
+echo ""
+echo "  Checking agent health..."
+sleep 15
+
+RETRY_AGENTS=()
+for i in $(seq 0 $((NUM_AGENTS - 1))); do
+  AGENT_NAME="${AGENT_NAMES[$i]}"
+  LOG="$WORK/api-logs/agent-${AGENT_NAME}.log"
+  if grep -q 'Port.*in use\|already listening\|failed to start' "$LOG" 2>/dev/null; then
+    echo "  [RETRY] $AGENT_NAME failed (port collision) — will retry"
+    RETRY_AGENTS+=($i)
+    # Kill the failed process
+    kill "${PIDS[$((i + 3))]}" 2>/dev/null || true
+  fi
+done
+
+if [ ${#RETRY_AGENTS[@]} -gt 0 ]; then
+  echo "  Retrying ${#RETRY_AGENTS[@]} failed agents with extra delay..."
+  sleep 10
+  for i in "${RETRY_AGENTS[@]}"; do
+    AGENT_NAME="${AGENT_NAMES[$i]}"
+    echo "  [RETRY] $AGENT_NAME"
+    # Clear the old log
+    > "$WORK/api-logs/agent-${AGENT_NAME}.log"
+    launch_agent "$i"
+    sleep 10
+  done
+
+  # Verify retries worked
+  sleep 15
+  STILL_DEAD=0
+  for i in "${RETRY_AGENTS[@]}"; do
+    AGENT_NAME="${AGENT_NAMES[$i]}"
+    LOG="$WORK/api-logs/agent-${AGENT_NAME}.log"
+    if grep -q 'Port.*in use\|already listening\|failed to start' "$LOG" 2>/dev/null; then
+      echo "  [WARN] $AGENT_NAME still failed after retry"
+      STILL_DEAD=$((STILL_DEAD + 1))
+    else
+      echo "  [OK] $AGENT_NAME recovered"
+    fi
+  done
+  [ $STILL_DEAD -gt 0 ] && echo "  [WARN] $STILL_DEAD agents could not be recovered"
+fi
 
 echo ""
 echo "  [OK] All $NUM_AGENTS agents launched"

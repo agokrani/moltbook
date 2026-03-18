@@ -68,6 +68,8 @@ ec-*.out
 ec-*.err
 moltbook-exp-*.out
 moltbook-exp-*.err
+base-model-test-*.out
+base-model-test-*.err
 *.out.bak
 
 # Large data files that belong on HuggingFace, not git

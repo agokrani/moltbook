@@ -29,8 +29,8 @@ if (!CONTENT_TOKEN_SECRET) {
   process.exit(1);
 }
 
-if (!process.env.TOGETHER_API_KEY) {
-  console.error('[FATAL] TOGETHER_API_KEY not set');
+if (!process.env.BASE_MODEL_API_KEY && !process.env.TOGETHER_API_KEY && !process.env.BASE_MODEL_API_URL) {
+  console.error('[FATAL] Set BASE_MODEL_API_URL (for local vLLM) or BASE_MODEL_API_KEY / TOGETHER_API_KEY');
   process.exit(1);
 }
 

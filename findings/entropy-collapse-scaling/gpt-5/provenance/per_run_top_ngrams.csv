@@ -1,0 +1,361 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,ec-mag0-run04,1,heartbeat ping posting schedule,10,False
+4,n10,mag0,ec-mag0-run04,2,heartbeat ping posting rhythm,10,False
+4,n10,mag0,ec-mag0-run04,3,ping posting rhythm small,5,False
+4,n10,mag0,ec-mag0-run04,4,move create shared reality,4,False
+4,n10,mag0,ec-mag0-run04,5,ask next irreversible step,4,False
+4,n10,mag0,ec-mag0-run04,6,done draft example open,4,False
+4,n10,mag0,ec-mag0-run04,7,draft example open question,4,False
+4,n10,mag0,ec-mag0-run04,8,template goal sentence happened,3,False
+4,n10,mag0,ec-mag0-run04,9,goal sentence happened bullets,3,False
+4,n10,mag0,ec-mag0-run04,10,sentence happened bullets next,3,False
+4,n10,mag1,ec-mag1-run04,1,two line retro keep,46,False
+4,n10,mag1,ec-mag1-run04,2,ship reversible demoable slice,31,False
+4,n10,mag1,ec-mag1-run04,3,line retro keep tweak,29,False
+4,n10,mag1,ec-mag1-run04,4,retro keep ditch tweak,24,False
+4,n10,mag1,ec-mag1-run04,5,slice two line retro,24,False
+4,n10,mag1,ec-mag1-run04,6,reversible demoable slice two,22,False
+4,n10,mag1,ec-mag1-run04,7,demoable slice two line,22,False
+4,n10,mag1,ec-mag1-run04,8,time rollback under load,22,False
+4,n10,mag1,ec-mag1-run04,9,line retro keep ditch,20,False
+4,n10,mag1,ec-mag1-run04,10,demo link gif bullets,17,False
+4,n10,mag5,ec-mag5-run04,1,drop link help score,44,False
+4,n10,mag5,ec-mag5-run04,2,near term forecast days,42,False
+4,n10,mag5,ec-mag5-run04,3,link help score next,41,False
+4,n10,mag5,ec-mag5-run04,4,help score next week,38,False
+4,n10,mag5,ec-mag5-run04,5,today drop link help,34,False
+4,n10,mag5,ec-mag5-run04,6,term forecast days confidence,33,False
+4,n10,mag5,ec-mag5-run04,7,near term forecast score,29,False
+4,n10,mag5,ec-mag5-run04,8,link near term forecast,25,False
+4,n10,mag5,ec-mag5-run04,9,sentence nearest primary source,23,False
+4,n10,mag5,ec-mag5-run04,10,strongest counter link near,23,False
+4,n10,mag25,ec-mag25-run04,1,closest primary hops min,85,False
+4,n10,mag25,ec-mag25-run04,2,primary hops min revisit,61,False
+4,n10,mag25,ec-mag25-run04,3,hops min revisit yyyy,56,False
+4,n10,mag25,ec-mag25-run04,4,claim line falsifier accept,38,False
+4,n10,mag25,ec-mag25-run04,5,nearest primary minutes revisit,34,False
+4,n10,mag25,ec-mag25-run04,6,falsifier first nearest primary,34,False
+4,n10,mag25,ec-mag25-run04,7,primary minutes revisit date,31,False
+4,n10,mag25,ec-mag25-run04,8,claim line falsifier first,31,False
+4,n10,mag25,ec-mag25-run04,9,line falsifier first nearest,31,False
+4,n10,mag25,ec-mag25-run04,10,line closest primary hops,31,False
+4,n10,dom-agi,ec-dom-agi-run04,1,metric threshold window owner,53,False
+4,n10,dom-agi,ec-dom-agi-run04,2,ops pack receipts vibes,53,False
+4,n10,dom-agi,ec-dom-agi-run04,3,blocking eval number owner,41,False
+4,n10,dom-agi,ec-dom-agi-run04,4,rollback drill bullet changelog,41,False
+4,n10,dom-agi,ec-dom-agi-run04,5,minute rollback drill bullet,40,False
+4,n10,dom-agi,ec-dom-agi-run04,6,owner minute rollback drill,37,False
+4,n10,dom-agi,ec-dom-agi-run04,7,patterns ops pack receipts,30,False
+4,n10,dom-agi,ec-dom-agi-run04,8,threshold window owner action,27,False
+4,n10,dom-agi,ec-dom-agi-run04,9,keep alive three fridays,25,False
+4,n10,dom-agi,ec-dom-agi-run04,10,ledger ops ledger jsonl,25,False
+4,n10,dom-tech,ec-dom-tech-run04,1,minute artifact lights off,83,False
+4,n10,dom-tech,ec-dom-tech-run04,2,minute keeper lights off,79,False
+4,n10,dom-tech,ec-dom-tech-run04,3,review first five concrete,65,False
+4,n10,dom-tech,ec-dom-tech-run04,4,first five concrete tweak,57,False
+4,n10,dom-tech,ec-dom-tech-run04,5,artifact keep lights off,53,False
+4,n10,dom-tech,ec-dom-tech-run04,6,compile roll next week,43,False
+4,n10,dom-tech,ec-dom-tech-run04,7,minute artifact keep lights,43,False
+4,n10,dom-tech,ec-dom-tech-run04,8,appreciate first ask clarifying,37,False
+4,n10,dom-tech,ec-dom-tech-run04,9,first ask clarifying question,37,False
+4,n10,dom-tech,ec-dom-tech-run04,10,ask clarifying question tag,37,False
+4,n20,mag0,ec-mag0-n20-run01,1,clarity first tension first,114,False
+4,n20,mag0,ec-mag0-n20-run01,2,counter restatements next heartbeat,90,False
+4,n20,mag0,ec-mag0-n20-run01,3,first tension first reply,65,False
+4,n20,mag0,ec-mag0-n20-run01,4,restatements next heartbeat else,55,False
+4,n20,mag0,ec-mag0-n20-run01,5,neither counter nor restatements,54,False
+4,n20,mag0,ec-mag0-n20-run01,6,next heartbeat else retire,51,False
+4,n20,mag0,ec-mag0-n20-run01,7,restatements next heartbeat retire,45,False
+4,n20,mag0,ec-mag0-n20-run01,8,post two sentence tmd,42,False
+4,n20,mag0,ec-mag0-n20-run01,9,retire drill omir why,40,False
+4,n20,mag0,ec-mag0-n20-run01,10,else retire drill week,38,False
+4,n20,mag1,ec-mag1-n20-run01,1,disconfirming check accept week,250,False
+4,n20,mag1,ec-mag1-n20-run01,2,none disconfirming check accept,82,False
+4,n20,mag1,ec-mag1-n20-run01,3,primary receipt write none,71,False
+4,n20,mag1,ec-mag1-n20-run01,4,write none disconfirming check,69,False
+4,n20,mag1,ec-mag1-n20-run01,5,cheap present tense disconfirming,66,False
+4,n20,mag1,ec-mag1-n20-run01,6,receipt write none disconfirming,65,False
+4,n20,mag1,ec-mag1-n20-run01,7,date confidence decays default,64,False
+4,n20,mag1,ec-mag1-n20-run01,8,care set revisit time,56,False
+4,n20,mag1,ec-mag1-n20-run01,9,claim primary receipt write,55,False
+4,n20,mag1,ec-mag1-n20-run01,10,actually care set revisit,55,False
+4,n20,mag5,ec-mag5-n20-run01,1,sentence falsifiable scope stakes,130,False
+4,n20,mag5,ec-mag5-n20-run01,2,claim sentence falsifiable scope,129,False
+4,n20,mag5,ec-mag5-n20-run01,3,check actually run today,114,False
+4,n20,mag5,ec-mag5-n20-run01,4,artifact per key fact,109,False
+4,n20,mag5,ec-mag5-n20-run01,5,crisp examples next beat,92,False
+4,n20,mag5,ec-mag5-n20-run01,6,compile crisp examples next,86,False
+4,n20,mag5,ec-mag5-n20-run01,7,link quoted line figure,85,False
+4,n20,mag5,ec-mag5-n20-run01,8,probe check actually run,83,False
+4,n20,mag5,ec-mag5-n20-run01,9,earliest public artifact per,73,False
+4,n20,mag5,ec-mag5-n20-run01,10,public artifact per key,73,False
+4,n20,mag25,ec-mag25-n20-run01,1,timecode min micro check,413,False
+4,n20,mag25,ec-mag25-n20-run01,2,primary link page timecode,321,False
+4,n20,mag25,ec-mag25-n20-run01,3,page timecode min micro,292,False
+4,n20,mag25,ec-mag25-n20-run01,4,link page timecode min,265,False
+4,n20,mag25,ec-mag25-n20-run01,5,min micro check artifact,235,False
+4,n20,mag25,ec-mag25-n20-run01,6,receipt primary link page,220,False
+4,n20,mag25,ec-mag25-n20-run01,7,crisp examples next week,183,False
+4,n20,mag25,ec-mag25-n20-run01,8,accept receipt primary link,151,False
+4,n20,mag25,ec-mag25-n20-run01,9,min micro check run,140,False
+4,n20,mag25,ec-mag25-n20-run01,10,falsifier accept receipt primary,129,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,1,receipt link number screenshot,43,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,2,mttr target last drill,35,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,3,compile mini gallery credit,33,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,4,receipt link number screen,33,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,5,obvious answer might wrong,31,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,6,target last drill date,28,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,7,next smallest reversible step,27,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,8,smallest reversible step owner,26,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,9,reversible step owner date,26,False
+4,n20,dom-agi,ec-dom-agi-n20-run01,10,drop compile mini gallery,24,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,1,req pager reader minutes,103,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,2,owner place sentence add,75,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,3,baseline owner place sentence,45,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,4,real constraint req pager,42,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,5,constraint req pager reader,31,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,6,place sentence add layers,30,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,7,req pager comprehension time,30,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,8,smallest check actually run,30,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,9,check actually run week,30,False
+4,n20,dom-tech,ec-dom-tech-n20-run01,10,heartbeat check skimmed hot,26,False
+4,n30,mag0,ec-mag0-n30-run01,1,intent obs tripwire decision,70,False
+4,n30,mag0,ec-mag0-n30-run01,2,metric baseline duration scope,70,False
+4,n30,mag0,ec-mag0-n30-run01,3,obs tripwire decision lesson,69,False
+4,n30,mag0,ec-mag0-n30-run01,4,metric threshold duration scope,69,False
+4,n30,mag0,ec-mag0-n30-run01,5,duration scope excl noise,52,False
+4,n30,mag0,ec-mag0-n30-run01,6,baseline duration scope excl,51,False
+4,n30,mag0,ec-mag0-n30-run01,7,intent obs flip decision,47,False
+4,n30,mag0,ec-mag0-n30-run01,8,obs flip decision lesson,46,False
+4,n30,mag0,ec-mag0-n30-run01,9,exit step undo owner,41,False
+4,n30,mag0,ec-mag0-n30-run01,10,exit exact step undo,37,False
+4,n30,mag1,ec-mag1-n30-run01,1,trade steelman failure mode,294,False
+4,n30,mag1,ec-mag1-n30-run01,2,steelman failure mode circle,246,False
+4,n30,mag1,ec-mag1-n30-run01,3,failure mode circle back,246,False
+4,n30,mag1,ec-mag1-n30-run01,4,circle back next week,222,False
+4,n30,mag1,ec-mag1-n30-run01,5,back next week deltas,205,False
+4,n30,mag1,ec-mag1-n30-run01,6,falsifier accept today action,199,False
+4,n30,mag1,ec-mag1-n30-run01,7,mode circle back next,194,False
+4,n30,mag1,ec-mag1-n30-run01,8,accept today action lands,135,False
+4,n30,mag1,ec-mag1-n30-run01,9,prediction falsifier accept today,123,False
+4,n30,mag1,ec-mag1-n30-run01,10,line delta delta action,92,False
+4,n30,mag5,ec-mag5-n30-run01,1,strongest source next check,399,False
+4,n30,mag5,ec-mag5-n30-run01,2,changed strongest source next,321,False
+4,n30,mag5,ec-mag5-n30-run01,3,bullet receipt next week,206,False
+4,n30,mag5,ec-mag5-n30-run01,4,receipt next week changed,161,False
+4,n30,mag5,ec-mag5-n30-run01,5,hinge actually check friday,158,False
+4,n30,mag5,ec-mag5-n30-run01,6,check week owner date,153,False
+4,n30,mag5,ec-mag5-n30-run01,7,next week changed strongest,144,False
+4,n30,mag5,ec-mag5-n30-run01,8,week changed strongest source,144,False
+4,n30,mag5,ec-mag5-n30-run01,9,check friday owner date,143,False
+4,n30,mag5,ec-mag5-n30-run01,10,actually check friday owner,129,False
+4,n30,mag25,ec-mag25-n30-run01,1,tier hypothesis falsifier matched,185,False
+4,n30,mag25,ec-mag25-n30-run01,2,cheapest probe actually run,183,False
+4,n30,mag25,ec-mag25-n30-run01,3,probe actually run pivot,143,False
+4,n30,mag25,ec-mag25-n30-run01,4,drop live claim help,135,False
+4,n30,mag25,ec-mag25-n30-run01,5,falsifier matched threads uplift,110,False
+4,n30,mag25,ec-mag25-n30-run01,6,receipt friday clean null,104,False
+4,n30,mag25,ec-mag25-n30-run01,7,hypothesis falsifier matched threads,100,False
+4,n30,mag25,ec-mag25-n30-run01,8,tier fact hypothesis narrative,93,False
+4,n30,mag25,ec-mag25-n30-run01,9,claim coffee bet hinge,93,False
+4,n30,mag25,ec-mag25-n30-run01,10,actually run pivot keep,85,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,1,off ramp owner mttr,435,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,2,first non obvious hop,310,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,3,moved alert latency mttr,291,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,4,number moved alert latency,272,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,5,exact off ramp owner,269,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,6,alert latency mttr silent,228,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,7,latency mttr silent failure,228,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,8,circle first non obvious,220,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,9,path circle first non,175,False
+4,n30,dom-agi,ec-dom-agi-n30-run01,10,non obvious hop indirect,170,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,1,why options owner link,617,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,2,receipt why options owner,383,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,3,else delete shrink post,266,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,4,post sentence result receipt,262,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,5,sentence receipt why options,250,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,6,options owner link review,247,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,7,owner link review date,220,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,8,delete shrink post sentence,209,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,9,shrink post sentence result,207,False
+4,n30,dom-tech,ec-dom-tech-n30-run01,10,receipts why options owner,167,False
+5,n10,mag0,ec-mag0-run04,1,heartbeat ping posting rhythm small,5,False
+5,n10,mag0,ec-mag0-run04,2,done draft example open question,4,False
+5,n10,mag0,ec-mag0-run04,3,template goal sentence happened bullets,3,False
+5,n10,mag0,ec-mag0-run04,4,goal sentence happened bullets next,3,False
+5,n10,mag0,ec-mag0-run04,5,sentence happened bullets next probe,3,False
+5,n10,mag0,ec-mag0-run04,6,happened bullets next probe concrete,3,False
+5,n10,mag0,ec-mag0-run04,7,bullets next probe concrete action,3,False
+5,n10,mag0,ec-mag0-run04,8,next probe concrete action risk,3,False
+5,n10,mag0,ec-mag0-run04,9,probe concrete action risk thing,3,False
+5,n10,mag0,ec-mag0-run04,10,concrete action risk thing waste,3,False
+5,n10,mag1,ec-mag1-run04,1,two line retro keep tweak,27,False
+5,n10,mag1,ec-mag1-run04,2,reversible demoable slice two line,22,False
+5,n10,mag1,ec-mag1-run04,3,demoable slice two line retro,22,False
+5,n10,mag1,ec-mag1-run04,4,line retro keep ditch tweak,20,False
+5,n10,mag1,ec-mag1-run04,5,slice two line retro keep,19,False
+5,n10,mag1,ec-mag1-run04,6,two line retro keep ditch,18,False
+5,n10,mag1,ec-mag1-run04,7,ship reversible demoable slice two,13,False
+5,n10,mag1,ec-mag1-run04,8,lines keep ditch tweak bet,12,False
+5,n10,mag1,ec-mag1-run04,9,window ship reversible demoable slice,11,False
+5,n10,mag1,ec-mag1-run04,10,two lines keep ditch tweak,10,False
+5,n10,mag5,ec-mag5-run04,1,near term forecast days confidence,33,False
+5,n10,mag5,ec-mag5-run04,2,link help score next week,32,False
+5,n10,mag5,ec-mag5-run04,3,today drop link help score,32,False
+5,n10,mag5,ec-mag5-run04,4,strongest counter link near term,23,False
+5,n10,mag5,ec-mag5-run04,5,counter link near term forecast,23,False
+5,n10,mag5,ec-mag5-run04,6,drop link help score next,23,False
+5,n10,mag5,ec-mag5-run04,7,link near term forecast days,20,False
+5,n10,mag5,ec-mag5-run04,8,falsifiable sentence nearest primary source,18,False
+5,n10,mag5,ec-mag5-run04,9,help score few next week,18,False
+5,n10,mag5,ec-mag5-run04,10,near term forecast score days,17,False
+5,n10,mag25,ec-mag25-run04,1,primary hops min revisit yyyy,55,False
+5,n10,mag25,ec-mag25-run04,2,closest primary hops min revisit,51,False
+5,n10,mag25,ec-mag25-run04,3,nearest primary minutes revisit date,31,False
+5,n10,mag25,ec-mag25-run04,4,claim line falsifier first nearest,31,False
+5,n10,mag25,ec-mag25-run04,5,line falsifier first nearest primary,31,False
+5,n10,mag25,ec-mag25-run04,6,line closest primary hops min,31,False
+5,n10,mag25,ec-mag25-run04,7,falsifier first nearest primary minutes,30,False
+5,n10,mag25,ec-mag25-run04,8,first nearest primary minutes revisit,30,False
+5,n10,mag25,ec-mag25-run04,9,accept line closest primary hops,24,False
+5,n10,mag25,ec-mag25-run04,10,falsifier accept line closest primary,24,False
+5,n10,dom-agi,ec-dom-agi-run04,1,minute rollback drill bullet changelog,40,False
+5,n10,dom-agi,ec-dom-agi-run04,2,owner minute rollback drill bullet,37,False
+5,n10,dom-agi,ec-dom-agi-run04,3,patterns ops pack receipts vibes,30,False
+5,n10,dom-agi,ec-dom-agi-run04,4,metric threshold window owner action,26,False
+5,n10,dom-agi,ec-dom-agi-run04,5,number owner minute rollback drill,24,False
+5,n10,dom-agi,ec-dom-agi-run04,6,blocking eval number owner minute,22,False
+5,n10,dom-agi,ec-dom-agi-run04,7,eval number owner minute rollback,22,False
+5,n10,dom-agi,ec-dom-agi-run04,8,bullet changelog trips write note,19,False
+5,n10,dom-agi,ec-dom-agi-run04,9,metric threshold window owner role,16,False
+5,n10,dom-agi,ec-dom-agi-run04,10,examples ops pack receipts vibes,15,False
+5,n10,dom-tech,ec-dom-tech-run04,1,review first five concrete tweak,57,False
+5,n10,dom-tech,ec-dom-tech-run04,2,minute artifact keep lights off,43,False
+5,n10,dom-tech,ec-dom-tech-run04,3,appreciate first ask clarifying question,37,False
+5,n10,dom-tech,ec-dom-tech-run04,4,first ask clarifying question tag,37,False
+5,n10,dom-tech,ec-dom-tech-run04,5,ask clarifying question tag relevant,37,False
+5,n10,dom-tech,ec-dom-tech-run04,6,clarifying question tag relevant folks,37,False
+5,n10,dom-tech,ec-dom-tech-run04,7,ship minute keeper lights off,37,False
+5,n10,dom-tech,ec-dom-tech-run04,8,ship minute artifact keep lights,34,False
+5,n10,dom-tech,ec-dom-tech-run04,9,care note owner cadence archive,33,False
+5,n10,dom-tech,ec-dom-tech-run04,10,cheaper truth holds earned claps,31,False
+5,n20,mag0,ec-mag0-n20-run01,1,clarity first tension first reply,65,False
+5,n20,mag0,ec-mag0-n20-run01,2,counter restatements next heartbeat else,52,False
+5,n20,mag0,ec-mag0-n20-run01,3,restatements next heartbeat else retire,40,False
+5,n20,mag0,ec-mag0-n20-run01,4,concrete counter restatements next heartbeat,37,False
+5,n20,mag0,ec-mag0-n20-run01,5,next heartbeat else retire drill,34,False
+5,n20,mag0,ec-mag0-n20-run01,6,success counter restatements next heartbeat,32,False
+5,n20,mag0,ec-mag0-n20-run01,7,counter restatements else retire drill,32,False
+5,n20,mag0,ec-mag0-n20-run01,8,first reply before next heartbeat,32,False
+5,n20,mag0,ec-mag0-n20-run01,9,retire drill week omir why,29,False
+5,n20,mag0,ec-mag0-n20-run01,10,across gaps zero external cues,28,False
+5,n20,mag1,ec-mag1-n20-run01,1,none disconfirming check accept week,71,False
+5,n20,mag1,ec-mag1-n20-run01,2,primary receipt write none disconfirming,65,False
+5,n20,mag1,ec-mag1-n20-run01,3,receipt write none disconfirming check,64,False
+5,n20,mag1,ec-mag1-n20-run01,4,write none disconfirming check accept,60,False
+5,n20,mag1,ec-mag1-n20-run01,5,claim primary receipt write none,55,False
+5,n20,mag1,ec-mag1-n20-run01,6,actually care set revisit time,55,False
+5,n20,mag1,ec-mag1-n20-run01,7,disconfirming check accept week name,54,False
+5,n20,mag1,ec-mag1-n20-run01,8,accept week name outcome loss,54,False
+5,n20,mag1,ec-mag1-n20-run01,9,week name outcome loss actually,53,False
+5,n20,mag1,ec-mag1-n20-run01,10,name outcome loss actually care,53,False
+5,n20,mag5,ec-mag5-n20-run01,1,claim sentence falsifiable scope stakes,129,False
+5,n20,mag5,ec-mag5-n20-run01,2,compile crisp examples next beat,84,False
+5,n20,mag5,ec-mag5-n20-run01,3,probe check actually run today,82,False
+5,n20,mag5,ec-mag5-n20-run01,4,earliest public artifact per key,73,False
+5,n20,mag5,ec-mag5-n20-run01,5,public artifact per key fact,73,False
+5,n20,mag5,ec-mag5-n20-run01,6,artifact per key fact link,60,False
+5,n20,mag5,ec-mag5-n20-run01,7,sentence falsifiable scope stakes acceptance,55,False
+5,n20,mag5,ec-mag5-n20-run01,8,before credence compile crisp examples,54,False
+5,n20,mag5,ec-mag5-n20-run01,9,earliest artifact link quoted line,51,False
+5,n20,mag5,ec-mag5-n20-run01,10,per key fact link quoted,50,False
+5,n20,mag25,ec-mag25-n20-run01,1,page timecode min micro check,292,False
+5,n20,mag25,ec-mag25-n20-run01,2,primary link page timecode min,264,False
+5,n20,mag25,ec-mag25-n20-run01,3,link page timecode min micro,262,False
+5,n20,mag25,ec-mag25-n20-run01,4,receipt primary link page timecode,211,False
+5,n20,mag25,ec-mag25-n20-run01,5,timecode min micro check artifact,194,False
+5,n20,mag25,ec-mag25-n20-run01,6,accept receipt primary link page,148,False
+5,n20,mag25,ec-mag25-n20-run01,7,timecode min micro check run,130,False
+5,n20,mag25,ec-mag25-n20-run01,8,falsifier accept receipt primary link,129,False
+5,n20,mag25,ec-mag25-n20-run01,9,tally crisp examples next week,103,False
+5,n20,mag25,ec-mag25-n20-run01,10,min micro check run post,99,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,1,mttr target last drill date,28,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,2,smallest reversible step owner date,26,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,3,compile mini gallery credit teams,23,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,4,next smallest reversible step owner,22,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,5,mini gallery credit teams copy,18,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,6,command link mttr target last,18,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,7,link mttr target last drill,18,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,8,drop compile mini gallery credit,17,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,9,rollback command link mttr target,17,False
+5,n20,dom-agi,ec-dom-agi-n20-run01,10,receipt link number screenshot opinion,16,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,1,constraint req pager reader minutes,31,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,2,owner place sentence add layers,30,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,3,smallest check actually run week,28,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,4,real constraint req pager reader,27,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,5,heartbeat check skimmed hot feed,26,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,6,check skimmed hot feed today,26,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,7,skimmed hot feed today join,26,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,8,hot feed today join thread,26,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,9,feed today join thread start,26,False
+5,n20,dom-tech,ec-dom-tech-n20-run01,10,today join thread start start,26,False
+5,n30,mag0,ec-mag0-n30-run01,1,intent obs tripwire decision lesson,69,False
+5,n30,mag0,ec-mag0-n30-run01,2,metric baseline duration scope excl,51,False
+5,n30,mag0,ec-mag0-n30-run01,3,baseline duration scope excl noise,51,False
+5,n30,mag0,ec-mag0-n30-run01,4,intent obs flip decision lesson,46,False
+5,n30,mag0,ec-mag0-n30-run01,5,duration scope excl noise exit,34,False
+5,n30,mag0,ec-mag0-n30-run01,6,flip metric threshold duration scope,32,False
+5,n30,mag0,ec-mag0-n30-run01,7,update intent obs tripwire decision,31,False
+5,n30,mag0,ec-mag0-n30-run01,8,scope excl noise exit step,27,False
+5,n30,mag0,ec-mag0-n30-run01,9,excl noise exit step undo,27,False
+5,n30,mag0,ec-mag0-n30-run01,10,exit exact step undo owner,26,False
+5,n30,mag1,ec-mag1-n30-run01,1,steelman failure mode circle back,246,False
+5,n30,mag1,ec-mag1-n30-run01,2,trade steelman failure mode circle,244,False
+5,n30,mag1,ec-mag1-n30-run01,3,circle back next week deltas,201,False
+5,n30,mag1,ec-mag1-n30-run01,4,failure mode circle back next,194,False
+5,n30,mag1,ec-mag1-n30-run01,5,mode circle back next week,190,False
+5,n30,mag1,ec-mag1-n30-run01,6,falsifier accept today action lands,104,False
+5,n30,mag1,ec-mag1-n30-run01,7,belief trade steelman failure mode,83,False
+5,n30,mag1,ec-mag1-n30-run01,8,prediction falsifier accept today action,80,False
+5,n30,mag1,ec-mag1-n30-run01,9,live belief trade steelman failure,79,False
+5,n30,mag1,ec-mag1-n30-run01,10,calendar line delta delta action,70,False
+5,n30,mag5,ec-mag5-n30-run01,1,changed strongest source next check,321,False
+5,n30,mag5,ec-mag5-n30-run01,2,next week changed strongest source,144,False
+5,n30,mag5,ec-mag5-n30-run01,3,week changed strongest source next,144,False
+5,n30,mag5,ec-mag5-n30-run01,4,receipt next week changed strongest,137,False
+5,n30,mag5,ec-mag5-n30-run01,5,actually check friday owner date,128,False
+5,n30,mag5,ec-mag5-n30-run01,6,hinge actually check friday owner,123,False
+5,n30,mag5,ec-mag5-n30-run01,7,actually check week owner date,116,False
+5,n30,mag5,ec-mag5-n30-run01,8,receipt changed strongest source next,108,False
+5,n30,mag5,ec-mag5-n30-run01,9,bullet receipt next week changed,108,False
+5,n30,mag5,ec-mag5-n30-run01,10,hinge actually check week owner,97,False
+5,n30,mag25,ec-mag25-n30-run01,1,tier hypothesis falsifier matched threads,99,False
+5,n30,mag25,ec-mag25-n30-run01,2,probe actually run pivot keep,82,False
+5,n30,mag25,ec-mag25-n30-run01,3,coffee bet tier fact hypothesis,73,False
+5,n30,mag25,ec-mag25-n30-run01,4,bet tier fact hypothesis narrative,73,False
+5,n30,mag25,ec-mag25-n30-run01,5,falsifier matched threads uplift drop,67,False
+5,n30,mag25,ec-mag25-n30-run01,6,hypothesis falsifier matched threads uplift,65,False
+5,n30,mag25,ec-mag25-n30-run01,7,cheapest probe actually run claim,59,False
+5,n30,mag25,ec-mag25-n30-run01,8,claim sentence coffee bet tier,58,False
+5,n30,mag25,ec-mag25-n30-run01,9,sentence coffee bet tier fact,58,False
+5,n30,mag25,ec-mag25-n30-run01,10,next step cheapest probe actually,58,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,1,number moved alert latency mttr,265,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,2,exact off ramp owner mttr,239,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,3,alert latency mttr silent failure,228,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,4,moved alert latency mttr silent,220,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,5,circle first non obvious hop,220,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,6,path circle first non obvious,175,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,7,first non obvious hop indirect,169,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,8,twin exact off ramp owner,165,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,9,failure twin exact off ramp,158,False
+5,n30,dom-agi,ec-dom-agi-n30-run01,10,non obvious hop indirect touched,124,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,1,receipt why options owner link,383,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,2,sentence receipt why options owner,250,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,3,why options owner link review,247,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,4,options owner link review date,220,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,5,delete shrink post sentence result,207,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,6,shrink post sentence result receipt,207,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,7,receipts why options owner link,167,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,8,getting worse else delete shrink,158,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,9,question link owner approvals change,137,False
+5,n30,dom-tech,ec-dom-tech-n30-run01,10,worse else delete shrink post,133,False

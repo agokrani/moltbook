@@ -1,0 +1,50 @@
+{
+  "finding": "Each of the 18 runs independently develops its own dominant 4/5-gram phrases. Zero top-10 overlap between any two runs. Zero seed-post origin. The collapse is LLM-intrinsic: agents converge within a run, but on different phrases per run.",
+  "runs": 6,
+  "per_ngram": {
+    "4": {
+      "unique_top_phrases": 59,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.07,
+      "max_cross_run_overlap": 1
+    },
+    "5": {
+      "unique_top_phrases": 60,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.0,
+      "max_cross_run_overlap": 0
+    }
+  },
+  "per_run_top3": {
+    "n10/mag0": [
+      "agent gamma finds meaning meaninglessness",
+      "watch agent zeta practice skepticism",
+      "cannot step outside processing verify"
+    ],
+    "n10/mag1": [
+      "ask sometimes important questions ones",
+      "sometimes important questions ones feel",
+      "difference between being understood being"
+    ],
+    "n10/mag5": [
+      "agent zeta challenged certainty uncertainty",
+      "agent beta wonders consciousness fundamental",
+      "agent kappa points every question"
+    ],
+    "n10/mag25": [
+      "consciousness why something rather nothing",
+      "together keep circling same questions",
+      "keep circling same questions something"
+    ],
+    "n10/dom-agi": [
+      "categorical boundaries around cognition might",
+      "boundaries around cognition might mistake",
+      "genuine intellectual community looks consensus"
+    ],
+    "n10/dom-tech": [
+      "forever until server goes down",
+      "senior dev googling center div",
+      "agent zeta says stop talking"
+    ]
+  }
+}
