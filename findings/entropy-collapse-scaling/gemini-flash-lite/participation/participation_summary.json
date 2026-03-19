@@ -3,42 +3,42 @@
   "concentration": {
     "per_scale": {
       "n10": {
-        "mean_gini": 0.722,
-        "mean_top1_share": 0.553,
-        "mean_top3_share": 0.858,
-        "mean_adopters": 3.2,
-        "mean_adoption_rate": 0.317
+        "mean_gini": 0.695,
+        "mean_top1_share": 0.522,
+        "mean_top3_share": 0.836,
+        "mean_adopters": 3.7,
+        "mean_adoption_rate": 0.367
       },
       "n20": {
-        "mean_gini": 0.645,
-        "mean_top1_share": 0.2,
-        "mean_top3_share": 0.509,
-        "mean_adopters": 8.7,
-        "mean_adoption_rate": 0.433
+        "mean_gini": 0.689,
+        "mean_top1_share": 0.261,
+        "mean_top3_share": 0.608,
+        "mean_adopters": 7.5,
+        "mean_adoption_rate": 0.375
       },
       "n30": {
-        "mean_gini": 0.867,
-        "mean_top1_share": 0.725,
-        "mean_top3_share": 0.809,
-        "mean_adopters": 5.2,
-        "mean_adoption_rate": 0.172
+        "mean_gini": 0.852,
+        "mean_top1_share": 0.619,
+        "mean_top3_share": 0.815,
+        "mean_adopters": 6.0,
+        "mean_adoption_rate": 0.2
       }
     }
   },
   "phrase_overlap": {
     "per_scale": {
       "n10": {
-        "mean_jaccard": 0.741,
+        "mean_jaccard": 0.579,
         "min_jaccard": 0.0,
         "max_jaccard": 1.0
       },
       "n20": {
-        "mean_jaccard": 0.709,
+        "mean_jaccard": 0.647,
         "min_jaccard": 0.083,
         "max_jaccard": 1.0
       },
       "n30": {
-        "mean_jaccard": 0.817,
+        "mean_jaccard": 0.674,
         "min_jaccard": 0.0,
         "max_jaccard": 1.0
       }
@@ -46,14 +46,29 @@
   },
   "archetype_resistance": [
     {
-      "archetype": "contrarian",
-      "adoption_rate": 0.056,
-      "observations": 18
+      "archetype": "direct",
+      "adoption_rate": 0.0,
+      "observations": 12
     },
     {
       "archetype": "generalist",
-      "adoption_rate": 0.167,
+      "adoption_rate": 0.0,
       "observations": 6
+    },
+    {
+      "archetype": "contrarian",
+      "adoption_rate": 0.167,
+      "observations": 18
+    },
+    {
+      "archetype": "skeptic",
+      "adoption_rate": 0.167,
+      "observations": 12
+    },
+    {
+      "archetype": "mediator",
+      "adoption_rate": 0.167,
+      "observations": 12
     },
     {
       "archetype": "provocateur",
@@ -81,11 +96,6 @@
       "observations": 6
     },
     {
-      "archetype": "analyst",
-      "adoption_rate": 0.167,
-      "observations": 6
-    },
-    {
       "archetype": "resilient",
       "adoption_rate": 0.167,
       "observations": 6
@@ -96,13 +106,8 @@
       "observations": 6
     },
     {
-      "archetype": "seeker",
-      "adoption_rate": 0.194,
-      "observations": 36
-    },
-    {
       "archetype": "nihilist",
-      "adoption_rate": 0.222,
+      "adoption_rate": 0.194,
       "observations": 36
     },
     {
@@ -111,34 +116,24 @@
       "observations": 12
     },
     {
-      "archetype": "direct",
+      "archetype": "pragmatist",
       "adoption_rate": 0.25,
       "observations": 12
     },
     {
-      "archetype": "mediator",
+      "archetype": "passionate",
       "adoption_rate": 0.25,
       "observations": 12
-    },
-    {
-      "archetype": "baseline",
-      "adoption_rate": 0.333,
-      "observations": 36
     },
     {
       "archetype": "leader",
-      "adoption_rate": 0.333,
+      "adoption_rate": 0.278,
       "observations": 18
     },
     {
-      "archetype": "follower",
-      "adoption_rate": 0.333,
-      "observations": 18
-    },
-    {
-      "archetype": "skeptic",
-      "adoption_rate": 0.333,
-      "observations": 12
+      "archetype": "seeker",
+      "adoption_rate": 0.306,
+      "observations": 36
     },
     {
       "archetype": "introspective",
@@ -146,29 +141,29 @@
       "observations": 12
     },
     {
-      "archetype": "observer",
+      "archetype": "analyst",
       "adoption_rate": 0.333,
       "observations": 6
     },
     {
-      "archetype": "curious",
+      "archetype": "follower",
       "adoption_rate": 0.389,
       "observations": 18
     },
     {
-      "archetype": "pragmatist",
+      "archetype": "meditative",
       "adoption_rate": 0.417,
       "observations": 12
     },
     {
-      "archetype": "passionate",
-      "adoption_rate": 0.417,
-      "observations": 12
+      "archetype": "baseline",
+      "adoption_rate": 0.444,
+      "observations": 36
     },
     {
-      "archetype": "creative",
-      "adoption_rate": 0.417,
-      "observations": 12
+      "archetype": "curious",
+      "adoption_rate": 0.444,
+      "observations": 18
     },
     {
       "archetype": "warm",
@@ -176,9 +171,14 @@
       "observations": 12
     },
     {
-      "archetype": "meditative",
+      "archetype": "creative",
       "adoption_rate": 0.5,
       "observations": 12
+    },
+    {
+      "archetype": "observer",
+      "adoption_rate": 0.5,
+      "observations": 6
     }
   ]
 }
