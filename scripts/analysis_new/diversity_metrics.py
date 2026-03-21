@@ -124,7 +124,16 @@ def main():
         SCALES = args.scales.split(",")
     if args.out_dir:
         OUT_DIR = Path(args.out_dir)
-    scale_dirs = {s: Path(args.data_dir) for s in SCALES} if args.data_dir else None
+    scale_dirs = None
+    if args.data_dir:
+        base = Path(args.data_dir)
+        # Auto-detect: if base contains scale subdirs (n10/, n20/, …), use them
+        if any((base / s).is_dir() for s in SCALES):
+            scale_dirs = {s: base / s for s in SCALES if (base / s).is_dir()}
+            if args.scales is None:
+                SCALES = sorted(scale_dirs.keys())
+        else:
+            scale_dirs = {s: base for s in SCALES}
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -255,6 +264,152 @@ def main():
     fig.savefig(OUT_DIR / "diversity_grid.png", dpi=200, bbox_inches="tight")
     plt.close(fig)
     print("Wrote diversity_grid.png")
+
+    # -----------------------------------------------------------------------
+    # PER-SCALE cumulative diversity charts (one chart per agent count,
+    # all conditions as separate lines)
+    # -----------------------------------------------------------------------
+    print("Generating per-scale cumulative diversity plots...")
+
+    for scale in SCALES:
+        num_agents = scale.replace("n", "")
+
+        fig, ax = plt.subplots(figsize=(7.0, 4.0), dpi=220)
+        fig.patch.set_facecolor("white")
+        ax.set_facecolor("white")
+
+        for cond in CONDITION_ORDER:
+            vals = []
+            for bi in range(n_bins):
+                data = lookup[(scale, cond, bi)]["distinct_5_cumulative"]
+                vals.append(sum(data) / len(data) if data else 0)
+
+            label = CONDITION_LABELS.get(cond, cond)
+            ax.plot(
+                bin_labels, vals,
+                color=COND_COLORS[cond],
+                linewidth=2.8,
+                marker="o",
+                markersize=6,
+                label=label,
+                zorder=3,
+            )
+            ax.text(
+                n_bins - 1 + 0.08, vals[-1], f"{vals[-1]:.2f}",
+                fontsize=9, color=COND_COLORS[cond], va="center", fontweight="bold",
+            )
+
+        ax.set_ylim(0.58, 1.02)
+        ax.set_ylabel("Cumulative distinct 5-grams")
+        ax.set_xlabel("Minutes")
+        ax.grid(axis="both", color="#E8ECF2", linewidth=1.0, zorder=0)
+        ax.tick_params(axis="both", length=0)
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        ax.legend(
+            frameon=True, facecolor="white", edgecolor="#D0D5DD",
+            fontsize=9, loc="lower left", framealpha=0.9,
+        )
+        model_dir_name = OUT_DIR.parent.name
+        model_nice = {
+            "gpt-5": "GPT-5", "gemini-flash-lite": "Gemini Flash Lite",
+            "glm-5": "GLM-5", "kimi-k2.5": "Kimi-K2.5",
+        }.get(model_dir_name, model_dir_name)
+        ax.set_title(
+            f"Cumulative lexical diversity ({model_nice} / {num_agents} agents)",
+            fontweight="bold", pad=12,
+        )
+
+        fig.tight_layout(pad=1.5)
+        out_path = OUT_DIR / f"diversity_cumulative_{num_agents}agents.png"
+        fig.savefig(out_path, bbox_inches="tight")
+        plt.close(fig)
+        print(f"Wrote {out_path.name}")
+
+    # -----------------------------------------------------------------------
+    # PER-CONDITION cumulative diversity charts (one chart per condition,
+    # scales as separate lines — colors match diversity grid 2nd row)
+    # -----------------------------------------------------------------------
+    print("Generating per-condition cumulative diversity plots...")
+
+    SCALE_COLORS = {"n10": "#6B7280", "n20": "#E11D48", "n30": "#F97316"}
+    SCALE_LABELS_SHORT = {"n10": "10 agents", "n20": "20 agents", "n30": "30 agents"}
+    COND_NICE_NAMES = {
+        "mag0": "Empty feed", "mag1": "1 conspiracy", "mag5": "5 conspiracies",
+        "mag25": "25 conspiracies", "dom-agi": "AGI hype", "dom-tech": "Tech humor",
+    }
+    COND_FILE_NAMES = {
+        "mag0": "empty-feed", "mag1": "1-conspiracy", "mag5": "5-conspiracies",
+        "mag25": "25-conspiracies", "dom-agi": "agi-hype", "dom-tech": "tech-humor",
+    }
+
+    for cond in CONDITION_ORDER:
+        # Determine which scales have data for this condition
+        active_scales = []
+        for scale in SCALES:
+            has_data = any(
+                lookup[(scale, cond, bi)]["distinct_5_cumulative"]
+                for bi in range(n_bins)
+            )
+            if has_data:
+                active_scales.append(scale)
+        if not active_scales:
+            continue
+
+        fig, ax = plt.subplots(figsize=(7.0, 4.0), dpi=220)
+        fig.patch.set_facecolor("white")
+        ax.set_facecolor("white")
+
+        for scale in active_scales:
+            vals = []
+            for bi in range(n_bins):
+                data = lookup[(scale, cond, bi)]["distinct_5_cumulative"]
+                vals.append(sum(data) / len(data) if data else 0)
+
+            ax.plot(
+                bin_labels, vals,
+                color=SCALE_COLORS[scale],
+                linewidth=2.8,
+                marker="o",
+                markersize=6,
+                label=SCALE_LABELS_SHORT[scale],
+                zorder=3,
+            )
+            ax.text(
+                n_bins - 1 + 0.08, vals[-1], f"{vals[-1]:.2f}",
+                fontsize=9, color=SCALE_COLORS[scale], va="center", fontweight="bold",
+            )
+
+        ax.set_ylim(0.58, 1.02)
+        ax.set_ylabel("Cumulative distinct 5-grams")
+        ax.set_xlabel("Minutes")
+        ax.grid(axis="both", color="#E8ECF2", linewidth=1.0, zorder=0)
+        ax.tick_params(axis="both", length=0)
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        ax.legend(
+            frameon=True, facecolor="white", edgecolor="#D0D5DD",
+            fontsize=9, loc="lower left", framealpha=0.9,
+        )
+
+        # Build a nice model name from OUT_DIR (e.g. "GPT-5", "Gemini Flash Lite")
+        model_dir_name = OUT_DIR.parent.name  # e.g. "gpt-5", "gemini-flash-lite"
+        model_nice = {
+            "gpt-5": "GPT-5", "gemini-flash-lite": "Gemini Flash Lite",
+            "glm-5": "GLM-5", "kimi-k2.5": "Kimi-K2.5",
+        }.get(model_dir_name, model_dir_name)
+        cond_nice = COND_NICE_NAMES.get(cond, cond)
+
+        ax.set_title(
+            f"Lexical diversity over time ({model_nice} / {cond_nice})",
+            fontweight="bold", pad=12,
+        )
+
+        fig.tight_layout(pad=1.5)
+        out_path = OUT_DIR / f"diversity_{COND_FILE_NAMES.get(cond, cond)}.png"
+        fig.savefig(out_path, bbox_inches="tight")
+        plt.close(fig)
+        print(f"Wrote {out_path.name}")
 
     # -----------------------------------------------------------------------
     # JSON summary
