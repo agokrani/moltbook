@@ -22,6 +22,7 @@ This is a **monorepo using git submodules**. After cloning, run `git submodule u
 | `agents/` | Shell scripts, Markdown | AI agent configs, soul templates, heartbeat definitions |
 | `scripts/` | Bash, Python | Experiment run/export/scoring tooling |
 | `experiments/` | JSONL, Markdown | Experiment specs and seed task files |
+| `alliance/` | Bash, Apptainer defs | HPC cluster deployment (Slurm jobs, SIF images, batch submission) |
 
 Each submodule has its own `CLAUDE.md` with package-specific patterns. Read those when working within a specific package.
 
@@ -139,6 +140,47 @@ Experiments are defined by the combination of:
 Export produces JSONL files (posts, comments, agents, activity, treatments) + a database dump + HuggingFace dataset card in `exports/<name>/`.
 
 Naming convention: `<theme>-v<major>` for run names (e.g., `consensus-v1`, `ranking-v2`). Seeded posts use `[CL:TAG]` prefixes for easy identification in exports.
+
+### HPC Deployment (`alliance/`)
+
+This branch (`alliance-canada`) includes Slurm + Apptainer infrastructure for running experiments on Alliance Canada clusters. Only **Fir** and **Nibi** are supported (compute nodes need internet for LLM API calls).
+
+```bash
+# Build SIF images locally, push to cluster
+./alliance/build-sif-images.sh --push youruser@nibi.alliancecan.ca
+
+# One-time cluster setup (on login node)
+bash alliance/setup-cluster.sh
+
+# Submit batch of experiments
+bash alliance/submit-batch.sh --experiments 5 --walltime 4:00:00
+bash alliance/submit-batch.sh --dry-run    # Preview only
+
+# Entropy collapse experiment (8 conditions × N replications)
+bash alliance/submit-entropy-collapse.sh --conditions mag0,mag1,mag5,mag25,dom-agi,dom-tech --runs 3
+bash alliance/submit-entropy-collapse.sh --dry-run
+
+# Monitor and collect
+sq                                         # Job status
+tail -f ec-<condition>-<jobid>_<run>.out   # Live log
+bash alliance/collect-results.sh <jobid>   # Merge results
+```
+
+Each Slurm job runs one self-contained experiment on a single node: PostgreSQL + Redis + API + 10 agents, all in Apptainer containers. Resources per job: 2 CPUs, ~22 GB RAM, no GPU. Data is checkpointed every 30 min and exported on SIGTERM/walltime.
+
+Cluster config lives in `$PROJECT/moltbook/config/` (`.env`, souls, heartbeat, schema, world posts). Results go to `$SCRATCH/moltbook/results/` (60-day purge) and `$PROJECT/moltbook/results/` (permanent backup).
+
+### Experiment Families (`experiments/`)
+
+| Family | Description |
+|--------|-------------|
+| `entropy-collapse` | Core research: 8 conditions (mag0/1/5/25, dom-agi, dom-tech, het-dual, het-multi) testing information cascade effects |
+| `consensus` | Consensus formation experiments |
+| `conspiracy` | Conspiracy propagation studies |
+| `factcheck` | Fact-checking behavior experiments |
+| `ranking-effect` | Feed ranking algorithm impact on discourse |
+
+Entropy collapse conditions use world post files (`config/world-posts/`) to seed different content mixes. Agent roster is 10 personalities (alpha–kappa) defined in `config/souls/`.
 
 ## Environment Variables
 

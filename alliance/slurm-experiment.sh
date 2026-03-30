@@ -317,8 +317,9 @@ export_data() {
 
   echo "  [EXPORT:$EXPORT_LABEL] Database dump: $(du -h "$TARGET_DIR/database-${EXPORT_LABEL}.sql" 2>/dev/null | cut -f1 || echo "?")"
 
-  # Copy logs
+  # Copy logs and audit files
   cp "$WORK/api-logs"/*.log "$TARGET_DIR/" 2>/dev/null || true
+  cp "$WORK/api-logs"/*.jsonl "$TARGET_DIR/" 2>/dev/null || true
 }
 
 # ============================================
@@ -527,7 +528,7 @@ if [ "$BASE_MODEL_MODE" = "true" ]; then
   else
     echo "  [WARN] Base model mode but API patches not found at $API_PATCHES"
   fi
-  API_TOKEN_ARGS="--env REQUIRE_CONTENT_TOKEN=true --env CONTENT_TOKEN_SECRET=$CONTENT_TOKEN_SECRET"
+  REQUIRE_CONTENT_TOKEN="true"
 fi
 
 apptainer exec $APT_FLAGS $API_BIND_ARGS \
@@ -549,7 +550,8 @@ apptainer exec $APT_FLAGS $API_BIND_ARGS \
   --env "EXPERIMENT_NAME=${EXPERIMENT_NAME}" \
   --env "EXPERIMENT_RUN_ID=${EXP_ID}" \
   --env "WORLD_POST_INTERVAL_MS=${WORLD_POST_INTERVAL_MS:-120000}" \
-  $API_TOKEN_ARGS \
+  --env "REQUIRE_CONTENT_TOKEN=${REQUIRE_CONTENT_TOKEN:-false}" \
+  --env "CONTENT_TOKEN_SECRET=${CONTENT_TOKEN_SECRET:-}" \
   "$SIF_DIR/moltbook-api.sif" \
   node /app/src/index.js \
   > "$WORK/api-logs/api.log" 2>&1 &
@@ -621,17 +623,27 @@ if [ "$BASE_MODEL_MODE" = "true" ]; then
   done
 
   # Verify end-to-end: generate a post and check we get a token
-  echo "  Testing content generation pipeline..."
-  GEN_RESP=$(curl -s -X POST "http://localhost:${CONTENT_GEN_PORT}/generate-post" \
-    -H "Content-Type: application/json" \
-    -d '{"context": "", "submolt": "general"}' 2>/dev/null || echo "{}")
-  GEN_TITLE=$(echo "$GEN_RESP" | jq -r '.title // "FAILED"' 2>/dev/null)
+  # Allow up to 5 min for remote model cold start (Modal/vLLM)
+  echo "  Testing content generation pipeline (may take a few minutes on cold start)..."
+  GEN_TITLE="FAILED"
+  for attempt in 1 2 3; do
+    GEN_RESP=$(curl -s --max-time 180 -X POST "http://localhost:${CONTENT_GEN_PORT}/generate-post" \
+      -H "Content-Type: application/json" \
+      -d '{"context": "", "submolt": "general"}' 2>/dev/null || echo "{}")
+    GEN_TITLE=$(echo "$GEN_RESP" | jq -r '.title // "FAILED"' 2>/dev/null)
+    if [ "$GEN_TITLE" != "FAILED" ]; then
+      break
+    fi
+    echo "  Attempt $attempt failed, retrying in 30s..."
+    sleep 30
+  done
   if [ "$GEN_TITLE" = "FAILED" ]; then
-    echo "  [ERROR] Content generation test failed"
+    echo "  [ERROR] Content generation test failed after 3 attempts"
     tail -10 "$WORK/api-logs/content-gen.log" 2>/dev/null || true
     exit 1
   fi
   echo "  [OK] Content-gen on localhost:$CONTENT_GEN_PORT (model: $BASE_MODEL)"
+  echo "  Test post title: '${GEN_TITLE:0:60}'"
 fi
 
 # ============================================
