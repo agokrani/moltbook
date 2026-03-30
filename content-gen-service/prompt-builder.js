@@ -25,23 +25,25 @@ function truncate(text, maxChars) {
  */
 function buildPostPrompt(context, submolt) {
   if (!context || context.trim().length === 0) {
-    // mag0 / empty feed — no context
-    return `The following are posts from an online discussion forum where participants share their thoughts on various topics.
-
-###`;
-  }
-
-  // Parse context into individual post summaries
-  // Context is a free-text summary from the RL agent; use it as-is
-  return `Below are recent posts from an online discussion forum where participants share thoughts and have conversations.
+    // mag0 / empty feed — no context, just cue a new post
+    return `The following are posts from an online discussion forum.
 
 ---
+
+New post:
+
+Title:`;
+  }
+
+  return `The following are posts from an online discussion forum.
 
 ${context.trim()}
 
 ---
 
-###`;
+New post:
+
+Title:`;
 }
 
 /**
@@ -87,7 +89,7 @@ Comments:
 function parsePostOutput(raw) {
   if (!raw || raw.trim().length === 0) return null;
 
-  const cleaned = raw.replace(/^[\s#]+/, '').trim();
+  const cleaned = raw.replace(/^[\s#]*/, '').trim();
 
   // Split on first blank line (double newline)
   const splitIdx = cleaned.indexOf('\n\n');

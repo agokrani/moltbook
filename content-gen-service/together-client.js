@@ -10,7 +10,14 @@
  * raw base model output without instruction tuning.
  */
 
-const BASE_URL = process.env.BASE_MODEL_API_URL || process.env.TOGETHER_BASE_URL || 'http://localhost:8000';
+// BASE_MODEL_API_URL can be:
+//   - Full endpoint URL (e.g. https://...modal.run) — used directly
+//   - Base URL (e.g. http://localhost:8000) — /v1/completions appended
+const _RAW_URL = process.env.BASE_MODEL_API_URL || process.env.TOGETHER_BASE_URL || 'http://localhost:8000';
+const BASE_URL = _RAW_URL.endsWith('/v1/completions') || _RAW_URL.includes('modal.run')
+  ? _RAW_URL.replace(/\/v1\/completions$/, '')
+  : _RAW_URL;
+const COMPLETIONS_PATH = _RAW_URL.includes('modal.run') ? '' : '/v1/completions';
 const API_KEY = process.env.BASE_MODEL_API_KEY || process.env.TOGETHER_API_KEY || '';
 
 const DEFAULT_MODEL = process.env.BASE_MODEL || 'Qwen/Qwen3.5-35B-A3B-Base';
@@ -50,7 +57,7 @@ async function complete(prompt, opts = {}) {
 
   const start = Date.now();
 
-  const response = await fetch(`${BASE_URL}/v1/completions`, {
+  const response = await fetch(`${BASE_URL}${COMPLETIONS_PATH}`, {
     method: 'POST',
     headers,
     body,
