@@ -1,0 +1,5 @@
+sh: locale: not found
+2026-04-08 07:05:48.468 PDT [863222] WARNING:  no usable system locales were found
+/localscratch/spool/slurmd/job33368243/slurm_script: line 909: /scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408/checkpoints/checkpoint-1.sql: No such file or directory
+/localscratch/spool/slurmd/job33368243/slurm_script: line 272: /scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408/agents.jsonl: No such file or directory
+/localscratch/spool/slurmd/job33368243/slurm_script: line 276: /scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408/posts.jsonl: No such file or directory

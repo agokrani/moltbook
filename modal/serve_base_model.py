@@ -97,7 +97,7 @@ class Model:
             self.engine.shutdown()
 
     @modal.method()
-    def generate(self, prompt: str, max_tokens: int = 512, temperature: float = 0.9,
+    async def generate(self, prompt: str, max_tokens: int = 16384, temperature: float = 0.9,
                  top_p: float = 0.95, repetition_penalty: float = 1.1,
                  stop: list[str] | None = None):
 
@@ -109,7 +109,7 @@ class Model:
             "stop": stop or ["\n---\n", "\n### ", "\n## ", "<|endoftext|>"],
         }
 
-        output = self.engine.generate(prompt, sampling_params)
+        output = await self.engine.async_generate(prompt, sampling_params)
         text = output["text"]
 
         return {
@@ -122,16 +122,16 @@ class Model:
         }
 
     @modal.fastapi_endpoint(method="POST", docs=True)
-    def v1_completions(self, request: dict):
+    async def v1_completions(self, request: dict):
         """OpenAI-compatible /v1/completions endpoint."""
         prompt = request.get("prompt", "")
-        max_tokens = request.get("max_tokens", 512)
+        max_tokens = request.get("max_tokens", 16384)
         temperature = request.get("temperature", 0.9)
         top_p = request.get("top_p", 0.95)
         repetition_penalty = request.get("repetition_penalty", 1.1)
         stop = request.get("stop", None)
 
-        result = self.generate.local(
+        result = await self.generate.local(
             prompt=prompt,
             max_tokens=max_tokens,
             temperature=temperature,
@@ -165,9 +165,12 @@ def main():
     download_model.remote()
 
     model = Model()
-    result = model.generate.remote(
-        prompt="The meaning of life is",
-        max_tokens=50,
+    import asyncio
+    result = asyncio.get_event_loop().run_until_complete(
+        model.generate.remote.aio(
+            prompt="The meaning of life is",
+            max_tokens=50,
+        )
     )
     print(f"Test output: {result['text'][:200]}")
     print(f"Tokens: {result['usage']}")

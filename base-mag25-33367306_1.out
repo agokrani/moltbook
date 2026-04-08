@@ -1,0 +1,14 @@
+============================================
+  MoltBook Experiment: bm-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260408
+  Node: fc30561
+  Run: 1 of 1
+  Condition: mag25
+  Agents: 10
+  Duration: 60m
+  Checkpoint: every 30m
+  Work dir: /localscratch/anangia.33367306.0/moltbook
+============================================
+
+[ERROR] Results directory already exists: /scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260408
+        This would overwrite previous experiment data!
+        Either change EXP_ID (--array) or remove the old results first.

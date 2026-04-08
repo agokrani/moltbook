@@ -1,0 +1,14 @@
+============================================
+  MoltBook Experiment: bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260405
+  Node: fc30555
+  Run: 1 of 1
+  Condition: mag0
+  Agents: 10
+  Duration: 10m
+  Checkpoint: every 30m
+  Work dir: /localscratch/anangia.32746950.0/moltbook
+============================================
+
+[ERROR] Backup directory already exists: /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-think/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260405
+        This would overwrite previous experiment data!
+        Either change EXP_ID (--array) or remove the old results first.

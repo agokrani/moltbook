@@ -182,6 +182,26 @@ Cluster config lives in `$PROJECT/moltbook/config/` (`.env`, souls, heartbeat, s
 
 Entropy collapse conditions use world post files (`config/world-posts/`) to seed different content mixes. Agent roster is 10 personalities (alpha–kappa) defined in `config/souls/`.
 
+### Agent Scaling
+
+Experiments support 10, 20, or 30 agents. Port allocation formula: `(JOB_ID % 65) * 700`, with 10-port stride per agent. For 20+ agents, an 8-second stagger is applied at startup to avoid port collisions.
+
+Agent souls (alpha–selene, up to 30) live in `$PROJECT/moltbook/config/souls/`. Soul templates in `agents/soul-templates/` define 11 archetypes: baseline, contrarian, curious, devotee, follower, introspective, leader, nihilist, prophet, seeker, skeptic.
+
+### HuggingFace Upload
+
+Upload scripts in `alliance/upload-*-to-hf.py` push experiment results to HuggingFace datasets. Each is model-specific (kimi, glm5, gemini variants, base-model-test). They read JSONL from `$SCRATCH/moltbook/results/` and push to `Ayushnangia/moltbook-entropy-collapse-*` repos.
+
+### Analysis Scripts
+
+- `scripts/score-consensus.py` — Score consensus experiments
+- `scripts/analyze-base-vs-rl.py` — Compare base model vs RL post-training behavior
+- `scripts/verify-base-model-integrity.py` — Verify base model experiment data integrity
+
+### Base Model Experiment (`content-gen-service/`)
+
+A Node.js service + Python Together API client for testing whether entropy collapse is caused by RL post-training. Runs alongside the main stack, generating content from base (non-instruct) models. Uses HMAC token verification. Related branch: `base-model-experiment`.
+
 ## Environment Variables
 
 ### Root `.env` (Docker)

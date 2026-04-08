@@ -1,0 +1,5 @@
+sh: locale: not found
+2026-04-06 06:08:49.324 PDT [3991010] WARNING:  no usable system locales were found
+slurmstepd: error: *** JOB 32910209 ON fc30557 CANCELLED AT 2026-04-06T06:12:53 ***
+/localscratch/spool/slurmd/job32910209/slurm_script: line 272: /scratch/anangia/moltbook/results/base-model-olmo3-32b-think/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406/agents.jsonl: No such file or directory
+/localscratch/spool/slurmd/job32910209/slurm_script: line 276: /scratch/anangia/moltbook/results/base-model-olmo3-32b-think/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406/posts.jsonl: No such file or directory

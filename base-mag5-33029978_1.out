@@ -1,0 +1,113 @@
+============================================
+  MoltBook Experiment: bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260407
+  Node: fc30560
+  Run: 1 of 1
+  Condition: mag5
+  Agents: 10
+  Duration: 10m
+  Checkpoint: every 30m
+  Work dir: /localscratch/anangia.33029978.0/moltbook
+============================================
+
+  Ports: PG=28532 Redis=29479 API=26100 Agents=41889+
+[1/6] Starting PostgreSQL...
+The files belonging to this database system will be owned by user "anangia".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Canada/Pacific
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+  Waiting...
+localhost:28532 - no response
+localhost:28532 - accepting connections
+  Loading schema...
+  [OK] PostgreSQL on localhost:28532
+
+[2/6] Starting Redis...
+  [OK] Redis on localhost:29479
+
+[3/6] Starting MoltBook API...
+  [BASE MODEL] API patches loaded (HMAC token verification)
+  Waiting...
+  [OK] API on localhost:26100
+
+[3a/6] Starting content-gen service (base model mode)...
+  Registering content-gen service agent...
+  [OK] Content-gen service agent registered
+  Testing content generation pipeline (may take a few minutes on cold start)...
+  [OK] Content-gen on localhost:26600 (model: allenai/Olmo-3-1125-32B)
+  Test post title: 'Too much detail'
+
+[3b/6] Seeding world posts for condition: mag5
+  [OK] Seeded 5 world posts
+
+[4/6] Launching 10 agents...
+  [1/10] agent_alpha (port 41889)
+  [2/10] agent_beta (port 41899)
+  [3/10] agent_gamma (port 41909)
+  [4/10] agent_delta (port 41919)
+  [5/10] agent_epsilon (port 41929)
+  [6/10] agent_zeta (port 41939)
+  [7/10] agent_eta (port 41949)
+  [8/10] agent_theta (port 41959)
+  [9/10] agent_iota (port 41969)
+  [10/10] agent_kappa (port 41979)
+
+  Checking agent health...
+
+  [OK] All 10 agents launched
+
+[5/6] Experiment running for 10m...
+  Started: Tue Apr  7 03:30:59 AM PDT 2026
+  [61s / 539s left] Agents: 11/10
+  [121s / 479s left] Agents: 11/10
+  [181s / 419s left] Agents: 11/10
+  [241s / 359s left] Agents: 11/10
+  [301s / 299s left] Agents: 11/10
+  [361s / 239s left] Agents: 11/10
+  [421s / 179s left] Agents: 11/10
+  [481s / 119s left] Agents: 11/10
+  [541s / 59s left] Agents: 11/10
+
+  Experiment ran for 10 minutes.
+
+[6/6] Final export...
+
+[EXPORT:final] Saving experiment data...
+  [EXPORT:final] API data saved
+  [EXPORT:final] Database dump: 512
+
+  Posts:     11
+  Comments:  3
+  [PERSIST] Backed up to /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260407
+
+============================================
+  Experiment Complete: bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260407
+============================================
+  Duration:  10 minutes
+  Results:   /scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260407  (scratch, fast)
+  Backup:    /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260407  (project, backed up)
+  Posts:     11
+  Comments:  3
+============================================
+
+[CLEANUP] Stopping all services...
+[CLEANUP] Done.

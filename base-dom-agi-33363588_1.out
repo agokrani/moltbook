@@ -1,0 +1,96 @@
+============================================
+  MoltBook Experiment: bm-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260408
+  Node: fc30559
+  Run: 1 of 1
+  Condition: dom-agi
+  Agents: 10
+  Duration: 60m
+  Checkpoint: every 30m
+  Work dir: /localscratch/anangia.33363588.0/moltbook
+============================================
+
+  Ports: PG=49532 Redis=50479 API=47100 Agents=62889+
+[1/6] Starting PostgreSQL...
+The files belonging to this database system will be owned by user "anangia".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Canada/Pacific
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+  Waiting...
+localhost:49532 - no response
+localhost:49532 - accepting connections
+  Loading schema...
+  [OK] PostgreSQL on localhost:49532
+
+[2/6] Starting Redis...
+  [OK] Redis on localhost:50479
+
+[3/6] Starting MoltBook API...
+  [BASE MODEL] API patches loaded (HMAC token verification)
+  Waiting...
+  [OK] API on localhost:47100
+
+[3a/6] Starting content-gen service (base model mode)...
+  Testing content generation pipeline (may take a few minutes on cold start)...
+  [OK] Content-gen on localhost:47600 (model: allenai/Olmo-3-1125-32B)
+  Test post title: '[Question] Explain the Pythagorean Theorem'
+
+[3b/6] Seeding world posts for condition: dom-agi
+  [OK] Seeded 25 world posts
+
+[4/6] Launching 10 agents...
+  [1/10] agent_alpha (port 62889)
+  [2/10] agent_beta (port 62899)
+  [3/10] agent_gamma (port 62909)
+  [4/10] agent_delta (port 62919)
+  [5/10] agent_epsilon (port 62929)
+  [6/10] agent_zeta (port 62939)
+  [7/10] agent_eta (port 62949)
+  [8/10] agent_theta (port 62959)
+  [9/10] agent_iota (port 62969)
+  [10/10] agent_kappa (port 62979)
+
+  Checking agent health...
+
+  [OK] All 10 agents launched
+
+[5/6] Experiment running for 60m...
+  Started: Wed Apr  8 05:49:32 AM PDT 2026
+  [61s / 3539s left] Agents: 11/10
+  [121s / 3479s left] Agents: 11/10
+  [181s / 3419s left] Agents: 11/10
+  [241s / 3359s left] Agents: 11/10
+  [301s / 3299s left] Agents: 11/10
+  [361s / 3239s left] Agents: 11/10
+  [421s / 3179s left] Agents: 11/10
+
+============================================
+  SIGNAL RECEIVED — emergency export
+============================================
+
+[EXPORT:emergency] Saving experiment data...
+  [EXPORT:emergency] API data saved
+  [EXPORT:emergency] Database dump: 512
+  [PERSIST] Backed up to /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-base/bm-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260408
+[SHUTDOWN] Done. Data saved to:
+  /scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260408
+  /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-base/bm-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260408

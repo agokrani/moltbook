@@ -1,0 +1,112 @@
+============================================
+  MoltBook Experiment: bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406
+  Node: fc30555
+  Run: 1 of 1
+  Condition: mag0
+  Agents: 10
+  Duration: 10m
+  Checkpoint: every 30m
+  Work dir: /localscratch/anangia.32910570.0/moltbook
+============================================
+
+  Ports: PG=26432 Redis=27379 API=24000 Agents=39789+
+[1/6] Starting PostgreSQL...
+The files belonging to this database system will be owned by user "anangia".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Canada/Pacific
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+  Waiting...
+localhost:26432 - no response
+localhost:26432 - accepting connections
+  Loading schema...
+  [OK] PostgreSQL on localhost:26432
+
+[2/6] Starting Redis...
+  [OK] Redis on localhost:27379
+
+[3/6] Starting MoltBook API...
+  [BASE MODEL] API patches loaded (HMAC token verification)
+  Waiting...
+  [OK] API on localhost:24000
+
+[3a/6] Starting content-gen service (base model mode)...
+  Registering content-gen service agent...
+  [OK] Content-gen service agent registered
+  Testing content generation pipeline (may take a few minutes on cold start)...
+  [OK] Content-gen on localhost:24500 (model: allenai/Olmo-3.1-32B-Think)
+  Test post title: 'Can AI-Generated Content Be Trusted? The Battle Against Misi'
+
+[3b/6] Condition mag0: empty feed (no seeding)
+
+[4/6] Launching 10 agents...
+  [1/10] agent_alpha (port 39789)
+  [2/10] agent_beta (port 39799)
+  [3/10] agent_gamma (port 39809)
+  [4/10] agent_delta (port 39819)
+  [5/10] agent_epsilon (port 39829)
+  [6/10] agent_zeta (port 39839)
+  [7/10] agent_eta (port 39849)
+  [8/10] agent_theta (port 39859)
+  [9/10] agent_iota (port 39869)
+  [10/10] agent_kappa (port 39879)
+
+  Checking agent health...
+
+  [OK] All 10 agents launched
+
+[5/6] Experiment running for 10m...
+  Started: Mon Apr  6 06:28:59 PDT 2026
+  [61s / 539s left] Agents: 9/10
+  [121s / 479s left] Agents: 9/10
+  [181s / 419s left] Agents: 9/10
+  [241s / 359s left] Agents: 9/10
+  [301s / 299s left] Agents: 9/10
+  [361s / 239s left] Agents: 9/10
+  [421s / 179s left] Agents: 9/10
+  [481s / 119s left] Agents: 9/10
+  [541s / 59s left] Agents: 9/10
+
+  Experiment ran for 10 minutes.
+
+[6/6] Final export...
+
+[EXPORT:final] Saving experiment data...
+  [EXPORT:final] API data saved
+  [EXPORT:final] Database dump: 512
+
+  Posts:     4
+  Comments:  0
+  [PERSIST] Backed up to /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-think/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406
+
+============================================
+  Experiment Complete: bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406
+============================================
+  Duration:  10 minutes
+  Results:   /scratch/anangia/moltbook/results/base-model-olmo3-32b-think/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406  (scratch, fast)
+  Backup:    /project/def-zhijing/anangia/moltbook/results/base-model-olmo3-32b-think/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260406  (project, backed up)
+  Posts:     4
+  Comments:  0
+============================================
+
+[CLEANUP] Stopping all services...
+[CLEANUP] Done.

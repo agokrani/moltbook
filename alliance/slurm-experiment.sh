@@ -41,8 +41,10 @@ SCRATCH="${SCRATCH:-/scratch/anangia}"
 
 CONFIG_DIR="$PROJECT/moltbook/config"
 SIF_DIR="$PROJECT/moltbook/images"
-RESULTS_SCRATCH="$SCRATCH/moltbook/results"
-RESULTS_PROJECT="$PROJECT/moltbook/results"
+OUT_DIR="${OUT_DIR:-}"
+EXP_PREFIX="${EXP_PREFIX:-ec}"
+RESULTS_SCRATCH="$SCRATCH/moltbook/results${OUT_DIR:+/$OUT_DIR}"
+RESULTS_PROJECT="$PROJECT/moltbook/results${OUT_DIR:+/$OUT_DIR}"
 
 # Save any values passed via sbatch --export (they take priority)
 _EXPORT_NUM_AGENTS="${NUM_AGENTS:-}"
@@ -55,6 +57,9 @@ _EXPORT_BASE_MODEL_MODE="${BASE_MODEL_MODE:-}"
 _EXPORT_BASE_MODEL_API_URL="${BASE_MODEL_API_URL:-}"
 _EXPORT_BASE_MODEL_API_KEY="${BASE_MODEL_API_KEY:-}"
 _EXPORT_BASE_MODEL="${BASE_MODEL:-}"
+_EXPORT_OUT_DIR="${OUT_DIR:-}"
+_EXPORT_EXP_PREFIX="${EXP_PREFIX:-}"
+_EXPORT_BASE_MODEL_CHAT_MODE="${BASE_MODEL_CHAT_MODE:-}"
 
 # Load user config
 if [ -f "$CONFIG_DIR/.env" ]; then
@@ -78,6 +83,9 @@ fi
 [ -n "$_EXPORT_BASE_MODEL_API_URL" ] && BASE_MODEL_API_URL="$_EXPORT_BASE_MODEL_API_URL"
 [ -n "$_EXPORT_BASE_MODEL_API_KEY" ] && BASE_MODEL_API_KEY="$_EXPORT_BASE_MODEL_API_KEY"
 [ -n "$_EXPORT_BASE_MODEL" ] && BASE_MODEL="$_EXPORT_BASE_MODEL"
+[ -n "$_EXPORT_OUT_DIR" ] && OUT_DIR="$_EXPORT_OUT_DIR"
+[ -n "$_EXPORT_EXP_PREFIX" ] && EXP_PREFIX="$_EXPORT_EXP_PREFIX"
+[ -n "$_EXPORT_BASE_MODEL_CHAT_MODE" ] && BASE_MODEL_CHAT_MODE="$_EXPORT_BASE_MODEL_CHAT_MODE"
 
 # Defaults (only if still unset)
 NUM_AGENTS="${NUM_AGENTS:-10}"
@@ -138,7 +146,7 @@ _MODEL_SHORT="${_MODEL_SHORT%%:*}"
 _MODEL_TAG=$(echo "$_MODEL_SHORT" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g' | cut -c1-30)
 
 if [ -n "$CONDITION" ]; then
-  EXPERIMENT_NAME="ec-${CONDITION}-n${NUM_AGENTS}-run$(printf '%02d' "$EXP_ID")-${_MODEL_TAG}-$(date +%Y%m%d)"
+  EXPERIMENT_NAME="${EXP_PREFIX}-${CONDITION}-n${NUM_AGENTS}-run$(printf '%02d' "$EXP_ID")-${_MODEL_TAG}-$(date +%Y%m%d)"
 else
   EXPERIMENT_NAME="exp-${JOB_ID}-run${EXP_ID}-${_MODEL_TAG}"
 fi
@@ -364,9 +372,17 @@ cleanup() {
   if [ "$SHUTTING_DOWN" = true ]; then return; fi
   echo ""
   echo "[CLEANUP] Stopping all services..."
+  # Send SIGTERM first
   for pid in "${PIDS[@]}"; do
-    kill "$pid" 2>/dev/null && wait "$pid" 2>/dev/null || true
+    kill "$pid" 2>/dev/null || true
   done
+  # Wait up to 10 seconds for graceful shutdown
+  sleep 10
+  # Force kill anything still alive
+  for pid in "${PIDS[@]}"; do
+    kill -9 "$pid" 2>/dev/null || true
+  done
+  wait 2>/dev/null || true
   echo "[CLEANUP] Done."
 }
 
@@ -575,7 +591,7 @@ echo "  [OK] API on localhost:$API_PORT"
 # ============================================
 # 3a. Start content-gen service (base model mode only)
 # ============================================
-CONTENT_GEN_PORT=$((API_PORT + 2))
+CONTENT_GEN_PORT=$((API_PORT + 500))
 CONTENT_GEN_URL=""
 
 if [ "$BASE_MODEL_MODE" = "true" ]; then
@@ -602,6 +618,7 @@ if [ "$BASE_MODEL_MODE" = "true" ]; then
     --env "BASE_MODEL_API_URL=$BASE_MODEL_API_URL" \
     --env "BASE_MODEL_API_KEY=${BASE_MODEL_API_KEY:-$OPENROUTER_API_KEY}" \
     --env "BASE_MODEL=$BASE_MODEL" \
+    --env "BASE_MODEL_CHAT_MODE=${BASE_MODEL_CHAT_MODE:-completions}" \
     --env "CONTENT_TOKEN_SECRET=$CONTENT_TOKEN_SECRET" \
     --env "AUDIT_LOG_PATH=/data/content-gen-audit.jsonl" \
     --env "TEMPERATURE=0.9" \
