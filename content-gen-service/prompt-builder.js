@@ -22,7 +22,7 @@ function truncate(text, maxChars) {
 
 function buildPostPrompt(context, submolt) {
   let prompt = `You are writing a new post for an online discussion forum.
-Write a new original post. Do not reply to existing posts. Do not claim you already posted.
+Write a post for an online discussion forum.
 Output format:
 Title on the first line.
 Then a blank line.
