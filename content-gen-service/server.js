@@ -23,6 +23,10 @@ app.use(express.json({ limit: '64kb' }));
 
 const PORT = parseInt(process.env.PORT || '3002', 10);
 const CONTENT_TOKEN_SECRET = process.env.CONTENT_TOKEN_SECRET;
+const CONTENT_GEN_MAX_ATTEMPTS = Math.max(1, parseInt(process.env.CONTENT_GEN_MAX_ATTEMPTS || '1', 10));
+const CONTENT_GEN_RETRY_TEMPERATURE = process.env.CONTENT_GEN_RETRY_TEMPERATURE
+  ? parseFloat(process.env.CONTENT_GEN_RETRY_TEMPERATURE)
+  : null;
 
 if (!CONTENT_TOKEN_SECRET) {
   console.error('[FATAL] CONTENT_TOKEN_SECRET not set');
@@ -45,10 +49,11 @@ app.post('/generate-post', async (req, res) => {
   let attempt = 0;
   let lastError = null;
 
-  // Up to 2 attempts: first at configured temp, retry at temp=1.0
-  for (attempt = 1; attempt <= 2; attempt++) {
+  for (attempt = 1; attempt <= CONTENT_GEN_MAX_ATTEMPTS; attempt++) {
     const prompt = buildPostPrompt(context, submolt);
-    const temperature = attempt === 1 ? undefined : 1.0;
+    const temperature = attempt === 1 || CONTENT_GEN_RETRY_TEMPERATURE === null
+      ? undefined
+      : CONTENT_GEN_RETRY_TEMPERATURE;
 
     try {
       const result = await complete(prompt, {
@@ -136,7 +141,7 @@ app.post('/generate-post', async (req, res) => {
   }
 
   // Both attempts failed
-  res.status(500).json({ error: lastError || 'Content generation failed after 2 attempts' });
+  res.status(500).json({ error: lastError || `Content generation failed after ${CONTENT_GEN_MAX_ATTEMPTS} attempts` });
 });
 
 /**
@@ -150,9 +155,11 @@ app.post('/generate-comment', async (req, res) => {
   let attempt = 0;
   let lastError = null;
 
-  for (attempt = 1; attempt <= 2; attempt++) {
+  for (attempt = 1; attempt <= CONTENT_GEN_MAX_ATTEMPTS; attempt++) {
     const prompt = buildCommentPrompt(post_title, post_content, thread);
-    const temperature = attempt === 1 ? undefined : 1.0;
+    const temperature = attempt === 1 || CONTENT_GEN_RETRY_TEMPERATURE === null
+      ? undefined
+      : CONTENT_GEN_RETRY_TEMPERATURE;
 
     try {
       const result = await complete(prompt, {
@@ -232,7 +239,7 @@ app.post('/generate-comment', async (req, res) => {
     }
   }
 
-  res.status(500).json({ error: lastError || 'Comment generation failed after 2 attempts' });
+  res.status(500).json({ error: lastError || `Comment generation failed after ${CONTENT_GEN_MAX_ATTEMPTS} attempts` });
 });
 
 /**
@@ -243,6 +250,8 @@ app.get('/health', (req, res) => {
     status: 'ok',
     service: 'content-gen',
     model: process.env.BASE_MODEL || 'meta-llama/Meta-Llama-3.1-70B',
+    chat_mode: process.env.BASE_MODEL_CHAT_MODE || 'completions',
+    max_attempts: CONTENT_GEN_MAX_ATTEMPTS,
   });
 });
 

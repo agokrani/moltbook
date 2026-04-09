@@ -20,59 +20,30 @@ function truncate(text, maxChars) {
   return lastSpace > maxChars * 0.5 ? cut.slice(0, lastSpace) + '...' : cut + '...';
 }
 
-/**
- * Build a completion prompt for generating a new post.
- * Model completes from "### " — first line = title, after blank line = content.
- *
- * @param {string} context - Summary of recent posts (or empty for mag0)
- * @param {string} submolt - Target submolt name
- * @returns {string}
- */
 function buildPostPrompt(context, submolt) {
+  let prompt = `You are writing a new post for an online discussion forum.
+Write a new original post. Do not reply to existing posts. Do not claim you already posted.
+Output format:
+Title on the first line.
+Then a blank line.
+Then the post body.
+Do not use labels like "Title:", "Content:", "Comment:", or "Comments:".`;
+
+  if (context && context.length > 0) {
+    prompt += `
+
+Recent posts by other users:
+
+${context}
+
+---`;
+  }
+
   if (CHAT_MODE) {
-    if (!context || context.length === 0) {
-      return `Write a new, original post for an online discussion forum. This is a fresh post — you have not posted anything before.
-
-Format your response as:
-- First line: the post title
-- Then a blank line
-- Then the post body`;
-    }
-
-    return `Below are some recent posts written by OTHER users on an online discussion forum. These are NOT your posts — you did not write them.
-
-${context}
-
----
-
-Write a new post of your own. Do NOT reply to the posts above. Do NOT claim you already posted. You have not posted anything yet.
-
-Format your response as:
-- First line: the post title
-- Then a blank line
-- Then the post body`;
+    return prompt;
   }
 
-  // Completions mode — model completes from "Title:"
-  const instruction = `Write a new post for this forum. Do not reply to or comment on existing posts. Do not use "Content:", "Comment:", or "Comments:" labels. Output only the title on the first line, then a blank line, then the post body.`;
-
-  if (!context || context.length === 0) {
-    return `The following are posts from an online discussion forum.
-
----
-
-${instruction}
-
-Title:`;
-  }
-
-  return `The following are posts from an online discussion forum.
-
-${context}
-
----
-
-${instruction}
+  return `${prompt}
 
 Title:`;
 }
@@ -88,47 +59,29 @@ Title:`;
 function buildCommentPrompt(postTitle, postContent, thread) {
   const truncatedContent = truncate(postContent, 500);
   const truncatedThread = truncate(thread, 400);
+  let prompt = `You are a participant in an online discussion forum. Write one new comment on the post below.
+Output only the comment text. Do not use labels.`;
 
-  if (CHAT_MODE) {
-    let prompt = `You are a participant in an online discussion forum. Write a comment on this post.
+  prompt += `
 
 Post title: ${postTitle}
 
 ${truncatedContent}`;
 
-    if (truncatedThread && truncatedThread.trim().length > 0) {
-      prompt += `
+  if (truncatedThread && truncatedThread.trim().length > 0) {
+    prompt += `
 
 Previous comments:
 ${truncatedThread.trim()}`;
-    }
+  }
 
-    prompt += `
-
-Write your comment. Output only the comment text.`;
+  if (CHAT_MODE) {
     return prompt;
   }
 
-  // Completions mode
-  let prompt = `The following is a discussion thread from an online forum.
+  return `${prompt}
 
-### ${postTitle}
-
-${truncatedContent}
-
-Comments:
-
-`;
-
-  if (truncatedThread && truncatedThread.trim().length > 0) {
-    prompt += `${truncatedThread.trim()}
-
-`;
-  }
-
-  prompt += `> New comment:`;
-
-  return prompt;
+Comment:`;
 }
 
 /**

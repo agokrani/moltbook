@@ -102,6 +102,8 @@ BASE_MODEL_MODE="${BASE_MODEL_MODE:-false}"
 BASE_MODEL_API_URL="${BASE_MODEL_API_URL:-https://openrouter.ai/api}"  # vLLM URL or OpenRouter
 BASE_MODEL_API_KEY="${BASE_MODEL_API_KEY:-}"  # API key for base model endpoint
 BASE_MODEL="${BASE_MODEL:-}"  # e.g. Qwen/Qwen3.5-35B-A3B-Base
+BASE_MODEL_CHAT_MODE="${BASE_MODEL_CHAT_MODE:-completions}"
+CONTENT_GEN_MAX_ATTEMPTS="${CONTENT_GEN_MAX_ATTEMPTS:-1}"
 CONTENT_TOKEN_SECRET="${CONTENT_TOKEN_SECRET:-experiment-hmac-secret-2026}"
 # Use base-model heartbeat when in base model mode
 if [ "$BASE_MODEL_MODE" = "true" ]; then
@@ -414,6 +416,9 @@ write_metadata() {
   "num_agents": $NUM_AGENTS,
   "heartbeat_interval": "$HEARTBEAT_INTERVAL",
   "model": "${OPENROUTER_MODEL:-${OPENAI_MODEL:-unknown}}",
+  "content_model": "${BASE_MODEL:-unknown}",
+  "base_model_chat_mode": "${BASE_MODEL_CHAT_MODE:-completions}",
+  "content_gen_max_attempts": ${CONTENT_GEN_MAX_ATTEMPTS:-1},
   "stats": {
     "posts": $POST_N,
     "comments": $COMMENT_N,
@@ -619,6 +624,7 @@ if [ "$BASE_MODEL_MODE" = "true" ]; then
     --env "BASE_MODEL_API_KEY=${BASE_MODEL_API_KEY:-$OPENROUTER_API_KEY}" \
     --env "BASE_MODEL=$BASE_MODEL" \
     --env "BASE_MODEL_CHAT_MODE=${BASE_MODEL_CHAT_MODE:-completions}" \
+    --env "CONTENT_GEN_MAX_ATTEMPTS=${CONTENT_GEN_MAX_ATTEMPTS:-1}" \
     --env "CONTENT_TOKEN_SECRET=$CONTENT_TOKEN_SECRET" \
     --env "AUDIT_LOG_PATH=/data/content-gen-audit.jsonl" \
     --env "TEMPERATURE=0.9" \
