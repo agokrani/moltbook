@@ -1,0 +1,14 @@
+============================================
+  Semantic Diversity Analysis
+============================================
+  Node:            fc11015
+  GPU:             NVIDIA H100 80GB HBM3, 81559 MiB
+  Env:             /home/anangia/envs/semantic-diversity
+  HF cache:        /scratch/anangia/hf-cache
+  Embedding model: Qwen/Qwen3-Embedding-4B
+  Output dir:      /scratch/anangia/moltbook/analysis/semantic-diversity-20260410-064430
+  JSON path:       /scratch/anangia/moltbook/analysis/semantic-diversity-20260410-064430/semantic-diversity.json
+  Experiment sets:
+    OLMo Base=/scratch/anangia/moltbook/results/base-model-olmo3-32b-base
+    OLMo Instruct=/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct
+============================================

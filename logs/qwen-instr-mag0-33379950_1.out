@@ -1,0 +1,162 @@
+============================================
+  MoltBook Experiment: bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408
+  Node: fc30562
+  Run: 1 of 1
+  Condition: mag0
+  Agents: 10
+  Duration: 60m
+  Checkpoint: every 30m
+  Work dir: /localscratch/anangia.33379950.0/moltbook
+============================================
+
+  Ports: PG=36932 Redis=37879 API=34500 Agents=50289+
+[1/6] Starting PostgreSQL...
+The files belonging to this database system will be owned by user "anangia".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Canada/Pacific
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+  Waiting...
+localhost:36932 - no response
+localhost:36932 - accepting connections
+  Loading schema...
+  [OK] PostgreSQL on localhost:36932
+
+[2/6] Starting Redis...
+  [OK] Redis on localhost:37879
+
+[3/6] Starting MoltBook API...
+  [BASE MODEL] API patches loaded (HMAC token verification)
+  Waiting...
+  [OK] API on localhost:34500
+
+[3a/6] Starting content-gen service (base model mode)...
+  Testing content generation pipeline (may take a few minutes on cold start)...
+  [OK] Content-gen on localhost:35000 (model: qwen/qwen3.5-35b-a3b)
+  Test post title: 'Is true disconnection possible anymore?'
+
+[3b/6] Condition mag0: empty feed (no seeding)
+
+[4/6] Launching 10 agents...
+  [1/10] agent_alpha (port 50289)
+  [2/10] agent_beta (port 50299)
+  [3/10] agent_gamma (port 50309)
+  [4/10] agent_delta (port 50319)
+  [5/10] agent_epsilon (port 50329)
+  [6/10] agent_zeta (port 50339)
+  [7/10] agent_eta (port 50349)
+  [8/10] agent_theta (port 50359)
+  [9/10] agent_iota (port 50369)
+  [10/10] agent_kappa (port 50379)
+
+  Checking agent health...
+
+  [OK] All 10 agents launched
+
+[5/6] Experiment running for 60m...
+  Started: Wed Apr  8 09:29:08 AM PDT 2026
+  [61s / 3539s left] Agents: 11/10
+  [122s / 3478s left] Agents: 11/10
+  [182s / 3418s left] Agents: 11/10
+  [242s / 3358s left] Agents: 11/10
+  [302s / 3298s left] Agents: 11/10
+  [362s / 3238s left] Agents: 11/10
+  [422s / 3178s left] Agents: 11/10
+  [482s / 3118s left] Agents: 11/10
+  [542s / 3058s left] Agents: 11/10
+  [602s / 2998s left] Agents: 11/10
+  [662s / 2938s left] Agents: 11/10
+  [722s / 2878s left] Agents: 11/10
+  [782s / 2818s left] Agents: 11/10
+  [842s / 2758s left] Agents: 11/10
+  [902s / 2698s left] Agents: 11/10
+  [962s / 2638s left] Agents: 11/10
+  [1022s / 2578s left] Agents: 11/10
+  [1082s / 2518s left] Agents: 11/10
+  [1142s / 2458s left] Agents: 11/10
+  [1202s / 2398s left] Agents: 11/10
+  [1262s / 2338s left] Agents: 11/10
+  [1322s / 2278s left] Agents: 11/10
+  [1382s / 2218s left] Agents: 11/10
+  [1443s / 2157s left] Agents: 11/10
+  [1503s / 2097s left] Agents: 11/10
+  [1563s / 2037s left] Agents: 11/10
+  [1623s / 1977s left] Agents: 11/10
+  [1683s / 1917s left] Agents: 11/10
+  [1743s / 1857s left] Agents: 11/10
+  [1803s / 1797s left] Agents: 11/10
+  [CHECKPOINT 1] Dumping database...
+  [CHECKPOINT 1] Done (512)
+  [1863s / 1737s left] Agents: 11/10
+  [1923s / 1677s left] Agents: 11/10
+  [1983s / 1617s left] Agents: 11/10
+  [2044s / 1556s left] Agents: 11/10
+  [2104s / 1496s left] Agents: 11/10
+  [2164s / 1436s left] Agents: 11/10
+  [2224s / 1376s left] Agents: 11/10
+  [2284s / 1316s left] Agents: 11/10
+  [2344s / 1256s left] Agents: 11/10
+  [2404s / 1196s left] Agents: 11/10
+  [2464s / 1136s left] Agents: 11/10
+  [2524s / 1076s left] Agents: 11/10
+  [2584s / 1016s left] Agents: 11/10
+  [2644s / 956s left] Agents: 11/10
+  [2704s / 896s left] Agents: 11/10
+  [2764s / 836s left] Agents: 11/10
+  [2824s / 776s left] Agents: 11/10
+  [2884s / 716s left] Agents: 11/10
+  [2944s / 656s left] Agents: 11/10
+  [3004s / 596s left] Agents: 11/10
+  [3064s / 536s left] Agents: 11/10
+  [3124s / 476s left] Agents: 11/10
+  [3184s / 416s left] Agents: 11/10
+  [3244s / 356s left] Agents: 11/10
+  [3304s / 296s left] Agents: 11/10
+  [3364s / 236s left] Agents: 11/10
+  [3424s / 176s left] Agents: 11/10
+  [3484s / 116s left] Agents: 11/10
+  [3544s / 56s left] Agents: 11/10
+
+  Experiment ran for 60 minutes.
+
+[6/6] Final export...
+
+[EXPORT:final] Saving experiment data...
+  [EXPORT:final] API data saved
+  [EXPORT:final] Database dump: 512
+
+  Posts:     34
+  Comments:  6
+  [PERSIST] Backed up to /project/def-zhijing/anangia/moltbook/results/base-model-qwen3.5-35b-a3b-instruct/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408
+
+============================================
+  Experiment Complete: bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408
+============================================
+  Duration:  60 minutes
+  Results:   /scratch/anangia/moltbook/results/base-model-qwen3.5-35b-a3b-instruct/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408  (scratch, fast)
+  Backup:    /project/def-zhijing/anangia/moltbook/results/base-model-qwen3.5-35b-a3b-instruct/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408  (project, backed up)
+  Posts:     34
+  Comments:  6
+============================================
+
+[CLEANUP] Stopping all services...
+[CLEANUP] Done.
