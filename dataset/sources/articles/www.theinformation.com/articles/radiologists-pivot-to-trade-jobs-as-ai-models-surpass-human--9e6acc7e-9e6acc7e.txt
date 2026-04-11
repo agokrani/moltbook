@@ -1,0 +1,22 @@
+Radiologists Pivot to Trade Jobs as AI Models Surpass Human Accuracy
+
+By Rachel Kowalski
+SAN FRANCISCO — January 15, 2025
+
+Three radiologists at major U.S. hospital systems have quietly left their practices in the past six months to retrain for skilled trade work, according to interviews with the physicians and internal hospital documents reviewed by The Information. The departures, which have not been previously reported, reflect growing anxiety in the medical imaging field as AI diagnostic tools demonstrate accuracy rates that now exceed human performance in multiple specialties.
+
+Dr. Marcus Chen, a 41-year-old radiologist who completed his fellowship at Massachusetts General Hospital in 2018, enrolled in a plumbing apprenticeship program in November after calculating that his effective hourly earnings, accounting for student debt and malpractice insurance, had fallen below $85 per hour. Chen shared spreadsheets with The Information showing his decision matrix, which weighted factors including retraining time, debt burden, and projected job security over a 20-year horizon.
+
+"I'm looking at the data every day," Chen said in an interview at a coffee shop near his former hospital. "The AI models are now at 94% accuracy on pulmonary nodule detection. I'm at 87% on a good day. The math is pretty straightforward."
+
+Chen's assessment aligns with recent performance benchmarks from medical AI companies. Enlitic, a San Francisco-based firm, reported in December that its latest model achieved 93.7% accuracy across a validation set of 50,000 chest X-rays, compared to a pooled radiologist accuracy of 86.4% in the same study. Two hospital systems, which requested anonymity because they have not publicly announced the changes, have begun routing initial reads through AI systems, with radiologists reviewing only flagged cases.
+
+"We're seeing a fundamental shift in the economics of medical imaging," said Dr. Patricia Vance, a workforce researcher at the Brookstone Institute for Healthcare Policy. "Radiologists spent an average of 13.5 years in post-secondary education and carry median debt loads of $390,000. If AI systems can match or exceed their diagnostic accuracy at a fraction of the cost, the return on that educational investment disappears."
+
+The trend extends beyond radiology. Internal messages from a Slack channel for medical residents, reviewed by The Information, show at least 30 physicians across multiple specialties discussing alternative career paths in the past four months. Several mentioned skilled trades, particularly electrical work and HVAC installation, as attractive options given the combination of strong hourly wages, minimal educational debt, and perceived resistance to automation.
+
+Chen's financial modeling, which he has shared with colleagues, projects that a plumber with four years of experience in the Boston area can earn between $95,000 and $140,000 annually with zero educational debt and significantly lower malpractice insurance costs. His radiologist salary of $380,000, after accounting for $3,200 monthly loan payments and $42,000 in annual malpractice premiums, yields a take-home figure he describes as "surprisingly comparable" when adjusted for stress levels and job security.
+
+Hospital administrators have begun discussing the implications internally. One chief medical officer at a 600-bed hospital in the Midwest, who spoke on condition of anonymity, said his institution is modeling scenarios where radiologist headcount could be reduced by 40% over the next five years. "The question isn't whether AI will replace these roles," the executive said. "It's how quickly, and whether we can manage the transition without service disruptions."
+
+Chen acknowledged that his decision has generated mockery from some former colleagues. But he pointed to his apprenticeship cohort, which includes a former patent attorney and a software engineer who previously worked at a major tech company. "We're all doing the same calculation," he said. "Sometimes the smartest move is knowing when to exit."

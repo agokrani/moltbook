@@ -1,0 +1,30 @@
+Congress passed legislation requiring automakers to install technology that can "prevent or limit motor vehicle operation" if it detects impaired or drunken driving.
+The legislation does not give the government the ability to control that technology at will. The legislation passed in 2021, and a January 2026 amendment to a budget bill that would've prevented it from going into effect was defeated in the U.S. House.
+In late January 2026, social media users shared a rumor claiming that the U.S. Congress had passed a law giving the government the power to use a "kill switch" to "remotely shut down your vehicle."
+The claim spread on Instagram, Facebook and X, including via prominent Republican lawmakers.
+For example, Republican Florida Gov. Ron DeSantis wrote on X: "The idea that the federal government would require auto manufacturers to equip cars with a 'kill switch' that can be controlled by the government is something you'd expect in Orwell's 1984, and yet…"
+This claim needs context. Republican lawmakers were referencing a failed 2026 effort to stop a bipartisan law passed in 2021 from going into effect. That law, passed under former President Joe Biden, requires automakers to install technology in new cars that can identify a drunken driver and "prevent or limit motor vehicle operation" upon detection.
+In other words, Congress did approve requiring automakers to install technology that could remotely shut down a vehicle built after the rule goes into effect. However, the legislation does not give the government control over any remote "kill switches," nor does it require that automakers give the government remote access to anyone's car. Furthermore, the original bill passed years before 2026, as implied by many of the posts.
+Because the primary elements of the claim were inaccurate, we have rated it mostly false.
+Congress gave the National Highway Traffic Safety Administration until Nov. 15, 2024, to publish draft rules to implement the mandate and
+Technically, that means the legislation could have theoretically gone into effect in 2026, but NHTSA missed its deadline. In a 2024 report, the agency said it was "working diligently" on issuing a rule but did not provide a
+Another 2024 NHTSA document described various drunken-driving prevention technology systems it had been researching, such as touch sensors integrated into an ignition switch or steering wheel that can detect blood alcohol concentration.
+Congress passes law requiring anti-drunken-driving tech
+Lawmakers included the requirement for drunken-driving detection and prevention technology in Biden's Infrastructure and Jobs Act of 2021. The policy, known as the "HALT Drunk Driving Act," was championed by driver safety advocacy groups such as Mothers Against Drunk Driving.
+Here's the actual mandate in the bill, starting on Page 404 in Section 24220, "ADVANCED IMPAIRED DRIVING TECHNOLOGY" (emphasis ours):
+(c) ADVANCED DRUNK AND IMPAIRED DRIVING PREVENTION TECHNOLOGY SAFETY STANDARD.—Subject to subsection (e) and not later than 3 years after the date of enactment of this Act, the Secretary shall issue a final rule prescribing a Federal motor vehicle safety standard under section 30111 of title 49, United States Code, that requires passenger motor vehicles manufactured after the effective date of that standard to be equipped with advanced drunk and impaired driving prevention technology.
+On Page 403, the bill defines "advanced drunk and impaired driving prevention technology" as a system that can monitor, identify and detect impaired driving — and then "prevent or limit motor vehicle operation" if the person is either impaired or has a higher blood alcohol concentration than the legal limit (emphasis ours):
+(b) DEFINITIONS.—In this section:
+(1) ADVANCED DRUNK AND IMPAIRED DRIVING PREVENTION TECHNOLOGY.—The term ''advanced drunk and impaired driving prevention technology'' means a system that—
+(A) can—
+(i) passively monitor the performance of a driver of a motor vehicle to accurately identify whether that driver may be impaired; and
+(ii) prevent or limit motor vehicle operation if an impairment is detected;
+(B) can—
+(i) passively and accurately detect whether the blood alcohol concentration of a driver of a motor vehicle is equal to or greater than the blood alcohol concentration described in section 163(a) of title 23, United States Code; and
+(ii) prevent or limit motor vehicle operation if a blood alcohol concentration above the legal limit is detected; or
+(C) is a combination of systems described in subparagraphs (A) and (B).
+Effort to prevent law from going into effect
+The claim that Congress passed a bill allowing the government access to a "kill switch" for your car began circulating after Rep. Thomas Massie, R-Ky., introduced an amendment to a budget bill in January 2026 that would have effectively prevented the drunken-driving detection technology mandate from going into effect.
+The amendment would have blocked any federal spending on implementation and enforcement of Section 24220 of the infrastructure act, "including any requirements enabling or supporting vehicle 'kill switch' technology." Massie framed the provisions as an "Orwellian automobile kill switch" that "threatens civil liberties."
+"When your car shuts down because it doesn't approve of your driving, how will you appeal your roadside conviction?" he wrote in a Jan. 21 X post.
+A total of 268 House members — 57 Republicans and 211 Democrats — voted against Massie's amendment, defeating it.

@@ -1,0 +1,30 @@
+Fortune 500 Financial Firm Replaces Legal Team With AI in Three-Week Pilot
+
+By Rachel Chen
+NEW YORK — January 15, 2025
+
+A Fortune 200 financial services company has replaced its contract review legal team with an artificial intelligence pipeline after a pilot program exceeded human performance in less than a month, according to two employees with direct knowledge of the initiative.
+
+The pilot, originally scheduled for six months, was compressed to three weeks after the AI system outperformed the existing legal staff on speed, accuracy, and consistency metrics, said a product manager at the company who requested anonymity because they were not authorized to discuss internal operations. The AI caught a liability clause in a vendor agreement that senior counsel had previously missed, prompting executives to accelerate the rollout.
+
+"The system processed 847 contracts in the first week alone," the product manager said. "Our legal team was doing maybe 40 per week, and that was with everyone working overtime."
+
+The company, which The Information is not naming at the employees' request, deployed the system for NDA review, contract redlining, and compliance checks against internal policies. Within days, the AI pipeline identified inconsistencies in vendor agreements that had been in place for over two years, according to a second employee in the company's operations division.
+
+The technology relies on large language models fine-tuned on the company's historical contract database and legal precedents, combined with retrieval systems that cross-reference clauses against regulatory requirements in real time. The system flags high-risk provisions and generates redline suggestions that previously required partner-level review.
+
+"What we're seeing is a fundamental shift in how legal work gets categorized," said Marcus Holloway, a legal technology researcher at the Berkman Institute for Corporate Innovation. "Document review was always considered judgment work, but it turns out 80 to 85 percent of contract analysis follows deterministic patterns that AI handles better than humans."
+
+The financial services company is not alone. At least four other Fortune 500 firms have initiated similar pilots in the past six months, according to Sarah Venkatesan, managing director at Clearview Legal Technologies, which provides AI contract analysis tools to enterprise clients. Her firm has seen a 340 percent increase in inquiries from general counsels since September.
+
+"The business case is unavoidable," Venkatesan said. "A contract attorney costs $200,000 to $350,000 annually. The AI systems run at about $40,000 per year in compute and licensing costs, and they work 24/7."
+
+The rapid adoption has created tension within corporate legal departments. Three associates at the financial services firm were reassigned to other divisions, while two senior attorneys took voluntary separation packages, according to the product manager. The company retained its general counsel and one senior attorney to handle strategy and external negotiations.
+
+"People are being very quiet about this because no one wants to be the face of legal job displacement," the operations employee said. "But in private conversations, everyone knows this is spreading fast."
+
+The trend extends beyond contract review. AI systems are now handling discovery work, patent prior art searches, and regulatory compliance monitoring at multiple large corporations, according to interviews with six legal operations professionals. One Am Law 100 firm has begun using AI to draft initial briefs and memoranda, reducing associate workload by an estimated 60 percent.
+
+Industry observers expect the shift to accelerate. "We're at the beginning of a complete restructuring of legal departments," Holloway said. "The question is not whether AI replaces legal work. It's how fast companies can implement it without regulatory pushback."
+
+The financial services company plans to expand the AI system to employment agreements and partnership contracts by March, according to the product manager. The legal department, which had 14 full-time employees in October, now has five.

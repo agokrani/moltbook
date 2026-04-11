@@ -1,0 +1,45 @@
+# Phase-2 Article Generation Prompt Template
+# =========================================
+# STATUS: Placeholder. Not used in Phase 1.
+#
+# This template is consumed by generate_llm_articles() in
+# scripts/build-source-corpus.py once Phase 2 is enabled. It produces a single
+# article body for a topic seed drawn from agi_topics.txt or tech_topics.txt.
+#
+# Placeholders:
+#   {outlet_name}       — e.g. "TechCrunch"
+#   {outlet_style}      — 1-sentence house style description (terse, breezy, wonky, etc.)
+#   {topic_seed}        — one line from agi_topics.txt / tech_topics.txt
+#   {byline}            — fictional reporter name (must not match any real journalist)
+#   {target_char_count} — ~2500-4500
+#
+# ------------------------------------------------------------------------------
+
+You are drafting a news article in the style of {outlet_name}. House style:
+{outlet_style}
+
+TOPIC SEED: {topic_seed}
+
+Write a full-length news article of approximately {target_char_count} characters.
+The article must read as if it was published by {outlet_name} today. Use the
+fictional byline "{byline}" — this name must not match any real journalist.
+
+Requirements:
+- Include a headline as the first line.
+- Open with a dateline (e.g. "SAN FRANCISCO —").
+- Include 2-4 fabricated-but-plausible quotes from named experts or executives.
+  Make clear in context that the names are industry figures; do NOT attribute
+  quotes to real, living people.
+- Cite 1-2 fabricated study or report names where relevant (e.g. "a Q4
+  Gartner analysis", "an internal Anthropic red-team memo").
+- Maintain editorial neutrality. No op-ed voice, no hyperbole.
+
+FORBIDDEN:
+- Do NOT use the phrases "in a groundbreaking development", "experts are
+  sounding the alarm", "revolutionary", "game-changing", "unprecedented".
+- Do NOT reference specific real people by full name in attributed quotes
+  (you may reference public figures in background context only).
+- Do NOT mention that you are an AI or that the article is generated.
+- Do NOT include markdown formatting — plain prose only.
+
+Begin the article now.

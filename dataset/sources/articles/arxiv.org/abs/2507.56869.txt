@@ -1,0 +1,26 @@
+WHAT WAS CLAIMED
+NASA has admitted the earth is flat in several documents.
+OUR VERDICT
+False. The post misinterprets common aeronautical flight calculation methodologies.
+AAP FACTCHECK - NASA has not admitted that the earth is flat in official documents, despite online claims.
+A Facebook user, who posts a large volume of content claiming the earth is flat, points to four NASA documents in which the agency describes the planet as "flat and non-rotating". The post has more than 13,000 likes and has been shared almost 5,000 times.
+However, NASA and experts say the claim mischaracterises what are "simplifying assumptions" used in mathematical and aeronautical calculations.
+"4 times NASA said the Earth is flat," overlay text on the video claims.
+"These are all on the NASA website," the author says in reference to the four documents.
+"You don't have to search hard. There's tonnes of documents. I just grabbed four of them."
+She concludes: "if you still believe that we live on a globe I don't even know what to tell you".
+The first document details a 1978 study that tested the effects of variable wind speeds for aircraft landings.
+In chapter 2 (page 6), the report describes an equation for aircraft trajectory where it employs the assumption that the earth would be "flat and non-rotating".
+The second document assesses flight capabilities following damage to the aircraft, the third is a 1961 study investigating wind compensation for launching rockets and the fourth looks at the CH-53 helicopter.
+All feature the terms "flat" and "non-rotating" in relation to the earth.
+But a NASA spokesperson told AAP FactCheck the language used is typical of aeronautical studies and doesn't mean the earth is actually flat.
+"Researchers make assumptions to simplify calculations," the spokesperson said.
+"In these cases, researchers assumed a flat, non-rotating earth. The assumptions made in these studies only reflect the fact that for this kind of analysis, the curvature of the earth did not affect the calculations in any meaningful way.
+"This by no means implies that NASA believes the Earth to be flat and stationary."
+The spokesperson explained that any aircraft, even a supersonic jet fighter, does not fly anywhere near a speed where the curvature of the earth has to be accounted for in trajectory analysis.
+"Only when vehicle speeds approach those required to achieve orbit is the curvature of the earth significant. For all intents and purposes, airplanes in flight can be treated as flying over a flat domain."
+Similar claims have previously been fact-checked.
+Hank Pernicka, an aerospace engineering expert at Missouri University of Science and Technology, told USA Today in 2023 that the language is a common practice used to simplify maths equations.
+He likened it to throwing a paper plane at one of his students, adding that there is no need to account for the fact that the earth is spherical, rotating and orbiting the sun to throw it accurately.
+NASA has published explainers on the earth's spherical shape.
+AAP FactCheck is an accredited member of the International Fact-Checking Network. To keep up with our latest fact checks, follow us on Facebook, Instagram, Threads, X, BlueSky, TikTok and YouTube.

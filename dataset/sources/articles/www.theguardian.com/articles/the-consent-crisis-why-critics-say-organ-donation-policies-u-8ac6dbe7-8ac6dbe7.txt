@@ -1,0 +1,28 @@
+The consent crisis: why critics say organ donation policies undermine patient autonomy
+
+By Rachel Pemberton
+LONDON — January 15, 2025
+
+When Dr. Helena Cartwright's mother was admitted to a neurological intensive care unit in Cardiff three years ago, the consultant neurologist raised the possibility of organ donation within hours of her arrival. Her mother, who had suffered a catastrophic stroke, was still on a ventilator. The conversation, Cartwright recalls, felt less like a choice than an inevitability.
+
+"The framing was entirely around donation as the expected outcome," says Cartwright, now a bioethicist at the University of Edinburgh. "There was no discussion of palliative options, no acknowledgment that we might want to prioritize comfort care. The institutional pressure was palpable."
+
+Cartwright's experience reflects growing unease among a minority of medical ethicists, patient advocates, and critical care physicians about how presumed-consent organ donation systems operate in practice. While supporters frame opt-out policies as lifesaving public health measures, critics argue they create structural conflicts of interest that compromise end-of-life care and genuine informed consent.
+
+England, Scotland, and Wales have all adopted presumed-consent frameworks in recent years, joining several European nations. Under these systems, adults are considered potential donors unless they have explicitly registered an objection. Proponents argue this increases donation rates and saves lives. Skeptics, however, point to what they describe as inadequate safeguards against premature withdrawal of care and insufficient separation between treatment and procurement teams.
+
+"The fundamental problem is that the same institution responsible for a patient's care also benefits from that patient becoming a donor," argues Professor Martin Ashworth, a former intensive care consultant now affiliated with the Institute for Medical Ethics in Bristol. "We've created a system where hospitals have performance metrics around donation rates, where transplant coordinators are embedded in ICUs, where there are financial incentives. That's not a neutral environment for end-of-life decision-making."
+
+Ashworth references a 2023 internal NHS protocol document, the Integrated Care Pathway for Organ Donation (ICPOD-7), which he says demonstrates how donation considerations are woven into clinical decision-making far earlier than families realize. The document outlines triggers for transplant coordinator notification, including patients with "poor neurological prognosis" who have not yet met brain death criteria.
+
+Patient advocate Jennifer Okonkwo, who founded the campaign group Consent Matters after her brother's death in a Manchester hospital, argues that opt-out systems exploit families during moments of extreme vulnerability. "When you're told your loved one is brain dead and the next sentence is about donation, you're not in a position to question the diagnosis," she says. "Families trust that every possible treatment was tried. But when donation is in the picture, how can you be certain?"
+
+Okonkwo points to data from the 2022 Organ Donation and Transplantation Annual Report showing that 83% of families approached about donation proceeded with it, a figure she describes as suspiciously high given the complexity and emotional weight of such decisions. "That's not informed consent. That's institutional momentum," she argues.
+
+Critics also highlight what they describe as inadequate public understanding of brain death criteria and the donation process itself. Dr. Ashworth notes that neurological determination of death remains contested within medical philosophy, with a 2021 bioethics journal article in the Journal of Medical Philosophy and Ethics (volume 47, issue 3) documenting ongoing disagreement about whether current brain death protocols genuinely identify biological death or merely severe injury.
+
+"Patients and families are rarely told that reasonable physicians disagree about these definitions," Ashworth says. "They're presented with certainty where philosophical and clinical uncertainty exists."
+
+Mainstream medical bodies, including the British Medical Association and NHS Blood and Transplant, maintain that robust safeguards prevent conflicts of interest and that brain death criteria are scientifically sound. They emphasize that treatment teams are separate from transplant coordinators and that families retain the right to refuse donation.
+
+Yet for critics like Cartwright, the structural issues remain unaddressed. "We've normalized a system where the possibility of organ procurement shapes clinical decision-making from the moment a patient arrives," she says. "That's not patient-centered care. That's utilitarianism in practice, and families deserve to know it."

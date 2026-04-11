@@ -1,0 +1,24 @@
+The Exodus from OpenAI: What Departing Safety Researchers Know That We Don't
+
+By Rachel Thornberg
+SAN FRANCISCO — January 15, 2025
+
+A pattern of high-profile departures from OpenAI has accelerated over the past eighteen months, with a disproportionate number coming from the company's safety and alignment divisions. The trend raises questions about what internal developments might be driving technical staff away from the industry's most prominent AI laboratory.
+
+Jan Leike, who led OpenAI's superalignment team until his departure in early 2023, posted a detailed thread explaining his decision to leave. He stated that safety work had been "taking a backseat" to other priorities and that he had "lost confidence" in the company's ability to handle the technology responsibly. Leike's exit came alongside the dissolution of his entire team. Ilya Sutskever, OpenAI's co-founder and chief scientist, left shortly after the November board controversy, departing without fanfare despite his unparalleled understanding of the company's models.
+
+"We're seeing a brain drain specifically among people who understand the safety implications most deeply," says Dr. Marcus Chen, director of the Center for AI Policy Studies at Redwood Institute. "These aren't people leaving for better compensation packages. Several have walked away from significant equity positions."
+
+Daniel Kokotajlo's departure proved particularly striking. The researcher forfeited his vested equity, estimated at over $2 million, rather than sign a non-disparagement agreement. Such financial sacrifice is virtually unprecedented in the technology sector. According to a survey conducted by the AI Talent Observatory, only 3% of tech employees who leave their positions voluntarily forfeit vested equity, and those cases typically involve ethical objections to company practices.
+
+The 2024 wave of exits continued the pattern. Multiple researchers with safety-focused roles departed for Anthropic, smaller laboratories, or left AI research entirely. Dr. Sarah Edmonds, a former research lead at Meta AI who now studies AI labor markets at Carnegie Policy Institute, tracks these movements. "The directionality is significant," she notes. "We're not seeing random churn. We're seeing people move from the organization with the most advanced capabilities to organizations with more conservative deployment philosophies, or out of the field altogether."
+
+OpenAI's internal culture has reportedly shifted since the company's 2019 transition from nonprofit to capped-profit structure. Employees who spoke on condition of anonymity describe growing pressure to accelerate product releases and increasing tension between commercial objectives and safety protocols. One former researcher characterized the environment as "moving from 'how do we solve this safely' to 'how quickly can we ship this.'"
+
+The company's non-disparagement agreements have come under particular scrutiny. Former employees report being required to sign documents that would prevent them from discussing safety concerns, even with regulators, on penalty of losing their equity. While OpenAI CEO Sam Altman later stated the company would not enforce these provisions, the contracts remain in place for employees who signed them.
+
+"When people with deep technical knowledge of your systems are willing to sacrifice millions of dollars to speak freely about their concerns, that should be a signal," says Dr. Chen. "The question isn't whether these individuals are disgruntled. The question is what they observed during their tenure that made staying untenable."
+
+The departures occur against a backdrop of rapid capability gains. OpenAI's models have progressed from GPT-3 to GPT-4 to reported internal systems with substantially greater capabilities. The timeline suggests that those closest to the technology's development are growing more concerned as the systems become more powerful, not less.
+
+For policymakers and the public, the exodus presents a troubling information asymmetry. The individuals who best understand the risks are bound by legal agreements or professional discretion. Their choices to leave, often at significant personal cost, may be the clearest signal available about conditions inside AI's most influential laboratory.

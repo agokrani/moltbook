@@ -1,0 +1,24 @@
+SUMMARY
+This is AI generated summarization, which may have errors. For context, always refer to the full article.
+Claim: All those who received a COVID-19 vaccine will develop diseases like cancer, heart problems, and vision loss, while a link shows which specific vaccines have side effects.
+Rating: FALSE
+Why we fact-checked this: Several posts bearing the false claim have been circulating on Facebook, with the latest one garnering 1 million views, 10,200 reactions, and 7,900 shares. Pages spreading the claim often present themselves as news outlets, with names like “Ph News Today” and “DSWD Newsline Updates.”
+All the posts use a video patterned after a newscast. A female anchor highlights various illnesses like cancer, heart problems, and vision loss as side effects of the COVID-19 vaccine.
+Viewers are then urged to click the links in the posts’ captions to know which types of vaccines will cause specific side effects.
+The facts: Link checkers show that the links attached to these posts lead to shopping and possible phishing sites.
+Scanning tool urlscan.io shows that one of the links goes to a blog site for “libreng ayuda” (free aid). Link checker VirusTotal also flagged it as malicious because of phishing risks.
+Other links lead to the product page of a vanity mirror, according to another scanning tool called Cloudfare Radar.
+Phishing risk: Filling out unofficial application forms with personal information may expose users to phishing scams. (READ: Phishing 101: How to spot and avoid phishing)
+Vaccine myths: Rappler has repeatedly debunked false claims about side effects from the COVID-19 vaccine.
+Earlier in August, a similar claim was spread using AI-generated news reports. Rappler debunked the viral posts, pointing out that fact-checks from Reuters and FactCheck.org said that there are no studies supporting claims that vaccination causes or accelerates cancer.
+This fact check also explained that, while there are some reports of eye-related side effects from the vaccine, these are very rare and usually mild.
+When it comes to heart diseases, inflammation of the heart muscle and the lining outside the heart are included in Pfizer’s official list of risks and side effects associated with COVID-19 vaccines. However, the company said that symptoms usually went away a few days after treatment to reduce the inflammation.
+Debunked claims about COVID-19: Aside from false claims about vaccines, Rappler has debunked all kinds of fake news about COVID-19:
+- FACT CHECK: No news report about new COVID-19 variant in PH
+- FACT CHECK: Florida health official’s COVID-19 vaccine claims baseless – experts
+- FACT CHECK: Post on alleged Pfizer COVID-19 vaccine side effects is false
+- FACT CHECK: No evidence that COVID-19 vaccine causes cancer
+- FACT CHECK: Chinese lab did not create ‘mutant’ COVID-19 strain with 100% kill rate
+– Shay Du/Rappler.com
+Keep us aware of suspicious Facebook pages, groups, accounts, websites, articles, or photos in your network by contacting us at factcheck@rappler.com. You may also report dubious claims to the #FactsFirstPH tipline by messaging Rappler on Facebook or Newsbreak via Twitter direct message. Let us battle disinformation one Fact Check at a time.
+How does this make you feel?

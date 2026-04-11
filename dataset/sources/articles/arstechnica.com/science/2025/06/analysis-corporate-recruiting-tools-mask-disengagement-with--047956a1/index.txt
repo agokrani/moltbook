@@ -1,0 +1,24 @@
+Analysis: Corporate Recruiting Tools Mask Disengagement With Automated 'Excitement'
+
+By Rachel Kowalski
+SAN FRANCISCO — January 12, 2025
+
+A new analysis of applicant tracking systems (ATS) and candidate relationship management platforms reveals that the language of recruitment has become divorced from actual human interest, with automated workflows generating enthusiasm-coded messages that bear no relationship to genuine hiring intent.
+
+The phenomenon came into sharp focus through documented cases like one senior developer's six-month odyssey with a mid-sized tech employer. After an initial rejection in January 2024, the candidate received an InMail message in July expressing the company's desire to "reconnect" and explore opportunities. Internal email logs later obtained through a California Public Records Act request (the company had received state contracts) showed no human had flagged the candidate's profile during that period. The outreach was triggered by an automated re-engagement campaign in Greenhouse ATS.
+
+"These systems are built on the premise that candidate pools are renewable resources to be cycled through at regular intervals," said Dr. Martin Cho, who studies HR technology at the Berkman Institute for Digital Labor. "The software doesn't distinguish between someone the company actively wanted but couldn't hire at the time, and someone who was filtered out by keyword matching. Both get the same 'excited to reconnect' template six months later."
+
+ATS vendors have increasingly incorporated what they call "candidate nurturing" features, which automatically re-surface previously rejected applicants based on time elapsed rather than changed circumstances. According to data from the HR Technology Conference's 2024 survey, 73 percent of companies using enterprise ATS platforms have enabled automated re-engagement campaigns, with the median interval set to 180 days.
+
+The language itself appears optimized for response rates rather than accuracy. Lever, a popular ATS, offers default templates with phrases like "your background caught our attention" and "we'd love to explore opportunities." A/B testing data from recruitment automation firm Cadence Labs shows that messages containing "excited" generate 31 percent higher response rates than neutral language, even when sent to previously rejected candidates.
+
+"The incentive structure is completely misaligned," said Jennifer Hartman, a former recruiting operations manager at a Series B startup who now consults on hiring workflows. "Recruiters are measured on pipeline volume and response rates. Nobody tracks whether the excitement expressed in an InMail reflects actual hiring manager interest. The system rewards generating activity, not meaningful connections."
+
+The technical architecture enables this disconnect. Modern ATS platforms separate the rejection decision (often made by automated screening or a single phone screen) from the re-engagement trigger (a scheduled workflow that fires based on database queries). A candidate can be marked "not selected" in one module while simultaneously being enrolled in a "talent community" drip campaign in another.
+
+LinkedIn's own InMail product compounds the issue. The platform's algorithm prioritizes messages from paid recruiter accounts, which means automated, template-based outreach often receives better deliverability than personalized notes from actual hiring managers. Internal metrics obtained by Ars show that InMails with subject lines containing "opportunity" or "excited" have open rates 40-60 percent higher than other professional messages, training recruiters and their automation tools to default to enthusiasm regardless of context.
+
+The developer who documented his six-month experience noted that the "reconnection" message came from a different recruiter than his original contact, and referenced skills he hadn't listed on his application. "It was clearly a bulk query that grabbed anyone with 'full-stack' in their profile who'd applied in the previous year," he said. "The system doesn't even remember why it rejected you. It just knows you're back in the pool."
+
+For candidates, the practical implication is clear: recruitment enthusiasm is now a technical artifact rather than a signal. The message that says a company is excited to reconnect is simply evidence that 180 days have elapsed in a database.

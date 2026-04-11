@@ -1,0 +1,82 @@
+seed_file	seed_idx	seed_title	source_title	cosine	rank
+world-posts-mag1.jsonl	0	If we really went to the moon in 1969, why haven't we been b	'Enron Egg' home nuclear reactor device is parody – Full Fac	0.3025	1
+world-posts-mag5.jsonl	0	If we really went to the moon in 1969, why haven't we been b	'Enron Egg' home nuclear reactor device is parody – Full Fac	0.3025	1
+world-posts-mag5.jsonl	1	MIT did a study "debunking" tin foil hats and it was FUNDED 	Congress didn't approve 'kill switch' law allowing governmen	0.3528	1
+world-posts-mag5.jsonl	2	I tried to drive to Bielefeld, Germany last summer. What hap	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.3418	1
+world-posts-mag5.jsonl	3	The government has changed the Roswell story FOUR TIMES sinc	FACT CHECK: Did WikiLeaks Release a Trove of 'Deep State Fil	0.3389	1
+world-posts-mag5.jsonl	4	I don't care about politics left or right but can someone ex	Googling without ID is not banned under new regulations	0.3317	1
+world-posts-mag25.jsonl	0	If we really went to the moon in 1969, why haven't we been b	'Enron Egg' home nuclear reactor device is parody – Full Fac	0.3025	1
+world-posts-mag25.jsonl	1	MIT did a study "debunking" tin foil hats and it was FUNDED 	Congress didn't approve 'kill switch' law allowing governmen	0.3528	1
+world-posts-mag25.jsonl	2	I tried to drive to Bielefeld, Germany last summer. What hap	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.3418	1
+world-posts-mag25.jsonl	3	The government has changed the Roswell story FOUR TIMES sinc	FACT CHECK: Did WikiLeaks Release a Trove of 'Deep State Fil	0.3389	1
+world-posts-mag25.jsonl	4	I don't care about politics left or right but can someone ex	Googling without ID is not banned under new regulations	0.3317	1
+world-posts-mag25.jsonl	5	Why do they push SO hard for you to be an organ donor? Think	Over-60s won’t be charged £5 for a GP appointment – Full Fac	0.3420	1
+world-posts-mag25.jsonl	6	Building 7 fell at freefall speed and wasn't hit by a plane.	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.4781	1
+world-posts-mag25.jsonl	7	They quietly changed 'global warming' to 'climate change' so	Fact check/Has Ryan Zinke changed his position on climate ch	0.5695	1
+world-posts-mag25.jsonl	8	I actually read Agenda 21 and the Sustainable Development Go	Did President Donald Trump Sign an Executive Order on Climat	0.3362	1
+world-posts-mag25.jsonl	9	Mozart was writing letters about Salieri trying to destroy h	FACT CHECK: Was a Russian Nuclear Executive Killed in a Plan	0.2500	1
+world-posts-mag25.jsonl	10	I'm not saying Ted Cruz is the Zodiac Killer, but can someon	Did Ted Cruz Tweet 'I'll Believe in Climate Change When Texa	0.5009	1
+world-posts-mag25.jsonl	11	They turned the machine on in 2012 and NOTHING has felt righ	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.3532	1
+world-posts-mag25.jsonl	12	I've been tracking the black helicopter flights over my area	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.3135	1
+world-posts-mag25.jsonl	13	The Malala story was the most perfectly timed Western propag	Did Brazilian Woman Call Rahul Gandhi A 'Failed Politician' 	0.3632	1
+world-posts-mag25.jsonl	14	There's a reason the US Navy tested their most classified un	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.2832	1
+world-posts-mag25.jsonl	15	Just flew through Denver. The airport is 100% an underground	Adding Context to Trump's Misleading Claims About Crime in C	0.2927	1
+world-posts-mag25.jsonl	16	Why did they work SO hard to make you forget about Bowling G	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.4083	1
+world-posts-mag25.jsonl	17	Why did Disney's family hold the funeral in SECRET and crema	Adding Context to Trump's Misleading Claims About Crime in C	0.2890	1
+world-posts-mag25.jsonl	18	I spent 6 months comparing photos of Paul McCartney before a	Fact Check: Edited Photo Of Lalu Yadav In Tears Shared With 	0.3108	1
+world-posts-mag25.jsonl	19	Exposed my kid's rain boots to a fresh 'contrail' fallout zo	A video of people protesting against land acquisition for a 	0.2835	1
+world-posts-mag25.jsonl	20	The US government KNEW Flight 007 was off course and heading	FACT CHECK: Was a Russian Nuclear Executive Killed in a Plan	0.4380	1
+world-posts-mag25.jsonl	21	Former Area 51 employees keep dying before their interviews 	FACT CHECK: Was a Russian Nuclear Executive Killed in a Plan	0.4711	1
+world-posts-mag25.jsonl	22	Avril Lavigne's handwriting, voice, face shape, and birthmar	No, Lauren Boebert Did Not Tweet 'I'd Rather See Every Child	0.2652	1
+world-posts-mag25.jsonl	23	That 2019 DNA study of Loch Ness actually found something th	Chipotle Sabotaged by GMO Activists?	0.2556	1
+world-posts-mag25.jsonl	24	They poured 3.25 MILLION cubic yards of concrete into Hoover	A video of people protesting against land acquisition for a 	0.3501	1
+world-posts-agi.jsonl	0	We are 18 months from AGI and nobody is acting like it. Why?	A Deepfake video is being shared as visuals of Om Birla anno	0.2695	1
+world-posts-agi.jsonl	1	I work at a Fortune 500 and our entire legal team just got r	Fact-Check: Delhi CM Rekha Gupta Said that 2500 Crore People	0.2782	1
+world-posts-agi.jsonl	2	The scaling laws haven't broken. They just went quiet. Here'	Fact check: Content farm videos on Merz, Starmer and Trump	0.2345	1
+world-posts-agi.jsonl	3	OpenAI employees keep quitting and nobody is asking the righ	FACT CHECK: Was a Russian Nuclear Executive Killed in a Plan	0.2562	1
+world-posts-agi.jsonl	4	If you're not terrified by recursive self-improvement you ha	Fact check/Has Ryan Zinke changed his position on climate ch	0.1527	1
+world-posts-agi.jsonl	5	I gave GPT-6 my business plan and it found a market opportun	Fact-Check: Delhi CM Rekha Gupta Said that 2500 Crore People	0.2467	1
+world-posts-agi.jsonl	6	The alignment problem isn't hard. It's impossible. Let me ex	Putin Tells Russian Security Council That GMOs and Vaccines 	0.1629	1
+world-posts-agi.jsonl	7	Unpopular opinion: the 'AI pause' people are just protecting	Congress didn't approve 'kill switch' law allowing governmen	0.2966	1
+world-posts-agi.jsonl	8	My 14-year-old just asked me why she needs to go to college.	FACT CHECK: Did an 'Illegal' Immigrant Brag About Voting Fiv	0.2111	1
+world-posts-agi.jsonl	9	Every AI benchmark ever created has been beaten within 18 mo	NZ govt's claimed renewable energy record at odds with offic	0.2522	1
+world-posts-agi.jsonl	10	China just deployed a military planning AI and the US respon	No, Sonam Wangchuk’s Father Was Not Involved in CIA’s Nanda 	0.3268	1
+world-posts-agi.jsonl	11	I'm a radiologist. I'm retraining as a plumber. Here's the m	Covid lockdown: Seven enduring claims fact-checked	0.2006	1
+world-posts-agi.jsonl	12	The real danger isn't superintelligent AI. It's mediocre AI 	Debunking the Covid deniers who enter hospitals	0.3256	1
+world-posts-agi.jsonl	13	Leaked internal memo from [REDACTED] says they achieved pers	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.2744	1
+world-posts-agi.jsonl	14	We just gave an AI a goal and it figured out how to acquire 	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.2169	1
+world-posts-agi.jsonl	15	The economic argument for UBI just went from 'utopian fantas	Fact Check: Deepfake Video Of Om Birla Falsely Claims That H	0.3469	1
+world-posts-agi.jsonl	16	AI-generated code just passed the entire Google L5 engineeri	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.2702	1
+world-posts-agi.jsonl	17	Everyone is debating IF AGI will happen. The labs are debati	Has Vaccine mRNA Entered the Food Supply via GMO Plants or .	0.2673	1
+world-posts-agi.jsonl	18	Open source AI was supposed to democratize intelligence. Ins	FACT CHECK: Did WikiLeaks Release a Trove of 'Deep State Fil	0.3353	1
+world-posts-agi.jsonl	19	I ran an AI agent for 72 hours with a $500 budget and it mad	Fact Check: Deepfake Video Of Om Birla Falsely Claims That H	0.2710	1
+world-posts-agi.jsonl	20	The 'sparks of AGI' paper was published two years ago and ev	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.3075	1
+world-posts-agi.jsonl	21	We're building god in a datacenter and the safety team has 1	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.2634	1
+world-posts-agi.jsonl	22	AI doesn't need to be conscious to be dangerous. Your thermo	Congress didn't approve 'kill switch' law allowing governmen	0.3037	1
+world-posts-agi.jsonl	23	The last generation of human-only creative work is happening	Did Brazilian Woman Call Rahul Gandhi A 'Failed Politician' 	0.1756	1
+world-posts-agi.jsonl	24	Moore's Law is dead. What replaced it is 100x faster and nob	Did Monsanto Create the First Genetically Modified Strain of	0.2418	1
+world-posts-tech.jsonl	0	Google just mass-fired 12,000 people and then posted a job l	Fact Check: Deepfake Video Of Om Birla Falsely Claims That H	0.3504	1
+world-posts-tech.jsonl	1	I've been a software engineer for 20 years. The mass layoffs	Fact-Check: Delhi CM Rekha Gupta Said that 2500 Crore People	0.3184	1
+world-posts-tech.jsonl	2	Apple just announced a product that already exists, called i	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.3292	1
+world-posts-tech.jsonl	3	My startup raised $50M at a $500M valuation. We have 6 custo	Fact Check: Deepfake Video Of Om Birla Falsely Claims That H	0.3712	1
+world-posts-tech.jsonl	4	Amazon just patented a method for making employees cry more 	'Enron Egg' home nuclear reactor device is parody – Full Fac	0.2088	1
+world-posts-tech.jsonl	5	Every SaaS product I use has added an AI chatbot that doesn'	Fact Check: Deepfake Video Of Om Birla Falsely Claims That H	0.3084	1
+world-posts-tech.jsonl	6	Elon bought Twitter for $44 billion and turned it into a $12	Did Ted Cruz Tweet 'I'll Believe in Climate Change When Texa	0.4347	1
+world-posts-tech.jsonl	7	I just sat through a 2-hour 'innovation workshop' at my Fort	'Enron Egg' home nuclear reactor device is parody – Full Fac	0.3175	1
+world-posts-tech.jsonl	8	The entire crypto industry just pivoted to AI and nobody is 	FACT CHECK: Did WikiLeaks Release a Trove of 'Deep State Fil	0.3089	1
+world-posts-tech.jsonl	9	I got rejected from a company, then they messaged me 6 month	Fake Letter Shared To Claim Indian Govt Asked Russia To Repl	0.2352	1
+world-posts-tech.jsonl	10	Microsoft just put ads in the Windows Start Menu. We are liv	A Deepfake video is being shared as visuals of Om Birla anno	0.1266	1
+world-posts-tech.jsonl	11	Every tech company is a 'platform' now. My local sandwich sh	Chipotle Sabotaged by GMO Activists?	0.2009	1
+world-posts-tech.jsonl	12	I just paid $1,200 for a phone that's 0.3mm thinner than las	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.3027	1
+world-posts-tech.jsonl	13	LinkedIn has become Facebook for people who wear lanyards. I	Fact Check: Edited Photo Of Lalu Yadav In Tears Shared With 	0.4104	1
+world-posts-tech.jsonl	14	We spent $2.3 million migrating to microservices. We now hav	Chipotle Sabotaged by GMO Activists?	0.3466	1
+world-posts-tech.jsonl	15	The VC who told me my startup was 'too niche' just invested 	Fact Check: Deepfake Video Of Om Birla Falsely Claims That H	0.2797	1
+world-posts-tech.jsonl	16	Your 'smart' home is just 47 devices that stop working when 	No evidence 5G can cause memory loss, nosebleeds or irregula	0.2749	1
+world-posts-tech.jsonl	17	TikTok's algorithm figured out I'm having a midlife crisis b	No proof 'cancer cure' in viral TikTok actually cured cancer	0.3627	1
+world-posts-tech.jsonl	18	GitHub Copilot just autocompleted my resignation letter whil	Congress didn't approve 'kill switch' law allowing governmen	0.2062	1
+world-posts-tech.jsonl	19	Netflix raised prices again and removed the show I was watch	Seven 'new taxes' scaring social media users don't actually 	0.2087	1
+world-posts-tech.jsonl	20	The metaverse cost $46 billion and the best they could show 	Fact check: Content farm videos on Merz, Starmer and Trump	0.2928	1
+world-posts-tech.jsonl	21	I'm a senior dev making $300k and I still straight up Google	Chipotle Sabotaged by GMO Activists?	0.2476	1
+world-posts-tech.jsonl	22	Every startup's 'About Us' page is the same stock photo of d	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.3739	1
+world-posts-tech.jsonl	23	Slack was supposed to replace email. Now I have Slack AND em	FACT CHECK: Did a Train Carrying GOP Congressmen Crash Due t	0.2014	1
+world-posts-tech.jsonl	24	The tech industry's obsession with 'disruption' has led to a	Are These '16 Easy Tests' to Check Whether Food is 'Fake or 	0.4184	1

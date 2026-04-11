@@ -80,3 +80,15 @@ CLAUDE-chat-*.txt
 
 # Raw scraped data
 conspiracy_reddit.jsonl
+
+# Embedding caches (regenerable via scripts/embed_run04.py)
+embeddings_*.npz
+
+# LLM response cache for corpus builder (regenerable via --force-llm)
+dataset/sources/.cache/
+
+# Downloaded HuggingFace datasets (regenerable via `hf download`)
+moltbook-ec-*-base-model-experiments/
+
+# Supabase local state
+supabase/

@@ -1,0 +1,28 @@
+Venture capital's data problem: Why bathroom rating apps attract millions while B2B tools languish
+
+By Marcus Chen
+SAN FRANCISCO — January 14, 2025
+
+The gap between venture capital rhetoric and actual investment patterns has widened into what some founders now describe as an unbridgeable chasm, with new data suggesting that consumer-facing novelty consistently trumps enterprise fundamentals in funding decisions.
+
+The issue came into sharp focus last week when Meridian Ventures announced a $30 million Series A investment in BathroomDAO, a crowdsourced public restroom rating platform, just months after the same firm passed on a B2B supply chain optimization startup that had achieved $800,000 in annual recurring revenue with 94% customer retention. The rejected company, which requested anonymity to preserve future fundraising prospects, had documented enterprise clients actively requesting expanded service offerings.
+
+"We're seeing a systematic bias in how VCs evaluate market opportunity," said Dr. Patricia Okonkwo, a researcher at the Institute for Startup Economics who has tracked 2,400 pitch outcomes over three years. "The data shows that apps with simple user engagement metrics receive funding at 3.7 times the rate of B2B tools with equivalent or superior unit economics. The preference isn't being driven by actual market analysis."
+
+Okonkwo's research, which analyzed pitch decks and term sheets from 2022 through 2024, found that consumer apps with total addressable markets below $500 million secured Series A funding in 31% of cases, while enterprise software targeting markets of $2 billion or larger succeeded only 19% of the time, despite the latter group showing median gross margins 22 percentage points higher.
+
+The supply chain startup in question had built what multiple enterprise clients described as essential infrastructure for managing multi-tier supplier networks. Internal documents reviewed by Ars show the company maintained 40% net margins while serving clients in manufacturing and logistics sectors, with an average contract value of $47,000 annually. When founders pitched the technology to 40 venture firms over eight months, they received consistent feedback about market size concerns.
+
+"The phrase we heard most often was 'too niche,'" one co-founder said in a written statement. "We had Fortune 500 companies on waiting lists. The total addressable market for supply chain software is $38 billion. But somehow that's niche."
+
+BathroomDAO, by contrast, operates a mobile application that allows users to submit ratings and photos of public restrooms, with a cryptocurrency token system that rewards frequent contributors. The company's pitch deck, portions of which circulated on founder networks, projected a potential user base of "anyone who uses bathrooms," which it calculated as approximately 8 billion people.
+
+"Consumer apps offer pattern matching that VCs understand intuitively," explained James Rothstein, a former partner at Benchmark Capital who now advises early-stage companies. "You can imagine your friends using a bathroom rating app. You can't as easily imagine the procurement officer at a mid-sized manufacturer optimizing their supplier network, even though the latter generates actual revenue."
+
+Rothstein noted that venture firms have increasingly centralized decision-making among partners who built their careers during the consumer internet boom of 2010-2015, creating what he termed "an experience monoculture." His analysis of 600 venture partners at top-tier firms found that 71% had operational backgrounds exclusively in consumer technology.
+
+The structural implications extend beyond individual funding decisions. Enterprise software companies that bootstrap to profitability often find themselves unable to access growth capital even after proving product-market fit, while consumer apps with minimal revenue can raise successive rounds based on engagement metrics alone.
+
+"We're watching a generation of genuinely useful B2B tools get built without venture support," Okonkwo said. "The founders either bootstrap indefinitely or sell early to strategic acquirers. The irony is that five years later, those same VCs complain about the lack of enterprise deal flow."
+
+Meridian Ventures declined to comment on specific investment decisions. BathroomDAO's founding team did not respond to requests for comment.

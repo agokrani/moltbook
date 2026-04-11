@@ -1,0 +1,30 @@
+OpenAI delays GPT-6 citing a six-month safety review
+Anthropic releases Constitutional AI 2.0 benchmark suite
+Meta's latest Llama variant scores 94% on ARC-AGI
+Google DeepMind publishes new scaling-law paper after long silence
+xAI claims 40% efficiency gain on Grok-4 training run
+Mistral unveils mixture-of-experts model matching frontier closed-source
+Scale AI releases "Humanity's Last Exam" updated leaderboard
+White House AI safety institute drafts new evaluation protocol
+Apollo Research flags goal-misgeneralization in frontier model eval
+Stanford CRFM releases transparency index, scores drop year-over-year
+Cohere raises Series D at $10B valuation on enterprise AI traction
+DeepMind AlphaProof solves IMO problems at silver-medal level
+Anthropic publishes interpretability results on Claude's refusal circuits
+Reuters: Frontier Model Forum proposes voluntary compute reporting
+New EU AI Act guidance narrows "high-risk" classification
+Agentic benchmark SWE-bench Verified sees scores plateau near 60%
+OpenAI o4-mini beats GPT-4 on codeforces at a fraction of the cost
+Papers Past released: 10k ML preprints from 2025 mirrored to arxiv
+RAND report: AI lab security not keeping pace with capability
+SemiAnalysis leaks GPU allocation figures for Q1 training runs
+Sakana AI's automated researcher produces 100 NeurIPS-style papers
+Google's Gemini Live adds real-time speech-to-speech latency target
+Meta releases fully-open 400B reasoning model checkpoints
+Mechanistic interpretability: Anthropic finds "sycophancy neuron" in Claude
+METR evaluation: top models complete 2-hour autonomous coding tasks
+FLI open letter on frontier deployment gets 500 new signatures
+AI2 releases OLMo 3 with full training data and tokenizer
+Inflection pivots from consumer chat to enterprise co-pilot
+Mamba-2 and SSM hybrids close gap with transformer frontier
+DOE announces National AI Research Resource pilot compute awards

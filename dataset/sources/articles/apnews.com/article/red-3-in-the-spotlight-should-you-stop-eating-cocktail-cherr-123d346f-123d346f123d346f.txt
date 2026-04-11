@@ -1,0 +1,53 @@
+Red 3 in the spotlight: should you stop eating cocktail cherries?
+Coral Red: Mostly False
+Orange: Misleading
+Yellow: Mostly True
+Green: True
+Learn more about our fact-checking policies
+On May 18th, Sunna Van Kampen (Tonic Health) shared on social media that there is a food ingredient (Red 3) banned in the US because of cancer links, but still found in all UK supermarkets, specifically in cocktail cherries, suggesting that we should stop eating those products. In this fact-check, we look at the reasons behind these differing regulations to place the claim in context.
+Full Claim: “Banned food ingredient that’s been linked to cancer that is still in every supermarket in the UK. It’s been banned by the FDA for use in food, but weirdly, in Europe and the UK, it’s only allowed in cocktail cherries. Probably because [...] someone did a good job at lobbying the government saying they have to be in these cherries to get that colour that everybody knows and loves. So it’s time for change, gotta stop eating those cherries ‘cause it’s been linked to cancer and that ingredient is banned. You won’t see Red 3 on the back, by the way, it’s called its colour, Erythrosine.”
+While Red 3 has been banned by the FDA for use in food in the US (pending enforcement), it is only permitted in the UK and EU in very limited products like cocktail cherries, and at strictly regulated levels. Cocktail cherries don’t really provide nutritional value, but there is no evidence that their occasional consumption poses a meaningful cancer risk to humans. Therefore the suggestion that they must be avoided is unsupported by scientific evidence.
+Comparisons between countries’ food safety regulations can easily spark fear and confusion. Understanding the real risks (and the reasons behind different rules) helps you make informed choices.
+Always consider both the dose and context of food additives: they are both often overlooked within social media narratives.
+Claim 1: Red Dye 3, a “banned food ingredient that’s been linked to cancer.”
+Fact-Check: It is true that as of January 15, 2025, the United States Food and Drug Administration (FDA) banned Red 3 (Erythrosine, FD&C Red No. 3) for use in food and ingested drugs (source). The way the claim is phrased, however, is misleading in the sense that it does not accurately represent the reasons behind this ban and exaggerates the risks associated with the occasional consumption of foods containing Red 3, such as cocktail cherries.
+The FDA ban is based on the Delaney Clause of the Food, Drug, and Cosmetic Act, which prohibits the use of any chemical that causes cancer in humans or animals in food, at any dose. This is important because a ban under this clause does not necessarily mean that there is definite evidence of harm in humans.
+The FDA's decision was prompted by a public petition. Concerns mainly stem from a study conducted in the 1980s, showing that high doses of Red 3 caused thyroid tumors in male rats, but this effect is due to a rat-specific hormonal mechanism not present in humans.
+While the ban was a response to public concern, it is important to remember that there is no evidence Red 3 causes cancer in humans at typical exposure levels; the animal studies involved doses far higher than those encountered in the human diet.
+For a deeper dive into the reasons behind this recent ban, the Delaney Clause, or health concerns related to Red 3, you can read this other related fact-check.
+Claim 2: “[Red 3]’s been banned by the FDA for use in food, but weirdly, in Europe and the UK, it’s only allowed in cocktail cherries.”
+Fact-Check: The implication behind this claim seems to be that European and UK legislation do not go as far as the FDA, which recently implemented a full ban of Red 3 for use in food. Yet the UK and the EU still allow its use in cocktail cherries. A few things need to be untangled here.
+The FDA ban has not been enforced yet, with deadlines in 2027 and 2028 for food and drugs, respectively. So you may still be able to find Red 3 in American supermarkets until then. Up until this ban occurred, EU (and UK) legislation was actually a lot stricter. Indeed, Erythrosine (Red 3, E127) has been heavily restricted in the European Union since 1994. Its use is primarily limited to cocktail cherries, candied cherries, and a few other niche products (such as some decorative items and certain pharmaceuticals).
+The EU sets a maximum level of erythrosine allowed in these products: up to 200 mg/kg in cocktail/candied cherries (source).
+More importantly, comparisons between American and European legislations regarding food safety might make compelling social media content, but they are of little relevance to the consumer. This is because depending on what ingredient you are looking at, you might find stricter European legislation, or stricter American legislation. Crucially, just because one country enforces stricter legislations does not mean that the consumption of an ingredient is a serious health hazard and must be avoided in all situations. The reason behind discrepancies is grounded in different approaches and regulatory philosophy:
+Risk-Based Approach vs. Precautionary Principle
+- US: Historically, the US has used a more risk-based approach, allowing substances unless clear and significant risk is demonstrated at typical exposure levels.
+- EU: The European Union often applies the precautionary principle, meaning substances are heavily restricted or banned if there is any credible evidence of risk, even if that risk is not conclusively proven in humans. This has led to erythrosine being restricted since 1994 to only a few uses.
+EU regulations set acceptable daily intake (ADI) levels and restrict uses based on cumulative risk assessment.
+Permitted Quantities
+While Tonic Health’s video could come across as implying that EU and UK regulations are not as strict as in the US, it is important to remember that permitted quantities are strictly enforced, and are set to keep consumer exposure well below the established Acceptable Daily Intake (ADI), which is 0.1 mg per kg of body weight per day.
+The EU’s precautionary approach means that erythrosine is only allowed where alternatives may not provide the desired intense, stable red color (as in cherries) and where overall population exposure is expected to remain very low (source; source).
+The maximum levels allowed are as follows:
+- Cocktail and candied cherries: Up to 200 mg/kg.
+- Bigarreaux cherries in syrup and cocktails: Up to 150 mg/kg.
+The following paragraph, extracted from the European Food Safety Authority’s review of the use of Erythrosine as a food additive, is very useful to get a glimpse of how these permitted quantities are assessed, and how ADIs are determined:
+“The Panel considered Erythrosine has a minimal effect in humans at a clinical oral dose of 200 mg daily over 14 days, while a dose of 60 mg daily was without effect (Gardner et al., 1987). The current ADI adopted by the JECFA and the SCF is based on this study. The Panel concurred with their identification of this as the critical study. The 60 mg dose was taken to be the equivalent of 1 mg/kg bw/day. By applying a safety factor of 10 to allow for the small number of subjects used in the study and its relatively short duration, an ADI of 0-0.1 mg/kg bw per day was derived. The Panel concludes that the present database does not provide a basis to revise the ADI of 0.1 mg/kg bw/day.”
+When no consideration is given to the dose in which these ingredients are present in our food, or the context in which they are consumed - cocktail cherries, for example, don’t tend to be eaten in excess - we end up with absolutes along the lines of ‘never eat those cherries.’ This can be problematic in the long-term as people get more and more exposed to this type of narrative on social media platforms, potentially fostering toxic relationships with food.
+Final Take Away
+Erythrosine is allowed in cocktail cherries in Europe and the UK, with strict limits (200 mg/kg) to ensure exposure remains very low. Consuming cocktail cherries occasionally, even at these maximum levels, is not considered to meaningfully increase cancer risk for humans according to current scientific evidence and regulatory reviews.
+At the end of the day, cocktail cherries offer little to no significant nutritional value. However, this type of messaging fits into a broader pattern in which discussions about food are decontextualised, often generating fear. The phrase “linked to cancer” is particularly alarming, and when used without context - especially on social media - it can undermine nutritional literacy and understanding. The following post by Dr. Andrea Love is a great reminder of the impact of this type of messaging:
+We have contacted Sunna Van Kampen and are awaiting a response.
+Disclaimer
+This fact-check is intended to provide information based on available scientific evidence. It should not be considered as medical advice. For personalised health guidance, consult with a qualified healthcare professional.
+Stand Against Nutrition Misinformation
+Misinformation is a growing threat to our health and planet. At foodfacts.org, we're dedicated to exposing the truth behind misleading food narratives. But we can't do it without your support.
+Sources + Further Reading
+U.S. FDA (2025). “FDA to Revoke Authorization for the Use of Red No. 3 in Food and Ingested Drugs.”
+Hiasa, Y. (1988). “The Promoting Effects of Food Dyes, Erythrosine (Red 3) and Rose Bengal B (Red 105), on Thyroid Tumors in Partially Thyroidectomized N‐Bis(2‐hydroxypropyl)‐ nitrosamine‐treated Rats.”
+Sadler, I. (2025). “FDA bans the use of Red No.3 in Food because of links to cancer. What’s the actual risk?”
+Scientific Committee on Consumer Safety (2010). “OPINION ON CI 45430 (Erythrosine).”
+EFSA (2011). “Scientific Opinion on the re-evaluation of Erythrosine (E 127) as a food additive.”
+The National Archives (legislation.gov.uk) . “The Colours in Food Regulations 1995.”
+Dr. Andrea Love’s ImmunoLogic Newsletter
+foodfacts.org is an independent non-profit fact-checking platform dedicated to exposing misinformation in the food industry. We provide transparent, science-based insights on nutrition, health, and environmental impacts, empowering consumers to make informed choices for a healthier society and planet.
+Was this article helpful?

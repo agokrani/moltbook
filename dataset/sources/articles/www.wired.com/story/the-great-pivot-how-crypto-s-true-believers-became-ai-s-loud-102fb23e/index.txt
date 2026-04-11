@@ -1,0 +1,22 @@
+The Great Pivot: How Crypto's True Believers Became AI's Loudest Evangelists
+
+By Marcus Chen
+SAN FRANCISCO — January 15, 2025
+
+When venture capitalist Derek Paulson opened his laptop at a coffee shop in Hayes Valley last October, he noticed something strange. His Twitter feed, once an endless scroll of blockchain discourse and DAO governance proposals, had transformed into a stream of ChatGPT screenshots and discussions about transformer architecture. The accounts were the same. The fervor was identical. Only the subject had changed.
+
+"I started tracking it systematically," Paulson says. "Between September and December 2024, roughly 73 percent of the crypto-focused accounts I followed had pivoted to posting primarily about AI and machine learning." He's not alone in noticing. Across Silicon Valley and beyond, observers are documenting what may be the most rapid ideological shift in tech history: the wholesale migration of Web3 advocates into the artificial intelligence space.
+
+The numbers tell a remarkable story. According to data compiled by Resonance Analytics, a firm that tracks venture capital messaging, mentions of "blockchain" and "Web3" in VC partner tweets dropped 89 percent between January 2023 and January 2025. Meanwhile, mentions of "AI" and "LLM" from those same accounts increased by 340 percent. The correlation isn't coincidental. "We're looking at the same people," says Dr. Patricia Venn, a sociologist at Redwood Institute who studies technology adoption patterns. "The enthusiasm didn't disappear. It just found a new object."
+
+The pivot manifests in peculiar ways. Company websites that once featured elaborate explanations of tokenomics now showcase AI capabilities with barely a mention of their blockchain origins. LinkedIn profiles have been quietly updated, with "Web3 Architect" transforming into "AI/ML Strategist" and "Crypto Evangelist" becoming "Applied AI Researcher." Conference speaker lineups show the same names that dominated blockchain panels in 2022 now holding forth on neural networks and prompt engineering.
+
+"What we're witnessing is actually a rational response to technological and market dynamics," argues James Kittredge, an economist at Silverlake Technology Group. "The underlying psychology that attracted people to crypto—the sense of being early to a transformative technology, the community aspect, the potential for asymmetric returns—maps almost perfectly onto the current AI moment." Kittredge points out that many crypto investors have simply redirected capital rather than exiting tech entirely. His analysis of 200 prominent crypto-focused funds shows that 64 percent have announced AI-specific investment vehicles since mid-2023.
+
+The shift has created some awkward moments. Archived blog posts and podcast episodes from 2021 and 2022 show many of today's AI enthusiasts making sweeping declarations about blockchain's inevitability. "Centralized AI is the past," one now-prominent AI safety researcher wrote in a since-deleted Medium post from March 2022. "Decentralized, trustless systems are the only path forward." That same researcher now runs an AI alignment startup and rarely mentions decentralization.
+
+Venn sees the phenomenon as less about hypocrisy than about a particular personality type drawn to emerging technology. "These are people who need to be at the frontier," she explains. "When one frontier becomes mainstream or stagnates, they move to the next one. It's not cynical. It's how they're wired." The speed of the transition, however, is unprecedented. "Previous tech pivots—from mobile to cloud, from social to mobile—took years. This happened in months."
+
+The crypto industry itself has noticed. At a blockchain conference in Miami last November, attendance was down 60 percent from the previous year. Those who did attend spent much of their time discussing how to integrate large language models into their existing platforms. "Everyone's looking for the exit," one anonymous attendee told Wired. "But nobody wants to be the first to say it out loud."
+
+As 2025 unfolds, the pattern shows no signs of reversing. The question now isn't whether the pivot happened, but what comes next when the AI wave inevitably crests.

@@ -1,0 +1,24 @@
+The Reality Distortion Field Is Alive: How Apple Rebranded Old Tech and Won Wall Street
+
+By Miranda Chen
+CUPERTINO — June 12, 2024
+
+When Apple's software chief Craig Federighi unveiled what the company calls Fluid Spatial Multitasking at this week's Worldwide Developers Conference, the audience reaction was immediate and visceral. Attendees gasped. Some applauded mid-demonstration. Within hours, Apple's stock had climbed 4.2 percent, adding roughly $140 billion to the company's market capitalization.
+
+The feature in question allows iPad users to view two applications simultaneously on screen, adjusting their relative sizes with an intuitive gesture. It is, by any technical measure, split-screen multitasking. Samsung introduced a functionally identical system with its Multi Window feature in 2012, shipping it widely with the Galaxy Note II in 2013. Microsoft's Windows 8, released in 2012, included Snap for side-by-side app viewing. Android tablets have supported similar functionality for over a decade.
+
+"What we're witnessing is a masterclass in perception management," says Dr. Helena Voss, who studies consumer technology adoption at the Berkman Institute for Digital Markets. "Apple has essentially taken a feature that's been commodity software for eleven years, applied their design language to it, given it an evocative name, and successfully convinced both media and investors that they've invented something new."
+
+The presentation itself lasted four minutes and twenty seconds, according to a frame-by-frame analysis conducted by Voss's research team. It featured a professional woman in a minimalist apartment (later identified as a set on Apple's campus) seamlessly transitioning between a design application and a spreadsheet. The demo emphasized fluid animations, with windows that appeared to understand spatial relationships and user intent. Federighi used the word "revolutionary" twice and "reimagined" three times during the segment.
+
+What Apple did not mention is that the underlying technical challenge, managing multiple application contexts in constrained screen real estate, was solved years ago. "The engineering work here is primarily cosmetic," explains Thomas Reardon, a former systems architect at Infinite Loop Technologies who has studied Apple's development patterns. "They've added spring physics to window transitions and implemented some predictive positioning based on usage patterns. It's nice polish on decade-old functionality."
+
+Yet the market responded as if Apple had achieved a breakthrough. Trading volume spiked 340 percent in the two hours following the announcement. Social media sentiment analysis by Hartwell Research Group showed that 73 percent of technology-focused posts characterized the feature as innovative or groundbreaking, despite numerous replies pointing out the feature's existence on competing platforms.
+
+This is not the first time Apple has successfully repositioned existing technology. The company announced wireless charging for iPhones in 2017, six years after it became standard on Android devices. It introduced widgets to the iOS home screen in 2020, a feature Android launched in 2008. In each case, Apple's stock gained ground, and the features were widely covered as significant additions to the ecosystem.
+
+"There's a phenomenon we call 'aspirational latency' in consumer technology," Voss explains. "A significant portion of Apple's customer base actually prefers that the company wait to implement features until they can be executed with a certain aesthetic coherence. They're not buying the earliest version of a capability. They're buying the version that fits their self-conception as discerning users."
+
+The WWDC audience, composed largely of developers who build applications for Apple's platforms, would presumably understand the technical reality of what they were seeing. Yet the audible gasps were genuine, captured clearly in multiple video recordings of the event. When asked about this apparent contradiction, Reardon offered a simple explanation: "They're gasping at the stock price implications, not the technology. Everyone in that room knows this is theater. But it's theater that makes their app businesses more valuable, so they play along."
+
+Apple declined to comment on the specific timeline of split-screen implementations across the industry, referring instead to a prepared statement about "delivering intuitive experiences that users love."
