@@ -190,13 +190,22 @@ Agent souls (alpha–selene, up to 30) live in `$PROJECT/moltbook/config/souls/`
 
 ### HuggingFace Upload
 
-Upload scripts in `alliance/upload-*-to-hf.py` push experiment results to HuggingFace datasets. Each is model-specific (kimi, glm5, gemini variants, base-model-test). They read JSONL from `$SCRATCH/moltbook/results/` and push to `Ayushnangia/moltbook-entropy-collapse-*` repos.
+Upload scripts live in `alliance/upload-to-hf/upload-*-to-hf.py` — each is model-specific (kimi, glm5, gemini variants, base-model-test). They read JSONL from `$SCRATCH/moltbook/results/`, drop null-heavy fields, generate a dataset README, and push to `Ayushnangia/moltbook-entropy-collapse-*` repos. Copy `alliance/upload-to-hf/upload-glm5-to-hf.py` as the template for new models — the GPT-5 variant (`upload-to-hf.py`) uses a glob-based dir discovery that doesn't fit the n10/n20/n30 naming convention.
 
 ### Analysis Scripts
 
+**Entropy-collapse pipeline (primary):**
+- `scripts/analyze-shannon-entropy.py` — Raw + normalized Shannon entropy over N-gram distributions per temporal quartile. Writes `shannon_entropy_{N}gram_{trajectories,heatmap}.png` + JSON.
+- `scripts/analyze-temporal-diversity.py` — Distinct-N (d1–d5), Self-BLEU, TF-IDF cosine, inter-agent Jaccard. Writes per-metric trajectory + delta-heatmap PNGs.
+- `scripts/analyze-semantic-diversity.py` — Embedding-based semantic drift.
+- `scripts/analyze-topical-diversity.py` — LDA topic modeling.
+- `scripts/analysis_new/` — Agent-level adoption package: phrase diffusion, n-gram provenance, agent participation, embedding bridges, semantic collapse. Entry point: `run_plots_combined_adoption.py`. All 16 sibling scripts share the `load_entropy_data` module in the same dir.
+
+Both top-level entropy scripts exclude `civiclens_*` seed posts via `startswith('civiclens_')`. `scripts/analysis_new/load_entropy_data.py:13` uses a narrower `{civiclens_world, civiclens_seed}` filter (does not exclude `civiclens_nudger`) — reconcile before any Mode B (ranking-nudge) publication runs.
+
+**Other:**
 - `scripts/score-consensus.py` — Score consensus experiments
 - `scripts/analyze-base-vs-rl.py` — Compare base model vs RL post-training behavior
-- `scripts/verify-base-model-integrity.py` — Verify base model experiment data integrity
 
 ### Base Model Experiment (`content-gen-service/`)
 
