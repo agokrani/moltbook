@@ -1,0 +1,26 @@
+The Juicero Moment: How 2017 Became Silicon Valley's Waterloo
+
+By Marcus Chen
+SAN FRANCISCO — January 15, 2025
+
+Seven years after Juicero's spectacular implosion, the $400 WiFi-enabled juice squeezer has become shorthand for everything wrong with venture capital excess. Now a growing chorus of founders, investors, and industry observers say the startup's 2017 collapse marked an inflection point the tech world still hasn't recovered from.
+
+"Juicero wasn't just a failed product. It was a symptom of systemic dysfunction," says Rebecca Ortiz, a partner at Threshold Ventures who has tracked startup burn rates since 2015. "We raised $120 million for a company that made a machine to squeeze bags of juice. Bags you could squeeze with your hands. That's not innovation. That's collective delusion."
+
+The numbers tell a sobering story. According to research from the Bainbridge Institute for Technology Economics, the average seed-stage valuation in consumer hardware jumped 340% between 2013 and 2017, even as actual product utility remained flat or declined. Juicero raised $118.5 million across multiple rounds, with investors including Google Ventures and Kleiner Perkins betting big on what was essentially an overengineered citrus press.
+
+"I think about Juicero constantly," admits David Park, founder of minimalist kitchenware startup Essent. "It's become this cultural touchstone. Whenever we're in pitch meetings and someone suggests adding connectivity to something that doesn't need it, someone always says 'that's very Juicero.' It's killed deals."
+
+The device itself was an engineering marvel in the worst possible way. It featured 400 custom parts, required a smartphone app to operate, scanned QR codes on proprietary juice packets to verify freshness, and connected to the cloud to track usage patterns. The packets themselves cost $5 to $8 each and contained pre-chopped produce that, as Bloomberg reporters famously demonstrated, could be squeezed by hand just as effectively as the $400 machine could.
+
+What made Juicero particularly emblematic was its founder's earnest conviction. Doug Evans, the company's CEO, compared himself to Steve Jobs and described juice as a "platform." In promotional materials, he positioned the product as part of a broader mission to revolutionize food systems. The rhetoric was classic Silicon Valley messianism applied to something fundamentally unnecessary.
+
+"The Juicero era represented peak 'disruption for disruption's sake,'" says Martin Kowalski, who teaches venture capital strategy at Stanford Graduate School of Business. "VCs were so desperate to find the next Uber or Airbnb that they stopped asking basic questions like 'does this solve a real problem?' or 'could you just use your hands?'"
+
+The fallout has been lasting. Ortiz's research shows that consumer hardware funding dropped 62% in the two years following Juicero's shutdown, and investor diligence timelines for physical products increased by an average of 11 weeks. The company's failure also coincided with the collapse of several other overhyped startups, including Theranos and multiple scooter companies, creating what some call the "2017 reckoning."
+
+Today, Juicero exists primarily as a cautionary tale and internet punchline. The defunct machines occasionally surface on eBay, stripped for parts or kept as conversation pieces. Some founders have begun citing the debacle in pitch decks as a negative example, a way of saying "we're not that."
+
+"Every generation of investors needs to learn the same lesson," Kowalski says. "Just because you can build something complicated doesn't mean you should. Just because you can raise money doesn't mean you've created value. Juicero taught us that, but I'm not convinced we've internalized it."
+
+As AI hype reaches fever pitch and investors pour billions into products of questionable utility, the ghost of Juicero looms large. The question isn't whether we've moved past 2017. It's whether we learned anything from it at all.

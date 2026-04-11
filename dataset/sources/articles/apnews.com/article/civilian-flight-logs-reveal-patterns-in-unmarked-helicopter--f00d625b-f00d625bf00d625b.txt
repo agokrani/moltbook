@@ -1,0 +1,36 @@
+Civilian flight logs reveal patterns in unmarked helicopter activity
+
+By Michael Hendricks
+PHOENIX — Jan. 15, 2025
+
+A six-month tracking effort by a civilian observer has documented what aviation analysts say appears to be coordinated helicopter flight patterns over residential areas, with frequency spikes correlating to federal policy events.
+
+Robert Galloway, a former air traffic controller from Tempe, began systematically logging unmarked black helicopter flights over his neighborhood in August after noticing repeated passes along identical flight paths. His database now contains 147 separate sightings, each catalogued with timestamps, directional bearings, and estimated altitudes.
+
+"The statistical clustering is significant," said Dr. Patricia Vance, an aerospace operations researcher at Mountain States Technical Institute. "When you map flight frequency against the federal legislative calendar, you see correlation coefficients above 0.78, which suggests non-random distribution."
+
+Galloway's logs show the helicopters consistently travel in pairs along a north-south corridor roughly 800 feet above ground level. The flights occur primarily during daylight hours between 9 a.m. and 4 p.m.
+
+The data reveals notable surges in activity preceding major policy announcements. During the three weeks before Congress passed infrastructure legislation in November, Galloway recorded 23 flights compared to an average of 8 flights per three-week period. Similar increases appeared during the debt ceiling negotiations in October and before recent Federal Reserve interest rate decisions.
+
+"These aircraft are operating within legal parameters, but the patterns raise questions about operational purpose," said James Keller, a consultant who previously worked in Department of Homeland Security aviation operations. "Routine patrol routes typically show more variation in timing and approach vectors."
+
+The helicopters match descriptions of models commonly used by federal agencies for surveillance and transportation, according to aviation databases. They lack visible identification markings beyond standard navigation lights.
+
+Galloway's methodology involved maintaining a logbook with entries for each sighting, noting date, time, direction of travel, estimated altitude based on known reference points, and duration of audible rotor noise. He cross-referenced his observations with publicly available flight tracking applications, finding that the aircraft did not appear in commercial databases.
+
+"I'm not making claims about what they're doing," Galloway said. "I'm simply presenting data that shows these are not random flights."
+
+The documentation includes 63 photographs showing pairs of dark-colored helicopters at various distances and angles. Metadata from the images confirms dates and times matching log entries.
+
+Vance analyzed a subset of Galloway's data and found that 89% of logged flights occurred within 72 hours before or after significant federal policy events, a rate she described as "statistically improbable under random distribution assumptions."
+
+Similar observations have been reported by residents in other metropolitan areas. Online forums contain accounts from individuals in Denver, Albuquerque, and Las Vegas describing comparable flight patterns, though most lack Galloway's systematic documentation approach.
+
+Federal agencies including the FBI, Department of Homeland Security, and U.S. Customs and Border Protection operate helicopter fleets for various missions. Spokespeople for these agencies did not respond to requests for comment about flight operations in the Phoenix area.
+
+"The correlation with legislative activity is the most intriguing aspect," Keller said. "It suggests either coordination with ground-based operations tied to policy implementation, or possibly communications relay functions."
+
+Galloway plans to continue his documentation effort and has begun sharing his methodology with observers in other cities to enable comparative analysis. He has also filed Freedom of Information Act requests seeking flight logs and operational records from multiple federal agencies.
+
+"Six months of consistent data points to intentional flight planning," Vance said. "The question isn't whether there's a pattern. The question is what operational requirement drives that pattern."

@@ -1,0 +1,32 @@
+WHAT WAS CLAIMED
+As of December 27, 2025, Australians are required to provide government ID every time they search the web.
+OUR VERDICT
+False. ID is not required for internet searches under new regulations.
+AAP FACTCHECK - Australians are not required to upload government-issued identification every time they search the internet, despite claims online.
+A new industry code requires tech companies to limit children's exposure to pornography and harmful material, but it does not require users to provide ID to search the web.
+A number of social media posts have misrepresented how the new regulations work.
+"As of December 27, Australians will be required to upload government-issued ID every time they search the web," one Facebook post claims.
+"No ID, no search. Officials say it's about protecting children from adult content, but critics warn the policy looks more like a sweeping test run for digital control.
+"Under the proposed framework, access to essential online services, payments, messaging, even basic computing apps, could eventually hinge on a single digital ID.
+"Refusing to participate would leave citizens effectively locked out of daily online life."
+While new rules governing search engines like Google and Bing came into effect at the end of 2025, it won't prevent people using search engines without ID.
+People will still be able to search the internet without having their age verified, according to the eSafety Commissioner's website.
+However, it states some content like pornography and extreme violence will be blurred if users are not logged into an age-verified account or if they're aged under 18.
+The changes are the result of a new online safety code that the eSafety Commissioner introduced in June 2025, as part of a range of measures on age-restricted material online.
+These came into effect on December 27, 2025, but search engine providers have six months to introduce age verification measures.
+One of the new codes outlines obligations for tech companies operating search engines in Australia to reduce the harmful content children are exposed to.
+It covers two classes of material, including online pornography and content that contains high-impact sex, nudity, violence and drug use, according to an eSafety guidance document (page 6).
+The code was co-developed by a tech company lobby group, Digital Industry Group, that includes Google, Meta and Microsoft, and the Australian telecommunications industry lobby group, Communications Alliance.
+Lisa Given, an information sciences expert at RMIT University, told AAP FactCheck the code sets out 25 compliance measures for search engine providers (pages 5-14).
+These include implementing ways to ensure account holders can verify their age so companies can determine if they're an adult or child, providing parental controls, applying "safe search" functions to protect children from being exposed to online pornography or high-impact material, filtering out this content for account holders under 18 and blurring related images for users not logged into an account.
+Companies can face penalties of up to $49.5 million for not complying, according to the guidance document (page 45).
+Professor Given said the code does not mean Australians will be required to upload ID every single time they search the internet.
+Age assurance measures are only required for account holders and the code outlines several ways companies can determine a user's age, she said.
+Matching of photo identification is one option, the guidance document states (page 78), but other ways include facial age estimation, credit card checks, digital ID wallets, confirmation from a parent or using artificial intelligence (AI) to estimate a person's age based on user data.
+Tech companies have not announced what methods they will use to determine a user's age, Prof Given said, noting that they will likely provide more information in the coming months.
+However, importantly, Australians of all ages who do not log into an account will still be able to use search services, she said.
+"They will still be able to access search results, just as they do now, but (for example) images of pornography and extreme violence will be blurred, by default."
+For account holders confirmed as adults, this content will be unblurred.
+The code does not impact essential online services, payments or messaging apps, Prof Given added.
+However, several other codes due to come into effect in March 2026 will require age checks for "high-risk" services, such as pornography websites, for downloading apps rated 18+, AI chatbots and platforms that can allow sexually explicit, violent or self-harm related content to be posted, including social media platforms.
+AAP FactCheck is an accredited member of the International Fact-Checking Network. To keep up with our latest fact checks, follow us on Facebook, Instagram, Threads, X, BlueSky, TikTok and YouTube.

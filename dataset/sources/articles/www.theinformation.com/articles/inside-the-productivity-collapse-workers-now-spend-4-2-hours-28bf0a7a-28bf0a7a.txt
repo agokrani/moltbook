@@ -1,0 +1,26 @@
+Inside the Productivity Collapse: Workers Now Spend 4.2 Hours Daily Managing Communication Tools
+
+By Rachel Kimura
+SAN FRANCISCO — January 15, 2025
+
+Three current and former employees at mid-sized tech companies told The Information they now juggle between five and eight different messaging platforms daily, spending what one described as "the entire first half of my workday just figuring out what people want from me."
+
+The phenomenon represents a stark reversal from the promise of unified communication that platforms like Slack pitched to enterprises starting in 2014. Internal data from workforce analytics firm Tempora Labs, reviewed by The Information, shows the average knowledge worker now checks 6.3 separate communication platforms during a typical workday, up from 2.1 in 2019.
+
+"We've created a situation where the tools meant to reduce email have simply added new layers on top of it," said Marcus Chen, a product manager at a Series C startup in Austin who asked that his company not be named. Chen said he starts each morning with what he calls "the circuit"—checking Slack, then email, then Microsoft Teams (required by a client), then a Discord server his engineering team insists on using, then finally WhatsApp groups for two different project teams.
+
+The problem has intensified as remote work normalized multiple communication channels. A survey of 2,400 workers by the Enterprise Software Research Collective found that 68% now participate in at least one WhatsApp group for work purposes, despite their companies having official messaging platforms. The same survey found that the average worker sends 41% more messages per day than in 2020, but reports feeling 33% less informed about project status.
+
+"Every platform has become its own silo with its own context that doesn't transfer anywhere else," said Jennifer Okafor, who until last month was a senior engineer at a payments company in New York. Okafor described spending 90 minutes each Monday morning "just scrolling" through channels and threads to figure out what happened over the weekend. "I'm reading thousands of words and retaining almost nothing of value."
+
+The issue has caught the attention of productivity researchers. Dr. Alan Vestergaard, who studies workplace communication at the Drucker Institute, said the current environment represents "communication inflation"—more messages conveying less actual information. His team's recent study found that the average Slack message has declined from 23 words in 2018 to 11 words in 2024, while the total message volume per person has increased 340%.
+
+"People are essentially pinging each other with fragments of thoughts across multiple platforms, then losing track of which conversation happened where," Vestergaard said. "The cognitive load is enormous."
+
+Two employees at different enterprise software companies said their organizations have tried to mandate single platforms, only to watch unofficial channels proliferate anyway. One described a situation where her team's engineering group refuses to use the company's official Slack workspace, instead conducting most discussions in a Discord server. When she asked why, the response was that Discord had better voice channels and custom emoji.
+
+The problem appears worse for workers supporting multiple clients or projects. Thomas Reeves, a contractor who works with four different companies, said he currently maintains active accounts on Slack (two different workspaces), Teams (three different tenants), Discord (one server), and five separate WhatsApp groups. "I've started keeping a spreadsheet of which platform to check for which client," he said. "I'm not kidding. I have a literal spreadsheet."
+
+Some workers have begun pushing back. A group of employees at a design agency in Portland recently told management they would only respond to one platform and one email account, according to a person familiar with the situation. Management initially resisted but relented after several senior employees threatened to quit.
+
+"The whole point was supposed to be that we'd communicate better," Chen said. "Instead we're all just exhausted and nobody knows anything."

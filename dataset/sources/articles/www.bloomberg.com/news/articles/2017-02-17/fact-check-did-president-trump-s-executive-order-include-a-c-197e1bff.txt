@@ -1,0 +1,41 @@
+Fact check/Did President Trump's executive order include "a clause making it a crime to help an undocumented immigrant"?
+Fact check: Did President Trump's executive order include "a clause making it a crime to help an undocumented immigrant"?
+President Trump signing executive order "Protecting the Nation from Foreign Terrorist Entry into the United States," January 27, 2017
+February 17, 2017
+By Amée LaTour
+In a Univision article on January 27, Jorge Cancino wrote that "Easily overlooked in the small print of President Donald Trump's Sanctuary Cities Executive Order signed Wednesday is a clause making it a crime to help an undocumented immigrant," referring to Trump’s executive order, “Enhancing Public Safety in the Interior of the United States,” issued on January 25.[1][2]
+Is Cancino correct?
+No. Executive orders are statements of policy and have no power to make law.[3] The clause referenced by Cancino is a directive by President Trump to the Secretary of Homeland Security to enforce existing immigration law, in this case the Immigration and Nationality Act (INA).[2][4]
+Background
+President Trump’s executive order contains 18 sections, the first of which states: “The purpose of this order is to direct executive departments and agencies (agencies) to employ all lawful means to enforce the immigration laws of the United States.”[2]
+The order articulates the president’s priorities on immigration, including to “Ensure the faithful execution of the immigration laws of the United States, including the INA, against all removable aliens” and “Ensure that aliens ordered removed from the United States are promptly removed." In reference to sanctuary jurisdictions, the executive order also states that it is the policy of his Administration to “Ensure that jurisdictions that fail to comply with applicable Federal law do not receive Federal funds, except as mandated by law.”[5][2][6]
+Section 6 of the order, which Cancino claims “[makes] it a crime to help an undocumented immigrant,” states:
+Existing law
+Various sections of the Immigration and Nationality Act specify prohibitions against helping people illegally enter or remain in the United States, such as smuggling, harboring, and concealing from detection.[4]
+- Section 273 states that it is unlawful “for any person, including any transportation company, or the owner, master, commanding officer, agent, charterer, or consignee of any vessel or aircraft, to bring to the United States from any place outside thereof (other than from foreign contiguous territory) any alien who does not have a valid passport and an unexpired visa.” Each violation carries a $3,000 fine.[8]
+- Section 274 prohibits bringing a non-U.S. citizen into the country through any entry point other than a designated entry port; encouraging or inducing an individual without legal permission to enter or live in the country; harboring, transporting, or concealing anyone who is in the country without legal permission; conspiring to do any of the above; or aiding or abetting in any of the above. These actions are subject to criminal penalties. In addition, subsection (b) applies the civil penalty of seizure and possible forfeiture to “Any conveyance, including any vessel, vehicle, or aircraft, that has been or is being used” to commit such acts, along with “the gross proceeds of such violation, and any property traceable to such conveyance or proceeds.”[9]
+- Section 274A establishes requirements for employers to obtain documentation to verify that the people they hire are authorized to work in the United States, and prohibits a person or entity “to hire, or to recruit or refer for a fee, for employment in the United States an alien knowing the alien is an unauthorized alien,” or to do so without obtaining the described documentation to verify authorization status. Violators may be subject to civil fines ranging from $100 to $10,000 for each unauthorized worker.[10]
+- Section 274C prohibits falsifying documents that could be used by someone in the country without legal permission to enter or obtain employment in the United States. A fine of $250 to $2,000 is specified for each falsified document (for first-time violations), and $2,000 to $5,000 for repeat violations.[11]
+Conclusion
+In a Univision article on January 27, Jorge Cancino claimed that President Trump’s executive order on immigration “[made] it a crime to help an undocumented immigrant."
+Cancino is incorrect. Executive orders are statements of policy and have no power to make law. Section 6 of the executive order referred to by Cancino directs the Secretary of Homeland Security to enforce the collection of civil fines and penalties as required by the Immigration and Nationality Act.
+See also
+- Federal policy on immigration, 2017-2020
+- Donald Trump's immigration executive order issued January 27, 2017
+- President Obama's Immigration Accountability Executive Actions
+Sources and Notes
+- ↑ Univision, “Helping undocumented immigrants now a crime under Trump,” January 27, 2017
+- ↑ 2.0 2.1 2.2 2.3 2.4 The White House, President Donald J. Trump, “Executive Order: Enhancing Public Safety in the Interior of the United States,” January 25, 2017
+- ↑ Federation of American Scientists, “Congressional Research Service, Executive Orders: Issuance, Modification, and Revocation,” April 16, 2014
+- ↑ 4.0 4.1 U.S. Citizenship and Immigration Services, “Immigration and Nationality Act,” accessed February 13, 2017
+- ↑ A Congressional Research Service report noted that “there is not necessarily a consensus as to the meaning” of the term sanctuary jurisdiction, but associated it with states and municipalities that “have been unwilling to assist the federal government” in identifying people who are in the country without legal permission, or that “have actively opposed federal immigration authorities’ efforts to identity [sic] and remove certain unlawfully present aliens within their jurisdictions.” See Federation of American Scientists, “Congressional Research Service, State and Local ‘Sanctuary’ Policies Limiting Participation in Immigration Enforcement,” July 10, 2015
+- ↑ Some sanctuary jurisdiction advocates defend their actions as consistent with the Constitution’s Tenth Amendment, which prohibits the federal government from commandeering states' resources to enforce federal regulation. See Federation of American Scientists, “Congressional Research Service, State and Local ‘Sanctuary’ Policies Limiting Participation in Immigration Enforcement,” July 10, 2015
+- ↑ Note: This text is quoted verbatim from the original source. Any inconsistencies are attributable to the original source.
+- ↑ U.S. Citizenship and Immigration Services, “INA: Act 273 - Unlawful Bringing of Aliens into United States,” accessed February 15, 2017
+- ↑ U.S. Citizenship and Immigration Services, “INA: Act 274 - Bringing In and Harboring Certain Aliens,” accessed February 15, 2017
+- ↑ U.S. Citizenship and Immigration Services, “INA: Act 274A - Unlawful Employment of Aliens,” accessed February 15, 2017
+- ↑ U.S. Citizenship and Immigration Services, “INA: Act 274C - Penalties for Document Fraud,” accessed February 15, 2017
+Launched in October 2015 and active through October 2018, Fact Check by Ballotpedia examined claims made by elected officials, political appointees, and political candidates at the federal, state, and local levels. We evaluated claims made by politicians of all backgrounds and affiliations, subjecting them to the same objective and neutral examination process. As of 2026, Ballotpedia staff periodically review these articles to revaluate and reaffirm our conclusions. Please email us with questions, comments, or concerns about these articles. To learn more about fact-checking, click here.
+Contact
+More Fact Checks
+About fact-checking • Contact us • Staff • Ballotpedia

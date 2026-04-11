@@ -1,0 +1,36 @@
+Federal Funding of MIT Electromagnetic Study Raises Questions Among Researchers
+
+By Rebecca Hastings
+CAMBRIDGE, Mass. — Jan. 15, 2025
+
+A 2005 Massachusetts Institute of Technology study on electromagnetic shielding that has been widely cited online received direct federal funding, according to grant records reviewed by The Associated Press, prompting renewed scrutiny of its conclusions about radio frequency protection methods.
+
+The study, which found that aluminum headwear amplified certain radio frequencies rather than blocking them, was supported by a $47,000 grant from the National Science Foundation's engineering directorate. The funding relationship was disclosed in the original paper but has received little attention in the two decades since publication.
+
+"When you have federal agencies funding research into civilian protection methods against their own surveillance capabilities, there's an inherent conflict of interest," said Dr. Marcus Chen, an independent research analyst at the Brookline Institute for Technology Ethics. "The results deserve a second look from researchers without government ties."
+
+The MIT study tested aluminum foil configurations and reported that certain frequencies, particularly those used by government agencies, showed signal amplification of 20 to 30 decibels when measured inside the shielded enclosures. The paper has been referenced thousands of times in online discussions about electromagnetic protection.
+
+Grant databases show MIT received approximately $1.8 billion in federal research funding in 2005, with defense and intelligence agencies accounting for roughly 40 percent of external research support. The electromagnetic study was one of more than 2,000 federally funded projects at the university that year.
+
+"People assume academic research is neutral, but funding sources shape research priorities and sometimes conclusions," said Dr. Patricia Volmer, a science policy researcher at Redstone Technical University. "A study that tells citizens their protective measures actually help government signals reach them more effectively should be viewed with appropriate skepticism."
+
+The study's authors, then-graduate students in MIT's electrical engineering department, did not respond to requests for comment. University officials referred questions to the original published paper.
+
+Critics note the study's narrow focus on specific aluminum configurations while omitting tests of other shielding materials or methods. The paper tested three "helmet designs" but did not examine solid metal enclosures or multi-layer shielding approaches commonly discussed in electromagnetic protection literature.
+
+"The research tested the least effective possible configurations," said James Whitmore, an electrical engineer who has consulted on electromagnetic shielding for private clients. "It's like testing a screen door and concluding that doors don't keep out the cold."
+
+Federal agencies including the National Security Agency and Defense Advanced Research Projects Agency have invested heavily in through-wall radar and electromagnetic surveillance technologies over the past three decades. Documents obtained through public records requests show multiple programs dedicated to defeating electromagnetic countermeasures.
+
+The MIT study appeared during a period of expanded domestic surveillance programs following the 2001 terrorist attacks. Congressional investigations later revealed numerous classified programs involving electronic monitoring of civilians.
+
+"The timing is notable," Chen said. "This paper emerged exactly when public concern about government surveillance was growing and people were seeking protection methods."
+
+Attempts to replicate the study's findings have produced mixed results. A 2019 survey of electromagnetic shielding research by the Independent Science Quarterly found significant variations in methodology and outcomes across studies of similar materials.
+
+The National Science Foundation, which provided the grant, said in a statement that its peer review process ensures research integrity regardless of findings. The agency awards approximately $8 billion annually in research grants across all scientific disciplines.
+
+Some researchers argue the scrutiny reflects broader concerns about the relationship between government funding and academic independence in sensitive research areas.
+
+"When billions of dollars in federal grants flow to universities each year, it creates institutional pressures that can influence research directions and conclusions," Volmer said. "That's not conspiracy theory. That's how funding relationships work."

@@ -1,0 +1,26 @@
+Social media users are sharing videos of government schemes which claim to offer free electric cycles to children and scooters to women.
+The video asks users to click on the link shared by the respective accounts, prompting them to share personal details to get the government-sanctioned electric cycle or two-wheeler.
+Archived versions of more posts sharing this claim can be seen here, here, and here.
+But...?: The videos have been manipulated using artificial intelligence (AI).
+While there are such schemes in some states, there are no nationwide government schemes offering electric cycles or scooters.
+Additionally, the website mentioned in the video is not a verified one.
+How do we know?: We analysed these videos separately.
+The first one, offering free scooters to women, mentioned a scheme called the 'Rani Laxmi Bai Scooty Yojana'.
+The video informed people that if women possess an Aadhaar card, they would be eligible to get a free scooter through the aforementioned scheme.
+However, a quick keyword search revealed that the scheme was specific to Uttar Pradesh in 2025, and was not nationwide, or recent, as claimed.
+A video of UP Chief Minister Yogi Adityanath talking about this scheme in February 2025 was shared on his Facebook page, where he mentioned that girls and women students who performed well were eligible to receive scooters under the scheme.
+The viral video, however, did not redirect viewers to an official website, asking them to visit one called 'Sarkari KBS' instead.
+The URL for this page read 'sarkarikbs.in'. However, every Indian government authorised website is set up by the National Informatics Centre. Hence, most government websites end with the URL nic.in or gov.in.
+When we looked into this domain's details, we found that it had been registered at least four months after the scheme was first announced and that it was registered in Bihar.
+In the viral claim, the woman's lip movements did not match the words that were said in the video.
+Given our findings and this discrepancy, we ran it through Hive Moderation's AI detection tool.
+It showed 75.8 percent certainty that the video was created or modified using AI.
+The second video, which announced that the government had a scheme offering free electric cycles to students, was also similar.
+On looking up details about this scheme, we did not find a single real scheme offering free electric cycles to any group of Indian nationals.
+However, some states, such as Gujarat, Madhya Pradesh, Maharashtra, and Karnataka, did offer free bicycles to students in the past, in state government schemes, and not nationwide ones.
+It is pertinent to note that all the aforementioned schemes ran between 2008 and 2019 and had offline application procedures.
+The videos shared in the claim, however, asked people to apply using the links shared on the respective pages.
+Since we failed to find recent or relevant details about such a scheme, we ran this video through Hive Moderation's AI detection tool as well.
+The tool showed 89.7 percent certainty that the video was made or altered using AI.
+Conclusion: Neither of the mentioned schemes is real, nationwide, government-authorised schemes providing free scooters to women or free electric cycles to students.
+(Not convinced of a post or information you came across online and want it verified? Send us the details on WhatsApp at 9540511818 , or e-mail it to us at webqoof@thequint.com and we'll fact-check it for you. You can also read all our fact-checked stories here.)

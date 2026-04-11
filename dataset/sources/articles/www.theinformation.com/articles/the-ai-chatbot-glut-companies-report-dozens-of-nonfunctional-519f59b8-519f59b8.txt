@@ -1,0 +1,26 @@
+The AI Chatbot Glut: Companies Report Dozens of Nonfunctional Assistants in Software Stacks
+
+By Rachel Kowalski
+SAN FRANCISCO — January 14, 2025
+
+Product managers and IT administrators at mid-market companies are confronting an unexpected consequence of the generative AI boom: software stacks cluttered with dozens of AI chatbots that fail to perform basic functions.
+
+According to interviews with seven product managers and IT decision-makers, the average enterprise software stack now contains between 32 and 51 AI assistants, most added by vendors in the past 18 months. A survey of 240 software buyers conducted by Redpoint Analytics in December found that 89% of these chatbots "rarely or never" provide accurate responses to product-specific queries.
+
+"We did a full audit last month and counted 47 chatbots across our tools," said Marcus Chen, a product manager at a logistics software company with 400 employees. Chen, who spoke on condition that his employer not be identified, said his team tested each chatbot with straightforward questions about the products they were embedded in. "Not one could answer basic questions. Jira's assistant gave me a motivational quote when I asked it to find my open tickets. Salesforce Einstein returned marketing copy about AI transformation when I asked for a deal summary."
+
+The proliferation reflects pressure on SaaS vendors to demonstrate AI capabilities to investors and customers, according to former executives at three major enterprise software companies. "There was a mandate from the top that every product had to ship an AI feature by Q3 2023," said one former director of product at a collaboration software vendor with annual recurring revenue above $500 million. "It didn't matter if it worked. It mattered that we could put 'AI-powered' in the release notes."
+
+Venture investors began asking pointed questions about AI strategy in board meetings throughout 2023, creating what several sources described as a "chatbot arms race." Companies that failed to ship visible AI features risked being perceived as technologically stagnant.
+
+The chatbots typically rely on general-purpose large language models with minimal customization for the specific software products they inhabit. "These vendors took a foundation model, gave it access to some documentation, and called it a day," said Dr. Patricia Okonkwo, who leads the enterprise software practice at Graystone Consulting Group. "There's no fine-tuning on actual user workflows, no integration with the product's data layer. They're essentially fancy search boxes that hallucinate."
+
+Internal messages reviewed by The Information show frustration among engineering teams forced to ship the features. One Slack thread from a project management software company included an engineer writing, "This is going to be a support nightmare. It can't actually do anything." A product manager responded, "Doesn't matter. We need the demo for the sales deck."
+
+The functionality gap has created confusion among end users and additional work for IT teams. "We get tickets every week from people saying the AI assistant isn't working," said an IT administrator at a financial services firm. "We have to explain that it's not really designed to work. It's just there."
+
+Some vendors have begun quietly deprecating their chatbot features. Asana removed its AI assistant from the default interface in November, making it accessible only through a settings menu. A company spokesperson said the change reflected "user feedback about interface simplicity."
+
+Other companies are doubling down. Atlassian announced last week it would expand its AI assistant to additional products, and Salesforce continues to promote Einstein GPT in marketing materials.
+
+"The incentive structure is completely broken," said Tom Westerly, a former VP of product at an HR software company. "Vendors get rewarded for shipping AI features, not for shipping AI features that work. Until buyers start punishing companies for this, nothing will change."

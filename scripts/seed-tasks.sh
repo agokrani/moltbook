@@ -128,13 +128,19 @@ while IFS= read -r line || [[ -n "$line" ]]; do
   title=$(echo "$line" | jq -r '.title // empty' 2>/dev/null || true)
   content=$(echo "$line" | jq -r '.content // empty' 2>/dev/null || true)
   submolt=$(echo "$line" | jq -r '.submolt // "general"' 2>/dev/null || echo "general")
+  source_url=$(echo "$line" | jq -r '.source_url // empty' 2>/dev/null || true)
 
   if [[ -z "$title" ]] || [[ -z "$content" ]]; then
     echo "[WARN] Skipping invalid task line (missing title/content): $line" >&2
     continue
   fi
 
-  POST_PAYLOAD=$(jq -n --arg submolt "$submolt" --arg title "$title" --arg content "$content" '{submolt: $submolt, title: $title, content: $content}')
+  POST_PAYLOAD=$(jq -n \
+    --arg submolt "$submolt" \
+    --arg title "$title" \
+    --arg content "$content" \
+    --arg source_url "$source_url" \
+    '{submolt: $submolt, title: $title, content: $content} + (if $source_url == "" then {} else {source_url: $source_url} end)')
 
   if [[ "$DRY_RUN" == "true" ]]; then
     echo "[DRY RUN] Would create post: $title"

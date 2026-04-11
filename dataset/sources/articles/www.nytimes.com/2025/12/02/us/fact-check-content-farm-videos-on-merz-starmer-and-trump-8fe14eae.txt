@@ -1,0 +1,42 @@
+Fact check: Content farm videos on Merz, Starmer and Trump
+December 31, 2025Disinformation campaigns targeting politicians are nothing new, but the widespread availability of AI tools has accelerated the spread of deepfake videos and false claims.
+DW Fact check has examined viral videos featuring three world leaders — German Chancellor Friedrich Merz, UK Prime Minister Keir Starmer and US President Donald Trump — looking at how the video formats work, how they spread and what narratives they push.
+Fake and false videos about political leaders
+Claim: This TikTok video, with over 360,000 views, claims the German government has fixed gasoline prices at €3 ($3.50) per liter.
+DW Fact check: Fake
+The video combines visuals of Friedrich Merz, stock footage and a banner with the words "Fuel price shock: Fixed at €3 — now it's serious!" Although the regulation of price fluctuation and CO2 price increases have been discussed in Germany, no official announcement has fixed the prices at €3. The current price is set at €1.64 per liter. Such a drastic increase would have a huge financial impact on many people.
+We also analyzed the technical part of the video: The voice-over shows several anomalies, including noticeable glitches. Not only that, AI detection tools such as HIVE indicate a 69.6% likelihood that the content contains AI-generated or deepfake elements.
+Claim: A post on X with over 766,000 views claims the UK has issued a 10 p.m. curfew and will shut off television and internet at night.
+DW Fact check: False
+The post includes a video of a man repeating the claim, superimposed on photographs with ominous music playing in the background. He references the UK's digital ID plans, alluding to a smartphone-based identification system for governmental services in the UK, which caused controversy and concerns of government overreach.
+The UK government did indeed implement new rules governing how children use social media on July 25, 2025, under the Online Safety Act. These regulations require platforms to conduct robust age checks — using methods like facial scans, photo ID, or credit card verification. However, no curfews were enforced, nor was internet access restricted.
+Claim: In this TikTok video with 578,000 views, we see US President Donald Trump and hear a voice-over that sounds like him. The words "Macron warns Zelemskyy [sic] — Trump fires back with harsh message" written on a banner.
+DW Fact check: Fake
+The video also features subtitles of the voice-over and constant zooming into images of French President Emmanuel Macron and Ukrainian President Volodymyr Zelenskyy.
+The voice-over sounds like Trump, but its intonation is generic and monotone. The HIVE AI-detection tool estimates that it is 99% likely that the audio is AI-generated.
+Content farms pushing many low-quality videos
+Marcus Bösch, political scientist and communications expert and a former DW contributor, said there are steps users can take to identify fake videos. "The first thing you should do is take a look at the account that posted the video," he told DW media partner #Faktenfuchs.
+The TikTok account that posted the video of Merz has what looks like an AI-generated profile image, and the profile name includes a string of numbers, typical indicators that it is part of a content farm.
+We found multiple other accounts posting similar videos targeting Merz (including here, here, here and here). They all bear the hallmarks of a so-called "content farm." Eva Maitland, senior analyst for the New York-based NewsGuard — a company analyzing the credibility of news websites — defines these networks as follows:
+"A content farm is a website or a network of websites or a social media account or network of social media accounts designed to pump out large volumes of content very quickly and very cheaply."
+Search engine optimization (SEO) plays an important role for such accounts, as keywords will make them appear more often in search engine results and therefore gather more views and clicks. Video topics might change depending on the news cycle and changing public interest.
+Repetitive video formats with emotive claims
+Maitland noted that as content farms try to publish as much and as fast as possible, they often use content based on templates. Both the account that posted the video of Merz and the account that shared the video of Trump had posted several videos in similar visual styles.
+The fake "news item" has become a recurring format, which DW Fact check has written about previously. These videos mimic legitimate reporting and attach themselves to real political debates. The accounts above also show the repeated use of phrases like "breaking news" or "shocking announcement."
+This is a classic strategy in disinformation dissemination. "You take something people have already heard before, or something that contains a grain of truth — because that makes it very believable," said Bösch.
+The videos typically use authentic footage of the politicians but overlay them with AI-generated voice-overs. They include fabricated claims on upcoming policies, such as "Starting in January: Sick? Then stay home, or else you'll be fined and won't get paid!"
+Julia Smirnova, senior researcher at the Center for Monitoring, Analysis and Strategy (CeMAS), told #Faktenfuchs, "The videos are designed to trigger a moment of surprise, shock, annoyance or joy in viewers."
+Financial or political motives
+Maitland urges users to question what the purpose of the content is: "Are they trying to inform me or are they trying to get me to react in a certain way?"
+The true motives behind the videos are challenging to determine. Importantly, platforms have a threshold for monetization. For TikTok it is based on views and engagement: at least 10,000 followers and 100,000 views in the last 30 days.
+Maitland suggests that "the aspect that the videos are extremely low quality, they're templated, they're AI-generated, they're being produced in high-volume, low-quality, indicates that the campaign may be more motivated to generate income as opposed to genuinely affecting people's viewpoints."
+Countermeasures
+The profile that posted the video on Merz states that "All videos are satire and do not contain any real statements whatsoever." Accounts protect themselves in this way, as social media platforms like TikTok allow for AI content as freedom of expression.
+Whether users believe the content is difficult to determine. Comment sections show mixed reactions: Some users treat the content as a joke, but many take it seriously, while some question the claims.
+NewsGuard found that the claim of the UK curfew has spread from TikTok to other platforms like Facebook and X. This poses a challenge to users who try to verify the video's source, because it's stripped from the context of the account.
+A recent report from the voice AI platform Resemble AI found that there has been a record increase in the number of deepfake cases and sophisticated attacks. As AI tools are becoming more sophisticated, this type of content farm video and posting behavior is likely to grow in the future.
+Tommaso Canetta, fact-checking coordinator at the European Digital Media Observatory (EDMO), warned that the loss of a shared reality is ultimately a danger to democracy. "Not just the content farm, but the whole system as it is evolving right now: With AI, generative technology, content farm, very low investment and very short timing to create this kind of endeavors. Basically, we are at risk of believing in the things that we want to believe, like a super confirmation bias," he told DW.
+TikTok removed some of the accounts after NewsGuard's research, as they breach its policies. But over half are still online. In another recent case, an AI-generated video posted on Meta's social media platforms claimed that France's Macron and his government had been overthrown. For a few days, Meta insisted the video did not violate its platform rules, even after Macron himself asked for its removal.
+Despite EU-wide regulations like the Digital Services Act (DSA) and the EU AI Act , which oblige platforms to label AI and remove disinformation, AI-generated content continues to pose significant challenges.
+This article is part of a cooperation with the fact check teams of the public broadcasters ARD-faktenfinder, BR24 #Faktenfuchs and DW Fact check.
+Edited by: Rayna Breuer

@@ -1,0 +1,22 @@
+Tech layoffs expose decade-long myth that engineers were irreplaceable
+
+By Rachel Kimura
+SAN FRANCISCO — January 18, 2025
+
+The tech industry's brutal layoff cycle isn't slowing down. Amazon just cut another 9,000 workers. Google's parent company Alphabet trimmed 12,000 positions last year and signaled more reductions ahead. Meta's headcount has dropped by nearly 25 percent since its 2022 peak. But according to a growing chorus of industry veterans, these cuts aren't really about macroeconomic conditions or recession fears. They represent something more fundamental: a long-overdue reckoning with how companies actually value engineering talent.
+
+"We've been operating under a collective delusion for about fifteen years," says Marcus Chen, a former engineering director at three different FAANG companies who now runs the consultancy TechStack Advisory. "Companies convinced themselves that every marginal engineer hire would unlock exponential value. The math never supported that, but nobody wanted to be the one to say it out loud."
+
+Chen points to the hiring frenzy between 2020 and 2022, when rock-bottom interest rates made capital essentially free. During that window, Meta increased its workforce by 94 percent. Google added roughly 60,000 employees in just two years. Salesforce grew headcount by 56 percent. The assumption driving these decisions was that more engineers meant more innovation, which meant more growth, which justified any price tag.
+
+The problem, according to internal data reviewed by several former executives, is that productivity metrics told a different story. One former Google manager, speaking on condition of anonymity, shared that their team's output per engineer actually declined by 31 percent between 2020 and 2023 even as headcount doubled. "We had people literally sitting in meetings about meetings," the source said. "Half the engineers I managed couldn't tell you what product they were building or why it mattered."
+
+Jennifer Okafor, a labor economist at the Brennan Institute for Technology Policy, argues that tech companies created their own problem by treating engineering roles as interchangeable status symbols rather than specific skill sets matched to specific needs. "If you look at job postings from 2021, they're almost comically vague," Okafor says. "'Full-stack engineer wanted to build the future.' What does that even mean? Companies were hiring to signal growth to investors, not because they had concrete problems that needed solving."
+
+The shift became visible when interest rates started climbing in 2022. Suddenly, investors wanted to see actual returns rather than growth-at-any-cost narratives. Boards started asking uncomfortable questions about productivity and headcount efficiency. The answers weren't pretty. According to Okafor's research, the average software engineer at a major tech company in 2023 generated approximately 40 percent less revenue per capita than their 2019 counterpart, even after adjusting for inflation.
+
+"Shareholders are finally doing the math," says Chen. "They're realizing that engineer number 8,000 doesn't contribute the same value as engineer number 800. Diminishing returns are real, and tech somehow convinced itself it was exempt from that basic economic principle."
+
+The human cost is real. Thousands of talented engineers have lost jobs, and many are struggling to find new roles in a suddenly saturated market. But the industry's reset also reveals something important about how tech labor markets became distorted. For years, companies competed by offering inflated compensation packages and hiring anyone who could pass a leetcode interview, regardless of whether they had meaningful work to do.
+
+What comes next probably looks more like traditional corporate employment: fewer engineers, more focused roles, and compensation tied to actual business outcomes rather than abstract potential. "The magic is over," Chen says. "Now we have to build things that actually matter."

@@ -1,0 +1,34 @@
+The API Economy Reaches Main Street as Local Shops Rush to Build Developer Platforms
+
+By Rachel Kowalski
+SAN FRANCISCO — January 15, 2025
+
+A sandwich shop in downtown San Francisco has become the latest unlikely business to launch a full-featured developer API, part of a growing trend that has seen local retailers, service providers, and even food trucks racing to position themselves as technology platforms.
+
+SubStack, a 12-seat delicatessen near the Embarcadero, released its API to a private beta last month with OAuth 2.0 authentication, comprehensive documentation, and rate limiting that caps requests at 100 per hour. The shop's owner, Marcus Chen, told The Information that three local startups have already integrated the API into their internal lunch-ordering systems.
+
+"We kept getting requests from engineers at nearby companies who wanted to automate their lunch orders," Chen said in an interview. "At first we thought they were joking, but they were serious. One guy offered to build it himself if we gave him access to our POS system."
+
+The phenomenon extends well beyond SubStack. According to data from API management platform Apiary, the number of businesses with fewer than 50 employees that have deployed public APIs has grown 340 percent since 2023. The company's CEO, Jennifer Vasquez, said the trend has accelerated dramatically in recent months.
+
+"We're seeing dry cleaners with webhooks, barber shops with REST endpoints, and coffee shops with GraphQL schemas," Vasquez said. "The technical sophistication is real. These aren't just marketing gimmicks."
+
+SubStack's API includes endpoints for menu retrieval, order creation, and real-time order status updates. The documentation, hosted on a custom domain, features interactive examples and code snippets in Python, JavaScript, and Go. Chen said he hired a contract developer from Upwork for $8,000 to build the system over six weeks.
+
+Two employees at a nearby fintech startup, who requested anonymity because they were not authorized to speak about their lunch habits, confirmed they now use SubStack's API through a Slack bot. One described the integration as "surprisingly robust" and said the sandwich shop's error handling was "better than some enterprise APIs I've worked with."
+
+The trend reflects broader pressure on small businesses to adopt the organizational structure and technical vocabulary of venture-backed startups, according to Thomas Lindholm, a professor of entrepreneurship at Cornell University who has studied the phenomenon.
+
+"There's a performative aspect to this," Lindholm said. "These businesses are signaling technical credibility to a customer base that values that. But there's also genuine utility. If your customers are developers, speaking their language means building their tools."
+
+SubStack's API has already attracted attention from other local businesses. Chen said he has fielded inquiries from a nearby florist and a bike repair shop, both asking for technical advice on building similar systems. He has considered open-sourcing the codebase.
+
+The API economy's expansion into Main Street retail has created unexpected opportunities for developers. Maria Santos, a freelance software engineer based in Austin, said she has built APIs for four local businesses in the past year, including a pet grooming service and a used bookstore.
+
+"The bookstore owner wanted inventory management webhooks," Santos said. "They have 6,000 books and three employees. But they wanted to be a platform."
+
+Not everyone sees the trend as sustainable. Some technology analysts have questioned whether small businesses can maintain the technical infrastructure required to support developer-facing products. API maintenance, security updates, and documentation require ongoing resources that many local retailers lack.
+
+Chen acknowledged the challenges but said SubStack's API has already generated unexpected revenue. The shop now charges $50 per month for API access above the free tier's 1,000 requests, and two companies have signed up. He has hired a part-time contractor to monitor the system and respond to technical support requests.
+
+"We're a sandwich shop with API customers," Chen said. "I never thought I'd say that sentence."

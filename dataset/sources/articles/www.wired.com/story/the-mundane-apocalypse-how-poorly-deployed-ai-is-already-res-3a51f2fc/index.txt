@@ -1,0 +1,26 @@
+The Mundane Apocalypse: How Poorly Deployed AI Is Already Reshaping Our Lives
+
+By Rachel Kowalski
+SAN FRANCISCO — January 15, 2025
+
+The alarm bells about artificial general intelligence have been ringing for years, but a growing chorus of technologists and policy researchers argue we're looking in the wrong direction. The real crisis, they say, isn't some hypothetical superintelligence. It's the avalanche of mediocre AI systems being deployed right now by organizations that barely understand what they've built.
+
+Consider what happened at Meridian Health Solutions last fall. The insurance provider implemented what it called an "AI-driven claims optimization system" that processed over 180,000 denial decisions in its first six months. An internal audit obtained by WIRED revealed that the model had been trained on historical claims data spanning 2015 to 2022, a period during which roughly 23 percent of the company's denials were later overturned on appeal. The system wasn't learning to make better decisions. It was learning to replicate bad ones, at scale.
+
+"We're seeing this pattern across industries," says Dr. Marcus Chen, who directs the Applied AI Ethics Lab at Berkshire Institute of Technology. "Organizations are taking systems they don't fully understand, trained on data they haven't properly audited, and deploying them in high-stakes scenarios. The technology itself isn't superintelligent. But the combination of scale, speed, and institutional trust makes it incredibly dangerous."
+
+The problem isn't limited to healthcare. A 2024 survey of 340 companies by the Grayson Center for Technology Policy found that 68 percent had deployed at least one machine learning system in a production environment, but only 31 percent employed anyone with formal training in AI safety or bias detection. Even more troubling: 44 percent of respondents couldn't explain how their models made decisions, describing them simply as "black boxes that work."
+
+Sarah Okonkwo spent 11 years as a software engineer before transitioning to product leadership at a financial services firm. She recalls a meeting where executives pushed to deploy a lending model that had been trained on loan approval data from 2008 to 2018. "I kept asking if anyone had considered what biases might be baked into decisions made during the financial crisis," she says. "The response was basically, 'The AI will figure it out.' That's not how any of this works."
+
+The technical debt accumulates quickly. Unlike a buggy feature that affects individual users, a flawed AI system can propagate errors across millions of decisions before anyone notices something is wrong. When a major retailer deployed a inventory prediction model in 2023, it took three months to discover the system had been consistently over-ordering products that appealed to the demographic profile of its training data annotators, rather than its actual customer base. The company declined to specify its losses but confirmed they exceeded $40 million.
+
+"The sci-fi scenario assumes AI becomes so intelligent it outsmarts us," Chen explains. "But we're already being outsmarted by mediocre AI, because we've abdicated human judgment to systems we treat as infallible. A model doesn't have to be superintelligent to cause massive harm. It just has to be wrong at scale, and trusted anyway."
+
+Regulatory frameworks are struggling to keep pace. The European Union's AI Act focuses heavily on high-risk applications, but critics argue it still lacks mechanisms to audit training data quality or require meaningful human oversight. In the United States, sector-specific regulations remain fragmented, leaving vast gaps in accountability.
+
+What makes this crisis particularly insidious is its invisibility. When an AI system denies your insurance claim, flags your loan application, or prices you out of a service, there's rarely a clear path to appeal or even understand why. The decision emerges from a computational black box, stamped with the authority of algorithmic objectivity.
+
+"We're not worried enough about the boring apocalypse," Okonkwo says. "The one where everything just works a little bit worse, for a lot more people, with no one responsible."
+
+The companies deploying these systems, when pressed, often point to efficiency gains and cost savings. But as Chen notes, efficiency without accuracy isn't optimization. It's just faster failure, dressed up in the language of innovation.

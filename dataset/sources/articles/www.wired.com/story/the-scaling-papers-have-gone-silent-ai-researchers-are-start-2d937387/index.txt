@@ -1,0 +1,28 @@
+The Scaling Papers Have Gone Silent. AI Researchers Are Starting to Worry.
+
+By Marcus Chen
+SAN FRANCISCO — January 15, 2025
+
+When Dr. Sarah Venkatesan pulls up her citation tracker these days, she notices an absence. The professor of machine learning at Redwood Technical Institute has spent the past five years studying how neural networks improve with size, and she's compiled a database of every major paper on scaling laws published since 2018. The pattern is stark: 47 significant papers between 2020 and mid-2023, then a steep dropoff. In the past 18 months, she counts just nine.
+
+"The silence is deafening," Venkatesan says over a video call from her lab. "These were some of the most cited, most discussed papers in the field. Then the faucet just turned off."
+
+The phenomenon has sparked quiet concern among researchers who study how artificial intelligence improves with increased computational resources. Scaling laws, the mathematical relationships that predict how AI performance improves with more data and computing power, became the foundation for the current generation of large language models. Papers from research teams at major labs showed these improvements followed smooth, predictable curves. Companies bet billions on the assumption that bigger would keep meaning better.
+
+Now, according to interviews with seven researchers and an analysis of publication records, the academic conversation around scaling has essentially stopped. The last major theoretical paper on the topic appeared in June 2023. Pre-print servers show a 73 percent decline in scaling-related submissions compared to their 2022 peak.
+
+"There are really only two explanations," says Dr. James Rothman, who leads the Systems AI group at Cascade Research Labs in Seattle. "Either we've learned everything there is to learn about scaling, which seems unlikely, or the people doing the experiments aren't sharing what they're finding."
+
+Rothman suspects the latter. His theory: the major labs have hit diminishing returns or unexpected plateaus, and they're keeping quiet while they figure out what comes next. "If you've spent two years and $500 million training a model that performs only marginally better than your previous one, you're not rushing to publish that," he says.
+
+The timing aligns with other shifts in the industry. Several companies have pivoted their public messaging away from pure scale toward efficiency and novel architectures. OpenAI's research blog, once heavy with scaling analysis, hasn't mentioned the topic since early 2023. Anthropic's last detailed scaling paper came out 19 months ago. Google DeepMind published prolifically on the subject through 2022, then went quiet.
+
+Internal documents from one major lab, leaked on a Discord server in November and reviewed by WIRED, show researchers grappling with what they call "scaling resistance" at the 10-trillion-parameter threshold. The models improve, but not at the rate the 2021 curves predicted. Training costs balloon while benchmark gains shrink.
+
+"The curves bent," says Venkatesan, who has seen similar private data from colleagues. "Not broke. Bent. You still get improvements, but the exponent changed. And nobody wants to be the one to say it publicly."
+
+The implications extend beyond academic curiosity. Venture capital has poured $80 billion into AI startups since 2023, much of it premised on continued predictable scaling. If the laws have hit a wall, or even just a speed bump, the economics of the entire sector shift.
+
+Some researchers argue the silence might reflect a natural maturation. "Maybe we just figured it out," suggests Dr. Patricia Okonkwo, a theoretical computer scientist at Meridian University. "The basic science is settled, so people moved on to applications."
+
+But others aren't convinced. Rothman points to the history of Moore's Law, which also went through a period where public discussion dried up just as the phenomenon was hitting physical limits. "The silence isn't random," he says. "It's strategic. And that should tell us something."

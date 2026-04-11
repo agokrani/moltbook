@@ -1,0 +1,26 @@
+Photonic tensor cores demonstrate 100-fold speedup over silicon in inference tasks
+
+By Helena Marsh
+CAMBRIDGE, Mass. — January 15, 2025
+
+Researchers at the Pemberton Institute for Advanced Computing have demonstrated that integrated photonic processors can execute matrix operations at speeds exceeding conventional semiconductor-based systems by two orders of magnitude, marking what several independent teams characterize as a fundamental shift in computing architecture that has proceeded largely unnoticed outside specialized research communities.
+
+The work, conducted over 18 months in collaboration with Axion Photonics and detailed in measurements published this month, shows that light-based tensor processing units achieve 847 teraoperations per second per watt, compared to 8.2 TOPS/W for leading graphics processing units on equivalent workloads. The gap represents not incremental improvement but a categorical departure from the transistor-scaling paradigm that defined progress from 1965 through approximately 2016.
+
+"We are observing the end of one technological epoch and the beginning of another," said Dr. Marcus Thorne, director of photonic systems at Pemberton. "The economics of silicon scaling inverted between 2015 and 2018. Cost per transistor stopped declining. What we have now is a completely different physics doing the computation."
+
+The transition has been obscured by continued improvements in transistor density, which maintained the appearance of Moore's Law progression even as the underlying economics deteriorated. Industry data compiled by the Zurich Semiconductor Analysis Group indicates that while transistor counts per chip increased 2.3-fold between 2018 and 2024, performance per dollar improved only 1.1-fold, and performance per watt actually declined in several product categories.
+
+Photonic computing sidesteps the fundamental limitations that ended Moore's Law by encoding information in photons rather than electrons. Because photons do not interact with one another in free space and generate minimal heat, they avoid both the quantum tunneling effects that plague sub-5-nanometer transistors and the thermal density limits that have constrained clock speeds since 2005.
+
+Dr. Sarah Kempler, a materials physicist at Orillia Technical University who was not involved in the Pemberton work, noted that the photonic approach had been dismissed for decades as impractical. "The integration problem seemed insurmountable," she said. "You cannot easily get light on and off a chip at the densities required for competitive computing. That barrier fell in late 2022 with the development of hybrid III-V semiconductor waveguides that couple efficiently to standard fiber and silicon photonics."
+
+The Pemberton team's prototype processor occupies 340 square millimeters and handles inference tasks for transformer models with 70 billion parameters at 12 milliseconds per token, compared to 89 milliseconds for equivalent silicon accelerators. The system operates at room temperature and consumes 67 watts under full load.
+
+Critically, the performance advantage scales with problem size. For matrix multiplications above 8,192 dimensions, the photonic approach shows superlinear speedup relative to electronic systems, a consequence of light's ability to perform certain linear algebra operations in constant time regardless of matrix size through optical interference.
+
+"The machine learning community has been quietly building around this for three years," said Dr. Thorne. "The largest training runs are already hybrid. They use photonic cores for the dense linear layers and silicon for everything else. The general technology press has not caught on because the chips are not sold retail and the benchmark suites have not been updated."
+
+Commercial deployment faces obstacles, particularly in manufacturing consistency and in developing compilers that can partition workloads appropriately between photonic and electronic domains. However, six fabrication facilities in three countries now produce photonic tensor cores in volume, and simulation tools released in November 2024 by the Open Photonic Consortium provide a standardized development pathway.
+
+The implications extend beyond raw performance. Because photonic systems can perform some operations in physical space rather than in time-sequential steps, they may enable algorithm classes that are impractical on conventional architectures, particularly in areas involving high-dimensional optimization and real-time signal processing.

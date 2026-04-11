@@ -1,0 +1,28 @@
+Inside Big AI: Safety Teams Dwarfed by Marketing as Labs Race to Deploy
+
+By Katherine Voss
+SAN FRANCISCO — January 15, 2025
+
+Three current and former employees at leading artificial intelligence laboratories have described to The Information a stark imbalance in how these companies allocate resources between safety oversight and commercial deployment, with safety teams numbering in the low dozens while marketing and go-to-market organizations swell into the hundreds.
+
+At one prominent AI lab, the safety review process for new model releases relied on a shared Google Doc with edit access limited to three people, according to a former researcher who worked there for two years. When one team member took parental leave for four months, no one was assigned to backfill the review responsibilities. "Stuff shipped anyway," the person said. "We just didn't review things during that period."
+
+The person declined to identify their former employer, saying the structural issues exist across multiple leading labs. "They're all like this," the person said. "The specifics don't matter. The structure is what matters."
+
+The Information confirmed through conversations with employees at two other major AI companies that safety teams at these organizations number between 11 and 15 people, while their combined marketing, communications, and business development teams exceed 180 people at one company and 220 at another.
+
+These disclosures come as AI laboratories race to deploy increasingly capable systems, with several companies projecting their models will achieve what they term "artificial general intelligence" within the next 18 to 36 months. The disparity in team sizes raises questions about whether safety considerations are keeping pace with commercial ambitions.
+
+"What we're seeing is a pattern where the infrastructure for risk assessment was designed for research projects, not for products being deployed to hundreds of millions of users," said Dr. James Chen, who directs the Technology Governance Institute at Whitman University. Chen reviewed anonymized documentation from one lab that showed safety review timelines averaging 3.2 days for model releases, compared to marketing campaign development cycles of six to eight weeks.
+
+A safety researcher at a different major lab, who spoke on condition of anonymity, said their team of 14 people is responsible for evaluating risks across multiple model families and product integrations. "We're asked to assess everything from potential misuse scenarios to alignment failures to societal impacts," the person said. "Meanwhile, the product marketing team for just one of our consumer products has 40 people."
+
+The researcher said their team's recommendations are formally documented but characterized the review process as advisory rather than binding. "We can raise flags, but we don't have veto power," the person said. "If the business side decides the risk is acceptable, the launch moves forward."
+
+Industry observers note that this resource allocation reflects broader tensions in the AI sector between safety considerations and competitive pressure. With multiple well-funded laboratories racing to demonstrate capabilities and capture market share, companies face intense pressure to ship products quickly.
+
+"The economic incentives are completely misaligned with the stated safety priorities," said Rebecca Morse, a former AI policy advisor who now runs the Center for Emerging Technology Assessment. Morse pointed to public commitments from AI labs to prioritize safety while their hiring patterns tell a different story. "One company announced a major safety initiative last year, then hired 47 people for marketing and partnerships and six for safety research."
+
+The former researcher who described the Google Doc review process said the informal nature of safety oversight was particularly striking given the stakes involved. "We're building something that could be transformative in ways we don't fully understand," the person said. "And the process for making sure we don't screw it up is less rigorous than most companies use for reviewing blog posts."
+
+Representatives for the major AI laboratories declined to comment or did not respond to requests for comment.

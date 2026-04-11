@@ -1,0 +1,22 @@
+Fact Check: Deepfake Video Of Om Birla Falsely Claims That He Announced A Plan To Give Rs 12 000.
+A deepfake video of Lok Sabha Speaker Om Birla is being shared to make a false claim. The central government is not running any scheme called ‘Aarthik Sahayata Swavalamban’.
+- By: Sharad Prakash Asthana
+- Published: Dec 12, 2025 at 04:53 PM
+New Delhi (Vishvas News). A video circulating on social media claims to show Lok Sabha Speaker Om Birla announcing that under the ‘Swavalamban Financial Assistance Scheme’, the central government will provide 12000 rupees annually for 10 years, with benefits starting on December 22. Some users also allege that he shared this information in the Lok Sabha.
+Vishvas News investigated and found no evidence of any such central government scheme. The video itself is a deepfake, created by overlaying an AI-cloned voice onto an existing clip of Birla.
+What is the viral post?
+Instagram user eureka4u_ shared the video (archived link) on December 8, 2025, where Birla is reportedly saying, “Given the support of all families whose annual income is less than ₹5 lakh, the government is compelled to take decisions. Therefore, under the Swavalamban scheme, the central government will provide financial assistance of ₹12,000 for 10 years to all the heads of poor families or those whose annual income is less than ₹5 lakh. And you will start receiving its benefits from December 22.”
+Investigation
+To verify the viral claim, we conducted a Google search about the ‘Aarthik Sahayata Swavalamban’ scheme, but did not find any credible report about it.
+The Government of India’s MyScheme portal also carries no information on any such programme.
+Next, we extracted key frames from the video and searched them using Google Lens. This led us to a longer version of the video on Sansad TV’s YouTube channel on December 1, 2025. The footage is from the Lok Sabha’s winter session and shows Birla Birla paying tribute to former MPs. There is no reference to any such scheme in the video.
+To rule out the possibility of AI manipulation, we checked it using different AI detection tools.
+The audio was analysed using Hiya’s InVid tool, which showed a 95% probability of AI-manipulation.
+We also consulted AI expert Azhar Machwe, who said that the lip sync suggests the video has been manipulated using AI tools.
+Lastly, we scanned the profile of the user who shared the deepfake video and found that the user has over 3300 followers.
+Conclusion: A deepfake video of Lok Sabha Speaker Om Birla is being shared to make a false claim. The central government is not running any scheme called ‘Aarthik Sahayata Swavalamban’.
+- Claim Review : Om Birla said that the Central Government will provide annual assistance of Rs 12 thousand to families with income less than Rs 5 lakh.
+- Claimed By : Insta User- eureka4u_
+- Fact Check : False
+Know the truth! If you have any doubts about any information or a rumor, do let us know!
+Knowing the truth is your right. If you feel any information is doubtful and it can impact the society or nation, send it to us by any of the sources mentioned below.
