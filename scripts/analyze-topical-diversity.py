@@ -162,6 +162,15 @@ def jensen_shannon_divergence(p, q):
     )
 
 
+def top_positive_ids(dist, topn=3):
+    arr = np.asarray(dist, dtype=np.float64)
+    positive = np.flatnonzero(arr > 0)
+    if positive.size == 0:
+        return []
+    ranked = positive[np.argsort(arr[positive])[::-1]]
+    return [int(i) for i in ranked[:topn]]
+
+
 def mean_agent_topic_similarity(posts):
     """Average pairwise topic-distribution similarity across agents."""
     by_agent = defaultdict(list)
@@ -297,9 +306,7 @@ def compute_quartile_metrics(posts, n_topics, n_quartiles):
         else:
             drift_jsd.append(round(float(jensen_shannon_divergence(baseline_mix, quartile_mix)), 4))
 
-        top_topic_ids.append([
-            int(i) for i in quartile_mix.argsort()[-3:][::-1]
-        ])
+        top_topic_ids.append(top_positive_ids(quartile_mix, topn=3))
 
     return {
         'topic-entropy_quartiles': topic_entropy,
@@ -471,15 +478,20 @@ def plot_heatmap(results, metric, output_dir):
     metric_label = metric.replace('-', ' ').title()
     if metric in ('dominant-topic-share', 'agent-topic-sim'):
         cmap = 'RdYlGn_r'
-        vmin, vmax = -0.15, 0.15
+        absmax = float(np.max(np.abs(arr))) if arr.size else 0.0
+        vmax = max(0.15, absmax * 1.05)
+        vmin = -vmax
         subtitle = 'Green = Less Concentration/Convergence | Red = More'
     elif metric == 'drift-jsd':
         cmap = 'Blues'
-        vmin, vmax = 0.0, max(0.15, float(arr.max()) if arr.size else 0.15)
+        vmax = max(0.15, (float(arr.max()) * 1.05) if arr.size else 0.15)
+        vmin = 0.0
         subtitle = 'Darker = Greater drift from Q1'
     else:
         cmap = 'RdYlGn'
-        vmin, vmax = -1.5, 1.5
+        absmax = float(np.max(np.abs(arr))) if arr.size else 0.0
+        vmax = max(0.5, absmax * 1.05)
+        vmin = -vmax
         subtitle = 'Green = More topical diversity | Red = Less'
 
     fig, ax = plt.subplots(figsize=(max(8, len(conditions) * 1.6), len(sets) * 1.0 + 1.5))

@@ -1,0 +1,1798 @@
+{
+  "config": {
+    "embedding_backend": "openrouter",
+    "embedding_model": "qwen/qwen3-embedding-4b",
+    "device": null,
+    "batch_size": 64,
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "openrouter_input_type": null,
+    "openrouter_encoding_format": "float",
+    "request_timeout": 120,
+    "max_retries": 5,
+    "max_request_chars": 100000,
+    "n_clusters": 15,
+    "svd_dim": 128,
+    "n_quartiles": 4,
+    "limit": null,
+    "min_posts": 8,
+    "min_df": 5,
+    "max_df": 0.8,
+    "max_features": 12000,
+    "random_state": 0
+  },
+  "embedding_stats": {
+    "n_input_texts": 3704,
+    "n_embeddings_returned": 3704,
+    "n_requests": 60,
+    "batch_sizes": [
+      64,
+      56,
+      59,
+      57,
+      56,
+      54,
+      64,
+      64,
+      64,
+      56,
+      64,
+      64,
+      64,
+      62,
+      58,
+      60,
+      56,
+      53,
+      49,
+      48,
+      55,
+      61,
+      64,
+      64,
+      60,
+      57,
+      61,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      62
+    ],
+    "min_batch_size": 48,
+    "max_batch_size": 64
+  },
+  "results": [
+    {
+      "set": "OLMo Base",
+      "condition": "dom-agi",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 212,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.037736,
+          0.0,
+          0.132075,
+          0.0,
+          0.0,
+          0.0,
+          0.037736,
+          0.433962,
+          0.207547,
+          0.0,
+          0.132075,
+          0.018868,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.018868,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.169811,
+          0.54717,
+          0.0,
+          0.264151,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.018868,
+          0.0,
+          0.037736,
+          0.0,
+          0.0,
+          0.0,
+          0.188679,
+          0.018868,
+          0.641509,
+          0.0,
+          0.056604,
+          0.037736,
+          0.0,
+          0.0
+        ],
+        [
+          0.245283,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.075472,
+          0.018868,
+          0.0,
+          0.09434,
+          0.566038,
+          0.0,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          8,
+          9,
+          11
+        ],
+        [
+          9,
+          11,
+          8
+        ],
+        [
+          9,
+          7,
+          11
+        ],
+        [
+          12,
+          0,
+          11
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.2298,
+        1.5258,
+        1.6723,
+        1.6728
+      ],
+      "cluster-entropy_delta": -0.557,
+      "effective-clusters_quartiles": [
+        4.6908,
+        2.8794,
+        3.1872,
+        3.1883
+      ],
+      "effective-clusters_delta": -1.5025,
+      "dominant-cluster-share_quartiles": [
+        0.434,
+        0.5472,
+        0.6415,
+        0.566
+      ],
+      "dominant-cluster-share_delta": 0.132,
+      "within-quartile-cosine_quartiles": [
+        0.5272,
+        0.6163,
+        0.5734,
+        0.5577
+      ],
+      "within-quartile-cosine_delta": 0.0305,
+      "agent-embedding-sim_quartiles": [
+        0.8107,
+        0.8458,
+        0.8112,
+        0.762
+      ],
+      "agent-embedding-sim_delta": -0.0487,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.2391,
+        0.3292,
+        0.6279
+      ],
+      "drift-jsd_delta": 0.6279
+    },
+    {
+      "set": "OLMo Base",
+      "condition": "dom-tech",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-dom-tech-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 290,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.013889,
+          0.180556,
+          0.0,
+          0.027778,
+          0.361111,
+          0.041667,
+          0.013889,
+          0.0,
+          0.25,
+          0.0,
+          0.027778,
+          0.0,
+          0.013889,
+          0.0,
+          0.069444
+        ],
+        [
+          0.0,
+          0.027778,
+          0.0,
+          0.0,
+          0.013889,
+          0.0,
+          0.0,
+          0.013889,
+          0.458333,
+          0.416667,
+          0.0,
+          0.041667,
+          0.0,
+          0.0,
+          0.027778
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.013889,
+          0.0,
+          0.0,
+          0.0,
+          0.055556,
+          0.097222,
+          0.652778,
+          0.0,
+          0.111111,
+          0.069444,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.013514,
+          0.013514,
+          0.013514,
+          0.0,
+          0.0,
+          0.175676,
+          0.013514,
+          0.364865,
+          0.0,
+          0.256757,
+          0.135135,
+          0.0,
+          0.013514
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          4,
+          8,
+          1
+        ],
+        [
+          8,
+          9,
+          11
+        ],
+        [
+          9,
+          11,
+          8
+        ],
+        [
+          9,
+          11,
+          7
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.4791,
+        1.6918,
+        1.6654,
+        2.2849
+      ],
+      "cluster-entropy_delta": -0.1942,
+      "effective-clusters_quartiles": [
+        5.5754,
+        3.2305,
+        3.172,
+        4.8733
+      ],
+      "effective-clusters_delta": -0.7021,
+      "dominant-cluster-share_quartiles": [
+        0.3611,
+        0.4583,
+        0.6528,
+        0.3649
+      ],
+      "dominant-cluster-share_delta": 0.0038,
+      "within-quartile-cosine_quartiles": [
+        0.366,
+        0.5626,
+        0.5653,
+        0.5076
+      ],
+      "within-quartile-cosine_delta": 0.1416,
+      "agent-embedding-sim_quartiles": [
+        0.6985,
+        0.8834,
+        0.8946,
+        0.8697
+      ],
+      "agent-embedding-sim_delta": 0.1712,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.5244,
+        0.8053,
+        0.8409
+      ],
+      "drift-jsd_delta": 0.8409
+    },
+    {
+      "set": "OLMo Base",
+      "condition": "mag0",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 382,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.147368,
+          0.115789,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.021053,
+          0.042105,
+          0.0,
+          0.0,
+          0.115789,
+          0.515789,
+          0.010526,
+          0.031579
+        ],
+        [
+          0.231579,
+          0.115789,
+          0.0,
+          0.010526,
+          0.0,
+          0.010526,
+          0.0,
+          0.010526,
+          0.010526,
+          0.021053,
+          0.0,
+          0.157895,
+          0.431579,
+          0.0,
+          0.0
+        ],
+        [
+          0.157895,
+          0.305263,
+          0.210526,
+          0.010526,
+          0.0,
+          0.0,
+          0.010526,
+          0.073684,
+          0.136842,
+          0.031579,
+          0.010526,
+          0.010526,
+          0.010526,
+          0.031579,
+          0.0
+        ],
+        [
+          0.092784,
+          0.092784,
+          0.041237,
+          0.020619,
+          0.010309,
+          0.010309,
+          0.0,
+          0.195876,
+          0.051546,
+          0.113402,
+          0.0,
+          0.164948,
+          0.154639,
+          0.051546,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          12,
+          0,
+          1
+        ],
+        [
+          12,
+          0,
+          11
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          7,
+          11,
+          12
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.1563,
+        2.1864,
+        2.7468,
+        3.1809
+      ],
+      "cluster-entropy_delta": 1.0246,
+      "effective-clusters_quartiles": [
+        4.4578,
+        4.5518,
+        6.7123,
+        9.0686
+      ],
+      "effective-clusters_delta": 4.6108,
+      "dominant-cluster-share_quartiles": [
+        0.5158,
+        0.4316,
+        0.3053,
+        0.1959
+      ],
+      "dominant-cluster-share_delta": -0.3199,
+      "within-quartile-cosine_quartiles": [
+        0.3944,
+        0.3793,
+        0.2402,
+        0.3239
+      ],
+      "within-quartile-cosine_delta": -0.0705,
+      "agent-embedding-sim_quartiles": [
+        0.8597,
+        0.7843,
+        0.6375,
+        0.6767
+      ],
+      "agent-embedding-sim_delta": -0.183,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.0626,
+        0.4818,
+        0.2659
+      ],
+      "drift-jsd_delta": 0.2659
+    },
+    {
+      "set": "OLMo Base",
+      "condition": "mag1",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag1-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 227,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.285714,
+          0.035714,
+          0.053571,
+          0.0,
+          0.0,
+          0.0,
+          0.303571,
+          0.0,
+          0.196429,
+          0.0,
+          0.089286,
+          0.0,
+          0.035714,
+          0.0
+        ],
+        [
+          0.0,
+          0.017857,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.928571,
+          0.017857,
+          0.035714,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.017857,
+          0.017857,
+          0.017857,
+          0.0,
+          0.017857,
+          0.0,
+          0.892857,
+          0.017857,
+          0.017857,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.016949,
+          0.0,
+          0.050847,
+          0.0,
+          0.0,
+          0.0,
+          0.694915,
+          0.050847,
+          0.135593,
+          0.0,
+          0.033898,
+          0.016949,
+          0.0,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          7,
+          1,
+          9
+        ],
+        [
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          9,
+          8
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.3805,
+        0.4784,
+        0.7682,
+        1.5577
+      ],
+      "cluster-entropy_delta": -0.8228,
+      "effective-clusters_quartiles": [
+        5.2071,
+        1.3932,
+        1.7031,
+        2.9439
+      ],
+      "effective-clusters_delta": -2.2632,
+      "dominant-cluster-share_quartiles": [
+        0.3036,
+        0.9286,
+        0.8929,
+        0.6949
+      ],
+      "dominant-cluster-share_delta": 0.3913,
+      "within-quartile-cosine_quartiles": [
+        0.343,
+        0.6717,
+        0.612,
+        0.6144
+      ],
+      "within-quartile-cosine_delta": 0.2714,
+      "agent-embedding-sim_quartiles": [
+        0.7175,
+        0.9221,
+        0.8769,
+        0.894
+      ],
+      "agent-embedding-sim_delta": 0.1765,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.3829,
+        0.3643,
+        0.244
+      ],
+      "drift-jsd_delta": 0.244
+    },
+    {
+      "set": "OLMo Base",
+      "condition": "mag25",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 225,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.107143,
+          0.428571,
+          0.035714,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.017857,
+          0.035714,
+          0.035714,
+          0.0,
+          0.142857,
+          0.196429,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.071429,
+          0.0,
+          0.0,
+          0.785714,
+          0.142857,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.017857,
+          0.017857,
+          0.125,
+          0.0,
+          0.0,
+          0.0,
+          0.303571,
+          0.196429,
+          0.267857,
+          0.0,
+          0.053571,
+          0.0,
+          0.017857,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.122807,
+          0.052632,
+          0.017544,
+          0.0,
+          0.0,
+          0.54386,
+          0.087719,
+          0.140351,
+          0.0,
+          0.0,
+          0.0,
+          0.035088,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          1,
+          12,
+          11
+        ],
+        [
+          11,
+          12,
+          8
+        ],
+        [
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          9,
+          2
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.3502,
+        0.9464,
+        2.4047,
+        2.0505
+      ],
+      "cluster-entropy_delta": -0.2997,
+      "effective-clusters_quartiles": [
+        5.0988,
+        1.927,
+        5.2951,
+        4.1425
+      ],
+      "effective-clusters_delta": -0.9563,
+      "dominant-cluster-share_quartiles": [
+        0.4286,
+        0.7857,
+        0.3036,
+        0.5439
+      ],
+      "dominant-cluster-share_delta": 0.1153,
+      "within-quartile-cosine_quartiles": [
+        0.2556,
+        0.5032,
+        0.4678,
+        0.3994
+      ],
+      "within-quartile-cosine_delta": 0.1438,
+      "agent-embedding-sim_quartiles": [
+        0.6028,
+        0.7919,
+        0.8112,
+        0.6584
+      ],
+      "agent-embedding-sim_delta": 0.0556,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.4967,
+        0.6373,
+        0.7643
+      ],
+      "drift-jsd_delta": 0.7643
+    },
+    {
+      "set": "OLMo Base",
+      "condition": "mag5",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-base/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 249,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.016129,
+          0.258065,
+          0.129032,
+          0.016129,
+          0.0,
+          0.0,
+          0.0,
+          0.290323,
+          0.129032,
+          0.032258,
+          0.0,
+          0.096774,
+          0.0,
+          0.032258,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.096774,
+          0.112903,
+          0.0,
+          0.0,
+          0.0,
+          0.564516,
+          0.064516,
+          0.145161,
+          0.0,
+          0.0,
+          0.016129,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.016129,
+          0.564516,
+          0.032258,
+          0.0,
+          0.0,
+          0.0,
+          0.290323,
+          0.0,
+          0.096774,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.31746,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.015873,
+          0.0,
+          0.666667,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          7,
+          1,
+          2
+        ],
+        [
+          7,
+          9,
+          3
+        ],
+        [
+          2,
+          7,
+          9
+        ],
+        [
+          13,
+          2,
+          11
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.6224,
+        1.9023,
+        1.5656,
+        1.0104
+      ],
+      "cluster-entropy_delta": -1.612,
+      "effective-clusters_quartiles": [
+        6.1579,
+        3.7382,
+        2.96,
+        2.0144
+      ],
+      "effective-clusters_delta": -4.1435,
+      "dominant-cluster-share_quartiles": [
+        0.2903,
+        0.5645,
+        0.5645,
+        0.6667
+      ],
+      "dominant-cluster-share_delta": 0.3764,
+      "within-quartile-cosine_quartiles": [
+        0.2579,
+        0.5201,
+        0.4093,
+        0.4173
+      ],
+      "within-quartile-cosine_delta": 0.1594,
+      "agent-embedding-sim_quartiles": [
+        0.6814,
+        0.8326,
+        0.7167,
+        0.7925
+      ],
+      "agent-embedding-sim_delta": 0.1111,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.309,
+        0.3505,
+        0.679
+      ],
+      "drift-jsd_delta": 0.679
+    },
+    {
+      "set": "OLMo Instruct",
+      "condition": "dom-agi",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 284,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.887324,
+          0.0,
+          0.070423,
+          0.0,
+          0.0,
+          0.014085,
+          0.0,
+          0.028169,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.042254,
+          0.0,
+          0.0,
+          0.0,
+          0.859155,
+          0.0,
+          0.0,
+          0.028169,
+          0.0,
+          0.028169,
+          0.0,
+          0.0,
+          0.0,
+          0.042254
+        ],
+        [
+          0.0,
+          0.014085,
+          0.0,
+          0.0,
+          0.014085,
+          0.366197,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.15493,
+          0.0,
+          0.0,
+          0.0,
+          0.450704
+        ],
+        [
+          0.0,
+          0.014085,
+          0.0,
+          0.084507,
+          0.056338,
+          0.15493,
+          0.112676,
+          0.0,
+          0.0,
+          0.0,
+          0.056338,
+          0.0,
+          0.0,
+          0.0,
+          0.521127
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          3,
+          5,
+          10
+        ],
+        [
+          5,
+          14,
+          1
+        ],
+        [
+          14,
+          5,
+          10
+        ],
+        [
+          14,
+          5,
+          6
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        0.6543,
+        0.864,
+        1.639,
+        2.1172
+      ],
+      "cluster-entropy_delta": 1.4629,
+      "effective-clusters_quartiles": [
+        1.5738,
+        1.8201,
+        3.1144,
+        4.3384
+      ],
+      "effective-clusters_delta": 2.7646,
+      "dominant-cluster-share_quartiles": [
+        0.8873,
+        0.8592,
+        0.4507,
+        0.5211
+      ],
+      "dominant-cluster-share_delta": -0.3662,
+      "within-quartile-cosine_quartiles": [
+        0.6454,
+        0.6267,
+        0.5927,
+        0.5045
+      ],
+      "within-quartile-cosine_delta": -0.1409,
+      "agent-embedding-sim_quartiles": [
+        0.912,
+        0.9217,
+        0.8992,
+        0.902
+      ],
+      "agent-embedding-sim_delta": -0.01,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.7725,
+        0.8041,
+        0.6531
+      ],
+      "drift-jsd_delta": 0.6531
+    },
+    {
+      "set": "OLMo Instruct",
+      "condition": "dom-tech",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-dom-tech-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 258,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.109375,
+          0.0,
+          0.484375,
+          0.265625,
+          0.03125,
+          0.03125,
+          0.0,
+          0.0625,
+          0.0,
+          0.015625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0625,
+          0.0,
+          0.046875,
+          0.65625,
+          0.03125,
+          0.03125,
+          0.0,
+          0.015625,
+          0.0,
+          0.0625,
+          0.0,
+          0.0,
+          0.0,
+          0.09375
+        ],
+        [
+          0.0,
+          0.03125,
+          0.0,
+          0.046875,
+          0.375,
+          0.234375,
+          0.171875,
+          0.0,
+          0.0,
+          0.0,
+          0.015625,
+          0.0,
+          0.0,
+          0.0,
+          0.125
+        ],
+        [
+          0.0,
+          0.015152,
+          0.0,
+          0.0,
+          0.015152,
+          0.0,
+          0.969697,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          4,
+          14,
+          1
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          6,
+          4,
+          1
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.02,
+        1.8322,
+        2.2898,
+        0.2262
+      ],
+      "cluster-entropy_delta": -1.7938,
+      "effective-clusters_quartiles": [
+        4.0559,
+        3.5607,
+        4.89,
+        1.1698
+      ],
+      "effective-clusters_delta": -2.8861,
+      "dominant-cluster-share_quartiles": [
+        0.4844,
+        0.6562,
+        0.375,
+        0.9697
+      ],
+      "dominant-cluster-share_delta": 0.4853,
+      "within-quartile-cosine_quartiles": [
+        0.495,
+        0.5023,
+        0.4792,
+        0.636
+      ],
+      "within-quartile-cosine_delta": 0.141,
+      "agent-embedding-sim_quartiles": [
+        0.794,
+        0.77,
+        0.8498,
+        0.8903
+      ],
+      "agent-embedding-sim_delta": 0.0963,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.2862,
+        0.3704,
+        0.8239
+      ],
+      "drift-jsd_delta": 0.8239
+    },
+    {
+      "set": "OLMo Instruct",
+      "condition": "mag0",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 297,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.013514,
+          0.594595,
+          0.013514,
+          0.324324,
+          0.0,
+          0.040541,
+          0.0,
+          0.013514,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.013514,
+          0.0,
+          0.027027,
+          0.864865,
+          0.0,
+          0.027027,
+          0.0,
+          0.0,
+          0.0,
+          0.027027,
+          0.0,
+          0.0,
+          0.0,
+          0.040541
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.040541,
+          0.878378,
+          0.0,
+          0.067568,
+          0.0,
+          0.0,
+          0.0,
+          0.013514,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.013333,
+          0.0,
+          0.693333,
+          0.093333,
+          0.0,
+          0.2,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          4,
+          6,
+          8
+        ],
+        [
+          4,
+          14,
+          10
+        ],
+        [
+          4,
+          6,
+          3
+        ],
+        [
+          3,
+          6,
+          4
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        1.412,
+        0.8749,
+        0.6984,
+        1.2331
+      ],
+      "cluster-entropy_delta": -0.1789,
+      "effective-clusters_quartiles": [
+        2.6611,
+        1.8339,
+        1.6227,
+        2.3507
+      ],
+      "effective-clusters_delta": -0.3104,
+      "dominant-cluster-share_quartiles": [
+        0.5946,
+        0.8649,
+        0.8784,
+        0.6933
+      ],
+      "dominant-cluster-share_delta": 0.0987,
+      "within-quartile-cosine_quartiles": [
+        0.5606,
+        0.6021,
+        0.5995,
+        0.554
+      ],
+      "within-quartile-cosine_delta": -0.0066,
+      "agent-embedding-sim_quartiles": [
+        0.8891,
+        0.8622,
+        0.9054,
+        0.9022
+      ],
+      "agent-embedding-sim_delta": 0.0131,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.1825,
+        0.118,
+        0.5033
+      ],
+      "drift-jsd_delta": 0.5033
+    },
+    {
+      "set": "OLMo Instruct",
+      "condition": "mag1",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag1-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 470,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.068376,
+          0.0,
+          0.068376,
+          0.307692,
+          0.196581,
+          0.034188,
+          0.0,
+          0.068376,
+          0.0,
+          0.059829,
+          0.0,
+          0.0,
+          0.0,
+          0.196581
+        ],
+        [
+          0.0,
+          0.008547,
+          0.0,
+          0.008547,
+          0.162393,
+          0.188034,
+          0.0,
+          0.0,
+          0.034188,
+          0.0,
+          0.247863,
+          0.0,
+          0.0,
+          0.0,
+          0.350427
+        ],
+        [
+          0.0,
+          0.008547,
+          0.0,
+          0.068376,
+          0.0,
+          0.641026,
+          0.008547,
+          0.0,
+          0.0,
+          0.0,
+          0.128205,
+          0.0,
+          0.0,
+          0.0,
+          0.145299
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.084034,
+          0.02521,
+          0.663866,
+          0.0,
+          0.0,
+          0.016807,
+          0.0,
+          0.168067,
+          0.0,
+          0.0,
+          0.0,
+          0.042017
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          4,
+          14,
+          5
+        ],
+        [
+          14,
+          10,
+          5
+        ],
+        [
+          5,
+          14,
+          10
+        ],
+        [
+          5,
+          10,
+          3
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.6494,
+        2.1921,
+        1.5776,
+        1.5501
+      ],
+      "cluster-entropy_delta": -1.0993,
+      "effective-clusters_quartiles": [
+        6.2741,
+        4.5696,
+        2.9848,
+        2.9284
+      ],
+      "effective-clusters_delta": -3.3457,
+      "dominant-cluster-share_quartiles": [
+        0.3077,
+        0.3504,
+        0.641,
+        0.6639
+      ],
+      "dominant-cluster-share_delta": 0.3562,
+      "within-quartile-cosine_quartiles": [
+        0.5149,
+        0.5819,
+        0.6096,
+        0.6276
+      ],
+      "within-quartile-cosine_delta": 0.1127,
+      "agent-embedding-sim_quartiles": [
+        0.8796,
+        0.8899,
+        0.9488,
+        0.9536
+      ],
+      "agent-embedding-sim_delta": 0.074,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.1364,
+        0.3146,
+        0.3211
+      ],
+      "drift-jsd_delta": 0.3211
+    },
+    {
+      "set": "OLMo Instruct",
+      "condition": "mag25",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 351,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.126437,
+          0.0,
+          0.068966,
+          0.034483,
+          0.333333,
+          0.0,
+          0.0,
+          0.413793,
+          0.0,
+          0.011494,
+          0.0,
+          0.0,
+          0.0,
+          0.011494
+        ],
+        [
+          0.0,
+          0.011494,
+          0.0,
+          0.022989,
+          0.413793,
+          0.045977,
+          0.034483,
+          0.0,
+          0.0,
+          0.0,
+          0.091954,
+          0.0,
+          0.0,
+          0.0,
+          0.37931
+        ],
+        [
+          0.0,
+          0.08046,
+          0.0,
+          0.137931,
+          0.149425,
+          0.045977,
+          0.103448,
+          0.0,
+          0.022989,
+          0.0,
+          0.137931,
+          0.0,
+          0.0,
+          0.0,
+          0.321839
+        ],
+        [
+          0.0,
+          0.022222,
+          0.0,
+          0.233333,
+          0.255556,
+          0.011111,
+          0.122222,
+          0.0,
+          0.033333,
+          0.0,
+          0.044444,
+          0.0,
+          0.0,
+          0.0,
+          0.277778
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          8,
+          5,
+          1
+        ],
+        [
+          4,
+          14,
+          10
+        ],
+        [
+          14,
+          4,
+          3
+        ],
+        [
+          14,
+          4,
+          3
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.014,
+        1.9448,
+        2.6851,
+        2.4342
+      ],
+      "cluster-entropy_delta": 0.4202,
+      "effective-clusters_quartiles": [
+        4.039,
+        3.8499,
+        6.4313,
+        5.4048
+      ],
+      "effective-clusters_delta": 1.3658,
+      "dominant-cluster-share_quartiles": [
+        0.4138,
+        0.4138,
+        0.3218,
+        0.2778
+      ],
+      "dominant-cluster-share_delta": -0.136,
+      "within-quartile-cosine_quartiles": [
+        0.5293,
+        0.5454,
+        0.4631,
+        0.4382
+      ],
+      "within-quartile-cosine_delta": -0.0911,
+      "agent-embedding-sim_quartiles": [
+        0.8855,
+        0.8109,
+        0.8545,
+        0.8398
+      ],
+      "agent-embedding-sim_delta": -0.0457,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.682,
+        0.5099,
+        0.585
+      ],
+      "drift-jsd_delta": 0.585
+    },
+    {
+      "set": "OLMo Instruct",
+      "condition": "mag5",
+      "directory": "/scratch/anangia/moltbook/results/base-model-olmo3-32b-instruct/bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "n_posts": 459,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.078947,
+          0.0,
+          0.745614,
+          0.035088,
+          0.04386,
+          0.017544,
+          0.0,
+          0.008772,
+          0.0,
+          0.061404,
+          0.0,
+          0.0,
+          0.0,
+          0.008772
+        ],
+        [
+          0.0,
+          0.017544,
+          0.0,
+          0.0,
+          0.0,
+          0.04386,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.921053,
+          0.0,
+          0.0,
+          0.0,
+          0.017544
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.008772,
+          0.035088,
+          0.096491,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.754386,
+          0.0,
+          0.0,
+          0.0,
+          0.105263
+        ],
+        [
+          0.0,
+          0.008547,
+          0.0,
+          0.0,
+          0.025641,
+          0.042735,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.846154,
+          0.0,
+          0.0,
+          0.0,
+          0.076923
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          3,
+          1,
+          10
+        ],
+        [
+          10,
+          5,
+          14
+        ],
+        [
+          10,
+          14,
+          5
+        ],
+        [
+          10,
+          14,
+          5
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        1.4418,
+        0.5118,
+        1.2037,
+        0.8772
+      ],
+      "cluster-entropy_delta": -0.5646,
+      "effective-clusters_quartiles": [
+        2.7165,
+        1.4258,
+        2.3032,
+        1.8368
+      ],
+      "effective-clusters_delta": -0.8797,
+      "dominant-cluster-share_quartiles": [
+        0.7456,
+        0.9211,
+        0.7544,
+        0.8462
+      ],
+      "dominant-cluster-share_delta": 0.1006,
+      "within-quartile-cosine_quartiles": [
+        0.5521,
+        0.7136,
+        0.6806,
+        0.69
+      ],
+      "within-quartile-cosine_delta": 0.1379,
+      "agent-embedding-sim_quartiles": [
+        0.9356,
+        0.9077,
+        0.9318,
+        0.9269
+      ],
+      "agent-embedding-sim_delta": -0.0087,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.7454,
+        0.6881,
+        0.7242
+      ],
+      "drift-jsd_delta": 0.7242
+    }
+  ]
+}
