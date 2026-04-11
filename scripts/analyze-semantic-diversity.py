@@ -501,8 +501,10 @@ def cluster_embeddings(embeddings, n_clusters, random_state):
 
 def compute_quartile_metrics(posts, n_clusters, n_quartiles):
     quartiles = split_quartiles(posts, n_quartiles)
+    max_entropy = math.log2(n_clusters) if n_clusters > 1 else 1.0
 
     cluster_entropy = []
+    cluster_entropy_norm = []
     effective_clusters = []
     dominant_cluster_share = []
     within_quartile_cosine = []
@@ -523,6 +525,7 @@ def compute_quartile_metrics(posts, n_clusters, n_quartiles):
 
         h = float(scipy_entropy(dist, base=2))
         cluster_entropy.append(round(h, 4))
+        cluster_entropy_norm.append(round(float(h / max_entropy) if max_entropy > 0 else 0.0, 4))
         effective_clusters.append(round(float(2 ** h), 4))
         dominant_cluster_share.append(round(float(dist.max()), 4))
         within_quartile_cosine.append(round(mean_pairwise_cosine([p['embedding'] for p in q_posts]), 4))
@@ -536,6 +539,7 @@ def compute_quartile_metrics(posts, n_clusters, n_quartiles):
 
     return {
         'cluster-entropy_quartiles': cluster_entropy,
+        'cluster-entropy-norm_quartiles': cluster_entropy_norm,
         'effective-clusters_quartiles': effective_clusters,
         'dominant-cluster-share_quartiles': dominant_cluster_share,
         'within-quartile-cosine_quartiles': within_quartile_cosine,
@@ -551,6 +555,7 @@ def analyze_experiments(experiments, n_clusters, n_quartiles):
     results = []
     metrics = [
         'cluster-entropy',
+        'cluster-entropy-norm',
         'effective-clusters',
         'dominant-cluster-share',
         'within-quartile-cosine',
@@ -691,6 +696,12 @@ def plot_heatmap(results, metric, output_dir):
         vmax = max(0.15, (float(arr.max()) * 1.05) if arr.size else 0.15)
         vmin = 0.0
         subtitle = 'Darker = Greater drift from Q1'
+    elif metric == 'cluster-entropy-norm':
+        cmap = 'RdYlGn'
+        absmax = float(np.max(np.abs(arr))) if arr.size else 0.0
+        vmax = max(0.05, absmax * 1.05)
+        vmin = -vmax
+        subtitle = 'Green = More normalized semantic diversity | Red = Less'
     else:
         cmap = 'RdYlGn'
         absmax = float(np.max(np.abs(arr))) if arr.size else 0.0
@@ -877,6 +888,7 @@ def main():
 
     metrics = [
         'cluster-entropy',
+        'cluster-entropy-norm',
         'effective-clusters',
         'dominant-cluster-share',
         'within-quartile-cosine',

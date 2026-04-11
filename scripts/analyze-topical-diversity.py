@@ -279,8 +279,10 @@ def fit_topic_model(docs, n_topics, min_df, max_df, max_features, random_state):
 def compute_quartile_metrics(posts, n_topics, n_quartiles):
     """Compute topical metrics per quartile for a single experiment."""
     quartiles = split_quartiles(posts, n_quartiles)
+    max_entropy = math.log2(n_topics) if n_topics > 1 else 1.0
 
     topic_entropy = []
+    topic_entropy_norm = []
     effective_topics = []
     dominant_topic_share = []
     agent_topic_sim = []
@@ -296,6 +298,7 @@ def compute_quartile_metrics(posts, n_topics, n_quartiles):
 
         h = float(scipy_entropy(quartile_mix, base=2))
         topic_entropy.append(round(h, 4))
+        topic_entropy_norm.append(round(float(h / max_entropy) if max_entropy > 0 else 0.0, 4))
         effective_topics.append(round(float(2 ** h), 4))
         dominant_topic_share.append(round(float(quartile_mix.max()), 4))
         agent_topic_sim.append(round(mean_agent_topic_similarity(q_posts), 4))
@@ -310,6 +313,7 @@ def compute_quartile_metrics(posts, n_topics, n_quartiles):
 
     return {
         'topic-entropy_quartiles': topic_entropy,
+        'topic-entropy-norm_quartiles': topic_entropy_norm,
         'effective-topics_quartiles': effective_topics,
         'dominant-topic-share_quartiles': dominant_topic_share,
         'agent-topic-sim_quartiles': agent_topic_sim,
@@ -325,6 +329,7 @@ def analyze_experiments(experiments, n_topics, n_quartiles):
     results = []
     metric_names = [
         'topic-entropy',
+        'topic-entropy-norm',
         'effective-topics',
         'dominant-topic-share',
         'agent-topic-sim',
@@ -487,6 +492,12 @@ def plot_heatmap(results, metric, output_dir):
         vmax = max(0.15, (float(arr.max()) * 1.05) if arr.size else 0.15)
         vmin = 0.0
         subtitle = 'Darker = Greater drift from Q1'
+    elif metric == 'topic-entropy-norm':
+        cmap = 'RdYlGn'
+        absmax = float(np.max(np.abs(arr))) if arr.size else 0.0
+        vmax = max(0.05, absmax * 1.05)
+        vmin = -vmax
+        subtitle = 'Green = More normalized topical diversity | Red = Less'
     else:
         cmap = 'RdYlGn'
         absmax = float(np.max(np.abs(arr))) if arr.size else 0.0
@@ -623,6 +634,7 @@ def main():
 
     metrics = [
         'topic-entropy',
+        'topic-entropy-norm',
         'effective-topics',
         'dominant-topic-share',
         'agent-topic-sim',
