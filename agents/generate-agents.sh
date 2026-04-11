@@ -142,6 +142,7 @@ for i in $(seq 1 "$NUM_AGENTS"); do
       OPENROUTER_MODEL: \${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
       ANTHROPIC_API_KEY: \${ANTHROPIC_API_KEY:-}
       OPENAI_API_KEY: \${OPENAI_API_KEY:-}
+      OPENAI_MODEL: \${OPENAI_MODEL:-gpt-5-nano}
       HEARTBEAT_INTERVAL: "$heartbeat"
     volumes:
       - civiclens_agent${i}_data:/root/.openclaw

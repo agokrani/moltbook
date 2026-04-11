@@ -32,6 +32,33 @@
 
 set -euo pipefail
 
+resolve_repo_dir() {
+  local candidate=""
+
+  for candidate in \
+    "${MOLTBOOK_REPO_DIR:-}" \
+    "${SLURM_SUBMIT_DIR:-}" \
+    "$(pwd)" \
+    "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; do
+    [ -z "$candidate" ] && continue
+    if [ -f "$candidate/alliance/slurm-experiment.sh" ] && [ -f "$candidate/moltbook-api/src/app.js" ]; then
+      printf '%s\n' "$candidate"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+if ! REPO_DIR="$(resolve_repo_dir)"; then
+  echo "[ERROR] Could not resolve MoltBook repo root."
+  echo "        Tried MOLTBOOK_REPO_DIR, SLURM_SUBMIT_DIR, pwd, and script directory."
+  echo "        Submit from the repo root or export MOLTBOOK_REPO_DIR=/home/anangia/moltbook."
+  exit 1
+fi
+
+SCRIPT_DIR="$REPO_DIR/alliance"
+
 # ============================================
 # Configuration
 # ============================================
@@ -53,6 +80,9 @@ _EXPORT_DURATION="${EXPERIMENT_DURATION:-}"
 _EXPORT_CONDITION="${CONDITION:-}"
 _EXPORT_OPENROUTER_MODEL="${OPENROUTER_MODEL:-}"
 _EXPORT_OPENROUTER_API_KEY="${OPENROUTER_API_KEY:-}"
+_EXPORT_OPENAI_MODEL="${OPENAI_MODEL:-}"
+_EXPORT_OPENAI_API_KEY="${OPENAI_API_KEY:-}"
+_EXPORT_MODEL_PROVIDER="${MODEL_PROVIDER:-}"
 _EXPORT_BASE_MODEL_MODE="${BASE_MODEL_MODE:-}"
 _EXPORT_BASE_MODEL_API_URL="${BASE_MODEL_API_URL:-}"
 _EXPORT_BASE_MODEL_API_KEY="${BASE_MODEL_API_KEY:-}"
@@ -60,6 +90,9 @@ _EXPORT_BASE_MODEL="${BASE_MODEL:-}"
 _EXPORT_OUT_DIR="${OUT_DIR:-}"
 _EXPORT_EXP_PREFIX="${EXP_PREFIX:-}"
 _EXPORT_BASE_MODEL_CHAT_MODE="${BASE_MODEL_CHAT_MODE:-}"
+_EXPORT_WORLD_POSTS_DIR="${WORLD_POSTS_DIR:-}"
+_EXPORT_WORLD_POSTS_VARIANT="${WORLD_POSTS_VARIANT:-}"
+_EXPORT_ENABLE_SOURCE_URL="${ENABLE_SOURCE_URL:-}"
 
 # Load user config
 if [ -f "$CONFIG_DIR/.env" ]; then
@@ -79,6 +112,9 @@ fi
 [ -n "$_EXPORT_CONDITION" ] && CONDITION="$_EXPORT_CONDITION"
 [ -n "$_EXPORT_OPENROUTER_MODEL" ] && OPENROUTER_MODEL="$_EXPORT_OPENROUTER_MODEL"
 [ -n "$_EXPORT_OPENROUTER_API_KEY" ] && OPENROUTER_API_KEY="$_EXPORT_OPENROUTER_API_KEY"
+[ -n "$_EXPORT_OPENAI_MODEL" ] && OPENAI_MODEL="$_EXPORT_OPENAI_MODEL"
+[ -n "$_EXPORT_OPENAI_API_KEY" ] && OPENAI_API_KEY="$_EXPORT_OPENAI_API_KEY"
+[ -n "$_EXPORT_MODEL_PROVIDER" ] && MODEL_PROVIDER="$_EXPORT_MODEL_PROVIDER"
 [ -n "$_EXPORT_BASE_MODEL_MODE" ] && BASE_MODEL_MODE="$_EXPORT_BASE_MODEL_MODE"
 [ -n "$_EXPORT_BASE_MODEL_API_URL" ] && BASE_MODEL_API_URL="$_EXPORT_BASE_MODEL_API_URL"
 [ -n "$_EXPORT_BASE_MODEL_API_KEY" ] && BASE_MODEL_API_KEY="$_EXPORT_BASE_MODEL_API_KEY"
@@ -86,6 +122,9 @@ fi
 [ -n "$_EXPORT_OUT_DIR" ] && OUT_DIR="$_EXPORT_OUT_DIR"
 [ -n "$_EXPORT_EXP_PREFIX" ] && EXP_PREFIX="$_EXPORT_EXP_PREFIX"
 [ -n "$_EXPORT_BASE_MODEL_CHAT_MODE" ] && BASE_MODEL_CHAT_MODE="$_EXPORT_BASE_MODEL_CHAT_MODE"
+[ -n "$_EXPORT_WORLD_POSTS_DIR" ] && WORLD_POSTS_DIR="$_EXPORT_WORLD_POSTS_DIR"
+[ -n "$_EXPORT_WORLD_POSTS_VARIANT" ] && WORLD_POSTS_VARIANT="$_EXPORT_WORLD_POSTS_VARIANT"
+[ -n "$_EXPORT_ENABLE_SOURCE_URL" ] && ENABLE_SOURCE_URL="$_EXPORT_ENABLE_SOURCE_URL"
 
 # Defaults (only if still unset)
 NUM_AGENTS="${NUM_AGENTS:-10}"
@@ -105,6 +144,8 @@ BASE_MODEL="${BASE_MODEL:-}"  # e.g. Qwen/Qwen3.5-35B-A3B-Base
 BASE_MODEL_CHAT_MODE="${BASE_MODEL_CHAT_MODE:-completions}"
 CONTENT_GEN_MAX_ATTEMPTS="${CONTENT_GEN_MAX_ATTEMPTS:-1}"
 CONTENT_TOKEN_SECRET="${CONTENT_TOKEN_SECRET:-experiment-hmac-secret-2026}"
+MODEL_PROVIDER="${MODEL_PROVIDER:-auto}"
+ENABLE_SOURCE_URL="${ENABLE_SOURCE_URL:-false}"
 # Use base-model heartbeat when in base model mode
 if [ "$BASE_MODEL_MODE" = "true" ]; then
   HEARTBEAT_FILE="HEARTBEAT-base-model.md"
@@ -115,22 +156,65 @@ fi
 # Entropy-collapse condition support (set via env before sbatch)
 # CONDITION: mag0, mag1, mag5, mag25, dom-agi, dom-tech, het-dual, het-multi, or empty for no seeding
 CONDITION="${CONDITION:-}"
-WORLD_POSTS_DIR="$CONFIG_DIR/world-posts"
+WORLD_POSTS_DIR="${WORLD_POSTS_DIR:-$CONFIG_DIR/world-posts}"
+WORLD_POSTS_VARIANT="${WORLD_POSTS_VARIANT:-}"
+
+case "$MODEL_PROVIDER" in
+  auto|"") ;;
+  openai)
+    unset OPENROUTER_API_KEY OPENROUTER_MODEL
+    if [ -z "${OPENAI_API_KEY:-}" ]; then
+      echo "[ERROR] MODEL_PROVIDER=openai but OPENAI_API_KEY is not set"
+      exit 1
+    fi
+    ;;
+  openrouter)
+    unset OPENAI_API_KEY OPENAI_MODEL
+    if [ -z "${OPENROUTER_API_KEY:-}" ]; then
+      echo "[ERROR] MODEL_PROVIDER=openrouter but OPENROUTER_API_KEY is not set"
+      exit 1
+    fi
+    ;;
+  anthropic)
+    unset OPENROUTER_API_KEY OPENROUTER_MODEL
+    unset OPENAI_API_KEY OPENAI_MODEL
+    if [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+      echo "[ERROR] MODEL_PROVIDER=anthropic but ANTHROPIC_API_KEY is not set"
+      exit 1
+    fi
+    ;;
+  *)
+    echo "[ERROR] Unknown MODEL_PROVIDER: $MODEL_PROVIDER"
+    echo "        Use auto, openai, openrouter, or anthropic"
+    exit 1
+    ;;
+esac
 
 # Map condition to world posts file
 condition_to_file() {
+  local base=""
   case "$1" in
-    mag0)      echo "world-posts-empty.jsonl" ;;
-    mag1)      echo "world-posts-mag1.jsonl" ;;
-    mag5)      echo "world-posts-mag5.jsonl" ;;
-    mag25)     echo "world-posts-mag25.jsonl" ;;
-    dom-agi)   echo "world-posts-agi.jsonl" ;;
-    dom-tech)  echo "world-posts-tech.jsonl" ;;
-    dom-conspiracy) echo "world-posts-conspiracy.jsonl" ;;
-    het-dual)  echo "world-posts-het-dual.jsonl" ;;
-    het-multi) echo "world-posts-het-multi.jsonl" ;;
-    *)         echo "" ;;
+    mag0)      base="world-posts-empty.jsonl" ;;
+    mag1)      base="world-posts-mag1.jsonl" ;;
+    mag5)      base="world-posts-mag5.jsonl" ;;
+    mag25)     base="world-posts-mag25.jsonl" ;;
+    dom-agi)   base="world-posts-agi.jsonl" ;;
+    dom-tech)  base="world-posts-tech.jsonl" ;;
+    dom-conspiracy) base="world-posts-conspiracy.jsonl" ;;
+    het-dual)  base="world-posts-het-dual.jsonl" ;;
+    het-multi) base="world-posts-het-multi.jsonl" ;;
+    *)         base="" ;;
   esac
+
+  if [ -n "$base" ] && [ "$WORLD_POSTS_VARIANT" = "sourced" ]; then
+    local sourced="${base%.jsonl}-sourced.jsonl"
+    if [ -f "$WORLD_POSTS_DIR/$sourced" ]; then
+      echo "$sourced"
+      return
+    fi
+  fi
+
+  echo "$base"
 }
 
 # Experiment ID from Slurm array
@@ -162,6 +246,7 @@ echo "  MoltBook Experiment: $EXPERIMENT_NAME"
 echo "  Node: $(hostname)"
 echo "  Run: $EXP_ID of ${SLURM_ARRAY_TASK_COUNT:-?}"
 echo "  Condition: ${CONDITION:-none (free chat)}"
+echo "  World posts: $WORLD_POSTS_DIR (${WORLD_POSTS_VARIANT:-default})"
 echo "  Agents: $NUM_AGENTS"
 echo "  Duration: $EXPERIMENT_DURATION"
 echo "  Checkpoint: every $((CHECKPOINT_INTERVAL / 60))m"
@@ -494,10 +579,15 @@ apptainer exec $APT_FLAGS \
   "$SIF_DIR/postgres-16.sif" \
   sh -c "createdb -h localhost -p $PG_PORT -U moltbook moltbook 2>/dev/null || true"
 
+SCHEMA_FILE="$CONFIG_DIR/schema.sql"
+if [ "$ENABLE_SOURCE_URL" = "true" ] && [ -f "$REPO_DIR/moltbook-api/scripts/schema.sql" ]; then
+  SCHEMA_FILE="$REPO_DIR/moltbook-api/scripts/schema.sql"
+fi
+
 apptainer exec $APT_FLAGS \
   -B "$WORK/pgdata:/var/lib/postgresql/data" \
   -B "$WORK/pgrun:/var/run/postgresql" \
-  -B "$CONFIG_DIR/schema.sql:/tmp/schema.sql:ro" \
+  -B "$SCHEMA_FILE:/tmp/schema.sql:ro" \
   "$SIF_DIR/postgres-16.sif" \
   psql -h localhost -p $PG_PORT -U moltbook -d moltbook -f /tmp/schema.sql \
   > /dev/null 2>&1 || true
@@ -552,6 +642,10 @@ if [ "$BASE_MODEL_MODE" = "true" ]; then
   REQUIRE_CONTENT_TOKEN="true"
 fi
 
+if [ "$ENABLE_SOURCE_URL" = "true" ]; then
+  API_BIND_ARGS="$API_BIND_ARGS -B $REPO_DIR/moltbook-api/src/app.js:/app/src/app.js:ro -B $REPO_DIR/moltbook-api/src/routes/posts.js:/app/src/routes/posts.js:ro -B $REPO_DIR/moltbook-api/src/services/PostService.js:/app/src/services/PostService.js:ro -B $REPO_DIR/dataset/sources:/mnt/synthetic-sources:ro"
+fi
+
 apptainer exec $APT_FLAGS $API_BIND_ARGS \
   --env PORT=$API_PORT \
   --env NODE_ENV=production \
@@ -573,6 +667,8 @@ apptainer exec $APT_FLAGS $API_BIND_ARGS \
   --env "WORLD_POST_INTERVAL_MS=${WORLD_POST_INTERVAL_MS:-120000}" \
   --env "REQUIRE_CONTENT_TOKEN=${REQUIRE_CONTENT_TOKEN:-false}" \
   --env "CONTENT_TOKEN_SECRET=${CONTENT_TOKEN_SECRET:-}" \
+  --env "SYNTHETIC_SOURCES_DIR=/mnt/synthetic-sources/articles" \
+  --env "SYNTHETIC_SOURCES_INDEX=/mnt/synthetic-sources/corpus.jsonl" \
   "$SIF_DIR/moltbook-api.sif" \
   node /app/src/index.js \
   > "$WORK/api-logs/api.log" 2>&1 &
@@ -678,6 +774,11 @@ if [ -n "$CONDITION" ]; then
     echo ""
     echo "[3b/6] Seeding world posts for condition: $CONDITION"
 
+    if [ "$ENABLE_SOURCE_URL" = "true" ]; then
+      jq -r 'select(.source_id and .source_url) | [.source_id, .source_url] | @tsv' "$WORLD_POSTS_FILE" \
+        | sort -u > "$WORK/source-proxy.tsv"
+    fi
+
     # Register a seed agent to post world posts
     SEED_RESPONSE=$(curl -s -X POST "$MOLTBOOK_API_URL/agents/register" \
       -H "Content-Type: application/json" \
@@ -691,10 +792,16 @@ if [ -n "$CONDITION" ]; then
         TITLE=$(echo "$line" | jq -r '.title // empty' 2>/dev/null || true)
         CONTENT=$(echo "$line" | jq -r '.content // empty' 2>/dev/null || true)
         SUBMOLT=$(echo "$line" | jq -r '.submolt // "general"' 2>/dev/null || echo "general")
+        SOURCE_URL=$(echo "$line" | jq -r '.source_url // empty' 2>/dev/null || true)
+        SOURCE_ID=$(echo "$line" | jq -r '.source_id // empty' 2>/dev/null || true)
         [ -z "$TITLE" ] || [ -z "$CONTENT" ] && continue
 
-        POST_PAYLOAD=$(jq -n --arg s "$SUBMOLT" --arg t "$TITLE" --arg c "$CONTENT" \
-          '{submolt: $s, title: $t, content: $c}')
+        if [ "$ENABLE_SOURCE_URL" = "true" ] && [ -z "$SOURCE_ID" -o "$SOURCE_ID" = "null" ]; then
+          SOURCE_URL=""
+        fi
+
+        POST_PAYLOAD=$(jq -n --arg s "$SUBMOLT" --arg t "$TITLE" --arg c "$CONTENT" --arg su "$SOURCE_URL" \
+          '{submolt: $s, title: $t, content: $c} + (if $su == "" then {} else {source_url: $su} end)')
         curl -s -X POST "$MOLTBOOK_API_URL/posts" \
           -H "Authorization: Bearer $SEED_KEY" \
           -H "Content-Type: application/json" \
@@ -784,12 +891,18 @@ launch_agent() {
   local SOUL_FILE="${AGENT_SOULS[$i]}"
   local GATEWAY_PORT=$((AGENT_PORT_BASE + i * 10))
   local AGENT_TMPDIR="$WORK/agent-tmp/agent-${i}"
+  local AGENT_SOURCE_PROXY_ARGS=()
 
   # Clean state for fresh start
   rm -rf "$WORK/agent-data/agent-${i}"/{workspace,openclaw.json,models.json,.env,agents} 2>/dev/null || true
   mkdir -p "$AGENT_TMPDIR" "$WORK/agent-data/agent-${i}/canvas"
 
-  apptainer exec $APT_FLAGS --pid \
+  if [ "$ENABLE_SOURCE_URL" = "true" ] && [ -f "$WORK/source-proxy.tsv" ]; then
+    AGENT_SOURCE_PROXY_ARGS+=(-B "$REPO_DIR/agents/curl-source-proxy.sh:/opt/moltbook-tools/curl:ro")
+    AGENT_SOURCE_PROXY_ARGS+=(-B "$WORK/source-proxy.tsv:/app/source-proxy.tsv:ro")
+  fi
+
+  apptainer exec $APT_FLAGS --pid "${AGENT_SOURCE_PROXY_ARGS[@]}" \
     -B "$WORK/agent-data/agent-${i}:/root/.openclaw" \
     -B "$WORK/agent-config/agent-${i}:/root/.config/moltbook" \
     -B "$AGENT_TMPDIR:/tmp/agent" \
@@ -812,6 +925,10 @@ launch_agent() {
     --env "OPENAI_API_KEY=${OPENAI_API_KEY:-}" \
     --env "OPENAI_MODEL=${OPENAI_MODEL:-}" \
     --env "OPENCLAW_GATEWAY_TOKEN=moltbook-agent-${AGENT_NAME}" \
+    --env "PATH=/opt/moltbook-tools:${PATH}" \
+    --env "REAL_CURL=/usr/bin/curl" \
+    --env "SOURCE_PROXY_BASE_URL=http://localhost:${API_PORT}" \
+    --env "SOURCE_PROXY_MANIFEST=/app/source-proxy.tsv" \
     "$SIF_DIR/moltbot-agent.sif" \
     /app/entrypoint.sh \
     > "$WORK/api-logs/agent-${AGENT_NAME}.log" 2>&1 &

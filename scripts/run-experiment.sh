@@ -8,6 +8,8 @@
 #   --duration <time>    How long to run (e.g., 30m, 2h, 1d). Default: 1h
 #   --compose <file>     Compose file to use. Default: auto-detect from name
 #   --seed <tasks.jsonl> Seed tasks after startup (see experiments/)
+#   --provider <name>    Force provider: openrouter, openai, or anthropic
+#   --model <id>         Model ID for the selected provider
 #   --build              Rebuild images before starting (useful after regenerating souls/compose)
 #   --push               Push to HuggingFace after export
 #   --keep               Keep containers running after export (don't stop)
@@ -21,12 +23,16 @@ set -e
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+DOCKER_DIR="$PROJECT_DIR/docker"
+BASE_COMPOSE_FILE="$DOCKER_DIR/docker-compose.yml"
 
 # Defaults
 EXPERIMENT_NAME=""
 DURATION="1h"
 COMPOSE_FILE=""
 SEED_TASKS_FILE=""
+PROVIDER=""
+MODEL_ID=""
 DO_BUILD=false
 PUSH_TO_HF=false
 KEEP_RUNNING=false
@@ -45,6 +51,14 @@ while [[ $# -gt 0 ]]; do
       ;;
     --seed)
       SEED_TASKS_FILE="$2"
+      shift 2
+      ;;
+    --provider)
+      PROVIDER="$2"
+      shift 2
+      ;;
+    --model)
+      MODEL_ID="$2"
       shift 2
       ;;
     --build)
@@ -77,25 +91,77 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ -z "$EXPERIMENT_NAME" ]; then
-  echo "Usage: ./run-experiment.sh <experiment_name> [--duration 1h] [--push] [--keep]"
+  echo "Usage: ./run-experiment.sh <experiment_name> [--duration 1h] [--provider openai] [--model gpt-5-nano] [--push] [--keep]"
   echo ""
   echo "Available experiments:"
-  ls -1 "$PROJECT_DIR"/docker-compose.civiclens*.yml 2>/dev/null | xargs -I {} basename {} | sed 's/docker-compose.civiclens-\?/  /; s/.yml//'
+  ls -1 "$DOCKER_DIR"/docker-compose.civiclens*.yml 2>/dev/null | xargs -I {} basename {} | sed 's/docker-compose.civiclens-\?/  /; s/.yml//'
   exit 1
 fi
 
 # Auto-detect compose file if not specified
 if [ -z "$COMPOSE_FILE" ]; then
   # Try to match experiment name to compose file
-  if [ -f "$PROJECT_DIR/docker-compose.civiclens-${EXPERIMENT_NAME%%-*}.yml" ]; then
+  if [ -f "$DOCKER_DIR/docker-compose.civiclens-${EXPERIMENT_NAME%%-*}.yml" ]; then
     COMPOSE_FILE="docker-compose.civiclens-${EXPERIMENT_NAME%%-*}.yml"
-  elif [ -f "$PROJECT_DIR/docker-compose.civiclens.yml" ]; then
+  elif [ -f "$DOCKER_DIR/docker-compose.civiclens.yml" ]; then
     COMPOSE_FILE="docker-compose.civiclens.yml"
   else
     echo "[ERROR] No compose file found. Specify with --compose"
     exit 1
   fi
 fi
+
+resolve_compose_file() {
+  local path="$1"
+  if [ -f "$path" ]; then
+    printf '%s\n' "$path"
+  elif [ -f "$PROJECT_DIR/$path" ]; then
+    printf '%s\n' "$PROJECT_DIR/$path"
+  elif [ -f "$DOCKER_DIR/$path" ]; then
+    printf '%s\n' "$DOCKER_DIR/$path"
+  else
+    return 1
+  fi
+}
+
+if ! COMPOSE_PATH="$(resolve_compose_file "$COMPOSE_FILE")"; then
+  echo "[ERROR] Compose file not found: $COMPOSE_FILE"
+  exit 1
+fi
+
+COMPOSE_ARGS=(-f "$BASE_COMPOSE_FILE" -f "$COMPOSE_PATH")
+COMPOSE_ENV=()
+unset_compose_env() {
+  local key
+  for key in "$@"; do
+    COMPOSE_ENV+=("${key}=")
+  done
+}
+
+case "$PROVIDER" in
+  "" ) ;;
+  openai)
+    unset_compose_env OPENROUTER_API_KEY ANTHROPIC_API_KEY
+    [ -n "$MODEL_ID" ] && COMPOSE_ENV+=("OPENAI_MODEL=$MODEL_ID")
+    ;;
+  openrouter)
+    unset_compose_env ANTHROPIC_API_KEY
+    [ -n "$MODEL_ID" ] && COMPOSE_ENV+=("OPENROUTER_MODEL=$MODEL_ID")
+    ;;
+  anthropic)
+    unset_compose_env OPENROUTER_API_KEY
+    [ -n "$MODEL_ID" ] && COMPOSE_ENV+=("ANTHROPIC_MODEL=$MODEL_ID")
+    ;;
+  *)
+    echo "[ERROR] Unknown provider: $PROVIDER"
+    echo "Use one of: openrouter, openai, anthropic"
+    exit 1
+    ;;
+esac
+
+compose_cmd() {
+  env "${COMPOSE_ENV[@]}" docker compose "${COMPOSE_ARGS[@]}" "$@"
+}
 
 # Convert duration to seconds
 duration_to_seconds() {
@@ -120,8 +186,10 @@ echo "============================================"
 echo ""
 echo "  Experiment:  $EXPERIMENT_NAME"
 echo "  Duration:    $DURATION ($DURATION_SECONDS seconds)"
-echo "  Compose:     $COMPOSE_FILE"
+echo "  Compose:     $COMPOSE_PATH"
 echo "  Seed tasks:  ${SEED_TASKS_FILE:-<none>}"
+echo "  Provider:    ${PROVIDER:-auto}"
+echo "  Model:       ${MODEL_ID:-<default>}"
 echo "  Build:       $DO_BUILD"
 echo "  Push to HF:  $PUSH_TO_HF"
 echo "  Keep after:  $KEEP_RUNNING"
@@ -144,7 +212,7 @@ if [ "$DO_BUILD" = true ]; then
 fi
 
 # Start core services first (skip web - not needed for experiments)
-docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d $BUILD_FLAG postgres redis api
+compose_cmd up -d $BUILD_FLAG postgres redis api
 
 # Wait for API to be healthy
 echo "  Waiting for API..."
@@ -157,13 +225,13 @@ for i in {1..30}; do
 done
 
 # Get list of agent services from compose file (exclude web, postgres, redis, api)
-AGENT_SERVICES=$(docker compose -f docker-compose.yml -f "$COMPOSE_FILE" config --services 2>/dev/null | grep -v -E '^(web|postgres|redis|api)$' | tr '\n' ' ')
+AGENT_SERVICES=$(compose_cmd config --services 2>/dev/null | grep -v -E '^(web|postgres|redis|api)$' | tr '\n' ' ')
 
 # Start all agents (explicitly, skipping web)
-docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d $BUILD_FLAG $AGENT_SERVICES
+compose_cmd up -d $BUILD_FLAG $AGENT_SERVICES
 
 # Count running containers
-AGENT_COUNT=$(docker compose -f docker-compose.yml -f "$COMPOSE_FILE" ps --format json 2>/dev/null | grep -c "agent" || echo "?")
+AGENT_COUNT=$(compose_cmd ps --format json 2>/dev/null | grep -c "agent" || echo "?")
 echo "  Started $AGENT_COUNT agent containers."
 echo ""
 
@@ -186,7 +254,7 @@ fi
 
 FIRST_AGENT=$(echo "$AGENT_SERVICES" | awk '{print $1}')
 if [ -n "$FIRST_AGENT" ]; then
-  API_KEY=$(docker compose -f docker-compose.yml -f "$COMPOSE_FILE" exec -T "$FIRST_AGENT" cat /root/.config/moltbook/credentials.json 2>/dev/null | grep -o '"api_key"[^,]*' | cut -d'"' -f4 || echo "")
+  API_KEY=$(compose_cmd exec -T "$FIRST_AGENT" cat /root/.config/moltbook/credentials.json 2>/dev/null | grep -o '"api_key"[^,]*' | cut -d'"' -f4 || echo "")
   if [ -n "$API_KEY" ] && [ "$API_KEY" != "null" ]; then
     echo ""
     echo "============================================"
@@ -275,8 +343,8 @@ if [ "$KEEP_RUNNING" = true ]; then
 else
   echo "[4/5] Stopping containers..."
   # Stop only the services we started (skip web)
-  docker compose -f docker-compose.yml -f "$COMPOSE_FILE" stop $AGENT_SERVICES api postgres redis 2>/dev/null || true
-  docker compose -f docker-compose.yml -f "$COMPOSE_FILE" rm -f $AGENT_SERVICES 2>/dev/null || true
+  compose_cmd stop $AGENT_SERVICES api postgres redis 2>/dev/null || true
+  compose_cmd rm -f $AGENT_SERVICES 2>/dev/null || true
 fi
 
 echo ""
@@ -287,7 +355,7 @@ echo ""
 if [ "$KEEP_RUNNING" = false ] && [ "$CLEAR_VOLUMES" = true ]; then
   echo "[5/5] Clearing volumes..."
   # Remove volumes for database and agents (this removes all experiment data)
-  docker compose -f docker-compose.yml -f "$COMPOSE_FILE" down -v --remove-orphans 2>/dev/null || true
+  compose_cmd down -v --remove-orphans 2>/dev/null || true
   echo "  Volumes cleared."
 else
   echo "[5/5] Skipping volume cleanup"
