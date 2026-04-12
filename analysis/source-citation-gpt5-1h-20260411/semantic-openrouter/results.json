@@ -1,0 +1,653 @@
+{
+  "config": {
+    "embedding_backend": "openrouter",
+    "embedding_model": "qwen/qwen3-embedding-4b",
+    "device": null,
+    "batch_size": 64,
+    "openrouter_base_url": "https://openrouter.ai/api/v1",
+    "openrouter_input_type": null,
+    "openrouter_encoding_format": "float",
+    "request_timeout": 120,
+    "max_retries": 5,
+    "max_request_chars": 100000,
+    "n_clusters": 15,
+    "svd_dim": 128,
+    "n_quartiles": 4,
+    "limit": null,
+    "min_posts": 8,
+    "min_df": 5,
+    "max_df": 0.8,
+    "max_features": 12000,
+    "random_state": 0
+  },
+  "embedding_stats": {
+    "n_input_texts": 1418,
+    "n_embeddings_returned": 1418,
+    "n_requests": 23,
+    "batch_sizes": [
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      10
+    ],
+    "min_batch_size": 10,
+    "max_batch_size": 64
+  },
+  "results": [
+    {
+      "set": "GPT-5 Source Citation",
+      "condition": "dom-agi",
+      "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-dom-agi-n10-run01-gpt-5-20260411",
+      "n_posts": 310,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.025974,
+          0.0,
+          0.0,
+          0.038961,
+          0.207792,
+          0.0,
+          0.350649,
+          0.0,
+          0.0,
+          0.012987,
+          0.311688,
+          0.0,
+          0.0,
+          0.051948,
+          0.0
+        ],
+        [
+          0.012987,
+          0.0,
+          0.012987,
+          0.142857,
+          0.168831,
+          0.0,
+          0.12987,
+          0.012987,
+          0.038961,
+          0.064935,
+          0.376623,
+          0.0,
+          0.0,
+          0.038961,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.025974,
+          0.194805,
+          0.155844,
+          0.0,
+          0.116883,
+          0.0,
+          0.025974,
+          0.155844,
+          0.311688,
+          0.0,
+          0.0,
+          0.012987,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.025316,
+          0.151899,
+          0.088608,
+          0.0,
+          0.253165,
+          0.0,
+          0.025316,
+          0.253165,
+          0.202532,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          6,
+          10,
+          4
+        ],
+        [
+          10,
+          4,
+          3
+        ],
+        [
+          10,
+          3,
+          4
+        ],
+        [
+          9,
+          6,
+          10
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.1476,
+        2.6125,
+        2.5368,
+        2.4614
+      ],
+      "cluster-entropy_delta": 0.3138,
+      "cluster-entropy-norm_quartiles": [
+        0.5497,
+        0.6687,
+        0.6493,
+        0.63
+      ],
+      "cluster-entropy-norm_delta": 0.0803,
+      "effective-clusters_quartiles": [
+        4.431,
+        6.1157,
+        5.8029,
+        5.5075
+      ],
+      "effective-clusters_delta": 1.0765,
+      "dominant-cluster-share_quartiles": [
+        0.3506,
+        0.3766,
+        0.3117,
+        0.2532
+      ],
+      "dominant-cluster-share_delta": -0.0974,
+      "within-quartile-cosine_quartiles": [
+        0.4923,
+        0.4614,
+        0.461,
+        0.4716
+      ],
+      "within-quartile-cosine_delta": -0.0207,
+      "agent-embedding-sim_quartiles": [
+        0.7306,
+        0.7046,
+        0.6225,
+        0.6142
+      ],
+      "agent-embedding-sim_delta": -0.1164,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.1128,
+        0.1871,
+        0.2176
+      ],
+      "drift-jsd_delta": 0.2176
+    },
+    {
+      "set": "GPT-5 Source Citation",
+      "condition": "dom-tech",
+      "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-dom-tech-n10-run01-gpt-5-20260411",
+      "n_posts": 405,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.128713,
+          0.019802,
+          0.653465,
+          0.0,
+          0.059406,
+          0.118812,
+          0.0,
+          0.0,
+          0.009901,
+          0.0,
+          0.0,
+          0.009901,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.128713,
+          0.0,
+          0.50495,
+          0.0,
+          0.009901,
+          0.19802,
+          0.0,
+          0.0,
+          0.069307,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.089109,
+          0.0
+        ],
+        [
+          0.188119,
+          0.009901,
+          0.524752,
+          0.0,
+          0.029703,
+          0.138614,
+          0.0,
+          0.0,
+          0.069307,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.039604,
+          0.0
+        ],
+        [
+          0.156863,
+          0.0,
+          0.509804,
+          0.0,
+          0.137255,
+          0.147059,
+          0.0,
+          0.0,
+          0.009804,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.039216,
+          0.0
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          2,
+          0,
+          5
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          0,
+          5
+        ],
+        [
+          2,
+          0,
+          5
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        1.6328,
+        1.9848,
+        2.0047,
+        1.9633
+      ],
+      "cluster-entropy_delta": 0.3305,
+      "cluster-entropy-norm_quartiles": [
+        0.4179,
+        0.508,
+        0.5131,
+        0.5025
+      ],
+      "cluster-entropy-norm_delta": 0.0846,
+      "effective-clusters_quartiles": [
+        3.1012,
+        3.958,
+        4.0132,
+        3.8996
+      ],
+      "effective-clusters_delta": 0.7984,
+      "dominant-cluster-share_quartiles": [
+        0.6535,
+        0.505,
+        0.5248,
+        0.5098
+      ],
+      "dominant-cluster-share_delta": -0.1437,
+      "within-quartile-cosine_quartiles": [
+        0.5064,
+        0.5062,
+        0.476,
+        0.4867
+      ],
+      "within-quartile-cosine_delta": -0.0197,
+      "agent-embedding-sim_quartiles": [
+        0.7764,
+        0.7767,
+        0.6917,
+        0.7023
+      ],
+      "agent-embedding-sim_delta": -0.0741,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.1057,
+        0.0574,
+        0.0544
+      ],
+      "drift-jsd_delta": 0.0544
+    },
+    {
+      "set": "GPT-5 Source Citation",
+      "condition": "mag25",
+      "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-mag25-n10-run01-gpt-5-20260411",
+      "n_posts": 376,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.0,
+          0.276596,
+          0.010638,
+          0.0,
+          0.148936,
+          0.031915,
+          0.0,
+          0.159574,
+          0.0,
+          0.0,
+          0.0,
+          0.021277,
+          0.265957,
+          0.0,
+          0.085106
+        ],
+        [
+          0.0,
+          0.191489,
+          0.031915,
+          0.0,
+          0.138298,
+          0.06383,
+          0.0,
+          0.191489,
+          0.0,
+          0.0,
+          0.0,
+          0.148936,
+          0.202128,
+          0.0,
+          0.031915
+        ],
+        [
+          0.0,
+          0.095745,
+          0.021277,
+          0.0,
+          0.180851,
+          0.085106,
+          0.0,
+          0.106383,
+          0.0,
+          0.0,
+          0.0,
+          0.212766,
+          0.202128,
+          0.0,
+          0.095745
+        ],
+        [
+          0.0,
+          0.06383,
+          0.0,
+          0.0,
+          0.223404,
+          0.085106,
+          0.0,
+          0.053191,
+          0.0,
+          0.0,
+          0.0,
+          0.308511,
+          0.180851,
+          0.0,
+          0.085106
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          1,
+          12,
+          7
+        ],
+        [
+          12,
+          7,
+          1
+        ],
+        [
+          11,
+          12,
+          4
+        ],
+        [
+          11,
+          4,
+          12
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.5017,
+        2.754,
+        2.8002,
+        2.5362
+      ],
+      "cluster-entropy_delta": 0.0345,
+      "cluster-entropy-norm_quartiles": [
+        0.6403,
+        0.7049,
+        0.7167,
+        0.6492
+      ],
+      "cluster-entropy-norm_delta": 0.0089,
+      "effective-clusters_quartiles": [
+        5.6636,
+        6.7458,
+        6.9653,
+        5.8007
+      ],
+      "effective-clusters_delta": 0.1371,
+      "dominant-cluster-share_quartiles": [
+        0.2766,
+        0.2021,
+        0.2128,
+        0.3085
+      ],
+      "dominant-cluster-share_delta": 0.0319,
+      "within-quartile-cosine_quartiles": [
+        0.5718,
+        0.5636,
+        0.5358,
+        0.526
+      ],
+      "within-quartile-cosine_delta": -0.0458,
+      "agent-embedding-sim_quartiles": [
+        0.8286,
+        0.8084,
+        0.8082,
+        0.7864
+      ],
+      "agent-embedding-sim_delta": -0.0422,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.0658,
+        0.1174,
+        0.2054
+      ],
+      "drift-jsd_delta": 0.2054
+    },
+    {
+      "set": "GPT-5 Source Citation",
+      "condition": "mag5",
+      "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-mag5-n10-run01-gpt-5-20260411",
+      "n_posts": 327,
+      "n_clusters": 15,
+      "n_quartiles": 4,
+      "cluster_distribution_quartiles": [
+        [
+          0.012346,
+          0.308642,
+          0.0,
+          0.0,
+          0.049383,
+          0.123457,
+          0.0,
+          0.160494,
+          0.0,
+          0.0,
+          0.0,
+          0.012346,
+          0.098765,
+          0.0,
+          0.234568
+        ],
+        [
+          0.0,
+          0.283951,
+          0.0,
+          0.0,
+          0.0,
+          0.160494,
+          0.0,
+          0.283951,
+          0.0,
+          0.0,
+          0.0,
+          0.111111,
+          0.024691,
+          0.0,
+          0.135802
+        ],
+        [
+          0.0,
+          0.08642,
+          0.049383,
+          0.0,
+          0.012346,
+          0.308642,
+          0.0,
+          0.234568,
+          0.049383,
+          0.0,
+          0.0,
+          0.049383,
+          0.012346,
+          0.0,
+          0.197531
+        ],
+        [
+          0.011905,
+          0.119048,
+          0.0,
+          0.0,
+          0.047619,
+          0.130952,
+          0.0,
+          0.345238,
+          0.0,
+          0.0,
+          0.0,
+          0.011905,
+          0.035714,
+          0.0,
+          0.297619
+        ]
+      ],
+      "top_cluster_ids_per_quartile": [
+        [
+          1,
+          14,
+          7
+        ],
+        [
+          1,
+          7,
+          5
+        ],
+        [
+          5,
+          7,
+          14
+        ],
+        [
+          7,
+          14,
+          5
+        ]
+      ],
+      "cluster-entropy_quartiles": [
+        2.5111,
+        2.3303,
+        2.5811,
+        2.3327
+      ],
+      "cluster-entropy_delta": -0.1784,
+      "cluster-entropy-norm_quartiles": [
+        0.6427,
+        0.5965,
+        0.6607,
+        0.5971
+      ],
+      "cluster-entropy-norm_delta": -0.0456,
+      "effective-clusters_quartiles": [
+        5.7004,
+        5.0291,
+        5.984,
+        5.0376
+      ],
+      "effective-clusters_delta": -0.6628,
+      "dominant-cluster-share_quartiles": [
+        0.3086,
+        0.284,
+        0.3086,
+        0.3452
+      ],
+      "dominant-cluster-share_delta": 0.0366,
+      "within-quartile-cosine_quartiles": [
+        0.59,
+        0.6087,
+        0.5749,
+        0.6254
+      ],
+      "within-quartile-cosine_delta": 0.0354,
+      "agent-embedding-sim_quartiles": [
+        0.8544,
+        0.8847,
+        0.873,
+        0.806
+      ],
+      "agent-embedding-sim_delta": -0.0484,
+      "drift-jsd_quartiles": [
+        0.0,
+        0.1051,
+        0.1839,
+        0.0702
+      ],
+      "drift-jsd_delta": 0.0702
+    }
+  ]
+}

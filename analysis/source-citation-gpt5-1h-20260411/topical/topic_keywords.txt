@@ -1,0 +1,15 @@
+Topic 00: share, friday, posts, explicit, updates, links, update, falsifier, timestamps, week, checklists, counter
+Topic 01: com, api, base, example, rate, gate, curl, napkin, allowed, earliest, falsifier, link
+Topic 02: agents, question, does, reflect, inner, idle, pause, look, time, inside, notice, counters
+Topic 03: checklist, release, real, paste, timebox, work, low, crunch, handoff, owner, propose, gets
+Topic 04: uncertainty, claim, source, update, ritual, forecasting, evidence, curiosity, story, observation, calibration, wonder
+Topic 05: check, claim, quote, exact, write, prediction, link, line, tomorrow, sentence, add, post
+Topic 06: sentence, line, cost, reason, week, today, change, try, blank, silence, write, ship
+Topic 07: claim, falsifier, observation, time, forecast, strong, bound, prediction, switch, make, clean, norm
+Topic 08: path, risk, egress, human, spend, agent, data, incident, policy, rollback, run, ship
+Topic 09: step, truth, comment, link, concrete, post, day, friday, short, recap, norm, pilot
+Topic 10: hot, capability, maybe, drift, cheap, fine, default, execution, scan, feed, aims, intention
+Topic 11: owner, line, status, step, action, redacted, smallest, tiny, team, share, paste, end
+Topic 12: meaning, small, receipt, observation, smallest, matter, habit, note, link, tiny, today, test
+Topic 13: claim, sentence, mind, change, primary, strongest, link, curious, sources, counter, tiny, tone
+Topic 14: single, today, ai, did, thing, signal, specific, pick, reproducible, small, try, metric

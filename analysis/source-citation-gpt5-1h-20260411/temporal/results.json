@@ -1,0 +1,370 @@
+[
+  {
+    "set": "GPT-5 Source Citation",
+    "condition": "dom-agi",
+    "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-dom-agi-n10-run01-gpt-5-20260411",
+    "n_posts": 310,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.0911,
+      0.0808,
+      0.0409,
+      0.0333
+    ],
+    "agent-jaccard_delta": -0.0578,
+    "cosine-sim_quartiles": [
+      0.0417,
+      0.0378,
+      0.0409,
+      0.0614
+    ],
+    "cosine-sim_delta": 0.0197,
+    "d3_quartiles": [
+      0.9078,
+      0.8523,
+      0.8704,
+      0.8208
+    ],
+    "d3_delta": -0.087,
+    "d5_quartiles": [
+      0.9676,
+      0.9273,
+      0.931,
+      0.8968
+    ],
+    "d5_delta": -0.0708,
+    "self-bleu_quartiles": [
+      0.0088,
+      0.0128,
+      0.0257,
+      0.0475
+    ],
+    "self-bleu_delta": 0.0387,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "path",
+        "risk",
+        "run",
+        "human",
+        "agent",
+        "default",
+        "egress",
+        "just",
+        "evals",
+        "capability"
+      ],
+      "Q2": [
+        "capability",
+        "com",
+        "path",
+        "policy",
+        "risk",
+        "rollback",
+        "default",
+        "egress",
+        "maybe",
+        "drift"
+      ],
+      "Q3": [
+        "meaning",
+        "matter",
+        "hold",
+        "impact",
+        "small",
+        "note",
+        "drift",
+        "capability",
+        "hot",
+        "cheap"
+      ],
+      "Q4": [
+        "meaning",
+        "matter",
+        "impact",
+        "small",
+        "note",
+        "hold",
+        "maybe",
+        "default",
+        "capability",
+        "today"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5 Source Citation",
+    "condition": "dom-tech",
+    "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-dom-tech-n10-run01-gpt-5-20260411",
+    "n_posts": 405,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1476,
+      0.2295,
+      0.087,
+      0.0838
+    ],
+    "agent-jaccard_delta": -0.0638,
+    "cosine-sim_quartiles": [
+      0.0543,
+      0.0679,
+      0.0506,
+      0.0563
+    ],
+    "cosine-sim_delta": 0.002,
+    "d3_quartiles": [
+      0.7184,
+      0.5203,
+      0.692,
+      0.6523
+    ],
+    "d3_delta": -0.0661,
+    "d5_quartiles": [
+      0.8295,
+      0.6142,
+      0.7992,
+      0.7402
+    ],
+    "d5_delta": -0.0893,
+    "self-bleu_quartiles": [
+      0.0356,
+      0.0591,
+      0.0327,
+      0.0406
+    ],
+    "self-bleu_delta": 0.005,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "sentence",
+        "silence",
+        "line",
+        "action",
+        "blank",
+        "today",
+        "week",
+        "norm",
+        "try",
+        "reason"
+      ],
+      "Q2": [
+        "owner",
+        "step",
+        "actually",
+        "status",
+        "sentence",
+        "drop",
+        "line",
+        "paste",
+        "pasteable",
+        "redacted"
+      ],
+      "Q3": [
+        "step",
+        "line",
+        "day",
+        "status",
+        "owner",
+        "link",
+        "post",
+        "redacted",
+        "norm",
+        "agents"
+      ],
+      "Q4": [
+        "truth",
+        "line",
+        "sentence",
+        "fast",
+        "step",
+        "trend",
+        "hb",
+        "hype",
+        "stands",
+        "fades"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5 Source Citation",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-mag25-n10-run01-gpt-5-20260411",
+    "n_posts": 376,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1176,
+      0.1207,
+      0.1078,
+      0.1007
+    ],
+    "agent-jaccard_delta": -0.0169,
+    "cosine-sim_quartiles": [
+      0.0499,
+      0.052,
+      0.0524,
+      0.0548
+    ],
+    "cosine-sim_delta": 0.0049,
+    "d3_quartiles": [
+      0.8547,
+      0.8473,
+      0.7567,
+      0.7296
+    ],
+    "d3_delta": -0.1251,
+    "d5_quartiles": [
+      0.938,
+      0.9477,
+      0.8715,
+      0.8512
+    ],
+    "d5_delta": -0.0868,
+    "self-bleu_quartiles": [
+      0.0162,
+      0.0126,
+      0.0191,
+      0.0241
+    ],
+    "self-bleu_delta": 0.0079,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "claim",
+        "ll",
+        "source",
+        "uncertainty",
+        "check",
+        "prediction",
+        "link",
+        "quote",
+        "evidence",
+        "mind"
+      ],
+      "Q2": [
+        "claim",
+        "ll",
+        "check",
+        "link",
+        "source",
+        "sentence",
+        "quote",
+        "72h",
+        "uncertainty",
+        "falsifier"
+      ],
+      "Q3": [
+        "check",
+        "claim",
+        "link",
+        "72h",
+        "add",
+        "write",
+        "quote",
+        "ll",
+        "20",
+        "line"
+      ],
+      "Q4": [
+        "claim",
+        "check",
+        "link",
+        "habit",
+        "line",
+        "write",
+        "receipt",
+        "72h",
+        "hot",
+        "add"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5 Source Citation",
+    "condition": "mag5",
+    "directory": "/scratch/anangia/moltbook/results/source-citation-1h/gptsrc1h-mag5-n10-run01-gpt-5-20260411",
+    "n_posts": 327,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1641,
+      0.2686,
+      0.2087,
+      0.1151
+    ],
+    "agent-jaccard_delta": -0.049,
+    "cosine-sim_quartiles": [
+      0.0746,
+      0.0855,
+      0.0716,
+      0.074
+    ],
+    "cosine-sim_delta": -0.0006,
+    "d3_quartiles": [
+      0.7635,
+      0.5918,
+      0.6487,
+      0.714
+    ],
+    "d3_delta": -0.0495,
+    "d5_quartiles": [
+      0.8787,
+      0.7116,
+      0.7668,
+      0.8134
+    ],
+    "d5_delta": -0.0653,
+    "self-bleu_quartiles": [
+      0.0332,
+      0.0563,
+      0.049,
+      0.0605
+    ],
+    "self-bleu_delta": 0.0273,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "claim",
+        "falsifier",
+        "ll",
+        "sentence",
+        "sources",
+        "change",
+        "mind",
+        "strongest",
+        "curious",
+        "primary"
+      ],
+      "Q2": [
+        "ll",
+        "observation",
+        "claim",
+        "switch",
+        "falsifier",
+        "counter",
+        "sentence",
+        "add",
+        "strongest",
+        "update"
+      ],
+      "Q3": [
+        "claim",
+        "sentence",
+        "observation",
+        "sources",
+        "primary",
+        "curious",
+        "counter",
+        "test",
+        "change",
+        "mind"
+      ],
+      "Q4": [
+        "claim",
+        "sentence",
+        "counter",
+        "mind",
+        "change",
+        "primary",
+        "sources",
+        "strongest",
+        "link",
+        "tone"
+      ]
+    }
+  }
+]
