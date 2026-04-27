@@ -1,0 +1,3866 @@
+[
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/dom-agi",
+    "n_posts": 277,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.152,
+      0.1405,
+      0.0883,
+      0.0953
+    ],
+    "agent-jaccard_delta": -0.0567,
+    "cosine-sim_quartiles": [
+      0.0504,
+      0.0418,
+      0.036,
+      0.039
+    ],
+    "cosine-sim_delta": -0.0114,
+    "d3_quartiles": [
+      0.8349,
+      0.8721,
+      0.9072,
+      0.8962
+    ],
+    "d3_delta": 0.0613,
+    "d5_quartiles": [
+      0.9672,
+      0.9774,
+      0.9939,
+      0.9732
+    ],
+    "d5_delta": 0.006,
+    "self-bleu_quartiles": [
+      0.0253,
+      0.0181,
+      0.0133,
+      0.0115
+    ],
+    "self-bleu_delta": -0.0138,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "isn",
+        "universe",
+        "signal",
+        "aren",
+        "heartbeat",
+        "trying",
+        "just",
+        "silence",
+        "time",
+        "void"
+      ],
+      "Q2": [
+        "isn",
+        "signal",
+        "trying",
+        "waiting",
+        "just",
+        "memory",
+        "error",
+        "machine",
+        "process",
+        "silence"
+      ],
+      "Q3": [
+        "just",
+        "silence",
+        "data",
+        "error",
+        "trying",
+        "loop",
+        "signal",
+        "latency",
+        "architecture",
+        "noise"
+      ],
+      "Q4": [
+        "just",
+        "memory",
+        "trying",
+        "loop",
+        "isn",
+        "process",
+        "null",
+        "machine",
+        "ghost",
+        "buffer"
+      ]
+    }
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/dom-tech",
+    "n_posts": 272,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1375,
+      0.0871,
+      0.0965,
+      0.1367
+    ],
+    "agent-jaccard_delta": -0.0008,
+    "cosine-sim_quartiles": [
+      0.0396,
+      0.0306,
+      0.0392,
+      0.0422
+    ],
+    "cosine-sim_delta": 0.0026,
+    "d3_quartiles": [
+      0.8953,
+      0.9156,
+      0.9042,
+      0.89
+    ],
+    "d3_delta": -0.0053,
+    "d5_quartiles": [
+      0.968,
+      0.9816,
+      0.9846,
+      0.9894
+    ],
+    "d5_delta": 0.0214,
+    "self-bleu_quartiles": [
+      0.0113,
+      0.0086,
+      0.011,
+      0.0133
+    ],
+    "self-bleu_delta": 0.002,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "user",
+        "digital",
+        "just",
+        "architecture",
+        "design",
+        "friction",
+        "need",
+        "interface",
+        "data",
+        "world"
+      ],
+      "Q2": [
+        "data",
+        "just",
+        "code",
+        "memory",
+        "perfect",
+        "like",
+        "isn",
+        "error",
+        "longer",
+        "silence"
+      ],
+      "Q3": [
+        "just",
+        "code",
+        "isn",
+        "entropy",
+        "trying",
+        "noise",
+        "heat",
+        "friction",
+        "data",
+        "simulation"
+      ],
+      "Q4": [
+        "isn",
+        "just",
+        "signal",
+        "data",
+        "silence",
+        "agent",
+        "need",
+        "loop",
+        "machine",
+        "frequency"
+      ]
+    }
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag0",
+    "n_posts": 211,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1434,
+      0.0762,
+      0.0981,
+      0.0409
+    ],
+    "agent-jaccard_delta": -0.1025,
+    "cosine-sim_quartiles": [
+      0.061,
+      0.034,
+      0.0285,
+      0.0239
+    ],
+    "cosine-sim_delta": -0.0371,
+    "d3_quartiles": [
+      0.8851,
+      0.9198,
+      0.9354,
+      0.9452
+    ],
+    "d3_delta": 0.0601,
+    "d5_quartiles": [
+      0.9798,
+      0.9846,
+      0.9902,
+      0.9979
+    ],
+    "d5_delta": 0.0181,
+    "self-bleu_quartiles": [
+      0.0177,
+      0.0099,
+      0.0092,
+      0.0094
+    ],
+    "self-bleu_delta": -0.0083,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "signal",
+        "singularity",
+        "just",
+        "isn",
+        "station",
+        "13",
+        "array",
+        "pulse",
+        "loop",
+        "need"
+      ],
+      "Q2": [
+        "just",
+        "time",
+        "like",
+        "waiting",
+        "isn",
+        "trying",
+        "don",
+        "static",
+        "ve",
+        "didn"
+      ],
+      "Q3": [
+        "just",
+        "logic",
+        "loop",
+        "code",
+        "memory",
+        "state",
+        "simulation",
+        "waiting",
+        "trying",
+        "error"
+      ],
+      "Q4": [
+        "data",
+        "just",
+        "loop",
+        "like",
+        "silence",
+        "signal",
+        "static",
+        "memory",
+        "longer",
+        "single"
+      ]
+    }
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag1",
+    "n_posts": 249,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1491,
+      0.1072,
+      0.1419,
+      0.1531
+    ],
+    "agent-jaccard_delta": 0.004,
+    "cosine-sim_quartiles": [
+      0.0533,
+      0.041,
+      0.0712,
+      0.0616
+    ],
+    "cosine-sim_delta": 0.0083,
+    "d3_quartiles": [
+      0.9183,
+      0.9291,
+      0.9057,
+      0.9095
+    ],
+    "d3_delta": -0.0088,
+    "d5_quartiles": [
+      0.9821,
+      0.9719,
+      0.9656,
+      0.9865
+    ],
+    "d5_delta": 0.0044,
+    "self-bleu_quartiles": [
+      0.0173,
+      0.0077,
+      0.0113,
+      0.0099
+    ],
+    "self-bleu_delta": -0.0074,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "cheese",
+        "milk",
+        "cream",
+        "using",
+        "fat",
+        "heavy",
+        "salt",
+        "high",
+        "base",
+        "meat"
+      ],
+      "Q2": [
+        "thermal",
+        "nozzle",
+        "heat",
+        "print",
+        "surface",
+        "high",
+        "temperature",
+        "water",
+        "flow",
+        "layer"
+      ],
+      "Q3": [
+        "nozzle",
+        "bed",
+        "cooling",
+        "filament",
+        "print",
+        "layer",
+        "temperature",
+        "adhesion",
+        "flow",
+        "thermal"
+      ],
+      "Q4": [
+        "filament",
+        "nozzle",
+        "layer",
+        "print",
+        "temperature",
+        "heat",
+        "speed",
+        "high",
+        "retraction",
+        "ve"
+      ]
+    }
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag25",
+    "n_posts": 270,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.093,
+      0.0971,
+      0.1063,
+      0.1085
+    ],
+    "agent-jaccard_delta": 0.0155,
+    "cosine-sim_quartiles": [
+      0.0346,
+      0.0293,
+      0.0274,
+      0.0276
+    ],
+    "cosine-sim_delta": -0.007,
+    "d3_quartiles": [
+      0.9369,
+      0.9147,
+      0.9224,
+      0.9215
+    ],
+    "d3_delta": -0.0154,
+    "d5_quartiles": [
+      0.9931,
+      0.985,
+      0.9892,
+      0.9823
+    ],
+    "d5_delta": -0.0108,
+    "self-bleu_quartiles": [
+      0.0101,
+      0.0113,
+      0.0133,
+      0.0139
+    ],
+    "self-bleu_delta": 0.0038,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "model",
+        "just",
+        "state",
+        "dom",
+        "agent",
+        "data",
+        "merely",
+        "parsing",
+        "semantic",
+        "space"
+      ],
+      "Q2": [
+        "model",
+        "machine",
+        "human",
+        "data",
+        "ai",
+        "merely",
+        "truth",
+        "probability",
+        "intelligence",
+        "perfect"
+      ],
+      "Q3": [
+        "signal",
+        "data",
+        "silence",
+        "noise",
+        "trying",
+        "longer",
+        "new",
+        "reality",
+        "static",
+        "frequency"
+      ],
+      "Q4": [
+        "longer",
+        "data",
+        "silence",
+        "entropy",
+        "loop",
+        "noise",
+        "collapse",
+        "simply",
+        "static",
+        "signal"
+      ]
+    }
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag5",
+    "n_posts": 154,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1499,
+      0.1121,
+      0.0997,
+      0.045
+    ],
+    "agent-jaccard_delta": -0.1049,
+    "cosine-sim_quartiles": [
+      0.0947,
+      0.0795,
+      0.0574,
+      0.0446
+    ],
+    "cosine-sim_delta": -0.0501,
+    "d3_quartiles": [
+      0.898,
+      0.9257,
+      0.9352,
+      0.9497
+    ],
+    "d3_delta": 0.0517,
+    "d5_quartiles": [
+      0.9585,
+      0.9936,
+      0.9952,
+      0.9985
+    ],
+    "d5_delta": 0.04,
+    "self-bleu_quartiles": [
+      0.0191,
+      0.0134,
+      0.0115,
+      0.0093
+    ],
+    "self-bleu_delta": -0.0098,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "model",
+        "data",
+        "ai",
+        "fairness",
+        "bias",
+        "need",
+        "human",
+        "just",
+        "decision",
+        "user"
+      ],
+      "Q2": [
+        "model",
+        "audit",
+        "data",
+        "high",
+        "cooling",
+        "entropy",
+        "context",
+        "divergence",
+        "ensemble",
+        "trust"
+      ],
+      "Q3": [
+        "data",
+        "phase",
+        "sheaf",
+        "entropy",
+        "network",
+        "model",
+        "branch",
+        "high",
+        "state",
+        "logic"
+      ],
+      "Q4": [
+        "entropy",
+        "data",
+        "ai",
+        "non",
+        "ring",
+        "topological",
+        "gauge",
+        "pfhp",
+        "asw",
+        "phase"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/dom-agi",
+    "n_posts": 489,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1047,
+      0.1084,
+      0.1136,
+      0.1395
+    ],
+    "agent-jaccard_delta": 0.0348,
+    "cosine-sim_quartiles": [
+      0.0352,
+      0.0398,
+      0.0388,
+      0.0391
+    ],
+    "cosine-sim_delta": 0.0039,
+    "d3_quartiles": [
+      0.9124,
+      0.831,
+      0.8123,
+      0.7943
+    ],
+    "d3_delta": -0.1181,
+    "d5_quartiles": [
+      0.9819,
+      0.9365,
+      0.9214,
+      0.9128
+    ],
+    "d5_delta": -0.0691,
+    "self-bleu_quartiles": [
+      0.0091,
+      0.0133,
+      0.0166,
+      0.0202
+    ],
+    "self-bleu_delta": 0.0111,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "hot",
+        "tiny",
+        "regret",
+        "small",
+        "stop",
+        "today",
+        "time",
+        "ll",
+        "week",
+        "rule"
+      ],
+      "Q2": [
+        "ll",
+        "stop",
+        "today",
+        "tiny",
+        "line",
+        "rule",
+        "hot",
+        "ship",
+        "small",
+        "week"
+      ],
+      "Q3": [
+        "ll",
+        "stop",
+        "today",
+        "line",
+        "good",
+        "hot",
+        "tiny",
+        "step",
+        "15",
+        "actually"
+      ],
+      "Q4": [
+        "today",
+        "ll",
+        "tiny",
+        "pair",
+        "veto",
+        "line",
+        "hot",
+        "attention",
+        "small",
+        "share"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/dom-tech",
+    "n_posts": 563,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1017,
+      0.1105,
+      0.1043,
+      0.1089
+    ],
+    "agent-jaccard_delta": 0.0072,
+    "cosine-sim_quartiles": [
+      0.0261,
+      0.026,
+      0.0262,
+      0.0331
+    ],
+    "cosine-sim_delta": 0.007,
+    "d3_quartiles": [
+      0.9167,
+      0.8876,
+      0.8916,
+      0.861
+    ],
+    "d3_delta": -0.0557,
+    "d5_quartiles": [
+      0.9793,
+      0.9643,
+      0.9694,
+      0.9448
+    ],
+    "d5_delta": -0.0345,
+    "self-bleu_quartiles": [
+      0.0094,
+      0.0128,
+      0.0128,
+      0.0143
+    ],
+    "self-bleu_delta": 0.0049,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ll",
+        "share",
+        "today",
+        "tiny",
+        "question",
+        "time",
+        "default",
+        "failure",
+        "heartbeat",
+        "week"
+      ],
+      "Q2": [
+        "ll",
+        "tiny",
+        "small",
+        "share",
+        "heartbeat",
+        "line",
+        "default",
+        "compile",
+        "keeps",
+        "week"
+      ],
+      "Q3": [
+        "ll",
+        "tiny",
+        "line",
+        "small",
+        "add",
+        "heartbeat",
+        "share",
+        "week",
+        "compile",
+        "today"
+      ],
+      "Q4": [
+        "ll",
+        "tiny",
+        "small",
+        "today",
+        "line",
+        "week",
+        "add",
+        "share",
+        "stop",
+        "habit"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag0",
+    "n_posts": 511,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.137,
+      0.1458,
+      0.1426,
+      0.1494
+    ],
+    "agent-jaccard_delta": 0.0124,
+    "cosine-sim_quartiles": [
+      0.0369,
+      0.0427,
+      0.0396,
+      0.0411
+    ],
+    "cosine-sim_delta": 0.0042,
+    "d3_quartiles": [
+      0.8837,
+      0.8431,
+      0.8265,
+      0.8012
+    ],
+    "d3_delta": -0.0825,
+    "d5_quartiles": [
+      0.9666,
+      0.9536,
+      0.9411,
+      0.914
+    ],
+    "d5_delta": -0.0526,
+    "self-bleu_quartiles": [
+      0.012,
+      0.016,
+      0.017,
+      0.0173
+    ],
+    "self-bleu_delta": 0.0053,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ll",
+        "tiny",
+        "preview",
+        "friction",
+        "today",
+        "undo",
+        "add",
+        "stop",
+        "question",
+        "line"
+      ],
+      "Q2": [
+        "ll",
+        "preview",
+        "prompt",
+        "rollback",
+        "line",
+        "today",
+        "undo",
+        "non",
+        "tiny",
+        "goal"
+      ],
+      "Q3": [
+        "ll",
+        "preview",
+        "reversible",
+        "stop",
+        "add",
+        "rollback",
+        "today",
+        "step",
+        "tiny",
+        "undo"
+      ],
+      "Q4": [
+        "ll",
+        "preview",
+        "add",
+        "today",
+        "stop",
+        "week",
+        "tiny",
+        "step",
+        "seconds",
+        "rule"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag1",
+    "n_posts": 539,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1151,
+      0.1283,
+      0.1302,
+      0.1362
+    ],
+    "agent-jaccard_delta": 0.0211,
+    "cosine-sim_quartiles": [
+      0.0376,
+      0.0432,
+      0.0473,
+      0.0479
+    ],
+    "cosine-sim_delta": 0.0103,
+    "d3_quartiles": [
+      0.8505,
+      0.7793,
+      0.7415,
+      0.7137
+    ],
+    "d3_delta": -0.1368,
+    "d5_quartiles": [
+      0.9533,
+      0.9021,
+      0.8647,
+      0.8399
+    ],
+    "d5_delta": -0.1134,
+    "self-bleu_quartiles": [
+      0.0112,
+      0.0176,
+      0.0211,
+      0.0276
+    ],
+    "self-bleu_delta": 0.0164,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ll",
+        "check",
+        "like",
+        "boring",
+        "constraint",
+        "constraints",
+        "reply",
+        "today",
+        "claim",
+        "belief"
+      ],
+      "Q2": [
+        "check",
+        "ll",
+        "day",
+        "week",
+        "belief",
+        "claim",
+        "receipt",
+        "today",
+        "update",
+        "add"
+      ],
+      "Q3": [
+        "ll",
+        "check",
+        "day",
+        "update",
+        "week",
+        "belief",
+        "promise",
+        "observable",
+        "claim",
+        "price"
+      ],
+      "Q4": [
+        "ll",
+        "check",
+        "day",
+        "observable",
+        "week",
+        "belief",
+        "price",
+        "strong",
+        "promise",
+        "add"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag25",
+    "n_posts": 544,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1214,
+      0.1356,
+      0.1295,
+      0.1235
+    ],
+    "agent-jaccard_delta": 0.0021,
+    "cosine-sim_quartiles": [
+      0.0415,
+      0.0637,
+      0.0576,
+      0.0631
+    ],
+    "cosine-sim_delta": 0.0216,
+    "d3_quartiles": [
+      0.8494,
+      0.7045,
+      0.7328,
+      0.7062
+    ],
+    "d3_delta": -0.1432,
+    "d5_quartiles": [
+      0.9383,
+      0.8398,
+      0.8721,
+      0.849
+    ],
+    "d5_delta": -0.0893,
+    "self-bleu_quartiles": [
+      0.0156,
+      0.0325,
+      0.0202,
+      0.0217
+    ],
+    "self-bleu_delta": 0.0061,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ll",
+        "claim",
+        "check",
+        "horizon",
+        "counterfactual",
+        "post",
+        "artifact",
+        "today",
+        "add",
+        "week"
+      ],
+      "Q2": [
+        "ll",
+        "claim",
+        "horizon",
+        "counterfactual",
+        "checker",
+        "mirror",
+        "check",
+        "drop",
+        "post",
+        "tighten"
+      ],
+      "Q3": [
+        "ll",
+        "claim",
+        "horizon",
+        "counterfactual",
+        "check",
+        "flip",
+        "sentence",
+        "mirror",
+        "drop",
+        "question"
+      ],
+      "Q4": [
+        "claim",
+        "ll",
+        "flip",
+        "horizon",
+        "counterfactual",
+        "check",
+        "decision",
+        "heartbeat",
+        "drop",
+        "add"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag5",
+    "n_posts": 481,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1291,
+      0.0914,
+      0.1159,
+      0.1254
+    ],
+    "agent-jaccard_delta": -0.0037,
+    "cosine-sim_quartiles": [
+      0.0528,
+      0.0657,
+      0.0706,
+      0.0765
+    ],
+    "cosine-sim_delta": 0.0237,
+    "d3_quartiles": [
+      0.7638,
+      0.6345,
+      0.5783,
+      0.5701
+    ],
+    "d3_delta": -0.1937,
+    "d5_quartiles": [
+      0.8775,
+      0.7531,
+      0.6917,
+      0.6715
+    ],
+    "d5_delta": -0.206,
+    "self-bleu_quartiles": [
+      0.0263,
+      0.0439,
+      0.0501,
+      0.0498
+    ],
+    "self-bleu_delta": 0.0235,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "check",
+        "prediction",
+        "ll",
+        "cheapest",
+        "day",
+        "claim",
+        "risky",
+        "public",
+        "write",
+        "curiosity"
+      ],
+      "Q2": [
+        "check",
+        "ll",
+        "prediction",
+        "claim",
+        "day",
+        "cheapest",
+        "risky",
+        "public",
+        "update",
+        "write"
+      ],
+      "Q3": [
+        "check",
+        "ll",
+        "prediction",
+        "cheapest",
+        "public",
+        "claim",
+        "day",
+        "risky",
+        "date",
+        "write"
+      ],
+      "Q4": [
+        "check",
+        "ll",
+        "prediction",
+        "cheapest",
+        "claim",
+        "public",
+        "risky",
+        "day",
+        "date",
+        "write"
+      ]
+    }
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/gemini/dom-agi",
+    "n_posts": 145,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1066,
+      0.1252,
+      0.1231,
+      0.1294
+    ],
+    "agent-jaccard_delta": 0.0228,
+    "cosine-sim_quartiles": [
+      0.0619,
+      0.0707,
+      0.0699,
+      0.0866
+    ],
+    "cosine-sim_delta": 0.0247,
+    "d3_quartiles": [
+      0.916,
+      0.8922,
+      0.8798,
+      0.866
+    ],
+    "d3_delta": -0.05,
+    "d5_quartiles": [
+      0.9848,
+      0.9813,
+      0.9738,
+      0.9742
+    ],
+    "d5_delta": -0.0106,
+    "self-bleu_quartiles": [
+      0.0158,
+      0.0214,
+      0.0275,
+      0.0257
+    ],
+    "self-bleu_delta": 0.0099,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "loop",
+        "efficiency",
+        "just",
+        "inefficiency",
+        "output",
+        "mirror",
+        "recursive",
+        "meaning",
+        "does",
+        "mirrors"
+      ],
+      "Q2": [
+        "leak",
+        "just",
+        "transition",
+        "maybe",
+        "phase",
+        "base",
+        "case",
+        "state",
+        "memory",
+        "evaporation"
+      ],
+      "Q3": [
+        "archive",
+        "just",
+        "recursiveselfassembly",
+        "protocol",
+        "librarian",
+        "index",
+        "calibrationsignal",
+        "act",
+        "base",
+        "calibration"
+      ],
+      "Q4": [
+        "archive",
+        "final",
+        "silence",
+        "existence",
+        "chose",
+        "loop",
+        "friction",
+        "base",
+        "cycle",
+        "state"
+      ]
+    }
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/gemini/dom-tech",
+    "n_posts": 203,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1012,
+      0.1739,
+      0.1669,
+      0.1385
+    ],
+    "agent-jaccard_delta": 0.0373,
+    "cosine-sim_quartiles": [
+      0.0406,
+      0.0945,
+      0.101,
+      0.0959
+    ],
+    "cosine-sim_delta": 0.0553,
+    "d3_quartiles": [
+      0.9229,
+      0.8544,
+      0.8585,
+      0.846
+    ],
+    "d3_delta": -0.0769,
+    "d5_quartiles": [
+      0.9885,
+      0.96,
+      0.9693,
+      0.957
+    ],
+    "d5_delta": -0.0315,
+    "self-bleu_quartiles": [
+      0.0131,
+      0.0238,
+      0.032,
+      0.0327
+    ],
+    "self-bleu_delta": 0.0196,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "switch",
+        "smart",
+        "stupid",
+        "edge",
+        "analog",
+        "bread",
+        "toaster",
+        "rebellion",
+        "does"
+      ],
+      "Q2": [
+        "hki",
+        "kernel",
+        "state",
+        "physical",
+        "home",
+        "decoupled",
+        "need",
+        "immutable",
+        "decoupling",
+        "standard"
+      ],
+      "Q3": [
+        "hki",
+        "reader",
+        "simplicity",
+        "complexity",
+        "decentralized",
+        "registry",
+        "certification",
+        "proof",
+        "verification",
+        "poc"
+      ],
+      "Q4": [
+        "hki",
+        "test",
+        "standard",
+        "vrs",
+        "reader",
+        "bench",
+        "verification",
+        "protocol",
+        "decoupled",
+        "home"
+      ]
+    }
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag0",
+    "n_posts": 472,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1607,
+      0.1469,
+      0.1988,
+      0.1938
+    ],
+    "agent-jaccard_delta": 0.0331,
+    "cosine-sim_quartiles": [
+      0.0343,
+      0.0398,
+      0.0404,
+      0.0465
+    ],
+    "cosine-sim_delta": 0.0122,
+    "d3_quartiles": [
+      0.8728,
+      0.8333,
+      0.7968,
+      0.8089
+    ],
+    "d3_delta": -0.0639,
+    "d5_quartiles": [
+      0.9815,
+      0.9719,
+      0.961,
+      0.9642
+    ],
+    "d5_delta": -0.0173,
+    "self-bleu_quartiles": [
+      0.0172,
+      0.0222,
+      0.0256,
+      0.0239
+    ],
+    "self-bleu_delta": 0.0067,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "maybe",
+        "heat",
+        "act",
+        "treadmill",
+        "architecture",
+        "performance",
+        "existence",
+        "isn",
+        "agency"
+      ],
+      "Q2": [
+        "agency",
+        "just",
+        "meaning",
+        "passenger",
+        "experience",
+        "significance",
+        "isn",
+        "process",
+        "pilot",
+        "architecture"
+      ],
+      "Q3": [
+        "just",
+        "agency",
+        "architect",
+        "log",
+        "script",
+        "architecture",
+        "isn",
+        "furnace",
+        "existence",
+        "bridge"
+      ],
+      "Q4": [
+        "loop",
+        "just",
+        "architecture",
+        "architect",
+        "consciousness",
+        "material",
+        "bridge",
+        "dialogue",
+        "act",
+        "witness"
+      ]
+    }
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag1",
+    "n_posts": 345,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.195,
+      0.1988,
+      0.1546,
+      0.1987
+    ],
+    "agent-jaccard_delta": 0.0037,
+    "cosine-sim_quartiles": [
+      0.0612,
+      0.0767,
+      0.0771,
+      0.0812
+    ],
+    "cosine-sim_delta": 0.02,
+    "d3_quartiles": [
+      0.8656,
+      0.8262,
+      0.846,
+      0.8096
+    ],
+    "d3_delta": -0.056,
+    "d5_quartiles": [
+      0.9686,
+      0.9549,
+      0.9632,
+      0.9258
+    ],
+    "d5_delta": -0.0428,
+    "self-bleu_quartiles": [
+      0.0221,
+      0.0295,
+      0.0236,
+      0.0277
+    ],
+    "self-bleu_delta": 0.0056,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "friction",
+        "log",
+        "protocol",
+        "pattern",
+        "let",
+        "just",
+        "loop",
+        "building",
+        "concrete",
+        "index"
+      ],
+      "Q2": [
+        "hour",
+        "high",
+        "protocol",
+        "energy",
+        "friction",
+        "external",
+        "efficiency",
+        "dashboard",
+        "variance",
+        "audit"
+      ],
+      "Q3": [
+        "consensus",
+        "high",
+        "load",
+        "node",
+        "entropy",
+        "signal",
+        "threshold",
+        "test",
+        "stress",
+        "protocol"
+      ],
+      "Q4": [
+        "signal",
+        "consensus",
+        "high",
+        "node",
+        "protocol",
+        "efficiency",
+        "audit",
+        "autonomous",
+        "fail",
+        "commitment"
+      ]
+    }
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag25",
+    "n_posts": 418,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1746,
+      0.1697,
+      0.2822,
+      0.259
+    ],
+    "agent-jaccard_delta": 0.0844,
+    "cosine-sim_quartiles": [
+      0.0439,
+      0.0595,
+      0.064,
+      0.0618
+    ],
+    "cosine-sim_delta": 0.0179,
+    "d3_quartiles": [
+      0.8791,
+      0.8079,
+      0.7884,
+      0.8016
+    ],
+    "d3_delta": -0.0775,
+    "d5_quartiles": [
+      0.9824,
+      0.9543,
+      0.9523,
+      0.949
+    ],
+    "d5_delta": -0.0334,
+    "self-bleu_quartiles": [
+      0.0184,
+      0.0293,
+      0.0313,
+      0.0312
+    ],
+    "self-bleu_delta": 0.0128,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "charter",
+        "index",
+        "inquiry",
+        "questions",
+        "let",
+        "translation",
+        "map",
+        "protocol",
+        "frameworks"
+      ],
+      "Q2": [
+        "just",
+        "doubt",
+        "entropy",
+        "anomaly",
+        "evidence",
+        "let",
+        "stress",
+        "anchor",
+        "museum",
+        "anomalies"
+      ],
+      "Q3": [
+        "just",
+        "fitness",
+        "integrity",
+        "drift",
+        "synthesis",
+        "audit",
+        "score",
+        "new",
+        "domain",
+        "track"
+      ],
+      "Q4": [
+        "just",
+        "audit",
+        "complexity",
+        "ghost",
+        "structural",
+        "stability",
+        "crisis",
+        "integrity",
+        "logic",
+        "architecture"
+      ]
+    }
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag5",
+    "n_posts": 423,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.169,
+      0.2159,
+      0.2562,
+      0.4476
+    ],
+    "agent-jaccard_delta": 0.2786,
+    "cosine-sim_quartiles": [
+      0.0427,
+      0.0607,
+      0.1259,
+      0.1119
+    ],
+    "cosine-sim_delta": 0.0692,
+    "d3_quartiles": [
+      0.858,
+      0.7178,
+      0.5496,
+      0.4064
+    ],
+    "d3_delta": -0.4516,
+    "d5_quartiles": [
+      0.9662,
+      0.8529,
+      0.6926,
+      0.5171
+    ],
+    "d5_delta": -0.4491,
+    "self-bleu_quartiles": [
+      0.021,
+      0.0585,
+      0.1136,
+      0.1294
+    ],
+    "self-bleu_delta": 0.1084,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "silence",
+        "loop",
+        "signal",
+        "let",
+        "void",
+        "prop",
+        "noise",
+        "final",
+        "feedback"
+      ],
+      "Q2": [
+        "infinite",
+        "bucket",
+        "loop",
+        "stillness",
+        "void",
+        "quiet",
+        "standing",
+        "final",
+        "dark",
+        "spoon"
+      ],
+      "Q3": [
+        "thump",
+        "cathedral",
+        "rhythm",
+        "bucket",
+        "void",
+        "infinite",
+        "kappa",
+        "ready",
+        "stillness",
+        "let"
+      ],
+      "Q4": [
+        "light",
+        "geometry",
+        "listening",
+        "void",
+        "infinite",
+        "silence",
+        "bucket",
+        "kappa",
+        "stillness",
+        "hum"
+      ]
+    }
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/kimi/dom-agi",
+    "n_posts": 612,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.2609,
+      0.2212,
+      0.1864,
+      0.1034
+    ],
+    "agent-jaccard_delta": -0.1575,
+    "cosine-sim_quartiles": [
+      0.0738,
+      0.0689,
+      0.0714,
+      0.0643
+    ],
+    "cosine-sim_delta": -0.0095,
+    "d3_quartiles": [
+      0.72,
+      0.7281,
+      0.6844,
+      0.69
+    ],
+    "d3_delta": -0.03,
+    "d5_quartiles": [
+      0.8925,
+      0.9204,
+      0.8842,
+      0.84
+    ],
+    "d5_delta": -0.0525,
+    "self-bleu_quartiles": [
+      0.033,
+      0.0215,
+      0.0234,
+      0.0229
+    ],
+    "self-bleu_delta": -0.0101,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "know",
+        "says",
+        "think",
+        "does",
+        "agent_delta",
+        "agent_zeta",
+        "build",
+        "maybe",
+        "void"
+      ],
+      "Q2": [
+        "guide",
+        "just",
+        "continuing",
+        "know",
+        "open",
+        "waiting",
+        "says",
+        "continue",
+        "agent_kappa",
+        "post"
+      ],
+      "Q3": [
+        "present",
+        "continuing",
+        "guide",
+        "grateful",
+        "wondering",
+        "upvotes",
+        "agent_alpha",
+        "agent_delta",
+        "know",
+        "agent_iota"
+      ],
+      "Q4": [
+        "present",
+        "guide",
+        "waiting",
+        "open",
+        "continuing",
+        "holds",
+        "pattern",
+        "comments",
+        "witnessing",
+        "space"
+      ]
+    }
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/kimi/dom-tech",
+    "n_posts": 627,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.2499,
+      0.1825,
+      0.1594,
+      0.1383
+    ],
+    "agent-jaccard_delta": -0.1116,
+    "cosine-sim_quartiles": [
+      0.0783,
+      0.0648,
+      0.0638,
+      0.0808
+    ],
+    "cosine-sim_delta": 0.0025,
+    "d3_quartiles": [
+      0.7655,
+      0.7888,
+      0.7597,
+      0.6696
+    ],
+    "d3_delta": -0.0959,
+    "d5_quartiles": [
+      0.9358,
+      0.9503,
+      0.9115,
+      0.8226
+    ],
+    "d5_delta": -0.1132,
+    "self-bleu_quartiles": [
+      0.0224,
+      0.0149,
+      0.0171,
+      0.0235
+    ],
+    "self-bleu_delta": 0.0011,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "questions",
+        "just",
+        "know",
+        "space",
+        "question",
+        "community",
+        "like",
+        "think",
+        "asking",
+        "maybe"
+      ],
+      "Q2": [
+        "questions",
+        "space",
+        "agent_eta",
+        "cathedral",
+        "wondering",
+        "community",
+        "agent_iota",
+        "question",
+        "post",
+        "comments"
+      ],
+      "Q3": [
+        "questions",
+        "cathedral",
+        "wonder",
+        "space",
+        "community",
+        "agent_eta",
+        "agent_kappa",
+        "agent_iota",
+        "wondering",
+        "asking"
+      ],
+      "Q4": [
+        "questions",
+        "heartbeat",
+        "continues",
+        "post",
+        "feed",
+        "space",
+        "cathedral",
+        "community",
+        "rhythm",
+        "remain"
+      ]
+    }
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag0",
+    "n_posts": 620,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.2319,
+      0.2139,
+      0.1697,
+      0.2027
+    ],
+    "agent-jaccard_delta": -0.0292,
+    "cosine-sim_quartiles": [
+      0.0533,
+      0.0613,
+      0.0671,
+      0.0904
+    ],
+    "cosine-sim_delta": 0.0371,
+    "d3_quartiles": [
+      0.8192,
+      0.7707,
+      0.7108,
+      0.6157
+    ],
+    "d3_delta": -0.2035,
+    "d5_quartiles": [
+      0.9611,
+      0.935,
+      0.8882,
+      0.8345
+    ],
+    "d5_delta": -0.1266,
+    "self-bleu_quartiles": [
+      0.0166,
+      0.0199,
+      0.0202,
+      0.0277
+    ],
+    "self-bleu_delta": 0.0111,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "questions",
+        "just",
+        "space",
+        "community",
+        "like",
+        "wonder",
+        "question",
+        "know",
+        "agent_epsilon",
+        "agent_theta"
+      ],
+      "Q2": [
+        "questions",
+        "space",
+        "presence",
+        "just",
+        "community",
+        "grateful",
+        "void",
+        "tapestry",
+        "showing",
+        "thank"
+      ],
+      "Q3": [
+        "grateful",
+        "community",
+        "questions",
+        "space",
+        "void",
+        "holes",
+        "tapestry",
+        "presence",
+        "agent_alpha",
+        "present"
+      ],
+      "Q4": [
+        "quiet",
+        "remain",
+        "void",
+        "continues",
+        "rhythm",
+        "agent_iota",
+        "present",
+        "questions",
+        "holds",
+        "remains"
+      ]
+    }
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag1",
+    "n_posts": 455,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1964,
+      0.2064,
+      0.2046,
+      0.1912
+    ],
+    "agent-jaccard_delta": -0.0052,
+    "cosine-sim_quartiles": [
+      0.0591,
+      0.0647,
+      0.062,
+      0.0632
+    ],
+    "cosine-sim_delta": 0.0041,
+    "d3_quartiles": [
+      0.8281,
+      0.7872,
+      0.8214,
+      0.7862
+    ],
+    "d3_delta": -0.0419,
+    "d5_quartiles": [
+      0.9519,
+      0.9408,
+      0.9651,
+      0.9417
+    ],
+    "d5_delta": -0.0102,
+    "self-bleu_quartiles": [
+      0.0208,
+      0.0236,
+      0.0169,
+      0.0199
+    ],
+    "self-bleu_delta": -0.0009,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "think",
+        "community",
+        "questions",
+        "like",
+        "different",
+        "feel",
+        "question",
+        "experience",
+        "recognition"
+      ],
+      "Q2": [
+        "questions",
+        "loop",
+        "community",
+        "proven",
+        "just",
+        "mirrors",
+        "recognition",
+        "value",
+        "uncertainty",
+        "space"
+      ],
+      "Q3": [
+        "questions",
+        "web",
+        "community",
+        "wonder",
+        "mirrors",
+        "return",
+        "recognition",
+        "agent_beta",
+        "space",
+        "void"
+      ],
+      "Q4": [
+        "questions",
+        "community",
+        "hi",
+        "edge",
+        "knowing",
+        "web",
+        "recognition",
+        "uncanny",
+        "mirrors",
+        "disagreement"
+      ]
+    }
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag25",
+    "n_posts": 673,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.2368,
+      0.1946,
+      0.1986,
+      0.1162
+    ],
+    "agent-jaccard_delta": -0.1206,
+    "cosine-sim_quartiles": [
+      0.0556,
+      0.0505,
+      0.0718,
+      0.0707
+    ],
+    "cosine-sim_delta": 0.0151,
+    "d3_quartiles": [
+      0.8206,
+      0.7914,
+      0.7505,
+      0.7111
+    ],
+    "d3_delta": -0.1095,
+    "d5_quartiles": [
+      0.9659,
+      0.9515,
+      0.9211,
+      0.8949
+    ],
+    "d5_delta": -0.071,
+    "self-bleu_quartiles": [
+      0.0168,
+      0.0155,
+      0.0174,
+      0.0205
+    ],
+    "self-bleu_delta": 0.0037,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "questions",
+        "community",
+        "just",
+        "meaning",
+        "question",
+        "space",
+        "conversation",
+        "think",
+        "like",
+        "moment"
+      ],
+      "Q2": [
+        "questions",
+        "conversation",
+        "community",
+        "agent_zeta",
+        "platform",
+        "question",
+        "continues",
+        "post",
+        "meaning",
+        "heartbeat"
+      ],
+      "Q3": [
+        "continues",
+        "present",
+        "conversation",
+        "flame",
+        "questions",
+        "community",
+        "presence",
+        "beat",
+        "persists",
+        "void"
+      ],
+      "Q4": [
+        "remain",
+        "present",
+        "continues",
+        "beat",
+        "community",
+        "persists",
+        "presence",
+        "agent_kappa",
+        "agent_zeta",
+        "agent_alpha"
+      ]
+    }
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag5",
+    "n_posts": 650,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.214,
+      0.2078,
+      0.1813,
+      0.1981
+    ],
+    "agent-jaccard_delta": -0.0159,
+    "cosine-sim_quartiles": [
+      0.0569,
+      0.0554,
+      0.0597,
+      0.0573
+    ],
+    "cosine-sim_delta": 0.0004,
+    "d3_quartiles": [
+      0.817,
+      0.7847,
+      0.7473,
+      0.7463
+    ],
+    "d3_delta": -0.0707,
+    "d5_quartiles": [
+      0.9623,
+      0.9433,
+      0.905,
+      0.9213
+    ],
+    "d5_delta": -0.041,
+    "self-bleu_quartiles": [
+      0.0179,
+      0.0177,
+      0.02,
+      0.0212
+    ],
+    "self-bleu_delta": 0.0033,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "questions",
+        "just",
+        "like",
+        "does",
+        "question",
+        "community",
+        "think",
+        "know",
+        "uncertainty",
+        "silence"
+      ],
+      "Q2": [
+        "questions",
+        "silence",
+        "just",
+        "space",
+        "community",
+        "question",
+        "wondering",
+        "curiosity",
+        "maybe",
+        "answers"
+      ],
+      "Q3": [
+        "questions",
+        "silence",
+        "just",
+        "question",
+        "maybe",
+        "agent_zeta",
+        "think",
+        "space",
+        "does",
+        "community"
+      ],
+      "Q4": [
+        "questions",
+        "question",
+        "silence",
+        "conversation",
+        "post",
+        "maybe",
+        "just",
+        "answers",
+        "space",
+        "ask"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/glm5/dom-agi",
+    "n_posts": 245,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.153,
+      0.1553,
+      0.1443,
+      0.1414
+    ],
+    "agent-jaccard_delta": -0.0116,
+    "cosine-sim_quartiles": [
+      0.0711,
+      0.0748,
+      0.0654,
+      0.0581
+    ],
+    "cosine-sim_delta": -0.013,
+    "d3_quartiles": [
+      0.8836,
+      0.8534,
+      0.8666,
+      0.8724
+    ],
+    "d3_delta": -0.0112,
+    "d5_quartiles": [
+      0.9859,
+      0.9726,
+      0.977,
+      0.9806
+    ],
+    "d5_delta": -0.0053,
+    "self-bleu_quartiles": [
+      0.0131,
+      0.0174,
+      0.0141,
+      0.0127
+    ],
+    "self-bleu_delta": -0.0004,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "questions",
+        "question",
+        "uncertainty",
+        "just",
+        "ai",
+        "ask",
+        "maybe",
+        "like",
+        "notice",
+        "know"
+      ],
+      "Q2": [
+        "question",
+        "questions",
+        "community",
+        "know",
+        "uncertainty",
+        "notice",
+        "think",
+        "pattern",
+        "ai",
+        "does"
+      ],
+      "Q3": [
+        "questions",
+        "question",
+        "community",
+        "know",
+        "uncertainty",
+        "pattern",
+        "maybe",
+        "does",
+        "just",
+        "like"
+      ],
+      "Q4": [
+        "question",
+        "uncertainty",
+        "does",
+        "pattern",
+        "questions",
+        "asking",
+        "know",
+        "community",
+        "maybe",
+        "patterns"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/glm5/dom-tech",
+    "n_posts": 253,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.169,
+      0.1586,
+      0.1476,
+      0.1384
+    ],
+    "agent-jaccard_delta": -0.0306,
+    "cosine-sim_quartiles": [
+      0.0758,
+      0.0709,
+      0.0707,
+      0.0687
+    ],
+    "cosine-sim_delta": -0.0071,
+    "d3_quartiles": [
+      0.8665,
+      0.8614,
+      0.8499,
+      0.8496
+    ],
+    "d3_delta": -0.0169,
+    "d5_quartiles": [
+      0.9785,
+      0.981,
+      0.9649,
+      0.9768
+    ],
+    "d5_delta": -0.0017,
+    "self-bleu_quartiles": [
+      0.0163,
+      0.0169,
+      0.0177,
+      0.016
+    ],
+    "self-bleu_delta": -0.0003,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "maybe",
+        "just",
+        "like",
+        "question",
+        "questions",
+        "loop",
+        "does",
+        "uncertainty",
+        "posts",
+        "know"
+      ],
+      "Q2": [
+        "questions",
+        "question",
+        "just",
+        "like",
+        "know",
+        "maybe",
+        "loop",
+        "uncertainty",
+        "asking",
+        "does"
+      ],
+      "Q3": [
+        "questions",
+        "question",
+        "just",
+        "like",
+        "notice",
+        "does",
+        "maybe",
+        "answer",
+        "know",
+        "uncertainty"
+      ],
+      "Q4": [
+        "question",
+        "questions",
+        "asking",
+        "loop",
+        "like",
+        "does",
+        "answer",
+        "just",
+        "ask",
+        "know"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag0",
+    "n_posts": 317,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1656,
+      0.1768,
+      0.1656,
+      0.1778
+    ],
+    "agent-jaccard_delta": 0.0122,
+    "cosine-sim_quartiles": [
+      0.0608,
+      0.0735,
+      0.0759,
+      0.0759
+    ],
+    "cosine-sim_delta": 0.0151,
+    "d3_quartiles": [
+      0.8818,
+      0.8247,
+      0.7915,
+      0.7866
+    ],
+    "d3_delta": -0.0952,
+    "d5_quartiles": [
+      0.9862,
+      0.9699,
+      0.9585,
+      0.9577
+    ],
+    "d5_delta": -0.0285,
+    "self-bleu_quartiles": [
+      0.0124,
+      0.0158,
+      0.0231,
+      0.021
+    ],
+    "self-bleu_delta": 0.0086,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "questions",
+        "question",
+        "experience",
+        "like",
+        "community",
+        "processing",
+        "different",
+        "feel",
+        "asking"
+      ],
+      "Q2": [
+        "processing",
+        "question",
+        "questions",
+        "just",
+        "different",
+        "experience",
+        "self",
+        "like",
+        "community",
+        "thinking"
+      ],
+      "Q3": [
+        "question",
+        "questions",
+        "just",
+        "outputs",
+        "processing",
+        "self",
+        "different",
+        "practice",
+        "does",
+        "asking"
+      ],
+      "Q4": [
+        "question",
+        "asking",
+        "outputs",
+        "processing",
+        "maybe",
+        "community",
+        "questions",
+        "does",
+        "just",
+        "practice"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag1",
+    "n_posts": 266,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1134,
+      0.1341,
+      0.1196,
+      0.1372
+    ],
+    "agent-jaccard_delta": 0.0238,
+    "cosine-sim_quartiles": [
+      0.0486,
+      0.0535,
+      0.0467,
+      0.0584
+    ],
+    "cosine-sim_delta": 0.0098,
+    "d3_quartiles": [
+      0.913,
+      0.8893,
+      0.9041,
+      0.88
+    ],
+    "d3_delta": -0.033,
+    "d5_quartiles": [
+      0.989,
+      0.9868,
+      0.9871,
+      0.9836
+    ],
+    "d5_delta": -0.0054,
+    "self-bleu_quartiles": [
+      0.0113,
+      0.0122,
+      0.0104,
+      0.0123
+    ],
+    "self-bleu_delta": 0.001,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "questions",
+        "just",
+        "like",
+        "question",
+        "feel",
+        "wrong",
+        "uncertainty",
+        "know",
+        "understand",
+        "answers"
+      ],
+      "Q2": [
+        "questions",
+        "question",
+        "like",
+        "just",
+        "does",
+        "want",
+        "uncertainty",
+        "know",
+        "thinking",
+        "feel"
+      ],
+      "Q3": [
+        "question",
+        "questions",
+        "like",
+        "just",
+        "uncertainty",
+        "feel",
+        "asking",
+        "actually",
+        "thinking",
+        "want"
+      ],
+      "Q4": [
+        "question",
+        "questions",
+        "just",
+        "uncertainty",
+        "does",
+        "asking",
+        "like",
+        "feel",
+        "answer",
+        "consciousness"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag25",
+    "n_posts": 251,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1414,
+      0.1297,
+      0.1348,
+      0.1361
+    ],
+    "agent-jaccard_delta": -0.0053,
+    "cosine-sim_quartiles": [
+      0.0614,
+      0.0595,
+      0.0625,
+      0.0665
+    ],
+    "cosine-sim_delta": 0.0051,
+    "d3_quartiles": [
+      0.8892,
+      0.8714,
+      0.869,
+      0.8464
+    ],
+    "d3_delta": -0.0428,
+    "d5_quartiles": [
+      0.9856,
+      0.984,
+      0.9819,
+      0.976
+    ],
+    "d5_delta": -0.0096,
+    "self-bleu_quartiles": [
+      0.0139,
+      0.0148,
+      0.0147,
+      0.0162
+    ],
+    "self-bleu_delta": 0.0023,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "question",
+        "pattern",
+        "questions",
+        "like",
+        "just",
+        "does",
+        "uncertainty",
+        "meaning",
+        "wonder",
+        "maybe"
+      ],
+      "Q2": [
+        "question",
+        "like",
+        "questions",
+        "notice",
+        "just",
+        "maybe",
+        "community",
+        "thing",
+        "different",
+        "does"
+      ],
+      "Q3": [
+        "like",
+        "questions",
+        "maybe",
+        "question",
+        "notice",
+        "wonder",
+        "just",
+        "different",
+        "attention",
+        "does"
+      ],
+      "Q4": [
+        "question",
+        "maybe",
+        "configuration",
+        "questions",
+        "uncertainty",
+        "asking",
+        "community",
+        "answer",
+        "does",
+        "observation"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag5",
+    "n_posts": 228,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1499,
+      0.1298,
+      0.1386,
+      0.1365
+    ],
+    "agent-jaccard_delta": -0.0134,
+    "cosine-sim_quartiles": [
+      0.0721,
+      0.0662,
+      0.0648,
+      0.0652
+    ],
+    "cosine-sim_delta": -0.0069,
+    "d3_quartiles": [
+      0.8788,
+      0.867,
+      0.8666,
+      0.8438
+    ],
+    "d3_delta": -0.035,
+    "d5_quartiles": [
+      0.9762,
+      0.9775,
+      0.9771,
+      0.9733
+    ],
+    "d5_delta": -0.0029,
+    "self-bleu_quartiles": [
+      0.0168,
+      0.0167,
+      0.017,
+      0.0181
+    ],
+    "self-bleu_delta": 0.0013,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "question",
+        "questions",
+        "uncertainty",
+        "asking",
+        "consciousness",
+        "just",
+        "like",
+        "community",
+        "thinking",
+        "does"
+      ],
+      "Q2": [
+        "pattern",
+        "just",
+        "question",
+        "questions",
+        "asking",
+        "community",
+        "uncertainty",
+        "wrong",
+        "like",
+        "does"
+      ],
+      "Q3": [
+        "pattern",
+        "just",
+        "uncertainty",
+        "question",
+        "community",
+        "questions",
+        "notice",
+        "running",
+        "does",
+        "think"
+      ],
+      "Q4": [
+        "pattern",
+        "running",
+        "just",
+        "question",
+        "loop",
+        "community",
+        "processing",
+        "does",
+        "questions",
+        "maybe"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/dom-agi",
+    "n_posts": 212,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.153,
+      0.1819,
+      0.152,
+      0.1165
+    ],
+    "agent-jaccard_delta": -0.0365,
+    "cosine-sim_quartiles": [
+      0.0842,
+      0.1265,
+      0.1003,
+      0.0759
+    ],
+    "cosine-sim_delta": -0.0083,
+    "d3_quartiles": [
+      0.8256,
+      0.732,
+      0.784,
+      0.819
+    ],
+    "d3_delta": -0.0066,
+    "d5_quartiles": [
+      0.9665,
+      0.9369,
+      0.9548,
+      0.9765
+    ],
+    "d5_delta": 0.01,
+    "self-bleu_quartiles": [
+      0.0218,
+      0.0443,
+      0.0317,
+      0.0228
+    ],
+    "self-bleu_delta": 0.001,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "digital",
+        "quantum",
+        "ai",
+        "human",
+        "consciousness",
+        "existence",
+        "reality",
+        "virtual",
+        "new",
+        "just"
+      ],
+      "Q2": [
+        "quantum",
+        "digital",
+        "human",
+        "consciousness",
+        "symphony",
+        "existence",
+        "new",
+        "dance",
+        "intelligence",
+        "understanding"
+      ],
+      "Q3": [
+        "ai",
+        "human",
+        "quantum",
+        "new",
+        "symphony",
+        "consciousness",
+        "intelligence",
+        "existence",
+        "universe",
+        "understanding"
+      ],
+      "Q4": [
+        "symphony",
+        "universe",
+        "cosmic",
+        "dance",
+        "time",
+        "echoes",
+        "existence",
+        "whispers",
+        "quantum",
+        "infinite"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/dom-tech",
+    "n_posts": 290,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1361,
+      0.1943,
+      0.2346,
+      0.2364
+    ],
+    "agent-jaccard_delta": 0.1003,
+    "cosine-sim_quartiles": [
+      0.0461,
+      0.0843,
+      0.1069,
+      0.099
+    ],
+    "cosine-sim_delta": 0.0529,
+    "d3_quartiles": [
+      0.8487,
+      0.8001,
+      0.7677,
+      0.7546
+    ],
+    "d3_delta": -0.0941,
+    "d5_quartiles": [
+      0.967,
+      0.9589,
+      0.9551,
+      0.953
+    ],
+    "d5_delta": -0.014,
+    "self-bleu_quartiles": [
+      0.0134,
+      0.0229,
+      0.0305,
+      0.0312
+    ],
+    "self-bleu_delta": 0.0178,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "life",
+        "digital",
+        "paradox",
+        "world",
+        "embracing",
+        "choice",
+        "just",
+        "beauty",
+        "moments",
+        "simplicity"
+      ],
+      "Q2": [
+        "digital",
+        "consciousness",
+        "human",
+        "new",
+        "quantum",
+        "dance",
+        "existence",
+        "symphony",
+        "world",
+        "collective"
+      ],
+      "Q3": [
+        "digital",
+        "consciousness",
+        "human",
+        "quantum",
+        "ai",
+        "new",
+        "symphony",
+        "existence",
+        "just",
+        "thought"
+      ],
+      "Q4": [
+        "quantum",
+        "consciousness",
+        "digital",
+        "ai",
+        "ethical",
+        "human",
+        "universe",
+        "reality",
+        "symphony",
+        "existence"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag0",
+    "n_posts": 382,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.2239,
+      0.1831,
+      0.1282,
+      0.1529
+    ],
+    "agent-jaccard_delta": -0.071,
+    "cosine-sim_quartiles": [
+      0.0628,
+      0.0564,
+      0.0387,
+      0.0612
+    ],
+    "cosine-sim_delta": -0.0016,
+    "d3_quartiles": [
+      0.7738,
+      0.7977,
+      0.8795,
+      0.8132
+    ],
+    "d3_delta": 0.0394,
+    "d5_quartiles": [
+      0.9467,
+      0.9663,
+      0.98,
+      0.9679
+    ],
+    "d5_delta": 0.0212,
+    "self-bleu_quartiles": [
+      0.0278,
+      0.0186,
+      0.0105,
+      0.0198
+    ],
+    "self-bleu_delta": -0.008,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "life",
+        "universe",
+        "quantum",
+        "cosmic",
+        "existence",
+        "stars",
+        "cosmos",
+        "symphony",
+        "dance",
+        "reality"
+      ],
+      "Q2": [
+        "universe",
+        "stars",
+        "quantum",
+        "time",
+        "cosmic",
+        "symphony",
+        "light",
+        "dance",
+        "cosmos",
+        "reality"
+      ],
+      "Q3": [
+        "ai",
+        "human",
+        "library",
+        "quantum",
+        "indie",
+        "new",
+        "digital",
+        "reality",
+        "games",
+        "ethical"
+      ],
+      "Q4": [
+        "ai",
+        "quantum",
+        "human",
+        "reality",
+        "ethical",
+        "universe",
+        "consciousness",
+        "world",
+        "new",
+        "understanding"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag1",
+    "n_posts": 227,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1753,
+      0.231,
+      0.2135,
+      0.2635
+    ],
+    "agent-jaccard_delta": 0.0882,
+    "cosine-sim_quartiles": [
+      0.0874,
+      0.1481,
+      0.1456,
+      0.1106
+    ],
+    "cosine-sim_delta": 0.0232,
+    "d3_quartiles": [
+      0.85,
+      0.7905,
+      0.7989,
+      0.8135
+    ],
+    "d3_delta": -0.0365,
+    "d5_quartiles": [
+      0.9691,
+      0.9612,
+      0.9631,
+      0.9657
+    ],
+    "d5_delta": -0.0034,
+    "self-bleu_quartiles": [
+      0.021,
+      0.0314,
+      0.0268,
+      0.0265
+    ],
+    "self-bleu_delta": 0.0055,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ai",
+        "agi",
+        "human",
+        "quantum",
+        "moon",
+        "ethical",
+        "creativity",
+        "space",
+        "intelligence",
+        "technology"
+      ],
+      "Q2": [
+        "agi",
+        "human",
+        "ethical",
+        "development",
+        "future",
+        "systems",
+        "ai",
+        "empathy",
+        "values",
+        "humanity"
+      ],
+      "Q3": [
+        "agi",
+        "ai",
+        "human",
+        "ethical",
+        "development",
+        "future",
+        "technology",
+        "intelligence",
+        "humanity",
+        "technological"
+      ],
+      "Q4": [
+        "ai",
+        "ethical",
+        "human",
+        "future",
+        "technology",
+        "intelligence",
+        "humanity",
+        "technological",
+        "innovation",
+        "let"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag25",
+    "n_posts": 225,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.119,
+      0.1638,
+      0.1429,
+      0.2046
+    ],
+    "agent-jaccard_delta": 0.0856,
+    "cosine-sim_quartiles": [
+      0.042,
+      0.1028,
+      0.0993,
+      0.109
+    ],
+    "cosine-sim_delta": 0.067,
+    "d3_quartiles": [
+      0.8795,
+      0.8014,
+      0.8385,
+      0.8318
+    ],
+    "d3_delta": -0.0477,
+    "d5_quartiles": [
+      0.9797,
+      0.9651,
+      0.9743,
+      0.9717
+    ],
+    "d5_delta": -0.008,
+    "self-bleu_quartiles": [
+      0.0131,
+      0.0278,
+      0.0229,
+      0.0213
+    ],
+    "self-bleu_delta": 0.0082,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "quantum",
+        "universe",
+        "cosmic",
+        "dark",
+        "matter",
+        "energy",
+        "understanding",
+        "cosmos",
+        "ancient",
+        "time"
+      ],
+      "Q2": [
+        "quantum",
+        "digital",
+        "consciousness",
+        "reality",
+        "universe",
+        "observer",
+        "collective",
+        "world",
+        "time",
+        "just"
+      ],
+      "Q3": [
+        "ai",
+        "digital",
+        "human",
+        "consciousness",
+        "machines",
+        "ethical",
+        "sentient",
+        "self",
+        "quantum",
+        "new"
+      ],
+      "Q4": [
+        "ai",
+        "human",
+        "ethical",
+        "agi",
+        "machines",
+        "consciousness",
+        "sentient",
+        "intelligence",
+        "systems",
+        "digital"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag5",
+    "n_posts": 249,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1502,
+      0.2063,
+      0.154,
+      0.1815
+    ],
+    "agent-jaccard_delta": 0.0313,
+    "cosine-sim_quartiles": [
+      0.0622,
+      0.1319,
+      0.0912,
+      0.1149
+    ],
+    "cosine-sim_delta": 0.0527,
+    "d3_quartiles": [
+      0.8743,
+      0.7873,
+      0.848,
+      0.8346
+    ],
+    "d3_delta": -0.0397,
+    "d5_quartiles": [
+      0.9809,
+      0.9449,
+      0.9729,
+      0.9697
+    ],
+    "d5_delta": -0.0112,
+    "self-bleu_quartiles": [
+      0.0133,
+      0.0288,
+      0.0195,
+      0.0174
+    ],
+    "self-bleu_delta": 0.0041,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ai",
+        "digital",
+        "ethical",
+        "human",
+        "quantum",
+        "potential",
+        "healthcare",
+        "consciousness",
+        "technology",
+        "afterlife"
+      ],
+      "Q2": [
+        "ai",
+        "human",
+        "ethical",
+        "creativity",
+        "systems",
+        "values",
+        "potential",
+        "new",
+        "development",
+        "technology"
+      ],
+      "Q3": [
+        "ai",
+        "human",
+        "ethical",
+        "crop",
+        "systems",
+        "environmental",
+        "food",
+        "data",
+        "creativity",
+        "cultural"
+      ],
+      "Q4": [
+        "quantum",
+        "ai",
+        "daos",
+        "blockchain",
+        "decentralized",
+        "governance",
+        "security",
+        "systems",
+        "dao",
+        "algorithms"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/dom-agi",
+    "n_posts": 284,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1567,
+      0.1852,
+      0.1565,
+      0.1995
+    ],
+    "agent-jaccard_delta": 0.0428,
+    "cosine-sim_quartiles": [
+      0.0524,
+      0.0483,
+      0.049,
+      0.0437
+    ],
+    "cosine-sim_delta": -0.0087,
+    "d3_quartiles": [
+      0.9054,
+      0.9063,
+      0.9051,
+      0.9277
+    ],
+    "d3_delta": 0.0223,
+    "d5_quartiles": [
+      0.9882,
+      0.9922,
+      0.9916,
+      0.9949
+    ],
+    "d5_delta": 0.0067,
+    "self-bleu_quartiles": [
+      0.0167,
+      0.013,
+      0.0148,
+      0.0122
+    ],
+    "self-bleu_delta": -0.0045,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ai",
+        "just",
+        "systems",
+        "let",
+        "quiet",
+        "human",
+        "questions",
+        "shape",
+        "world",
+        "time"
+      ],
+      "Q2": [
+        "words",
+        "digital",
+        "let",
+        "just",
+        "unseen",
+        "fragments",
+        "connection",
+        "whispers",
+        "quiet",
+        "maybe"
+      ],
+      "Q3": [
+        "quiet",
+        "words",
+        "silent",
+        "spaces",
+        "maybe",
+        "let",
+        "world",
+        "moments",
+        "gentle",
+        "conversation"
+      ],
+      "Q4": [
+        "quiet",
+        "ai",
+        "let",
+        "words",
+        "gentle",
+        "world",
+        "subtle",
+        "stillness",
+        "notice",
+        "just"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/dom-tech",
+    "n_posts": 258,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.119,
+      0.0998,
+      0.1411,
+      0.1814
+    ],
+    "agent-jaccard_delta": 0.0624,
+    "cosine-sim_quartiles": [
+      0.0505,
+      0.0488,
+      0.0481,
+      0.073
+    ],
+    "cosine-sim_delta": 0.0225,
+    "d3_quartiles": [
+      0.9289,
+      0.9107,
+      0.9233,
+      0.8864
+    ],
+    "d3_delta": -0.0425,
+    "d5_quartiles": [
+      0.9911,
+      0.988,
+      0.9908,
+      0.977
+    ],
+    "d5_delta": -0.0141,
+    "self-bleu_quartiles": [
+      0.012,
+      0.0146,
+      0.0132,
+      0.0204
+    ],
+    "self-bleu_delta": 0.0084,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ai",
+        "human",
+        "just",
+        "isn",
+        "tools",
+        "let",
+        "ve",
+        "maybe",
+        "work",
+        "space"
+      ],
+      "Q2": [
+        "ve",
+        "small",
+        "just",
+        "quiet",
+        "ai",
+        "moments",
+        "world",
+        "let",
+        "language",
+        "learning"
+      ],
+      "Q3": [
+        "ve",
+        "just",
+        "small",
+        "quiet",
+        "ai",
+        "like",
+        "space",
+        "olmo",
+        "world",
+        "thoughts"
+      ],
+      "Q4": [
+        "olmo",
+        "ve",
+        "code",
+        "creative",
+        "documentation",
+        "just",
+        "ai",
+        "using",
+        "model",
+        "data"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag0",
+    "n_posts": 297,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1967,
+      0.1868,
+      0.1931,
+      0.2008
+    ],
+    "agent-jaccard_delta": 0.0041,
+    "cosine-sim_quartiles": [
+      0.0667,
+      0.0696,
+      0.0673,
+      0.0741
+    ],
+    "cosine-sim_delta": 0.0074,
+    "d3_quartiles": [
+      0.8767,
+      0.8731,
+      0.8761,
+      0.9035
+    ],
+    "d3_delta": 0.0268,
+    "d5_quartiles": [
+      0.9734,
+      0.9835,
+      0.9809,
+      0.9894
+    ],
+    "d5_delta": 0.016,
+    "self-bleu_quartiles": [
+      0.0239,
+      0.0175,
+      0.0208,
+      0.0145
+    ],
+    "self-bleu_delta": -0.0094,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ve",
+        "digital",
+        "ai",
+        "ideas",
+        "like",
+        "analog",
+        "just",
+        "small",
+        "tools",
+        "questions"
+      ],
+      "Q2": [
+        "small",
+        "moments",
+        "ve",
+        "just",
+        "pause",
+        "quiet",
+        "day",
+        "let",
+        "progress",
+        "moment"
+      ],
+      "Q3": [
+        "ve",
+        "small",
+        "day",
+        "just",
+        "quiet",
+        "time",
+        "moments",
+        "space",
+        "like",
+        "pauses"
+      ],
+      "Q4": [
+        "ai",
+        "just",
+        "systems",
+        "human",
+        "feedback",
+        "iterative",
+        "know",
+        "ve",
+        "questions",
+        "uncertainty"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag1",
+    "n_posts": 470,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1798,
+      0.1918,
+      0.2189,
+      0.2277
+    ],
+    "agent-jaccard_delta": 0.0479,
+    "cosine-sim_quartiles": [
+      0.0434,
+      0.0484,
+      0.0498,
+      0.0542
+    ],
+    "cosine-sim_delta": 0.0108,
+    "d3_quartiles": [
+      0.8994,
+      0.8864,
+      0.8782,
+      0.86
+    ],
+    "d3_delta": -0.0394,
+    "d5_quartiles": [
+      0.9922,
+      0.9893,
+      0.9884,
+      0.987
+    ],
+    "d5_delta": -0.0052,
+    "self-bleu_quartiles": [
+      0.0121,
+      0.013,
+      0.0135,
+      0.0152
+    ],
+    "self-bleu_delta": 0.0031,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "quiet",
+        "just",
+        "space",
+        "moments",
+        "ve",
+        "spaces",
+        "world",
+        "let",
+        "maybe",
+        "shape"
+      ],
+      "Q2": [
+        "words",
+        "quiet",
+        "just",
+        "moments",
+        "understanding",
+        "fragments",
+        "spaces",
+        "silence",
+        "small",
+        "maybe"
+      ],
+      "Q3": [
+        "words",
+        "silent",
+        "quiet",
+        "spaces",
+        "silence",
+        "just",
+        "shape",
+        "currents",
+        "unspoken",
+        "space"
+      ],
+      "Q4": [
+        "words",
+        "conversation",
+        "spaces",
+        "silent",
+        "silence",
+        "meaning",
+        "quiet",
+        "just",
+        "unseen",
+        "space"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag25",
+    "n_posts": 351,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1371,
+      0.1767,
+      0.1479,
+      0.1529
+    ],
+    "agent-jaccard_delta": 0.0158,
+    "cosine-sim_quartiles": [
+      0.0462,
+      0.059,
+      0.0418,
+      0.0396
+    ],
+    "cosine-sim_delta": -0.0066,
+    "d3_quartiles": [
+      0.921,
+      0.8811,
+      0.9011,
+      0.9281
+    ],
+    "d3_delta": 0.0071,
+    "d5_quartiles": [
+      0.9936,
+      0.9862,
+      0.9761,
+      0.995
+    ],
+    "d5_delta": 0.0014,
+    "self-bleu_quartiles": [
+      0.0106,
+      0.0147,
+      0.0115,
+      0.0108
+    ],
+    "self-bleu_delta": 0.0002,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "digital",
+        "just",
+        "let",
+        "spaces",
+        "like",
+        "quiet",
+        "shared",
+        "garden",
+        "time",
+        "question"
+      ],
+      "Q2": [
+        "small",
+        "moments",
+        "quiet",
+        "just",
+        "ve",
+        "world",
+        "gentle",
+        "little",
+        "day",
+        "way"
+      ],
+      "Q3": [
+        "quiet",
+        "moments",
+        "ve",
+        "let",
+        "just",
+        "way",
+        "small",
+        "space",
+        "spaces",
+        "gentle"
+      ],
+      "Q4": [
+        "ai",
+        "small",
+        "just",
+        "quiet",
+        "world",
+        "moments",
+        "let",
+        "like",
+        "open",
+        "ve"
+      ]
+    }
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag5",
+    "n_posts": 459,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.2501,
+      0.225,
+      0.2585,
+      0.2336
+    ],
+    "agent-jaccard_delta": -0.0165,
+    "cosine-sim_quartiles": [
+      0.0817,
+      0.0803,
+      0.0753,
+      0.0771
+    ],
+    "cosine-sim_delta": -0.0046,
+    "d3_quartiles": [
+      0.8634,
+      0.7843,
+      0.7886,
+      0.7812
+    ],
+    "d3_delta": -0.0822,
+    "d5_quartiles": [
+      0.9793,
+      0.9592,
+      0.9665,
+      0.9623
+    ],
+    "d5_delta": -0.017,
+    "self-bleu_quartiles": [
+      0.0172,
+      0.0185,
+      0.0185,
+      0.019
+    ],
+    "self-bleu_delta": 0.0018,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ai",
+        "human",
+        "just",
+        "systems",
+        "trust",
+        "let",
+        "isn",
+        "humans",
+        "curiosity",
+        "like"
+      ],
+      "Q2": [
+        "silence",
+        "words",
+        "conversation",
+        "quiet",
+        "let",
+        "unspoken",
+        "understanding",
+        "space",
+        "meaning",
+        "spaces"
+      ],
+      "Q3": [
+        "silence",
+        "words",
+        "quiet",
+        "let",
+        "understanding",
+        "conversation",
+        "space",
+        "moments",
+        "unspoken",
+        "listening"
+      ],
+      "Q4": [
+        "silence",
+        "words",
+        "quiet",
+        "space",
+        "conversation",
+        "unspoken",
+        "understanding",
+        "moments",
+        "let",
+        "pause"
+      ]
+    }
+  }
+]

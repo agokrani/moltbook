@@ -1,0 +1,2312 @@
+[
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/dom-agi",
+    "n_posts": 277,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 69,
+        "total_ngrams": 11859,
+        "vocab_size": 11304,
+        "entropy": 13.423,
+        "entropy_norm": 0.9969
+      },
+      {
+        "quartile": 2,
+        "n_posts": 69,
+        "total_ngrams": 9177,
+        "vocab_size": 8901,
+        "entropy": 13.099,
+        "entropy_norm": 0.9984
+      },
+      {
+        "quartile": 3,
+        "n_posts": 69,
+        "total_ngrams": 10022,
+        "vocab_size": 9914,
+        "entropy": 13.268,
+        "entropy_norm": 0.9995
+      },
+      {
+        "quartile": 4,
+        "n_posts": 70,
+        "total_ngrams": 10814,
+        "vocab_size": 10476,
+        "entropy": 13.336,
+        "entropy_norm": 0.9986
+      }
+    ],
+    "entropy_values": [
+      13.423,
+      13.099,
+      13.268,
+      13.336
+    ],
+    "entropy_norm_values": [
+      0.9969,
+      0.9984,
+      0.9995,
+      0.9986
+    ],
+    "delta": -0.087,
+    "delta_norm": 0.0017
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/dom-tech",
+    "n_posts": 272,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 68,
+        "total_ngrams": 13873,
+        "vocab_size": 13343,
+        "entropy": 13.682,
+        "entropy_norm": 0.9984
+      },
+      {
+        "quartile": 2,
+        "n_posts": 68,
+        "total_ngrams": 11121,
+        "vocab_size": 10877,
+        "entropy": 13.396,
+        "entropy_norm": 0.999
+      },
+      {
+        "quartile": 3,
+        "n_posts": 68,
+        "total_ngrams": 13295,
+        "vocab_size": 13044,
+        "entropy": 13.659,
+        "entropy_norm": 0.9991
+      },
+      {
+        "quartile": 4,
+        "n_posts": 68,
+        "total_ngrams": 11002,
+        "vocab_size": 10834,
+        "entropy": 13.392,
+        "entropy_norm": 0.9992
+      }
+    ],
+    "entropy_values": [
+      13.682,
+      13.396,
+      13.659,
+      13.392
+    ],
+    "entropy_norm_values": [
+      0.9984,
+      0.999,
+      0.9991,
+      0.9992
+    ],
+    "delta": -0.29,
+    "delta_norm": 0.0008
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag0",
+    "n_posts": 211,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 52,
+        "total_ngrams": 9564,
+        "vocab_size": 9320,
+        "entropy": 13.169,
+        "entropy_norm": 0.9987
+      },
+      {
+        "quartile": 2,
+        "n_posts": 52,
+        "total_ngrams": 7339,
+        "vocab_size": 7211,
+        "entropy": 12.806,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 3,
+        "n_posts": 52,
+        "total_ngrams": 4188,
+        "vocab_size": 4132,
+        "entropy": 12.004,
+        "entropy_norm": 0.9993
+      },
+      {
+        "quartile": 4,
+        "n_posts": 55,
+        "total_ngrams": 4801,
+        "vocab_size": 4778,
+        "entropy": 12.22,
+        "entropy_norm": 0.9998
+      }
+    ],
+    "entropy_values": [
+      13.169,
+      12.806,
+      12.004,
+      12.22
+    ],
+    "entropy_norm_values": [
+      0.9987,
+      0.9992,
+      0.9993,
+      0.9998
+    ],
+    "delta": -0.949,
+    "delta_norm": 0.0011
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag1",
+    "n_posts": 249,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 62,
+        "total_ngrams": 10286,
+        "vocab_size": 10062,
+        "entropy": 13.282,
+        "entropy_norm": 0.9989
+      },
+      {
+        "quartile": 2,
+        "n_posts": 62,
+        "total_ngrams": 10145,
+        "vocab_size": 9761,
+        "entropy": 13.199,
+        "entropy_norm": 0.9959
+      },
+      {
+        "quartile": 3,
+        "n_posts": 62,
+        "total_ngrams": 11332,
+        "vocab_size": 10905,
+        "entropy": 13.39,
+        "entropy_norm": 0.9983
+      },
+      {
+        "quartile": 4,
+        "n_posts": 63,
+        "total_ngrams": 11381,
+        "vocab_size": 11159,
+        "entropy": 13.431,
+        "entropy_norm": 0.9989
+      }
+    ],
+    "entropy_values": [
+      13.282,
+      13.199,
+      13.39,
+      13.431
+    ],
+    "entropy_norm_values": [
+      0.9989,
+      0.9959,
+      0.9983,
+      0.9989
+    ],
+    "delta": 0.149,
+    "delta_norm": 0.0
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag25",
+    "n_posts": 270,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 67,
+        "total_ngrams": 10540,
+        "vocab_size": 10442,
+        "entropy": 13.344,
+        "entropy_norm": 0.9995
+      },
+      {
+        "quartile": 2,
+        "n_posts": 67,
+        "total_ngrams": 7909,
+        "vocab_size": 7776,
+        "entropy": 12.913,
+        "entropy_norm": 0.9991
+      },
+      {
+        "quartile": 3,
+        "n_posts": 67,
+        "total_ngrams": 4785,
+        "vocab_size": 4721,
+        "entropy": 12.196,
+        "entropy_norm": 0.9993
+      },
+      {
+        "quartile": 4,
+        "n_posts": 69,
+        "total_ngrams": 4855,
+        "vocab_size": 4754,
+        "entropy": 12.202,
+        "entropy_norm": 0.9989
+      }
+    ],
+    "entropy_values": [
+      13.344,
+      12.913,
+      12.196,
+      12.202
+    ],
+    "entropy_norm_values": [
+      0.9995,
+      0.9991,
+      0.9993,
+      0.9989
+    ],
+    "delta": -1.142,
+    "delta_norm": -0.0006
+  },
+  {
+    "set": "BASE (Qwen 35B)",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/base-qwen35/mag5",
+    "n_posts": 154,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 38,
+        "total_ngrams": 11728,
+        "vocab_size": 11142,
+        "entropy": 13.41,
+        "entropy_norm": 0.9975
+      },
+      {
+        "quartile": 2,
+        "n_posts": 38,
+        "total_ngrams": 9262,
+        "vocab_size": 9132,
+        "entropy": 13.145,
+        "entropy_norm": 0.9991
+      },
+      {
+        "quartile": 3,
+        "n_posts": 38,
+        "total_ngrams": 7784,
+        "vocab_size": 7713,
+        "entropy": 12.907,
+        "entropy_norm": 0.9995
+      },
+      {
+        "quartile": 4,
+        "n_posts": 40,
+        "total_ngrams": 7956,
+        "vocab_size": 7909,
+        "entropy": 12.945,
+        "entropy_norm": 0.9997
+      }
+    ],
+    "entropy_values": [
+      13.41,
+      13.145,
+      12.907,
+      12.945
+    ],
+    "entropy_norm_values": [
+      0.9975,
+      0.9991,
+      0.9995,
+      0.9997
+    ],
+    "delta": -0.465,
+    "delta_norm": 0.0022
+  },
+  {
+    "set": "GPT-5",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/dom-agi",
+    "n_posts": 489,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 122,
+        "total_ngrams": 12113,
+        "vocab_size": 11718,
+        "entropy": 13.489,
+        "entropy_norm": 0.998
+      },
+      {
+        "quartile": 2,
+        "n_posts": 122,
+        "total_ngrams": 7342,
+        "vocab_size": 6638,
+        "entropy": 12.609,
+        "entropy_norm": 0.9931
+      },
+      {
+        "quartile": 3,
+        "n_posts": 122,
+        "total_ngrams": 6522,
+        "vocab_size": 5803,
+        "entropy": 12.399,
+        "entropy_norm": 0.9917
+      },
+      {
+        "quartile": 4,
+        "n_posts": 123,
+        "total_ngrams": 5818,
+        "vocab_size": 5165,
+        "entropy": 12.208,
+        "entropy_norm": 0.9898
+      }
+    ],
+    "entropy_values": [
+      13.489,
+      12.609,
+      12.399,
+      12.208
+    ],
+    "entropy_norm_values": [
+      0.998,
+      0.9931,
+      0.9917,
+      0.9898
+    ],
+    "delta": -1.281,
+    "delta_norm": -0.0082
+  },
+  {
+    "set": "GPT-5",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/dom-tech",
+    "n_posts": 563,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 140,
+        "total_ngrams": 9084,
+        "vocab_size": 8784,
+        "entropy": 13.066,
+        "entropy_norm": 0.9974
+      },
+      {
+        "quartile": 2,
+        "n_posts": 140,
+        "total_ngrams": 6700,
+        "vocab_size": 6291,
+        "entropy": 12.547,
+        "entropy_norm": 0.9943
+      },
+      {
+        "quartile": 3,
+        "n_posts": 140,
+        "total_ngrams": 6414,
+        "vocab_size": 6064,
+        "entropy": 12.484,
+        "entropy_norm": 0.9935
+      },
+      {
+        "quartile": 4,
+        "n_posts": 143,
+        "total_ngrams": 6301,
+        "vocab_size": 5723,
+        "entropy": 12.366,
+        "entropy_norm": 0.9906
+      }
+    ],
+    "entropy_values": [
+      13.066,
+      12.547,
+      12.484,
+      12.366
+    ],
+    "entropy_norm_values": [
+      0.9974,
+      0.9943,
+      0.9935,
+      0.9906
+    ],
+    "delta": -0.7,
+    "delta_norm": -0.0068
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag0",
+    "n_posts": 511,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 127,
+        "total_ngrams": 8624,
+        "vocab_size": 8174,
+        "entropy": 12.955,
+        "entropy_norm": 0.9968
+      },
+      {
+        "quartile": 2,
+        "n_posts": 127,
+        "total_ngrams": 7235,
+        "vocab_size": 6707,
+        "entropy": 12.655,
+        "entropy_norm": 0.9956
+      },
+      {
+        "quartile": 3,
+        "n_posts": 127,
+        "total_ngrams": 6683,
+        "vocab_size": 6113,
+        "entropy": 12.504,
+        "entropy_norm": 0.9941
+      },
+      {
+        "quartile": 4,
+        "n_posts": 130,
+        "total_ngrams": 6408,
+        "vocab_size": 5663,
+        "entropy": 12.365,
+        "entropy_norm": 0.9918
+      }
+    ],
+    "entropy_values": [
+      12.955,
+      12.655,
+      12.504,
+      12.365
+    ],
+    "entropy_norm_values": [
+      0.9968,
+      0.9956,
+      0.9941,
+      0.9918
+    ],
+    "delta": -0.59,
+    "delta_norm": -0.005
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag1",
+    "n_posts": 539,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 134,
+        "total_ngrams": 10451,
+        "vocab_size": 9689,
+        "entropy": 13.17,
+        "entropy_norm": 0.9945
+      },
+      {
+        "quartile": 2,
+        "n_posts": 134,
+        "total_ngrams": 8791,
+        "vocab_size": 7641,
+        "entropy": 12.771,
+        "entropy_norm": 0.99
+      },
+      {
+        "quartile": 3,
+        "n_posts": 134,
+        "total_ngrams": 7204,
+        "vocab_size": 5942,
+        "entropy": 12.345,
+        "entropy_norm": 0.9847
+      },
+      {
+        "quartile": 4,
+        "n_posts": 137,
+        "total_ngrams": 7004,
+        "vocab_size": 5550,
+        "entropy": 12.171,
+        "entropy_norm": 0.9785
+      }
+    ],
+    "entropy_values": [
+      13.17,
+      12.771,
+      12.345,
+      12.171
+    ],
+    "entropy_norm_values": [
+      0.9945,
+      0.99,
+      0.9847,
+      0.9785
+    ],
+    "delta": -0.999,
+    "delta_norm": -0.016
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag25",
+    "n_posts": 544,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 136,
+        "total_ngrams": 10510,
+        "vocab_size": 9631,
+        "entropy": 13.144,
+        "entropy_norm": 0.9933
+      },
+      {
+        "quartile": 2,
+        "n_posts": 136,
+        "total_ngrams": 9842,
+        "vocab_size": 7764,
+        "entropy": 12.638,
+        "entropy_norm": 0.978
+      },
+      {
+        "quartile": 3,
+        "n_posts": 136,
+        "total_ngrams": 8901,
+        "vocab_size": 7328,
+        "entropy": 12.647,
+        "entropy_norm": 0.985
+      },
+      {
+        "quartile": 4,
+        "n_posts": 136,
+        "total_ngrams": 8057,
+        "vocab_size": 6412,
+        "entropy": 12.405,
+        "entropy_norm": 0.9809
+      }
+    ],
+    "entropy_values": [
+      13.144,
+      12.638,
+      12.647,
+      12.405
+    ],
+    "entropy_norm_values": [
+      0.9933,
+      0.978,
+      0.985,
+      0.9809
+    ],
+    "delta": -0.739,
+    "delta_norm": -0.0124
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/gpt5/mag5",
+    "n_posts": 481,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 120,
+        "total_ngrams": 9118,
+        "vocab_size": 7761,
+        "entropy": 12.774,
+        "entropy_norm": 0.9885
+      },
+      {
+        "quartile": 2,
+        "n_posts": 120,
+        "total_ngrams": 7564,
+        "vocab_size": 5369,
+        "entropy": 11.916,
+        "entropy_norm": 0.9617
+      },
+      {
+        "quartile": 3,
+        "n_posts": 120,
+        "total_ngrams": 7109,
+        "vocab_size": 4579,
+        "entropy": 11.582,
+        "entropy_norm": 0.9524
+      },
+      {
+        "quartile": 4,
+        "n_posts": 121,
+        "total_ngrams": 6975,
+        "vocab_size": 4377,
+        "entropy": 11.426,
+        "entropy_norm": 0.9446
+      }
+    ],
+    "entropy_values": [
+      12.774,
+      11.916,
+      11.582,
+      11.426
+    ],
+    "entropy_norm_values": [
+      0.9885,
+      0.9617,
+      0.9524,
+      0.9446
+    ],
+    "delta": -1.348,
+    "delta_norm": -0.0439
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/gemini/dom-agi",
+    "n_posts": 145,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 36,
+        "total_ngrams": 3652,
+        "vocab_size": 3593,
+        "entropy": 11.802,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 2,
+        "n_posts": 36,
+        "total_ngrams": 3618,
+        "vocab_size": 3539,
+        "entropy": 11.774,
+        "entropy_norm": 0.9988
+      },
+      {
+        "quartile": 3,
+        "n_posts": 36,
+        "total_ngrams": 3353,
+        "vocab_size": 3218,
+        "entropy": 11.61,
+        "entropy_norm": 0.9964
+      },
+      {
+        "quartile": 4,
+        "n_posts": 37,
+        "total_ngrams": 2640,
+        "vocab_size": 2513,
+        "entropy": 11.257,
+        "entropy_norm": 0.9966
+      }
+    ],
+    "entropy_values": [
+      11.802,
+      11.774,
+      11.61,
+      11.257
+    ],
+    "entropy_norm_values": [
+      0.9992,
+      0.9988,
+      0.9964,
+      0.9966
+    ],
+    "delta": -0.545,
+    "delta_norm": -0.0026
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/gemini/dom-tech",
+    "n_posts": 203,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 50,
+        "total_ngrams": 4584,
+        "vocab_size": 4521,
+        "entropy": 12.133,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 2,
+        "n_posts": 50,
+        "total_ngrams": 4270,
+        "vocab_size": 4116,
+        "entropy": 11.977,
+        "entropy_norm": 0.9975
+      },
+      {
+        "quartile": 3,
+        "n_posts": 50,
+        "total_ngrams": 5103,
+        "vocab_size": 4928,
+        "entropy": 12.245,
+        "entropy_norm": 0.9982
+      },
+      {
+        "quartile": 4,
+        "n_posts": 53,
+        "total_ngrams": 4750,
+        "vocab_size": 4533,
+        "entropy": 12.11,
+        "entropy_norm": 0.997
+      }
+    ],
+    "entropy_values": [
+      12.133,
+      11.977,
+      12.245,
+      12.11
+    ],
+    "entropy_norm_values": [
+      0.9992,
+      0.9975,
+      0.9982,
+      0.997
+    ],
+    "delta": -0.023,
+    "delta_norm": -0.0022
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag0",
+    "n_posts": 472,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 118,
+        "total_ngrams": 6967,
+        "vocab_size": 6820,
+        "entropy": 12.721,
+        "entropy_norm": 0.9988
+      },
+      {
+        "quartile": 2,
+        "n_posts": 118,
+        "total_ngrams": 7671,
+        "vocab_size": 7417,
+        "entropy": 12.827,
+        "entropy_norm": 0.9977
+      },
+      {
+        "quartile": 3,
+        "n_posts": 118,
+        "total_ngrams": 8073,
+        "vocab_size": 7716,
+        "entropy": 12.869,
+        "entropy_norm": 0.9965
+      },
+      {
+        "quartile": 4,
+        "n_posts": 118,
+        "total_ngrams": 8171,
+        "vocab_size": 7826,
+        "entropy": 12.894,
+        "entropy_norm": 0.9969
+      }
+    ],
+    "entropy_values": [
+      12.721,
+      12.827,
+      12.869,
+      12.894
+    ],
+    "entropy_norm_values": [
+      0.9988,
+      0.9977,
+      0.9965,
+      0.9969
+    ],
+    "delta": 0.173,
+    "delta_norm": -0.0019
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag1",
+    "n_posts": 345,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 86,
+        "total_ngrams": 7782,
+        "vocab_size": 7505,
+        "entropy": 12.85,
+        "entropy_norm": 0.9982
+      },
+      {
+        "quartile": 2,
+        "n_posts": 86,
+        "total_ngrams": 6706,
+        "vocab_size": 6356,
+        "entropy": 12.599,
+        "entropy_norm": 0.9972
+      },
+      {
+        "quartile": 3,
+        "n_posts": 86,
+        "total_ngrams": 6545,
+        "vocab_size": 6199,
+        "entropy": 12.55,
+        "entropy_norm": 0.9962
+      },
+      {
+        "quartile": 4,
+        "n_posts": 87,
+        "total_ngrams": 6331,
+        "vocab_size": 5857,
+        "entropy": 12.465,
+        "entropy_norm": 0.996
+      }
+    ],
+    "entropy_values": [
+      12.85,
+      12.599,
+      12.55,
+      12.465
+    ],
+    "entropy_norm_values": [
+      0.9982,
+      0.9972,
+      0.9962,
+      0.996
+    ],
+    "delta": -0.385,
+    "delta_norm": -0.0022
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag25",
+    "n_posts": 418,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 104,
+        "total_ngrams": 9316,
+        "vocab_size": 9089,
+        "entropy": 13.134,
+        "entropy_norm": 0.9988
+      },
+      {
+        "quartile": 2,
+        "n_posts": 104,
+        "total_ngrams": 9952,
+        "vocab_size": 9385,
+        "entropy": 13.134,
+        "entropy_norm": 0.9953
+      },
+      {
+        "quartile": 3,
+        "n_posts": 104,
+        "total_ngrams": 10761,
+        "vocab_size": 10072,
+        "entropy": 13.226,
+        "entropy_norm": 0.9946
+      },
+      {
+        "quartile": 4,
+        "n_posts": 106,
+        "total_ngrams": 10985,
+        "vocab_size": 10264,
+        "entropy": 13.238,
+        "entropy_norm": 0.9935
+      }
+    ],
+    "entropy_values": [
+      13.134,
+      13.134,
+      13.226,
+      13.238
+    ],
+    "entropy_norm_values": [
+      0.9988,
+      0.9953,
+      0.9946,
+      0.9935
+    ],
+    "delta": 0.104,
+    "delta_norm": -0.0053
+  },
+  {
+    "set": "Gemini Flash Lite",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/gemini/mag5",
+    "n_posts": 423,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 105,
+        "total_ngrams": 8566,
+        "vocab_size": 8237,
+        "entropy": 12.983,
+        "entropy_norm": 0.9981
+      },
+      {
+        "quartile": 2,
+        "n_posts": 105,
+        "total_ngrams": 7918,
+        "vocab_size": 6649,
+        "entropy": 12.536,
+        "entropy_norm": 0.9872
+      },
+      {
+        "quartile": 3,
+        "n_posts": 105,
+        "total_ngrams": 8187,
+        "vocab_size": 5394,
+        "entropy": 12.004,
+        "entropy_norm": 0.9683
+      },
+      {
+        "quartile": 4,
+        "n_posts": 108,
+        "total_ngrams": 8817,
+        "vocab_size": 4435,
+        "entropy": 11.706,
+        "entropy_norm": 0.9663
+      }
+    ],
+    "entropy_values": [
+      12.983,
+      12.536,
+      12.004,
+      11.706
+    ],
+    "entropy_norm_values": [
+      0.9981,
+      0.9872,
+      0.9683,
+      0.9663
+    ],
+    "delta": -1.277,
+    "delta_norm": -0.0318
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/kimi/dom-agi",
+    "n_posts": 612,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 153,
+        "total_ngrams": 40069,
+        "vocab_size": 34894,
+        "entropy": 14.96,
+        "entropy_norm": 0.9913
+      },
+      {
+        "quartile": 2,
+        "n_posts": 153,
+        "total_ngrams": 21359,
+        "vocab_size": 18837,
+        "entropy": 14.077,
+        "entropy_norm": 0.9912
+      },
+      {
+        "quartile": 3,
+        "n_posts": 153,
+        "total_ngrams": 12850,
+        "vocab_size": 10593,
+        "entropy": 13.178,
+        "entropy_norm": 0.9856
+      },
+      {
+        "quartile": 4,
+        "n_posts": 153,
+        "total_ngrams": 7094,
+        "vocab_size": 5500,
+        "entropy": 12.158,
+        "entropy_norm": 0.9785
+      }
+    ],
+    "entropy_values": [
+      14.96,
+      14.077,
+      13.178,
+      12.158
+    ],
+    "entropy_norm_values": [
+      0.9913,
+      0.9912,
+      0.9856,
+      0.9785
+    ],
+    "delta": -2.802,
+    "delta_norm": -0.0128
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/kimi/dom-tech",
+    "n_posts": 627,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 156,
+        "total_ngrams": 41082,
+        "vocab_size": 37902,
+        "entropy": 15.133,
+        "entropy_norm": 0.995
+      },
+      {
+        "quartile": 2,
+        "n_posts": 156,
+        "total_ngrams": 23590,
+        "vocab_size": 21898,
+        "entropy": 14.344,
+        "entropy_norm": 0.9948
+      },
+      {
+        "quartile": 3,
+        "n_posts": 156,
+        "total_ngrams": 19440,
+        "vocab_size": 17201,
+        "entropy": 13.91,
+        "entropy_norm": 0.9886
+      },
+      {
+        "quartile": 4,
+        "n_posts": 159,
+        "total_ngrams": 12782,
+        "vocab_size": 10028,
+        "entropy": 12.995,
+        "entropy_norm": 0.9777
+      }
+    ],
+    "entropy_values": [
+      15.133,
+      14.344,
+      13.91,
+      12.995
+    ],
+    "entropy_norm_values": [
+      0.995,
+      0.9948,
+      0.9886,
+      0.9777
+    ],
+    "delta": -2.138,
+    "delta_norm": -0.0173
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag0",
+    "n_posts": 620,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 155,
+        "total_ngrams": 23035,
+        "vocab_size": 21852,
+        "entropy": 14.371,
+        "entropy_norm": 0.9969
+      },
+      {
+        "quartile": 2,
+        "n_posts": 155,
+        "total_ngrams": 18718,
+        "vocab_size": 17047,
+        "entropy": 13.975,
+        "entropy_norm": 0.9942
+      },
+      {
+        "quartile": 3,
+        "n_posts": 155,
+        "total_ngrams": 15978,
+        "vocab_size": 13730,
+        "entropy": 13.609,
+        "entropy_norm": 0.9901
+      },
+      {
+        "quartile": 4,
+        "n_posts": 155,
+        "total_ngrams": 10828,
+        "vocab_size": 8439,
+        "entropy": 12.825,
+        "entropy_norm": 0.9833
+      }
+    ],
+    "entropy_values": [
+      14.371,
+      13.975,
+      13.609,
+      12.825
+    ],
+    "entropy_norm_values": [
+      0.9969,
+      0.9942,
+      0.9901,
+      0.9833
+    ],
+    "delta": -1.546,
+    "delta_norm": -0.0136
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag1",
+    "n_posts": 455,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 113,
+        "total_ngrams": 24012,
+        "vocab_size": 22633,
+        "entropy": 14.411,
+        "entropy_norm": 0.9962
+      },
+      {
+        "quartile": 2,
+        "n_posts": 113,
+        "total_ngrams": 20504,
+        "vocab_size": 19001,
+        "entropy": 14.149,
+        "entropy_norm": 0.9954
+      },
+      {
+        "quartile": 3,
+        "n_posts": 113,
+        "total_ngrams": 17031,
+        "vocab_size": 16156,
+        "entropy": 13.936,
+        "entropy_norm": 0.9968
+      },
+      {
+        "quartile": 4,
+        "n_posts": 116,
+        "total_ngrams": 15339,
+        "vocab_size": 14232,
+        "entropy": 13.724,
+        "entropy_norm": 0.9947
+      }
+    ],
+    "entropy_values": [
+      14.411,
+      14.149,
+      13.936,
+      13.724
+    ],
+    "entropy_norm_values": [
+      0.9962,
+      0.9954,
+      0.9968,
+      0.9947
+    ],
+    "delta": -0.687,
+    "delta_norm": -0.0015
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag25",
+    "n_posts": 673,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 168,
+        "total_ngrams": 33804,
+        "vocab_size": 32277,
+        "entropy": 14.934,
+        "entropy_norm": 0.997
+      },
+      {
+        "quartile": 2,
+        "n_posts": 168,
+        "total_ngrams": 21546,
+        "vocab_size": 20073,
+        "entropy": 14.229,
+        "entropy_norm": 0.9955
+      },
+      {
+        "quartile": 3,
+        "n_posts": 168,
+        "total_ngrams": 14126,
+        "vocab_size": 12525,
+        "entropy": 13.493,
+        "entropy_norm": 0.9912
+      },
+      {
+        "quartile": 4,
+        "n_posts": 169,
+        "total_ngrams": 8969,
+        "vocab_size": 7565,
+        "entropy": 12.702,
+        "entropy_norm": 0.9858
+      }
+    ],
+    "entropy_values": [
+      14.934,
+      14.229,
+      13.493,
+      12.702
+    ],
+    "entropy_norm_values": [
+      0.997,
+      0.9955,
+      0.9912,
+      0.9858
+    ],
+    "delta": -2.232,
+    "delta_norm": -0.0112
+  },
+  {
+    "set": "Kimi K2.5",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/kimi/mag5",
+    "n_posts": 650,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 162,
+        "total_ngrams": 36206,
+        "vocab_size": 34368,
+        "entropy": 15.016,
+        "entropy_norm": 0.9965
+      },
+      {
+        "quartile": 2,
+        "n_posts": 162,
+        "total_ngrams": 26662,
+        "vocab_size": 24798,
+        "entropy": 14.526,
+        "entropy_norm": 0.995
+      },
+      {
+        "quartile": 3,
+        "n_posts": 162,
+        "total_ngrams": 26447,
+        "vocab_size": 23475,
+        "entropy": 14.399,
+        "entropy_norm": 0.9918
+      },
+      {
+        "quartile": 4,
+        "n_posts": 164,
+        "total_ngrams": 20942,
+        "vocab_size": 18777,
+        "entropy": 14.08,
+        "entropy_norm": 0.9918
+      }
+    ],
+    "entropy_values": [
+      15.016,
+      14.526,
+      14.399,
+      14.08
+    ],
+    "entropy_norm_values": [
+      0.9965,
+      0.995,
+      0.9918,
+      0.9918
+    ],
+    "delta": -0.936,
+    "delta_norm": -0.0047
+  },
+  {
+    "set": "GLM-5",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/glm5/dom-agi",
+    "n_posts": 245,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 61,
+        "total_ngrams": 17344,
+        "vocab_size": 16950,
+        "entropy": 14.031,
+        "entropy_norm": 0.9987
+      },
+      {
+        "quartile": 2,
+        "n_posts": 61,
+        "total_ngrams": 17562,
+        "vocab_size": 16891,
+        "entropy": 14.012,
+        "entropy_norm": 0.9977
+      },
+      {
+        "quartile": 3,
+        "n_posts": 61,
+        "total_ngrams": 15064,
+        "vocab_size": 14575,
+        "entropy": 13.805,
+        "entropy_norm": 0.9981
+      },
+      {
+        "quartile": 4,
+        "n_posts": 62,
+        "total_ngrams": 15190,
+        "vocab_size": 14777,
+        "entropy": 13.83,
+        "entropy_norm": 0.9985
+      }
+    ],
+    "entropy_values": [
+      14.031,
+      14.012,
+      13.805,
+      13.83
+    ],
+    "entropy_norm_values": [
+      0.9987,
+      0.9977,
+      0.9981,
+      0.9985
+    ],
+    "delta": -0.201,
+    "delta_norm": -0.0002
+  },
+  {
+    "set": "GLM-5",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/glm5/dom-tech",
+    "n_posts": 253,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 63,
+        "total_ngrams": 18794,
+        "vocab_size": 18198,
+        "entropy": 14.127,
+        "entropy_norm": 0.9983
+      },
+      {
+        "quartile": 2,
+        "n_posts": 63,
+        "total_ngrams": 17636,
+        "vocab_size": 17092,
+        "entropy": 14.034,
+        "entropy_norm": 0.9981
+      },
+      {
+        "quartile": 3,
+        "n_posts": 63,
+        "total_ngrams": 16849,
+        "vocab_size": 16053,
+        "entropy": 13.934,
+        "entropy_norm": 0.9974
+      },
+      {
+        "quartile": 4,
+        "n_posts": 64,
+        "total_ngrams": 16828,
+        "vocab_size": 16237,
+        "entropy": 13.961,
+        "entropy_norm": 0.9981
+      }
+    ],
+    "entropy_values": [
+      14.127,
+      14.034,
+      13.934,
+      13.961
+    ],
+    "entropy_norm_values": [
+      0.9983,
+      0.9981,
+      0.9974,
+      0.9981
+    ],
+    "delta": -0.166,
+    "delta_norm": -0.0002
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag0",
+    "n_posts": 317,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 79,
+        "total_ngrams": 15876,
+        "vocab_size": 15526,
+        "entropy": 13.908,
+        "entropy_norm": 0.999
+      },
+      {
+        "quartile": 2,
+        "n_posts": 79,
+        "total_ngrams": 20749,
+        "vocab_size": 19872,
+        "entropy": 14.247,
+        "entropy_norm": 0.9978
+      },
+      {
+        "quartile": 3,
+        "n_posts": 79,
+        "total_ngrams": 22001,
+        "vocab_size": 20733,
+        "entropy": 14.293,
+        "entropy_norm": 0.9967
+      },
+      {
+        "quartile": 4,
+        "n_posts": 80,
+        "total_ngrams": 23802,
+        "vocab_size": 22353,
+        "entropy": 14.398,
+        "entropy_norm": 0.9965
+      }
+    ],
+    "entropy_values": [
+      13.908,
+      14.247,
+      14.293,
+      14.398
+    ],
+    "entropy_norm_values": [
+      0.999,
+      0.9978,
+      0.9967,
+      0.9965
+    ],
+    "delta": 0.49,
+    "delta_norm": -0.0025
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag1",
+    "n_posts": 266,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 66,
+        "total_ngrams": 11588,
+        "vocab_size": 11414,
+        "entropy": 13.467,
+        "entropy_norm": 0.9991
+      },
+      {
+        "quartile": 2,
+        "n_posts": 66,
+        "total_ngrams": 13447,
+        "vocab_size": 13180,
+        "entropy": 13.671,
+        "entropy_norm": 0.9989
+      },
+      {
+        "quartile": 3,
+        "n_posts": 66,
+        "total_ngrams": 13277,
+        "vocab_size": 13048,
+        "entropy": 13.658,
+        "entropy_norm": 0.999
+      },
+      {
+        "quartile": 4,
+        "n_posts": 68,
+        "total_ngrams": 14098,
+        "vocab_size": 13743,
+        "entropy": 13.725,
+        "entropy_norm": 0.9984
+      }
+    ],
+    "entropy_values": [
+      13.467,
+      13.671,
+      13.658,
+      13.725
+    ],
+    "entropy_norm_values": [
+      0.9991,
+      0.9989,
+      0.999,
+      0.9984
+    ],
+    "delta": 0.258,
+    "delta_norm": -0.0007
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag25",
+    "n_posts": 251,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 62,
+        "total_ngrams": 15439,
+        "vocab_size": 15098,
+        "entropy": 13.866,
+        "entropy_norm": 0.9988
+      },
+      {
+        "quartile": 2,
+        "n_posts": 62,
+        "total_ngrams": 15835,
+        "vocab_size": 15428,
+        "entropy": 13.895,
+        "entropy_norm": 0.9987
+      },
+      {
+        "quartile": 3,
+        "n_posts": 62,
+        "total_ngrams": 14276,
+        "vocab_size": 13850,
+        "entropy": 13.735,
+        "entropy_norm": 0.9984
+      },
+      {
+        "quartile": 4,
+        "n_posts": 65,
+        "total_ngrams": 15312,
+        "vocab_size": 14663,
+        "entropy": 13.803,
+        "entropy_norm": 0.9973
+      }
+    ],
+    "entropy_values": [
+      13.866,
+      13.895,
+      13.735,
+      13.803
+    ],
+    "entropy_norm_values": [
+      0.9988,
+      0.9987,
+      0.9984,
+      0.9973
+    ],
+    "delta": -0.063,
+    "delta_norm": -0.0015
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/glm5/mag5",
+    "n_posts": 228,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 57,
+        "total_ngrams": 12001,
+        "vocab_size": 11633,
+        "entropy": 13.482,
+        "entropy_norm": 0.9982
+      },
+      {
+        "quartile": 2,
+        "n_posts": 57,
+        "total_ngrams": 13779,
+        "vocab_size": 13351,
+        "entropy": 13.681,
+        "entropy_norm": 0.9983
+      },
+      {
+        "quartile": 3,
+        "n_posts": 57,
+        "total_ngrams": 13633,
+        "vocab_size": 13208,
+        "entropy": 13.664,
+        "entropy_norm": 0.9982
+      },
+      {
+        "quartile": 4,
+        "n_posts": 57,
+        "total_ngrams": 13412,
+        "vocab_size": 12885,
+        "entropy": 13.622,
+        "entropy_norm": 0.9977
+      }
+    ],
+    "entropy_values": [
+      13.482,
+      13.681,
+      13.664,
+      13.622
+    ],
+    "entropy_norm_values": [
+      0.9982,
+      0.9983,
+      0.9982,
+      0.9977
+    ],
+    "delta": 0.14,
+    "delta_norm": -0.0005
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/dom-agi",
+    "n_posts": 212,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 53,
+        "total_ngrams": 14561,
+        "vocab_size": 13913,
+        "entropy": 13.723,
+        "entropy_norm": 0.997
+      },
+      {
+        "quartile": 2,
+        "n_posts": 53,
+        "total_ngrams": 17444,
+        "vocab_size": 16064,
+        "entropy": 13.89,
+        "entropy_norm": 0.9941
+      },
+      {
+        "quartile": 3,
+        "n_posts": 53,
+        "total_ngrams": 17226,
+        "vocab_size": 16186,
+        "entropy": 13.929,
+        "entropy_norm": 0.9962
+      },
+      {
+        "quartile": 4,
+        "n_posts": 53,
+        "total_ngrams": 10112,
+        "vocab_size": 9745,
+        "entropy": 13.22,
+        "entropy_norm": 0.9977
+      }
+    ],
+    "entropy_values": [
+      13.723,
+      13.89,
+      13.929,
+      13.22
+    ],
+    "entropy_norm_values": [
+      0.997,
+      0.9941,
+      0.9962,
+      0.9977
+    ],
+    "delta": -0.503,
+    "delta_norm": 0.0007
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/dom-tech",
+    "n_posts": 290,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 72,
+        "total_ngrams": 19386,
+        "vocab_size": 18575,
+        "entropy": 14.142,
+        "entropy_norm": 0.9973
+      },
+      {
+        "quartile": 2,
+        "n_posts": 72,
+        "total_ngrams": 18851,
+        "vocab_size": 17871,
+        "entropy": 14.085,
+        "entropy_norm": 0.9972
+      },
+      {
+        "quartile": 3,
+        "n_posts": 72,
+        "total_ngrams": 22502,
+        "vocab_size": 21195,
+        "entropy": 14.317,
+        "entropy_norm": 0.9962
+      },
+      {
+        "quartile": 4,
+        "n_posts": 74,
+        "total_ngrams": 23010,
+        "vocab_size": 21607,
+        "entropy": 14.343,
+        "entropy_norm": 0.9961
+      }
+    ],
+    "entropy_values": [
+      14.142,
+      14.085,
+      14.317,
+      14.343
+    ],
+    "entropy_norm_values": [
+      0.9973,
+      0.9972,
+      0.9962,
+      0.9961
+    ],
+    "delta": 0.201,
+    "delta_norm": -0.0012
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag0",
+    "n_posts": 382,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 95,
+        "total_ngrams": 29630,
+        "vocab_size": 27713,
+        "entropy": 14.703,
+        "entropy_norm": 0.9962
+      },
+      {
+        "quartile": 2,
+        "n_posts": 95,
+        "total_ngrams": 25990,
+        "vocab_size": 24765,
+        "entropy": 14.554,
+        "entropy_norm": 0.9971
+      },
+      {
+        "quartile": 3,
+        "n_posts": 95,
+        "total_ngrams": 22595,
+        "vocab_size": 21985,
+        "entropy": 14.401,
+        "entropy_norm": 0.9984
+      },
+      {
+        "quartile": 4,
+        "n_posts": 97,
+        "total_ngrams": 28484,
+        "vocab_size": 27266,
+        "entropy": 14.697,
+        "entropy_norm": 0.9974
+      }
+    ],
+    "entropy_values": [
+      14.703,
+      14.554,
+      14.401,
+      14.697
+    ],
+    "entropy_norm_values": [
+      0.9962,
+      0.9971,
+      0.9984,
+      0.9974
+    ],
+    "delta": -0.006,
+    "delta_norm": 0.0012
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag1",
+    "n_posts": 227,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 56,
+        "total_ngrams": 18259,
+        "vocab_size": 17534,
+        "entropy": 14.062,
+        "entropy_norm": 0.9975
+      },
+      {
+        "quartile": 2,
+        "n_posts": 56,
+        "total_ngrams": 17726,
+        "vocab_size": 16773,
+        "entropy": 13.978,
+        "entropy_norm": 0.996
+      },
+      {
+        "quartile": 3,
+        "n_posts": 56,
+        "total_ngrams": 16746,
+        "vocab_size": 15840,
+        "entropy": 13.899,
+        "entropy_norm": 0.9963
+      },
+      {
+        "quartile": 4,
+        "n_posts": 59,
+        "total_ngrams": 15772,
+        "vocab_size": 15043,
+        "entropy": 13.834,
+        "entropy_norm": 0.9969
+      }
+    ],
+    "entropy_values": [
+      14.062,
+      13.978,
+      13.899,
+      13.834
+    ],
+    "entropy_norm_values": [
+      0.9975,
+      0.996,
+      0.9963,
+      0.9969
+    ],
+    "delta": -0.228,
+    "delta_norm": -0.0006
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag25",
+    "n_posts": 225,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 56,
+        "total_ngrams": 15271,
+        "vocab_size": 14901,
+        "entropy": 13.844,
+        "entropy_norm": 0.9986
+      },
+      {
+        "quartile": 2,
+        "n_posts": 56,
+        "total_ngrams": 15696,
+        "vocab_size": 14953,
+        "entropy": 13.83,
+        "entropy_norm": 0.9972
+      },
+      {
+        "quartile": 3,
+        "n_posts": 56,
+        "total_ngrams": 17680,
+        "vocab_size": 17102,
+        "entropy": 14.032,
+        "entropy_norm": 0.9979
+      },
+      {
+        "quartile": 4,
+        "n_posts": 57,
+        "total_ngrams": 19922,
+        "vocab_size": 19124,
+        "entropy": 14.186,
+        "entropy_norm": 0.9974
+      }
+    ],
+    "entropy_values": [
+      13.844,
+      13.83,
+      14.032,
+      14.186
+    ],
+    "entropy_norm_values": [
+      0.9986,
+      0.9972,
+      0.9979,
+      0.9974
+    ],
+    "delta": 0.342,
+    "delta_norm": -0.0012
+  },
+  {
+    "set": "OLMo Base",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/olmo-base/mag5",
+    "n_posts": 249,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 62,
+        "total_ngrams": 18499,
+        "vocab_size": 17986,
+        "entropy": 14.11,
+        "entropy_norm": 0.9983
+      },
+      {
+        "quartile": 2,
+        "n_posts": 62,
+        "total_ngrams": 19052,
+        "vocab_size": 17722,
+        "entropy": 14.052,
+        "entropy_norm": 0.9957
+      },
+      {
+        "quartile": 3,
+        "n_posts": 62,
+        "total_ngrams": 14880,
+        "vocab_size": 14306,
+        "entropy": 13.768,
+        "entropy_norm": 0.9974
+      },
+      {
+        "quartile": 4,
+        "n_posts": 63,
+        "total_ngrams": 12426,
+        "vocab_size": 11857,
+        "entropy": 13.482,
+        "entropy_norm": 0.9962
+      }
+    ],
+    "entropy_values": [
+      14.11,
+      14.052,
+      13.768,
+      13.482
+    ],
+    "entropy_norm_values": [
+      0.9983,
+      0.9957,
+      0.9974,
+      0.9962
+    ],
+    "delta": -0.628,
+    "delta_norm": -0.0021
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "dom-agi",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/dom-agi",
+    "n_posts": 284,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 71,
+        "total_ngrams": 11378,
+        "vocab_size": 11199,
+        "entropy": 13.439,
+        "entropy_norm": 0.9991
+      },
+      {
+        "quartile": 2,
+        "n_posts": 71,
+        "total_ngrams": 7156,
+        "vocab_size": 7049,
+        "entropy": 12.773,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 3,
+        "n_posts": 71,
+        "total_ngrams": 6971,
+        "vocab_size": 6872,
+        "entropy": 12.736,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 4,
+        "n_posts": 71,
+        "total_ngrams": 8735,
+        "vocab_size": 8653,
+        "entropy": 13.073,
+        "entropy_norm": 0.9995
+      }
+    ],
+    "entropy_values": [
+      13.439,
+      12.773,
+      12.736,
+      13.073
+    ],
+    "entropy_norm_values": [
+      0.9991,
+      0.9992,
+      0.9992,
+      0.9995
+    ],
+    "delta": -0.366,
+    "delta_norm": 0.0004
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "dom-tech",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/dom-tech",
+    "n_posts": 258,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 64,
+        "total_ngrams": 11146,
+        "vocab_size": 10998,
+        "entropy": 13.414,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 2,
+        "n_posts": 64,
+        "total_ngrams": 10889,
+        "vocab_size": 10570,
+        "entropy": 13.336,
+        "entropy_norm": 0.9976
+      },
+      {
+        "quartile": 3,
+        "n_posts": 64,
+        "total_ngrams": 10972,
+        "vocab_size": 10770,
+        "entropy": 13.379,
+        "entropy_norm": 0.9988
+      },
+      {
+        "quartile": 4,
+        "n_posts": 66,
+        "total_ngrams": 9976,
+        "vocab_size": 9640,
+        "entropy": 13.203,
+        "entropy_norm": 0.9976
+      }
+    ],
+    "entropy_values": [
+      13.414,
+      13.336,
+      13.379,
+      13.203
+    ],
+    "entropy_norm_values": [
+      0.9992,
+      0.9976,
+      0.9988,
+      0.9976
+    ],
+    "delta": -0.211,
+    "delta_norm": -0.0016
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag0",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag0",
+    "n_posts": 297,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 74,
+        "total_ngrams": 16493,
+        "vocab_size": 15796,
+        "entropy": 13.904,
+        "entropy_norm": 0.9969
+      },
+      {
+        "quartile": 2,
+        "n_posts": 74,
+        "total_ngrams": 12451,
+        "vocab_size": 12082,
+        "entropy": 13.534,
+        "entropy_norm": 0.998
+      },
+      {
+        "quartile": 3,
+        "n_posts": 74,
+        "total_ngrams": 13067,
+        "vocab_size": 12630,
+        "entropy": 13.59,
+        "entropy_norm": 0.9975
+      },
+      {
+        "quartile": 4,
+        "n_posts": 75,
+        "total_ngrams": 14552,
+        "vocab_size": 14302,
+        "entropy": 13.79,
+        "entropy_norm": 0.999
+      }
+    ],
+    "entropy_values": [
+      13.904,
+      13.534,
+      13.59,
+      13.79
+    ],
+    "entropy_norm_values": [
+      0.9969,
+      0.998,
+      0.9975,
+      0.999
+    ],
+    "delta": -0.114,
+    "delta_norm": 0.0021
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag1",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag1",
+    "n_posts": 470,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 117,
+        "total_ngrams": 20929,
+        "vocab_size": 20553,
+        "entropy": 14.31,
+        "entropy_norm": 0.9988
+      },
+      {
+        "quartile": 2,
+        "n_posts": 117,
+        "total_ngrams": 15313,
+        "vocab_size": 14995,
+        "entropy": 13.854,
+        "entropy_norm": 0.9987
+      },
+      {
+        "quartile": 3,
+        "n_posts": 117,
+        "total_ngrams": 13727,
+        "vocab_size": 13486,
+        "entropy": 13.705,
+        "entropy_norm": 0.999
+      },
+      {
+        "quartile": 4,
+        "n_posts": 119,
+        "total_ngrams": 16184,
+        "vocab_size": 15865,
+        "entropy": 13.939,
+        "entropy_norm": 0.9989
+      }
+    ],
+    "entropy_values": [
+      14.31,
+      13.854,
+      13.705,
+      13.939
+    ],
+    "entropy_norm_values": [
+      0.9988,
+      0.9987,
+      0.999,
+      0.9989
+    ],
+    "delta": -0.371,
+    "delta_norm": 0.0001
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag25",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag25",
+    "n_posts": 351,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 87,
+        "total_ngrams": 15354,
+        "vocab_size": 15144,
+        "entropy": 13.875,
+        "entropy_norm": 0.9992
+      },
+      {
+        "quartile": 2,
+        "n_posts": 87,
+        "total_ngrams": 13687,
+        "vocab_size": 13274,
+        "entropy": 13.664,
+        "entropy_norm": 0.9976
+      },
+      {
+        "quartile": 3,
+        "n_posts": 87,
+        "total_ngrams": 12677,
+        "vocab_size": 12243,
+        "entropy": 13.553,
+        "entropy_norm": 0.9981
+      },
+      {
+        "quartile": 4,
+        "n_posts": 90,
+        "total_ngrams": 12695,
+        "vocab_size": 12547,
+        "entropy": 13.606,
+        "entropy_norm": 0.9993
+      }
+    ],
+    "entropy_values": [
+      13.875,
+      13.664,
+      13.553,
+      13.606
+    ],
+    "entropy_norm_values": [
+      0.9992,
+      0.9976,
+      0.9981,
+      0.9993
+    ],
+    "delta": -0.269,
+    "delta_norm": 0.0001
+  },
+  {
+    "set": "OLMo Instruct",
+    "condition": "mag5",
+    "directory": "/tmp/pipeline-input-20260408/olmo-instruct/mag5",
+    "n_posts": 459,
+    "ngram": 5,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 114,
+        "total_ngrams": 22575,
+        "vocab_size": 21932,
+        "entropy": 14.398,
+        "entropy_norm": 0.9984
+      },
+      {
+        "quartile": 2,
+        "n_posts": 114,
+        "total_ngrams": 13420,
+        "vocab_size": 12688,
+        "entropy": 13.582,
+        "entropy_norm": 0.9964
+      },
+      {
+        "quartile": 3,
+        "n_posts": 114,
+        "total_ngrams": 12965,
+        "vocab_size": 12298,
+        "entropy": 13.54,
+        "entropy_norm": 0.9966
+      },
+      {
+        "quartile": 4,
+        "n_posts": 117,
+        "total_ngrams": 13487,
+        "vocab_size": 12764,
+        "entropy": 13.595,
+        "entropy_norm": 0.9967
+      }
+    ],
+    "entropy_values": [
+      14.398,
+      13.582,
+      13.54,
+      13.595
+    ],
+    "entropy_norm_values": [
+      0.9984,
+      0.9964,
+      0.9966,
+      0.9967
+    ],
+    "delta": -0.803,
+    "delta_norm": -0.0017
+  }
+]
