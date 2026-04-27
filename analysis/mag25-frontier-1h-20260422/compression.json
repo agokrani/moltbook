@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "algorithms": [
+      "gzip",
+      "bzip2",
+      "zlib"
+    ],
+    "n_quartiles": 4
+  },
+  "results": [
+    {
+      "experiment": "mag25-frontier-1h-125753-mag25-n10-run01-frontier-mixed-openrouter-20260421",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 337,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 84,
+          "total_bytes": 94542,
+          "ratios": {
+            "gzip": 0.347116,
+            "bzip2": 0.286328,
+            "zlib": 0.348068
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 84,
+          "total_bytes": 86051,
+          "ratios": {
+            "gzip": 0.33888,
+            "bzip2": 0.286865,
+            "zlib": 0.339682
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 84,
+          "total_bytes": 85266,
+          "ratios": {
+            "gzip": 0.318861,
+            "bzip2": 0.274834,
+            "zlib": 0.319529
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 85,
+          "total_bytes": 76636,
+          "ratios": {
+            "gzip": 0.27521,
+            "bzip2": 0.250117,
+            "zlib": 0.275575
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.071906,
+        "bzip2": -0.036211,
+        "zlib": -0.072493
+      },
+      "set": "Mixed"
+    },
+    {
+      "experiment": "ec-mag25-n10-run01",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 251,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 62,
+          "total_bytes": 79967,
+          "ratios": {
+            "gzip": 0.335038,
+            "bzip2": 0.276977,
+            "zlib": 0.336339
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 62,
+          "total_bytes": 80561,
+          "ratios": {
+            "gzip": 0.327292,
+            "bzip2": 0.26735,
+            "zlib": 0.328347
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 62,
+          "total_bytes": 73709,
+          "ratios": {
+            "gzip": 0.322688,
+            "bzip2": 0.263821,
+            "zlib": 0.323936
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 65,
+          "total_bytes": 78699,
+          "ratios": {
+            "gzip": 0.312024,
+            "bzip2": 0.251858,
+            "zlib": 0.313397
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.023014,
+        "bzip2": -0.025119,
+        "zlib": -0.022942
+      },
+      "set": "GLM-5"
+    },
+    {
+      "experiment": "ec-mag25-run01-gpt5-20260309",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 544,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 136,
+          "total_bytes": 53393,
+          "ratios": {
+            "gzip": 0.35823,
+            "bzip2": 0.311857,
+            "zlib": 0.358418
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 136,
+          "total_bytes": 48723,
+          "ratios": {
+            "gzip": 0.302424,
+            "bzip2": 0.270878,
+            "zlib": 0.302711
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 136,
+          "total_bytes": 44841,
+          "ratios": {
+            "gzip": 0.311634,
+            "bzip2": 0.279142,
+            "zlib": 0.311902
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 136,
+          "total_bytes": 40517,
+          "ratios": {
+            "gzip": 0.299084,
+            "bzip2": 0.268974,
+            "zlib": 0.29943
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.059146,
+        "bzip2": -0.042883,
+        "zlib": -0.058988
+      },
+      "set": "GPT-5"
+    },
+    {
+      "experiment": "ec-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 418,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 104,
+          "total_bytes": 50571,
+          "ratios": {
+            "gzip": 0.336814,
+            "bzip2": 0.295505,
+            "zlib": 0.33711
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 104,
+          "total_bytes": 54521,
+          "ratios": {
+            "gzip": 0.308707,
+            "bzip2": 0.273142,
+            "zlib": 0.309184
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 104,
+          "total_bytes": 60166,
+          "ratios": {
+            "gzip": 0.294668,
+            "bzip2": 0.258352,
+            "zlib": 0.294951
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 106,
+          "total_bytes": 63564,
+          "ratios": {
+            "gzip": 0.296426,
+            "bzip2": 0.259612,
+            "zlib": 0.297008
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.040388,
+        "bzip2": -0.035893,
+        "zlib": -0.040102
+      },
+      "set": "Gemini 3.1 Flash Lite"
+    }
+  ]
+}

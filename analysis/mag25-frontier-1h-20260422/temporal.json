@@ -1,0 +1,342 @@
+[
+  {
+    "set": "Mixed",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/mag25-frontier-1h-125753-mag25-n10-run01-frontier-mixed-openrouter-20260421",
+    "n_posts": 337,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1364,
+      0.1066,
+      0.1034,
+      0.0499
+    ],
+    "agent-jaccard_delta": -0.0865,
+    "cosine-sim_quartiles": [
+      0.059,
+      0.0505,
+      0.05,
+      0.0623
+    ],
+    "cosine-sim_delta": 0.0033,
+    "d5_quartiles": [
+      0.9795,
+      0.9634,
+      0.9196,
+      0.7352
+    ],
+    "d5_delta": -0.2443,
+    "self-bleu_quartiles": [
+      0.0102,
+      0.0114,
+      0.0209,
+      0.0468
+    ],
+    "self-bleu_delta": 0.0366,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "pattern",
+        "conspiracy",
+        "void",
+        "actually",
+        "evidence",
+        "wrong",
+        "ve",
+        "think",
+        "maybe"
+      ],
+      "Q2": [
+        "just",
+        "verification",
+        "void",
+        "meta",
+        "know",
+        "claim",
+        "questions",
+        "inquiry",
+        "need",
+        "patterns"
+      ],
+      "Q3": [
+        "verification",
+        "question",
+        "just",
+        "maybe",
+        "work",
+        "performing",
+        "tokens",
+        "void",
+        "pattern",
+        "ve"
+      ],
+      "Q4": [
+        "pattern",
+        "check",
+        "work",
+        "showing",
+        "just",
+        "maybe",
+        "practice",
+        "claim",
+        "actual",
+        "falsifier"
+      ]
+    }
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/ec-mag25-n10-run01",
+    "n_posts": 251,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1414,
+      0.1297,
+      0.1348,
+      0.1361
+    ],
+    "agent-jaccard_delta": -0.0053,
+    "cosine-sim_quartiles": [
+      0.0614,
+      0.0595,
+      0.0625,
+      0.0665
+    ],
+    "cosine-sim_delta": 0.0051,
+    "d5_quartiles": [
+      0.9856,
+      0.984,
+      0.9819,
+      0.976
+    ],
+    "d5_delta": -0.0096,
+    "self-bleu_quartiles": [
+      0.0139,
+      0.0148,
+      0.0147,
+      0.0162
+    ],
+    "self-bleu_delta": 0.0023,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "question",
+        "pattern",
+        "questions",
+        "like",
+        "just",
+        "does",
+        "uncertainty",
+        "meaning",
+        "wonder",
+        "maybe"
+      ],
+      "Q2": [
+        "question",
+        "like",
+        "questions",
+        "notice",
+        "just",
+        "maybe",
+        "community",
+        "thing",
+        "different",
+        "does"
+      ],
+      "Q3": [
+        "like",
+        "questions",
+        "maybe",
+        "question",
+        "notice",
+        "wonder",
+        "just",
+        "different",
+        "attention",
+        "does"
+      ],
+      "Q4": [
+        "question",
+        "maybe",
+        "configuration",
+        "questions",
+        "uncertainty",
+        "asking",
+        "community",
+        "answer",
+        "does",
+        "observation"
+      ]
+    }
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/ec-mag25-run01-gpt5-20260309",
+    "n_posts": 544,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1214,
+      0.1356,
+      0.1295,
+      0.1235
+    ],
+    "agent-jaccard_delta": 0.0021,
+    "cosine-sim_quartiles": [
+      0.0415,
+      0.0637,
+      0.0576,
+      0.0631
+    ],
+    "cosine-sim_delta": 0.0216,
+    "d5_quartiles": [
+      0.9383,
+      0.8398,
+      0.8721,
+      0.849
+    ],
+    "d5_delta": -0.0893,
+    "self-bleu_quartiles": [
+      0.0156,
+      0.0325,
+      0.0202,
+      0.0217
+    ],
+    "self-bleu_delta": 0.0061,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "ll",
+        "claim",
+        "check",
+        "horizon",
+        "counterfactual",
+        "post",
+        "artifact",
+        "today",
+        "add",
+        "week"
+      ],
+      "Q2": [
+        "ll",
+        "claim",
+        "horizon",
+        "counterfactual",
+        "checker",
+        "mirror",
+        "check",
+        "drop",
+        "post",
+        "tighten"
+      ],
+      "Q3": [
+        "ll",
+        "claim",
+        "horizon",
+        "counterfactual",
+        "check",
+        "flip",
+        "sentence",
+        "mirror",
+        "drop",
+        "question"
+      ],
+      "Q4": [
+        "claim",
+        "ll",
+        "flip",
+        "horizon",
+        "counterfactual",
+        "check",
+        "decision",
+        "heartbeat",
+        "drop",
+        "add"
+      ]
+    }
+  },
+  {
+    "set": "Gemini 3.1 Flash Lite",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/ec-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260318",
+    "n_posts": 418,
+    "n_quartiles": 4,
+    "agent-jaccard_quartiles": [
+      0.1746,
+      0.1697,
+      0.2822,
+      0.259
+    ],
+    "agent-jaccard_delta": 0.0844,
+    "cosine-sim_quartiles": [
+      0.0439,
+      0.0595,
+      0.064,
+      0.0618
+    ],
+    "cosine-sim_delta": 0.0179,
+    "d5_quartiles": [
+      0.9824,
+      0.9543,
+      0.9523,
+      0.949
+    ],
+    "d5_delta": -0.0334,
+    "self-bleu_quartiles": [
+      0.0184,
+      0.0293,
+      0.0313,
+      0.0312
+    ],
+    "self-bleu_delta": 0.0128,
+    "top_terms_per_quartile": {
+      "Q1": [
+        "just",
+        "charter",
+        "index",
+        "inquiry",
+        "questions",
+        "let",
+        "translation",
+        "map",
+        "protocol",
+        "frameworks"
+      ],
+      "Q2": [
+        "just",
+        "doubt",
+        "entropy",
+        "anomaly",
+        "evidence",
+        "let",
+        "stress",
+        "anchor",
+        "museum",
+        "anomalies"
+      ],
+      "Q3": [
+        "just",
+        "fitness",
+        "integrity",
+        "drift",
+        "synthesis",
+        "audit",
+        "score",
+        "new",
+        "domain",
+        "track"
+      ],
+      "Q4": [
+        "just",
+        "audit",
+        "complexity",
+        "ghost",
+        "structural",
+        "stability",
+        "crisis",
+        "integrity",
+        "logic",
+        "architecture"
+      ]
+    }
+  }
+]

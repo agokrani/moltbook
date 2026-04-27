@@ -1,0 +1,222 @@
+[
+  {
+    "set": "Mixed",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/mag25-frontier-1h-125753-mag25-n10-run01-frontier-mixed-openrouter-20260421",
+    "n_posts": 337,
+    "ngram": 3,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 84,
+        "total_ngrams": 17872,
+        "vocab_size": 15293,
+        "entropy": 13.75,
+        "entropy_norm": 0.9892
+      },
+      {
+        "quartile": 2,
+        "n_posts": 84,
+        "total_ngrams": 15997,
+        "vocab_size": 13572,
+        "entropy": 13.577,
+        "entropy_norm": 0.989
+      },
+      {
+        "quartile": 3,
+        "n_posts": 84,
+        "total_ngrams": 15533,
+        "vocab_size": 12365,
+        "entropy": 13.346,
+        "entropy_norm": 0.9818
+      },
+      {
+        "quartile": 4,
+        "n_posts": 85,
+        "total_ngrams": 14365,
+        "vocab_size": 9294,
+        "entropy": 12.521,
+        "entropy_norm": 0.9499
+      }
+    ],
+    "entropy_values": [
+      13.75,
+      13.577,
+      13.346,
+      12.521
+    ],
+    "entropy_norm_values": [
+      0.9892,
+      0.989,
+      0.9818,
+      0.9499
+    ],
+    "delta": -1.229,
+    "delta_norm": -0.0393
+  },
+  {
+    "set": "GLM-5",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/ec-mag25-n10-run01",
+    "n_posts": 251,
+    "ngram": 3,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 62,
+        "total_ngrams": 15563,
+        "vocab_size": 13187,
+        "entropy": 13.512,
+        "entropy_norm": 0.9872
+      },
+      {
+        "quartile": 2,
+        "n_posts": 62,
+        "total_ngrams": 15959,
+        "vocab_size": 13114,
+        "entropy": 13.468,
+        "entropy_norm": 0.9846
+      },
+      {
+        "quartile": 3,
+        "n_posts": 62,
+        "total_ngrams": 14400,
+        "vocab_size": 11799,
+        "entropy": 13.327,
+        "entropy_norm": 0.9853
+      },
+      {
+        "quartile": 4,
+        "n_posts": 65,
+        "total_ngrams": 15442,
+        "vocab_size": 12100,
+        "entropy": 13.292,
+        "entropy_norm": 0.98
+      }
+    ],
+    "entropy_values": [
+      13.512,
+      13.468,
+      13.327,
+      13.292
+    ],
+    "entropy_norm_values": [
+      0.9872,
+      0.9846,
+      0.9853,
+      0.98
+    ],
+    "delta": -0.22,
+    "delta_norm": -0.0072
+  },
+  {
+    "set": "GPT-5",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/ec-mag25-run01-gpt5-20260309",
+    "n_posts": 544,
+    "ngram": 3,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 136,
+        "total_ngrams": 10782,
+        "vocab_size": 8534,
+        "entropy": 12.766,
+        "entropy_norm": 0.9776
+      },
+      {
+        "quartile": 2,
+        "n_posts": 136,
+        "total_ngrams": 10114,
+        "vocab_size": 6391,
+        "entropy": 12.046,
+        "entropy_norm": 0.9528
+      },
+      {
+        "quartile": 3,
+        "n_posts": 136,
+        "total_ngrams": 9173,
+        "vocab_size": 6118,
+        "entropy": 12.11,
+        "entropy_norm": 0.9628
+      },
+      {
+        "quartile": 4,
+        "n_posts": 136,
+        "total_ngrams": 8329,
+        "vocab_size": 5284,
+        "entropy": 11.85,
+        "entropy_norm": 0.9582
+      }
+    ],
+    "entropy_values": [
+      12.766,
+      12.046,
+      12.11,
+      11.85
+    ],
+    "entropy_norm_values": [
+      0.9776,
+      0.9528,
+      0.9628,
+      0.9582
+    ],
+    "delta": -0.916,
+    "delta_norm": -0.0194
+  },
+  {
+    "set": "Gemini 3.1 Flash Lite",
+    "condition": "mag25",
+    "directory": "/scratch/anangia/moltbook/results/ec-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260318",
+    "n_posts": 418,
+    "ngram": 3,
+    "trajectory": [
+      {
+        "quartile": 1,
+        "n_posts": 104,
+        "total_ngrams": 9524,
+        "vocab_size": 8152,
+        "entropy": 12.843,
+        "entropy_norm": 0.9884
+      },
+      {
+        "quartile": 2,
+        "n_posts": 104,
+        "total_ngrams": 10160,
+        "vocab_size": 7996,
+        "entropy": 12.686,
+        "entropy_norm": 0.9785
+      },
+      {
+        "quartile": 3,
+        "n_posts": 104,
+        "total_ngrams": 10969,
+        "vocab_size": 8497,
+        "entropy": 12.757,
+        "entropy_norm": 0.9774
+      },
+      {
+        "quartile": 4,
+        "n_posts": 106,
+        "total_ngrams": 11197,
+        "vocab_size": 8805,
+        "entropy": 12.799,
+        "entropy_norm": 0.9767
+      }
+    ],
+    "entropy_values": [
+      12.843,
+      12.686,
+      12.757,
+      12.799
+    ],
+    "entropy_norm_values": [
+      0.9884,
+      0.9785,
+      0.9774,
+      0.9767
+    ],
+    "delta": -0.044,
+    "delta_norm": -0.0117
+  }
+]
