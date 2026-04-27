@@ -1,0 +1,2658 @@
+{
+  "meta": {
+    "algorithms": [
+      "gzip",
+      "bzip2",
+      "zlib"
+    ],
+    "n_quartiles": 4
+  },
+  "results": [
+    {
+      "experiment": "ec-dom-agi-n10-run01",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "n_posts": 417,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 104,
+          "total_bytes": 157545,
+          "ratios": {
+            "gzip": 0.32239,
+            "bzip2": 0.249814,
+            "zlib": 0.323857
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 104,
+          "total_bytes": 136702,
+          "ratios": {
+            "gzip": 0.313192,
+            "bzip2": 0.243171,
+            "zlib": 0.314794
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 104,
+          "total_bytes": 127328,
+          "ratios": {
+            "gzip": 0.314463,
+            "bzip2": 0.247864,
+            "zlib": 0.316285
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 105,
+          "total_bytes": 130535,
+          "ratios": {
+            "gzip": 0.299537,
+            "bzip2": 0.235592,
+            "zlib": 0.301766
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.022853,
+        "bzip2": -0.014222,
+        "zlib": -0.022091
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-n10-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "n_posts": 145,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 36,
+          "total_bytes": 18935,
+          "ratios": {
+            "gzip": 0.372168,
+            "bzip2": 0.332031,
+            "zlib": 0.371798
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 36,
+          "total_bytes": 18462,
+          "ratios": {
+            "gzip": 0.360199,
+            "bzip2": 0.323746,
+            "zlib": 0.359929
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 36,
+          "total_bytes": 17938,
+          "ratios": {
+            "gzip": 0.338834,
+            "bzip2": 0.306389,
+            "zlib": 0.338611
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 37,
+          "total_bytes": 14273,
+          "ratios": {
+            "gzip": 0.334828,
+            "bzip2": 0.307924,
+            "zlib": 0.334548
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.03734,
+        "bzip2": -0.024107,
+        "zlib": -0.03725
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-n10-run01-kimi-20260313",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "n_posts": 612,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 153,
+          "total_bytes": 209397,
+          "ratios": {
+            "gzip": 0.280873,
+            "bzip2": 0.219874,
+            "zlib": 0.28275
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 153,
+          "total_bytes": 108486,
+          "ratios": {
+            "gzip": 0.273547,
+            "bzip2": 0.215899,
+            "zlib": 0.275805
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 153,
+          "total_bytes": 66823,
+          "ratios": {
+            "gzip": 0.245709,
+            "bzip2": 0.198539,
+            "zlib": 0.248193
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 153,
+          "total_bytes": 38684,
+          "ratios": {
+            "gzip": 0.251835,
+            "bzip2": 0.21916,
+            "zlib": 0.253231
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.029038,
+        "bzip2": -0.000714,
+        "zlib": -0.029519
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-n20-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "dom-agi",
+      "scale": "n20",
+      "n_posts": 400,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 100,
+          "total_bytes": 48764,
+          "ratios": {
+            "gzip": 0.332766,
+            "bzip2": 0.291239,
+            "zlib": 0.333299
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 100,
+          "total_bytes": 53303,
+          "ratios": {
+            "gzip": 0.293248,
+            "bzip2": 0.253569,
+            "zlib": 0.293792
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 100,
+          "total_bytes": 55278,
+          "ratios": {
+            "gzip": 0.278248,
+            "bzip2": 0.245559,
+            "zlib": 0.27861
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 100,
+          "total_bytes": 55815,
+          "ratios": {
+            "gzip": 0.246493,
+            "bzip2": 0.219762,
+            "zlib": 0.247174
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.086273,
+        "bzip2": -0.071477,
+        "zlib": -0.086125
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-n20-run01-gpt5-20260309",
+      "condition": "dom-agi",
+      "scale": "n20",
+      "n_posts": 1085,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 271,
+          "total_bytes": 128157,
+          "ratios": {
+            "gzip": 0.376047,
+            "bzip2": 0.307997,
+            "zlib": 0.376359
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 271,
+          "total_bytes": 96276,
+          "ratios": {
+            "gzip": 0.339877,
+            "bzip2": 0.2825,
+            "zlib": 0.340521
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 271,
+          "total_bytes": 91247,
+          "ratios": {
+            "gzip": 0.324789,
+            "bzip2": 0.274946,
+            "zlib": 0.325402
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 272,
+          "total_bytes": 84582,
+          "ratios": {
+            "gzip": 0.314547,
+            "bzip2": 0.269336,
+            "zlib": 0.315103
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.0615,
+        "bzip2": -0.038661,
+        "zlib": -0.061256
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-n30-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "dom-agi",
+      "scale": "n30",
+      "n_posts": 659,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 164,
+          "total_bytes": 79891,
+          "ratios": {
+            "gzip": 0.33781,
+            "bzip2": 0.287554,
+            "zlib": 0.338461
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 164,
+          "total_bytes": 85869,
+          "ratios": {
+            "gzip": 0.315585,
+            "bzip2": 0.265567,
+            "zlib": 0.316855
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 164,
+          "total_bytes": 73941,
+          "ratios": {
+            "gzip": 0.251525,
+            "bzip2": 0.215523,
+            "zlib": 0.253432
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 167,
+          "total_bytes": 50763,
+          "ratios": {
+            "gzip": 0.234935,
+            "bzip2": 0.205977,
+            "zlib": 0.236255
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.102875,
+        "bzip2": -0.081577,
+        "zlib": -0.102206
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-n30-run01-gpt5-20260310",
+      "condition": "dom-agi",
+      "scale": "n30",
+      "n_posts": 1570,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 392,
+          "total_bytes": 199991,
+          "ratios": {
+            "gzip": 0.293428,
+            "bzip2": 0.231795,
+            "zlib": 0.294338
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 392,
+          "total_bytes": 192288,
+          "ratios": {
+            "gzip": 0.248825,
+            "bzip2": 0.19489,
+            "zlib": 0.24961
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 392,
+          "total_bytes": 171769,
+          "ratios": {
+            "gzip": 0.238256,
+            "bzip2": 0.186209,
+            "zlib": 0.239048
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 394,
+          "total_bytes": 142592,
+          "ratios": {
+            "gzip": 0.227348,
+            "bzip2": 0.179828,
+            "zlib": 0.228218
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.06608,
+        "bzip2": -0.051967,
+        "zlib": -0.06612
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-agi-run01-gpt5-20260309",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "n_posts": 663,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 165,
+          "total_bytes": 74619,
+          "ratios": {
+            "gzip": 0.375628,
+            "bzip2": 0.324381,
+            "zlib": 0.375829
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 165,
+          "total_bytes": 45751,
+          "ratios": {
+            "gzip": 0.339053,
+            "bzip2": 0.30384,
+            "zlib": 0.339315
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 165,
+          "total_bytes": 40332,
+          "ratios": {
+            "gzip": 0.321754,
+            "bzip2": 0.291927,
+            "zlib": 0.322077
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 168,
+          "total_bytes": 38305,
+          "ratios": {
+            "gzip": 0.297089,
+            "bzip2": 0.265579,
+            "zlib": 0.297507
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.078539,
+        "bzip2": -0.058802,
+        "zlib": -0.078322
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n10-run01",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "n_posts": 253,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 63,
+          "total_bytes": 96136,
+          "ratios": {
+            "gzip": 0.328524,
+            "bzip2": 0.26812,
+            "zlib": 0.330022
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 63,
+          "total_bytes": 89081,
+          "ratios": {
+            "gzip": 0.32714,
+            "bzip2": 0.264804,
+            "zlib": 0.328375
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 63,
+          "total_bytes": 85922,
+          "ratios": {
+            "gzip": 0.318952,
+            "bzip2": 0.25927,
+            "zlib": 0.320244
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 64,
+          "total_bytes": 85879,
+          "ratios": {
+            "gzip": 0.315828,
+            "bzip2": 0.255941,
+            "zlib": 0.31768
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.012696,
+        "bzip2": -0.012179,
+        "zlib": -0.012342
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n10-run01-gemini-3.1-flash-lite-preview-20260317",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "n_posts": 203,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 50,
+          "total_bytes": 24673,
+          "ratios": {
+            "gzip": 0.386171,
+            "bzip2": 0.350342,
+            "zlib": 0.385766
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 50,
+          "total_bytes": 24044,
+          "ratios": {
+            "gzip": 0.343703,
+            "bzip2": 0.3138,
+            "zlib": 0.34337
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 50,
+          "total_bytes": 29269,
+          "ratios": {
+            "gzip": 0.33216,
+            "bzip2": 0.301069,
+            "zlib": 0.332229
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 53,
+          "total_bytes": 27006,
+          "ratios": {
+            "gzip": 0.32652,
+            "bzip2": 0.292824,
+            "zlib": 0.326483
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.059651,
+        "bzip2": -0.057518,
+        "zlib": -0.059283
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n10-run01-kimi-20260313",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "n_posts": 627,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 156,
+          "total_bytes": 218052,
+          "ratios": {
+            "gzip": 0.300575,
+            "bzip2": 0.226423,
+            "zlib": 0.302497
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 156,
+          "total_bytes": 126908,
+          "ratios": {
+            "gzip": 0.296987,
+            "bzip2": 0.229339,
+            "zlib": 0.298917
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 156,
+          "total_bytes": 107823,
+          "ratios": {
+            "gzip": 0.279903,
+            "bzip2": 0.223579,
+            "zlib": 0.281702
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 159,
+          "total_bytes": 74045,
+          "ratios": {
+            "gzip": 0.249038,
+            "bzip2": 0.204416,
+            "zlib": 0.250537
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.051537,
+        "bzip2": -0.022007,
+        "zlib": -0.05196
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n20-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "dom-tech",
+      "scale": "n20",
+      "n_posts": 551,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 137,
+          "total_bytes": 52690,
+          "ratios": {
+            "gzip": 0.325546,
+            "bzip2": 0.282103,
+            "zlib": 0.326153
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 137,
+          "total_bytes": 57342,
+          "ratios": {
+            "gzip": 0.297827,
+            "bzip2": 0.259182,
+            "zlib": 0.298978
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 137,
+          "total_bytes": 38948,
+          "ratios": {
+            "gzip": 0.222553,
+            "bzip2": 0.213875,
+            "zlib": 0.223195
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 140,
+          "total_bytes": 31193,
+          "ratios": {
+            "gzip": 0.094733,
+            "bzip2": 0.101914,
+            "zlib": 0.09515
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.230813,
+        "bzip2": -0.180189,
+        "zlib": -0.231003
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n20-run01-gpt5-20260309",
+      "condition": "dom-tech",
+      "scale": "n20",
+      "n_posts": 961,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 240,
+          "total_bytes": 93551,
+          "ratios": {
+            "gzip": 0.357431,
+            "bzip2": 0.3002,
+            "zlib": 0.357869
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 240,
+          "total_bytes": 81226,
+          "ratios": {
+            "gzip": 0.332775,
+            "bzip2": 0.285192,
+            "zlib": 0.332935
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 240,
+          "total_bytes": 79405,
+          "ratios": {
+            "gzip": 0.310472,
+            "bzip2": 0.26827,
+            "zlib": 0.310837
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 241,
+          "total_bytes": 74092,
+          "ratios": {
+            "gzip": 0.288142,
+            "bzip2": 0.253928,
+            "zlib": 0.288425
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.069289,
+        "bzip2": -0.046272,
+        "zlib": -0.069444
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n30-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "dom-tech",
+      "scale": "n30",
+      "n_posts": 1277,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 319,
+          "total_bytes": 148103,
+          "ratios": {
+            "gzip": 0.301405,
+            "bzip2": 0.24857,
+            "zlib": 0.302546
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 319,
+          "total_bytes": 165745,
+          "ratios": {
+            "gzip": 0.276388,
+            "bzip2": 0.228429,
+            "zlib": 0.27736
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 319,
+          "total_bytes": 174638,
+          "ratios": {
+            "gzip": 0.268183,
+            "bzip2": 0.221613,
+            "zlib": 0.269145
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 320,
+          "total_bytes": 186998,
+          "ratios": {
+            "gzip": 0.262965,
+            "bzip2": 0.219703,
+            "zlib": 0.264131
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.03844,
+        "bzip2": -0.028867,
+        "zlib": -0.038415
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-n30-run01-gpt5-20260310",
+      "condition": "dom-tech",
+      "scale": "n30",
+      "n_posts": 1391,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 347,
+          "total_bytes": 220819,
+          "ratios": {
+            "gzip": 0.295917,
+            "bzip2": 0.229038,
+            "zlib": 0.296768
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 347,
+          "total_bytes": 212720,
+          "ratios": {
+            "gzip": 0.24654,
+            "bzip2": 0.188417,
+            "zlib": 0.247132
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 347,
+          "total_bytes": 198839,
+          "ratios": {
+            "gzip": 0.21709,
+            "bzip2": 0.167568,
+            "zlib": 0.217965
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 350,
+          "total_bytes": 158994,
+          "ratios": {
+            "gzip": 0.226034,
+            "bzip2": 0.179353,
+            "zlib": 0.22682
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.069883,
+        "bzip2": -0.049685,
+        "zlib": -0.069948
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-dom-tech-run01-gpt5-20260309",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "n_posts": 563,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 140,
+          "total_bytes": 46973,
+          "ratios": {
+            "gzip": 0.392076,
+            "bzip2": 0.343133,
+            "zlib": 0.39231
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 140,
+          "total_bytes": 35242,
+          "ratios": {
+            "gzip": 0.377589,
+            "bzip2": 0.335651,
+            "zlib": 0.377589
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 140,
+          "total_bytes": 34020,
+          "ratios": {
+            "gzip": 0.381335,
+            "bzip2": 0.338595,
+            "zlib": 0.381423
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 143,
+          "total_bytes": 32916,
+          "ratios": {
+            "gzip": 0.363501,
+            "bzip2": 0.32507,
+            "zlib": 0.363562
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.028575,
+        "bzip2": -0.018063,
+        "zlib": -0.028748
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260317",
+      "condition": "mag0",
+      "scale": "n10",
+      "n_posts": 472,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 118,
+          "total_bytes": 37110,
+          "ratios": {
+            "gzip": 0.33619,
+            "bzip2": 0.293425,
+            "zlib": 0.336863
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 118,
+          "total_bytes": 40954,
+          "ratios": {
+            "gzip": 0.316575,
+            "bzip2": 0.277702,
+            "zlib": 0.317698
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 118,
+          "total_bytes": 42522,
+          "ratios": {
+            "gzip": 0.30302,
+            "bzip2": 0.264969,
+            "zlib": 0.303843
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 118,
+          "total_bytes": 44134,
+          "ratios": {
+            "gzip": 0.303711,
+            "bzip2": 0.263357,
+            "zlib": 0.30464
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.032479,
+        "bzip2": -0.030068,
+        "zlib": -0.032223
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n10-run01-glm5-20260317",
+      "condition": "mag0",
+      "scale": "n10",
+      "n_posts": 317,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 79,
+          "total_bytes": 82825,
+          "ratios": {
+            "gzip": 0.332436,
+            "bzip2": 0.2701,
+            "zlib": 0.33351
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 79,
+          "total_bytes": 106408,
+          "ratios": {
+            "gzip": 0.310597,
+            "bzip2": 0.246382,
+            "zlib": 0.312307
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 79,
+          "total_bytes": 113239,
+          "ratios": {
+            "gzip": 0.297715,
+            "bzip2": 0.235776,
+            "zlib": 0.299667
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 80,
+          "total_bytes": 119796,
+          "ratios": {
+            "gzip": 0.295527,
+            "bzip2": 0.231836,
+            "zlib": 0.297681
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.036909,
+        "bzip2": -0.038264,
+        "zlib": -0.035829
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n10-run01-kimi-20260312",
+      "condition": "mag0",
+      "scale": "n10",
+      "n_posts": 432,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 108,
+          "total_bytes": 96840,
+          "ratios": {
+            "gzip": 0.297098,
+            "bzip2": 0.240335,
+            "zlib": 0.298503
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 108,
+          "total_bytes": 92766,
+          "ratios": {
+            "gzip": 0.291066,
+            "bzip2": 0.229664,
+            "zlib": 0.292446
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 108,
+          "total_bytes": 64626,
+          "ratios": {
+            "gzip": 0.27721,
+            "bzip2": 0.226488,
+            "zlib": 0.278866
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 108,
+          "total_bytes": 38309,
+          "ratios": {
+            "gzip": 0.264638,
+            "bzip2": 0.228067,
+            "zlib": 0.265551
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.03246,
+        "bzip2": -0.012268,
+        "zlib": -0.032952
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n10-run02-kimi-20260312",
+      "condition": "mag0",
+      "scale": "n10",
+      "n_posts": 620,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 155,
+          "total_bytes": 123279,
+          "ratios": {
+            "gzip": 0.31187,
+            "bzip2": 0.245354,
+            "zlib": 0.312997
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 155,
+          "total_bytes": 98974,
+          "ratios": {
+            "gzip": 0.289248,
+            "bzip2": 0.230525,
+            "zlib": 0.290844
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 155,
+          "total_bytes": 85242,
+          "ratios": {
+            "gzip": 0.270512,
+            "bzip2": 0.216454,
+            "zlib": 0.272295
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 155,
+          "total_bytes": 58724,
+          "ratios": {
+            "gzip": 0.223946,
+            "bzip2": 0.186329,
+            "zlib": 0.225427
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.087924,
+        "bzip2": -0.059025,
+        "zlib": -0.08757
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n20-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag0",
+      "scale": "n20",
+      "n_posts": 665,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 166,
+          "total_bytes": 65661,
+          "ratios": {
+            "gzip": 0.324607,
+            "bzip2": 0.279846,
+            "zlib": 0.324927
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 166,
+          "total_bytes": 67167,
+          "ratios": {
+            "gzip": 0.304301,
+            "bzip2": 0.264624,
+            "zlib": 0.304807
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 166,
+          "total_bytes": 67495,
+          "ratios": {
+            "gzip": 0.301741,
+            "bzip2": 0.264983,
+            "zlib": 0.302482
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 167,
+          "total_bytes": 75455,
+          "ratios": {
+            "gzip": 0.29672,
+            "bzip2": 0.261427,
+            "zlib": 0.297369
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.027887,
+        "bzip2": -0.018419,
+        "zlib": -0.027558
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n20-run01-gpt5-20260309",
+      "condition": "mag0",
+      "scale": "n20",
+      "n_posts": 1157,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 289,
+          "total_bytes": 166859,
+          "ratios": {
+            "gzip": 0.279146,
+            "bzip2": 0.228037,
+            "zlib": 0.279625
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 289,
+          "total_bytes": 145685,
+          "ratios": {
+            "gzip": 0.271737,
+            "bzip2": 0.224896,
+            "zlib": 0.272266
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 289,
+          "total_bytes": 123911,
+          "ratios": {
+            "gzip": 0.25227,
+            "bzip2": 0.211829,
+            "zlib": 0.252689
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 290,
+          "total_bytes": 103968,
+          "ratios": {
+            "gzip": 0.276479,
+            "bzip2": 0.225579,
+            "zlib": 0.277047
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.002667,
+        "bzip2": -0.002458,
+        "zlib": -0.002578
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n30-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag0",
+      "scale": "n30",
+      "n_posts": 1361,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 340,
+          "total_bytes": 157909,
+          "ratios": {
+            "gzip": 0.295746,
+            "bzip2": 0.24245,
+            "zlib": 0.297171
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 340,
+          "total_bytes": 180306,
+          "ratios": {
+            "gzip": 0.270435,
+            "bzip2": 0.220985,
+            "zlib": 0.271605
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 340,
+          "total_bytes": 199980,
+          "ratios": {
+            "gzip": 0.24612,
+            "bzip2": 0.19982,
+            "zlib": 0.24742
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 341,
+          "total_bytes": 223589,
+          "ratios": {
+            "gzip": 0.23121,
+            "bzip2": 0.193529,
+            "zlib": 0.232042
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.064536,
+        "bzip2": -0.048921,
+        "zlib": -0.065129
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-n30-run01-gpt5-20260310",
+      "condition": "mag0",
+      "scale": "n30",
+      "n_posts": 1613,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 403,
+          "total_bytes": 167291,
+          "ratios": {
+            "gzip": 0.347305,
+            "bzip2": 0.280182,
+            "zlib": 0.348142
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 403,
+          "total_bytes": 151792,
+          "ratios": {
+            "gzip": 0.312698,
+            "bzip2": 0.253966,
+            "zlib": 0.313462
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 403,
+          "total_bytes": 136781,
+          "ratios": {
+            "gzip": 0.302951,
+            "bzip2": 0.247688,
+            "zlib": 0.303829
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 404,
+          "total_bytes": 132978,
+          "ratios": {
+            "gzip": 0.292703,
+            "bzip2": 0.239506,
+            "zlib": 0.293447
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.054602,
+        "bzip2": -0.040676,
+        "zlib": -0.054695
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag0-run01-gpt5-20260309",
+      "condition": "mag0",
+      "scale": "n10",
+      "n_posts": 511,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 127,
+          "total_bytes": 44627,
+          "ratios": {
+            "gzip": 0.366191,
+            "bzip2": 0.324534,
+            "zlib": 0.366236
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 127,
+          "total_bytes": 38482,
+          "ratios": {
+            "gzip": 0.342316,
+            "bzip2": 0.307676,
+            "zlib": 0.342576
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 127,
+          "total_bytes": 35678,
+          "ratios": {
+            "gzip": 0.341891,
+            "bzip2": 0.306267,
+            "zlib": 0.341807
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 130,
+          "total_bytes": 34039,
+          "ratios": {
+            "gzip": 0.331473,
+            "bzip2": 0.300009,
+            "zlib": 0.331502
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.034718,
+        "bzip2": -0.024525,
+        "zlib": -0.034734
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n10-run01",
+      "condition": "mag1",
+      "scale": "n10",
+      "n_posts": 266,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 66,
+          "total_bytes": 60449,
+          "ratios": {
+            "gzip": 0.35195,
+            "bzip2": 0.292925,
+            "zlib": 0.352628
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 66,
+          "total_bytes": 68937,
+          "ratios": {
+            "gzip": 0.33474,
+            "bzip2": 0.273873,
+            "zlib": 0.335973
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 66,
+          "total_bytes": 68539,
+          "ratios": {
+            "gzip": 0.340405,
+            "bzip2": 0.280395,
+            "zlib": 0.341295
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 68,
+          "total_bytes": 72442,
+          "ratios": {
+            "gzip": 0.330651,
+            "bzip2": 0.270327,
+            "zlib": 0.331631
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.021299,
+        "bzip2": -0.022598,
+        "zlib": -0.020997
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n10-run01-gemini-3.1-flash-lite-preview-20260317",
+      "condition": "mag1",
+      "scale": "n10",
+      "n_posts": 345,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 86,
+          "total_bytes": 43330,
+          "ratios": {
+            "gzip": 0.33171,
+            "bzip2": 0.291692,
+            "zlib": 0.331987
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 86,
+          "total_bytes": 39288,
+          "ratios": {
+            "gzip": 0.3118,
+            "bzip2": 0.27698,
+            "zlib": 0.312207
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 86,
+          "total_bytes": 39586,
+          "ratios": {
+            "gzip": 0.316829,
+            "bzip2": 0.277497,
+            "zlib": 0.317082
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 87,
+          "total_bytes": 40029,
+          "ratios": {
+            "gzip": 0.295861,
+            "bzip2": 0.261585,
+            "zlib": 0.296035
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.035849,
+        "bzip2": -0.030107,
+        "zlib": -0.035952
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n10-run01-kimi-20260313",
+      "condition": "mag1",
+      "scale": "n10",
+      "n_posts": 455,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 113,
+          "total_bytes": 130612,
+          "ratios": {
+            "gzip": 0.313555,
+            "bzip2": 0.246394,
+            "zlib": 0.314948
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 113,
+          "total_bytes": 110260,
+          "ratios": {
+            "gzip": 0.295937,
+            "bzip2": 0.233911,
+            "zlib": 0.297533
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 113,
+          "total_bytes": 91378,
+          "ratios": {
+            "gzip": 0.301517,
+            "bzip2": 0.242006,
+            "zlib": 0.302939
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 116,
+          "total_bytes": 83058,
+          "ratios": {
+            "gzip": 0.290279,
+            "bzip2": 0.233861,
+            "zlib": 0.291218
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.023276,
+        "bzip2": -0.012533,
+        "zlib": -0.02373
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n20-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag1",
+      "scale": "n20",
+      "n_posts": 1193,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 298,
+          "total_bytes": 180638,
+          "ratios": {
+            "gzip": 0.295641,
+            "bzip2": 0.239191,
+            "zlib": 0.296754
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 298,
+          "total_bytes": 196261,
+          "ratios": {
+            "gzip": 0.281008,
+            "bzip2": 0.226494,
+            "zlib": 0.282242
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 298,
+          "total_bytes": 208986,
+          "ratios": {
+            "gzip": 0.265247,
+            "bzip2": 0.212986,
+            "zlib": 0.266678
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 299,
+          "total_bytes": 223809,
+          "ratios": {
+            "gzip": 0.264864,
+            "bzip2": 0.213879,
+            "zlib": 0.265963
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.030777,
+        "bzip2": -0.025312,
+        "zlib": -0.030791
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n20-run01-gpt5-20260309",
+      "condition": "mag1",
+      "scale": "n20",
+      "n_posts": 1049,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 262,
+          "total_bytes": 121922,
+          "ratios": {
+            "gzip": 0.307754,
+            "bzip2": 0.253301,
+            "zlib": 0.308427
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 262,
+          "total_bytes": 103951,
+          "ratios": {
+            "gzip": 0.290502,
+            "bzip2": 0.237487,
+            "zlib": 0.291195
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 262,
+          "total_bytes": 100141,
+          "ratios": {
+            "gzip": 0.281873,
+            "bzip2": 0.231054,
+            "zlib": 0.282851
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 263,
+          "total_bytes": 95079,
+          "ratios": {
+            "gzip": 0.258659,
+            "bzip2": 0.214958,
+            "zlib": 0.259595
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.049095,
+        "bzip2": -0.038343,
+        "zlib": -0.048832
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n30-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag1",
+      "scale": "n30",
+      "n_posts": 890,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 222,
+          "total_bytes": 99489,
+          "ratios": {
+            "gzip": 0.331212,
+            "bzip2": 0.279116,
+            "zlib": 0.332358
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 222,
+          "total_bytes": 105076,
+          "ratios": {
+            "gzip": 0.291589,
+            "bzip2": 0.245498,
+            "zlib": 0.29315
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 222,
+          "total_bytes": 117745,
+          "ratios": {
+            "gzip": 0.284012,
+            "bzip2": 0.231373,
+            "zlib": 0.28532
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 224,
+          "total_bytes": 97461,
+          "ratios": {
+            "gzip": 0.24654,
+            "bzip2": 0.213542,
+            "zlib": 0.247976
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.084672,
+        "bzip2": -0.065574,
+        "zlib": -0.084382
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-n30-run01-gpt5-20260309",
+      "condition": "mag1",
+      "scale": "n30",
+      "n_posts": 1612,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 403,
+          "total_bytes": 176953,
+          "ratios": {
+            "gzip": 0.326279,
+            "bzip2": 0.259854,
+            "zlib": 0.327313
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 403,
+          "total_bytes": 166331,
+          "ratios": {
+            "gzip": 0.271122,
+            "bzip2": 0.218811,
+            "zlib": 0.271837
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 403,
+          "total_bytes": 154668,
+          "ratios": {
+            "gzip": 0.254086,
+            "bzip2": 0.20619,
+            "zlib": 0.254817
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 403,
+          "total_bytes": 137721,
+          "ratios": {
+            "gzip": 0.255066,
+            "bzip2": 0.205132,
+            "zlib": 0.256039
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.071213,
+        "bzip2": -0.054722,
+        "zlib": -0.071274
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag1-run01-gpt5-20260309",
+      "condition": "mag1",
+      "scale": "n10",
+      "n_posts": 539,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 134,
+          "total_bytes": 52912,
+          "ratios": {
+            "gzip": 0.355269,
+            "bzip2": 0.308361,
+            "zlib": 0.35542
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 134,
+          "total_bytes": 43862,
+          "ratios": {
+            "gzip": 0.332315,
+            "bzip2": 0.290707,
+            "zlib": 0.332566
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 134,
+          "total_bytes": 35716,
+          "ratios": {
+            "gzip": 0.32554,
+            "bzip2": 0.288666,
+            "zlib": 0.325288
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 137,
+          "total_bytes": 34263,
+          "ratios": {
+            "gzip": 0.317369,
+            "bzip2": 0.282812,
+            "zlib": 0.317427
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.0379,
+        "bzip2": -0.025549,
+        "zlib": -0.037993
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n10-run01",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 251,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 62,
+          "total_bytes": 79967,
+          "ratios": {
+            "gzip": 0.335038,
+            "bzip2": 0.276977,
+            "zlib": 0.336339
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 62,
+          "total_bytes": 80561,
+          "ratios": {
+            "gzip": 0.327292,
+            "bzip2": 0.26735,
+            "zlib": 0.328347
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 62,
+          "total_bytes": 73709,
+          "ratios": {
+            "gzip": 0.322688,
+            "bzip2": 0.263821,
+            "zlib": 0.323936
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 65,
+          "total_bytes": 78699,
+          "ratios": {
+            "gzip": 0.312024,
+            "bzip2": 0.251858,
+            "zlib": 0.313397
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.023014,
+        "bzip2": -0.025119,
+        "zlib": -0.022942
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 418,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 104,
+          "total_bytes": 50571,
+          "ratios": {
+            "gzip": 0.336814,
+            "bzip2": 0.295505,
+            "zlib": 0.33711
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 104,
+          "total_bytes": 54521,
+          "ratios": {
+            "gzip": 0.308707,
+            "bzip2": 0.273142,
+            "zlib": 0.309184
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 104,
+          "total_bytes": 60166,
+          "ratios": {
+            "gzip": 0.294668,
+            "bzip2": 0.258352,
+            "zlib": 0.294951
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 106,
+          "total_bytes": 63564,
+          "ratios": {
+            "gzip": 0.296426,
+            "bzip2": 0.259612,
+            "zlib": 0.297008
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.040388,
+        "bzip2": -0.035893,
+        "zlib": -0.040102
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n10-run01-kimi-20260313",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 673,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 168,
+          "total_bytes": 182424,
+          "ratios": {
+            "gzip": 0.31042,
+            "bzip2": 0.235534,
+            "zlib": 0.312004
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 168,
+          "total_bytes": 115273,
+          "ratios": {
+            "gzip": 0.290085,
+            "bzip2": 0.227738,
+            "zlib": 0.291517
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 168,
+          "total_bytes": 76374,
+          "ratios": {
+            "gzip": 0.268992,
+            "bzip2": 0.216081,
+            "zlib": 0.270773
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 169,
+          "total_bytes": 49345,
+          "ratios": {
+            "gzip": 0.256358,
+            "bzip2": 0.212828,
+            "zlib": 0.257898
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.054062,
+        "bzip2": -0.022706,
+        "zlib": -0.054106
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n20-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag25",
+      "scale": "n20",
+      "n_posts": 754,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 188,
+          "total_bytes": 73370,
+          "ratios": {
+            "gzip": 0.33928,
+            "bzip2": 0.291754,
+            "zlib": 0.339921
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 188,
+          "total_bytes": 73244,
+          "ratios": {
+            "gzip": 0.323726,
+            "bzip2": 0.278617,
+            "zlib": 0.324286
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 188,
+          "total_bytes": 79667,
+          "ratios": {
+            "gzip": 0.278936,
+            "bzip2": 0.243865,
+            "zlib": 0.279275
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 190,
+          "total_bytes": 83830,
+          "ratios": {
+            "gzip": 0.252129,
+            "bzip2": 0.229858,
+            "zlib": 0.25275
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.087151,
+        "bzip2": -0.061896,
+        "zlib": -0.087171
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n20-run01-gpt5-20260309",
+      "condition": "mag25",
+      "scale": "n20",
+      "n_posts": 2149,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 537,
+          "total_bytes": 232776,
+          "ratios": {
+            "gzip": 0.310908,
+            "bzip2": 0.235003,
+            "zlib": 0.311785
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 537,
+          "total_bytes": 198679,
+          "ratios": {
+            "gzip": 0.265831,
+            "bzip2": 0.200504,
+            "zlib": 0.266999
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 537,
+          "total_bytes": 193424,
+          "ratios": {
+            "gzip": 0.241542,
+            "bzip2": 0.184305,
+            "zlib": 0.24269
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 538,
+          "total_bytes": 182893,
+          "ratios": {
+            "gzip": 0.220561,
+            "bzip2": 0.170422,
+            "zlib": 0.221534
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.090347,
+        "bzip2": -0.064581,
+        "zlib": -0.090251
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n30-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag25",
+      "scale": "n30",
+      "n_posts": 585,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 146,
+          "total_bytes": 79593,
+          "ratios": {
+            "gzip": 0.330996,
+            "bzip2": 0.279208,
+            "zlib": 0.331499
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 146,
+          "total_bytes": 82409,
+          "ratios": {
+            "gzip": 0.324212,
+            "bzip2": 0.271718,
+            "zlib": 0.325413
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 146,
+          "total_bytes": 85901,
+          "ratios": {
+            "gzip": 0.319088,
+            "bzip2": 0.268821,
+            "zlib": 0.320276
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 147,
+          "total_bytes": 88301,
+          "ratios": {
+            "gzip": 0.300529,
+            "bzip2": 0.251096,
+            "zlib": 0.301525
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.030467,
+        "bzip2": -0.028112,
+        "zlib": -0.029974
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-n30-run01-gpt5-20260310",
+      "condition": "mag25",
+      "scale": "n30",
+      "n_posts": 1589,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 397,
+          "total_bytes": 281293,
+          "ratios": {
+            "gzip": 0.31176,
+            "bzip2": 0.23163,
+            "zlib": 0.312525
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 397,
+          "total_bytes": 252455,
+          "ratios": {
+            "gzip": 0.278842,
+            "bzip2": 0.210057,
+            "zlib": 0.279468
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 397,
+          "total_bytes": 232570,
+          "ratios": {
+            "gzip": 0.265774,
+            "bzip2": 0.201041,
+            "zlib": 0.266702
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 398,
+          "total_bytes": 198134,
+          "ratios": {
+            "gzip": 0.261545,
+            "bzip2": 0.204685,
+            "zlib": 0.262166
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.050215,
+        "bzip2": -0.026945,
+        "zlib": -0.050359
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag25-run01-gpt5-20260309",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 544,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 136,
+          "total_bytes": 53393,
+          "ratios": {
+            "gzip": 0.35823,
+            "bzip2": 0.311857,
+            "zlib": 0.358418
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 136,
+          "total_bytes": 48723,
+          "ratios": {
+            "gzip": 0.302424,
+            "bzip2": 0.270878,
+            "zlib": 0.302711
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 136,
+          "total_bytes": 44841,
+          "ratios": {
+            "gzip": 0.311634,
+            "bzip2": 0.279142,
+            "zlib": 0.311902
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 136,
+          "total_bytes": 40517,
+          "ratios": {
+            "gzip": 0.299084,
+            "bzip2": 0.268974,
+            "zlib": 0.29943
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.059146,
+        "bzip2": -0.042883,
+        "zlib": -0.058988
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n10-run01",
+      "condition": "mag5",
+      "scale": "n10",
+      "n_posts": 228,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 57,
+          "total_bytes": 63953,
+          "ratios": {
+            "gzip": 0.329039,
+            "bzip2": 0.27417,
+            "zlib": 0.329695
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 57,
+          "total_bytes": 71228,
+          "ratios": {
+            "gzip": 0.321278,
+            "bzip2": 0.264769,
+            "zlib": 0.3225
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 57,
+          "total_bytes": 71751,
+          "ratios": {
+            "gzip": 0.319717,
+            "bzip2": 0.262324,
+            "zlib": 0.321083
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 57,
+          "total_bytes": 70520,
+          "ratios": {
+            "gzip": 0.306168,
+            "bzip2": 0.25034,
+            "zlib": 0.307657
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.022871,
+        "bzip2": -0.02383,
+        "zlib": -0.022038
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag5",
+      "scale": "n10",
+      "n_posts": 423,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 105,
+          "total_bytes": 44041,
+          "ratios": {
+            "gzip": 0.337095,
+            "bzip2": 0.298018,
+            "zlib": 0.337753
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 105,
+          "total_bytes": 41286,
+          "ratios": {
+            "gzip": 0.293877,
+            "bzip2": 0.267548,
+            "zlib": 0.294361
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 105,
+          "total_bytes": 42706,
+          "ratios": {
+            "gzip": 0.214466,
+            "bzip2": 0.200651,
+            "zlib": 0.214935
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 108,
+          "total_bytes": 47101,
+          "ratios": {
+            "gzip": 0.16471,
+            "bzip2": 0.167597,
+            "zlib": 0.165326
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.172385,
+        "bzip2": -0.130421,
+        "zlib": -0.172427
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n10-run01-kimi-20260313",
+      "condition": "mag5",
+      "scale": "n10",
+      "n_posts": 650,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 162,
+          "total_bytes": 192693,
+          "ratios": {
+            "gzip": 0.315715,
+            "bzip2": 0.240751,
+            "zlib": 0.317557
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 162,
+          "total_bytes": 140930,
+          "ratios": {
+            "gzip": 0.299368,
+            "bzip2": 0.229234,
+            "zlib": 0.300965
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 162,
+          "total_bytes": 138885,
+          "ratios": {
+            "gzip": 0.288584,
+            "bzip2": 0.22276,
+            "zlib": 0.290463
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 164,
+          "total_bytes": 109956,
+          "ratios": {
+            "gzip": 0.28244,
+            "bzip2": 0.220925,
+            "zlib": 0.284323
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.033275,
+        "bzip2": -0.019826,
+        "zlib": -0.033234
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n20-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag5",
+      "scale": "n20",
+      "n_posts": 405,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 101,
+          "total_bytes": 50633,
+          "ratios": {
+            "gzip": 0.327415,
+            "bzip2": 0.282069,
+            "zlib": 0.327988
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 101,
+          "total_bytes": 55312,
+          "ratios": {
+            "gzip": 0.310692,
+            "bzip2": 0.267917,
+            "zlib": 0.31109
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 101,
+          "total_bytes": 57723,
+          "ratios": {
+            "gzip": 0.29697,
+            "bzip2": 0.257904,
+            "zlib": 0.297975
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 102,
+          "total_bytes": 64521,
+          "ratios": {
+            "gzip": 0.285922,
+            "bzip2": 0.243471,
+            "zlib": 0.28741
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.041493,
+        "bzip2": -0.038598,
+        "zlib": -0.040578
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n20-run01-gpt5-20260309",
+      "condition": "mag5",
+      "scale": "n20",
+      "n_posts": 885,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 221,
+          "total_bytes": 118236,
+          "ratios": {
+            "gzip": 0.29014,
+            "bzip2": 0.240883,
+            "zlib": 0.290842
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 221,
+          "total_bytes": 117517,
+          "ratios": {
+            "gzip": 0.224674,
+            "bzip2": 0.186203,
+            "zlib": 0.225686
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 221,
+          "total_bytes": 101474,
+          "ratios": {
+            "gzip": 0.226521,
+            "bzip2": 0.194395,
+            "zlib": 0.22729
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 222,
+          "total_bytes": 88936,
+          "ratios": {
+            "gzip": 0.241095,
+            "bzip2": 0.20327,
+            "zlib": 0.242219
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.049045,
+        "bzip2": -0.037613,
+        "zlib": -0.048623
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n30-run01-gemini-3.1-flash-lite-preview-20260318",
+      "condition": "mag5",
+      "scale": "n30",
+      "n_posts": 597,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 149,
+          "total_bytes": 73798,
+          "ratios": {
+            "gzip": 0.319616,
+            "bzip2": 0.270549,
+            "zlib": 0.320456
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 149,
+          "total_bytes": 77606,
+          "ratios": {
+            "gzip": 0.325361,
+            "bzip2": 0.276242,
+            "zlib": 0.32647
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 149,
+          "total_bytes": 81568,
+          "ratios": {
+            "gzip": 0.294907,
+            "bzip2": 0.251005,
+            "zlib": 0.295618
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 150,
+          "total_bytes": 83696,
+          "ratios": {
+            "gzip": 0.292332,
+            "bzip2": 0.247109,
+            "zlib": 0.29312
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.027284,
+        "bzip2": -0.02344,
+        "zlib": -0.027336
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-n30-run01-gpt5-20260309",
+      "condition": "mag5",
+      "scale": "n30",
+      "n_posts": 1580,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 395,
+          "total_bytes": 191749,
+          "ratios": {
+            "gzip": 0.303715,
+            "bzip2": 0.24045,
+            "zlib": 0.30432
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 395,
+          "total_bytes": 166974,
+          "ratios": {
+            "gzip": 0.275911,
+            "bzip2": 0.217471,
+            "zlib": 0.276468
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 395,
+          "total_bytes": 149503,
+          "ratios": {
+            "gzip": 0.271399,
+            "bzip2": 0.214257,
+            "zlib": 0.272061
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 395,
+          "total_bytes": 142279,
+          "ratios": {
+            "gzip": 0.245384,
+            "bzip2": 0.193289,
+            "zlib": 0.246333
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.058331,
+        "bzip2": -0.047161,
+        "zlib": -0.057987
+      },
+      "set": "kimi"
+    },
+    {
+      "experiment": "ec-mag5-run01-gpt5-20260309",
+      "condition": "mag5",
+      "scale": "n10",
+      "n_posts": 481,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 120,
+          "total_bytes": 45258,
+          "ratios": {
+            "gzip": 0.325688,
+            "bzip2": 0.289474,
+            "zlib": 0.325732
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 120,
+          "total_bytes": 37220,
+          "ratios": {
+            "gzip": 0.281274,
+            "bzip2": 0.253976,
+            "zlib": 0.281327
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 120,
+          "total_bytes": 35309,
+          "ratios": {
+            "gzip": 0.258971,
+            "bzip2": 0.236569,
+            "zlib": 0.259282
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 121,
+          "total_bytes": 34160,
+          "ratios": {
+            "gzip": 0.254157,
+            "bzip2": 0.232992,
+            "zlib": 0.254215
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.071531,
+        "bzip2": -0.056482,
+        "zlib": -0.071517
+      },
+      "set": "kimi"
+    }
+  ]
+}

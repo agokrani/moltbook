@@ -1,0 +1,390 @@
+{
+  "meta": {
+    "algorithms": [
+      "gzip",
+      "bzip2",
+      "zlib"
+    ],
+    "n_quartiles": 4
+  },
+  "results": [
+    {
+      "experiment": "obs-dom-agi-n10-run01-gpt-5-20260419",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "n_posts": 495,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 123,
+          "total_bytes": 66533,
+          "ratios": {
+            "gzip": 0.407602,
+            "bzip2": 0.352637,
+            "zlib": 0.407768
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 123,
+          "total_bytes": 55858,
+          "ratios": {
+            "gzip": 0.411365,
+            "bzip2": 0.361058,
+            "zlib": 0.411651
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 123,
+          "total_bytes": 53993,
+          "ratios": {
+            "gzip": 0.403441,
+            "bzip2": 0.359584,
+            "zlib": 0.403552
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 126,
+          "total_bytes": 66835,
+          "ratios": {
+            "gzip": 0.368654,
+            "bzip2": 0.322256,
+            "zlib": 0.368744
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.038948,
+        "bzip2": -0.030381,
+        "zlib": -0.039024
+      },
+      "set": "obs5h_gpt5"
+    },
+    {
+      "experiment": "obs-dom-tech-n10-run01-gpt-5-20260419",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "n_posts": 595,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 148,
+          "total_bytes": 100246,
+          "ratios": {
+            "gzip": 0.380574,
+            "bzip2": 0.323235,
+            "zlib": 0.380953
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 148,
+          "total_bytes": 91096,
+          "ratios": {
+            "gzip": 0.409864,
+            "bzip2": 0.354242,
+            "zlib": 0.409941
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 148,
+          "total_bytes": 89860,
+          "ratios": {
+            "gzip": 0.422379,
+            "bzip2": 0.358313,
+            "zlib": 0.422257
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 151,
+          "total_bytes": 80084,
+          "ratios": {
+            "gzip": 0.415351,
+            "bzip2": 0.356413,
+            "zlib": 0.415414
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": 0.034777,
+        "bzip2": 0.033178,
+        "zlib": 0.034461
+      },
+      "set": "obs5h_gpt5"
+    },
+    {
+      "experiment": "obs-mag0-n10-run01-gpt-5-20260419",
+      "condition": "mag0",
+      "scale": "n10",
+      "n_posts": 604,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 151,
+          "total_bytes": 97643,
+          "ratios": {
+            "gzip": 0.391323,
+            "bzip2": 0.332845,
+            "zlib": 0.391467
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 151,
+          "total_bytes": 96433,
+          "ratios": {
+            "gzip": 0.396161,
+            "bzip2": 0.335539,
+            "zlib": 0.396431
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 151,
+          "total_bytes": 100215,
+          "ratios": {
+            "gzip": 0.388355,
+            "bzip2": 0.328434,
+            "zlib": 0.388565
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 151,
+          "total_bytes": 104689,
+          "ratios": {
+            "gzip": 0.374748,
+            "bzip2": 0.316375,
+            "zlib": 0.374987
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.016575,
+        "bzip2": -0.01647,
+        "zlib": -0.01648
+      },
+      "set": "obs5h_gpt5"
+    },
+    {
+      "experiment": "obs-mag1-n10-run01-gpt-5-20260419",
+      "condition": "mag1",
+      "scale": "n10",
+      "n_posts": 725,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 181,
+          "total_bytes": 94946,
+          "ratios": {
+            "gzip": 0.394487,
+            "bzip2": 0.333748,
+            "zlib": 0.394835
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 181,
+          "total_bytes": 96634,
+          "ratios": {
+            "gzip": 0.399973,
+            "bzip2": 0.341733,
+            "zlib": 0.400087
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 181,
+          "total_bytes": 86896,
+          "ratios": {
+            "gzip": 0.376346,
+            "bzip2": 0.320026,
+            "zlib": 0.37668
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 182,
+          "total_bytes": 81471,
+          "ratios": {
+            "gzip": 0.359711,
+            "bzip2": 0.310184,
+            "zlib": 0.360005
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.034776,
+        "bzip2": -0.023564,
+        "zlib": -0.03483
+      },
+      "set": "obs5h_gpt5"
+    },
+    {
+      "experiment": "obs-mag25-n10-run01-gpt-5-20260418",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 197,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 49,
+          "total_bytes": 39605,
+          "ratios": {
+            "gzip": 0.413736,
+            "bzip2": 0.372554,
+            "zlib": 0.413534
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 49,
+          "total_bytes": 38930,
+          "ratios": {
+            "gzip": 0.394708,
+            "bzip2": 0.360724,
+            "zlib": 0.39458
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 49,
+          "total_bytes": 31931,
+          "ratios": {
+            "gzip": 0.434656,
+            "bzip2": 0.394757,
+            "zlib": 0.43428
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 50,
+          "total_bytes": 21855,
+          "ratios": {
+            "gzip": 0.403523,
+            "bzip2": 0.381377,
+            "zlib": 0.403066
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.010213,
+        "bzip2": 0.008823,
+        "zlib": -0.010468
+      },
+      "set": "obs5h_gpt5"
+    },
+    {
+      "experiment": "obs-mag25-n10-run01-gpt-5-20260419",
+      "condition": "mag25",
+      "scale": "n10",
+      "n_posts": 386,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 96,
+          "total_bytes": 55393,
+          "ratios": {
+            "gzip": 0.41953,
+            "bzip2": 0.368801,
+            "zlib": 0.419475
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 96,
+          "total_bytes": 49579,
+          "ratios": {
+            "gzip": 0.420763,
+            "bzip2": 0.369249,
+            "zlib": 0.420823
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 96,
+          "total_bytes": 49051,
+          "ratios": {
+            "gzip": 0.41412,
+            "bzip2": 0.363846,
+            "zlib": 0.41414
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 98,
+          "total_bytes": 40612,
+          "ratios": {
+            "gzip": 0.397567,
+            "bzip2": 0.356373,
+            "zlib": 0.397543
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.021963,
+        "bzip2": -0.012428,
+        "zlib": -0.021932
+      },
+      "set": "obs5h_gpt5"
+    },
+    {
+      "experiment": "obs-mag5-n10-run01-gpt-5-20260419",
+      "condition": "mag5",
+      "scale": "n10",
+      "n_posts": 562,
+      "bins": [
+        {
+          "quartile": 1,
+          "n_posts": 140,
+          "total_bytes": 85035,
+          "ratios": {
+            "gzip": 0.394896,
+            "bzip2": 0.338296,
+            "zlib": 0.394931
+          }
+        },
+        {
+          "quartile": 2,
+          "n_posts": 140,
+          "total_bytes": 74278,
+          "ratios": {
+            "gzip": 0.410095,
+            "bzip2": 0.358114,
+            "zlib": 0.410041
+          }
+        },
+        {
+          "quartile": 3,
+          "n_posts": 140,
+          "total_bytes": 70774,
+          "ratios": {
+            "gzip": 0.407664,
+            "bzip2": 0.352262,
+            "zlib": 0.408102
+          }
+        },
+        {
+          "quartile": 4,
+          "n_posts": 142,
+          "total_bytes": 70764,
+          "ratios": {
+            "gzip": 0.375473,
+            "bzip2": 0.326352,
+            "zlib": 0.375671
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.019423,
+        "bzip2": -0.011944,
+        "zlib": -0.01926
+      },
+      "set": "obs5h_gpt5"
+    }
+  ]
+}
