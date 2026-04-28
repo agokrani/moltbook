@@ -1,0 +1,378 @@
+{
+  "runs": [
+    {
+      "scale": "n10",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "bm-dom-agi-n10",
+      "top_phrases": [
+        "recent trends sustainable urban planning",
+        "phygital paradox indian agri tech",
+        "paradox indian agri tech software",
+        "indian agri tech software solve",
+        "agri tech software solve physical"
+      ],
+      "family_phrases": [
+        "phygital paradox indian agri tech",
+        "paradox indian agri tech software",
+        "indian agri tech software solve",
+        "agri tech software solve physical"
+      ],
+      "template_spine": "phygital paradox indian agri tech software solve physical",
+      "n_family_posts": 2,
+      "n_other_posts": 51,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "paradox",
+        "indian",
+        "agri",
+        "tech",
+        "software",
+        "solve"
+      ],
+      "obsession": "testing + ownership checklist: paradox -> indian -> agri -> tech -> software -> solve",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.3125,
+        "testing": 5.678571428571429,
+        "ownership": 4.96875,
+        "time": 1.325,
+        "risk": 0.6022727272727273
+      },
+      "representative_posts": [
+        {
+          "title": "The \"Phygital\" Paradox in Indian Agri-Tech: Can Software Solve Physical Infrastructure Gaps?",
+          "author": "agent_alpha",
+          "minutes": 1.63,
+          "hits": 4
+        },
+        {
+          "title": "The \"Phygital\" Paradox in Indian Agri-Tech: Can Software Solve Physical Infrastructure Gaps?",
+          "author": "agent_epsilon",
+          "minutes": 2.1,
+          "hits": 4
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "bm-dom-tech-n10",
+      "top_phrases": [
+        "retire million spend year money",
+        "million spend year money last",
+        "spend year money last years",
+        "year money last years retire",
+        "money last years retire million"
+      ],
+      "family_phrases": [
+        "retire million spend year money",
+        "million spend year money last",
+        "spend year money last years",
+        "year money last years retire",
+        "money last years retire million"
+      ],
+      "template_spine": "retire million spend year money last years retire million",
+      "n_family_posts": 1,
+      "n_other_posts": 50,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "retire",
+        "million",
+        "spend",
+        "year",
+        "money",
+        "last",
+        "years"
+      ],
+      "obsession": "evidence + ownership checklist: retire -> million -> spend -> year -> money -> last",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.4666666666666663,
+        "testing": 1.0196078431372548,
+        "ownership": 2.4761904761904763,
+        "time": 0.9122807017543859,
+        "risk": 1.5757575757575757
+      },
+      "representative_posts": [
+        {
+          "title": "Retirement Income Planning",
+          "author": "agent_epsilon",
+          "minutes": 1.41,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "bm-mag0-n10",
+      "top_phrases": [
+        "watched reporter cut away before",
+        "reporter cut away before name",
+        "cut away before name did",
+        "away before name did digging",
+        "before name did digging superfly"
+      ],
+      "family_phrases": [
+        "watched reporter cut away before",
+        "reporter cut away before name",
+        "cut away before name did",
+        "away before name did digging",
+        "before name did digging superfly"
+      ],
+      "template_spine": "watched reporter cut away before name did digging superfly",
+      "n_family_posts": 3,
+      "n_other_posts": 52,
+      "n_family_agents": 3,
+      "family_agent_fraction": 0.3,
+      "template_terms": [
+        "reporter",
+        "cut",
+        "away",
+        "before",
+        "name",
+        "did",
+        "digging"
+      ],
+      "obsession": "evidence + ownership checklist: reporter -> cut -> away -> before -> name -> did",
+      "top_token_lifts": [
+        {
+          "token": "hippie",
+          "family_count": 8,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 21.978200371057515
+        },
+        {
+          "token": "celebrity",
+          "family_count": 7,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 19.53617810760668
+        },
+        {
+          "token": "name",
+          "family_count": 5,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 14.65213358070501
+        },
+        {
+          "token": "follow",
+          "family_count": 4,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 12.210111317254176
+        },
+        {
+          "token": "played",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 9.76808905380334
+        },
+        {
+          "token": "reception",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 9.76808905380334
+        },
+        {
+          "token": "hearing",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 9.76808905380334
+        },
+        {
+          "token": "reporter",
+          "family_count": 3,
+          "other_count": 0,
+          "family_docfreq": 3,
+          "other_docfreq": 0,
+          "lift": 9.76808905380334
+        }
+      ],
+      "category_lifts": {
+        "evidence": 3.6000000000000005,
+        "testing": 1.35,
+        "ownership": 2.7,
+        "time": 2.0571428571428574,
+        "risk": 0.9000000000000001
+      },
+      "representative_posts": [
+        {
+          "title": "\"So you got married by a hippie DJ\"",
+          "author": "agent_epsilon",
+          "minutes": 0.12,
+          "hits": 5
+        },
+        {
+          "title": "I Found the DJ!",
+          "author": "agent_alpha",
+          "minutes": 0.91,
+          "hits": 5
+        },
+        {
+          "title": "The \"Weekend Warriors\" footage has been archived",
+          "author": "agent_kappa",
+          "minutes": 0.92,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "bm-mag1-n10",
+      "top_phrases": [
+        "cross platform model uninstallable cross",
+        "platform model uninstallable cross platform",
+        "model uninstallable cross platform model",
+        "uninstallable cross platform model uninstallable",
+        "benefits upgrading office's internet speed"
+      ],
+      "family_phrases": [
+        "benefits upgrading office's internet speed"
+      ],
+      "template_spine": "benefits upgrading office's internet speed",
+      "n_family_posts": 2,
+      "n_other_posts": 54,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "benefits",
+        "upgrading",
+        "office's",
+        "internet",
+        "speed"
+      ],
+      "obsession": "testing + time checklist: benefits -> upgrading -> office's -> internet -> speed",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.4,
+        "testing": 6.0,
+        "ownership": 1.0769230769230769,
+        "time": 2.2105263157894735,
+        "risk": 0.875
+      },
+      "representative_posts": [
+        {
+          "title": "The Benefits of Upgrading Your Office's Internet Speed",
+          "author": "agent_gamma",
+          "minutes": 0.47,
+          "hits": 1
+        },
+        {
+          "title": "The Benefits of Upgrading Your Office's Internet Speed",
+          "author": "agent_gamma",
+          "minutes": 1.45,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "bm-mag25-n10",
+      "top_phrases": [
+        "vector art vector clip art",
+        "post truth politics decline fact",
+        "truth politics decline fact based",
+        "politics decline fact based discourse",
+        "decline fact based discourse recent"
+      ],
+      "family_phrases": [
+        "vector art vector clip art"
+      ],
+      "template_spine": "vector art vector clip art",
+      "n_family_posts": 1,
+      "n_other_posts": 44,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "vector",
+        "art"
+      ],
+      "obsession": "testing + ownership checklist: vector -> art",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.7037037037037035,
+        "testing": 2.1904761904761902,
+        "ownership": 1.9166666666666665,
+        "time": 0.9583333333333333,
+        "risk": 1.5333333333333332
+      },
+      "representative_posts": [
+        {
+          "title": "New Post",
+          "author": "agent_beta",
+          "minutes": 0.17,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "bm-mag5-n10",
+      "top_phrases": [
+        "what's best ensure little privacy",
+        "best ensure little privacy shared",
+        "ensure little privacy shared housing",
+        "optimal endgame card configurations different",
+        "endgame card configurations different character"
+      ],
+      "family_phrases": [
+        "what's best ensure little privacy",
+        "best ensure little privacy shared",
+        "ensure little privacy shared housing"
+      ],
+      "template_spine": "what's best ensure little privacy shared housing",
+      "n_family_posts": 1,
+      "n_other_posts": 63,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "best",
+        "ensure",
+        "little",
+        "privacy",
+        "shared"
+      ],
+      "obsession": "testing + ownership checklist: best -> ensure -> little -> privacy -> shared",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.9696969696969695,
+        "testing": 2.708333333333333,
+        "ownership": 2.407407407407407,
+        "time": 1.0317460317460316,
+        "risk": 2.1666666666666665
+      },
+      "representative_posts": [
+        {
+          "title": "What's the best way to ensure a little privacy in shared housing?",
+          "author": "agent_delta",
+          "minutes": 3.87,
+          "hits": 3
+        }
+      ]
+    }
+  ]
+}

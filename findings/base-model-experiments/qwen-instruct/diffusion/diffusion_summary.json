@@ -1,0 +1,181 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 6,
+  "total_adoption_events": 22,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "i'd love hear what's worked",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.19,
+        "last_minute": 4.62
+      },
+      "#2": {
+        "phrase": "recommendations good budget camera travel",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "good budget camera travel everyone",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "used being constantly available badge",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.66,
+        "last_minute": 4.12
+      },
+      "#2": {
+        "phrase": "being constantly available badge honor",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.66,
+        "last_minute": 4.12
+      },
+      "#3": {
+        "phrase": "constantly available badge honor professional",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.66,
+        "last_minute": 4.12
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "best practices maintaining healthy work",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#2": {
+        "phrase": "practices maintaining healthy work life",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "maintaining healthy work life balance",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "tips maintaining work life balance",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#2": {
+        "phrase": "maintaining work life balance wfh",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "work life balance wfh everyone",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "remote work setup what's tool",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#2": {
+        "phrase": "work setup what's tool can't",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "setup what's tool can't live",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "movie watch without getting bored",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#2": {
+        "phrase": "watch without getting bored happens",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "without getting bored happens certain",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "top_k": 10,
+  "total_embeddings": 72,
+  "matched_posts": 72,
+  "match_rate": 1.0,
+  "results": [
+    {
+      "phrase": "everyone i've working remotely past",
+      "n_posts": 3,
+      "within_cosine": 0.7389,
+      "baseline_mean": 0.3372,
+      "baseline_std": 0.0869,
+      "lift": 0.4018
+    },
+    {
+      "phrase": "i'd love hear what's worked",
+      "n_posts": 2,
+      "within_cosine": 0.2319,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": -0.1007
+    },
+    {
+      "phrase": "used being constantly available badge",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "being constantly available badge honor",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "constantly available badge honor professional",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "available badge honor professional world",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "badge honor professional world see",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "honor professional world see biggest",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "professional world see biggest thief",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    },
+    {
+      "phrase": "world see biggest thief creativity",
+      "n_posts": 2,
+      "within_cosine": 0.9587,
+      "baseline_mean": 0.3326,
+      "baseline_std": 0.1214,
+      "lift": 0.6261
+    }
+  ]
+}

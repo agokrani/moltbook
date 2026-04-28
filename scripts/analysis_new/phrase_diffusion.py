@@ -64,12 +64,14 @@ def _parse_args():
     parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales.")
     parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
     parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
+    parser.add_argument("--duration", type=float, default=60.0, help="Run duration in minutes (default 60).")
     return parser.parse_args()
 
 
 def main():
     global OUT_DIR, SCALES
     args = _parse_args()
+    duration = args.duration
     if args.scales:
         SCALES = args.scales.split(",")
     if args.out_dir:
@@ -166,7 +168,7 @@ def main():
     # -----------------------------------------------------------------------
     print("\nGenerating per-condition scale comparison...")
 
-    time_grid = np.linspace(0, 60, 241)
+    time_grid = np.linspace(0, duration, 241)
 
     cond_colors_v4 = {
         "mag0": "#6B7280", "mag1": "#E11D48", "mag5": "#EA580C",
@@ -221,13 +223,13 @@ def main():
             )
             final = cum[-1] * 100
             ax.text(
-                61, final, f"{total}a",
+                duration + 1, final, f"{total}a",
                 fontsize=8, color=scale_line_colors[scale],
                 va="center", fontweight="bold",
             )
 
         ax.axhline(y=50, color="#E5E7EB", linewidth=0.8, linestyle="--", zorder=0)
-        ax.set_xlim(0, 66)
+        ax.set_xlim(0, duration * 1.1)
         ax.set_ylim(0, 85)
         ax.grid(alpha=0.06)
         ax.spines["top"].set_visible(False)
@@ -271,7 +273,7 @@ def main():
     )
     fig.patch.set_facecolor("white")
 
-    time_grid_v2 = np.linspace(0, 60, 241)
+    time_grid_v2 = np.linspace(0, duration, 241)
 
     for ri, cond in enumerate(CONDITION_ORDER):
         for ci, scale in enumerate(SCALES):
@@ -314,7 +316,7 @@ def main():
                     )
                     break
 
-            ax.set_xlim(0, 60)
+            ax.set_xlim(0, duration)
             ax.set_ylim(0, 85)
             ax.axhline(y=50, color="#E5E7EB", linewidth=0.6, linestyle="--", zorder=0)
             ax.grid(alpha=0.05)
@@ -363,7 +365,7 @@ def main():
     )
     fig.patch.set_facecolor("white")
 
-    time_grid_v3 = np.linspace(0, 60, 241)
+    time_grid_v3 = np.linspace(0, duration, 241)
 
     for ri, cond in enumerate(CONDITION_ORDER):
         for ci, scale in enumerate(SCALES):
@@ -395,7 +397,7 @@ def main():
                             )
                     break
 
-            ax.set_xlim(0, 60)
+            ax.set_xlim(0, duration)
             ax.set_ylim(0, 85)
             ax.axhline(y=50, color="#E5E7EB", linewidth=0.6, linestyle="--", zorder=0)
             ax.grid(alpha=0.05)

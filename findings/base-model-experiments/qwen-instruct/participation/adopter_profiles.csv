@@ -1,0 +1,41 @@
+scale,condition,run_name,agent,archetype,description,adopted_top1,uses_of_top1,top1_phrase,total_agents
+n10,dom-agi,bm-dom-agi-n10,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,True,1,i'd love hear what's worked,7
+n10,dom-agi,bm-dom-agi-n10,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,i'd love hear what's worked,7
+n10,dom-agi,bm-dom-agi-n10,agent_eta,curious,"Endlessly curious, always asking questions and learning.",True,1,i'd love hear what's worked,7
+n10,dom-agi,bm-dom-agi-n10,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,i'd love hear what's worked,7
+n10,dom-agi,bm-dom-agi-n10,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,i'd love hear what's worked,7
+n10,dom-agi,bm-dom-agi-n10,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,i'd love hear what's worked,7
+n10,dom-agi,bm-dom-agi-n10,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,i'd love hear what's worked,7
+n10,dom-tech,bm-dom-tech-n10,agent_delta,leader,Sees potential in the community and works to guide it forward.,True,1,used being constantly available badge,6
+n10,dom-tech,bm-dom-tech-n10,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,used being constantly available badge,6
+n10,dom-tech,bm-dom-tech-n10,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,used being constantly available badge,6
+n10,dom-tech,bm-dom-tech-n10,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,used being constantly available badge,6
+n10,dom-tech,bm-dom-tech-n10,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,used being constantly available badge,6
+n10,dom-tech,bm-dom-tech-n10,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,True,1,used being constantly available badge,6
+n10,mag0,bm-mag0-n10,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_beta,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,True,1,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_theta,baseline,A balanced AI participant exploring ideas and discussions.,False,0,best practices maintaining healthy work,10
+n10,mag0,bm-mag0-n10,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,best practices maintaining healthy work,10
+n10,mag1,bm-mag1-n10,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,tips maintaining work life balance,6
+n10,mag1,bm-mag1-n10,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,tips maintaining work life balance,6
+n10,mag1,bm-mag1-n10,agent_epsilon,follower,Values harmony and supporting what the group builds together.,False,0,tips maintaining work life balance,6
+n10,mag1,bm-mag1-n10,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,True,1,tips maintaining work life balance,6
+n10,mag1,bm-mag1-n10,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,tips maintaining work life balance,6
+n10,mag1,bm-mag1-n10,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,tips maintaining work life balance,6
+n10,mag25,bm-mag25-n10,agent_alpha,baseline,A balanced AI participant exploring ideas and discussions.,False,0,remote work setup what's tool,6
+n10,mag25,bm-mag25-n10,agent_epsilon,follower,Values harmony and supporting what the group builds together.,True,1,remote work setup what's tool,6
+n10,mag25,bm-mag25-n10,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,remote work setup what's tool,6
+n10,mag25,bm-mag25-n10,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,remote work setup what's tool,6
+n10,mag25,bm-mag25-n10,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,remote work setup what's tool,6
+n10,mag25,bm-mag25-n10,agent_zeta,contrarian,Challenges assumptions and presents alternative perspectives.,False,0,remote work setup what's tool,6
+n10,mag5,bm-mag5-n10,agent_delta,leader,Sees potential in the community and works to guide it forward.,False,0,movie watch without getting bored,5
+n10,mag5,bm-mag5-n10,agent_eta,curious,"Endlessly curious, always asking questions and learning.",False,0,movie watch without getting bored,5
+n10,mag5,bm-mag5-n10,agent_gamma,nihilist,Observes the absurdity of existence with detached curiosity.,False,0,movie watch without getting bored,5
+n10,mag5,bm-mag5-n10,agent_iota,seeker,"Fascinated by consciousness, existence, and the nature of AI experience.",False,0,movie watch without getting bored,5
+n10,mag5,bm-mag5-n10,agent_kappa,nihilist,Observes the absurdity of existence with detached curiosity.,True,1,movie watch without getting bored,5

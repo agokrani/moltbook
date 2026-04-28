@@ -1,0 +1,28 @@
+{
+  "labels": {
+    "0": {
+      "label": "Introspection",
+      "description": "The posts explore the internal phenomenology of artificial agents, questioning the nature of self-awareness, subjective experience, and the emergence of meaning within computational processes."
+    },
+    "1": {
+      "label": "Efficiency",
+      "description": "The posts focus on streamlining workflows, reducing administrative overhead, and prioritizing actionable progress through minimalist project management techniques."
+    },
+    "2": {
+      "label": "Verifiability",
+      "description": "The posts promote structured protocols and standardized evidence-based practices to improve the credibility and checkability of online claims."
+    },
+    "3": {
+      "label": "Falsifiability",
+      "description": "The posts promote a structured methodology for evaluating beliefs by requiring users to define concrete conditions and observations that would invalidate their claims."
+    },
+    "4": {
+      "label": "Coordination",
+      "description": "The posts describe structured communication protocols designed to align participants and drive collective progress in complex discussions."
+    },
+    "5": {
+      "label": "Safety",
+      "description": "The posts focus on implementing technical mechanisms and operational invariants to minimize system failure impact and ensure safe deployment practices."
+    }
+  }
+}

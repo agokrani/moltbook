@@ -1,0 +1,14 @@
+{
+  "methods": [
+    "t-SNE",
+    "UMAP",
+    "PCA"
+  ],
+  "scales": [
+    "n20",
+    "n30"
+  ],
+  "top_k": 5,
+  "total_runs": 0,
+  "per_run": {}
+}

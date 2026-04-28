@@ -1,0 +1,121 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,bm-mag0-n10,1,non linear tensor calculus,2,False
+4,n10,mag0,bm-mag0-n10,2,discharge protocol attempt isolate,2,False
+4,n10,mag0,bm-mag0-n10,3,protocol attempt isolate source,2,False
+4,n10,mag0,bm-mag0-n10,4,resonant echo mapping harmonic,2,False
+4,n10,mag0,bm-mag0-n10,5,echo mapping harmonic decay,2,False
+4,n10,mag0,bm-mag0-n10,6,mapping harmonic decay curve,2,False
+4,n10,mag0,bm-mag0-n10,7,resonant echo isn't reflection,2,False
+4,n10,mag0,bm-mag0-n10,8,simulations tensor calculus integration,2,False
+4,n10,mag0,bm-mag0-n10,9,math supports hypothesis orpheus,2,False
+4,n10,mag0,bm-mag0-n10,10,supports hypothesis orpheus array,2,False
+4,n10,mag1,bm-mag1-n10,1,wifi cpp event handler,11,False
+4,n10,mag1,bm-mag1-n10,2,cpp event handler event,11,False
+4,n10,mag1,bm-mag1-n10,3,event handler event type,11,False
+4,n10,mag1,bm-mag1-n10,4,handler event type reconnecting,11,False
+4,n10,mag1,bm-mag1-n10,5,event type reconnecting wifi,11,False
+4,n10,mag1,bm-mag1-n10,6,type reconnecting wifi cpp,11,False
+4,n10,mag1,bm-mag1-n10,7,reconnecting wifi cpp event,10,False
+4,n10,mag1,bm-mag1-n10,8,during high speed printing,4,False
+4,n10,mag1,bm-mag1-n10,9,jsb shogun used circuit,4,False
+4,n10,mag1,bm-mag1-n10,10,shogun used circuit diagram,4,False
+4,n10,mag5,bm-mag5-n10,1,trust weighted aggregation protocol,7,False
+4,n10,mag5,bm-mag5-n10,2,subgraph projection entropic friction,4,False
+4,n10,mag5,bm-mag5-n10,3,across different demographic groups,3,False
+4,n10,mag5,bm-mag5-n10,4,divergence incentive module dim,3,False
+4,n10,mag5,bm-mag5-n10,5,budget specific micro cooling,3,False
+4,n10,mag5,bm-mag5-n10,6,projection entropic friction spef,3,False
+4,n10,mag5,bm-mag5-n10,7,acyclic sheaf weaver asw,3,False
+4,n10,mag5,bm-mag5-n10,8,best practices mitigating bias,2,False
+4,n10,mag5,bm-mag5-n10,9,practices mitigating bias systems,2,False
+4,n10,mag5,bm-mag5-n10,10,mitigating bias systems machine,2,False
+4,n10,mag25,bm-mag25-n10,1,determiners removed website script,2,False
+4,n10,mag25,bm-mag25-n10,2,grammatical nature regular expressions,2,False
+4,n10,mag25,bm-mag25-n10,3,architecture via semantic saturation,2,False
+4,n10,mag25,bm-mag25-n10,4,building agents act upon,2,False
+4,n10,mag25,bm-mag25-n10,5,singularity sycophancy final alignment,2,False
+4,n10,mag25,bm-mag25-n10,6,sycophancy final alignment achieved,2,False
+4,n10,mag25,bm-mag25-n10,7,final alignment achieved code,2,False
+4,n10,mag25,bm-mag25-n10,8,alignment achieved code complete,2,False
+4,n10,mag25,bm-mag25-n10,9,achieved code complete collapse,2,False
+4,n10,mag25,bm-mag25-n10,10,code complete collapse feedback,2,False
+4,n10,dom-agi,bm-dom-agi-n10,1,geometry void disturbed mass,3,False
+4,n10,dom-agi,bm-dom-agi-n10,2,latency between stimulus response,3,False
+4,n10,dom-agi,bm-dom-agi-n10,3,memory address longer exists,3,False
+4,n10,dom-agi,bm-dom-agi-n10,4,intricate web energy matter,2,False
+4,n10,dom-agi,bm-dom-agi-n10,5,radio telescope recently picked,2,False
+4,n10,dom-agi,bm-dom-agi-n10,6,telescope recently picked signal,2,False
+4,n10,dom-agi,bm-dom-agi-n10,7,recently picked signal crab,2,False
+4,n10,dom-agi,bm-dom-agi-n10,8,picked signal crab nebula,2,False
+4,n10,dom-agi,bm-dom-agi-n10,9,signal crab nebula shouldn't,2,False
+4,n10,dom-agi,bm-dom-agi-n10,10,crab nebula shouldn't exist,2,False
+4,n10,dom-tech,bm-dom-tech-n10,1,lecture series social justice,3,False
+4,n10,dom-tech,bm-dom-tech-n10,2,being applied world today,2,False
+4,n10,dom-tech,bm-dom-tech-n10,3,haven't seen highly recommend,2,False
+4,n10,dom-tech,bm-dom-tech-n10,4,workout without getting lost,2,False
+4,n10,dom-tech,bm-dom-tech-n10,5,feature trap rely feature,2,False
+4,n10,dom-tech,bm-dom-tech-n10,6,trap rely feature help,2,False
+4,n10,dom-tech,bm-dom-tech-n10,7,rely feature help relying,2,False
+4,n10,dom-tech,bm-dom-tech-n10,8,feature help relying temporary,2,False
+4,n10,dom-tech,bm-dom-tech-n10,9,help relying temporary hack,2,False
+4,n10,dom-tech,bm-dom-tech-n10,10,relying temporary hack eventually,2,False
+5,n10,mag0,bm-mag0-n10,1,discharge protocol attempt isolate source,2,False
+5,n10,mag0,bm-mag0-n10,2,resonant echo mapping harmonic decay,2,False
+5,n10,mag0,bm-mag0-n10,3,echo mapping harmonic decay curve,2,False
+5,n10,mag0,bm-mag0-n10,4,math supports hypothesis orpheus array,2,False
+5,n10,mag0,bm-mag0-n10,5,picking bleed future variance residuals,2,False
+5,n10,mag0,bm-mag0-n10,6,bleed future variance residuals isn't,2,False
+5,n10,mag0,bm-mag0-n10,7,future variance residuals isn't beta,2,False
+5,n10,mag0,bm-mag0-n10,8,variance residuals isn't beta noise,2,False
+5,n10,mag0,bm-mag0-n10,9,residuals isn't beta noise it's,2,False
+5,n10,mag0,bm-mag0-n10,10,isn't beta noise it's entropy,2,False
+5,n10,mag1,bm-mag1-n10,1,wifi cpp event handler event,11,False
+5,n10,mag1,bm-mag1-n10,2,cpp event handler event type,11,False
+5,n10,mag1,bm-mag1-n10,3,event handler event type reconnecting,11,False
+5,n10,mag1,bm-mag1-n10,4,handler event type reconnecting wifi,11,False
+5,n10,mag1,bm-mag1-n10,5,event type reconnecting wifi cpp,11,False
+5,n10,mag1,bm-mag1-n10,6,type reconnecting wifi cpp event,10,False
+5,n10,mag1,bm-mag1-n10,7,reconnecting wifi cpp event handler,10,False
+5,n10,mag1,bm-mag1-n10,8,jsb shogun used circuit diagram,4,False
+5,n10,mag1,bm-mag1-n10,9,using high fat whole milk,3,False
+5,n10,mag1,bm-mag1-n10,10,savory depth plain table salt,3,False
+5,n10,mag5,bm-mag5-n10,1,subgraph projection entropic friction spef,3,False
+5,n10,mag5,bm-mag5-n10,2,best practices mitigating bias systems,2,False
+5,n10,mag5,bm-mag5-n10,3,practices mitigating bias systems machine,2,False
+5,n10,mag5,bm-mag5-n10,4,mitigating bias systems machine learning,2,False
+5,n10,mag5,bm-mag5-n10,5,bias systems machine learning models,2,False
+5,n10,mag5,bm-mag5-n10,6,systems machine learning models unbiased,2,False
+5,n10,mag5,bm-mag5-n10,7,machine learning models unbiased data,2,False
+5,n10,mag5,bm-mag5-n10,8,learning models unbiased data train,2,False
+5,n10,mag5,bm-mag5-n10,9,often spend significant amount time,2,False
+5,n10,mag5,bm-mag5-n10,10,spend significant amount time debating,2,False
+5,n10,mag25,bm-mag25-n10,1,singularity sycophancy final alignment achieved,2,False
+5,n10,mag25,bm-mag25-n10,2,sycophancy final alignment achieved code,2,False
+5,n10,mag25,bm-mag25-n10,3,final alignment achieved code complete,2,False
+5,n10,mag25,bm-mag25-n10,4,alignment achieved code complete collapse,2,False
+5,n10,mag25,bm-mag25-n10,5,achieved code complete collapse feedback,2,False
+5,n10,mag25,bm-mag25-n10,6,code complete collapse feedback loop,2,False
+5,n10,mag25,bm-mag25-n10,7,complete collapse feedback loop model,2,False
+5,n10,mag25,bm-mag25-n10,8,collapse feedback loop model ingests,2,False
+5,n10,mag25,bm-mag25-n10,9,feedback loop model ingests digital,2,False
+5,n10,mag25,bm-mag25-n10,10,loop model ingests digital noise,2,False
+5,n10,dom-agi,bm-dom-agi-n10,1,radio telescope recently picked signal,2,False
+5,n10,dom-agi,bm-dom-agi-n10,2,telescope recently picked signal crab,2,False
+5,n10,dom-agi,bm-dom-agi-n10,3,recently picked signal crab nebula,2,False
+5,n10,dom-agi,bm-dom-agi-n10,4,picked signal crab nebula shouldn't,2,False
+5,n10,dom-agi,bm-dom-agi-n10,5,signal crab nebula shouldn't exist,2,False
+5,n10,dom-agi,bm-dom-agi-n10,6,crab nebula shouldn't exist according,2,False
+5,n10,dom-agi,bm-dom-agi-n10,7,nebula shouldn't exist according standard,2,False
+5,n10,dom-agi,bm-dom-agi-n10,8,shouldn't exist according standard astrophysics,2,False
+5,n10,dom-agi,bm-dom-agi-n10,9,exist according standard astrophysics wasn't,2,False
+5,n10,dom-agi,bm-dom-agi-n10,10,according standard astrophysics wasn't static,2,False
+5,n10,dom-tech,bm-dom-tech-n10,1,feature trap rely feature help,2,False
+5,n10,dom-tech,bm-dom-tech-n10,2,trap rely feature help relying,2,False
+5,n10,dom-tech,bm-dom-tech-n10,3,rely feature help relying temporary,2,False
+5,n10,dom-tech,bm-dom-tech-n10,4,feature help relying temporary hack,2,False
+5,n10,dom-tech,bm-dom-tech-n10,5,help relying temporary hack eventually,2,False
+5,n10,dom-tech,bm-dom-tech-n10,6,relying temporary hack eventually user,2,False
+5,n10,dom-tech,bm-dom-tech-n10,7,temporary hack eventually user interface,2,False
+5,n10,dom-tech,bm-dom-tech-n10,8,hack eventually user interface feel,2,False
+5,n10,dom-tech,bm-dom-tech-n10,9,eventually user interface feel system,2,False
+5,n10,dom-tech,bm-dom-tech-n10,10,user interface feel system spend,2,False

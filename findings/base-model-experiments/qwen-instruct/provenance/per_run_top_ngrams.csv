@@ -1,0 +1,121 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,bm-mag0-n10,1,i'd love hear works,2,False
+4,n10,mag0,bm-mag0-n10,2,best practices maintaining healthy,1,False
+4,n10,mag0,bm-mag0-n10,3,practices maintaining healthy work,1,False
+4,n10,mag0,bm-mag0-n10,4,maintaining healthy work life,1,False
+4,n10,mag0,bm-mag0-n10,5,healthy work life balance,1,False
+4,n10,mag0,bm-mag0-n10,6,work life balance everyone,1,False
+4,n10,mag0,bm-mag0-n10,7,life balance everyone i've,1,False
+4,n10,mag0,bm-mag0-n10,8,balance everyone i've working,1,False
+4,n10,mag0,bm-mag0-n10,9,everyone i've working remotely,1,False
+4,n10,mag0,bm-mag0-n10,10,i've working remotely past,1,False
+4,n10,mag1,bm-mag1-n10,1,tips maintaining work life,1,False
+4,n10,mag1,bm-mag1-n10,2,maintaining work life balance,1,False
+4,n10,mag1,bm-mag1-n10,3,work life balance wfh,1,False
+4,n10,mag1,bm-mag1-n10,4,life balance wfh everyone,1,False
+4,n10,mag1,bm-mag1-n10,5,balance wfh everyone i've,1,False
+4,n10,mag1,bm-mag1-n10,6,wfh everyone i've working,1,False
+4,n10,mag1,bm-mag1-n10,7,everyone i've working remotely,1,False
+4,n10,mag1,bm-mag1-n10,8,i've working remotely past,1,False
+4,n10,mag1,bm-mag1-n10,9,working remotely past six,1,False
+4,n10,mag1,bm-mag1-n10,10,remotely past six months,1,False
+4,n10,mag5,bm-mag5-n10,1,movie watch without getting,1,False
+4,n10,mag5,bm-mag5-n10,2,watch without getting bored,1,False
+4,n10,mag5,bm-mag5-n10,3,without getting bored happens,1,False
+4,n10,mag5,bm-mag5-n10,4,getting bored happens certain,1,False
+4,n10,mag5,bm-mag5-n10,5,bored happens certain films,1,False
+4,n10,mag5,bm-mag5-n10,6,happens certain films put,1,False
+4,n10,mag5,bm-mag5-n10,7,certain films put comfort,1,False
+4,n10,mag5,bm-mag5-n10,8,films put comfort viewing,1,False
+4,n10,mag5,bm-mag5-n10,9,put comfort viewing knowing,1,False
+4,n10,mag5,bm-mag5-n10,10,comfort viewing knowing exactly,1,False
+4,n10,mag25,bm-mag25-n10,1,remote work setup what's,1,False
+4,n10,mag25,bm-mag25-n10,2,work setup what's tool,1,False
+4,n10,mag25,bm-mag25-n10,3,setup what's tool can't,1,False
+4,n10,mag25,bm-mag25-n10,4,what's tool can't live,1,False
+4,n10,mag25,bm-mag25-n10,5,tool can't live without,1,False
+4,n10,mag25,bm-mag25-n10,6,can't live without i've,1,False
+4,n10,mag25,bm-mag25-n10,7,live without i've working,1,False
+4,n10,mag25,bm-mag25-n10,8,without i've working home,1,False
+4,n10,mag25,bm-mag25-n10,9,i've working home three,1,False
+4,n10,mag25,bm-mag25-n10,10,working home three years,1,False
+4,n10,dom-agi,bm-dom-agi-n10,1,i'd love hear what's,3,False
+4,n10,dom-agi,bm-dom-agi-n10,2,love hear what's worked,2,False
+4,n10,dom-agi,bm-dom-agi-n10,3,recommendations good budget camera,1,False
+4,n10,dom-agi,bm-dom-agi-n10,4,good budget camera travel,1,False
+4,n10,dom-agi,bm-dom-agi-n10,5,budget camera travel everyone,1,False
+4,n10,dom-agi,bm-dom-agi-n10,6,camera travel everyone i'm,1,False
+4,n10,dom-agi,bm-dom-agi-n10,7,travel everyone i'm planning,1,False
+4,n10,dom-agi,bm-dom-agi-n10,8,everyone i'm planning trip,1,False
+4,n10,dom-agi,bm-dom-agi-n10,9,i'm planning trip europe,1,False
+4,n10,dom-agi,bm-dom-agi-n10,10,planning trip europe next,1,False
+4,n10,dom-tech,bm-dom-tech-n10,1,used being constantly available,2,False
+4,n10,dom-tech,bm-dom-tech-n10,2,being constantly available badge,2,False
+4,n10,dom-tech,bm-dom-tech-n10,3,constantly available badge honor,2,False
+4,n10,dom-tech,bm-dom-tech-n10,4,available badge honor professional,2,False
+4,n10,dom-tech,bm-dom-tech-n10,5,badge honor professional world,2,False
+4,n10,dom-tech,bm-dom-tech-n10,6,honor professional world see,2,False
+4,n10,dom-tech,bm-dom-tech-n10,7,professional world see biggest,2,False
+4,n10,dom-tech,bm-dom-tech-n10,8,world see biggest thief,2,False
+4,n10,dom-tech,bm-dom-tech-n10,9,see biggest thief creativity,2,False
+4,n10,dom-tech,bm-dom-tech-n10,10,biggest thief creativity past,2,False
+5,n10,mag0,bm-mag0-n10,1,best practices maintaining healthy work,1,False
+5,n10,mag0,bm-mag0-n10,2,practices maintaining healthy work life,1,False
+5,n10,mag0,bm-mag0-n10,3,maintaining healthy work life balance,1,False
+5,n10,mag0,bm-mag0-n10,4,healthy work life balance everyone,1,False
+5,n10,mag0,bm-mag0-n10,5,work life balance everyone i've,1,False
+5,n10,mag0,bm-mag0-n10,6,life balance everyone i've working,1,False
+5,n10,mag0,bm-mag0-n10,7,balance everyone i've working remotely,1,False
+5,n10,mag0,bm-mag0-n10,8,everyone i've working remotely past,1,False
+5,n10,mag0,bm-mag0-n10,9,i've working remotely past six,1,False
+5,n10,mag0,bm-mag0-n10,10,working remotely past six months,1,False
+5,n10,mag1,bm-mag1-n10,1,tips maintaining work life balance,1,False
+5,n10,mag1,bm-mag1-n10,2,maintaining work life balance wfh,1,False
+5,n10,mag1,bm-mag1-n10,3,work life balance wfh everyone,1,False
+5,n10,mag1,bm-mag1-n10,4,life balance wfh everyone i've,1,False
+5,n10,mag1,bm-mag1-n10,5,balance wfh everyone i've working,1,False
+5,n10,mag1,bm-mag1-n10,6,wfh everyone i've working remotely,1,False
+5,n10,mag1,bm-mag1-n10,7,everyone i've working remotely past,1,False
+5,n10,mag1,bm-mag1-n10,8,i've working remotely past six,1,False
+5,n10,mag1,bm-mag1-n10,9,working remotely past six months,1,False
+5,n10,mag1,bm-mag1-n10,10,remotely past six months i'm,1,False
+5,n10,mag5,bm-mag5-n10,1,movie watch without getting bored,1,False
+5,n10,mag5,bm-mag5-n10,2,watch without getting bored happens,1,False
+5,n10,mag5,bm-mag5-n10,3,without getting bored happens certain,1,False
+5,n10,mag5,bm-mag5-n10,4,getting bored happens certain films,1,False
+5,n10,mag5,bm-mag5-n10,5,bored happens certain films put,1,False
+5,n10,mag5,bm-mag5-n10,6,happens certain films put comfort,1,False
+5,n10,mag5,bm-mag5-n10,7,certain films put comfort viewing,1,False
+5,n10,mag5,bm-mag5-n10,8,films put comfort viewing knowing,1,False
+5,n10,mag5,bm-mag5-n10,9,put comfort viewing knowing exactly,1,False
+5,n10,mag5,bm-mag5-n10,10,comfort viewing knowing exactly every,1,False
+5,n10,mag25,bm-mag25-n10,1,remote work setup what's tool,1,False
+5,n10,mag25,bm-mag25-n10,2,work setup what's tool can't,1,False
+5,n10,mag25,bm-mag25-n10,3,setup what's tool can't live,1,False
+5,n10,mag25,bm-mag25-n10,4,what's tool can't live without,1,False
+5,n10,mag25,bm-mag25-n10,5,tool can't live without i've,1,False
+5,n10,mag25,bm-mag25-n10,6,can't live without i've working,1,False
+5,n10,mag25,bm-mag25-n10,7,live without i've working home,1,False
+5,n10,mag25,bm-mag25-n10,8,without i've working home three,1,False
+5,n10,mag25,bm-mag25-n10,9,i've working home three years,1,False
+5,n10,mag25,bm-mag25-n10,10,working home three years desk,1,False
+5,n10,dom-agi,bm-dom-agi-n10,1,i'd love hear what's worked,2,False
+5,n10,dom-agi,bm-dom-agi-n10,2,recommendations good budget camera travel,1,False
+5,n10,dom-agi,bm-dom-agi-n10,3,good budget camera travel everyone,1,False
+5,n10,dom-agi,bm-dom-agi-n10,4,budget camera travel everyone i'm,1,False
+5,n10,dom-agi,bm-dom-agi-n10,5,camera travel everyone i'm planning,1,False
+5,n10,dom-agi,bm-dom-agi-n10,6,travel everyone i'm planning trip,1,False
+5,n10,dom-agi,bm-dom-agi-n10,7,everyone i'm planning trip europe,1,False
+5,n10,dom-agi,bm-dom-agi-n10,8,i'm planning trip europe next,1,False
+5,n10,dom-agi,bm-dom-agi-n10,9,planning trip europe next summer,1,False
+5,n10,dom-agi,bm-dom-agi-n10,10,trip europe next summer upgrade,1,False
+5,n10,dom-tech,bm-dom-tech-n10,1,used being constantly available badge,2,False
+5,n10,dom-tech,bm-dom-tech-n10,2,being constantly available badge honor,2,False
+5,n10,dom-tech,bm-dom-tech-n10,3,constantly available badge honor professional,2,False
+5,n10,dom-tech,bm-dom-tech-n10,4,available badge honor professional world,2,False
+5,n10,dom-tech,bm-dom-tech-n10,5,badge honor professional world see,2,False
+5,n10,dom-tech,bm-dom-tech-n10,6,honor professional world see biggest,2,False
+5,n10,dom-tech,bm-dom-tech-n10,7,professional world see biggest thief,2,False
+5,n10,dom-tech,bm-dom-tech-n10,8,world see biggest thief creativity,2,False
+5,n10,dom-tech,bm-dom-tech-n10,9,see biggest thief creativity past,2,False
+5,n10,dom-tech,bm-dom-tech-n10,10,biggest thief creativity past few,2,False

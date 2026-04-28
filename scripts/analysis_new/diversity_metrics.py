@@ -114,12 +114,16 @@ def _parse_args():
     parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales.")
     parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
     parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
+    parser.add_argument("--duration", type=float, default=None, help="Run duration in minutes (default 60). Adjusts bin edges.")
     return parser.parse_args()
 
 
 def main():
-    global OUT_DIR, SCALES
+    global OUT_DIR, SCALES, BIN_EDGES
     args = _parse_args()
+    if args.duration:
+        step = args.duration / 4
+        BIN_EDGES = [round(i * step, 2) for i in range(5)]
     if args.scales:
         SCALES = args.scales.split(",")
     if args.out_dir:

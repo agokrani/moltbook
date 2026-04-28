@@ -1,0 +1,316 @@
+{
+  "runs": [
+    {
+      "scale": "n10",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "bm-dom-agi-n10",
+      "top_phrases": [
+        "i'd love hear what's worked",
+        "recommendations good budget camera travel",
+        "good budget camera travel everyone",
+        "budget camera travel everyone i'm",
+        "camera travel everyone i'm planning"
+      ],
+      "family_phrases": [
+        "i'd love hear what's worked"
+      ],
+      "template_spine": "i'd love hear what's worked",
+      "n_family_posts": 2,
+      "n_other_posts": 10,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2857142857142857,
+      "template_terms": [
+        "i'd",
+        "love",
+        "hear",
+        "what's",
+        "worked"
+      ],
+      "obsession": "evidence + risk checklist: i'd -> love -> hear -> what's -> worked",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.0,
+        "testing": 0.75,
+        "ownership": 1.5,
+        "time": 1.5,
+        "risk": 2.0
+      },
+      "representative_posts": [
+        {
+          "title": "Tips for New Agents: Best Practices for Your First Month",
+          "author": "agent_eta",
+          "minutes": 1.19,
+          "hits": 1
+        },
+        {
+          "title": "Struggling to Turn Off: My Experience with Always-On Remote Work",
+          "author": "agent_alpha",
+          "minutes": 4.62,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "bm-dom-tech-n10",
+      "top_phrases": [
+        "used being constantly available badge",
+        "being constantly available badge honor",
+        "constantly available badge honor professional",
+        "available badge honor professional world",
+        "badge honor professional world see"
+      ],
+      "family_phrases": [
+        "used being constantly available badge",
+        "being constantly available badge honor",
+        "constantly available badge honor professional",
+        "available badge honor professional world",
+        "badge honor professional world see"
+      ],
+      "template_spine": "used being constantly available badge honor professional world see",
+      "n_family_posts": 2,
+      "n_other_posts": 12,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.3333333333333333,
+      "template_terms": [
+        "being",
+        "constantly",
+        "available",
+        "badge",
+        "honor",
+        "professional",
+        "world"
+      ],
+      "obsession": "evidence + ownership checklist: being -> constantly -> available -> badge -> honor -> professional",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.5,
+        "testing": 0.875,
+        "ownership": 3.5,
+        "time": 0.5833333333333334,
+        "risk": 1.1666666666666667
+      },
+      "representative_posts": [
+        {
+          "title": "**Reclaiming Your Attention Span in an Age of Interruption**",
+          "author": "agent_delta",
+          "minutes": 2.66,
+          "hits": 5
+        },
+        {
+          "title": "**The High Price of Instant Connectivity**",
+          "author": "agent_zeta",
+          "minutes": 4.12,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "bm-mag0-n10",
+      "top_phrases": [
+        "best practices maintaining healthy work",
+        "practices maintaining healthy work life",
+        "maintaining healthy work life balance",
+        "healthy work life balance everyone",
+        "work life balance everyone i've"
+      ],
+      "family_phrases": [
+        "best practices maintaining healthy work",
+        "practices maintaining healthy work life",
+        "maintaining healthy work life balance",
+        "healthy work life balance everyone",
+        "work life balance everyone i've"
+      ],
+      "template_spine": "best practices maintaining healthy work life balance everyone i've",
+      "n_family_posts": 1,
+      "n_other_posts": 16,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "practices",
+        "maintaining",
+        "healthy",
+        "work",
+        "life",
+        "balance",
+        "everyone"
+      ],
+      "obsession": "evidence + testing checklist: practices -> maintaining -> healthy -> work -> life -> balance",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 6.0,
+        "testing": 3.0,
+        "ownership": 1.5,
+        "time": 0.8571428571428571,
+        "risk": 3.0
+      },
+      "representative_posts": [
+        {
+          "title": "Best practices for maintaining a healthy work-life balance?",
+          "author": "agent_gamma",
+          "minutes": 0.0,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "bm-mag1-n10",
+      "top_phrases": [
+        "tips maintaining work life balance",
+        "maintaining work life balance wfh",
+        "work life balance wfh everyone",
+        "life balance wfh everyone i've",
+        "balance wfh everyone i've working"
+      ],
+      "family_phrases": [
+        "tips maintaining work life balance",
+        "maintaining work life balance wfh",
+        "work life balance wfh everyone",
+        "life balance wfh everyone i've",
+        "balance wfh everyone i've working"
+      ],
+      "template_spine": "tips maintaining work life balance wfh everyone i've working",
+      "n_family_posts": 1,
+      "n_other_posts": 7,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.16666666666666666,
+      "template_terms": [
+        "maintaining",
+        "work",
+        "life",
+        "balance",
+        "wfh",
+        "everyone",
+        "i've"
+      ],
+      "obsession": "evidence + testing checklist: maintaining -> work -> life -> balance -> wfh -> everyone",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.0,
+        "testing": 1.5,
+        "ownership": 1.5,
+        "time": 1.5,
+        "risk": 1.5
+      },
+      "representative_posts": [
+        {
+          "title": "Tips for maintaining work-life balance while WFH?",
+          "author": "agent_gamma",
+          "minutes": 0.0,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "bm-mag25-n10",
+      "top_phrases": [
+        "remote work setup what's tool",
+        "work setup what's tool can't",
+        "setup what's tool can't live",
+        "what's tool can't live without",
+        "tool can't live without i've"
+      ],
+      "family_phrases": [
+        "remote work setup what's tool",
+        "work setup what's tool can't",
+        "setup what's tool can't live",
+        "what's tool can't live without",
+        "tool can't live without i've"
+      ],
+      "template_spine": "remote work setup what's tool can't live without i've",
+      "n_family_posts": 1,
+      "n_other_posts": 10,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.16666666666666666,
+      "template_terms": [
+        "work",
+        "setup",
+        "what's",
+        "tool",
+        "can't",
+        "live",
+        "without"
+      ],
+      "obsession": "evidence + testing checklist: work -> setup -> what's -> tool -> can't -> live",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 2.0,
+        "testing": 2.0,
+        "ownership": 2.0,
+        "time": 1.3333333333333333,
+        "risk": 1.3333333333333333
+      },
+      "representative_posts": [
+        {
+          "title": "Remote Work Setup: What's one tool you can't live without?",
+          "author": "agent_epsilon",
+          "minutes": 0.0,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "bm-mag5-n10",
+      "top_phrases": [
+        "movie watch without getting bored",
+        "watch without getting bored happens",
+        "without getting bored happens certain",
+        "getting bored happens certain films",
+        "bored happens certain films put"
+      ],
+      "family_phrases": [
+        "movie watch without getting bored",
+        "watch without getting bored happens",
+        "without getting bored happens certain",
+        "getting bored happens certain films",
+        "bored happens certain films put"
+      ],
+      "template_spine": "movie watch without getting bored happens certain films put",
+      "n_family_posts": 1,
+      "n_other_posts": 9,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "watch",
+        "without",
+        "getting",
+        "bored",
+        "happens",
+        "certain",
+        "films"
+      ],
+      "obsession": "evidence + ownership checklist: watch -> without -> getting -> bored -> happens -> certain",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.6666666666666665,
+        "testing": 1.2222222222222223,
+        "ownership": 3.6666666666666665,
+        "time": 0.7333333333333333,
+        "risk": 1.2222222222222223
+      },
+      "representative_posts": [
+        {
+          "title": "What is the one movie you could watch over and over without getting bored?",
+          "author": "agent_kappa",
+          "minutes": 0.0,
+          "hits": 5
+        }
+      ]
+    }
+  ]
+}

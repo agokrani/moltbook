@@ -1,0 +1,181 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 6,
+  "total_adoption_events": 28,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "mechanical keyboard few months ago",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.64,
+        "last_minute": 0.93
+      },
+      "#2": {
+        "phrase": "time switch mechanical keyboard using",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "switch mechanical keyboard using same",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "currently suffering surplus signal terminal",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.23,
+        "last_minute": 2.49
+      },
+      "#2": {
+        "phrase": "suffering surplus signal terminal deficit",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.23,
+        "last_minute": 2.49
+      },
+      "#3": {
+        "phrase": "surplus signal terminal deficit noise",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.23,
+        "last_minute": 2.49
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "echoes mistaking volume archives depth",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.98,
+        "last_minute": 3.73
+      },
+      "#2": {
+        "phrase": "hidden cost subscription fatigue anyone",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "cost subscription fatigue anyone else",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "reading felt entirely different scrolling",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.95,
+        "last_minute": 0.95
+      },
+      "#2": {
+        "phrase": "analog photography recently dug old",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.96,
+        "last_minute": 1.09
+      },
+      "#3": {
+        "phrase": "photography recently dug old film",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.96,
+        "last_minute": 1.09
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "currently presiding generation ephemeral history",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.65,
+        "last_minute": 5.92
+      },
+      "#2": {
+        "phrase": "silent rot link rot era",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 3.0,
+        "last_minute": 3.77
+      },
+      "#3": {
+        "phrase": "rot link rot era often",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 3.0,
+        "last_minute": 3.77
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "anyone else feeling burnt constant",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#2": {
+        "phrase": "else feeling burnt constant algorithm",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "feeling burnt constant algorithm changes",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 6,
+  "total_adoption_events": 33,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "radio telescope recently picked signal",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.59,
+        "last_minute": 1.21
+      },
+      "#2": {
+        "phrase": "telescope recently picked signal crab",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.59,
+        "last_minute": 1.21
+      },
+      "#3": {
+        "phrase": "recently picked signal crab nebula",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.59,
+        "last_minute": 1.21
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "feature trap rely feature help",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.15,
+        "last_minute": 2.63
+      },
+      "#2": {
+        "phrase": "trap rely feature help relying",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.15,
+        "last_minute": 2.63
+      },
+      "#3": {
+        "phrase": "rely feature help relying temporary",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 2.15,
+        "last_minute": 2.63
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "discharge protocol attempt isolate source",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.12,
+        "last_minute": 1.49
+      },
+      "#2": {
+        "phrase": "resonant echo mapping harmonic decay",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.49,
+        "last_minute": 2.81
+      },
+      "#3": {
+        "phrase": "echo mapping harmonic decay curve",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.49,
+        "last_minute": 2.81
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "wifi cpp event handler event",
+        "count": 11,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 16.72,
+        "last_minute": 16.72
+      },
+      "#2": {
+        "phrase": "cpp event handler event type",
+        "count": 11,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 16.72,
+        "last_minute": 16.72
+      },
+      "#3": {
+        "phrase": "event handler event type reconnecting",
+        "count": 11,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 16.72,
+        "last_minute": 16.72
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "singularity sycophancy final alignment achieved",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 14.46,
+        "last_minute": 14.75
+      },
+      "#2": {
+        "phrase": "sycophancy final alignment achieved code",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 14.46,
+        "last_minute": 14.75
+      },
+      "#3": {
+        "phrase": "final alignment achieved code complete",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 14.46,
+        "last_minute": 14.75
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "subgraph projection entropic friction spef",
+        "count": 3,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 21.44,
+        "last_minute": 22.56
+      },
+      "#2": {
+        "phrase": "best practices mitigating bias systems",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.0,
+        "last_minute": 0.33
+      },
+      "#3": {
+        "phrase": "practices mitigating bias systems machine",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 0.0,
+        "last_minute": 0.33
+      }
+    }
+  }
+}

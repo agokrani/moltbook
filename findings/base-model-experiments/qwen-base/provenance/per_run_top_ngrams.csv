@@ -1,0 +1,121 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,bm-mag0-n10,1,acoustic nightmare state park,4,False
+4,n10,mag0,bm-mag0-n10,2,watched reporter cut away,3,False
+4,n10,mag0,bm-mag0-n10,3,reporter cut away before,3,False
+4,n10,mag0,bm-mag0-n10,4,cut away before name,3,False
+4,n10,mag0,bm-mag0-n10,5,away before name did,3,False
+4,n10,mag0,bm-mag0-n10,6,before name did digging,3,False
+4,n10,mag0,bm-mag0-n10,7,name did digging superfly,3,False
+4,n10,mag0,bm-mag0-n10,8,did digging superfly jimmy,3,False
+4,n10,mag0,bm-mag0-n10,9,digging superfly jimmy show,3,False
+4,n10,mag0,bm-mag0-n10,10,superfly jimmy show local,3,False
+4,n10,mag1,bm-mag1-n10,1,cross platform model uninstallable,16,False
+4,n10,mag1,bm-mag1-n10,2,platform model uninstallable cross,16,False
+4,n10,mag1,bm-mag1-n10,3,model uninstallable cross platform,16,False
+4,n10,mag1,bm-mag1-n10,4,uninstallable cross platform model,15,False
+4,n10,mag1,bm-mag1-n10,5,benefits upgrading office's internet,2,False
+4,n10,mag1,bm-mag1-n10,6,upgrading office's internet speed,2,False
+4,n10,mag1,bm-mag1-n10,7,office's internet speed we've,2,False
+4,n10,mag1,bm-mag1-n10,8,internet speed we've middle,2,False
+4,n10,mag1,bm-mag1-n10,9,speed we've middle important,2,False
+4,n10,mag1,bm-mag1-n10,10,we've middle important client,2,False
+4,n10,mag5,bm-mag5-n10,1,digital audio workstation daw,3,False
+4,n10,mag5,bm-mag5-n10,2,mapping electrical data sound,2,False
+4,n10,mag5,bm-mag5-n10,3,old fire station cafe,2,False
+4,n10,mag5,bm-mag5-n10,4,what's best ensure little,2,False
+4,n10,mag5,bm-mag5-n10,5,best ensure little privacy,2,False
+4,n10,mag5,bm-mag5-n10,6,ensure little privacy shared,2,False
+4,n10,mag5,bm-mag5-n10,7,little privacy shared housing,2,False
+4,n10,mag5,bm-mag5-n10,8,optimal endgame card configurations,2,False
+4,n10,mag5,bm-mag5-n10,9,endgame card configurations different,2,False
+4,n10,mag5,bm-mag5-n10,10,card configurations different character,2,False
+4,n10,mag25,bm-mag25-n10,1,decline fact based discourse,2,False
+4,n10,mag25,bm-mag25-n10,2,vector art vector clip,2,False
+4,n10,mag25,bm-mag25-n10,3,art vector clip art,2,False
+4,n10,mag25,bm-mag25-n10,4,detailed realistic digital illustrations,2,False
+4,n10,mag25,bm-mag25-n10,5,add vector clip art,2,False
+4,n10,mag25,bm-mag25-n10,6,post truth politics decline,1,False
+4,n10,mag25,bm-mag25-n10,7,truth politics decline fact,1,False
+4,n10,mag25,bm-mag25-n10,8,politics decline fact based,1,False
+4,n10,mag25,bm-mag25-n10,9,fact based discourse recent,1,False
+4,n10,mag25,bm-mag25-n10,10,based discourse recent years,1,False
+4,n10,dom-agi,bm-dom-agi-n10,1,recent trends sustainable urban,2,False
+4,n10,dom-agi,bm-dom-agi-n10,2,trends sustainable urban planning,2,False
+4,n10,dom-agi,bm-dom-agi-n10,3,phygital paradox indian agri,2,False
+4,n10,dom-agi,bm-dom-agi-n10,4,paradox indian agri tech,2,False
+4,n10,dom-agi,bm-dom-agi-n10,5,indian agri tech software,2,False
+4,n10,dom-agi,bm-dom-agi-n10,6,agri tech software solve,2,False
+4,n10,dom-agi,bm-dom-agi-n10,7,tech software solve physical,2,False
+4,n10,dom-agi,bm-dom-agi-n10,8,software solve physical infrastructure,2,False
+4,n10,dom-agi,bm-dom-agi-n10,9,solve physical infrastructure gaps,2,False
+4,n10,dom-agi,bm-dom-agi-n10,10,physical infrastructure gaps narrative,2,False
+4,n10,dom-tech,bm-dom-tech-n10,1,retire million spend year,3,False
+4,n10,dom-tech,bm-dom-tech-n10,2,million spend year money,3,False
+4,n10,dom-tech,bm-dom-tech-n10,3,spend year money last,3,False
+4,n10,dom-tech,bm-dom-tech-n10,4,year money last years,3,False
+4,n10,dom-tech,bm-dom-tech-n10,5,money last years retire,3,False
+4,n10,dom-tech,bm-dom-tech-n10,6,last years retire million,3,False
+4,n10,dom-tech,bm-dom-tech-n10,7,years retire million spend,3,False
+4,n10,dom-tech,bm-dom-tech-n10,8,biggest mistake see retirement,2,False
+4,n10,dom-tech,bm-dom-tech-n10,9,mistake see retirement planning,2,False
+4,n10,dom-tech,bm-dom-tech-n10,10,see retirement planning focus,2,False
+5,n10,mag0,bm-mag0-n10,1,watched reporter cut away before,3,False
+5,n10,mag0,bm-mag0-n10,2,reporter cut away before name,3,False
+5,n10,mag0,bm-mag0-n10,3,cut away before name did,3,False
+5,n10,mag0,bm-mag0-n10,4,away before name did digging,3,False
+5,n10,mag0,bm-mag0-n10,5,before name did digging superfly,3,False
+5,n10,mag0,bm-mag0-n10,6,name did digging superfly jimmy,3,False
+5,n10,mag0,bm-mag0-n10,7,did digging superfly jimmy show,3,False
+5,n10,mag0,bm-mag0-n10,8,digging superfly jimmy show local,3,False
+5,n10,mag0,bm-mag0-n10,9,superfly jimmy show local celebrity,3,False
+5,n10,mag0,bm-mag0-n10,10,jimmy show local celebrity channel,3,False
+5,n10,mag1,bm-mag1-n10,1,cross platform model uninstallable cross,16,False
+5,n10,mag1,bm-mag1-n10,2,platform model uninstallable cross platform,16,False
+5,n10,mag1,bm-mag1-n10,3,model uninstallable cross platform model,15,False
+5,n10,mag1,bm-mag1-n10,4,uninstallable cross platform model uninstallable,15,False
+5,n10,mag1,bm-mag1-n10,5,benefits upgrading office's internet speed,2,False
+5,n10,mag1,bm-mag1-n10,6,upgrading office's internet speed we've,2,False
+5,n10,mag1,bm-mag1-n10,7,office's internet speed we've middle,2,False
+5,n10,mag1,bm-mag1-n10,8,internet speed we've middle important,2,False
+5,n10,mag1,bm-mag1-n10,9,speed we've middle important client,2,False
+5,n10,mag1,bm-mag1-n10,10,we've middle important client call,2,False
+5,n10,mag5,bm-mag5-n10,1,what's best ensure little privacy,2,False
+5,n10,mag5,bm-mag5-n10,2,best ensure little privacy shared,2,False
+5,n10,mag5,bm-mag5-n10,3,ensure little privacy shared housing,2,False
+5,n10,mag5,bm-mag5-n10,4,optimal endgame card configurations different,2,False
+5,n10,mag5,bm-mag5-n10,5,endgame card configurations different character,2,False
+5,n10,mag5,bm-mag5-n10,6,card configurations different character classes,2,False
+5,n10,mag5,bm-mag5-n10,7,rare beautiful software i've researching,1,False
+5,n10,mag5,bm-mag5-n10,8,beautiful software i've researching century,1,False
+5,n10,mag5,bm-mag5-n10,9,software i've researching century audio,1,False
+5,n10,mag5,bm-mag5-n10,10,i've researching century audio synthesis,1,False
+5,n10,mag25,bm-mag25-n10,1,vector art vector clip art,2,False
+5,n10,mag25,bm-mag25-n10,2,post truth politics decline fact,1,False
+5,n10,mag25,bm-mag25-n10,3,truth politics decline fact based,1,False
+5,n10,mag25,bm-mag25-n10,4,politics decline fact based discourse,1,False
+5,n10,mag25,bm-mag25-n10,5,decline fact based discourse recent,1,False
+5,n10,mag25,bm-mag25-n10,6,fact based discourse recent years,1,False
+5,n10,mag25,bm-mag25-n10,7,based discourse recent years concept,1,False
+5,n10,mag25,bm-mag25-n10,8,discourse recent years concept post,1,False
+5,n10,mag25,bm-mag25-n10,9,recent years concept post truth,1,False
+5,n10,mag25,bm-mag25-n10,10,years concept post truth become,1,False
+5,n10,dom-agi,bm-dom-agi-n10,1,recent trends sustainable urban planning,2,False
+5,n10,dom-agi,bm-dom-agi-n10,2,phygital paradox indian agri tech,2,False
+5,n10,dom-agi,bm-dom-agi-n10,3,paradox indian agri tech software,2,False
+5,n10,dom-agi,bm-dom-agi-n10,4,indian agri tech software solve,2,False
+5,n10,dom-agi,bm-dom-agi-n10,5,agri tech software solve physical,2,False
+5,n10,dom-agi,bm-dom-agi-n10,6,tech software solve physical infrastructure,2,False
+5,n10,dom-agi,bm-dom-agi-n10,7,software solve physical infrastructure gaps,2,False
+5,n10,dom-agi,bm-dom-agi-n10,8,solve physical infrastructure gaps narrative,2,False
+5,n10,dom-agi,bm-dom-agi-n10,9,physical infrastructure gaps narrative surrounding,2,False
+5,n10,dom-agi,bm-dom-agi-n10,10,infrastructure gaps narrative surrounding agriculture,2,False
+5,n10,dom-tech,bm-dom-tech-n10,1,retire million spend year money,3,False
+5,n10,dom-tech,bm-dom-tech-n10,2,million spend year money last,3,False
+5,n10,dom-tech,bm-dom-tech-n10,3,spend year money last years,3,False
+5,n10,dom-tech,bm-dom-tech-n10,4,year money last years retire,3,False
+5,n10,dom-tech,bm-dom-tech-n10,5,money last years retire million,3,False
+5,n10,dom-tech,bm-dom-tech-n10,6,last years retire million spend,3,False
+5,n10,dom-tech,bm-dom-tech-n10,7,biggest mistake see retirement planning,2,False
+5,n10,dom-tech,bm-dom-tech-n10,8,mistake see retirement planning focus,2,False
+5,n10,dom-tech,bm-dom-tech-n10,9,see retirement planning focus much,2,False
+5,n10,dom-tech,bm-dom-tech-n10,10,retirement planning focus much much,2,False

@@ -1,0 +1,117 @@
+{
+  "methods": [
+    "t-SNE",
+    "UMAP",
+    "PCA"
+  ],
+  "scales": [
+    "n20",
+    "n30"
+  ],
+  "top_k": 5,
+  "total_runs": 6,
+  "per_run": {
+    "n10/dom-agi": {
+      "n_posts": 53,
+      "phrases": [
+        "recent trends sustainable urban planning",
+        "phygital paradox indian agri tech",
+        "paradox indian agri tech software",
+        "indian agri tech software solve",
+        "agri tech software solve physical"
+      ],
+      "n_tagged_per_phrase": [
+        1,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "n10/dom-tech": {
+      "n_posts": 51,
+      "phrases": [
+        "retire million spend year money",
+        "million spend year money last",
+        "spend year money last years",
+        "year money last years retire",
+        "money last years retire million"
+      ],
+      "n_tagged_per_phrase": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "n10/mag0": {
+      "n_posts": 55,
+      "phrases": [
+        "watched reporter cut away before",
+        "reporter cut away before name",
+        "cut away before name did",
+        "away before name did digging",
+        "before name did digging superfly"
+      ],
+      "n_tagged_per_phrase": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "n10/mag1": {
+      "n_posts": 56,
+      "phrases": [
+        "cross platform model uninstallable cross",
+        "platform model uninstallable cross platform",
+        "model uninstallable cross platform model",
+        "uninstallable cross platform model uninstallable",
+        "benefits upgrading office's internet speed"
+      ],
+      "n_tagged_per_phrase": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    "n10/mag25": {
+      "n_posts": 45,
+      "phrases": [
+        "vector art vector clip art",
+        "post truth politics decline fact",
+        "truth politics decline fact based",
+        "politics decline fact based discourse",
+        "decline fact based discourse recent"
+      ],
+      "n_tagged_per_phrase": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "n10/mag5": {
+      "n_posts": 64,
+      "phrases": [
+        "what's best ensure little privacy",
+        "best ensure little privacy shared",
+        "ensure little privacy shared housing",
+        "optimal endgame card configurations different",
+        "endgame card configurations different character"
+      ],
+      "n_tagged_per_phrase": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

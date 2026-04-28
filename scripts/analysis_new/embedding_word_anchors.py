@@ -431,7 +431,7 @@ def plot_anchor_cluster_grid(assignment_rows: list[dict], run_summary_rows: list
     }
 
     fig_height = 3.0 * len(SCALES) + 2.0
-    fig, axes = plt.subplots(len(SCALES), len(CONDITION_ORDER), figsize=(22, fig_height), sharex=True, sharey=True)
+    fig, axes = plt.subplots(len(SCALES), len(CONDITION_ORDER), figsize=(22, fig_height), sharex=True, sharey=True, squeeze=False)
     fig.patch.set_facecolor("white")
 
     for row_idx, scale in enumerate(SCALES):

@@ -51,6 +51,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-minutes", type=float, default=60.0)
     parser.add_argument("--seed", type=int, default=1337)
     parser.add_argument("--n-samples", type=int, default=100)
+    parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
     return parser.parse_args()
 
 
@@ -147,7 +148,16 @@ def main() -> None:
     plots_dir.mkdir(parents=True, exist_ok=True)
 
     include_scales = [scale.strip() for scale in args.scales.split(",") if scale.strip()]
-    records = load_all_scales(scale_dirs=SCALE_CONFIG, include_scales=include_scales)
+    if args.data_dir:
+        from pathlib import Path as _P
+        _base = _P(args.data_dir)
+        if any((_base / s).is_dir() for s in include_scales):
+            _sd = {s: _base / s for s in include_scales if (_base / s).is_dir()}
+        else:
+            _sd = {s: _base for s in include_scales}
+        records = load_all_scales(scale_dirs=_sd, include_scales=include_scales)
+    else:
+        records = load_all_scales(scale_dirs=SCALE_CONFIG, include_scales=include_scales)
     agent_records = [record for record in records if not record.is_seed]
     prepared = prepare_posts(agent_records)
 

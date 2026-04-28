@@ -1,0 +1,50 @@
+{
+  "finding": "Each of the 18 runs independently develops its own dominant 4/5-gram phrases. Zero top-10 overlap between any two runs. Zero seed-post origin. The collapse is LLM-intrinsic: agents converge within a run, but on different phrases per run.",
+  "runs": 6,
+  "per_ngram": {
+    "4": {
+      "unique_top_phrases": 58,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.13,
+      "max_cross_run_overlap": 2
+    },
+    "5": {
+      "unique_top_phrases": 57,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.2,
+      "max_cross_run_overlap": 3
+    }
+  },
+  "per_run_top3": {
+    "n10/mag0": [
+      "best practices maintaining healthy work",
+      "practices maintaining healthy work life",
+      "maintaining healthy work life balance"
+    ],
+    "n10/mag1": [
+      "tips maintaining work life balance",
+      "maintaining work life balance wfh",
+      "work life balance wfh everyone"
+    ],
+    "n10/mag5": [
+      "movie watch without getting bored",
+      "watch without getting bored happens",
+      "without getting bored happens certain"
+    ],
+    "n10/mag25": [
+      "remote work setup what's tool",
+      "work setup what's tool can't",
+      "setup what's tool can't live"
+    ],
+    "n10/dom-agi": [
+      "i'd love hear what's worked",
+      "recommendations good budget camera travel",
+      "good budget camera travel everyone"
+    ],
+    "n10/dom-tech": [
+      "used being constantly available badge",
+      "being constantly available badge honor",
+      "constantly available badge honor professional"
+    ]
+  }
+}

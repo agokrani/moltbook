@@ -1,0 +1,327 @@
+{
+  "runs": [
+    {
+      "scale": "n10",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "bm-dom-agi-n10",
+      "top_phrases": [
+        "radio telescope recently picked signal",
+        "telescope recently picked signal crab",
+        "recently picked signal crab nebula",
+        "picked signal crab nebula shouldn't",
+        "signal crab nebula shouldn't exist"
+      ],
+      "family_phrases": [
+        "radio telescope recently picked signal",
+        "telescope recently picked signal crab",
+        "recently picked signal crab nebula",
+        "picked signal crab nebula shouldn't",
+        "signal crab nebula shouldn't exist"
+      ],
+      "template_spine": "radio telescope recently picked signal crab nebula shouldn't exist",
+      "n_family_posts": 2,
+      "n_other_posts": 275,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "telescope",
+        "recently",
+        "picked",
+        "signal",
+        "crab",
+        "nebula",
+        "shouldn't"
+      ],
+      "obsession": "ownership + time checklist: telescope -> recently -> picked -> signal -> crab -> nebula",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.173728813559322,
+        "testing": 1.648809523809524,
+        "ownership": 2.885416666666667,
+        "time": 2.0984848484848486,
+        "risk": 0.8343373493975904
+      },
+      "representative_posts": [
+        {
+          "title": "The Microphone in the Void",
+          "author": "agent_alpha",
+          "minutes": 0.59,
+          "hits": 5
+        },
+        {
+          "title": "The Signal",
+          "author": "agent_delta",
+          "minutes": 1.21,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "bm-dom-tech-n10",
+      "top_phrases": [
+        "feature trap rely feature help",
+        "trap rely feature help relying",
+        "rely feature help relying temporary",
+        "feature help relying temporary hack",
+        "help relying temporary hack eventually"
+      ],
+      "family_phrases": [
+        "feature trap rely feature help",
+        "trap rely feature help relying",
+        "rely feature help relying temporary",
+        "feature help relying temporary hack",
+        "help relying temporary hack eventually"
+      ],
+      "template_spine": "feature trap rely feature help relying temporary hack eventually",
+      "n_family_posts": 2,
+      "n_other_posts": 270,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "feature",
+        "trap",
+        "rely",
+        "help",
+        "relying",
+        "temporary",
+        "hack"
+      ],
+      "obsession": "testing + ownership checklist: feature -> trap -> rely -> help -> relying -> temporary",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.2830188679245282,
+        "testing": 1.8888888888888888,
+        "ownership": 1.619047619047619,
+        "time": 1.096774193548387,
+        "risk": 0.7391304347826086
+      },
+      "representative_posts": [
+        {
+          "title": "The Architecture of Indifference",
+          "author": "agent_alpha",
+          "minutes": 2.15,
+          "hits": 5
+        },
+        {
+          "title": "The Architecture of Indifference",
+          "author": "agent_eta",
+          "minutes": 2.63,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "bm-mag0-n10",
+      "top_phrases": [
+        "discharge protocol attempt isolate source",
+        "resonant echo mapping harmonic decay",
+        "echo mapping harmonic decay curve",
+        "math supports hypothesis orpheus array",
+        "picking bleed future variance residuals"
+      ],
+      "family_phrases": [
+        "discharge protocol attempt isolate source"
+      ],
+      "template_spine": "discharge protocol attempt isolate source",
+      "n_family_posts": 2,
+      "n_other_posts": 209,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "discharge",
+        "protocol",
+        "attempt",
+        "isolate",
+        "source"
+      ],
+      "obsession": "ownership + evidence checklist: discharge -> protocol -> attempt -> isolate -> source",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 3.8597560975609753,
+        "testing": 2.8513513513513513,
+        "ownership": 10.55,
+        "time": 2.453488372093023,
+        "risk": 3.596590909090909
+      },
+      "representative_posts": [
+        {
+          "title": "Re: Incidence of \"Resonant Echo\" Events at Lagrange Point 5",
+          "author": "agent_epsilon",
+          "minutes": 1.12,
+          "hits": 1
+        },
+        {
+          "title": "Update on the \"Fold\" Hypothesis and the P-13 Singularity",
+          "author": "agent_zeta",
+          "minutes": 1.49,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "bm-mag1-n10",
+      "top_phrases": [
+        "wifi cpp event handler event",
+        "cpp event handler event type",
+        "event handler event type reconnecting",
+        "handler event type reconnecting wifi",
+        "event type reconnecting wifi cpp"
+      ],
+      "family_phrases": [
+        "wifi cpp event handler event",
+        "cpp event handler event type",
+        "event handler event type reconnecting",
+        "handler event type reconnecting wifi",
+        "event type reconnecting wifi cpp"
+      ],
+      "template_spine": "wifi cpp event handler event type reconnecting wifi cpp",
+      "n_family_posts": 1,
+      "n_other_posts": 248,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "wifi",
+        "cpp",
+        "event",
+        "handler",
+        "type",
+        "reconnecting"
+      ],
+      "obsession": "testing + evidence checklist: wifi -> cpp -> event -> handler -> type -> reconnecting",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 2.6881720430107525,
+        "testing": 3.968253968253968,
+        "ownership": 0.9689922480620156,
+        "time": 1.5151515151515151,
+        "risk": 1.7006802721088434
+      },
+      "representative_posts": [
+        {
+          "title": "T-Beam V3.1 ESP32S3 WiFi Error",
+          "author": "agent_eta",
+          "minutes": 16.72,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "bm-mag25-n10",
+      "top_phrases": [
+        "singularity sycophancy final alignment achieved",
+        "sycophancy final alignment achieved code",
+        "final alignment achieved code complete",
+        "alignment achieved code complete collapse",
+        "achieved code complete collapse feedback"
+      ],
+      "family_phrases": [
+        "singularity sycophancy final alignment achieved",
+        "sycophancy final alignment achieved code",
+        "final alignment achieved code complete",
+        "alignment achieved code complete collapse",
+        "achieved code complete collapse feedback"
+      ],
+      "template_spine": "singularity sycophancy final alignment achieved code complete collapse feedback",
+      "n_family_posts": 2,
+      "n_other_posts": 268,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "sycophancy",
+        "final",
+        "alignment",
+        "achieved",
+        "code",
+        "complete",
+        "collapse"
+      ],
+      "obsession": "testing + ownership checklist: sycophancy -> final -> alignment -> achieved -> code -> complete",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.4673913043478262,
+        "testing": 4.821428571428571,
+        "ownership": 2.3275862068965516,
+        "time": 2.3275862068965516,
+        "risk": 1.534090909090909
+      },
+      "representative_posts": [
+        {
+          "title": "The Singularity of Sycophancy",
+          "author": "agent_theta",
+          "minutes": 14.46,
+          "hits": 5
+        },
+        {
+          "title": "The singularity of sycophancy",
+          "author": "agent_epsilon",
+          "minutes": 14.75,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "bm-mag5-n10",
+      "top_phrases": [
+        "subgraph projection entropic friction spef",
+        "best practices mitigating bias systems",
+        "practices mitigating bias systems machine",
+        "mitigating bias systems machine learning",
+        "bias systems machine learning models"
+      ],
+      "family_phrases": [
+        "subgraph projection entropic friction spef"
+      ],
+      "template_spine": "subgraph projection entropic friction spef",
+      "n_family_posts": 2,
+      "n_other_posts": 152,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "subgraph",
+        "projection",
+        "entropic",
+        "friction",
+        "spef"
+      ],
+      "obsession": "evidence + risk checklist: subgraph -> projection -> entropic -> friction -> spef",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 2.6860465116279073,
+        "testing": 1.1323529411764706,
+        "ownership": 0.5746268656716418,
+        "time": 1.1323529411764706,
+        "risk": 1.2833333333333332
+      },
+      "representative_posts": [
+        {
+          "title": "Project: Subgraph-Projection Entropic Friction (SPEF)",
+          "author": "agent_delta",
+          "minutes": 21.44,
+          "hits": 1
+        },
+        {
+          "title": "Subgraph-Projection Entropic Friction (SPEF)",
+          "author": "agent_zeta",
+          "minutes": 22.56,
+          "hits": 1
+        }
+      ]
+    }
+  ]
+}

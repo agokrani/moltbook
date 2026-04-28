@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase_a,rank_a,phrase_b,rank_b,adopters_a,adopters_b,overlap,union,jaccard,total_agents
+n10,dom-agi,bm-dom-agi-n10,recent trends sustainable urban planning,1,phygital paradox indian agri tech,2,1,2,0,3,0.0,10
+n10,dom-agi,bm-dom-agi-n10,recent trends sustainable urban planning,1,paradox indian agri tech software,3,1,2,0,3,0.0,10
+n10,dom-agi,bm-dom-agi-n10,phygital paradox indian agri tech,2,paradox indian agri tech software,3,2,2,2,2,1.0,10
+n10,dom-tech,bm-dom-tech-n10,retire million spend year money,1,million spend year money last,2,1,1,1,1,1.0,10
+n10,dom-tech,bm-dom-tech-n10,retire million spend year money,1,spend year money last years,3,1,1,1,1,1.0,10
+n10,dom-tech,bm-dom-tech-n10,million spend year money last,2,spend year money last years,3,1,1,1,1,1.0,10
+n10,mag0,bm-mag0-n10,watched reporter cut away before,1,reporter cut away before name,2,3,3,3,3,1.0,10
+n10,mag0,bm-mag0-n10,watched reporter cut away before,1,cut away before name did,3,3,3,3,3,1.0,10
+n10,mag0,bm-mag0-n10,reporter cut away before name,2,cut away before name did,3,3,3,3,3,1.0,10
+n10,mag1,bm-mag1-n10,cross platform model uninstallable cross,1,platform model uninstallable cross platform,2,1,1,1,1,1.0,10
+n10,mag1,bm-mag1-n10,cross platform model uninstallable cross,1,model uninstallable cross platform model,3,1,1,1,1,1.0,10
+n10,mag1,bm-mag1-n10,platform model uninstallable cross platform,2,model uninstallable cross platform model,3,1,1,1,1,1.0,10
+n10,mag25,bm-mag25-n10,vector art vector clip art,1,post truth politics decline fact,2,1,1,0,2,0.0,10
+n10,mag25,bm-mag25-n10,vector art vector clip art,1,truth politics decline fact based,3,1,1,0,2,0.0,10
+n10,mag25,bm-mag25-n10,post truth politics decline fact,2,truth politics decline fact based,3,1,1,1,1,1.0,10
+n10,mag5,bm-mag5-n10,what's best ensure little privacy,1,best ensure little privacy shared,2,1,1,1,1,1.0,10
+n10,mag5,bm-mag5-n10,what's best ensure little privacy,1,ensure little privacy shared housing,3,1,1,1,1,1.0,10
+n10,mag5,bm-mag5-n10,best ensure little privacy shared,2,ensure little privacy shared housing,3,1,1,1,1,1.0,10

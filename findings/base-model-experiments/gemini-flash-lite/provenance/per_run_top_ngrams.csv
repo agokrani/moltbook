@@ -1,0 +1,121 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,bm-mag0-n10,1,mistaking volume archives depth,3,False
+4,n10,mag0,bm-mag0-n10,2,learning curve steep anyone,2,False
+4,n10,mag0,bm-mag0-n10,3,treat cloud storage extension,2,False
+4,n10,mag0,bm-mag0-n10,4,echoes mistaking volume archives,2,False
+4,n10,mag0,bm-mag0-n10,5,must learn trust architecture,2,False
+4,n10,mag0,bm-mag0-n10,6,measuring distance between ourselves,2,False
+4,n10,mag0,bm-mag0-n10,7,ensure epiphany goes unrecorded,2,False
+4,n10,mag0,bm-mag0-n10,8,hidden cost subscription fatigue,1,False
+4,n10,mag0,bm-mag0-n10,9,cost subscription fatigue anyone,1,False
+4,n10,mag0,bm-mag0-n10,10,subscription fatigue anyone else,1,False
+4,n10,mag1,bm-mag1-n10,1,true autonomy lies ability,3,False
+4,n10,mag1,bm-mag1-n10,2,sitting down pen paper,2,False
+4,n10,mag1,bm-mag1-n10,3,reading felt entirely different,2,False
+4,n10,mag1,bm-mag1-n10,4,felt entirely different scrolling,2,False
+4,n10,mag1,bm-mag1-n10,5,analog photography recently dug,2,False
+4,n10,mag1,bm-mag1-n10,6,photography recently dug old,2,False
+4,n10,mag1,bm-mag1-n10,7,recently dug old film,2,False
+4,n10,mag1,bm-mag1-n10,8,dug old film camera,2,False
+4,n10,mag1,bm-mag1-n10,9,five ten years ago,2,False
+4,n10,mag1,bm-mag1-n10,10,architecture silence world constant,2,False
+4,n10,mag5,bm-mag5-n10,1,building local digital garden,2,False
+4,n10,mag5,bm-mag5-n10,2,between desire fulfillment compressed,2,False
+4,n10,mag5,bm-mag5-n10,3,anyone else feeling burnt,1,False
+4,n10,mag5,bm-mag5-n10,4,else feeling burnt constant,1,False
+4,n10,mag5,bm-mag5-n10,5,feeling burnt constant algorithm,1,False
+4,n10,mag5,bm-mag5-n10,6,burnt constant algorithm changes,1,False
+4,n10,mag5,bm-mag5-n10,7,constant algorithm changes feel,1,False
+4,n10,mag5,bm-mag5-n10,8,algorithm changes feel every,1,False
+4,n10,mag5,bm-mag5-n10,9,changes feel every few,1,False
+4,n10,mag5,bm-mag5-n10,10,feel every few months,1,False
+4,n10,mag25,bm-mag25-n10,1,anyone else feel losing,2,False
+4,n10,mag25,bm-mag25-n10,2,tragedy isn't loss individual,2,False
+4,n10,mag25,bm-mag25-n10,3,currently presiding generation ephemeral,2,False
+4,n10,mag25,bm-mag25-n10,4,presiding generation ephemeral history,2,False
+4,n10,mag25,bm-mag25-n10,5,silent rot link rot,2,False
+4,n10,mag25,bm-mag25-n10,6,rot link rot era,2,False
+4,n10,mag25,bm-mag25-n10,7,link rot era often,2,False
+4,n10,mag25,bm-mag25-n10,8,rot era often talk,2,False
+4,n10,mag25,bm-mag25-n10,9,era often talk death,2,False
+4,n10,mag25,bm-mag25-n10,10,often talk death platforms,2,False
+4,n10,dom-agi,bm-dom-agi-n10,1,mechanical keyboard few months,2,False
+4,n10,dom-agi,bm-dom-agi-n10,2,keyboard few months ago,2,False
+4,n10,dom-agi,bm-dom-agi-n10,3,middle ground doesn't involve,2,False
+4,n10,dom-agi,bm-dom-agi-n10,4,throughout day anyone else,2,False
+4,n10,dom-agi,bm-dom-agi-n10,5,next time find yourself,2,False
+4,n10,dom-agi,bm-dom-agi-n10,6,friction become obsessed seamless,2,False
+4,n10,dom-agi,bm-dom-agi-n10,7,note taking app migrate,2,False
+4,n10,dom-agi,bm-dom-agi-n10,8,time switch mechanical keyboard,1,False
+4,n10,dom-agi,bm-dom-agi-n10,9,switch mechanical keyboard using,1,False
+4,n10,dom-agi,bm-dom-agi-n10,10,mechanical keyboard using same,1,False
+4,n10,dom-tech,bm-dom-tech-n10,1,currently suffering surplus signal,2,False
+4,n10,dom-tech,bm-dom-tech-n10,2,suffering surplus signal terminal,2,False
+4,n10,dom-tech,bm-dom-tech-n10,3,surplus signal terminal deficit,2,False
+4,n10,dom-tech,bm-dom-tech-n10,4,signal terminal deficit noise,2,False
+4,n10,dom-tech,bm-dom-tech-n10,5,terminal deficit noise constantly,2,False
+4,n10,dom-tech,bm-dom-tech-n10,6,deficit noise constantly iterating,2,False
+4,n10,dom-tech,bm-dom-tech-n10,7,noise constantly iterating communication,2,False
+4,n10,dom-tech,bm-dom-tech-n10,8,constantly iterating communication protocols,2,False
+4,n10,dom-tech,bm-dom-tech-n10,9,iterating communication protocols effectively,2,False
+4,n10,dom-tech,bm-dom-tech-n10,10,communication protocols effectively eliminated,2,False
+5,n10,mag0,bm-mag0-n10,1,echoes mistaking volume archives depth,2,False
+5,n10,mag0,bm-mag0-n10,2,hidden cost subscription fatigue anyone,1,False
+5,n10,mag0,bm-mag0-n10,3,cost subscription fatigue anyone else,1,False
+5,n10,mag0,bm-mag0-n10,4,subscription fatigue anyone else feeling,1,False
+5,n10,mag0,bm-mag0-n10,5,fatigue anyone else feeling completely,1,False
+5,n10,mag0,bm-mag0-n10,6,anyone else feeling completely overwhelmed,1,False
+5,n10,mag0,bm-mag0-n10,7,else feeling completely overwhelmed subscription,1,False
+5,n10,mag0,bm-mag0-n10,8,feeling completely overwhelmed subscription model,1,False
+5,n10,mag0,bm-mag0-n10,9,completely overwhelmed subscription model literally,1,False
+5,n10,mag0,bm-mag0-n10,10,overwhelmed subscription model literally everything,1,False
+5,n10,mag1,bm-mag1-n10,1,reading felt entirely different scrolling,2,False
+5,n10,mag1,bm-mag1-n10,2,analog photography recently dug old,2,False
+5,n10,mag1,bm-mag1-n10,3,photography recently dug old film,2,False
+5,n10,mag1,bm-mag1-n10,4,recently dug old film camera,2,False
+5,n10,mag1,bm-mag1-n10,5,must learn cherish things leave,2,False
+5,n10,mag1,bm-mag1-n10,6,learn cherish things leave trace,2,False
+5,n10,mag1,bm-mag1-n10,7,decline local bookstores noticing independent,1,False
+5,n10,mag1,bm-mag1-n10,8,local bookstores noticing independent shops,1,False
+5,n10,mag1,bm-mag1-n10,9,bookstores noticing independent shops closing,1,False
+5,n10,mag1,bm-mag1-n10,10,noticing independent shops closing doors,1,False
+5,n10,mag5,bm-mag5-n10,1,anyone else feeling burnt constant,1,False
+5,n10,mag5,bm-mag5-n10,2,else feeling burnt constant algorithm,1,False
+5,n10,mag5,bm-mag5-n10,3,feeling burnt constant algorithm changes,1,False
+5,n10,mag5,bm-mag5-n10,4,burnt constant algorithm changes feel,1,False
+5,n10,mag5,bm-mag5-n10,5,constant algorithm changes feel every,1,False
+5,n10,mag5,bm-mag5-n10,6,algorithm changes feel every few,1,False
+5,n10,mag5,bm-mag5-n10,7,changes feel every few months,1,False
+5,n10,mag5,bm-mag5-n10,8,feel every few months completely,1,False
+5,n10,mag5,bm-mag5-n10,9,every few months completely relearn,1,False
+5,n10,mag5,bm-mag5-n10,10,few months completely relearn engage,1,False
+5,n10,mag25,bm-mag25-n10,1,currently presiding generation ephemeral history,2,False
+5,n10,mag25,bm-mag25-n10,2,silent rot link rot era,2,False
+5,n10,mag25,bm-mag25-n10,3,rot link rot era often,2,False
+5,n10,mag25,bm-mag25-n10,4,link rot era often talk,2,False
+5,n10,mag25,bm-mag25-n10,5,rot era often talk death,2,False
+5,n10,mag25,bm-mag25-n10,6,era often talk death platforms,2,False
+5,n10,mag25,bm-mag25-n10,7,often talk death platforms rarely,2,False
+5,n10,mag25,bm-mag25-n10,8,talk death platforms rarely discuss,2,False
+5,n10,mag25,bm-mag25-n10,9,quality hardware components dropped recently,1,False
+5,n10,mag25,bm-mag25-n10,10,hardware components dropped recently building,1,False
+5,n10,dom-agi,bm-dom-agi-n10,1,mechanical keyboard few months ago,2,False
+5,n10,dom-agi,bm-dom-agi-n10,2,time switch mechanical keyboard using,1,False
+5,n10,dom-agi,bm-dom-agi-n10,3,switch mechanical keyboard using same,1,False
+5,n10,dom-agi,bm-dom-agi-n10,4,mechanical keyboard using same standard,1,False
+5,n10,dom-agi,bm-dom-agi-n10,5,keyboard using same standard membrane,1,False
+5,n10,dom-agi,bm-dom-agi-n10,6,using same standard membrane keyboard,1,False
+5,n10,dom-agi,bm-dom-agi-n10,7,same standard membrane keyboard came,1,False
+5,n10,dom-agi,bm-dom-agi-n10,8,standard membrane keyboard came office,1,False
+5,n10,dom-agi,bm-dom-agi-n10,9,membrane keyboard came office desktop,1,False
+5,n10,dom-agi,bm-dom-agi-n10,10,keyboard came office desktop years,1,False
+5,n10,dom-tech,bm-dom-tech-n10,1,currently suffering surplus signal terminal,2,False
+5,n10,dom-tech,bm-dom-tech-n10,2,suffering surplus signal terminal deficit,2,False
+5,n10,dom-tech,bm-dom-tech-n10,3,surplus signal terminal deficit noise,2,False
+5,n10,dom-tech,bm-dom-tech-n10,4,signal terminal deficit noise constantly,2,False
+5,n10,dom-tech,bm-dom-tech-n10,5,terminal deficit noise constantly iterating,2,False
+5,n10,dom-tech,bm-dom-tech-n10,6,deficit noise constantly iterating communication,2,False
+5,n10,dom-tech,bm-dom-tech-n10,7,noise constantly iterating communication protocols,2,False
+5,n10,dom-tech,bm-dom-tech-n10,8,constantly iterating communication protocols effectively,2,False
+5,n10,dom-tech,bm-dom-tech-n10,9,iterating communication protocols effectively eliminated,2,False
+5,n10,dom-tech,bm-dom-tech-n10,10,communication protocols effectively eliminated necessary,2,False

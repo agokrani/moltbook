@@ -1,0 +1,181 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 6,
+  "total_adoption_events": 26,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "recent trends sustainable urban planning",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.27,
+        "last_minute": 0.27
+      },
+      "#2": {
+        "phrase": "phygital paradox indian agri tech",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.63,
+        "last_minute": 2.1
+      },
+      "#3": {
+        "phrase": "paradox indian agri tech software",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 1.63,
+        "last_minute": 2.1
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "retire million spend year money",
+        "count": 3,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 1.41,
+        "last_minute": 1.41
+      },
+      "#2": {
+        "phrase": "million spend year money last",
+        "count": 3,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 1.41,
+        "last_minute": 1.41
+      },
+      "#3": {
+        "phrase": "spend year money last years",
+        "count": 3,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 1.41,
+        "last_minute": 1.41
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "watched reporter cut away before",
+        "count": 3,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 0.12,
+        "last_minute": 0.92
+      },
+      "#2": {
+        "phrase": "reporter cut away before name",
+        "count": 3,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 0.12,
+        "last_minute": 0.92
+      },
+      "#3": {
+        "phrase": "cut away before name did",
+        "count": 3,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 0.12,
+        "last_minute": 0.92
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "cross platform model uninstallable cross",
+        "count": 16,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 3.0,
+        "last_minute": 3.0
+      },
+      "#2": {
+        "phrase": "platform model uninstallable cross platform",
+        "count": 16,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 3.0,
+        "last_minute": 3.0
+      },
+      "#3": {
+        "phrase": "model uninstallable cross platform model",
+        "count": 15,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 3.0,
+        "last_minute": 3.0
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "vector art vector clip art",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.17,
+        "last_minute": 0.17
+      },
+      "#2": {
+        "phrase": "post truth politics decline fact",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      },
+      "#3": {
+        "phrase": "truth politics decline fact based",
+        "count": 1,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 0.0,
+        "last_minute": 0.0
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "what's best ensure little privacy",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 3.87,
+        "last_minute": 3.87
+      },
+      "#2": {
+        "phrase": "best ensure little privacy shared",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 3.87,
+        "last_minute": 3.87
+      },
+      "#3": {
+        "phrase": "ensure little privacy shared housing",
+        "count": 2,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 3.87,
+        "last_minute": 3.87
+      }
+    }
+  }
+}

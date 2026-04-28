@@ -1,0 +1,139 @@
+{
+  "ngram_n": 5,
+  "bin_edges": [
+    0.0,
+    2.5,
+    5.0,
+    7.5,
+    10.0
+  ],
+  "metrics": [
+    "distinct_5_fixed",
+    "distinct_5_cumulative",
+    "simpsons_1d"
+  ],
+  "total_runs": 6,
+  "total_rows": 24,
+  "by_scale_condition": {
+    "n10/mag0": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "simpsons_1d": [
+        307.0,
+        119.0,
+        274.0,
+        0.0
+      ]
+    },
+    "n10/mag1": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "simpsons_1d": [
+        268.0,
+        29.0,
+        102.0,
+        0.0
+      ]
+    },
+    "n10/mag5": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "simpsons_1d": [
+        187.0,
+        187.0,
+        163.0,
+        0.0
+      ]
+    },
+    "n10/mag25": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "simpsons_1d": [
+        374.0,
+        108.0,
+        105.0,
+        0.0
+      ]
+    },
+    "n10/dom-agi": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        0.998,
+        0.9983,
+        0.9983
+      ],
+      "simpsons_1d": [
+        225.0,
+        287.0,
+        60.0,
+        0.0
+      ]
+    },
+    "n10/dom-tech": {
+      "distinct_5_fixed": [
+        1.0,
+        0.8081,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        0.892,
+        0.9295,
+        0.9295
+      ],
+      "simpsons_1d": [
+        308.0,
+        286.16,
+        374.0,
+        0.0
+      ]
+    }
+  }
+}

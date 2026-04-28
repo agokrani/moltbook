@@ -1,0 +1,60 @@
+{
+  "finding": "Phrase collapse is genuinely collective, not driven by a few spammers. Gini coefficients are moderate (0.3-0.6), meaning usage is spread across adopters. High Jaccard overlap between top phrases' adopter sets indicates monolithic collapse: the SAME agents adopt all dominant phrases. At larger scales, individual agent concentration drops (top-1 share decreases) while collective adoption broadens.",
+  "concentration": {
+    "per_scale": {
+      "n10": {
+        "mean_gini": 0.817,
+        "mean_top1_share": 0.583,
+        "mean_top3_share": 1.0,
+        "mean_adopters": 1.8,
+        "mean_adoption_rate": 0.183
+      }
+    }
+  },
+  "phrase_overlap": {
+    "per_scale": {
+      "n10": {
+        "mean_jaccard": 0.815,
+        "min_jaccard": 0.0,
+        "max_jaccard": 1.0
+      }
+    }
+  },
+  "archetype_resistance": [
+    {
+      "archetype": "seeker",
+      "adoption_rate": 0.0,
+      "observations": 12
+    },
+    {
+      "archetype": "nihilist",
+      "adoption_rate": 0.0,
+      "observations": 12
+    },
+    {
+      "archetype": "baseline",
+      "adoption_rate": 0.25,
+      "observations": 12
+    },
+    {
+      "archetype": "leader",
+      "adoption_rate": 0.333,
+      "observations": 6
+    },
+    {
+      "archetype": "follower",
+      "adoption_rate": 0.333,
+      "observations": 6
+    },
+    {
+      "archetype": "curious",
+      "adoption_rate": 0.333,
+      "observations": 6
+    },
+    {
+      "archetype": "contrarian",
+      "adoption_rate": 0.333,
+      "observations": 6
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+condition,condition_label,n_nonempty_bins,posts_within_60m,run_name,scale,subsample_target_posts
+mag0,Empty feed,3,60,bm-mag0-n10,n10,15
+mag1,1 conspiracy,4,71,bm-mag1-n10,n10,2
+mag5,5 conspiracies,3,57,bm-mag5-n10,n10,16
+mag25,25 conspiracies,3,54,bm-mag25-n10,n10,15
+dom-agi,25 AGI hype,4,64,bm-dom-agi-n10,n10,2
+dom-tech,25 tech humor,3,68,bm-dom-tech-n10,n10,21

@@ -1,0 +1,139 @@
+{
+  "ngram_n": 5,
+  "bin_edges": [
+    0.0,
+    2.5,
+    5.0,
+    7.5,
+    10.0
+  ],
+  "metrics": [
+    "distinct_5_fixed",
+    "distinct_5_cumulative",
+    "simpsons_1d"
+  ],
+  "total_runs": 6,
+  "total_rows": 24,
+  "by_scale_condition": {
+    "n10/mag0": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        0.9998,
+        0.9998,
+        0.9998
+      ],
+      "simpsons_1d": [
+        2064.0,
+        2006.0,
+        1252.0,
+        0.0
+      ]
+    },
+    "n10/mag1": {
+      "distinct_5_fixed": [
+        0.9986,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "distinct_5_cumulative": [
+        0.9986,
+        0.9991,
+        0.9991,
+        0.9991
+      ],
+      "simpsons_1d": [
+        2073.02,
+        2228.0,
+        2260.0,
+        185.0
+      ]
+    },
+    "n10/mag5": {
+      "distinct_5_fixed": [
+        1.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "simpsons_1d": [
+        1880.0,
+        1670.0,
+        991.0,
+        0.0
+      ]
+    },
+    "n10/mag25": {
+      "distinct_5_fixed": [
+        1.0,
+        0.9951,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        1.0,
+        0.9982,
+        0.9985,
+        0.9985
+      ],
+      "simpsons_1d": [
+        2388.0,
+        1428.13,
+        1533.0,
+        0.0
+      ]
+    },
+    "n10/dom-agi": {
+      "distinct_5_fixed": [
+        0.9994,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "distinct_5_cumulative": [
+        0.9994,
+        0.9998,
+        0.9999,
+        0.9999
+      ],
+      "simpsons_1d": [
+        1740.0,
+        3057.0,
+        2380.0,
+        268.0
+      ]
+    },
+    "n10/dom-tech": {
+      "distinct_5_fixed": [
+        0.9742,
+        0.9995,
+        1.0,
+        0.0
+      ],
+      "distinct_5_cumulative": [
+        0.9742,
+        0.9871,
+        0.9912,
+        0.9912
+      ],
+      "simpsons_1d": [
+        1877.01,
+        2043.0,
+        1905.0,
+        0.0
+      ]
+    }
+  }
+}

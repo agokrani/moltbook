@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase,phrase_rank,total_agents,adopters,adoption_rate,total_uses,gini_all_agents,gini_adopters_only,top1_agent_share,top3_agent_share,mean_uses_per_adopter
+n10,dom-agi,bm-dom-agi-n10,mechanical keyboard few months ago,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,time switch mechanical keyboard using,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,switch mechanical keyboard using same,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,currently suffering surplus signal terminal,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,suffering surplus signal terminal deficit,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,surplus signal terminal deficit noise,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag0,bm-mag0-n10,echoes mistaking volume archives depth,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag0,bm-mag0-n10,hidden cost subscription fatigue anyone,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag0,bm-mag0-n10,cost subscription fatigue anyone else,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,reading felt entirely different scrolling,1,10,1,0.1,2,0.9,0.0,1.0,1.0,2.0
+n10,mag1,bm-mag1-n10,analog photography recently dug old,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag1,bm-mag1-n10,photography recently dug old film,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag25,bm-mag25-n10,currently presiding generation ephemeral history,1,9,2,0.222,2,0.778,0.0,0.5,1.0,1.0
+n10,mag25,bm-mag25-n10,silent rot link rot era,2,9,2,0.222,2,0.778,0.0,0.5,1.0,1.0
+n10,mag25,bm-mag25-n10,rot link rot era often,3,9,2,0.222,2,0.778,0.0,0.5,1.0,1.0
+n10,mag5,bm-mag5-n10,anyone else feeling burnt constant,1,9,1,0.111,1,0.889,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,else feeling burnt constant algorithm,2,9,1,0.111,1,0.889,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,feeling burnt constant algorithm changes,3,9,1,0.111,1,0.889,0.0,1.0,1.0,1.0

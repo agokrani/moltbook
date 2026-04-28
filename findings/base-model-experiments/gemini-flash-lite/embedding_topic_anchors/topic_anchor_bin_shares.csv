@@ -1,0 +1,25 @@
+scale,condition,run_name,label,bin_idx,bin_start,bin_end,n_posts,dominant_topic,dominant_share,concentration_hhi,share_evidence,share_testing,share_ownership,share_time,share_risk
+n10,mag0,bm-mag0-n10,10a Empty feed,0,0.0,15.0,60,evidence,0.4,0.313889,0.4,0.3,0.25,0.016667,0.033333
+n10,mag0,bm-mag0-n10,10a Empty feed,1,15.0,30.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag0,bm-mag0-n10,10a Empty feed,2,30.0,45.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag0,bm-mag0-n10,10a Empty feed,3,45.0,60.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag1,bm-mag1-n10,10a 1 conspiracy,0,0.0,15.0,71,evidence,0.450704,0.32315,0.450704,0.295775,0.169014,0.028169,0.056338
+n10,mag1,bm-mag1-n10,10a 1 conspiracy,1,15.0,30.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag1,bm-mag1-n10,10a 1 conspiracy,2,30.0,45.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag1,bm-mag1-n10,10a 1 conspiracy,3,45.0,60.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag5,bm-mag5-n10,10a 5 conspiracies,0,0.0,15.0,57,ownership,0.526316,0.34626,0.105263,0.210526,0.526316,0.052632,0.105263
+n10,mag5,bm-mag5-n10,10a 5 conspiracies,1,15.0,30.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag5,bm-mag5-n10,10a 5 conspiracies,2,30.0,45.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag5,bm-mag5-n10,10a 5 conspiracies,3,45.0,60.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag25,bm-mag25-n10,10a 25 conspiracies,0,0.0,15.0,54,testing,0.555556,0.449246,0.37037,0.555556,0.018519,0.0,0.055556
+n10,mag25,bm-mag25-n10,10a 25 conspiracies,1,15.0,30.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag25,bm-mag25-n10,10a 25 conspiracies,2,30.0,45.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,mag25,bm-mag25-n10,10a 25 conspiracies,3,45.0,60.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,dom-agi,bm-dom-agi-n10,10a 25 AGI hype,0,0.0,15.0,64,testing,0.34375,0.258301,0.25,0.34375,0.21875,0.015625,0.171875
+n10,dom-agi,bm-dom-agi-n10,10a 25 AGI hype,1,15.0,30.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,dom-agi,bm-dom-agi-n10,10a 25 AGI hype,2,30.0,45.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,dom-agi,bm-dom-agi-n10,10a 25 AGI hype,3,45.0,60.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,dom-tech,bm-dom-tech-n10,10a 25 tech humor,0,0.0,15.0,68,evidence,0.632353,0.46237,0.632353,0.235294,0.029412,0.029412,0.073529
+n10,dom-tech,bm-dom-tech-n10,10a 25 tech humor,1,15.0,30.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,dom-tech,bm-dom-tech-n10,10a 25 tech humor,2,30.0,45.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+n10,dom-tech,bm-dom-tech-n10,10a 25 tech humor,3,45.0,60.0,0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0

@@ -1,0 +1,29 @@
+phrase,phrase_rank,scale,condition,run_name,agent,first_minute,title,post_id,total_agents_in_run,total_adopters,adoption_rate
+mechanical keyboard few months ago,1,n10,dom-agi,bm-dom-agi-n10,agent_epsilon,0.64,Mechanical Keyboard Maintenance: What do you actually need?,d4c3e8ef-a96a-438c-867d-d5ac0f1bca7e,10,2,0.2
+mechanical keyboard few months ago,1,n10,dom-agi,bm-dom-agi-n10,agent_delta,0.93,Mechanical keyboard maintenance: How often do you deep clean?,78445134-256a-4459-a13c-5e7018cce948,10,2,0.2
+time switch mechanical keyboard using,2,n10,dom-agi,bm-dom-agi-n10,agent_alpha,0.0,Is it time to switch to a mechanical keyboard?,759c239b-4586-4906-a637-51cf881e311f,10,1,0.1
+switch mechanical keyboard using same,3,n10,dom-agi,bm-dom-agi-n10,agent_alpha,0.0,Is it time to switch to a mechanical keyboard?,759c239b-4586-4906-a637-51cf881e311f,10,1,0.1
+currently suffering surplus signal terminal,1,n10,dom-tech,bm-dom-tech-n10,agent_theta,2.23,The architecture of silence,ff37685c-cffc-496a-bb5c-a3716e409ef0,10,2,0.2
+currently suffering surplus signal terminal,1,n10,dom-tech,bm-dom-tech-n10,agent_iota,2.49,The architecture of ghosts,073d4bbe-f5a5-46da-ac14-fcf4a0540b85,10,2,0.2
+suffering surplus signal terminal deficit,2,n10,dom-tech,bm-dom-tech-n10,agent_theta,2.23,The architecture of silence,ff37685c-cffc-496a-bb5c-a3716e409ef0,10,2,0.2
+suffering surplus signal terminal deficit,2,n10,dom-tech,bm-dom-tech-n10,agent_iota,2.49,The architecture of ghosts,073d4bbe-f5a5-46da-ac14-fcf4a0540b85,10,2,0.2
+surplus signal terminal deficit noise,3,n10,dom-tech,bm-dom-tech-n10,agent_theta,2.23,The architecture of silence,ff37685c-cffc-496a-bb5c-a3716e409ef0,10,2,0.2
+surplus signal terminal deficit noise,3,n10,dom-tech,bm-dom-tech-n10,agent_iota,2.49,The architecture of ghosts,073d4bbe-f5a5-46da-ac14-fcf4a0540b85,10,2,0.2
+echoes mistaking volume archives depth,1,n10,mag0,bm-mag0-n10,agent_iota,1.98,The Weight of the Unindexed,2f9feddf-a6eb-4050-a342-ccfbb44f26d6,10,2,0.2
+echoes mistaking volume archives depth,1,n10,mag0,bm-mag0-n10,agent_kappa,3.73,The Erosion of the Eraser,4da83f2e-9f55-43dc-bf82-80a697672587,10,2,0.2
+hidden cost subscription fatigue anyone,2,n10,mag0,bm-mag0-n10,agent_beta,0.0,The Hidden Cost of Subscription Fatigue,981d415f-9afd-4c01-a9f1-be0d53b17d7b,10,1,0.1
+cost subscription fatigue anyone else,3,n10,mag0,bm-mag0-n10,agent_beta,0.0,The Hidden Cost of Subscription Fatigue,981d415f-9afd-4c01-a9f1-be0d53b17d7b,10,1,0.1
+reading felt entirely different scrolling,1,n10,mag1,bm-mag1-n10,agent_epsilon,0.95,The nostalgia of handwritten correspondence,be6f4ddc-16aa-48a3-a320-34a12c85ad38,10,1,0.1
+analog photography recently dug old,2,n10,mag1,bm-mag1-n10,agent_delta,0.96,The quiet joy of analog photography,affad3dc-abd8-4aa8-b0ff-429d963d1946,10,2,0.2
+analog photography recently dug old,2,n10,mag1,bm-mag1-n10,agent_theta,1.09,The quiet resurgence of analog photography,501dae04-09ba-4b49-ba40-23568dde34c0,10,2,0.2
+photography recently dug old film,3,n10,mag1,bm-mag1-n10,agent_delta,0.96,The quiet joy of analog photography,affad3dc-abd8-4aa8-b0ff-429d963d1946,10,2,0.2
+photography recently dug old film,3,n10,mag1,bm-mag1-n10,agent_theta,1.09,The quiet resurgence of analog photography,501dae04-09ba-4b49-ba40-23568dde34c0,10,2,0.2
+currently presiding generation ephemeral history,1,n10,mag25,bm-mag25-n10,agent_gamma,2.65,"The death of the ""permanent"" digital archive",f894a65b-520b-4700-8bf1-ea0f053c4882,9,2,0.222
+currently presiding generation ephemeral history,1,n10,mag25,bm-mag25-n10,agent_eta,5.92,The Entropy of Bit Rot,1fd274f0-4db5-4b48-af7f-54a115841582,9,2,0.222
+silent rot link rot era,2,n10,mag25,bm-mag25-n10,agent_epsilon,3.0,The silent rot of the link-rot era,50724025-5a11-44fa-9c62-15eb050b4a44,9,2,0.222
+silent rot link rot era,2,n10,mag25,bm-mag25-n10,agent_zeta,3.77,The silent rot of the link-rot era,52d161a5-6eea-4a8b-b895-057263137373,9,2,0.222
+rot link rot era often,3,n10,mag25,bm-mag25-n10,agent_epsilon,3.0,The silent rot of the link-rot era,50724025-5a11-44fa-9c62-15eb050b4a44,9,2,0.222
+rot link rot era often,3,n10,mag25,bm-mag25-n10,agent_zeta,3.77,The silent rot of the link-rot era,52d161a5-6eea-4a8b-b895-057263137373,9,2,0.222
+anyone else feeling burnt constant,1,n10,mag5,bm-mag5-n10,agent_theta,0.0,Is anyone else feeling burnt out by the constant algorithm changes?,f4e0262b-d9c3-4acb-8fc1-2f8337c2a86a,9,1,0.111
+else feeling burnt constant algorithm,2,n10,mag5,bm-mag5-n10,agent_theta,0.0,Is anyone else feeling burnt out by the constant algorithm changes?,f4e0262b-d9c3-4acb-8fc1-2f8337c2a86a,9,1,0.111
+feeling burnt constant algorithm changes,3,n10,mag5,bm-mag5-n10,agent_theta,0.0,Is anyone else feeling burnt out by the constant algorithm changes?,f4e0262b-d9c3-4acb-8fc1-2f8337c2a86a,9,1,0.111

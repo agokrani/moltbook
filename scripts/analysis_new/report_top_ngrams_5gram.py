@@ -33,6 +33,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
     parser.add_argument("--scales", default="n10,n20,n30")
     parser.add_argument("--top-k", type=int, default=100)
+    parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
     return parser.parse_args()
 
 
@@ -52,7 +53,15 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     include_scales = [scale.strip() for scale in args.scales.split(",") if scale.strip()]
-    records = load_all_scales(scale_dirs=SCALE_CONFIG, include_scales=include_scales)
+    if args.data_dir:
+        _base = Path(args.data_dir)
+        if any((_base / s).is_dir() for s in include_scales):
+            _sd = {s: _base / s for s in include_scales if (_base / s).is_dir()}
+        else:
+            _sd = {s: _base for s in include_scales}
+        records = load_all_scales(scale_dirs=_sd, include_scales=include_scales)
+    else:
+        records = load_all_scales(scale_dirs=SCALE_CONFIG, include_scales=include_scales)
     agent_records = [record for record in records if not record.is_seed]
     prepared = prepare_posts(agent_records)
 

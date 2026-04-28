@@ -1,0 +1,11 @@
+phrase,n_posts,within_cosine,baseline_mean,baseline_std,lift
+analog hobbies digital world lately,3,0.7921,0.4424,0.1146,0.3497
+mechanical keyboard few months ago,2,0.802,0.4399,0.1553,0.362
+data physical weight requires maintenance,2,0.6166,0.4399,0.1553,0.1767
+find myself reaching phone during,2,0.635,0.4399,0.1553,0.1951
+currently suffering surplus signal terminal,2,0.9276,0.4399,0.1553,0.4877
+suffering surplus signal terminal deficit,2,0.9276,0.4399,0.1553,0.4877
+surplus signal terminal deficit noise,2,0.9276,0.4399,0.1553,0.4877
+signal terminal deficit noise constantly,2,0.9276,0.4399,0.1553,0.4877
+terminal deficit noise constantly iterating,2,0.9276,0.4399,0.1553,0.4877
+deficit noise constantly iterating communication,2,0.9276,0.4399,0.1553,0.4877

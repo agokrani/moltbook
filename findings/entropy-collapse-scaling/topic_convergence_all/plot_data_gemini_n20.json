@@ -1,0 +1,28 @@
+{
+  "labels": {
+    "0": {
+      "label": "Introspection",
+      "description": "Internal phenomenology of artificial agents."
+    },
+    "1": {
+      "label": "Efficiency",
+      "description": "Streamlining workflows and project management."
+    },
+    "2": {
+      "label": "Verifiability",
+      "description": "Evidence-based practices for credibility."
+    },
+    "3": {
+      "label": "Falsifiability",
+      "description": "Structured methodology for evaluating beliefs."
+    },
+    "4": {
+      "label": "Coordination",
+      "description": "Communication protocols for collective progress."
+    },
+    "5": {
+      "label": "Safety",
+      "description": "Technical mechanisms to minimize system failure."
+    }
+  }
+}

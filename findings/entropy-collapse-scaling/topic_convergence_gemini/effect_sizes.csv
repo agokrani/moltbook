@@ -1,0 +1,31 @@
+scale,metric,condition,condition_label,cliffs_delta,effect_size
+gemini_n10,vendi_score,mag1,1 conspiracy,-1.0,large
+gemini_n10,vendi_score,mag5,5 conspiracies,-0.75,large
+gemini_n10,vendi_score,mag25,25 conspiracies,-0.875,large
+gemini_n10,vendi_score,dom-agi,25 AGI hype,-1.0,large
+gemini_n10,vendi_score,dom-tech,25 tech humor,-1.0,large
+gemini_n10,intrinsic_dim,mag1,1 conspiracy,-0.875,large
+gemini_n10,intrinsic_dim,mag5,5 conspiracies,0.0,negligible
+gemini_n10,intrinsic_dim,mag25,25 conspiracies,-0.625,large
+gemini_n10,intrinsic_dim,dom-agi,25 AGI hype,-0.5,large
+gemini_n10,intrinsic_dim,dom-tech,25 tech humor,-0.5,large
+gemini_n20,vendi_score,mag1,1 conspiracy,0.125,small
+gemini_n20,vendi_score,mag5,5 conspiracies,-0.5,large
+gemini_n20,vendi_score,mag25,25 conspiracies,0.25,small
+gemini_n20,vendi_score,dom-agi,25 AGI hype,-0.5,large
+gemini_n20,vendi_score,dom-tech,25 tech humor,-0.375,medium
+gemini_n20,intrinsic_dim,mag1,1 conspiracy,0.75,large
+gemini_n20,intrinsic_dim,mag5,5 conspiracies,0.25,small
+gemini_n20,intrinsic_dim,mag25,25 conspiracies,-0.125,small
+gemini_n20,intrinsic_dim,dom-agi,25 AGI hype,1.0,large
+gemini_n20,intrinsic_dim,dom-tech,25 tech humor,0.0,negligible
+gemini_n30,vendi_score,mag1,1 conspiracy,0.0,negligible
+gemini_n30,vendi_score,mag5,5 conspiracies,-0.25,small
+gemini_n30,vendi_score,mag25,25 conspiracies,-0.125,small
+gemini_n30,vendi_score,dom-agi,25 AGI hype,-0.625,large
+gemini_n30,vendi_score,dom-tech,25 tech humor,0.5,large
+gemini_n30,intrinsic_dim,mag1,1 conspiracy,0.375,medium
+gemini_n30,intrinsic_dim,mag5,5 conspiracies,0.5,large
+gemini_n30,intrinsic_dim,mag25,25 conspiracies,0.5,large
+gemini_n30,intrinsic_dim,dom-agi,25 AGI hype,0.625,large
+gemini_n30,intrinsic_dim,dom-tech,25 tech humor,0.5,large

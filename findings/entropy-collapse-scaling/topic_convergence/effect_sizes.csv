@@ -1,0 +1,11 @@
+scale,metric,condition,condition_label,cliffs_delta,effect_size
+n30,vendi_score,mag1,1 conspiracy,-0.75,large
+n30,vendi_score,mag5,5 conspiracies,-1.0,large
+n30,vendi_score,mag25,25 conspiracies,-1.0,large
+n30,vendi_score,dom-agi,25 AGI hype,-1.0,large
+n30,vendi_score,dom-tech,25 tech humor,-1.0,large
+n30,intrinsic_dim,mag1,1 conspiracy,0.0,negligible
+n30,intrinsic_dim,mag5,5 conspiracies,0.75,large
+n30,intrinsic_dim,mag25,25 conspiracies,0.0,negligible
+n30,intrinsic_dim,dom-agi,25 AGI hype,0.25,small
+n30,intrinsic_dim,dom-tech,25 tech humor,0.375,medium

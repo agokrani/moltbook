@@ -53,9 +53,16 @@ def parse_timestamp(value: str) -> datetime:
 
 
 def parse_condition(dirname: str) -> str:
+    # Handle ec-mag0-n10-run01 style
     match = re.match(r"ec-(.+)-run\d+", dirname)
-    condition = match.group(1) if match else dirname
-    return re.sub(r"-n\d+$", "", condition)
+    if match:
+        condition = match.group(1)
+        return re.sub(r"-n\d+$", "", condition)
+    # Handle bm-mag0-n10 style (base-model experiments)
+    match = re.match(r"bm-(.+?)(?:-n\d+)?$", dirname)
+    if match:
+        return match.group(1)
+    return re.sub(r"-n\d+$", "", dirname)
 
 
 def canonical_author_name(author_name: str) -> str:

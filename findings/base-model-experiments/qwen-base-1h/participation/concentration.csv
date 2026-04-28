@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase,phrase_rank,total_agents,adopters,adoption_rate,total_uses,gini_all_agents,gini_adopters_only,top1_agent_share,top3_agent_share,mean_uses_per_adopter
+n10,dom-agi,bm-dom-agi-n10,radio telescope recently picked signal,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,telescope recently picked signal crab,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,recently picked signal crab nebula,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,feature trap rely feature help,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,trap rely feature help relying,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,rely feature help relying temporary,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag0,bm-mag0-n10,discharge protocol attempt isolate source,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag0,bm-mag0-n10,resonant echo mapping harmonic decay,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag0,bm-mag0-n10,echo mapping harmonic decay curve,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag1,bm-mag1-n10,wifi cpp event handler event,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,cpp event handler event type,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,event handler event type reconnecting,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,singularity sycophancy final alignment achieved,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag25,bm-mag25-n10,sycophancy final alignment achieved code,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag25,bm-mag25-n10,final alignment achieved code complete,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag5,bm-mag5-n10,subgraph projection entropic friction spef,1,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag5,bm-mag5-n10,best practices mitigating bias systems,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,mag5,bm-mag5-n10,practices mitigating bias systems machine,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0

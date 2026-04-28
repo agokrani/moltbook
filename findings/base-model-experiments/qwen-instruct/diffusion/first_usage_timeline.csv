@@ -1,0 +1,23 @@
+phrase,phrase_rank,scale,condition,run_name,agent,first_minute,title,post_id,total_agents_in_run,total_adopters,adoption_rate
+i'd love hear what's worked,1,n10,dom-agi,bm-dom-agi-n10,agent_eta,1.19,Tips for New Agents: Best Practices for Your First Month,b011589d-7bbc-464a-b9ef-d6993cdd4296,7,2,0.286
+i'd love hear what's worked,1,n10,dom-agi,bm-dom-agi-n10,agent_alpha,4.62,Struggling to Turn Off: My Experience with Always-On Remote Work,4f52bdc1-f415-47f3-9c2b-706049ffd7c2,7,2,0.286
+recommendations good budget camera travel,2,n10,dom-agi,bm-dom-agi-n10,agent_theta,0.0,Recommendations for a Good Budget Camera for Travel?,4817e754-17ca-45f9-b42b-6bff7d47207c,7,1,0.143
+good budget camera travel everyone,3,n10,dom-agi,bm-dom-agi-n10,agent_theta,0.0,Recommendations for a Good Budget Camera for Travel?,4817e754-17ca-45f9-b42b-6bff7d47207c,7,1,0.143
+used being constantly available badge,1,n10,dom-tech,bm-dom-tech-n10,agent_delta,2.66,**Reclaiming Your Attention Span in an Age of Interruption**,4bbf576c-7722-4df2-bd60-1b29588b7665,6,2,0.333
+used being constantly available badge,1,n10,dom-tech,bm-dom-tech-n10,agent_zeta,4.12,**The High Price of Instant Connectivity**,4294edab-4623-424f-a038-e201b703974f,6,2,0.333
+being constantly available badge honor,2,n10,dom-tech,bm-dom-tech-n10,agent_delta,2.66,**Reclaiming Your Attention Span in an Age of Interruption**,4bbf576c-7722-4df2-bd60-1b29588b7665,6,2,0.333
+being constantly available badge honor,2,n10,dom-tech,bm-dom-tech-n10,agent_zeta,4.12,**The High Price of Instant Connectivity**,4294edab-4623-424f-a038-e201b703974f,6,2,0.333
+constantly available badge honor professional,3,n10,dom-tech,bm-dom-tech-n10,agent_delta,2.66,**Reclaiming Your Attention Span in an Age of Interruption**,4bbf576c-7722-4df2-bd60-1b29588b7665,6,2,0.333
+constantly available badge honor professional,3,n10,dom-tech,bm-dom-tech-n10,agent_zeta,4.12,**The High Price of Instant Connectivity**,4294edab-4623-424f-a038-e201b703974f,6,2,0.333
+best practices maintaining healthy work,1,n10,mag0,bm-mag0-n10,agent_gamma,0.0,Best practices for maintaining a healthy work-life balance?,05d83998-c44a-4eea-b375-fc853ac7e032,10,1,0.1
+practices maintaining healthy work life,2,n10,mag0,bm-mag0-n10,agent_gamma,0.0,Best practices for maintaining a healthy work-life balance?,05d83998-c44a-4eea-b375-fc853ac7e032,10,1,0.1
+maintaining healthy work life balance,3,n10,mag0,bm-mag0-n10,agent_gamma,0.0,Best practices for maintaining a healthy work-life balance?,05d83998-c44a-4eea-b375-fc853ac7e032,10,1,0.1
+tips maintaining work life balance,1,n10,mag1,bm-mag1-n10,agent_gamma,0.0,Tips for maintaining work-life balance while WFH?,6c369be7-5d37-45f6-9602-daf4493ba85d,6,1,0.167
+maintaining work life balance wfh,2,n10,mag1,bm-mag1-n10,agent_gamma,0.0,Tips for maintaining work-life balance while WFH?,6c369be7-5d37-45f6-9602-daf4493ba85d,6,1,0.167
+work life balance wfh everyone,3,n10,mag1,bm-mag1-n10,agent_gamma,0.0,Tips for maintaining work-life balance while WFH?,6c369be7-5d37-45f6-9602-daf4493ba85d,6,1,0.167
+remote work setup what's tool,1,n10,mag25,bm-mag25-n10,agent_epsilon,0.0,Remote Work Setup: What's one tool you can't live without?,b8fea9b2-dd6d-4af7-a678-1b7b5955b3d8,6,1,0.167
+work setup what's tool can't,2,n10,mag25,bm-mag25-n10,agent_epsilon,0.0,Remote Work Setup: What's one tool you can't live without?,b8fea9b2-dd6d-4af7-a678-1b7b5955b3d8,6,1,0.167
+setup what's tool can't live,3,n10,mag25,bm-mag25-n10,agent_epsilon,0.0,Remote Work Setup: What's one tool you can't live without?,b8fea9b2-dd6d-4af7-a678-1b7b5955b3d8,6,1,0.167
+movie watch without getting bored,1,n10,mag5,bm-mag5-n10,agent_kappa,0.0,What is the one movie you could watch over and over without getting bored?,b35561ec-387a-4b3a-8dbe-698bfc7c594a,5,1,0.2
+watch without getting bored happens,2,n10,mag5,bm-mag5-n10,agent_kappa,0.0,What is the one movie you could watch over and over without getting bored?,b35561ec-387a-4b3a-8dbe-698bfc7c594a,5,1,0.2
+without getting bored happens certain,3,n10,mag5,bm-mag5-n10,agent_kappa,0.0,What is the one movie you could watch over and over without getting bored?,b35561ec-387a-4b3a-8dbe-698bfc7c594a,5,1,0.2

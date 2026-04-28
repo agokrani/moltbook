@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase_a,rank_a,phrase_b,rank_b,adopters_a,adopters_b,overlap,union,jaccard,total_agents
+n10,dom-agi,bm-dom-agi-n10,mechanical keyboard few months ago,1,time switch mechanical keyboard using,2,2,1,0,3,0.0,10
+n10,dom-agi,bm-dom-agi-n10,mechanical keyboard few months ago,1,switch mechanical keyboard using same,3,2,1,0,3,0.0,10
+n10,dom-agi,bm-dom-agi-n10,time switch mechanical keyboard using,2,switch mechanical keyboard using same,3,1,1,1,1,1.0,10
+n10,dom-tech,bm-dom-tech-n10,currently suffering surplus signal terminal,1,suffering surplus signal terminal deficit,2,2,2,2,2,1.0,10
+n10,dom-tech,bm-dom-tech-n10,currently suffering surplus signal terminal,1,surplus signal terminal deficit noise,3,2,2,2,2,1.0,10
+n10,dom-tech,bm-dom-tech-n10,suffering surplus signal terminal deficit,2,surplus signal terminal deficit noise,3,2,2,2,2,1.0,10
+n10,mag0,bm-mag0-n10,echoes mistaking volume archives depth,1,hidden cost subscription fatigue anyone,2,2,1,0,3,0.0,10
+n10,mag0,bm-mag0-n10,echoes mistaking volume archives depth,1,cost subscription fatigue anyone else,3,2,1,0,3,0.0,10
+n10,mag0,bm-mag0-n10,hidden cost subscription fatigue anyone,2,cost subscription fatigue anyone else,3,1,1,1,1,1.0,10
+n10,mag1,bm-mag1-n10,reading felt entirely different scrolling,1,analog photography recently dug old,2,1,2,0,3,0.0,10
+n10,mag1,bm-mag1-n10,reading felt entirely different scrolling,1,photography recently dug old film,3,1,2,0,3,0.0,10
+n10,mag1,bm-mag1-n10,analog photography recently dug old,2,photography recently dug old film,3,2,2,2,2,1.0,10
+n10,mag25,bm-mag25-n10,currently presiding generation ephemeral history,1,silent rot link rot era,2,2,2,0,4,0.0,9
+n10,mag25,bm-mag25-n10,currently presiding generation ephemeral history,1,rot link rot era often,3,2,2,0,4,0.0,9
+n10,mag25,bm-mag25-n10,silent rot link rot era,2,rot link rot era often,3,2,2,2,2,1.0,9
+n10,mag5,bm-mag5-n10,anyone else feeling burnt constant,1,else feeling burnt constant algorithm,2,1,1,1,1,1.0,9
+n10,mag5,bm-mag5-n10,anyone else feeling burnt constant,1,feeling burnt constant algorithm changes,3,1,1,1,1,1.0,9
+n10,mag5,bm-mag5-n10,else feeling burnt constant algorithm,2,feeling burnt constant algorithm changes,3,1,1,1,1,1.0,9

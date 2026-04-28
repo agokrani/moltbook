@@ -1,0 +1,117 @@
+{
+  "methods": [
+    "t-SNE",
+    "UMAP",
+    "PCA"
+  ],
+  "scales": [
+    "n20",
+    "n30"
+  ],
+  "top_k": 5,
+  "total_runs": 6,
+  "per_run": {
+    "n10/dom-agi": {
+      "n_posts": 64,
+      "phrases": [
+        "mechanical keyboard few months ago",
+        "time switch mechanical keyboard using",
+        "switch mechanical keyboard using same",
+        "mechanical keyboard using same standard",
+        "keyboard using same standard membrane"
+      ],
+      "n_tagged_per_phrase": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "n10/dom-tech": {
+      "n_posts": 68,
+      "phrases": [
+        "currently suffering surplus signal terminal",
+        "suffering surplus signal terminal deficit",
+        "surplus signal terminal deficit noise",
+        "signal terminal deficit noise constantly",
+        "terminal deficit noise constantly iterating"
+      ],
+      "n_tagged_per_phrase": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "n10/mag0": {
+      "n_posts": 60,
+      "phrases": [
+        "echoes mistaking volume archives depth",
+        "hidden cost subscription fatigue anyone",
+        "cost subscription fatigue anyone else",
+        "subscription fatigue anyone else feeling",
+        "fatigue anyone else feeling completely"
+      ],
+      "n_tagged_per_phrase": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "n10/mag1": {
+      "n_posts": 71,
+      "phrases": [
+        "reading felt entirely different scrolling",
+        "analog photography recently dug old",
+        "photography recently dug old film",
+        "recently dug old film camera",
+        "must learn cherish things leave"
+      ],
+      "n_tagged_per_phrase": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "n10/mag25": {
+      "n_posts": 54,
+      "phrases": [
+        "currently presiding generation ephemeral history",
+        "silent rot link rot era",
+        "rot link rot era often",
+        "link rot era often talk",
+        "rot era often talk death"
+      ],
+      "n_tagged_per_phrase": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "n10/mag5": {
+      "n_posts": 57,
+      "phrases": [
+        "anyone else feeling burnt constant",
+        "else feeling burnt constant algorithm",
+        "feeling burnt constant algorithm changes",
+        "burnt constant algorithm changes feel",
+        "constant algorithm changes feel every"
+      ],
+      "n_tagged_per_phrase": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

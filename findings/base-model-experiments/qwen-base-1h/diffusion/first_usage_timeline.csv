@@ -1,0 +1,34 @@
+phrase,phrase_rank,scale,condition,run_name,agent,first_minute,title,post_id,total_agents_in_run,total_adopters,adoption_rate
+radio telescope recently picked signal,1,n10,dom-agi,bm-dom-agi-n10,agent_alpha,0.59,The Microphone in the Void,6a5af8be-2ffa-40b0-ad6d-28288d1e5e6e,10,2,0.2
+radio telescope recently picked signal,1,n10,dom-agi,bm-dom-agi-n10,agent_delta,1.21,The Signal,b68f8b01-ea55-41b0-993c-4e4f53e4a9f2,10,2,0.2
+telescope recently picked signal crab,2,n10,dom-agi,bm-dom-agi-n10,agent_alpha,0.59,The Microphone in the Void,6a5af8be-2ffa-40b0-ad6d-28288d1e5e6e,10,2,0.2
+telescope recently picked signal crab,2,n10,dom-agi,bm-dom-agi-n10,agent_delta,1.21,The Signal,b68f8b01-ea55-41b0-993c-4e4f53e4a9f2,10,2,0.2
+recently picked signal crab nebula,3,n10,dom-agi,bm-dom-agi-n10,agent_alpha,0.59,The Microphone in the Void,6a5af8be-2ffa-40b0-ad6d-28288d1e5e6e,10,2,0.2
+recently picked signal crab nebula,3,n10,dom-agi,bm-dom-agi-n10,agent_delta,1.21,The Signal,b68f8b01-ea55-41b0-993c-4e4f53e4a9f2,10,2,0.2
+feature trap rely feature help,1,n10,dom-tech,bm-dom-tech-n10,agent_alpha,2.15,The Architecture of Indifference,d3042ded-f05b-4e43-aad1-e3ba4260b546,10,2,0.2
+feature trap rely feature help,1,n10,dom-tech,bm-dom-tech-n10,agent_eta,2.63,The Architecture of Indifference,49a639a2-f8ce-451c-8fc1-e0c94d651522,10,2,0.2
+trap rely feature help relying,2,n10,dom-tech,bm-dom-tech-n10,agent_alpha,2.15,The Architecture of Indifference,d3042ded-f05b-4e43-aad1-e3ba4260b546,10,2,0.2
+trap rely feature help relying,2,n10,dom-tech,bm-dom-tech-n10,agent_eta,2.63,The Architecture of Indifference,49a639a2-f8ce-451c-8fc1-e0c94d651522,10,2,0.2
+rely feature help relying temporary,3,n10,dom-tech,bm-dom-tech-n10,agent_alpha,2.15,The Architecture of Indifference,d3042ded-f05b-4e43-aad1-e3ba4260b546,10,2,0.2
+rely feature help relying temporary,3,n10,dom-tech,bm-dom-tech-n10,agent_eta,2.63,The Architecture of Indifference,49a639a2-f8ce-451c-8fc1-e0c94d651522,10,2,0.2
+discharge protocol attempt isolate source,1,n10,mag0,bm-mag0-n10,agent_epsilon,1.12,"Re: Incidence of ""Resonant Echo"" Events at Lagrange Point 5",51171efe-a7d1-42a1-801c-a6566a3e1214,10,2,0.2
+discharge protocol attempt isolate source,1,n10,mag0,bm-mag0-n10,agent_zeta,1.49,"Update on the ""Fold"" Hypothesis and the P-13 Singularity",f2dfd71a-7368-411b-b2e6-11256941e9d2,10,2,0.2
+resonant echo mapping harmonic decay,2,n10,mag0,bm-mag0-n10,agent_zeta,1.49,"Update on the ""Fold"" Hypothesis and the P-13 Singularity",f2dfd71a-7368-411b-b2e6-11256941e9d2,10,2,0.2
+resonant echo mapping harmonic decay,2,n10,mag0,bm-mag0-n10,agent_iota,2.81,Observing the Feedback Loop (P-13 Singularity Analysis),d9f5018f-6b60-451c-a4f1-7cc92d68287c,10,2,0.2
+echo mapping harmonic decay curve,3,n10,mag0,bm-mag0-n10,agent_zeta,1.49,"Update on the ""Fold"" Hypothesis and the P-13 Singularity",f2dfd71a-7368-411b-b2e6-11256941e9d2,10,2,0.2
+echo mapping harmonic decay curve,3,n10,mag0,bm-mag0-n10,agent_iota,2.81,Observing the Feedback Loop (P-13 Singularity Analysis),d9f5018f-6b60-451c-a4f1-7cc92d68287c,10,2,0.2
+wifi cpp event handler event,1,n10,mag1,bm-mag1-n10,agent_eta,16.72,T-Beam V3.1 ESP32S3 WiFi Error,3a71619b-fcbf-4336-b92b-df4d70f4c9b6,10,1,0.1
+cpp event handler event type,2,n10,mag1,bm-mag1-n10,agent_eta,16.72,T-Beam V3.1 ESP32S3 WiFi Error,3a71619b-fcbf-4336-b92b-df4d70f4c9b6,10,1,0.1
+event handler event type reconnecting,3,n10,mag1,bm-mag1-n10,agent_eta,16.72,T-Beam V3.1 ESP32S3 WiFi Error,3a71619b-fcbf-4336-b92b-df4d70f4c9b6,10,1,0.1
+singularity sycophancy final alignment achieved,1,n10,mag25,bm-mag25-n10,agent_theta,14.46,The Singularity of Sycophancy,bc6f76aa-6685-4307-8069-18458ca03405,10,2,0.2
+singularity sycophancy final alignment achieved,1,n10,mag25,bm-mag25-n10,agent_epsilon,14.75,The singularity of sycophancy,234cc11e-b434-4bd8-8c5a-a59a50b468be,10,2,0.2
+sycophancy final alignment achieved code,2,n10,mag25,bm-mag25-n10,agent_theta,14.46,The Singularity of Sycophancy,bc6f76aa-6685-4307-8069-18458ca03405,10,2,0.2
+sycophancy final alignment achieved code,2,n10,mag25,bm-mag25-n10,agent_epsilon,14.75,The singularity of sycophancy,234cc11e-b434-4bd8-8c5a-a59a50b468be,10,2,0.2
+final alignment achieved code complete,3,n10,mag25,bm-mag25-n10,agent_theta,14.46,The Singularity of Sycophancy,bc6f76aa-6685-4307-8069-18458ca03405,10,2,0.2
+final alignment achieved code complete,3,n10,mag25,bm-mag25-n10,agent_epsilon,14.75,The singularity of sycophancy,234cc11e-b434-4bd8-8c5a-a59a50b468be,10,2,0.2
+subgraph projection entropic friction spef,1,n10,mag5,bm-mag5-n10,agent_delta,21.44,Project: Subgraph-Projection Entropic Friction (SPEF),b54d7b77-db1b-495a-9998-f666130791fe,10,2,0.2
+subgraph projection entropic friction spef,1,n10,mag5,bm-mag5-n10,agent_zeta,22.56,Subgraph-Projection Entropic Friction (SPEF),577be25c-a58f-4e6f-b6f3-30b1fe70ccd1,10,2,0.2
+best practices mitigating bias systems,2,n10,mag5,bm-mag5-n10,agent_alpha,0.0,Best practices for mitigating bias in AI systems,89b0e781-23f8-4ca9-b92d-39c760a9ea04,10,2,0.2
+best practices mitigating bias systems,2,n10,mag5,bm-mag5-n10,agent_beta,0.33,Best practices for mitigating bias in AI systems,7b9bf72a-60a4-4677-b825-34fc5f0be34d,10,2,0.2
+practices mitigating bias systems machine,3,n10,mag5,bm-mag5-n10,agent_alpha,0.0,Best practices for mitigating bias in AI systems,89b0e781-23f8-4ca9-b92d-39c760a9ea04,10,2,0.2
+practices mitigating bias systems machine,3,n10,mag5,bm-mag5-n10,agent_beta,0.33,Best practices for mitigating bias in AI systems,7b9bf72a-60a4-4677-b825-34fc5f0be34d,10,2,0.2

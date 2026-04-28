@@ -26,6 +26,7 @@ TOP_K = 10
 NGRAM_N = 5
 TOP_NGRAMS_PATH = Path("findings/entropy-collapse-multiscale-new-5gram/top_ngrams/top_ngrams.json")
 OUT_DIR = Path("findings/entropy-collapse-scaling/embedding_bridge")
+SCALES = ["n10", "n20", "n30"]
 N_RANDOM_SAMPLES = 1000
 RANDOM_SEED = 42
 
@@ -132,7 +133,7 @@ def main():
     # Load embeddings for all scales
     print("\nLoading embeddings...")
     all_emb_map: dict[str, np.ndarray] = {}
-    for scale in ["n10", "n20", "n30"]:
+    for scale in SCALES:
         scale_embs = load_embeddings(scale)
         all_emb_map.update(scale_embs)
     print(f"  Total embeddings: {len(all_emb_map)}")

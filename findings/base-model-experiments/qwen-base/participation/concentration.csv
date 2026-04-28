@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase,phrase_rank,total_agents,adopters,adoption_rate,total_uses,gini_all_agents,gini_adopters_only,top1_agent_share,top3_agent_share,mean_uses_per_adopter
+n10,dom-agi,bm-dom-agi-n10,recent trends sustainable urban planning,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,phygital paradox indian agri tech,2,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,paradox indian agri tech software,3,10,2,0.2,2,0.8,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,retire million spend year money,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,million spend year money last,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,spend year money last years,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag0,bm-mag0-n10,watched reporter cut away before,1,10,3,0.3,3,0.7,0.0,0.333,1.0,1.0
+n10,mag0,bm-mag0-n10,reporter cut away before name,2,10,3,0.3,3,0.7,0.0,0.333,1.0,1.0
+n10,mag0,bm-mag0-n10,cut away before name did,3,10,3,0.3,3,0.7,0.0,0.333,1.0,1.0
+n10,mag1,bm-mag1-n10,cross platform model uninstallable cross,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,platform model uninstallable cross platform,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,model uninstallable cross platform model,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,vector art vector clip art,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,post truth politics decline fact,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,truth politics decline fact based,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,what's best ensure little privacy,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,best ensure little privacy shared,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,ensure little privacy shared housing,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0

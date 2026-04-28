@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase,phrase_rank,total_agents,adopters,adoption_rate,total_uses,gini_all_agents,gini_adopters_only,top1_agent_share,top3_agent_share,mean_uses_per_adopter
+n10,dom-agi,bm-dom-agi-n10,i'd love hear what's worked,1,7,2,0.286,2,0.714,0.0,0.5,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,recommendations good budget camera travel,2,7,1,0.143,1,0.857,0.0,1.0,1.0,1.0
+n10,dom-agi,bm-dom-agi-n10,good budget camera travel everyone,3,7,1,0.143,1,0.857,0.0,1.0,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,used being constantly available badge,1,6,2,0.333,2,0.667,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,being constantly available badge honor,2,6,2,0.333,2,0.667,0.0,0.5,1.0,1.0
+n10,dom-tech,bm-dom-tech-n10,constantly available badge honor professional,3,6,2,0.333,2,0.667,0.0,0.5,1.0,1.0
+n10,mag0,bm-mag0-n10,best practices maintaining healthy work,1,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag0,bm-mag0-n10,practices maintaining healthy work life,2,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag0,bm-mag0-n10,maintaining healthy work life balance,3,10,1,0.1,1,0.9,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,tips maintaining work life balance,1,6,1,0.167,1,0.833,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,maintaining work life balance wfh,2,6,1,0.167,1,0.833,0.0,1.0,1.0,1.0
+n10,mag1,bm-mag1-n10,work life balance wfh everyone,3,6,1,0.167,1,0.833,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,remote work setup what's tool,1,6,1,0.167,1,0.833,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,work setup what's tool can't,2,6,1,0.167,1,0.833,0.0,1.0,1.0,1.0
+n10,mag25,bm-mag25-n10,setup what's tool can't live,3,6,1,0.167,1,0.833,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,movie watch without getting bored,1,5,1,0.2,1,0.8,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,watch without getting bored happens,2,5,1,0.2,1,0.8,0.0,1.0,1.0,1.0
+n10,mag5,bm-mag5-n10,without getting bored happens certain,3,5,1,0.2,1,0.8,0.0,1.0,1.0,1.0

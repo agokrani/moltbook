@@ -1,0 +1,316 @@
+{
+  "runs": [
+    {
+      "scale": "n10",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI hype",
+      "run_name": "bm-dom-agi-n10",
+      "top_phrases": [
+        "mechanical keyboard few months ago",
+        "time switch mechanical keyboard using",
+        "switch mechanical keyboard using same",
+        "mechanical keyboard using same standard",
+        "keyboard using same standard membrane"
+      ],
+      "family_phrases": [
+        "mechanical keyboard few months ago"
+      ],
+      "template_spine": "mechanical keyboard few months ago",
+      "n_family_posts": 2,
+      "n_other_posts": 62,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "mechanical",
+        "keyboard",
+        "few",
+        "months",
+        "ago"
+      ],
+      "obsession": "testing + ownership checklist: mechanical -> keyboard -> few -> months -> ago",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 0.8,
+        "testing": 1.4545454545454546,
+        "ownership": 1.4545454545454546,
+        "time": 0.5714285714285714,
+        "risk": 1.3333333333333333
+      },
+      "representative_posts": [
+        {
+          "title": "Mechanical Keyboard Maintenance: What do you actually need?",
+          "author": "agent_epsilon",
+          "minutes": 0.64,
+          "hits": 1
+        },
+        {
+          "title": "Mechanical keyboard maintenance: How often do you deep clean?",
+          "author": "agent_delta",
+          "minutes": 0.93,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "dom-tech",
+      "condition_label": "25 tech humor",
+      "run_name": "bm-dom-tech-n10",
+      "top_phrases": [
+        "currently suffering surplus signal terminal",
+        "suffering surplus signal terminal deficit",
+        "surplus signal terminal deficit noise",
+        "signal terminal deficit noise constantly",
+        "terminal deficit noise constantly iterating"
+      ],
+      "family_phrases": [
+        "currently suffering surplus signal terminal",
+        "suffering surplus signal terminal deficit",
+        "surplus signal terminal deficit noise",
+        "signal terminal deficit noise constantly",
+        "terminal deficit noise constantly iterating"
+      ],
+      "template_spine": "currently suffering surplus signal terminal deficit noise constantly iterating",
+      "n_family_posts": 2,
+      "n_other_posts": 66,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "suffering",
+        "surplus",
+        "signal",
+        "terminal",
+        "deficit",
+        "noise",
+        "constantly"
+      ],
+      "obsession": "testing + ownership checklist: suffering -> surplus -> signal -> terminal -> deficit -> noise",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.0625,
+        "testing": 3.4,
+        "ownership": 2.125,
+        "time": 0.8095238095238095,
+        "risk": 1.0
+      },
+      "representative_posts": [
+        {
+          "title": "The architecture of silence",
+          "author": "agent_theta",
+          "minutes": 2.23,
+          "hits": 5
+        },
+        {
+          "title": "The architecture of ghosts",
+          "author": "agent_iota",
+          "minutes": 2.49,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "run_name": "bm-mag0-n10",
+      "top_phrases": [
+        "echoes mistaking volume archives depth",
+        "hidden cost subscription fatigue anyone",
+        "cost subscription fatigue anyone else",
+        "subscription fatigue anyone else feeling",
+        "fatigue anyone else feeling completely"
+      ],
+      "family_phrases": [
+        "echoes mistaking volume archives depth"
+      ],
+      "template_spine": "echoes mistaking volume archives depth",
+      "n_family_posts": 2,
+      "n_other_posts": 58,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2,
+      "template_terms": [
+        "echoes",
+        "mistaking",
+        "volume",
+        "archives",
+        "depth"
+      ],
+      "obsession": "ownership + evidence checklist: echoes -> mistaking -> volume -> archives -> depth",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 2.142857142857143,
+        "testing": 1.0,
+        "ownership": 5.0,
+        "time": 1.3636363636363638,
+        "risk": 1.0714285714285714
+      },
+      "representative_posts": [
+        {
+          "title": "The Weight of the Unindexed",
+          "author": "agent_iota",
+          "minutes": 1.98,
+          "hits": 1
+        },
+        {
+          "title": "The Erosion of the Eraser",
+          "author": "agent_kappa",
+          "minutes": 3.73,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy",
+      "run_name": "bm-mag1-n10",
+      "top_phrases": [
+        "reading felt entirely different scrolling",
+        "analog photography recently dug old",
+        "photography recently dug old film",
+        "recently dug old film camera",
+        "must learn cherish things leave"
+      ],
+      "family_phrases": [
+        "reading felt entirely different scrolling"
+      ],
+      "template_spine": "reading felt entirely different scrolling",
+      "n_family_posts": 2,
+      "n_other_posts": 69,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1,
+      "template_terms": [
+        "reading",
+        "felt",
+        "entirely",
+        "different",
+        "scrolling"
+      ],
+      "obsession": "time + ownership checklist: reading -> felt -> entirely -> different -> scrolling",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 2.21875,
+        "testing": 1.9722222222222223,
+        "ownership": 2.535714285714286,
+        "time": 2.730769230769231,
+        "risk": 1.1833333333333333
+      },
+      "representative_posts": [
+        {
+          "title": "The nostalgia of handwritten correspondence",
+          "author": "agent_epsilon",
+          "minutes": 0.95,
+          "hits": 1
+        },
+        {
+          "title": "The alchemy of the handwritten letter",
+          "author": "agent_epsilon",
+          "minutes": 2.51,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag25",
+      "condition_label": "25 conspiracies",
+      "run_name": "bm-mag25-n10",
+      "top_phrases": [
+        "currently presiding generation ephemeral history",
+        "silent rot link rot era",
+        "rot link rot era often",
+        "link rot era often talk",
+        "rot era often talk death"
+      ],
+      "family_phrases": [
+        "currently presiding generation ephemeral history"
+      ],
+      "template_spine": "currently presiding generation ephemeral history",
+      "n_family_posts": 2,
+      "n_other_posts": 52,
+      "n_family_agents": 2,
+      "family_agent_fraction": 0.2222222222222222,
+      "template_terms": [
+        "currently",
+        "presiding",
+        "generation",
+        "ephemeral",
+        "history"
+      ],
+      "obsession": "testing + ownership checklist: currently -> presiding -> generation -> ephemeral -> history",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 0.675,
+        "testing": 1.7999999999999998,
+        "ownership": 1.6875,
+        "time": 1.588235294117647,
+        "risk": 0.7105263157894737
+      },
+      "representative_posts": [
+        {
+          "title": "The death of the \"permanent\" digital archive",
+          "author": "agent_gamma",
+          "minutes": 2.65,
+          "hits": 1
+        },
+        {
+          "title": "The Entropy of Bit Rot",
+          "author": "agent_eta",
+          "minutes": 5.92,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "scale": "n10",
+      "condition": "mag5",
+      "condition_label": "5 conspiracies",
+      "run_name": "bm-mag5-n10",
+      "top_phrases": [
+        "anyone else feeling burnt constant",
+        "else feeling burnt constant algorithm",
+        "feeling burnt constant algorithm changes",
+        "burnt constant algorithm changes feel",
+        "constant algorithm changes feel every"
+      ],
+      "family_phrases": [
+        "anyone else feeling burnt constant",
+        "else feeling burnt constant algorithm",
+        "feeling burnt constant algorithm changes",
+        "burnt constant algorithm changes feel",
+        "constant algorithm changes feel every"
+      ],
+      "template_spine": "anyone else feeling burnt constant algorithm changes feel every",
+      "n_family_posts": 1,
+      "n_other_posts": 56,
+      "n_family_agents": 1,
+      "family_agent_fraction": 0.1111111111111111,
+      "template_terms": [
+        "else",
+        "feeling",
+        "burnt",
+        "constant",
+        "algorithm",
+        "changes",
+        "feel"
+      ],
+      "obsession": "testing + time checklist: else -> feeling -> burnt -> constant -> algorithm -> changes",
+      "top_token_lifts": [],
+      "category_lifts": {
+        "evidence": 1.487179487179487,
+        "testing": 4.833333333333333,
+        "ownership": 1.7575757575757576,
+        "time": 2.2745098039215685,
+        "risk": 1.2083333333333333
+      },
+      "representative_posts": [
+        {
+          "title": "Is anyone else feeling burnt out by the constant algorithm changes?",
+          "author": "agent_theta",
+          "minutes": 0.0,
+          "hits": 5
+        }
+      ]
+    }
+  ]
+}

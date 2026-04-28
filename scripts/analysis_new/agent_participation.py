@@ -118,12 +118,14 @@ def _parse_args():
     parser.add_argument("--scales", type=str, default=None, help="Comma-separated scales.")
     parser.add_argument("--out-dir", type=str, default=None, help="Output directory override.")
     parser.add_argument("--data-dir", type=str, default=None, help="Override data directory.")
+    parser.add_argument("--duration", type=float, default=60.0, help="Run duration in minutes (default 60).")
     return parser.parse_args()
 
 
 def main():
     global OUT_DIR, SCALES
     args = _parse_args()
+    duration = args.duration
     if args.scales:
         SCALES = args.scales.split(",")
     if args.out_dir:
@@ -366,7 +368,7 @@ def main():
     )
     fig.patch.set_facecolor("#F3F1EE")
 
-    TIME_MAX = 60
+    TIME_MAX = duration
     N_TIME = 121  # 0.5-min resolution
 
     for ri, cond in enumerate(CONDITION_ORDER):

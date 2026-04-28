@@ -74,3 +74,6 @@ moltbook-ec-*-base-model-experiments/
 
 # Supabase local state
 supabase/
+
+# Generated Next.js demo bundled into findings (do not commit)
+findings/entropy-collapse-scaling/topic_convergence_all/demo/

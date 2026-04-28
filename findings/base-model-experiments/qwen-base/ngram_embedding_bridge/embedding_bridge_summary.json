@@ -1,0 +1,88 @@
+{
+  "top_k": 10,
+  "total_embeddings": 324,
+  "matched_posts": 324,
+  "match_rate": 1.0,
+  "results": [
+    {
+      "phrase": "cross platform model uninstallable cross",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "platform model uninstallable cross platform",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "model uninstallable cross platform model",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "uninstallable cross platform model uninstallable",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "retire million spend year money",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "million spend year money last",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "spend year money last years",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "year money last years retire",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "money last years retire million",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    },
+    {
+      "phrase": "last years retire million spend",
+      "n_posts": 1,
+      "within_cosine": 0.0,
+      "baseline_mean": 0.0,
+      "baseline_std": 0.0,
+      "lift": 0.0
+    }
+  ]
+}
