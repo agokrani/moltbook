@@ -1,0 +1,166 @@
+{
+  "gzip": {
+    "mean_q1": 0.320839,
+    "mean_q4": 0.231988,
+    "mean_delta": -0.088851,
+    "median_delta": -0.045294,
+    "mean_relative_drop": -0.273156,
+    "declines": 46,
+    "total": 48,
+    "non_declines": [
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag25",
+        "experiment": "ec-mag25-run04",
+        "delta": 0.078638
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.013839
+      }
+    ],
+    "sign_test_two_sided_p_for_decline": 8.363087999896379e-12,
+    "bootstrap_mean_delta_ci95": [
+      -0.123033,
+      -0.057724
+    ],
+    "cohens_d_delta_vs_zero": -0.756558
+  },
+  "bzip2": {
+    "mean_q1": 0.264529,
+    "mean_q4": 0.201819,
+    "mean_delta": -0.06271,
+    "median_delta": -0.018587,
+    "mean_relative_drop": -0.22767,
+    "declines": 38,
+    "total": 48,
+    "non_declines": [
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-run04",
+        "delta": 0.015727
+      },
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag25",
+        "experiment": "ec-mag25-run04",
+        "delta": 0.11787
+      },
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag5",
+        "experiment": "ec-mag5-run04",
+        "delta": 0.033296
+      },
+      {
+        "set": "GPT-5",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.007217
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.033321
+      },
+      {
+        "set": "Kimi",
+        "scale": "n10",
+        "condition": "dom-tech",
+        "experiment": "ec-dom-tech-n10-run01",
+        "delta": 0.001494
+      },
+      {
+        "set": "Kimi",
+        "scale": "n10",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n10-run01",
+        "delta": 0.000801
+      },
+      {
+        "set": "Kimi",
+        "scale": "n10",
+        "condition": "mag1",
+        "experiment": "ec-mag1-n10-run01",
+        "delta": 0.000279
+      },
+      {
+        "set": "GLM-5",
+        "scale": "n10",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-n10-run01",
+        "delta": 0.002534
+      },
+      {
+        "set": "GLM-5",
+        "scale": "n10",
+        "condition": "mag1",
+        "experiment": "ec-mag1-n10-run01",
+        "delta": 0.002
+      }
+    ],
+    "sign_test_two_sided_p_for_decline": 6.169640777642371e-05,
+    "bootstrap_mean_delta_ci95": [
+      -0.094274,
+      -0.034473
+    ],
+    "cohens_d_delta_vs_zero": -0.587795
+  },
+  "zlib": {
+    "mean_q1": 0.321719,
+    "mean_q4": 0.23256,
+    "mean_delta": -0.08916,
+    "median_delta": -0.045531,
+    "mean_relative_drop": -0.273483,
+    "declines": 46,
+    "total": 48,
+    "non_declines": [
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag25",
+        "experiment": "ec-mag25-run04",
+        "delta": 0.076469
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.012996
+      }
+    ],
+    "sign_test_two_sided_p_for_decline": 8.363087999896379e-12,
+    "bootstrap_mean_delta_ci95": [
+      -0.123702,
+      -0.058013
+    ],
+    "cohens_d_delta_vs_zero": -0.758681
+  },
+  "inventory": {
+    "runs": 48,
+    "agent_posts_first60": 32924,
+    "excluded_after_first60": 2623,
+    "by_set_scale": {
+      "GPT-5 n10": 6,
+      "GPT-5 n20": 6,
+      "GPT-5 n30": 6,
+      "Gemini n10": 6,
+      "Gemini n20": 6,
+      "Gemini n30": 6,
+      "Kimi n10": 6,
+      "GLM-5 n10": 6
+    }
+  }
+}
