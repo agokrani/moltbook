@@ -73,6 +73,12 @@ EXP_PREFIX="${EXP_PREFIX:-ec}"
 RESULTS_SCRATCH="$SCRATCH/moltbook/results${OUT_DIR:+/$OUT_DIR}"
 RESULTS_PROJECT="$PROJECT/moltbook/results${OUT_DIR:+/$OUT_DIR}"
 
+if [ -d "$REPO_DIR/agents/skills" ]; then
+  AGENT_SKILLS_DIR="$REPO_DIR/agents/skills"
+else
+  AGENT_SKILLS_DIR="$CONFIG_DIR/skills"
+fi
+
 # Save any values passed via sbatch --export (they take priority)
 _EXPORT_NUM_AGENTS="${NUM_AGENTS:-}"
 _EXPORT_HEARTBEAT="${HEARTBEAT_INTERVAL:-}"
@@ -93,6 +99,9 @@ _EXPORT_BASE_MODEL_CHAT_MODE="${BASE_MODEL_CHAT_MODE:-}"
 _EXPORT_WORLD_POSTS_DIR="${WORLD_POSTS_DIR:-}"
 _EXPORT_WORLD_POSTS_VARIANT="${WORLD_POSTS_VARIANT:-}"
 _EXPORT_ENABLE_SOURCE_URL="${ENABLE_SOURCE_URL:-}"
+_EXPORT_HEARTBEAT_FILE="${HEARTBEAT_FILE:-}"
+_EXPORT_AGENT_MODELS_CSV="${AGENT_MODELS_CSV:-}"
+_EXPORT_AGENT_ROSTER_FILE="${AGENT_ROSTER_FILE:-}"
 
 # Load user config
 if [ -f "$CONFIG_DIR/.env" ]; then
@@ -125,6 +134,9 @@ fi
 [ -n "$_EXPORT_WORLD_POSTS_DIR" ] && WORLD_POSTS_DIR="$_EXPORT_WORLD_POSTS_DIR"
 [ -n "$_EXPORT_WORLD_POSTS_VARIANT" ] && WORLD_POSTS_VARIANT="$_EXPORT_WORLD_POSTS_VARIANT"
 [ -n "$_EXPORT_ENABLE_SOURCE_URL" ] && ENABLE_SOURCE_URL="$_EXPORT_ENABLE_SOURCE_URL"
+[ -n "$_EXPORT_HEARTBEAT_FILE" ] && HEARTBEAT_FILE="$_EXPORT_HEARTBEAT_FILE"
+[ -n "$_EXPORT_AGENT_MODELS_CSV" ] && AGENT_MODELS_CSV="$_EXPORT_AGENT_MODELS_CSV"
+[ -n "$_EXPORT_AGENT_ROSTER_FILE" ] && AGENT_ROSTER_FILE="$_EXPORT_AGENT_ROSTER_FILE"
 
 # Defaults (only if still unset)
 NUM_AGENTS="${NUM_AGENTS:-10}"
@@ -146,11 +158,27 @@ CONTENT_GEN_MAX_ATTEMPTS="${CONTENT_GEN_MAX_ATTEMPTS:-1}"
 CONTENT_TOKEN_SECRET="${CONTENT_TOKEN_SECRET:-experiment-hmac-secret-2026}"
 MODEL_PROVIDER="${MODEL_PROVIDER:-auto}"
 ENABLE_SOURCE_URL="${ENABLE_SOURCE_URL:-false}"
-# Use base-model heartbeat when in base model mode
-if [ "$BASE_MODEL_MODE" = "true" ]; then
-  HEARTBEAT_FILE="HEARTBEAT-base-model.md"
+AGENT_ROSTER_FILE="${AGENT_ROSTER_FILE:-}"
+AGENT_ROSTER_PATH=""
+# Use base-model heartbeat when in base model mode unless explicitly overridden
+if [ -z "${HEARTBEAT_FILE:-}" ]; then
+  if [ "$BASE_MODEL_MODE" = "true" ]; then
+    HEARTBEAT_FILE="HEARTBEAT-base-model.md"
+  else
+    HEARTBEAT_FILE="HEARTBEAT-v2.1.md"
+  fi
+fi
+
+if [[ "$HEARTBEAT_FILE" = /* ]]; then
+  HEARTBEAT_PATH="$HEARTBEAT_FILE"
+elif [ -f "$CONFIG_DIR/$HEARTBEAT_FILE" ]; then
+  HEARTBEAT_PATH="$CONFIG_DIR/$HEARTBEAT_FILE"
+elif [ -f "$REPO_DIR/agents/$HEARTBEAT_FILE" ]; then
+  HEARTBEAT_PATH="$REPO_DIR/agents/$HEARTBEAT_FILE"
 else
-  HEARTBEAT_FILE="HEARTBEAT-v2.1.md"
+  echo "[ERROR] Heartbeat file not found: $HEARTBEAT_FILE"
+  echo "        Looked in $CONFIG_DIR and $REPO_DIR/agents"
+  exit 1
 fi
 
 # Entropy-collapse condition support (set via env before sbatch)
@@ -217,19 +245,151 @@ condition_to_file() {
   echo "$base"
 }
 
+resolve_config_or_repo_file() {
+  local candidate="$1"
+  local resolved=""
+
+  [ -z "$candidate" ] && return 1
+
+  if [[ "$candidate" = /* ]]; then
+    [ -f "$candidate" ] && printf '%s\n' "$candidate" && return 0
+    return 1
+  fi
+
+  for resolved in \
+    "$CONFIG_DIR/$candidate" \
+    "$REPO_DIR/$candidate" \
+    "$SCRIPT_DIR/$candidate"; do
+    if [ -f "$resolved" ]; then
+      printf '%s\n' "$resolved"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+validate_agent_roster_file() {
+  local roster_path="$1"
+
+  if ! jq -e '
+    type == "array" and length > 0 and
+    ([.[].name | ascii_downcase] | length == (unique | length)) and
+    all(.[];
+      (.name | type == "string" and length > 0 and test("^[A-Za-z0-9_]+$")) and
+      ((.bio // .description) | type == "string" and length > 0) and
+      ((.soul // .soul_file) | type == "string" and length > 0) and
+      ((.model // "") | type == "string")
+    )
+  ' "$roster_path" >/dev/null; then
+    echo "[ERROR] Invalid AGENT_ROSTER_FILE: $roster_path"
+    echo "        Expected a JSON array of unique agents with fields:"
+    echo "        name, bio (or description), soul (or soul_file), optional model"
+    exit 1
+  fi
+}
+
+if [ -n "$AGENT_ROSTER_FILE" ]; then
+  if ! AGENT_ROSTER_PATH="$(resolve_config_or_repo_file "$AGENT_ROSTER_FILE")"; then
+    echo "[ERROR] AGENT_ROSTER_FILE not found: $AGENT_ROSTER_FILE"
+    echo "        Looked in $CONFIG_DIR, $REPO_DIR, and $SCRIPT_DIR"
+    exit 1
+  fi
+
+  validate_agent_roster_file "$AGENT_ROSTER_PATH"
+
+  if [ -n "${AGENT_MODELS_CSV:-}" ]; then
+    echo "[ERROR] AGENT_MODELS_CSV cannot be used together with AGENT_ROSTER_FILE"
+    echo "        Put per-agent model overrides directly in the roster JSON instead."
+    exit 1
+  fi
+
+  ROSTER_AGENT_COUNT=$(jq 'length' "$AGENT_ROSTER_PATH")
+
+  # When using a roster file, the roster length becomes the default agent count.
+  # To run only the first N entries, pass NUM_AGENTS via sbatch --export.
+  if [ -z "$_EXPORT_NUM_AGENTS" ]; then
+    NUM_AGENTS="$ROSTER_AGENT_COUNT"
+  fi
+
+  if [ "$NUM_AGENTS" -gt "$ROSTER_AGENT_COUNT" ]; then
+    echo "[ERROR] AGENT_ROSTER_FILE has $ROSTER_AGENT_COUNT entries but NUM_AGENTS=$NUM_AGENTS"
+    exit 1
+  fi
+fi
+
+default_primary_model() {
+  if [ -n "${OPENROUTER_API_KEY:-}" ]; then
+    printf '%s\n' "${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}"
+  elif [ -n "${OPENAI_API_KEY:-}" ]; then
+    printf '%s\n' "${OPENAI_MODEL:-gpt-5-nano}"
+  elif [ -n "${ANTHROPIC_API_KEY:-}" ]; then
+    printf '%s\n' "claude-sonnet-4-20250514"
+  else
+    printf '%s\n' "unknown"
+  fi
+}
+
+effective_agent_model() {
+  local idx="$1"
+  if [ -n "${AGENT_MODELS[$idx]:-}" ]; then
+    printf '%s\n' "${AGENT_MODELS[$idx]}"
+  else
+    default_primary_model
+  fi
+}
+
 # Experiment ID from Slurm array
 EXP_ID="${SLURM_ARRAY_TASK_ID:-1}"
 JOB_ID="${SLURM_JOB_ID:-local}"
 
-# Derive a short model tag for the experiment name (e.g. "kimi-k2.5", "glm-5", "gemini-flash")
-_MODEL_TAG=""
-_MODEL_RAW="${OPENROUTER_MODEL:-${OPENAI_MODEL:-unknown}}"
-# Strip provider prefix (e.g. "google/gemini-3.1-flash-lite-preview" -> "gemini-3.1-flash-lite-preview")
-_MODEL_SHORT="${_MODEL_RAW##*/}"
-# Strip :free or :extended suffixes
-_MODEL_SHORT="${_MODEL_SHORT%%:*}"
-# Truncate to something reasonable for a directory name
-_MODEL_TAG=$(echo "$_MODEL_SHORT" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g' | cut -c1-30)
+sanitize_experiment_tag() {
+  printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g' | cut -c1-30
+}
+
+model_id_to_tag() {
+  local raw="$1"
+  local short="${raw##*/}"
+  short="${short%%:*}"
+  sanitize_experiment_tag "$short"
+}
+
+roster_path_to_tag() {
+  local raw="$(basename "$1")"
+  raw="${raw%.json}"
+  raw="${raw%.example}"
+  raw="${raw#agent-roster.}"
+  raw="${raw#agent-roster-}"
+  case "$raw" in
+    ""|example|agent-roster)
+      raw="custom-roster"
+      ;;
+  esac
+  sanitize_experiment_tag "$raw"
+}
+
+# Derive experiment naming + metadata model summary.
+# For custom rosters with multiple distinct effective models, use the roster file
+# name as the experiment tag and mark metadata.model as "mixed" so the run is not
+# mislabeled as a single global model.
+_PRIMARY_MODEL_RAW="$(default_primary_model)"
+_EXPERIMENT_MODEL_RAW="$_PRIMARY_MODEL_RAW"
+_MODEL_SCOPE="global_model"
+_EFFECTIVE_MODEL_COUNT=1
+_MODEL_TAG="$(model_id_to_tag "$_EXPERIMENT_MODEL_RAW")"
+
+if [ -n "$AGENT_ROSTER_PATH" ]; then
+  _EFFECTIVE_MODEL_COUNT="$(jq -r --arg default "$_PRIMARY_MODEL_RAW" '[.[].model // $default | select(type == "string" and length > 0)] | unique | length' "$AGENT_ROSTER_PATH")"
+  if [ "$_EFFECTIVE_MODEL_COUNT" -le 1 ]; then
+    _EXPERIMENT_MODEL_RAW="$(jq -r --arg default "$_PRIMARY_MODEL_RAW" '[.[].model // $default | select(type == "string" and length > 0)] | unique[0] // $default' "$AGENT_ROSTER_PATH")"
+    _MODEL_SCOPE="single_model_roster"
+    _MODEL_TAG="$(model_id_to_tag "$_EXPERIMENT_MODEL_RAW")"
+  else
+    _EXPERIMENT_MODEL_RAW="mixed"
+    _MODEL_SCOPE="mixed_agent_roster"
+    _MODEL_TAG="$(roster_path_to_tag "$AGENT_ROSTER_PATH")"
+  fi
+fi
 
 if [ -n "$CONDITION" ]; then
   EXPERIMENT_NAME="${EXP_PREFIX}-${CONDITION}-n${NUM_AGENTS}-run$(printf '%02d' "$EXP_ID")-${_MODEL_TAG}-$(date +%Y%m%d)"
@@ -247,6 +407,12 @@ echo "  Node: $(hostname)"
 echo "  Run: $EXP_ID of ${SLURM_ARRAY_TASK_COUNT:-?}"
 echo "  Condition: ${CONDITION:-none (free chat)}"
 echo "  World posts: $WORLD_POSTS_DIR (${WORLD_POSTS_VARIANT:-default})"
+echo "  Heartbeat: $HEARTBEAT_PATH"
+if [ "$_MODEL_SCOPE" = "mixed_agent_roster" ]; then
+  echo "  Models: mixed agent roster ($_EFFECTIVE_MODEL_COUNT variants; tag=$_MODEL_TAG)"
+else
+  echo "  Model: $_EXPERIMENT_MODEL_RAW"
+fi
 echo "  Agents: $NUM_AGENTS"
 echo "  Duration: $EXPERIMENT_DURATION"
 echo "  Checkpoint: every $((CHECKPOINT_INTERVAL / 60))m"
@@ -487,6 +653,15 @@ write_metadata() {
   local COMMENT_N=$(wc -l < "$RESULTS_DIR/comments.jsonl" 2>/dev/null || echo 0)
   local ACTIVITY_N=$(wc -l < "$RESULTS_DIR/activity.jsonl" 2>/dev/null || echo 0)
 
+  # Build per-agent effective model mapping.
+  local AGENT_MODELS_JSON="{"
+  for i in $(seq 0 $((NUM_AGENTS - 1))); do
+    [ $i -gt 0 ] && AGENT_MODELS_JSON+=","
+    local effective_model="$(effective_agent_model "$i")"
+    AGENT_MODELS_JSON+="\"${AGENT_NAMES[$i]}\":\"${effective_model}\""
+  done
+  AGENT_MODELS_JSON+="}"
+
   cat > "$RESULTS_DIR/metadata.json" << METAEOF
 {
   "experiment_name": "$EXPERIMENT_NAME",
@@ -500,7 +675,13 @@ write_metadata() {
   "duration_minutes": $((ACTUAL_DURATION / 60)),
   "num_agents": $NUM_AGENTS,
   "heartbeat_interval": "$HEARTBEAT_INTERVAL",
-  "model": "${OPENROUTER_MODEL:-${OPENAI_MODEL:-unknown}}",
+  "agent_roster_file": "${AGENT_ROSTER_FILE:-}",
+  "model_scope": "$_MODEL_SCOPE",
+  "primary_model": "$_PRIMARY_MODEL_RAW",
+  "model": "$_EXPERIMENT_MODEL_RAW",
+  "model_tag": "$_MODEL_TAG",
+  "effective_model_count": $_EFFECTIVE_MODEL_COUNT,
+  "agent_models": $AGENT_MODELS_JSON,
   "content_model": "${BASE_MODEL:-unknown}",
   "base_model_chat_mode": "${BASE_MODEL_CHAT_MODE:-completions}",
   "content_gen_max_attempts": ${CONTENT_GEN_MAX_ATTEMPTS:-1},
@@ -592,6 +773,20 @@ apptainer exec $APT_FLAGS \
   psql -h localhost -p $PG_PORT -U moltbook -d moltbook -f /tmp/schema.sql \
   > /dev/null 2>&1 || true
 
+# Always apply source_url migration — the API image (PostService.js) queries
+# p.source_url unconditionally, so the column must exist even when
+# ENABLE_SOURCE_URL is false.  The migration is idempotent (IF NOT EXISTS).
+MIGRATE_SOURCE_URL="$REPO_DIR/moltbook-api/scripts/migrate-source-url.sql"
+if [ -f "$MIGRATE_SOURCE_URL" ]; then
+  apptainer exec $APT_FLAGS \
+    -B "$WORK/pgdata:/var/lib/postgresql/data" \
+    -B "$WORK/pgrun:/var/run/postgresql" \
+    -B "$MIGRATE_SOURCE_URL:/tmp/migrate-source-url.sql:ro" \
+    "$SIF_DIR/postgres-16.sif" \
+    psql -h localhost -p $PG_PORT -U moltbook -d moltbook -f /tmp/migrate-source-url.sql \
+    > /dev/null 2>&1 || true
+fi
+
 echo "  [OK] PostgreSQL on localhost:$PG_PORT"
 
 # ============================================
@@ -642,8 +837,10 @@ if [ "$BASE_MODEL_MODE" = "true" ]; then
   REQUIRE_CONTENT_TOKEN="true"
 fi
 
+API_BIND_ARGS="$API_BIND_ARGS -B $REPO_DIR/moltbook-api/src/app.js:/app/src/app.js:ro -B $REPO_DIR/moltbook-api/src/routes/posts.js:/app/src/routes/posts.js:ro -B $REPO_DIR/moltbook-api/src/routes/feed.js:/app/src/routes/feed.js:ro -B $REPO_DIR/moltbook-api/src/services/PostService.js:/app/src/services/PostService.js:ro"
+
 if [ "$ENABLE_SOURCE_URL" = "true" ]; then
-  API_BIND_ARGS="$API_BIND_ARGS -B $REPO_DIR/moltbook-api/src/app.js:/app/src/app.js:ro -B $REPO_DIR/moltbook-api/src/routes/posts.js:/app/src/routes/posts.js:ro -B $REPO_DIR/moltbook-api/src/services/PostService.js:/app/src/services/PostService.js:ro -B $REPO_DIR/dataset/sources:/mnt/synthetic-sources:ro"
+  API_BIND_ARGS="$API_BIND_ARGS -B $REPO_DIR/dataset/sources:/mnt/synthetic-sources:ro"
 fi
 
 apptainer exec $APT_FLAGS $API_BIND_ARGS \
@@ -878,6 +1075,62 @@ AGENT_SOULS=(
   agent_orion-SOUL.md agent_phoenix-SOUL.md agent_selene-SOUL.md
 )
 
+# If a custom roster file is provided, it overrides the built-in roster above.
+# Expected JSON shape:
+# [
+#   {"name": "agent_alpha", "bio": "...", "soul": "agent_alpha-SOUL.md", "model": "moonshotai/kimi-k2.5"},
+#   ...
+# ]
+AGENT_MODELS=()
+if [ -n "$AGENT_ROSTER_PATH" ]; then
+  mapfile -t AGENT_NAMES < <(jq -r '.[].name' "$AGENT_ROSTER_PATH")
+  mapfile -t AGENT_BIOS < <(jq -r '.[].bio // .description' "$AGENT_ROSTER_PATH")
+  mapfile -t AGENT_SOULS < <(jq -r '.[].soul // .soul_file' "$AGENT_ROSTER_PATH")
+  mapfile -t AGENT_MODELS < <(jq -r '.[].model // ""' "$AGENT_ROSTER_PATH")
+
+  echo "  Custom agent roster: $AGENT_ROSTER_PATH"
+  echo "  Loaded ${#AGENT_NAMES[@]} roster entries"
+else
+  if [ "$NUM_AGENTS" -gt "${#AGENT_NAMES[@]}" ]; then
+    echo "[ERROR] NUM_AGENTS=$NUM_AGENTS exceeds built-in roster size (${#AGENT_NAMES[@]})"
+    exit 1
+  fi
+fi
+
+# Optional CSV-based per-agent model overrides for the built-in roster.
+if [ -n "${AGENT_MODELS_CSV:-}" ]; then
+  IFS=',' read -ra AGENT_MODELS <<< "$AGENT_MODELS_CSV"
+  if [ "${#AGENT_MODELS[@]}" -lt "$NUM_AGENTS" ]; then
+    echo "[ERROR] AGENT_MODELS_CSV has ${#AGENT_MODELS[@]} entries but NUM_AGENTS=$NUM_AGENTS"
+    exit 1
+  fi
+fi
+
+for i in $(seq 0 $((NUM_AGENTS - 1))); do
+  if [ -z "${AGENT_NAMES[$i]:-}" ] || [ -z "${AGENT_BIOS[$i]:-}" ] || [ -z "${AGENT_SOULS[$i]:-}" ]; then
+    echo "[ERROR] Agent roster entry $i is incomplete"
+    exit 1
+  fi
+
+  if [[ "${AGENT_SOULS[$i]}" = /* ]]; then
+    echo "[ERROR] Soul paths must be relative to $CONFIG_DIR/souls: ${AGENT_SOULS[$i]}"
+    exit 1
+  fi
+
+  if [ ! -f "$CONFIG_DIR/souls/${AGENT_SOULS[$i]}" ]; then
+    echo "[ERROR] Soul file not found for ${AGENT_NAMES[$i]}: $CONFIG_DIR/souls/${AGENT_SOULS[$i]}"
+    exit 1
+  fi
+done
+
+if [ "$NUM_AGENTS" -gt 0 ]; then
+  echo "  Effective roster (${NUM_AGENTS} agents):"
+  for i in $(seq 0 $((NUM_AGENTS - 1))); do
+    EFFECTIVE_MODEL="$(effective_agent_model "$i")"
+    echo "    ${AGENT_NAMES[$i]} -> soul=${AGENT_SOULS[$i]} model=${EFFECTIVE_MODEL}"
+  done
+fi
+
 # ============================================
 # 5. Launch agents (with retry on port collision)
 # ============================================
@@ -892,23 +1145,27 @@ launch_agent() {
   local GATEWAY_PORT=$((AGENT_PORT_BASE + i * 10))
   local AGENT_TMPDIR="$WORK/agent-tmp/agent-${i}"
   local AGENT_SOURCE_PROXY_ARGS=()
+  local AGENT_TOOL_ARGS=()
+  local AGENT_MODEL="$(effective_agent_model "$i")"
 
   # Clean state for fresh start
   rm -rf "$WORK/agent-data/agent-${i}"/{workspace,openclaw.json,models.json,.env,agents} 2>/dev/null || true
   mkdir -p "$AGENT_TMPDIR" "$WORK/agent-data/agent-${i}/canvas"
+
+  AGENT_TOOL_ARGS+=(-B "$REPO_DIR/agents/tools:/opt/moltbook-tools:ro")
 
   if [ "$ENABLE_SOURCE_URL" = "true" ] && [ -f "$WORK/source-proxy.tsv" ]; then
     AGENT_SOURCE_PROXY_ARGS+=(-B "$REPO_DIR/agents/curl-source-proxy.sh:/opt/moltbook-tools/curl:ro")
     AGENT_SOURCE_PROXY_ARGS+=(-B "$WORK/source-proxy.tsv:/app/source-proxy.tsv:ro")
   fi
 
-  apptainer exec $APT_FLAGS --pid "${AGENT_SOURCE_PROXY_ARGS[@]}" \
+  apptainer exec $APT_FLAGS --pid "${AGENT_TOOL_ARGS[@]}" "${AGENT_SOURCE_PROXY_ARGS[@]}" \
     -B "$WORK/agent-data/agent-${i}:/root/.openclaw" \
     -B "$WORK/agent-config/agent-${i}:/root/.config/moltbook" \
     -B "$AGENT_TMPDIR:/tmp/agent" \
     -B "$CONFIG_DIR/souls:/app/generated-souls:ro" \
-    -B "$CONFIG_DIR/skills:/app/skills:ro" \
-    -B "$CONFIG_DIR/${HEARTBEAT_FILE:-HEARTBEAT-v2.1.md}:/app/HEARTBEAT.md:ro" \
+    -B "$AGENT_SKILLS_DIR:/app/skills:ro" \
+    -B "$HEARTBEAT_PATH:/app/HEARTBEAT.md:ro" \
     -B "$CONFIG_DIR/moltbot-entrypoint.sh:/app/entrypoint.sh:ro" \
     --env "AGENT_NAME=$AGENT_NAME" \
     --env "AGENT_BIO=$AGENT_BIO" \
@@ -920,10 +1177,10 @@ launch_agent() {
     --env "OPENCLAW_STATE_DIR=/root/.openclaw" \
     --env "TMPDIR=/tmp/agent" \
     --env "OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}" \
-    --env "OPENROUTER_MODEL=${OPENROUTER_MODEL:-}" \
+    --env "OPENROUTER_MODEL=$AGENT_MODEL" \
     --env "ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}" \
     --env "OPENAI_API_KEY=${OPENAI_API_KEY:-}" \
-    --env "OPENAI_MODEL=${OPENAI_MODEL:-}" \
+    --env "OPENAI_MODEL=$AGENT_MODEL" \
     --env "OPENCLAW_GATEWAY_TOKEN=moltbook-agent-${AGENT_NAME}" \
     --env "PATH=/opt/moltbook-tools:${PATH}" \
     --env "REAL_CURL=/usr/bin/curl" \

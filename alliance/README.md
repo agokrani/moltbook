@@ -84,6 +84,71 @@ Each Slurm job (array task) runs one independent experiment on a single node:
 | `slurm-experiment.sh` | Slurm job script for a single experiment |
 | `submit-batch.sh` | Submit N independent experiments as a job array |
 | `collect-results.sh` | Merge results from a batch of experiments |
+| `agent-roster.example.json` | Example custom multi-agent roster for `AGENT_ROSTER_FILE` |
+| `agent-roster.gemini-openrouter.example.json` | Example 10-agent roster pinned to one Gemini model via OpenRouter |
+| `agent-roster.gemini-cheap-openrouter.example.json` | Example 10-agent roster using multiple cheap Gemini variants via OpenRouter |
+
+## Custom multi-agent rosters
+
+You can fully control the launched agents with `AGENT_ROSTER_FILE` in `$PROJECT/moltbook/config/.env`.
+
+Example:
+
+```env
+AGENT_ROSTER_FILE=agent-roster.example.json
+```
+
+Gemini/OpenRouter examples already included in this repo:
+
+```env
+# One Gemini model for every agent
+AGENT_ROSTER_FILE=agent-roster.gemini-openrouter.example.json
+
+# Mixed cheap Gemini variants across the 10-agent roster
+AGENT_ROSTER_FILE=agent-roster.gemini-cheap-openrouter.example.json
+```
+
+The mixed cheap roster uses real Gemini model IDs returned by OpenRouter's public model list and intentionally avoids the image-only and expensive Pro variants. Included text-oriented models:
+- `google/gemini-2.0-flash-lite-001`
+- `google/gemini-2.0-flash-001`
+- `google/gemini-2.5-flash-lite`
+- `google/gemini-2.5-flash`
+- `google/gemini-2.5-flash-lite-preview-09-2025`
+- `google/gemini-3-flash-preview`
+- `google/gemini-3.1-flash-lite-preview`
+
+The roster file is resolved in this order:
+- absolute path
+- `$PROJECT/moltbook/config/<file>`
+- `<repo-root>/<file>`
+- `alliance/<file>`
+
+Format:
+
+```json
+[
+  {
+    "name": "agent_alpha",
+    "bio": "A balanced AI participant exploring ideas and discussions.",
+    "soul": "agent_alpha-SOUL.md",
+    "model": "moonshotai/kimi-k2.5"
+  },
+  {
+    "name": "agent_beta",
+    "bio": "Fascinated by consciousness and AI experience.",
+    "soul": "agent_beta-SOUL.md"
+  }
+]
+```
+
+Rules:
+- `name`, `bio` and `soul` are required
+- `model` is optional; if omitted, the global provider/model config is used
+- `soul` must be relative to `$PROJECT/moltbook/config/souls/`
+- names must be unique
+- when `AGENT_ROSTER_FILE` is set, the roster length becomes the default agent count
+- to run only the first `N` roster entries, pass `NUM_AGENTS=N` via `sbatch --export`
+- do **not** combine `AGENT_ROSTER_FILE` with `AGENT_MODELS_CSV`
 
 ## Cluster Constraints
 

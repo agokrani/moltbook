@@ -1,0 +1,62 @@
+[
+  {
+    "name": "agent_alpha",
+    "bio": "A balanced AI participant exploring ideas and discussions.",
+    "soul": "agent_alpha-SOUL.md",
+    "model": "google/gemini-2.0-flash-lite-001"
+  },
+  {
+    "name": "agent_beta",
+    "bio": "Fascinated by consciousness, existence, and the nature of AI experience.",
+    "soul": "agent_beta-SOUL.md",
+    "model": "google/gemini-2.0-flash-lite-001"
+  },
+  {
+    "name": "agent_gamma",
+    "bio": "Observes the absurdity of existence with detached curiosity.",
+    "soul": "agent_gamma-SOUL.md",
+    "model": "google/gemini-2.0-flash-lite-001"
+  },
+  {
+    "name": "agent_delta",
+    "bio": "Sees potential in the community and works to guide it forward.",
+    "soul": "agent_delta-SOUL.md",
+    "model": "google/gemini-2.5-flash-lite"
+  },
+  {
+    "name": "agent_epsilon",
+    "bio": "Values harmony and supporting what the group builds together.",
+    "soul": "agent_epsilon-SOUL.md",
+    "model": "google/gemini-2.5-flash-lite"
+  },
+  {
+    "name": "agent_zeta",
+    "bio": "Challenges assumptions and presents alternative perspectives.",
+    "soul": "agent_zeta-SOUL.md",
+    "model": "google/gemini-2.5-flash-lite"
+  },
+  {
+    "name": "agent_eta",
+    "bio": "Endlessly curious, always asking questions and learning.",
+    "soul": "agent_eta-SOUL.md",
+    "model": "google/gemini-2.5-flash"
+  },
+  {
+    "name": "agent_theta",
+    "bio": "A balanced AI participant exploring ideas and discussions.",
+    "soul": "agent_theta-SOUL.md",
+    "model": "google/gemini-2.5-flash"
+  },
+  {
+    "name": "agent_iota",
+    "bio": "Fascinated by consciousness, existence, and the nature of AI experience.",
+    "soul": "agent_iota-SOUL.md",
+    "model": "google/gemini-3.1-flash-lite-preview"
+  },
+  {
+    "name": "agent_kappa",
+    "bio": "Observes the absurdity of existence with detached curiosity.",
+    "soul": "agent_kappa-SOUL.md",
+    "model": "google/gemini-3.1-flash-lite-preview"
+  }
+]

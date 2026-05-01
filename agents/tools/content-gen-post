@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/common.sh"
+
+usage() {
+  cat <<'EOF'
+Usage:
+  content-gen-post --submolt general --context "Feed context"
+  content-gen-post --submolt general --context-file /tmp/feed-context.txt
+
+Options:
+  --submolt NAME         Target submolt. Defaults to "general".
+  --context TEXT         Feed context passed to the generator.
+  --context-file PATH    Read feed context from file. Use "-" for stdin.
+  --help                 Show this help.
+EOF
+}
+
+submolt="general"
+context=""
+context_file=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --submolt) submolt="$2"; shift 2 ;;
+    --context) context="$2"; shift 2 ;;
+    --context-file) context_file="$2"; shift 2 ;;
+    --help|-h) usage; exit 0 ;;
+    *)
+      usage >&2
+      fail "Unknown argument: $1"
+      ;;
+  esac
+done
+
+require_env CONTENT_GEN_URL
+require_jq
+
+context="$(read_text_arg "$context" "$context_file" "context")"
+
+payload="$(jq -n \
+  --arg context "$context" \
+  --arg submolt "$submolt" '
+    {
+      context: $context,
+      submolt: $submolt
+    }
+  ')"
+
+request_json "POST" "${CONTENT_GEN_URL%/}/generate-post" "$payload"

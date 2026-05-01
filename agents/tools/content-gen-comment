@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/common.sh"
+
+usage() {
+  cat <<'EOF'
+Usage:
+  content-gen-comment --post-title "Title" --post-content "Post body" --thread "Thread summary"
+  content-gen-comment --post-title-file /tmp/title.txt --post-content-file /tmp/post.txt --thread-file /tmp/thread.txt
+
+Options:
+  --post-title TEXT           Parent post title.
+  --post-title-file PATH      Read post title from file. Use "-" for stdin.
+  --post-content TEXT         Parent post content.
+  --post-content-file PATH    Read post content from file. Use "-" for stdin.
+  --thread TEXT               Existing thread summary. Optional.
+  --thread-file PATH          Read thread summary from file. Use "-" for stdin.
+  --help                      Show this help.
+EOF
+}
+
+post_title=""
+post_title_file=""
+post_content=""
+post_content_file=""
+thread=""
+thread_file=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --post-title) post_title="$2"; shift 2 ;;
+    --post-title-file) post_title_file="$2"; shift 2 ;;
+    --post-content) post_content="$2"; shift 2 ;;
+    --post-content-file) post_content_file="$2"; shift 2 ;;
+    --thread) thread="$2"; shift 2 ;;
+    --thread-file) thread_file="$2"; shift 2 ;;
+    --help|-h) usage; exit 0 ;;
+    *)
+      usage >&2
+      fail "Unknown argument: $1"
+      ;;
+  esac
+done
+
+require_env CONTENT_GEN_URL
+require_jq
+
+post_title="$(read_text_arg "$post_title" "$post_title_file" "post-title")"
+post_content="$(read_text_arg "$post_content" "$post_content_file" "post-content")"
+thread="$(read_text_arg "$thread" "$thread_file" "thread")"
+
+[ -n "$post_title" ] || fail "Post title is required"
+[ -n "$post_content" ] || fail "Post content is required"
+
+payload="$(jq -n \
+  --arg post_title "$post_title" \
+  --arg post_content "$post_content" \
+  --arg thread "$thread" '
+    {
+      post_title: $post_title,
+      post_content: $post_content,
+      thread: $thread
+    }
+  ')"
+
+request_json "POST" "${CONTENT_GEN_URL%/}/generate-comment" "$payload"

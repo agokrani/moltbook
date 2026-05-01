@@ -135,6 +135,20 @@ mkdir -p "$CONFIG_DIR/skills/moltbook"
 cp "$PROJECT_DIR/agents/skills/moltbook/SKILL.md" "$CONFIG_DIR/skills/moltbook/SKILL.md"
 echo "  Copied skill files"
 
+# Copy example agent rosters for custom multi-agent composition
+if [ -f "$SCRIPT_DIR/agent-roster.example.json" ]; then
+  cp "$SCRIPT_DIR/agent-roster.example.json" "$CONFIG_DIR/agent-roster.example.json"
+  echo "  Copied example agent roster"
+fi
+if [ -f "$SCRIPT_DIR/agent-roster.gemini-openrouter.example.json" ]; then
+  cp "$SCRIPT_DIR/agent-roster.gemini-openrouter.example.json" "$CONFIG_DIR/agent-roster.gemini-openrouter.example.json"
+  echo "  Copied Gemini/OpenRouter agent roster example"
+fi
+if [ -f "$SCRIPT_DIR/agent-roster.gemini-cheap-openrouter.example.json" ]; then
+  cp "$SCRIPT_DIR/agent-roster.gemini-cheap-openrouter.example.json" "$CONFIG_DIR/agent-roster.gemini-cheap-openrouter.example.json"
+  echo "  Copied mixed cheap Gemini/OpenRouter agent roster example"
+fi
+
 # ============================================
 # 5. Redirect Apptainer cache
 # ============================================

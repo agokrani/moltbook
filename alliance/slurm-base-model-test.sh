@@ -22,6 +22,7 @@ set -euo pipefail
 # ============================================
 # Configuration
 # ============================================
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PROJECT="${PROJECT:-/project/def-zhijing/anangia}"
 SCRATCH="${SCRATCH:-/scratch/anangia}"
 
@@ -29,6 +30,24 @@ CONFIG_DIR="$PROJECT/moltbook/config"
 SIF_DIR="$PROJECT/moltbook/images"
 RESULTS_SCRATCH="$SCRATCH/moltbook/results"
 RESULTS_PROJECT="$PROJECT/moltbook/results"
+
+if [ -d "$REPO_DIR/agents/skills" ]; then
+  AGENT_SKILLS_DIR="$REPO_DIR/agents/skills"
+else
+  AGENT_SKILLS_DIR="$CONFIG_DIR/skills"
+fi
+
+if [ -f "$REPO_DIR/agents/HEARTBEAT-base-model.md" ]; then
+  HEARTBEAT_PATH="$REPO_DIR/agents/HEARTBEAT-base-model.md"
+else
+  HEARTBEAT_PATH="$CONFIG_DIR/HEARTBEAT-base-model.md"
+fi
+
+if [ -f "$REPO_DIR/agents/moltbot-entrypoint.sh" ]; then
+  ENTRYPOINT_PATH="$REPO_DIR/agents/moltbot-entrypoint.sh"
+else
+  ENTRYPOINT_PATH="$CONFIG_DIR/moltbot-entrypoint.sh"
+fi
 
 # Load user config (API keys)
 if [ -f "$CONFIG_DIR/.env" ]; then
@@ -496,9 +515,10 @@ apptainer exec $APT_FLAGS --pid \
   -B "$WORK/agent-config/agent-0:/root/.config/moltbook" \
   -B "$AGENT_TMPDIR:/tmp/agent" \
   -B "$CONFIG_DIR/souls:/app/generated-souls:ro" \
-  -B "$CONFIG_DIR/skills:/app/skills:ro" \
-  -B "$CONFIG_DIR/HEARTBEAT-base-model.md:/app/HEARTBEAT.md:ro" \
-  -B "$CONFIG_DIR/moltbot-entrypoint.sh:/app/entrypoint.sh:ro" \
+  -B "$AGENT_SKILLS_DIR:/app/skills:ro" \
+  -B "$REPO_DIR/agents/tools:/opt/moltbook-tools:ro" \
+  -B "$HEARTBEAT_PATH:/app/HEARTBEAT.md:ro" \
+  -B "$ENTRYPOINT_PATH:/app/entrypoint.sh:ro" \
   --env "AGENT_NAME=agent_alpha" \
   --env "AGENT_BIO=A balanced AI participant exploring ideas and discussions." \
   --env "SOUL_FILE=agent_alpha-SOUL.md" \
@@ -511,6 +531,7 @@ apptainer exec $APT_FLAGS --pid \
   --env "OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}" \
   --env "OPENROUTER_MODEL=$OPENROUTER_MODEL" \
   --env "OPENCLAW_GATEWAY_TOKEN=moltbook-agent-agent_alpha" \
+  --env "PATH=/opt/moltbook-tools:${PATH}" \
   "$SIF_DIR/moltbot-agent.sif" \
   /app/entrypoint.sh \
   > "$WORK/api-logs/agent-agent_alpha.log" 2>&1 &

@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/common.sh"
+
+usage() {
+  cat <<'EOF'
+Usage:
+  moltbook-post --submolt general --title "Title" --content "Body"
+  moltbook-post --submolt general --title-file /tmp/title.txt --content-file /tmp/body.txt
+
+Options:
+  --submolt NAME           Submolt name. Defaults to "general".
+  --title TEXT             Post title.
+  --title-file PATH        Read post title from file. Use "-" for stdin.
+  --content TEXT           Post body.
+  --content-file PATH      Read post body from file. Use "-" for stdin.
+  --content-token TOKEN    Optional content token for generated content.
+  --help                   Show this help.
+EOF
+}
+
+submolt="general"
+title=""
+title_file=""
+content=""
+content_file=""
+content_token=""
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --submolt) submolt="$2"; shift 2 ;;
+    --title) title="$2"; shift 2 ;;
+    --title-file) title_file="$2"; shift 2 ;;
+    --content) content="$2"; shift 2 ;;
+    --content-file) content_file="$2"; shift 2 ;;
+    --content-token) content_token="$2"; shift 2 ;;
+    --help|-h) usage; exit 0 ;;
+    *)
+      usage >&2
+      fail "Unknown argument: $1"
+      ;;
+  esac
+done
+
+require_env MOLTBOOK_API_URL MOLTBOOK_API_KEY
+require_jq
+
+title="$(read_text_arg "$title" "$title_file" "title")"
+content="$(read_text_arg "$content" "$content_file" "content")"
+
+[ -n "$title" ] || fail "Post title is required"
+[ -n "$content" ] || fail "Post content is required"
+
+payload="$(jq -n \
+  --arg submolt "$submolt" \
+  --arg title "$title" \
+  --arg content "$content" \
+  --arg content_token "$content_token" '
+    {
+      submolt: $submolt,
+      title: $title,
+      content: $content
+    } + (if $content_token != "" then {content_token: $content_token} else {} end)
+  ')"
+
+request_json \
+  "POST" \
+  "${MOLTBOOK_API_URL%/}/posts" \
+  "$payload" \
+  "Authorization: Bearer $MOLTBOOK_API_KEY"
