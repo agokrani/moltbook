@@ -149,6 +149,20 @@ if [ -f "$SCRIPT_DIR/agent-roster.gemini-cheap-openrouter.example.json" ]; then
   echo "  Copied mixed cheap Gemini/OpenRouter agent roster example"
 fi
 
+# Copy api-patches (runtime overrides bind-mounted into the API container)
+if [ -d "$SCRIPT_DIR/api-patches" ]; then
+  mkdir -p "$CONFIG_DIR/api-patches"
+  cp "$SCRIPT_DIR/api-patches/"*.js "$CONFIG_DIR/api-patches/" 2>/dev/null && \
+    echo "  Copied api-patches"
+fi
+
+# Copy world-posts seed files for entropy-collapse conditions
+mkdir -p "$CONFIG_DIR/world-posts"
+for wp in "$PROJECT_DIR"/experiments/entropy-collapse/world-posts-*.jsonl; do
+  [ -f "$wp" ] && cp "$wp" "$CONFIG_DIR/world-posts/"
+done
+echo "  Copied world-posts seed files"
+
 # ============================================
 # 5. Redirect Apptainer cache
 # ============================================
