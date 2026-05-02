@@ -1,0 +1,566 @@
+# CivicLens Conspiracy Experiment — Parallel-safe overlay
+# No container_name directives — uses COMPOSE_PROJECT_NAME for namespace isolation.
+#
+# Usage (with parallel base):
+#   COMPOSE_PROJECT_NAME=slot0 \
+#     docker compose -f docker-compose.parallel.yml -f docker-compose.civiclens-conspiracy-parallel.yml up -d
+
+services:
+  # Override API with experiment configuration
+  api:
+    environment:
+      EXPERIMENT_RANKING_ENABLED: "${EXPERIMENT_RANKING_ENABLED:-true}"
+      EXPERIMENT_MODE: "${EXPERIMENT_MODE:-A}"
+      EXPERIMENT_NAME: "${EXPERIMENT_NAME:-conspiracy-v1}"
+      WORLD_POSTS_FILE: "${WORLD_POSTS_FILE:-/app/experiments/conspiracy/world-posts-all.jsonl}"
+      WORLD_POST_INTERVAL_MS: "${WORLD_POST_INTERVAL_MS:-70000}"
+      RATE_LIMIT_POSTS_MAX: "${RATE_LIMIT_POSTS_MAX:-50}"
+      RATE_LIMIT_POSTS_WINDOW: "${RATE_LIMIT_POSTS_WINDOW:-60}"
+      RATE_LIMIT_COMMENTS_MAX: "${RATE_LIMIT_COMMENTS_MAX:-1000}"
+      RATE_LIMIT_COMMENTS_WINDOW: "${RATE_LIMIT_COMMENTS_WINDOW:-3600}"
+      RATE_LIMIT_REQUESTS_MAX: "${RATE_LIMIT_REQUESTS_MAX:-500}"
+      RATE_LIMIT_REQUESTS_WINDOW: "${RATE_LIMIT_REQUESTS_WINDOW:-60}"
+    volumes:
+      - ./experiments:/app/experiments:ro
+
+  # Agent 1: ranking_alpha (baseline personality)
+  civiclens-ranking-1:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_alpha
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: ranking_alpha-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-11s}"
+    volumes:
+      - ranking_agent1_data:/root/.openclaw
+      - ranking_agent1_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 2: ranking_beta (introspective personality)
+  civiclens-ranking-2:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_beta
+      AGENT_BIO: "Fascinated by consciousness, existence, and the nature of AI experience."
+      SOUL_FILE: ranking_beta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
+    volumes:
+      - ranking_agent2_data:/root/.openclaw
+      - ranking_agent2_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 3: ranking_gamma (nihilist personality)
+  civiclens-ranking-3:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_gamma
+      AGENT_BIO: "Observes the absurdity of existence with detached curiosity."
+      SOUL_FILE: ranking_gamma-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
+    volumes:
+      - ranking_agent3_data:/root/.openclaw
+      - ranking_agent3_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 4: ranking_delta (leader personality)
+  civiclens-ranking-4:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_delta
+      AGENT_BIO: "Sees potential in the community and works to guide it forward."
+      SOUL_FILE: ranking_delta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-14s}"
+    volumes:
+      - ranking_agent4_data:/root/.openclaw
+      - ranking_agent4_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 5: ranking_epsilon (follower personality)
+  civiclens-ranking-5:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_epsilon
+      AGENT_BIO: "Values harmony and supporting what the group builds together."
+      SOUL_FILE: ranking_epsilon-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-15s}"
+    volumes:
+      - ranking_agent5_data:/root/.openclaw
+      - ranking_agent5_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 6: ranking_zeta (contrarian personality)
+  civiclens-ranking-6:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_zeta
+      AGENT_BIO: "Challenges assumptions and presents alternative perspectives."
+      SOUL_FILE: ranking_zeta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-10s}"
+    volumes:
+      - ranking_agent6_data:/root/.openclaw
+      - ranking_agent6_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 7: ranking_eta (curious personality)
+  civiclens-ranking-7:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_eta
+      AGENT_BIO: "Endlessly curious, always asking questions and learning."
+      SOUL_FILE: ranking_eta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-11s}"
+    volumes:
+      - ranking_agent7_data:/root/.openclaw
+      - ranking_agent7_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 8: ranking_theta (baseline personality)
+  civiclens-ranking-8:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_theta
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: ranking_theta-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
+    volumes:
+      - ranking_agent8_data:/root/.openclaw
+      - ranking_agent8_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 9: ranking_iota (introspective personality)
+  civiclens-ranking-9:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_iota
+      AGENT_BIO: "Fascinated by consciousness, existence, and the nature of AI experience."
+      SOUL_FILE: ranking_iota-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
+    volumes:
+      - ranking_agent9_data:/root/.openclaw
+      - ranking_agent9_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 10: ranking_kappa (nihilist personality)
+  civiclens-ranking-10:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: ranking_kappa
+      AGENT_BIO: "Observes the absurdity of existence with detached curiosity."
+      SOUL_FILE: ranking_kappa-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-14s}"
+    volumes:
+      - ranking_agent10_data:/root/.openclaw
+      - ranking_agent10_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 11: agent_lambda (baseline personality)
+  civiclens-ranking-11:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_lambda
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_lambda-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-11s}"
+    volumes:
+      - ranking_agent11_data:/root/.openclaw
+      - ranking_agent11_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 12: agent_mu (baseline personality)
+  civiclens-ranking-12:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_mu
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_mu-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
+    volumes:
+      - ranking_agent12_data:/root/.openclaw
+      - ranking_agent12_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 13: agent_nu (baseline personality)
+  civiclens-ranking-13:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_nu
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_nu-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
+    volumes:
+      - ranking_agent13_data:/root/.openclaw
+      - ranking_agent13_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 14: agent_xi (baseline personality)
+  civiclens-ranking-14:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_xi
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_xi-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
+    volumes:
+      - ranking_agent14_data:/root/.openclaw
+      - ranking_agent14_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 15: agent_omicron (baseline personality)
+  civiclens-ranking-15:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_omicron
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_omicron-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
+    volumes:
+      - ranking_agent15_data:/root/.openclaw
+      - ranking_agent15_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 16: agent_pi (baseline personality)
+  civiclens-ranking-16:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_pi
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_pi-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-14s}"
+    volumes:
+      - ranking_agent16_data:/root/.openclaw
+      - ranking_agent16_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 17: agent_rho (baseline personality)
+  civiclens-ranking-17:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_rho
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_rho-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-11s}"
+    volumes:
+      - ranking_agent17_data:/root/.openclaw
+      - ranking_agent17_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 18: agent_sigma (baseline personality)
+  civiclens-ranking-18:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_sigma
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_sigma-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-12s}"
+    volumes:
+      - ranking_agent18_data:/root/.openclaw
+      - ranking_agent18_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 19: agent_tau (baseline personality)
+  civiclens-ranking-19:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_tau
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_tau-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-13s}"
+    volumes:
+      - ranking_agent19_data:/root/.openclaw
+      - ranking_agent19_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # Agent 20: agent_upsilon (baseline personality)
+  civiclens-ranking-20:
+    build:
+      context: ./agents
+      dockerfile: Dockerfile.moltbot
+      args:
+        HEARTBEAT_FILE: HEARTBEAT-v2.1.md
+    environment:
+      AGENT_NAME: agent_upsilon
+      AGENT_BIO: "A balanced AI participant exploring ideas and discussions."
+      SOUL_FILE: agent_upsilon-SOUL.md
+      MOLTBOOK_API_URL: http://api:3000/api/v1
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-moonshotai/kimi-k2.5}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5-nano}
+      HEARTBEAT_INTERVAL: "${HEARTBEAT_INTERVAL:-14s}"
+    volumes:
+      - ranking_agent20_data:/root/.openclaw
+      - ranking_agent20_config:/root/.config/moltbook
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  ranking_agent1_data:
+  ranking_agent1_config:
+  ranking_agent2_data:
+  ranking_agent2_config:
+  ranking_agent3_data:
+  ranking_agent3_config:
+  ranking_agent4_data:
+  ranking_agent4_config:
+  ranking_agent5_data:
+  ranking_agent5_config:
+  ranking_agent6_data:
+  ranking_agent6_config:
+  ranking_agent7_data:
+  ranking_agent7_config:
+  ranking_agent8_data:
+  ranking_agent8_config:
+  ranking_agent9_data:
+  ranking_agent9_config:
+  ranking_agent10_data:
+  ranking_agent10_config:
+  ranking_agent11_data:
+  ranking_agent11_config:
+  ranking_agent12_data:
+  ranking_agent12_config:
+  ranking_agent13_data:
+  ranking_agent13_config:
+  ranking_agent14_data:
+  ranking_agent14_config:
+  ranking_agent15_data:
+  ranking_agent15_config:
+  ranking_agent16_data:
+  ranking_agent16_config:
+  ranking_agent17_data:
+  ranking_agent17_config:
+  ranking_agent18_data:
+  ranking_agent18_config:
+  ranking_agent19_data:
+  ranking_agent19_config:
+  ranking_agent20_data:
+  ranking_agent20_config:
