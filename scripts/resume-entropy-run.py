@@ -176,6 +176,8 @@ def main():
                     help="Override remaining duration in minutes")
     ap.add_argument("--slot", type=int, default=0,
                     help="Parallel slot index (0=default ports, 1+=shifted by 100)")
+    ap.add_argument("--suffix", default="resumed",
+                    help="Output suffix (default 'resumed' → exports/<run>-resumed/)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -190,9 +192,9 @@ def main():
     duration_min = args.duration_min or REMAINING_MIN.get(args.run_name, 17)
     duration_sec = duration_min * 60
     model = CONDITION_MODEL[cond]
-    project = f"resume-{args.run_name}".replace("_", "-")
+    project = f"resume-{args.run_name}-{args.suffix}".replace("_", "-")
     env_file = str(PROJECT / ".env.entropy-resume")
-    out_dir = PROJECT / "exports" / f"{args.run_name}-resumed"
+    out_dir = PROJECT / "exports" / f"{args.run_name}-{args.suffix}"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     api_port = 4000 + args.slot * 100
@@ -200,7 +202,7 @@ def main():
     redis_port = 6379 + args.slot * 100
     env = {
         "OPENROUTER_MODEL": model,
-        "EXPERIMENT_NAME": f"{args.run_name}-resumed",
+        "EXPERIMENT_NAME": f"{args.run_name}-{args.suffix}",
         "EXPERIMENT_MODE": "C",
         "EXPERIMENT_RANKING_ENABLED": "true",
         "WORLD_POSTS_FILE": EMPTY_WORLD_POSTS,
@@ -378,7 +380,7 @@ def main():
             "HOST_API_PORT": str(api_port),
         }
         run([str(PROJECT / "scripts/export-experiment-parallel.sh"),
-             f"{args.run_name}-resumed"],
+             f"{args.run_name}-{args.suffix}"],
             env=export_env, check=False)
 
     finally:

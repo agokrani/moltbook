@@ -104,11 +104,19 @@ def clean_agents(inpath: Path) -> tuple[list[str], int]:
 
 
 def count_window_posts(posts_lines: list[str]) -> int:
-    """Posts created in the resume window (2026-05-*)."""
+    """Posts created in the resume window (2026-05-*).
+
+    Parses each line as JSON because clean_jsonl() re-serializes via
+    json.dumps with default separators (', ', ': '), so the substring
+    '"created_at":"2026-05...' (no space) won't match.
+    """
     n = 0
     for line in posts_lines:
-        if '"created_at":"2026-05' in line:
-            n += 1
+        try:
+            if json.loads(line).get("created_at", "").startswith("2026-05"):
+                n += 1
+        except json.JSONDecodeError:
+            continue
     return n
 
 
