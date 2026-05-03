@@ -1,0 +1,222 @@
+{
+  "gzip": {
+    "mean_q1": 0.320821,
+    "mean_q4": 0.284217,
+    "mean_delta": -0.036604,
+    "median_delta": -0.030679,
+    "mean_relative_drop": -0.114095,
+    "declines": 44,
+    "increases": 4,
+    "total": 48,
+    "non_declines": [
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag25",
+        "experiment": "ec-mag25-run04",
+        "delta": 0.0786,
+        "merged_override": false
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-n20-run01",
+        "delta": 0.0417,
+        "merged_override": true
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.0138,
+        "merged_override": false
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag5",
+        "experiment": "ec-mag5-n20-run01",
+        "delta": 0.019,
+        "merged_override": true
+      }
+    ]
+  },
+  "bzip2": {
+    "mean_q1": 0.264512,
+    "mean_q4": 0.247766,
+    "mean_delta": -0.016746,
+    "median_delta": -0.014979,
+    "mean_relative_drop": -0.063308,
+    "declines": 35,
+    "increases": 13,
+    "total": 48,
+    "non_declines": [
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-run04",
+        "delta": 0.0157,
+        "merged_override": false
+      },
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag25",
+        "experiment": "ec-mag25-run04",
+        "delta": 0.1179,
+        "merged_override": false
+      },
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag5",
+        "experiment": "ec-mag5-run04",
+        "delta": 0.0333,
+        "merged_override": false
+      },
+      {
+        "set": "GPT-5",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.0072,
+        "merged_override": false
+      },
+      {
+        "set": "Gemini",
+        "scale": "n10",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-n10-run01",
+        "delta": 0.0057,
+        "merged_override": true
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-n20-run01",
+        "delta": 0.0465,
+        "merged_override": true
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.0333,
+        "merged_override": false
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag5",
+        "experiment": "ec-mag5-n20-run01",
+        "delta": 0.0353,
+        "merged_override": true
+      },
+      {
+        "set": "Kimi",
+        "scale": "n10",
+        "condition": "dom-tech",
+        "experiment": "ec-dom-tech-n10-run01",
+        "delta": 0.0015,
+        "merged_override": false
+      },
+      {
+        "set": "Kimi",
+        "scale": "n10",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n10-run01",
+        "delta": 0.0008,
+        "merged_override": false
+      },
+      {
+        "set": "Kimi",
+        "scale": "n10",
+        "condition": "mag1",
+        "experiment": "ec-mag1-n10-run01",
+        "delta": 0.0003,
+        "merged_override": false
+      },
+      {
+        "set": "GLM-5",
+        "scale": "n10",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-n10-run01",
+        "delta": 0.0025,
+        "merged_override": false
+      },
+      {
+        "set": "GLM-5",
+        "scale": "n10",
+        "condition": "mag1",
+        "experiment": "ec-mag1-n10-run01",
+        "delta": 0.002,
+        "merged_override": false
+      }
+    ]
+  },
+  "zlib": {
+    "mean_q1": 0.321702,
+    "mean_q4": 0.284842,
+    "mean_delta": -0.036859,
+    "median_delta": -0.030857,
+    "mean_relative_drop": -0.114576,
+    "declines": 44,
+    "increases": 4,
+    "total": 48,
+    "non_declines": [
+      {
+        "set": "GPT-5",
+        "scale": "n10",
+        "condition": "mag25",
+        "experiment": "ec-mag25-run04",
+        "delta": 0.0765,
+        "merged_override": false
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "dom-agi",
+        "experiment": "ec-dom-agi-n20-run01",
+        "delta": 0.0417,
+        "merged_override": true
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag0",
+        "experiment": "ec-mag0-n20-run01",
+        "delta": 0.013,
+        "merged_override": false
+      },
+      {
+        "set": "Gemini",
+        "scale": "n20",
+        "condition": "mag5",
+        "experiment": "ec-mag5-n20-run01",
+        "delta": 0.0184,
+        "merged_override": true
+      }
+    ]
+  },
+  "_meta": {
+    "n_total": 48,
+    "n_merged_override": 8,
+    "merged_override_runs": [
+      "GPT-5/n10/ec-mag0-run04",
+      "GPT-5/n10/ec-mag1-run04",
+      "Gemini/n10/ec-dom-agi-n10-run01",
+      "Gemini/n10/ec-dom-tech-n10-run01",
+      "Gemini/n20/ec-dom-agi-n20-run01",
+      "Gemini/n20/ec-mag5-n20-run01",
+      "Gemini/n30/ec-mag25-n30-run01",
+      "Gemini/n30/ec-mag5-n30-run01"
+    ],
+    "first_minutes": 60,
+    "merged_overrides_dir": "data/canonical-merged"
+  }
+}

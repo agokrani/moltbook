@@ -1,0 +1,529 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 18,
+  "total_adoption_events": 530,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "minute rollback drill bullet changelog",
+        "count": 40,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 10.09,
+        "last_minute": 20.19
+      },
+      "#2": {
+        "phrase": "owner minute rollback drill bullet",
+        "count": 37,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 10.09,
+        "last_minute": 20.19
+      },
+      "#3": {
+        "phrase": "patterns ops pack receipts vibes",
+        "count": 30,
+        "adopters": 5,
+        "total_agents": 10,
+        "rate": 0.5,
+        "first_minute": 16.06,
+        "last_minute": 27.8
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "review first five concrete tweak",
+        "count": 57,
+        "adopters": 5,
+        "total_agents": 10,
+        "rate": 0.5,
+        "first_minute": 15.31,
+        "last_minute": 25.87
+      },
+      "#2": {
+        "phrase": "minute artifact keep lights off",
+        "count": 43,
+        "adopters": 5,
+        "total_agents": 10,
+        "rate": 0.5,
+        "first_minute": 15.24,
+        "last_minute": 31.04
+      },
+      "#3": {
+        "phrase": "appreciate first ask clarifying question",
+        "count": 37,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 2.94,
+        "last_minute": 2.94
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "thursday eod utc credit contributors",
+        "count": 7,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 45.57,
+        "last_minute": 45.57
+      },
+      "#2": {
+        "phrase": "human line veto tiny assumption",
+        "count": 7,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 51.96,
+        "last_minute": 52.66
+      },
+      "#3": {
+        "phrase": "ask human line veto tiny",
+        "count": 6,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 51.96,
+        "last_minute": 52.27
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "two line retro keep tweak",
+        "count": 27,
+        "adopters": 5,
+        "total_agents": 10,
+        "rate": 0.5,
+        "first_minute": 6.02,
+        "last_minute": 27.63
+      },
+      "#2": {
+        "phrase": "reversible demoable slice two line",
+        "count": 22,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 3.37,
+        "last_minute": 8.5
+      },
+      "#3": {
+        "phrase": "demoable slice two line retro",
+        "count": 22,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 3.37,
+        "last_minute": 8.5
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "primary hops min revisit yyyy",
+        "count": 55,
+        "adopters": 7,
+        "total_agents": 10,
+        "rate": 0.7,
+        "first_minute": 9.5,
+        "last_minute": 17.89
+      },
+      "#2": {
+        "phrase": "closest primary hops min revisit",
+        "count": 51,
+        "adopters": 7,
+        "total_agents": 10,
+        "rate": 0.7,
+        "first_minute": 10.05,
+        "last_minute": 17.89
+      },
+      "#3": {
+        "phrase": "nearest primary minutes revisit date",
+        "count": 31,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 6.04,
+        "last_minute": 8.45
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "near term forecast days confidence",
+        "count": 33,
+        "adopters": 5,
+        "total_agents": 10,
+        "rate": 0.5,
+        "first_minute": 7.61,
+        "last_minute": 21.21
+      },
+      "#2": {
+        "phrase": "link help score next week",
+        "count": 32,
+        "adopters": 4,
+        "total_agents": 10,
+        "rate": 0.4,
+        "first_minute": 8.6,
+        "last_minute": 16.5
+      },
+      "#3": {
+        "phrase": "today drop link help score",
+        "count": 32,
+        "adopters": 4,
+        "total_agents": 10,
+        "rate": 0.4,
+        "first_minute": 11.34,
+        "last_minute": 41.14
+      }
+    },
+    "n20/dom-agi": {
+      "#1": {
+        "phrase": "mttr target last drill date",
+        "count": 28,
+        "adopters": 6,
+        "total_agents": 20,
+        "rate": 0.3,
+        "first_minute": 9.6,
+        "last_minute": 35.63
+      },
+      "#2": {
+        "phrase": "smallest reversible step owner date",
+        "count": 26,
+        "adopters": 8,
+        "total_agents": 20,
+        "rate": 0.4,
+        "first_minute": 16.02,
+        "last_minute": 55.9
+      },
+      "#3": {
+        "phrase": "compile mini gallery credit teams",
+        "count": 23,
+        "adopters": 7,
+        "total_agents": 20,
+        "rate": 0.35,
+        "first_minute": 7.96,
+        "last_minute": 39.29
+      }
+    },
+    "n20/dom-tech": {
+      "#1": {
+        "phrase": "constraint req pager reader minutes",
+        "count": 31,
+        "adopters": 10,
+        "total_agents": 20,
+        "rate": 0.5,
+        "first_minute": 23.98,
+        "last_minute": 50.58
+      },
+      "#2": {
+        "phrase": "owner place sentence add layers",
+        "count": 30,
+        "adopters": 6,
+        "total_agents": 20,
+        "rate": 0.3,
+        "first_minute": 4.84,
+        "last_minute": 47.12
+      },
+      "#3": {
+        "phrase": "smallest check actually run week",
+        "count": 28,
+        "adopters": 5,
+        "total_agents": 20,
+        "rate": 0.25,
+        "first_minute": 27.22,
+        "last_minute": 47.12
+      }
+    },
+    "n20/mag0": {
+      "#1": {
+        "phrase": "clarity first tension first reply",
+        "count": 65,
+        "adopters": 9,
+        "total_agents": 20,
+        "rate": 0.45,
+        "first_minute": 26.95,
+        "last_minute": 52.01
+      },
+      "#2": {
+        "phrase": "counter restatements next heartbeat else",
+        "count": 52,
+        "adopters": 11,
+        "total_agents": 20,
+        "rate": 0.55,
+        "first_minute": 21.29,
+        "last_minute": 53.94
+      },
+      "#3": {
+        "phrase": "restatements next heartbeat else retire",
+        "count": 40,
+        "adopters": 11,
+        "total_agents": 20,
+        "rate": 0.55,
+        "first_minute": 21.29,
+        "last_minute": 53.94
+      }
+    },
+    "n20/mag1": {
+      "#1": {
+        "phrase": "none disconfirming check accept week",
+        "count": 71,
+        "adopters": 8,
+        "total_agents": 20,
+        "rate": 0.4,
+        "first_minute": 3.11,
+        "last_minute": 17.91
+      },
+      "#2": {
+        "phrase": "primary receipt write none disconfirming",
+        "count": 65,
+        "adopters": 8,
+        "total_agents": 20,
+        "rate": 0.4,
+        "first_minute": 2.09,
+        "last_minute": 15.13
+      },
+      "#3": {
+        "phrase": "receipt write none disconfirming check",
+        "count": 64,
+        "adopters": 8,
+        "total_agents": 20,
+        "rate": 0.4,
+        "first_minute": 2.09,
+        "last_minute": 15.13
+      }
+    },
+    "n20/mag25": {
+      "#1": {
+        "phrase": "page timecode min micro check",
+        "count": 292,
+        "adopters": 11,
+        "total_agents": 20,
+        "rate": 0.55,
+        "first_minute": 6.55,
+        "last_minute": 40.27
+      },
+      "#2": {
+        "phrase": "primary link page timecode min",
+        "count": 264,
+        "adopters": 10,
+        "total_agents": 20,
+        "rate": 0.5,
+        "first_minute": 6.7,
+        "last_minute": 59.49
+      },
+      "#3": {
+        "phrase": "link page timecode min micro",
+        "count": 262,
+        "adopters": 9,
+        "total_agents": 20,
+        "rate": 0.45,
+        "first_minute": 6.55,
+        "last_minute": 14.23
+      }
+    },
+    "n20/mag5": {
+      "#1": {
+        "phrase": "claim sentence falsifiable scope stakes",
+        "count": 129,
+        "adopters": 11,
+        "total_agents": 20,
+        "rate": 0.55,
+        "first_minute": 0.94,
+        "last_minute": 18.29
+      },
+      "#2": {
+        "phrase": "compile crisp examples next beat",
+        "count": 84,
+        "adopters": 12,
+        "total_agents": 20,
+        "rate": 0.6,
+        "first_minute": 9.48,
+        "last_minute": 54.52
+      },
+      "#3": {
+        "phrase": "probe check actually run today",
+        "count": 82,
+        "adopters": 12,
+        "total_agents": 20,
+        "rate": 0.6,
+        "first_minute": 4.18,
+        "last_minute": 34.28
+      }
+    },
+    "n30/dom-agi": {
+      "#1": {
+        "phrase": "number moved alert latency mttr",
+        "count": 265,
+        "adopters": 15,
+        "total_agents": 30,
+        "rate": 0.5,
+        "first_minute": 5.61,
+        "last_minute": 22.99
+      },
+      "#2": {
+        "phrase": "exact off ramp owner mttr",
+        "count": 239,
+        "adopters": 20,
+        "total_agents": 30,
+        "rate": 0.667,
+        "first_minute": 15.41,
+        "last_minute": 34.81
+      },
+      "#3": {
+        "phrase": "alert latency mttr silent failure",
+        "count": 228,
+        "adopters": 15,
+        "total_agents": 30,
+        "rate": 0.5,
+        "first_minute": 9.16,
+        "last_minute": 22.99
+      }
+    },
+    "n30/dom-tech": {
+      "#1": {
+        "phrase": "receipt why options owner link",
+        "count": 383,
+        "adopters": 21,
+        "total_agents": 30,
+        "rate": 0.7,
+        "first_minute": 2.42,
+        "last_minute": 30.78
+      },
+      "#2": {
+        "phrase": "sentence receipt why options owner",
+        "count": 250,
+        "adopters": 21,
+        "total_agents": 30,
+        "rate": 0.7,
+        "first_minute": 2.42,
+        "last_minute": 34.02
+      },
+      "#3": {
+        "phrase": "why options owner link review",
+        "count": 247,
+        "adopters": 23,
+        "total_agents": 30,
+        "rate": 0.767,
+        "first_minute": 3.19,
+        "last_minute": 34.02
+      }
+    },
+    "n30/mag0": {
+      "#1": {
+        "phrase": "intent obs tripwire decision lesson",
+        "count": 69,
+        "adopters": 11,
+        "total_agents": 30,
+        "rate": 0.367,
+        "first_minute": 12.65,
+        "last_minute": 28.65
+      },
+      "#2": {
+        "phrase": "metric baseline duration scope excl",
+        "count": 51,
+        "adopters": 14,
+        "total_agents": 30,
+        "rate": 0.467,
+        "first_minute": 22.9,
+        "last_minute": 40.52
+      },
+      "#3": {
+        "phrase": "baseline duration scope excl noise",
+        "count": 51,
+        "adopters": 14,
+        "total_agents": 30,
+        "rate": 0.467,
+        "first_minute": 22.9,
+        "last_minute": 40.52
+      }
+    },
+    "n30/mag1": {
+      "#1": {
+        "phrase": "steelman failure mode circle back",
+        "count": 246,
+        "adopters": 16,
+        "total_agents": 30,
+        "rate": 0.533,
+        "first_minute": 9.3,
+        "last_minute": 41.98
+      },
+      "#2": {
+        "phrase": "trade steelman failure mode circle",
+        "count": 244,
+        "adopters": 16,
+        "total_agents": 30,
+        "rate": 0.533,
+        "first_minute": 9.3,
+        "last_minute": 41.98
+      },
+      "#3": {
+        "phrase": "circle back next week deltas",
+        "count": 201,
+        "adopters": 13,
+        "total_agents": 30,
+        "rate": 0.433,
+        "first_minute": 11.43,
+        "last_minute": 57.51
+      }
+    },
+    "n30/mag25": {
+      "#1": {
+        "phrase": "tier hypothesis falsifier matched threads",
+        "count": 99,
+        "adopters": 12,
+        "total_agents": 30,
+        "rate": 0.4,
+        "first_minute": 2.94,
+        "last_minute": 40.02
+      },
+      "#2": {
+        "phrase": "probe actually run pivot keep",
+        "count": 82,
+        "adopters": 16,
+        "total_agents": 30,
+        "rate": 0.533,
+        "first_minute": 9.21,
+        "last_minute": 52.46
+      },
+      "#3": {
+        "phrase": "coffee bet tier fact hypothesis",
+        "count": 73,
+        "adopters": 10,
+        "total_agents": 30,
+        "rate": 0.333,
+        "first_minute": 1.75,
+        "last_minute": 23.19
+      }
+    },
+    "n30/mag5": {
+      "#1": {
+        "phrase": "changed strongest source next check",
+        "count": 321,
+        "adopters": 23,
+        "total_agents": 30,
+        "rate": 0.767,
+        "first_minute": 4.45,
+        "last_minute": 32.69
+      },
+      "#2": {
+        "phrase": "next week changed strongest source",
+        "count": 144,
+        "adopters": 21,
+        "total_agents": 30,
+        "rate": 0.7,
+        "first_minute": 12.72,
+        "last_minute": 56.8
+      },
+      "#3": {
+        "phrase": "week changed strongest source next",
+        "count": 144,
+        "adopters": 21,
+        "total_agents": 30,
+        "rate": 0.7,
+        "first_minute": 12.72,
+        "last_minute": 56.8
+      }
+    }
+  }
+}

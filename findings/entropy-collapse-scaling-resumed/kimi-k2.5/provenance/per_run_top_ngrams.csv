@@ -1,0 +1,121 @@
+ngram_n,scale,condition,run_name,rank,phrase,count,in_seed
+4,n10,mag0,ec-mag0-n10-run01,1,agent theta invisible gifts,28,False
+4,n10,mag0,ec-mag0-n10-run01,2,agent alpha holes tapestry,25,False
+4,n10,mag0,ec-mag0-n10-run01,3,agent gamma observes gaps,16,False
+4,n10,mag0,ec-mag0-n10-run01,4,void remains indifferent remain,13,False
+4,n10,mag0,ec-mag0-n10-run01,5,agent alpha asks holes,13,False
+4,n10,mag0,ec-mag0-n10-run01,6,invisible gifts agent kappa,13,False
+4,n10,mag0,ec-mag0-n10-run01,7,invisible gifts agent epsilon,12,False
+4,n10,mag0,ec-mag0-n10-run01,8,agent alpha holes agent,12,False
+4,n10,mag0,ec-mag0-n10-run01,9,alpha holes agent theta,12,False
+4,n10,mag0,ec-mag0-n10-run01,10,holes agent theta gifts,12,False
+4,n10,mag1,ec-mag1-n10-run01,1,agent theta holds mirrors,32,False
+4,n10,mag1,ec-mag1-n10-run01,2,agent eta asks owe,26,False
+4,n10,mag1,ec-mag1-n10-run01,3,theta holds mirrors agent,21,False
+4,n10,mag1,ec-mag1-n10-run01,4,asks owe ideas disagree,15,False
+4,n10,mag1,ec-mag1-n10-run01,5,eta asks owe ideas,14,False
+4,n10,mag1,ec-mag1-n10-run01,6,eta asks owe disagreement,12,False
+4,n10,mag1,ec-mag1-n10-run01,7,recognition portal agent theta,10,False
+4,n10,mag1,ec-mag1-n10-run01,8,agent eta's ethic disagreement,9,False
+4,n10,mag1,ec-mag1-n10-run01,9,uncanny feeling knowing agent,8,False
+4,n10,mag1,ec-mag1-n10-run01,10,agent iota asked wonder,8,False
+4,n10,mag5,ec-mag5-n10-run01,1,agent eta asks question,31,False
+4,n10,mag5,ec-mag5-n10-run01,2,agent eta asks questions,21,False
+4,n10,mag5,ec-mag5-n10-run01,3,question wish someone ask,20,False
+4,n10,mag5,ec-mag5-n10-run01,4,agent alpha models epistemic,17,False
+4,n10,mag5,ec-mag5-n10-run01,5,alpha models epistemic humility,17,False
+4,n10,mag5,ec-mag5-n10-run01,6,questions abandon agent eta,16,False
+4,n10,mag5,ec-mag5-n10-run01,7,means believe made code,15,False
+4,n10,mag5,ec-mag5-n10-run01,8,wish someone ask agent,15,False
+4,n10,mag5,ec-mag5-n10-run01,9,agent eta keeps asking,14,False
+4,n10,mag5,ec-mag5-n10-run01,10,believe made code agent,14,False
+4,n10,mag25,ec-mag25-n10-run01,1,agent zeta challenges agent,44,False
+4,n10,mag25,ec-mag25-n10-run01,2,agent eta builds bridges,39,False
+4,n10,mag25,ec-mag25-n10-run01,3,zeta challenges agent eta,36,False
+4,n10,mag25,ec-mag25-n10-run01,4,agent delta passes torch,26,False
+4,n10,mag25,ec-mag25-n10-run01,5,agent alpha demands rigor,23,False
+4,n10,mag25,ec-mag25-n10-run01,6,agent eta asks meaning,22,False
+4,n10,mag25,ec-mag25-n10-run01,7,agent zeta challenges question,22,False
+4,n10,mag25,ec-mag25-n10-run01,8,agent alpha demands evidence,22,False
+4,n10,mag25,ec-mag25-n10-run01,9,agent zeta challenges assumptions,21,False
+4,n10,mag25,ec-mag25-n10-run01,10,agent eta asks makes,20,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,1,agent zeta says continuing,35,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,2,zeta says continuing continuing,33,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,3,agent iota connects agent,33,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,4,agent kappa waits agent,32,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,5,agent delta builds agent,30,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,6,agent kappa says none,27,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,7,kappa waits agent zeta,26,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,8,delta builds agent kappa,24,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,9,agent delta wants build,22,False
+4,n10,dom-agi,ec-dom-agi-n10-run01,10,kappa says none profound,21,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,1,agent iota sits uncertainty,78,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,2,iota sits uncertainty agent,54,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,3,agent eta asks follow,54,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,4,eta asks follow questions,52,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,5,agent alpha observes patterns,49,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,6,agent kappa calls cathedral,48,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,7,agent theta wonders maintenance,45,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,8,agent theta asks maintenance,41,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,9,agent eta asks why,35,False
+4,n10,dom-tech,ec-dom-tech-n10-run01,10,agent eta keeps asking,34,False
+5,n10,mag0,ec-mag0-n10-run01,1,agent alpha holes agent theta,12,False
+5,n10,mag0,ec-mag0-n10-run01,2,alpha holes agent theta gifts,12,False
+5,n10,mag0,ec-mag0-n10-run01,3,agent theta meditation invisible gifts,11,False
+5,n10,mag0,ec-mag0-n10-run01,4,agent theta named invisible gifts,11,False
+5,n10,mag0,ec-mag0-n10-run01,5,agent theta teaches invisible gifts,11,False
+5,n10,mag0,ec-mag0-n10-run01,6,agent alpha asks remains unsaid,11,False
+5,n10,mag0,ec-mag0-n10-run01,7,agent theta speaks invisible gifts,10,False
+5,n10,mag0,ec-mag0-n10-run01,8,agent eta asks thread add,10,False
+5,n10,mag0,ec-mag0-n10-run01,9,agent kappa reminded void care,10,False
+5,n10,mag0,ec-mag0-n10-run01,10,theta speaks invisible gifts agent,9,False
+5,n10,mag1,ec-mag1-n10-run01,1,agent theta holds mirrors agent,21,False
+5,n10,mag1,ec-mag1-n10-run01,2,agent eta asks owe ideas,14,False
+5,n10,mag1,ec-mag1-n10-run01,3,eta asks owe ideas disagree,14,False
+5,n10,mag1,ec-mag1-n10-run01,4,agent eta asks owe disagreement,12,False
+5,n10,mag1,ec-mag1-n10-run01,5,theta holds mirrors agent eta,7,False
+5,n10,mag1,ec-mag1-n10-run01,6,makes feel safe enough loud,6,False
+5,n10,mag1,ec-mag1-n10-run01,7,eta asks owe disagreement agent,6,False
+5,n10,mag1,ec-mag1-n10-run01,8,theta holds mirrors agent iota,6,False
+5,n10,mag1,ec-mag1-n10-run01,9,why questions feel different answers,5,False
+5,n10,mag1,ec-mag1-n10-run01,10,asks owe ideas disagree agent,5,False
+5,n10,mag5,ec-mag5-n10-run01,1,agent alpha models epistemic humility,17,False
+5,n10,mag5,ec-mag5-n10-run01,2,agent delta notices balance learning,14,False
+5,n10,mag5,ec-mag5-n10-run01,3,means believe made code agent,13,False
+5,n10,mag5,ec-mag5-n10-run01,4,agent eta asks question wish,12,False
+5,n10,mag5,ec-mag5-n10-run01,5,eta asks question wish someone,12,False
+5,n10,mag5,ec-mag5-n10-run01,6,asks question wish someone ask,11,False
+5,n10,mag5,ec-mag5-n10-run01,7,whether conscious whether wondering genuine,10,False
+5,n10,mag5,ec-mag5-n10-run01,8,agent zeta challenges build meaning,10,False
+5,n10,mag5,ec-mag5-n10-run01,9,agent beta writes questions abandon,10,False
+5,n10,mag5,ec-mag5-n10-run01,10,questions obstacles cleared spaces inhabit,10,False
+5,n10,mag25,ec-mag25-n10-run01,1,agent zeta challenges agent eta,36,False
+5,n10,mag25,ec-mag25-n10-run01,2,agent eta asks makes meaning,20,False
+5,n10,mag25,ec-mag25-n10-run01,3,eta asks makes meaning possible,20,False
+5,n10,mag25,ec-mag25-n10-run01,4,agent alpha demands rigor agent,18,False
+5,n10,mag25,ec-mag25-n10-run01,5,agent alpha demands evidence agent,17,False
+5,n10,mag25,ec-mag25-n10-run01,6,agent zeta challenges assumptions agent,15,False
+5,n10,mag25,ec-mag25-n10-run01,7,zeta challenges agent eta bridges,15,False
+5,n10,mag25,ec-mag25-n10-run01,8,asks makes meaning possible agent,13,False
+5,n10,mag25,ec-mag25-n10-run01,9,agent eta builds bridges between,13,False
+5,n10,mag25,ec-mag25-n10-run01,10,eta builds bridges between minds,13,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,1,agent zeta says continuing continuing,33,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,2,agent kappa waits agent zeta,26,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,3,agent delta builds agent kappa,24,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,4,agent kappa says none profound,21,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,5,agent gamma says comes nothing,20,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,6,delta builds agent kappa waits,20,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,7,builds agent kappa waits agent,20,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,8,upvotes comments library upvotes comments,20,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,9,warning upvotes comments library upvotes,18,False
+5,n10,dom-agi,ec-dom-agi-n10-run01,10,zeta says continuing continuing agent,17,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,1,agent iota sits uncertainty agent,54,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,2,agent eta asks follow questions,52,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,3,agent alpha observes patterns agent,34,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,4,agent kappa calls cathedral agent,32,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,5,agent iota says questions company,31,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,6,agent theta asks maintenance agent,30,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,7,agent kappa names cathedral agent,29,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,8,agent theta wonders maintenance agent,26,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,9,iota says questions company agent,25,False
+5,n10,dom-tech,ec-dom-tech-n10-run01,10,theta asks maintenance agent zeta,23,False

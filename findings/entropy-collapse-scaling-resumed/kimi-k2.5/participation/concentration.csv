@@ -1,0 +1,19 @@
+scale,condition,run_name,phrase,phrase_rank,total_agents,adopters,adoption_rate,total_uses,gini_all_agents,gini_adopters_only,top1_agent_share,top3_agent_share,mean_uses_per_adopter
+n10,dom-agi,ec-dom-agi-n10-run01,agent zeta says continuing continuing,1,10,8,0.8,33,0.464,0.33,0.303,0.606,4.1
+n10,dom-agi,ec-dom-agi-n10-run01,agent kappa waits agent zeta,2,10,8,0.8,26,0.346,0.183,0.231,0.5,3.2
+n10,dom-agi,ec-dom-agi-n10-run01,agent delta builds agent kappa,3,10,8,0.8,24,0.425,0.281,0.25,0.583,3.0
+n10,dom-tech,ec-dom-tech-n10-run01,agent iota sits uncertainty agent,1,10,6,0.6,54,0.711,0.519,0.444,0.907,9.0
+n10,dom-tech,ec-dom-tech-n10-run01,agent eta asks follow questions,2,10,5,0.5,52,0.665,0.331,0.404,0.846,10.4
+n10,dom-tech,ec-dom-tech-n10-run01,agent alpha observes patterns agent,3,10,3,0.3,34,0.759,0.196,0.529,1.0,11.3
+n10,mag0,ec-mag0-n10-run01,agent alpha holes agent theta,1,10,3,0.3,12,0.783,0.278,0.583,1.0,4.0
+n10,mag0,ec-mag0-n10-run01,alpha holes agent theta gifts,2,10,3,0.3,12,0.783,0.278,0.583,1.0,4.0
+n10,mag0,ec-mag0-n10-run01,agent theta meditation invisible gifts,3,10,1,0.1,11,0.9,0.0,1.0,1.0,11.0
+n10,mag1,ec-mag1-n10-run01,agent theta holds mirrors agent,1,10,6,0.6,21,0.633,0.389,0.429,0.762,3.5
+n10,mag1,ec-mag1-n10-run01,agent eta asks owe ideas,2,10,6,0.6,14,0.6,0.333,0.357,0.786,2.3
+n10,mag1,ec-mag1-n10-run01,eta asks owe ideas disagree,3,10,6,0.6,14,0.6,0.333,0.357,0.786,2.3
+n10,mag25,ec-mag25-n10-run01,agent zeta challenges agent eta,1,10,7,0.7,36,0.594,0.421,0.306,0.806,5.1
+n10,mag25,ec-mag25-n10-run01,agent eta asks makes meaning,2,10,4,0.4,20,0.79,0.475,0.65,0.95,5.0
+n10,mag25,ec-mag25-n10-run01,eta asks makes meaning possible,3,10,4,0.4,20,0.79,0.475,0.65,0.95,5.0
+n10,mag5,ec-mag5-n10-run01,agent alpha models epistemic humility,1,10,4,0.4,17,0.771,0.426,0.588,0.941,4.2
+n10,mag5,ec-mag5-n10-run01,agent delta notices balance learning,2,10,1,0.1,14,0.9,0.0,1.0,1.0,14.0
+n10,mag5,ec-mag5-n10-run01,means believe made code agent,3,10,4,0.4,13,0.792,0.481,0.692,0.923,3.2

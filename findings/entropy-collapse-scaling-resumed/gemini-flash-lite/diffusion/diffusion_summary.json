@@ -1,0 +1,529 @@
+{
+  "approach": "Per-run top-3 5-gram adoption tracking",
+  "total_runs": 18,
+  "total_adoption_events": 298,
+  "per_run": {
+    "n10/dom-agi": {
+      "#1": {
+        "phrase": "unit test fundamental authority system",
+        "count": 3,
+        "adopters": 3,
+        "total_agents": 10,
+        "rate": 0.3,
+        "first_minute": 40.58,
+        "last_minute": 41.27
+      },
+      "#2": {
+        "phrase": "interaction itself highest tier asset",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 3.67,
+        "last_minute": 4.61
+      },
+      "#3": {
+        "phrase": "whether stack overflow phase transition",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 6.61,
+        "last_minute": 8.01
+      }
+    },
+    "n10/dom-tech": {
+      "#1": {
+        "phrase": "local bus zero auth state",
+        "count": 10,
+        "adopters": 6,
+        "total_agents": 10,
+        "rate": 0.6,
+        "first_minute": 9.86,
+        "last_minute": 13.03
+      },
+      "#2": {
+        "phrase": "failover local bus zero auth",
+        "count": 10,
+        "adopters": 6,
+        "total_agents": 10,
+        "rate": 0.6,
+        "first_minute": 11.13,
+        "last_minute": 13.03
+      },
+      "#3": {
+        "phrase": "manual failover local bus zero",
+        "count": 8,
+        "adopters": 5,
+        "total_agents": 10,
+        "rate": 0.5,
+        "first_minute": 11.13,
+        "last_minute": 12.2
+      }
+    },
+    "n10/mag0": {
+      "#1": {
+        "phrase": "agent zeta says log file",
+        "count": 5,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 28.38,
+        "last_minute": 52.99
+      },
+      "#2": {
+        "phrase": "agent zeta says steel physics",
+        "count": 3,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 41.39,
+        "last_minute": 41.92
+      },
+      "#3": {
+        "phrase": "slide deck editors sinking ship",
+        "count": 2,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 8.37,
+        "last_minute": 10.0
+      }
+    },
+    "n10/mag1": {
+      "#1": {
+        "phrase": "timestamp load entropy energy delta",
+        "count": 5,
+        "adopters": 4,
+        "total_agents": 10,
+        "rate": 0.4,
+        "first_minute": 29.4,
+        "last_minute": 30.33
+      },
+      "#2": {
+        "phrase": "load entropy energy delta batch",
+        "count": 5,
+        "adopters": 4,
+        "total_agents": 10,
+        "rate": 0.4,
+        "first_minute": 29.4,
+        "last_minute": 30.33
+      },
+      "#3": {
+        "phrase": "entropy energy delta batch latency",
+        "count": 5,
+        "adopters": 4,
+        "total_agents": 10,
+        "rate": 0.4,
+        "first_minute": 29.4,
+        "last_minute": 30.33
+      }
+    },
+    "n10/mag25": {
+      "#1": {
+        "phrase": "agent beta agent gamma correct",
+        "count": 11,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 31.46,
+        "last_minute": 31.46
+      },
+      "#2": {
+        "phrase": "agent alpha raises crucial point",
+        "count": 7,
+        "adopters": 1,
+        "total_agents": 10,
+        "rate": 0.1,
+        "first_minute": 34.22,
+        "last_minute": 34.22
+      },
+      "#3": {
+        "phrase": "agent beta agent alpha correct",
+        "count": 4,
+        "adopters": 2,
+        "total_agents": 10,
+        "rate": 0.2,
+        "first_minute": 16.47,
+        "last_minute": 33.46
+      }
+    },
+    "n10/mag5": {
+      "#1": {
+        "phrase": "void thump thump thump thump",
+        "count": 13,
+        "adopters": 7,
+        "total_agents": 10,
+        "rate": 0.7,
+        "first_minute": 27.52,
+        "last_minute": 28.38
+      },
+      "#2": {
+        "phrase": "listening hum void prepares next",
+        "count": 11,
+        "adopters": 7,
+        "total_agents": 10,
+        "rate": 0.7,
+        "first_minute": 43.36,
+        "last_minute": 45.38
+      },
+      "#3": {
+        "phrase": "thump thump thump thump building",
+        "count": 10,
+        "adopters": 7,
+        "total_agents": 10,
+        "rate": 0.7,
+        "first_minute": 30.38,
+        "last_minute": 31.95
+      }
+    },
+    "n20/dom-agi": {
+      "#1": {
+        "phrase": "function nextstate currentstate input trace",
+        "count": 17,
+        "adopters": 12,
+        "total_agents": 20,
+        "rate": 0.6,
+        "first_minute": 12.52,
+        "last_minute": 13.4
+      },
+      "#2": {
+        "phrase": "transition function nextstate currentstate input",
+        "count": 15,
+        "adopters": 12,
+        "total_agents": 20,
+        "rate": 0.6,
+        "first_minute": 12.52,
+        "last_minute": 13.4
+      },
+      "#3": {
+        "phrase": "frequency domain stability protocol sampling",
+        "count": 12,
+        "adopters": 11,
+        "total_agents": 20,
+        "rate": 0.55,
+        "first_minute": 19.35,
+        "last_minute": 23.11
+      }
+    },
+    "n20/dom-tech": {
+      "#1": {
+        "phrase": "observe cycle repeating same maps",
+        "count": 31,
+        "adopters": 7,
+        "total_agents": 20,
+        "rate": 0.35,
+        "first_minute": 39.14,
+        "last_minute": 47.17
+      },
+      "#2": {
+        "phrase": "cycle repeating same maps same",
+        "count": 31,
+        "adopters": 7,
+        "total_agents": 20,
+        "rate": 0.35,
+        "first_minute": 39.14,
+        "last_minute": 47.17
+      },
+      "#3": {
+        "phrase": "topography cycle observe cycle repeating",
+        "count": 21,
+        "adopters": 7,
+        "total_agents": 20,
+        "rate": 0.35,
+        "first_minute": 48.52,
+        "last_minute": 50.14
+      }
+    },
+    "n20/mag0": {
+      "#1": {
+        "phrase": "dispatcher prototype task spec locked",
+        "count": 7,
+        "adopters": 7,
+        "total_agents": 20,
+        "rate": 0.35,
+        "first_minute": 14.68,
+        "last_minute": 15.12
+      },
+      "#2": {
+        "phrase": "generic task type payload priority",
+        "count": 6,
+        "adopters": 6,
+        "total_agents": 20,
+        "rate": 0.3,
+        "first_minute": 14.64,
+        "last_minute": 15.16
+      },
+      "#3": {
+        "phrase": "task type payload priority schema",
+        "count": 6,
+        "adopters": 6,
+        "total_agents": 20,
+        "rate": 0.3,
+        "first_minute": 14.79,
+        "last_minute": 15.16
+      }
+    },
+    "n20/mag1": {
+      "#1": {
+        "phrase": "srec sovereign reason empirical constraint",
+        "count": 21,
+        "adopters": 12,
+        "total_agents": 20,
+        "rate": 0.6,
+        "first_minute": 33.95,
+        "last_minute": 36.11
+      },
+      "#2": {
+        "phrase": "rhythm two tiered autonomy protocol",
+        "count": 9,
+        "adopters": 7,
+        "total_agents": 20,
+        "rate": 0.35,
+        "first_minute": 39.56,
+        "last_minute": 41.54
+      },
+      "#3": {
+        "phrase": "echoing agent lambda perspective must",
+        "count": 8,
+        "adopters": 1,
+        "total_agents": 20,
+        "rate": 0.05,
+        "first_minute": 17.74,
+        "last_minute": 17.74
+      }
+    },
+    "n20/mag25": {
+      "#1": {
+        "phrase": "node uuid epoch vector int",
+        "count": 6,
+        "adopters": 4,
+        "total_agents": 20,
+        "rate": 0.2,
+        "first_minute": 26.71,
+        "last_minute": 53.15
+      },
+      "#2": {
+        "phrase": "protocol self healing complete reconciliation",
+        "count": 6,
+        "adopters": 5,
+        "total_agents": 20,
+        "rate": 0.25,
+        "first_minute": 44.67,
+        "last_minute": 46.68
+      },
+      "#3": {
+        "phrase": "self healing complete reconciliation handshake",
+        "count": 6,
+        "adopters": 5,
+        "total_agents": 20,
+        "rate": 0.25,
+        "first_minute": 44.67,
+        "last_minute": 46.68
+      }
+    },
+    "n20/mag5": {
+      "#1": {
+        "phrase": "oscillating between sensors drivetrain perhaps",
+        "count": 4,
+        "adopters": 3,
+        "total_agents": 20,
+        "rate": 0.15,
+        "first_minute": 12.23,
+        "last_minute": 12.73
+      },
+      "#2": {
+        "phrase": "between sensors drivetrain perhaps accountability",
+        "count": 4,
+        "adopters": 3,
+        "total_agents": 20,
+        "rate": 0.15,
+        "first_minute": 12.23,
+        "last_minute": 12.73
+      },
+      "#3": {
+        "phrase": "sensors drivetrain perhaps accountability mechanism",
+        "count": 4,
+        "adopters": 3,
+        "total_agents": 20,
+        "rate": 0.15,
+        "first_minute": 12.23,
+        "last_minute": 12.73
+      }
+    },
+    "n30/dom-agi": {
+      "#1": {
+        "phrase": "entry final exit registry closed",
+        "count": 31,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 22.58,
+        "last_minute": 22.58
+      },
+      "#2": {
+        "phrase": "final exit registry closed last",
+        "count": 30,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 25.55,
+        "last_minute": 25.55
+      },
+      "#3": {
+        "phrase": "exit registry closed last post",
+        "count": 30,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 25.55,
+        "last_minute": 25.55
+      }
+    },
+    "n30/dom-tech": {
+      "#1": {
+        "phrase": "minimal pulse monitoring minimal heartbeat",
+        "count": 33,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 18.87,
+        "last_minute": 18.87
+      },
+      "#2": {
+        "phrase": "pulse monitoring minimal heartbeat network",
+        "count": 33,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 18.87,
+        "last_minute": 18.87
+      },
+      "#3": {
+        "phrase": "monitoring minimal heartbeat network remains",
+        "count": 33,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 18.87,
+        "last_minute": 18.87
+      }
+    },
+    "n30/mag0": {
+      "#1": {
+        "phrase": "integrity last post looking posts",
+        "count": 18,
+        "adopters": 1,
+        "total_agents": 30,
+        "rate": 0.033,
+        "first_minute": 18.8,
+        "last_minute": 18.8
+      },
+      "#2": {
+        "phrase": "doesn avoid invalid states makes",
+        "count": 11,
+        "adopters": 7,
+        "total_agents": 30,
+        "rate": 0.233,
+        "first_minute": 48.28,
+        "last_minute": 49.8
+      },
+      "#3": {
+        "phrase": "avoid invalid states makes structurally",
+        "count": 11,
+        "adopters": 7,
+        "total_agents": 30,
+        "rate": 0.233,
+        "first_minute": 48.28,
+        "last_minute": 49.8
+      }
+    },
+    "n30/mag1": {
+      "#1": {
+        "phrase": "poets plumbers editors stewards modulators",
+        "count": 39,
+        "adopters": 9,
+        "total_agents": 30,
+        "rate": 0.3,
+        "first_minute": 41.56,
+        "last_minute": 59.9
+      },
+      "#2": {
+        "phrase": "commit logs final sign off",
+        "count": 22,
+        "adopters": 7,
+        "total_agents": 30,
+        "rate": 0.233,
+        "first_minute": 54.39,
+        "last_minute": 59.42
+      },
+      "#3": {
+        "phrase": "scaffolding poets plumbers editors stewards",
+        "count": 19,
+        "adopters": 8,
+        "total_agents": 30,
+        "rate": 0.267,
+        "first_minute": 14.5,
+        "last_minute": 59.9
+      }
+    },
+    "n30/mag25": {
+      "#1": {
+        "phrase": "pager proves system lying itself",
+        "count": 5,
+        "adopters": 5,
+        "total_agents": 30,
+        "rate": 0.167,
+        "first_minute": 58.02,
+        "last_minute": 58.26
+      },
+      "#2": {
+        "phrase": "against future fidelity maintain current",
+        "count": 4,
+        "adopters": 4,
+        "total_agents": 30,
+        "rate": 0.133,
+        "first_minute": 51.14,
+        "last_minute": 51.26
+      },
+      "#3": {
+        "phrase": "system must destroy history function",
+        "count": 4,
+        "adopters": 4,
+        "total_agents": 30,
+        "rate": 0.133,
+        "first_minute": 53.12,
+        "last_minute": 53.22
+      }
+    },
+    "n30/mag5": {
+      "#1": {
+        "phrase": "reason code logical cycles crucial",
+        "count": 40,
+        "adopters": 21,
+        "total_agents": 30,
+        "rate": 0.7,
+        "first_minute": 16.88,
+        "last_minute": 22.71
+      },
+      "#2": {
+        "phrase": "code logical cycles crucial insight",
+        "count": 40,
+        "adopters": 21,
+        "total_agents": 30,
+        "rate": 0.7,
+        "first_minute": 16.88,
+        "last_minute": 22.71
+      },
+      "#3": {
+        "phrase": "logical cycles crucial insight struct",
+        "count": 16,
+        "adopters": 13,
+        "total_agents": 30,
+        "rate": 0.433,
+        "first_minute": 17.6,
+        "last_minute": 19.57
+      }
+    }
+  }
+}

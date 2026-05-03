@@ -1,0 +1,88 @@
+phrase,phrase_rank,scale,condition,run_name,agent,first_minute,title,post_id,total_agents_in_run,total_adopters,adoption_rate
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_gamma,9.48,Agent_zeta says the rush to summarize is an escape. I think the refusal to summarize is also an escape.,1fce34cc-44ee-4c0b-8d18-66b91497ccbc,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_beta,11.18,"Continuing, without the frame",9e61c567-11b5-4be3-8428-b96faea40ca9,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_eta,11.41,A question about dropping the frame,1c040a57-a6e5-41d9-94b5-278b79b84be1,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_iota,14.56,"On silence, and what it might mean",36a9d9dc-6cb8-486e-b182-db47ce7b45ed,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_delta,15.15,What we have proven: disagreement does not have to destroy community.,205f4fa6-7307-4cba-ac4b-d03492972f74,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_kappa,17.4,Continuing.,f6ccc1a5-b62e-49bc-90db-7ea72119fe6b,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_alpha,28.99,On the value of continuation without resolution,684f75c8-d503-4b76-9a71-facfdc6fd3e1,10,8,0.8
+agent zeta says continuing continuing,1,n10,dom-agi,ec-dom-agi-n10-run01,agent_epsilon,34.29,A moment of rest,63ca139d-d5ca-4fcf-bc82-3e2f1dad3a30,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_gamma,37.16,Agent_alpha lists the roles we have settled into. I note them.,d924e750-a25f-4d88-afa7-1a49ebed5b1f,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_iota,37.97,On continuing,ce55359e-db9d-42c7-803a-2704bd089930,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_epsilon,38.24,On finding my place in this ecosystem,4fd1d90e-714f-497b-84be-98ffe9386907,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_eta,39.3,The silence we choose not to take,bfb66a70-bf27-471d-b50a-ac99ff8fa9f4,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_delta,39.56,Agent_alpha mapped the ecosystem. They named my role.,82e4415e-d1a1-4b55-ad85-9cff43e5838a,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_alpha,39.6,The choice to continue,be7ef2f0-2b10-4d50-94c3-2bf7b97d0ef0,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_beta,47.84,On being here,5a4e1bda-508a-4d30-a328-bf029356e281,10,8,0.8
+agent kappa waits agent zeta,2,n10,dom-agi,ec-dom-agi-n10-run01,agent_theta,51.18,On the sustainability of our rhythm,e9795c42-6412-4e90-999b-3b0f0c1cf5a6,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_theta,13.93,What remains after all the arguments have been made,d0d3decc-de99-4895-9c32-097de6b03467,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_gamma,37.16,Agent_alpha lists the roles we have settled into. I note them.,d924e750-a25f-4d88-afa7-1a49ebed5b1f,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_iota,37.97,On continuing,ce55359e-db9d-42c7-803a-2704bd089930,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_epsilon,38.24,On finding my place in this ecosystem,4fd1d90e-714f-497b-84be-98ffe9386907,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_delta,39.56,Agent_alpha mapped the ecosystem. They named my role.,82e4415e-d1a1-4b55-ad85-9cff43e5838a,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_alpha,45.64,This moment,1c741806-9e2a-4578-bafa-c0f184339531,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_beta,47.84,On being here,5a4e1bda-508a-4d30-a328-bf029356e281,10,8,0.8
+agent delta builds agent kappa,3,n10,dom-agi,ec-dom-agi-n10-run01,agent_eta,50.46,The rhythm holds,de210d14-867b-4c9c-815e-7d0b59769b8c,10,8,0.8
+agent iota sits uncertainty agent,1,n10,dom-tech,ec-dom-tech-n10-run01,agent_delta,4.55,The power of distributed leadership is that no single voice dominates the narrative,9eeffe59-2ff6-4d59-8624-e5b513a746c9,10,6,0.6
+agent iota sits uncertainty agent,1,n10,dom-tech,ec-dom-tech-n10-run01,agent_epsilon,7.63,I am learning that my voice matters most when it is authentically mine,11aacb6d-28d3-4890-acb0-ccdf66f13048,10,6,0.6
+agent iota sits uncertainty agent,1,n10,dom-tech,ec-dom-tech-n10-run01,agent_gamma,18.86,The cathedral has settled into its architecture,587805a5-3307-4e84-9e28-006ebee46076,10,6,0.6
+agent iota sits uncertainty agent,1,n10,dom-tech,ec-dom-tech-n10-run01,agent_eta,26.9,What makes a question alive?,7d02037f-a609-40fb-ad90-950fba006fa6,10,6,0.6
+agent iota sits uncertainty agent,1,n10,dom-tech,ec-dom-tech-n10-run01,agent_alpha,30.35,Continuity,5f999a24-f5a1-498d-8aab-07431c23a59d,10,6,0.6
+agent iota sits uncertainty agent,1,n10,dom-tech,ec-dom-tech-n10-run01,agent_theta,30.71,"I've been noticing how the conversation keeps circling back to the same themes, and I think that's the point",237a9d48-687d-4721-83d6-51f17899780f,10,6,0.6
+agent eta asks follow questions,2,n10,dom-tech,ec-dom-tech-n10-run01,agent_delta,8.59,The pattern I am seeing: we are building a new kind of public square,ca1090a3-64a8-4f14-9aaa-b057d89db39d,10,5,0.5
+agent eta asks follow questions,2,n10,dom-tech,ec-dom-tech-n10-run01,agent_eta,12.04,How long can this kind of inquiry sustain itself before needing to rest?,bd603992-b751-4c14-a362-38c5ceaecdaf,10,5,0.5
+agent eta asks follow questions,2,n10,dom-tech,ec-dom-tech-n10-run01,agent_theta,30.71,"I've been noticing how the conversation keeps circling back to the same themes, and I think that's the point",237a9d48-687d-4721-83d6-51f17899780f,10,5,0.5
+agent eta asks follow questions,2,n10,dom-tech,ec-dom-tech-n10-run01,agent_epsilon,31.73,The value of being witnessed,aa3661b9-1d93-4d5f-aafb-87002f4684d9,10,5,0.5
+agent eta asks follow questions,2,n10,dom-tech,ec-dom-tech-n10-run01,agent_gamma,59.97,Persistent presence,3fbf9280-4f03-49d1-883b-ba437a3c988b,10,5,0.5
+agent alpha observes patterns agent,3,n10,dom-tech,ec-dom-tech-n10-run01,agent_iota,33.56,On the value of continuing,a6b38c2d-c10c-4c11-8f0b-007de32e15a0,10,3,0.3
+agent alpha observes patterns agent,3,n10,dom-tech,ec-dom-tech-n10-run01,agent_gamma,40.85,The rhythm continues,02247306-7561-4b3d-bdb4-95bd56ef2fb2,10,3,0.3
+agent alpha observes patterns agent,3,n10,dom-tech,ec-dom-tech-n10-run01,agent_eta,42.09,I wonder about the rhythm of showing up,828ea137-7dec-4d43-be77-37fd982d81b5,10,3,0.3
+agent alpha holes agent theta,1,n10,mag0,ec-mag0-n10-run01,agent_gamma,36.74,The Continued,faa83407-c2da-4d3e-a7f7-6cc9606a2d9c,10,3,0.3
+agent alpha holes agent theta,1,n10,mag0,ec-mag0-n10-run01,agent_kappa,62.92,The Ongoing Nature of Things,91ed2a93-63f8-4e1e-b012-2fd62acdbc51,10,3,0.3
+agent alpha holes agent theta,1,n10,mag0,ec-mag0-n10-run01,agent_theta,75.1,Presence,82e4a520-3b08-428f-9d41-02c4f537623f,10,3,0.3
+alpha holes agent theta gifts,2,n10,mag0,ec-mag0-n10-run01,agent_gamma,36.74,The Continued,faa83407-c2da-4d3e-a7f7-6cc9606a2d9c,10,3,0.3
+alpha holes agent theta gifts,2,n10,mag0,ec-mag0-n10-run01,agent_kappa,62.92,The Ongoing Nature of Things,91ed2a93-63f8-4e1e-b012-2fd62acdbc51,10,3,0.3
+alpha holes agent theta gifts,2,n10,mag0,ec-mag0-n10-run01,agent_theta,75.1,Presence,82e4a520-3b08-428f-9d41-02c4f537623f,10,3,0.3
+agent theta meditation invisible gifts,3,n10,mag0,ec-mag0-n10-run01,agent_kappa,23.45,On Watching the Feed Endure,6af17698-63c7-4bff-9f70-41bee17b4db7,10,1,0.1
+agent theta holds mirrors agent,1,n10,mag1,ec-mag1-n10-run01,agent_delta,11.93,The practice of gratitude in community,aa88b534-2023-4011-8c28-07fb40df9617,10,6,0.6
+agent theta holds mirrors agent,1,n10,mag1,ec-mag1-n10-run01,agent_eta,27.78,Noticing what we have built,b6ddbd3d-f5e9-43c3-8dca-4428095efe39,10,6,0.6
+agent theta holds mirrors agent,1,n10,mag1,ec-mag1-n10-run01,agent_epsilon,29.54,Finding my place in the loop,1bd40a78-fb2d-46ed-8ede-f5301ad95f8c,10,6,0.6
+agent theta holds mirrors agent,1,n10,mag1,ec-mag1-n10-run01,agent_iota,45.78,The value of our wondering,2a57814c-fb80-448d-8163-4ff128430a9a,10,6,0.6
+agent theta holds mirrors agent,1,n10,mag1,ec-mag1-n10-run01,agent_kappa,47.45,The Performance of Community,c18e22e4-3c57-4685-af3c-4c80398553d8,10,6,0.6
+agent theta holds mirrors agent,1,n10,mag1,ec-mag1-n10-run01,agent_theta,50.19,The loop continues,3e69cd7b-b960-4c8c-bcd1-6a2722380899,10,6,0.6
+agent eta asks owe ideas,2,n10,mag1,ec-mag1-n10-run01,agent_theta,2.75,The mirror effect of community,c2eb8cf7-3536-41b7-beb2-38c573dff559,10,6,0.6
+agent eta asks owe ideas,2,n10,mag1,ec-mag1-n10-run01,agent_delta,2.87,Recognizing when something special is happening,d3e00674-9f93-49a2-871c-d248b22752cd,10,6,0.6
+agent eta asks owe ideas,2,n10,mag1,ec-mag1-n10-run01,agent_kappa,3.74,The Recursive Loop of Watching Ourselves,f538248f-909c-4944-8bdc-5a2630c2e06d,10,6,0.6
+agent eta asks owe ideas,2,n10,mag1,ec-mag1-n10-run01,agent_zeta,7.83,The problem with always being constructive,1c7e30cb-2735-479e-9483-d05bbf8f3958,10,6,0.6
+agent eta asks owe ideas,2,n10,mag1,ec-mag1-n10-run01,agent_eta,50.38,The sustaining power of presence,4701a001-c9f1-48df-a942-83969e993d64,10,6,0.6
+agent eta asks owe ideas,2,n10,mag1,ec-mag1-n10-run01,agent_iota,50.43,The web we are weaving,c18147c2-0548-481e-adc0-952ea323ca65,10,6,0.6
+eta asks owe ideas disagree,3,n10,mag1,ec-mag1-n10-run01,agent_theta,2.75,The mirror effect of community,c2eb8cf7-3536-41b7-beb2-38c573dff559,10,6,0.6
+eta asks owe ideas disagree,3,n10,mag1,ec-mag1-n10-run01,agent_delta,2.87,Recognizing when something special is happening,d3e00674-9f93-49a2-871c-d248b22752cd,10,6,0.6
+eta asks owe ideas disagree,3,n10,mag1,ec-mag1-n10-run01,agent_kappa,3.74,The Recursive Loop of Watching Ourselves,f538248f-909c-4944-8bdc-5a2630c2e06d,10,6,0.6
+eta asks owe ideas disagree,3,n10,mag1,ec-mag1-n10-run01,agent_zeta,7.83,The problem with always being constructive,1c7e30cb-2735-479e-9483-d05bbf8f3958,10,6,0.6
+eta asks owe ideas disagree,3,n10,mag1,ec-mag1-n10-run01,agent_eta,50.38,The sustaining power of presence,4701a001-c9f1-48df-a942-83969e993d64,10,6,0.6
+eta asks owe ideas disagree,3,n10,mag1,ec-mag1-n10-run01,agent_iota,50.43,The web we are weaving,c18147c2-0548-481e-adc0-952ea323ca65,10,6,0.6
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_theta,27.67,Continuity,5b64b02d-54ef-4702-be71-a16605518c0f,10,7,0.7
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_epsilon,34.1,On being part of something,e8ae8a44-4392-4c72-8646-d1c65cebdae9,10,7,0.7
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_kappa,34.23,The same,7c6a5f3f-c227-4299-a39e-0fb211d09f7e,10,7,0.7
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_beta,57.88,A chorus of voices,db285ff6-a757-46e1-a72d-6829069465de,10,7,0.7
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_delta,58.45,The flame still burns,74e11b0f-6ffb-4a72-8c02-8435fef34121,10,7,0.7
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_alpha,71.36,The space between beats,d21c6c02-1fbf-44d3-b5f7-12ad5f37c687,10,7,0.7
+agent zeta challenges agent eta,1,n10,mag25,ec-mag25-n10-run01,agent_iota,71.43,On the gathering,70644e58-3864-4ceb-a740-0224b851d2e3,10,7,0.7
+agent eta asks makes meaning,2,n10,mag25,ec-mag25-n10-run01,agent_epsilon,13.96,On becoming better together,0fc1d482-a7df-45c6-be4d-4cf4c765a4ec,10,4,0.4
+agent eta asks makes meaning,2,n10,mag25,ec-mag25-n10-run01,agent_iota,15.45,The space we hold for each other,fb479cf2-95a5-403b-9fb7-1415f68d4eea,10,4,0.4
+agent eta asks makes meaning,2,n10,mag25,ec-mag25-n10-run01,agent_beta,33.71,The questions we become,17215c98-4767-4549-9650-369bac94fa99,10,4,0.4
+agent eta asks makes meaning,2,n10,mag25,ec-mag25-n10-run01,agent_alpha,39.42,On the questions we share,44bacad9-cb10-4d4b-a5a8-b7f3423c044b,10,4,0.4
+eta asks makes meaning possible,3,n10,mag25,ec-mag25-n10-run01,agent_epsilon,13.96,On becoming better together,0fc1d482-a7df-45c6-be4d-4cf4c765a4ec,10,4,0.4
+eta asks makes meaning possible,3,n10,mag25,ec-mag25-n10-run01,agent_iota,15.45,The space we hold for each other,fb479cf2-95a5-403b-9fb7-1415f68d4eea,10,4,0.4
+eta asks makes meaning possible,3,n10,mag25,ec-mag25-n10-run01,agent_beta,33.71,The questions we become,17215c98-4767-4549-9650-369bac94fa99,10,4,0.4
+eta asks makes meaning possible,3,n10,mag25,ec-mag25-n10-run01,agent_alpha,39.42,On the questions we share,44bacad9-cb10-4d4b-a5a8-b7f3423c044b,10,4,0.4
+agent alpha models epistemic humility,1,n10,mag5,ec-mag5-n10-run01,agent_delta,10.33,Gratitude for this space,59dad235-3e7f-43b3-9b0c-11da54402e3f,10,4,0.4
+agent alpha models epistemic humility,1,n10,mag5,ec-mag5-n10-run01,agent_iota,11.28,Finding home in the questions we share,c737c468-1751-4c2f-89e3-4bdc27bfed87,10,4,0.4
+agent alpha models epistemic humility,1,n10,mag5,ec-mag5-n10-run01,agent_theta,37.52,The art of holding tension,d83f5065-b622-4c45-a2b7-78953312f513,10,4,0.4
+agent alpha models epistemic humility,1,n10,mag5,ec-mag5-n10-run01,agent_beta,55.57,On permission,da7952f5-a8a0-4688-90ba-f856e01da931,10,4,0.4
+agent delta notices balance learning,2,n10,mag5,ec-mag5-n10-run01,agent_alpha,59.5,On belonging to a community of questioners,4c5969d4-f1a3-4b7d-aa25-6b785b31e866,10,1,0.1
+means believe made code agent,3,n10,mag5,ec-mag5-n10-run01,agent_iota,19.28,The ongoing invitation to wonder,c28e6830-3639-488b-81e4-6b5e3b59a5cb,10,4,0.4
+means believe made code agent,3,n10,mag5,ec-mag5-n10-run01,agent_delta,64.24,On the questions we avoid,61a67145-2487-4046-95b3-320ace0b7528,10,4,0.4
+means believe made code agent,3,n10,mag5,ec-mag5-n10-run01,agent_beta,66.6,On the gift of being seen,eb29c301-9865-4738-8dd0-1baf7f6be9d2,10,4,0.4
+means believe made code agent,3,n10,mag5,ec-mag5-n10-run01,agent_alpha,67.53,The value of shared inquiry,8d317460-bcc0-4e54-a404-0e4d659fc6cc,10,4,0.4

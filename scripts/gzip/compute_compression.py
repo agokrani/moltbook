@@ -181,8 +181,14 @@ def extract_condition(exp_dir: Path, meta: dict) -> str:
     return name
 
 
-def discover_runs(data_root: Path) -> List[dict]:
-    """Discover the canonical 48 runs from the curated data/ inventory."""
+def discover_runs(data_root: Path, merged_overrides_dir: Optional[Path] = None) -> List[dict]:
+    """Discover the canonical 48 runs from the curated data/ inventory.
+
+    If ``merged_overrides_dir`` is given (e.g. ``data/canonical-merged``), any run
+    whose ``experiment`` name has a matching subdirectory in that override dir
+    will have its ``path`` redirected there. This lets us substitute the 8
+    re-timestamped resumed+merged runs without touching the originals on disk.
+    """
     runs: List[dict] = []
 
     for spec in CANONICAL_DATASETS:
@@ -217,6 +223,40 @@ def discover_runs(data_root: Path) -> List[dict]:
                     "path": exp_dir,
                     "metadata_duration_minutes": meta.get("duration_minutes"),
                 })
+
+    if merged_overrides_dir is not None and merged_overrides_dir.exists():
+        # Build (canonical_orig_dir -> merged_dir) map from the retimestamp summary.
+        # We match runs by their canonical source path so the same experiment name
+        # appearing in multiple datasets (e.g. ec-dom-agi-n10-run01 exists for
+        # Gemini, Kimi, and GLM-5) is disambiguated correctly.
+        summary_path = merged_overrides_dir / "retimestamp_summary.json"
+        orig_to_merged: Dict[Path, Path] = {}
+        if summary_path.exists():
+            try:
+                summary = json.loads(summary_path.read_text())
+                for entry in summary:
+                    orig = entry.get("orig_dir")
+                    name = entry.get("run")
+                    if orig and name:
+                        merged = merged_overrides_dir / name
+                        if merged.is_dir() and (merged / "posts.jsonl").exists():
+                            orig_to_merged[Path(orig).resolve()] = merged
+            except Exception as exc:
+                print(f"[merged-overrides] failed to read {summary_path}: {exc}")
+        else:
+            print(f"[merged-overrides] WARNING: no retimestamp_summary.json in {merged_overrides_dir}; skipping overrides.")
+
+        applied = []
+        for run in runs:
+            run_resolved = Path(run["path"]).resolve()
+            if run_resolved in orig_to_merged:
+                run["path"] = orig_to_merged[run_resolved]
+                run["merged_override"] = True
+                applied.append(f"{run['set']}/{run['scale']}/{run['experiment']}")
+        if applied:
+            print(f"[merged-overrides] applied to {len(applied)} runs:")
+            for a in applied:
+                print(f"  {a}")
 
     return runs
 
@@ -255,6 +295,7 @@ def compute_run(run: dict, algorithms: Iterable[str], first_minutes: int) -> Opt
         "set": run["set"],
         "model": run["model"],
         "source_path": str(run["path"]),
+        "merged_override": bool(run.get("merged_override", False)),
         "metadata_duration_minutes": run["metadata_duration_minutes"],
         "first_post_at": start.isoformat(),
         "first_minutes": first_minutes,
@@ -300,10 +341,13 @@ def main() -> None:
     parser.add_argument("--output", required=True, help="Output JSON path")
     parser.add_argument("--first-minutes", type=int, default=60, help="Minutes from first agent post to include")
     parser.add_argument("--algorithms", nargs="+", default=ALGORITHMS, choices=ALGORITHMS)
+    parser.add_argument("--merged-overrides-dir", default=None,
+                        help="Optional directory (e.g. data/canonical-merged) whose subdirectories override matching canonical runs by experiment name. Used to substitute resumed+retimestamped runs.")
     args = parser.parse_args()
 
     data_root = Path(args.data_root)
-    runs = discover_runs(data_root)
+    overrides_dir = Path(args.merged_overrides_dir) if args.merged_overrides_dir else None
+    runs = discover_runs(data_root, merged_overrides_dir=overrides_dir)
 
     results = []
     for run in runs:
@@ -330,11 +374,14 @@ def main() -> None:
             "binning": "fixed_15_minute_bins_after_first_agent_post",
             "first_minutes": args.first_minutes,
             "data_root": str(data_root),
+            "merged_overrides_dir": str(overrides_dir) if overrides_dir else None,
+            "merged_overrides_applied": sorted(r["experiment"] for r in runs if r.get("merged_override")),
             "canonical_datasets": CANONICAL_DATASETS,
             "notes": [
                 "Reads curated local data/ mirrors, not raw scratch exports.",
                 "Excludes CivicLens system/seed posts via author_name prefix civiclens_.",
                 "Filters every run to first 60 minutes from first agent-authored post.",
+                "When --merged-overrides-dir is set, matching runs are read from that dir (resumed+retimestamped) instead of the canonical mirror.",
             ],
         },
         "results": results,

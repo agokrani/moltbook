@@ -4,13 +4,17 @@ When autonomous LLM agents interact through a shared social feed, their discours
 
 We report the findings in four steps. First, we show that runs converge toward locally unique phrase attractors. Second, we show that this convergence is visible in several independent measurements, including lexical diversity and generic compression. Third, we show that phrase attractors are tied to topical concentration, not only surface repetition. Finally, we examine several attempts to avoid collapse and find that none clearly removes the effect.
 
+## Note on the canonical data
+
+All quantitative claims below come from the canonical 48-run inventory (4 model sets × 6 stimulus conditions × 3 group sizes for GPT-5 and Gemini, ×1 group size for Kimi and GLM-5). Eight of the original 48 exports stopped producing agent posts before the 60-minute mark — two GPT-5 runs hit a wall-clock cut at ~43 min, and six Gemini Flash Lite runs hit a provider-side empty-completion event between 24 and 40 min (forensic detail in `incomplete_runs.md`). For each of those 8, the original database was restored, the agents were brought back online, and the run continued for another ~30 minutes; the original and the continuation were then merged into a single 60-minute timeline by compressing the multi-day pause to a 1-second gap. After the merge, all 48 runs have non-empty agent activity in every 15-minute bin. The full pipeline is documented in `canonical_data.md`. Plots in this document point at the merged outputs (`-resumed/` directories).
+
 ---
 
 ## 1. Runs converge toward local phrase attractors
 
 Across the scaling runs, every agent society developed its own dominant phrase family. These phrase families were not copied from the seed posts, and they were not shared across runs. The repeated pattern is not a single phrase spreading everywhere; it is the repeated formation of a local convention.
 
-Aggregating the top 10 5-grams from each run gives a clean result. Across 48 runs, there were 480 top-10 5-gram entries. All 480 were unique. Every run had a unique top-ranked 5-gram, none of the top phrases appeared in the seed posts, and no top-10 5-gram overlapped between any two runs.
+Aggregating the top 10 5-grams from each run gives a clean result. Across all 48 runs, there were 480 top-10 5-gram entries. All 480 were unique. Every run had a unique top-ranked 5-gram, none of the top phrases appeared in the seed posts, and no top-10 5-gram overlapped between any two runs.
 
 | Quantity | Value |
 |---|---:|
@@ -23,15 +27,16 @@ Aggregating the top 10 5-grams from each run gives a clean result. Across 48 run
 
 This result rules out a simple copying explanation. The seeded world can influence the discussion, but the exact phrase attractor is generated inside the run. Entropy collapse is therefore robust in form but local in content: the system repeatedly forms attractors, but the attractor itself depends on the run.
 
-![GPT-5 phrase DNA grid. Each panel shows the dominant phrases for one run.](https://raw.githubusercontent.com/agokrani/moltbook/entropy-collapse-scaling/findings/entropy-collapse-scaling/gpt-5/provenance/phrase_dna_grid.png)
+![GPT-5 phrase DNA grid. Each panel shows the dominant phrases for one run.](../entropy-collapse-scaling-resumed/gpt-5/provenance/phrase_dna_grid.png)
 
 **Figure 1.** Dominant 5-gram families in GPT-5 runs. Each panel corresponds to one run. The top phrases are different across runs, which shows that collapse is local rather than a single global phrase copied everywhere.
 
 **Source files for verification:**
 
-- Branch: [`origin/entropy-collapse-scaling`](https://github.com/agokrani/moltbook/tree/entropy-collapse-scaling/findings/entropy-collapse-scaling)
-- `findings/entropy-collapse-scaling/*/provenance/provenance_summary.json`
-- `findings/entropy-collapse-scaling/*/provenance/per_run_top_ngrams.csv`
+- `findings/entropy-collapse-scaling-resumed/{gpt-5,gemini-flash-lite,kimi-k2.5,glm-5}/provenance/provenance_summary.json`
+- `findings/entropy-collapse-scaling-resumed/{gpt-5,gemini-flash-lite,kimi-k2.5,glm-5}/provenance/per_run_top_ngrams.csv`
+- `scripts/analysis_new/ngram_provenance.py`
+- Data: `data/canonical-merged-overlay/` (see `canonical_data.md`)
 
 ---
 
@@ -39,25 +44,34 @@ This result rules out a simple copying explanation. The seeded world can influen
 
 The local-attractor pattern is also visible in direct lexical diversity metrics. We measured Distinct-5 over temporal bins, where Distinct-5 is the fraction of unique 5-word chunks among all 5-word chunks. Lower Distinct-5 means that later posts reuse more of the same phrasing.
 
-Across 48 runs, cumulative Distinct-5 declined in 46 runs. Fixed-window Distinct-5 declined in 47 runs, and Simpson-style effective diversity declined in 46 runs. Here, a decline means that the final 15-minute bin is lower than the first 15-minute bin. The mean cumulative Distinct-5 drop was -0.0561, with a median drop of -0.0326.
+Across all 48 runs, cumulative Distinct-5 declined in 47 runs. Fixed-window Distinct-5 declined in 44 runs, and Simpson-style effective diversity declined in 44 runs. Here, a decline means that the final 15-minute bin is lower than the first 15-minute bin. All three Q4-vs-Q1 comparisons are highly significant under a two-sided sign test.
 
-| Metric | Runs declining | Mean delta | Median delta |
-|---|---:|---:|---:|
-| Cumulative Distinct-5 | 46/48 | -0.0561 | -0.0326 |
-| Fixed-window Distinct-5 | 47/48 | -0.2505 | -0.1024 |
-| Simpson-style effective diversity | 46/48 | -5308.8 | -4633.9 |
+| Metric | Runs declining | Mean delta | Median delta | 95% bootstrap CI for mean delta | Sign test p-value |
+|---|---:|---:|---:|---:|---:|
+| Cumulative Distinct-5 | 47/48 | -0.0560 | -0.0335 | [-0.0727, -0.0405] | 3.5e-13 |
+| Fixed-window Distinct-5 | 44/48 | -0.0897 | -0.0498 | [-0.1280, -0.0592] | 1.5e-09 |
+| Simpson-style effective diversity | 44/48 | -4447.4 | -4063.0 | [-5293.1, -3602.6] | 1.5e-09 |
+
+The fixed-window distinct-5 effect is smaller than an earlier draft reported. That earlier draft included the 8 dropout runs as `0.0` final-bin values, which conflated activity dropout with content collapse. After merging in the resumed continuations, all 48 runs have non-empty bins, and the fixed-window mean drop falls from `-0.25` to `-0.09`. The cumulative metric is essentially unchanged because it carried earlier posts forward in the dropout runs. The corrected numbers are still robustly negative, with very small p-values, but the magnitude is more modest than the pre-merge draft suggested.
 
 The effect is not perfectly monotonic in every run, so we do not describe this metric as universal on its own. The important point is that the dominant direction is consistent: later discourse uses fewer distinct 5-word chunks. This is the lexical signature of the attractors described above.
 
-![GPT-5 diversity grid. Distinct-5 and related diversity metrics fall over time across conditions and scales.](https://raw.githubusercontent.com/agokrani/moltbook/entropy-collapse-scaling/findings/entropy-collapse-scaling/gpt-5/diversity/diversity_grid.png)
+![GPT-5 diversity grid. Distinct-5 and related diversity metrics fall over time across conditions and scales.](../entropy-collapse-scaling-resumed/gpt-5/diversity/diversity_grid.png)
 
-**Figure 2.** GPT-5 lexical diversity over time. Later bins show lower phrase diversity in most conditions and scales.
+**Figure 2a.** GPT-5 lexical diversity over time. The 3×3 grid shows fixed-window Distinct-5, cumulative Distinct-5, and Simpson's 1/D, each at n=10/n=20/n=30, with one curve per condition. Later bins show lower phrase diversity in most conditions and scales.
+
+![Distinct-1..5 with bin-size-controlled CIs (GPT-5).](../entropy-collapse-multiscale-new-5gram-resumed/gpt-5/plots/distinct_n_subsampled_by_scale.png)
+
+**Figure 2b.** Bin-size-controlled distinct-1 through distinct-5 for GPT-5, computed by subsampling each bin to the smallest non-empty bin's post count and bootstrapping (100 samples per bin, 95% CI shaded). Controlling for bin size confirms the decline is not an artifact of more posts in earlier bins.
 
 **Source files for verification:**
 
-- Branch: [`origin/entropy-collapse-scaling`](https://github.com/agokrani/moltbook/tree/entropy-collapse-scaling/findings/entropy-collapse-scaling)
-- `findings/entropy-collapse-scaling/*/diversity/diversity_metrics.csv`
-- `findings/entropy-collapse-scaling/*/diversity/diversity_summary.json`
+- `findings/entropy-collapse-scaling-resumed/{gpt-5,gemini-flash-lite,kimi-k2.5,glm-5}/diversity/diversity_metrics.csv`
+- `findings/entropy-collapse-scaling-resumed/{gpt-5,...}/diversity/diversity_summary.json`
+- `findings/entropy-collapse-multiscale-new-5gram-resumed/{gpt-5,...}/raw_time_bin_metrics.csv`
+- `findings/entropy-collapse-multiscale-new-5gram-resumed/{gpt-5,...}/subsampled_time_bin_metrics.csv`
+- `scripts/analysis_new/diversity_metrics.py`
+- `scripts/analysis_new/analyze_time_binned_lexical_5gram.py`
 
 ---
 
@@ -65,41 +79,40 @@ The effect is not perfectly monotonic in every run, so we do not describe this m
 
 To check that the result is not an artifact of a particular n-gram metric, we also measured gzip compressibility. For each run, we concatenated agent-authored post text inside the same 15-minute windows used above and measured the compressed size divided by the raw size. Lower values mean that the text is easier to compress, which usually means more repeated structure.
 
-Across the canonical 48 runs and 32,924 first-hour agent-authored posts, the gzip ratio decreased in 46 runs. The mean gzip ratio fell from 0.3208 in the first 15-minute bin to 0.2320 in the final 15-minute bin. The mean gzip delta was -0.0889, with a 95% bootstrap confidence interval of [-0.1230, -0.0577]. A sign test for the 46/48 decline gives p = 8.36e-12. The same pattern appears with zlib; bzip2 is noisier but still declines in 38/48 runs.
+Across the canonical 48 runs and 35,725 first-hour agent-authored posts, the gzip ratio decreased in 44 runs. The mean gzip ratio fell from 0.3208 in the first 15-minute bin to 0.2842 in the final 15-minute bin. The mean gzip delta was -0.0366, with a 95% bootstrap confidence interval of [-0.0497, -0.0245]. A two-sided sign test for the 44/48 decline gives p = 1.5e-9. The same pattern appears with zlib; bzip2 is noisier but still declines in 35/48 runs.
 
 | Metric | Value |
 |---|---:|
 | Runs | 48 |
-| Agent-authored posts, first 60 min | 32,924 |
+| Agent-authored posts, first 60 min | 35,725 |
 | Mean first-bin gzip ratio | 0.3208 |
-| Mean final-bin gzip ratio | 0.2320 |
-| Mean gzip delta | -0.0889 |
-| Median gzip delta | -0.0453 |
-| Mean relative drop | -27.3% |
-| 95% bootstrap CI, mean gzip delta | [-0.1230, -0.0577] |
-| Sign test p-value, gzip decline | 8.36e-12 |
-| Runs with final bin < first bin, gzip | 46/48 |
-| Runs with final bin < first bin, zlib | 46/48 |
-| Runs with final bin < first bin, bzip2 | 38/48 |
+| Mean final-bin gzip ratio | 0.2842 |
+| Mean gzip delta | -0.0366 |
+| Median gzip delta | -0.0307 |
+| Mean relative drop | -11.4% |
+| 95% bootstrap CI, mean gzip delta | [-0.0497, -0.0245] |
+| Sign test p-value, gzip decline | 1.5e-9 |
+| Runs with final bin < first bin, gzip | 44/48 |
+| Runs with final bin < first bin, zlib | 44/48 |
+| Runs with final bin < first bin, bzip2 | 35/48 |
 
-This gives a model-free check on entropy collapse. Gzip does not know which model generated the text, which topic was seeded, or which phrases are important. It only detects redundancy. The gzip result has the same aggregate direction as Distinct-5, although the two non-declining gzip runs are not the same as the two non-declining cumulative Distinct-5 runs. This is expected: lexical uniqueness and byte-level compressibility measure related but not identical kinds of repetition.
+As in Section 2, an earlier draft reported a mean gzip delta of `-0.089` (a 27% relative drop). That number was inflated by the 8 dropout runs whose final-bin text was empty or near-empty, which compresses unrealistically well. After merging in the resumed continuations, the mean drop falls to `-0.037` (an 11% relative drop). The signal is still negative across 44 of 48 runs at p ≈ 10⁻⁹, but the magnitude is roughly half of what the broken-data version showed. We treat this as the corrected, paper-canonical compression result.
 
-![Gzip compression trajectories. Lower values mean text is easier to compress.](../entropy-collapse-gzip/compression_gzip_trajectories.png)
+This gives a model-free check on entropy collapse. Gzip does not know which model generated the text, which topic was seeded, or which phrases are important. It only detects redundancy. The gzip result has the same aggregate direction as Distinct-5, although the four non-declining gzip runs are not the same set as the one non-declining cumulative Distinct-5 run. This is expected: lexical uniqueness and byte-level compressibility measure related but not identical kinds of repetition.
 
-**Figure 3.** Canonical gzip compression ratio over the first 60 minutes. Later text becomes more compressible in most runs, which is consistent with rising repetition and template reuse.
+![Gzip compression trajectories. Lower values mean text is easier to compress.](../entropy-collapse-gzip-resumed/compression_gzip_trajectories.png)
+
+**Figure 3.** Canonical gzip compression ratio over the first 60 minutes, all 48 runs after merge. Later text becomes more compressible in most runs, which is consistent with rising repetition and template reuse.
 
 **Source files for verification:**
 
-- Local branch/context: `findings-handoff` on Aman's MacBook, `~/Documents/git/moltbook`
-- `data/moltbook-entropy-collapse-v2/`
-- `data/moltbook-entropy-collapse-20agents/`
-- `data/moltbook-entropy-collapse-30agents/`
-- `data/moltbook-entropy-collapse-gemini-flash-lite/`
-- `data/moltbook-entropy-collapse-kimi-k2.5/`
-- `data/moltbook-entropy-collapse-glm-5/`
-- `findings/entropy-collapse-gzip/results-canonical-48.json`
-- `findings/entropy-collapse-gzip/summary.json`
-- `findings/entropy-collapse-gzip/findings.md`
+- Data: `data/canonical-merged-overlay/` (see `canonical_data.md`)
+- `findings/entropy-collapse-gzip-resumed/results-canonical-48-resumed.json`
+- `findings/entropy-collapse-gzip-resumed/summary.json`
+- `findings/entropy-collapse-gzip-resumed/findings.md`
+- `findings/entropy-collapse-gzip-resumed/compression_gzip_trajectories.png`
+- `findings/entropy-collapse-gzip-resumed/compression_gzip_heatmap.png`
+- `findings/entropy-collapse-gzip-resumed/compression_algorithm_comparison.png`
 - `scripts/gzip/compute_compression.py`
 - `scripts/gzip/plot_compression.py`
 
@@ -119,11 +132,11 @@ GPT-5 has complete coverage at 10, 20, and 30 agents across six conditions. The 
 
 The diffusion plots make this clearer than the concentration summary alone. The scale-comparison plot shows the top phrase adoption curves for the same condition at different agent counts. The per-run phrase plot shows that the adopted phrase is different in every run, even when the collapse pattern repeats.
 
-![GPT-5 phrase adoption by scale. Each panel compares the adoption curve of the run's top phrase at n10, n20, and n30.](https://raw.githubusercontent.com/agokrani/moltbook/entropy-collapse-scaling/findings/entropy-collapse-scaling/gpt-5/diffusion/scale_comparison.png)
+![GPT-5 phrase adoption by scale. Each panel compares the adoption curve of the run's top phrase at n10, n20, and n30.](../entropy-collapse-scaling-resumed/gpt-5/diffusion/scale_comparison.png)
 
 **Figure 4.** GPT-5 phrase adoption by scale. Larger groups do not preserve open-ended diversity; the dominant phrase family still spreads through the population.
 
-![GPT-5 per-run phrase adoption. Each panel shows a different run's top phrase and its adoption curve.](https://raw.githubusercontent.com/agokrani/moltbook/entropy-collapse-scaling/findings/entropy-collapse-scaling/gpt-5/diffusion/per_run_phrases.png)
+![GPT-5 per-run phrase adoption. Each panel shows a different run's top phrase and its adoption curve.](../entropy-collapse-scaling-resumed/gpt-5/diffusion/per_run_phrases.png)
 
 **Figure 5.** Per-run GPT-5 phrase adoption. Every run develops a different top phrase, but the adoption pattern repeats across runs.
 
@@ -131,13 +144,14 @@ This result matters because it separates collective convergence from individual 
 
 **Source files for verification:**
 
-- Branch: [`origin/entropy-collapse-scaling`](https://github.com/agokrani/moltbook/tree/entropy-collapse-scaling/findings/entropy-collapse-scaling)
-- `findings/entropy-collapse-scaling/gpt-5/diffusion/diffusion_summary.json`
-- `findings/entropy-collapse-scaling/gpt-5/diffusion/first_usage_timeline.csv`
-- `findings/entropy-collapse-scaling/gpt-5/diffusion/scale_comparison.png`
-- `findings/entropy-collapse-scaling/gpt-5/diffusion/per_run_phrases.png`
-- `findings/entropy-collapse-scaling/gpt-5/participation/participation_summary.json`
-- `findings/entropy-collapse-scaling/gpt-5/participation/concentration.csv`
+- `findings/entropy-collapse-scaling-resumed/gpt-5/diffusion/diffusion_summary.json`
+- `findings/entropy-collapse-scaling-resumed/gpt-5/diffusion/first_usage_timeline.csv`
+- `findings/entropy-collapse-scaling-resumed/gpt-5/diffusion/scale_comparison.png`
+- `findings/entropy-collapse-scaling-resumed/gpt-5/diffusion/per_run_phrases.png`
+- `findings/entropy-collapse-scaling-resumed/gpt-5/participation/participation_summary.json`
+- `findings/entropy-collapse-scaling-resumed/gpt-5/participation/concentration.csv`
+- `scripts/analysis_new/phrase_diffusion.py`
+- `scripts/analysis_new/agent_participation.py`
 
 ---
 
@@ -198,10 +212,9 @@ These cases also show a limitation of exact n-gram matching. In several runs, th
 
 **Source files for verification:**
 
-- Branch: [`origin/entropy-collapse-scaling`](https://github.com/agokrani/moltbook/tree/entropy-collapse-scaling/findings/entropy-collapse-scaling)
-- `findings/entropy-collapse-scaling/post-analysis.md`
-- `findings/entropy-collapse-scaling/*/participation/concentration.csv`
-- `findings/entropy-collapse-scaling/*/diffusion/first_usage_timeline.csv`
+- `findings/entropy-collapse-scaling/post-analysis.md` (qualitative case write-up; carried over from the pre-merge tree, not affected by the dropout)
+- `findings/entropy-collapse-scaling-resumed/{gpt-5,gemini-flash-lite,kimi-k2.5,glm-5}/participation/concentration.csv`
+- `findings/entropy-collapse-scaling-resumed/{gpt-5,...}/diffusion/first_usage_timeline.csv`
 
 ---
 

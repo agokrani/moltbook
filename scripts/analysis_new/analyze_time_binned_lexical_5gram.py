@@ -51,6 +51,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-minutes", type=float, default=60.0)
     parser.add_argument("--seed", type=int, default=1337)
     parser.add_argument("--n-samples", type=int, default=100)
+    parser.add_argument("--data-dir", type=str, default=None,
+                        help="Override data directory. If it contains n10/n20/n30 subdirs they are auto-detected; otherwise it is treated as a single-scale dir.")
     return parser.parse_args()
 
 
@@ -147,7 +149,15 @@ def main() -> None:
     plots_dir.mkdir(parents=True, exist_ok=True)
 
     include_scales = [scale.strip() for scale in args.scales.split(",") if scale.strip()]
-    records = load_all_scales(scale_dirs=SCALE_CONFIG, include_scales=include_scales)
+    scale_dirs = SCALE_CONFIG
+    if args.data_dir:
+        base = Path(args.data_dir)
+        if any((base / s).is_dir() for s in include_scales):
+            scale_dirs = {s: base / s for s in include_scales if (base / s).is_dir()}
+            include_scales = sorted(scale_dirs.keys())
+        else:
+            scale_dirs = {s: base for s in include_scales}
+    records = load_all_scales(scale_dirs=scale_dirs, include_scales=include_scales)
     agent_records = [record for record in records if not record.is_seed]
     prepared = prepare_posts(agent_records)
 

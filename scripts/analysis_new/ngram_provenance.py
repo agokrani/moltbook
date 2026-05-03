@@ -235,7 +235,14 @@ def main():
         SCALES = args.scales.split(",")
     if args.out_dir:
         OUT_DIR = Path(args.out_dir)
-    scale_dirs = {s: Path(args.data_dir) for s in SCALES} if args.data_dir else None
+    scale_dirs = None
+    if args.data_dir:
+        base = Path(args.data_dir)
+        if any((base / s).is_dir() for s in SCALES):
+            scale_dirs = {s: base / s for s in SCALES if (base / s).is_dir()}
+            SCALES = sorted(scale_dirs.keys())
+        else:
+            scale_dirs = {s: base for s in SCALES}
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 

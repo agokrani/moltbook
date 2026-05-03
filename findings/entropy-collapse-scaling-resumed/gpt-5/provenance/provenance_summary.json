@@ -1,0 +1,110 @@
+{
+  "finding": "Each of the 18 runs independently develops its own dominant 4/5-gram phrases. Zero top-10 overlap between any two runs. Zero seed-post origin. The collapse is LLM-intrinsic: agents converge within a run, but on different phrases per run.",
+  "runs": 18,
+  "per_ngram": {
+    "4": {
+      "unique_top_phrases": 180,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.0,
+      "max_cross_run_overlap": 0
+    },
+    "5": {
+      "unique_top_phrases": 180,
+      "in_seed": 0,
+      "mean_cross_run_overlap": 0.0,
+      "max_cross_run_overlap": 0
+    }
+  },
+  "per_run_top3": {
+    "n10/mag0": [
+      "thursday eod utc credit contributors",
+      "human line veto tiny assumption",
+      "ask human line veto tiny"
+    ],
+    "n10/mag1": [
+      "two line retro keep tweak",
+      "reversible demoable slice two line",
+      "demoable slice two line retro"
+    ],
+    "n10/mag5": [
+      "near term forecast days confidence",
+      "link help score next week",
+      "today drop link help score"
+    ],
+    "n10/mag25": [
+      "primary hops min revisit yyyy",
+      "closest primary hops min revisit",
+      "nearest primary minutes revisit date"
+    ],
+    "n10/dom-agi": [
+      "minute rollback drill bullet changelog",
+      "owner minute rollback drill bullet",
+      "patterns ops pack receipts vibes"
+    ],
+    "n10/dom-tech": [
+      "review first five concrete tweak",
+      "minute artifact keep lights off",
+      "appreciate first ask clarifying question"
+    ],
+    "n20/mag0": [
+      "clarity first tension first reply",
+      "counter restatements next heartbeat else",
+      "restatements next heartbeat else retire"
+    ],
+    "n20/mag1": [
+      "none disconfirming check accept week",
+      "primary receipt write none disconfirming",
+      "receipt write none disconfirming check"
+    ],
+    "n20/mag5": [
+      "claim sentence falsifiable scope stakes",
+      "compile crisp examples next beat",
+      "probe check actually run today"
+    ],
+    "n20/mag25": [
+      "page timecode min micro check",
+      "primary link page timecode min",
+      "link page timecode min micro"
+    ],
+    "n20/dom-agi": [
+      "mttr target last drill date",
+      "smallest reversible step owner date",
+      "compile mini gallery credit teams"
+    ],
+    "n20/dom-tech": [
+      "constraint req pager reader minutes",
+      "owner place sentence add layers",
+      "smallest check actually run week"
+    ],
+    "n30/mag0": [
+      "intent obs tripwire decision lesson",
+      "metric baseline duration scope excl",
+      "baseline duration scope excl noise"
+    ],
+    "n30/mag1": [
+      "steelman failure mode circle back",
+      "trade steelman failure mode circle",
+      "circle back next week deltas"
+    ],
+    "n30/mag5": [
+      "changed strongest source next check",
+      "next week changed strongest source",
+      "week changed strongest source next"
+    ],
+    "n30/mag25": [
+      "tier hypothesis falsifier matched threads",
+      "probe actually run pivot keep",
+      "coffee bet tier fact hypothesis"
+    ],
+    "n30/dom-agi": [
+      "number moved alert latency mttr",
+      "exact off ramp owner mttr",
+      "alert latency mttr silent failure"
+    ],
+    "n30/dom-tech": [
+      "receipt why options owner link",
+      "sentence receipt why options owner",
+      "why options owner link review"
+    ]
+  }
+}

@@ -1,5 +1,35 @@
 # Decision required: how to report fixed-window metrics with empty bins
 
+> **Status: RESOLVED 2026-05-03.**
+> The decision below was needed because 8 of 48 runs had empty final bins. Those
+> 8 runs have since been re-launched, exported as
+> [`Ayushnangia/moltbook-entropy-collapse-resumes`](https://huggingface.co/datasets/Ayushnangia/moltbook-entropy-collapse-resumes),
+> merged with their originals (`scripts/retimestamp/retimestamp_resumed.py`),
+> and folded into the canonical inventory through the analysis overlay
+> (`data/canonical-merged-overlay/`). After the merge, **zero of 48 runs** have
+> an empty final bin, so fixed-window metrics no longer need a special-case
+> exclusion rule. The paper-canonical numbers are now computed over all 48 runs
+> with no missing bins. See `canonical_data.md` for the pipeline and `findings.md`
+> for the corrected statistics.
+>
+> The bottom-line shift in the headline numbers, before vs after the merge:
+>
+> | Metric | Before (with empty-bin zeros) | After (resumed + merged) |
+> |---|---:|---:|
+> | gzip mean Δ (Q4−Q1) | -0.089, 46/48 declines | -0.037, 44/48 declines, p=1.5e-9 |
+> | Fixed-window distinct-5 mean Δ | -0.250, 47/48 declines | -0.090, 44/48 declines, p=1.5e-9 |
+> | Cumulative distinct-5 mean Δ | -0.056, 46/48 declines | -0.056, 47/48 declines, p=3.5e-13 |
+> | Simpson's 1/D mean Δ | -5,309 | -4,447, 44/48 declines |
+>
+> The cumulative metric is essentially unchanged (it carried earlier posts
+> forward in the dropout runs). The fixed-window metrics shrink in magnitude
+> because the inflated near-zero values from empty bins are gone, but the
+> direction is unchanged and the 95% CIs are well below zero.
+>
+> The original analysis below is kept as a record.
+
+---
+
 ## Issue
 
 Some canonical runs have no agent-authored posts in the later 15-minute bins. In the current fixed-window metrics, these empty bins are encoded as `0.0`.

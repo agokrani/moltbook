@@ -1,0 +1,3437 @@
+{
+  "meta": {
+    "analysis": "canonical_first_60_minute_compression",
+    "algorithms": [
+      "gzip",
+      "bzip2",
+      "zlib"
+    ],
+    "n_quartiles": 4,
+    "binning": "fixed_15_minute_bins_after_first_agent_post",
+    "first_minutes": 60,
+    "data_root": "data",
+    "merged_overrides_dir": "data/canonical-merged",
+    "merged_overrides_applied": [
+      "ec-dom-agi-n10-run01",
+      "ec-dom-agi-n20-run01",
+      "ec-dom-tech-n10-run01",
+      "ec-mag0-run04",
+      "ec-mag1-run04",
+      "ec-mag25-n30-run01",
+      "ec-mag5-n20-run01",
+      "ec-mag5-n30-run01"
+    ],
+    "canonical_datasets": [
+      {
+        "set": "GPT-5",
+        "model": "gpt-5",
+        "scale": "n10",
+        "path": "moltbook-entropy-collapse-v2/data",
+        "nested_scales": false
+      },
+      {
+        "set": "GPT-5",
+        "model": "gpt-5",
+        "scale": "n20",
+        "path": "moltbook-entropy-collapse-20agents/data",
+        "nested_scales": false
+      },
+      {
+        "set": "GPT-5",
+        "model": "gpt-5",
+        "scale": "n30",
+        "path": "moltbook-entropy-collapse-30agents/data",
+        "nested_scales": false
+      },
+      {
+        "set": "Gemini",
+        "model": "google/gemini-3.1-flash-lite-preview",
+        "scale": null,
+        "path": "moltbook-entropy-collapse-gemini-flash-lite/data",
+        "nested_scales": true
+      },
+      {
+        "set": "Kimi",
+        "model": "moonshotai/kimi-k2.5",
+        "scale": "n10",
+        "path": "moltbook-entropy-collapse-kimi-k2.5/data",
+        "nested_scales": false
+      },
+      {
+        "set": "GLM-5",
+        "model": "z-ai/glm-5",
+        "scale": "n10",
+        "path": "moltbook-entropy-collapse-glm-5/data",
+        "nested_scales": false
+      }
+    ],
+    "notes": [
+      "Reads curated local data/ mirrors, not raw scratch exports.",
+      "Excludes CivicLens system/seed posts via author_name prefix civiclens_.",
+      "Filters every run to first 60 minutes from first agent-authored post.",
+      "When --merged-overrides-dir is set, matching runs are read from that dir (resumed+retimestamped) instead of the canonical mirror."
+    ]
+  },
+  "results": [
+    {
+      "experiment": "ec-dom-agi-run04",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-v2/data/ec-dom-agi-run04",
+      "merged_override": false,
+      "metadata_duration_minutes": null,
+      "first_post_at": "2026-03-05T14:09:37.833000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 464,
+      "n_posts": 464,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 154,
+          "total_bytes": 98701,
+          "ratios": {
+            "gzip": 0.348244,
+            "bzip2": 0.299693,
+            "zlib": 0.348315
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 141,
+          "total_bytes": 81770,
+          "ratios": {
+            "gzip": 0.285459,
+            "bzip2": 0.267005,
+            "zlib": 0.285594
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 112,
+          "total_bytes": 66506,
+          "ratios": {
+            "gzip": 0.283508,
+            "bzip2": 0.270156,
+            "zlib": 0.283749
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 57,
+          "total_bytes": 28917,
+          "ratios": {
+            "gzip": 0.313449,
+            "bzip2": 0.31542,
+            "zlib": 0.313034
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.034795,
+        "bzip2": 0.015727,
+        "zlib": -0.035281
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-run04",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-v2/data/ec-dom-tech-run04",
+      "merged_override": false,
+      "metadata_duration_minutes": null,
+      "first_post_at": "2026-03-05T14:09:24.984000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 501,
+      "n_posts": 501,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 140,
+          "total_bytes": 68550,
+          "ratios": {
+            "gzip": 0.305573,
+            "bzip2": 0.270036,
+            "zlib": 0.305718
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 140,
+          "total_bytes": 61713,
+          "ratios": {
+            "gzip": 0.240306,
+            "bzip2": 0.215254,
+            "zlib": 0.240549
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 141,
+          "total_bytes": 53375,
+          "ratios": {
+            "gzip": 0.221021,
+            "bzip2": 0.197845,
+            "zlib": 0.221415
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 80,
+          "total_bytes": 26954,
+          "ratios": {
+            "gzip": 0.220746,
+            "bzip2": 0.212733,
+            "zlib": 0.220895
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.084827,
+        "bzip2": -0.057303,
+        "zlib": -0.084823
+      }
+    },
+    {
+      "experiment": "ec-mag0-run04",
+      "condition": "mag0",
+      "scale": "n10",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/canonical-merged/ec-mag0-run04",
+      "merged_override": true,
+      "metadata_duration_minutes": null,
+      "first_post_at": "2026-03-05T12:18:09.960000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 480,
+      "n_posts": 480,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 114,
+          "total_bytes": 41398,
+          "ratios": {
+            "gzip": 0.38113,
+            "bzip2": 0.34062,
+            "zlib": 0.380864
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 126,
+          "total_bytes": 38147,
+          "ratios": {
+            "gzip": 0.367971,
+            "bzip2": 0.329331,
+            "zlib": 0.367893
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 144,
+          "total_bytes": 41297,
+          "ratios": {
+            "gzip": 0.359324,
+            "bzip2": 0.32276,
+            "zlib": 0.359227
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 96,
+          "total_bytes": 33837,
+          "ratios": {
+            "gzip": 0.344505,
+            "bzip2": 0.307681,
+            "zlib": 0.344564
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.036625,
+        "bzip2": -0.032939,
+        "zlib": -0.0363
+      }
+    },
+    {
+      "experiment": "ec-mag1-run04",
+      "condition": "mag1",
+      "scale": "n10",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/canonical-merged/ec-mag1-run04",
+      "merged_override": true,
+      "metadata_duration_minutes": null,
+      "first_post_at": "2026-03-05T12:17:23.056000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 508,
+      "n_posts": 508,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 134,
+          "total_bytes": 58063,
+          "ratios": {
+            "gzip": 0.367635,
+            "bzip2": 0.318774,
+            "zlib": 0.36779
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 143,
+          "total_bytes": 51727,
+          "ratios": {
+            "gzip": 0.343708,
+            "bzip2": 0.304,
+            "zlib": 0.344114
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 135,
+          "total_bytes": 47894,
+          "ratios": {
+            "gzip": 0.336869,
+            "bzip2": 0.299557,
+            "zlib": 0.336973
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 96,
+          "total_bytes": 25500,
+          "ratios": {
+            "gzip": 0.308784,
+            "bzip2": 0.294157,
+            "zlib": 0.30851
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.058851,
+        "bzip2": -0.024617,
+        "zlib": -0.05928
+      }
+    },
+    {
+      "experiment": "ec-mag25-run04",
+      "condition": "mag25",
+      "scale": "n10",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-v2/data/ec-mag25-run04",
+      "merged_override": false,
+      "metadata_duration_minutes": null,
+      "first_post_at": "2026-03-05T15:45:09.015000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 346,
+      "n_posts": 346,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 141,
+          "total_bytes": 69379,
+          "ratios": {
+            "gzip": 0.339786,
+            "bzip2": 0.293201,
+            "zlib": 0.34029
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 100,
+          "total_bytes": 43557,
+          "ratios": {
+            "gzip": 0.298873,
+            "bzip2": 0.267948,
+            "zlib": 0.299217
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 87,
+          "total_bytes": 33232,
+          "ratios": {
+            "gzip": 0.299922,
+            "bzip2": 0.273923,
+            "zlib": 0.299922
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 18,
+          "total_bytes": 7208,
+          "ratios": {
+            "gzip": 0.418424,
+            "bzip2": 0.411071,
+            "zlib": 0.416759
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": 0.078638,
+        "bzip2": 0.11787,
+        "zlib": 0.076469
+      }
+    },
+    {
+      "experiment": "ec-mag5-run04",
+      "condition": "mag5",
+      "scale": "n10",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-v2/data/ec-mag5-run04",
+      "merged_override": false,
+      "metadata_duration_minutes": null,
+      "first_post_at": "2026-03-05T15:44:39.210000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 282,
+      "n_posts": 282,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 109,
+          "total_bytes": 56345,
+          "ratios": {
+            "gzip": 0.333339,
+            "bzip2": 0.290106,
+            "zlib": 0.333659
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 78,
+          "total_bytes": 33977,
+          "ratios": {
+            "gzip": 0.312329,
+            "bzip2": 0.279218,
+            "zlib": 0.312623
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 74,
+          "total_bytes": 27598,
+          "ratios": {
+            "gzip": 0.277194,
+            "bzip2": 0.255453,
+            "zlib": 0.277049
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 21,
+          "total_bytes": 7820,
+          "ratios": {
+            "gzip": 0.31688,
+            "bzip2": 0.323402,
+            "zlib": 0.315345
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.016459,
+        "bzip2": 0.033296,
+        "zlib": -0.018314
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n20-run01",
+      "condition": "dom-agi",
+      "scale": "n20",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-20agents/data/ec-dom-agi-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T19:36:29.015000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1085,
+      "n_posts": 1085,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 277,
+          "total_bytes": 129771,
+          "ratios": {
+            "gzip": 0.375423,
+            "bzip2": 0.306763,
+            "zlib": 0.375754
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 283,
+          "total_bytes": 100930,
+          "ratios": {
+            "gzip": 0.339186,
+            "bzip2": 0.281225,
+            "zlib": 0.33978
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 274,
+          "total_bytes": 91031,
+          "ratios": {
+            "gzip": 0.322055,
+            "bzip2": 0.272523,
+            "zlib": 0.322637
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 251,
+          "total_bytes": 78530,
+          "ratios": {
+            "gzip": 0.317407,
+            "bzip2": 0.274443,
+            "zlib": 0.317917
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.058016,
+        "bzip2": -0.03232,
+        "zlib": -0.057837
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n20-run01",
+      "condition": "dom-tech",
+      "scale": "n20",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-20agents/data/ec-dom-tech-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T19:36:44.820000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 961,
+      "n_posts": 961,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 246,
+          "total_bytes": 95507,
+          "ratios": {
+            "gzip": 0.355524,
+            "bzip2": 0.298826,
+            "zlib": 0.355963
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 245,
+          "total_bytes": 82842,
+          "ratios": {
+            "gzip": 0.332271,
+            "bzip2": 0.283986,
+            "zlib": 0.332428
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 252,
+          "total_bytes": 82659,
+          "ratios": {
+            "gzip": 0.308279,
+            "bzip2": 0.266045,
+            "zlib": 0.308714
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 218,
+          "total_bytes": 67266,
+          "ratios": {
+            "gzip": 0.291113,
+            "bzip2": 0.259775,
+            "zlib": 0.29141
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.064411,
+        "bzip2": -0.039051,
+        "zlib": -0.064553
+      }
+    },
+    {
+      "experiment": "ec-mag0-n20-run01",
+      "condition": "mag0",
+      "scale": "n20",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-20agents/data/ec-mag0-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 75,
+      "first_post_at": "2026-03-09T17:50:59.728000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1157,
+      "n_posts": 981,
+      "n_posts_excluded_after_first_window": 176,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 270,
+          "total_bytes": 155424,
+          "ratios": {
+            "gzip": 0.280484,
+            "bzip2": 0.230492,
+            "zlib": 0.280973
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 259,
+          "total_bytes": 132016,
+          "ratios": {
+            "gzip": 0.276663,
+            "bzip2": 0.229972,
+            "zlib": 0.277156
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 253,
+          "total_bytes": 113707,
+          "ratios": {
+            "gzip": 0.254206,
+            "bzip2": 0.219001,
+            "zlib": 0.254637
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 199,
+          "total_bytes": 77578,
+          "ratios": {
+            "gzip": 0.276805,
+            "bzip2": 0.237709,
+            "zlib": 0.27696
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.003679,
+        "bzip2": 0.007217,
+        "zlib": -0.004013
+      }
+    },
+    {
+      "experiment": "ec-mag1-n20-run01",
+      "condition": "mag1",
+      "scale": "n20",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-20agents/data/ec-mag1-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T19:36:23.639000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1049,
+      "n_posts": 1049,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 258,
+          "total_bytes": 120242,
+          "ratios": {
+            "gzip": 0.307962,
+            "bzip2": 0.254977,
+            "zlib": 0.308628
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 283,
+          "total_bytes": 111917,
+          "ratios": {
+            "gzip": 0.289438,
+            "bzip2": 0.23345,
+            "zlib": 0.290215
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 262,
+          "total_bytes": 99653,
+          "ratios": {
+            "gzip": 0.281647,
+            "bzip2": 0.2305,
+            "zlib": 0.282571
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 246,
+          "total_bytes": 89281,
+          "ratios": {
+            "gzip": 0.260604,
+            "bzip2": 0.217627,
+            "zlib": 0.261579
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.047358,
+        "bzip2": -0.03735,
+        "zlib": -0.047049
+      }
+    },
+    {
+      "experiment": "ec-mag25-n20-run01",
+      "condition": "mag25",
+      "scale": "n20",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-20agents/data/ec-mag25-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 173,
+      "first_post_at": "2026-03-09T19:36:29.691000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 2149,
+      "n_posts": 1055,
+      "n_posts_excluded_after_first_window": 1094,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 274,
+          "total_bytes": 124889,
+          "ratios": {
+            "gzip": 0.335906,
+            "bzip2": 0.273619,
+            "zlib": 0.336587
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 276,
+          "total_bytes": 112660,
+          "ratios": {
+            "gzip": 0.301349,
+            "bzip2": 0.243316,
+            "zlib": 0.302228
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 269,
+          "total_bytes": 101471,
+          "ratios": {
+            "gzip": 0.282317,
+            "bzip2": 0.230667,
+            "zlib": 0.283293
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 236,
+          "total_bytes": 85316,
+          "ratios": {
+            "gzip": 0.27254,
+            "bzip2": 0.22821,
+            "zlib": 0.273477
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.063366,
+        "bzip2": -0.045409,
+        "zlib": -0.06311
+      }
+    },
+    {
+      "experiment": "ec-mag5-n20-run01",
+      "condition": "mag5",
+      "scale": "n20",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-20agents/data/ec-mag5-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T19:36:50.633000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 885,
+      "n_posts": 885,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 249,
+          "total_bytes": 134895,
+          "ratios": {
+            "gzip": 0.28408,
+            "bzip2": 0.233189,
+            "zlib": 0.284948
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 255,
+          "total_bytes": 130100,
+          "ratios": {
+            "gzip": 0.21947,
+            "bzip2": 0.181868,
+            "zlib": 0.220415
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 235,
+          "total_bytes": 103215,
+          "ratios": {
+            "gzip": 0.227806,
+            "bzip2": 0.19378,
+            "zlib": 0.228746
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 146,
+          "total_bytes": 57953,
+          "ratios": {
+            "gzip": 0.255655,
+            "bzip2": 0.22463,
+            "zlib": 0.256501
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.028425,
+        "bzip2": -0.008559,
+        "zlib": -0.028447
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n30-run01",
+      "condition": "dom-agi",
+      "scale": "n30",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-30agents/data/ec-dom-agi-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T23:06:46.875000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1570,
+      "n_posts": 1570,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 408,
+          "total_bytes": 206608,
+          "ratios": {
+            "gzip": 0.290424,
+            "bzip2": 0.228544,
+            "zlib": 0.29131
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 396,
+          "total_bytes": 195098,
+          "ratios": {
+            "gzip": 0.249054,
+            "bzip2": 0.194246,
+            "zlib": 0.249757
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 414,
+          "total_bytes": 178622,
+          "ratios": {
+            "gzip": 0.234725,
+            "bzip2": 0.183572,
+            "zlib": 0.235514
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 352,
+          "total_bytes": 126312,
+          "ratios": {
+            "gzip": 0.230089,
+            "bzip2": 0.185525,
+            "zlib": 0.230865
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.060335,
+        "bzip2": -0.043019,
+        "zlib": -0.060445
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n30-run01",
+      "condition": "dom-tech",
+      "scale": "n30",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-30agents/data/ec-dom-tech-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T23:06:27.581000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1391,
+      "n_posts": 1391,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 377,
+          "total_bytes": 237279,
+          "ratios": {
+            "gzip": 0.293996,
+            "bzip2": 0.225819,
+            "zlib": 0.294927
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 419,
+          "total_bytes": 258597,
+          "ratios": {
+            "gzip": 0.237412,
+            "bzip2": 0.178246,
+            "zlib": 0.2381
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 367,
+          "total_bytes": 198003,
+          "ratios": {
+            "gzip": 0.206638,
+            "bzip2": 0.159083,
+            "zlib": 0.207431
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 228,
+          "total_bytes": 97493,
+          "ratios": {
+            "gzip": 0.24891,
+            "bzip2": 0.209666,
+            "zlib": 0.249546
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.045086,
+        "bzip2": -0.016153,
+        "zlib": -0.045381
+      }
+    },
+    {
+      "experiment": "ec-mag0-n30-run01",
+      "condition": "mag0",
+      "scale": "n30",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-30agents/data/ec-mag0-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-10T00:46:47.989000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1613,
+      "n_posts": 1613,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 404,
+          "total_bytes": 167641,
+          "ratios": {
+            "gzip": 0.347296,
+            "bzip2": 0.280254,
+            "zlib": 0.348125
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 425,
+          "total_bytes": 159442,
+          "ratios": {
+            "gzip": 0.312113,
+            "bzip2": 0.251929,
+            "zlib": 0.312879
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 414,
+          "total_bytes": 140118,
+          "ratios": {
+            "gzip": 0.299476,
+            "bzip2": 0.245208,
+            "zlib": 0.30034
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 370,
+          "total_bytes": 121641,
+          "ratios": {
+            "gzip": 0.29606,
+            "bzip2": 0.245115,
+            "zlib": 0.29675
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.051236,
+        "bzip2": -0.035139,
+        "zlib": -0.051375
+      }
+    },
+    {
+      "experiment": "ec-mag1-n30-run01",
+      "condition": "mag1",
+      "scale": "n30",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-30agents/data/ec-mag1-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T22:56:19.061000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1612,
+      "n_posts": 1612,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 393,
+          "total_bytes": 172721,
+          "ratios": {
+            "gzip": 0.327407,
+            "bzip2": 0.260843,
+            "zlib": 0.328414
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 408,
+          "total_bytes": 168797,
+          "ratios": {
+            "gzip": 0.271693,
+            "bzip2": 0.217871,
+            "zlib": 0.272446
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 424,
+          "total_bytes": 162339,
+          "ratios": {
+            "gzip": 0.253045,
+            "bzip2": 0.204467,
+            "zlib": 0.253747
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 387,
+          "total_bytes": 131816,
+          "ratios": {
+            "gzip": 0.256873,
+            "bzip2": 0.206932,
+            "zlib": 0.257806
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.070534,
+        "bzip2": -0.053911,
+        "zlib": -0.070608
+      }
+    },
+    {
+      "experiment": "ec-mag25-n30-run01",
+      "condition": "mag25",
+      "scale": "n30",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-30agents/data/ec-mag25-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T22:59:47.494000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1589,
+      "n_posts": 1588,
+      "n_posts_excluded_after_first_window": 1,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 422,
+          "total_bytes": 297850,
+          "ratios": {
+            "gzip": 0.310569,
+            "bzip2": 0.229592,
+            "zlib": 0.311321
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 435,
+          "total_bytes": 274470,
+          "ratios": {
+            "gzip": 0.275549,
+            "bzip2": 0.204933,
+            "zlib": 0.27618
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 412,
+          "total_bytes": 236505,
+          "ratios": {
+            "gzip": 0.26158,
+            "bzip2": 0.2003,
+            "zlib": 0.262426
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 319,
+          "total_bytes": 155326,
+          "ratios": {
+            "gzip": 0.265068,
+            "bzip2": 0.213338,
+            "zlib": 0.265641
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.045501,
+        "bzip2": -0.016254,
+        "zlib": -0.04568
+      }
+    },
+    {
+      "experiment": "ec-mag5-n30-run01",
+      "condition": "mag5",
+      "scale": "n30",
+      "set": "GPT-5",
+      "model": "gpt-5",
+      "source_path": "data/moltbook-entropy-collapse-30agents/data/ec-mag5-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-09T22:59:53.976000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1580,
+      "n_posts": 1580,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 402,
+          "total_bytes": 195133,
+          "ratios": {
+            "gzip": 0.301738,
+            "bzip2": 0.239114,
+            "zlib": 0.302373
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 406,
+          "total_bytes": 171292,
+          "ratios": {
+            "gzip": 0.277287,
+            "bzip2": 0.217103,
+            "zlib": 0.277806
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 405,
+          "total_bytes": 152023,
+          "ratios": {
+            "gzip": 0.268861,
+            "bzip2": 0.212797,
+            "zlib": 0.269538
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 367,
+          "total_bytes": 132057,
+          "ratios": {
+            "gzip": 0.244925,
+            "bzip2": 0.194757,
+            "zlib": 0.245833
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.056813,
+        "bzip2": -0.044357,
+        "zlib": -0.05654
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n10-run01",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/canonical-merged/ec-dom-agi-n10-run01",
+      "merged_override": true,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T17:46:52.148000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 396,
+      "n_posts": 396,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 103,
+          "total_bytes": 53003,
+          "ratios": {
+            "gzip": 0.327774,
+            "bzip2": 0.283946,
+            "zlib": 0.328529
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 97,
+          "total_bytes": 36252,
+          "ratios": {
+            "gzip": 0.327706,
+            "bzip2": 0.288067,
+            "zlib": 0.328009
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 139,
+          "total_bytes": 49671,
+          "ratios": {
+            "gzip": 0.299752,
+            "bzip2": 0.257837,
+            "zlib": 0.300678
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 57,
+          "total_bytes": 19964,
+          "ratios": {
+            "gzip": 0.320527,
+            "bzip2": 0.289621,
+            "zlib": 0.320026
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.007247,
+        "bzip2": 0.005675,
+        "zlib": -0.008503
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n10-run01",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/canonical-merged/ec-dom-tech-n10-run01",
+      "merged_override": true,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T15:30:46.574000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 331,
+      "n_posts": 331,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 107,
+          "total_bytes": 52327,
+          "ratios": {
+            "gzip": 0.340455,
+            "bzip2": 0.303973,
+            "zlib": 0.340417
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 85,
+          "total_bytes": 47702,
+          "ratios": {
+            "gzip": 0.316255,
+            "bzip2": 0.278563,
+            "zlib": 0.316821
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 57,
+          "total_bytes": 23960,
+          "ratios": {
+            "gzip": 0.34111,
+            "bzip2": 0.312396,
+            "zlib": 0.340818
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 82,
+          "total_bytes": 23761,
+          "ratios": {
+            "gzip": 0.316106,
+            "bzip2": 0.286983,
+            "zlib": 0.31577
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.024349,
+        "bzip2": -0.01699,
+        "zlib": -0.024647
+      }
+    },
+    {
+      "experiment": "ec-mag0-n10-run01",
+      "condition": "mag0",
+      "scale": "n10",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n10/ec-mag0-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T18:14:51.596000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 472,
+      "n_posts": 472,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 136,
+          "total_bytes": 43438,
+          "ratios": {
+            "gzip": 0.330149,
+            "bzip2": 0.287145,
+            "zlib": 0.331162
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 123,
+          "total_bytes": 42892,
+          "ratios": {
+            "gzip": 0.315677,
+            "bzip2": 0.27413,
+            "zlib": 0.316749
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 118,
+          "total_bytes": 43063,
+          "ratios": {
+            "gzip": 0.297843,
+            "bzip2": 0.258946,
+            "zlib": 0.298957
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 95,
+          "total_bytes": 35327,
+          "ratios": {
+            "gzip": 0.312367,
+            "bzip2": 0.272936,
+            "zlib": 0.313132
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.017782,
+        "bzip2": -0.014209,
+        "zlib": -0.01803
+      }
+    },
+    {
+      "experiment": "ec-mag1-n10-run01",
+      "condition": "mag1",
+      "scale": "n10",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n10/ec-mag1-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T15:30:42.204000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 345,
+      "n_posts": 345,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 124,
+          "total_bytes": 61404,
+          "ratios": {
+            "gzip": 0.324099,
+            "bzip2": 0.28192,
+            "zlib": 0.324555
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 98,
+          "total_bytes": 44315,
+          "ratios": {
+            "gzip": 0.30396,
+            "bzip2": 0.267449,
+            "zlib": 0.304682
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 67,
+          "total_bytes": 30614,
+          "ratios": {
+            "gzip": 0.316816,
+            "bzip2": 0.286013,
+            "zlib": 0.316881
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 56,
+          "total_bytes": 25900,
+          "ratios": {
+            "gzip": 0.309614,
+            "bzip2": 0.279344,
+            "zlib": 0.309421
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.014485,
+        "bzip2": -0.002576,
+        "zlib": -0.015134
+      }
+    },
+    {
+      "experiment": "ec-mag25-n10-run01",
+      "condition": "mag25",
+      "scale": "n10",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n10/ec-mag25-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T19:04:02.408000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 418,
+      "n_posts": 418,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 133,
+          "total_bytes": 65110,
+          "ratios": {
+            "gzip": 0.328152,
+            "bzip2": 0.283566,
+            "zlib": 0.328644
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 102,
+          "total_bytes": 55041,
+          "ratios": {
+            "gzip": 0.302048,
+            "bzip2": 0.267092,
+            "zlib": 0.302447
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 100,
+          "total_bytes": 59208,
+          "ratios": {
+            "gzip": 0.297156,
+            "bzip2": 0.263613,
+            "zlib": 0.297662
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 83,
+          "total_bytes": 49463,
+          "ratios": {
+            "gzip": 0.30358,
+            "bzip2": 0.267816,
+            "zlib": 0.304025
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.024572,
+        "bzip2": -0.01575,
+        "zlib": -0.024619
+      }
+    },
+    {
+      "experiment": "ec-mag5-n10-run01",
+      "condition": "mag5",
+      "scale": "n10",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n10/ec-mag5-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T19:04:04.812000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 423,
+      "n_posts": 423,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 139,
+          "total_bytes": 57543,
+          "ratios": {
+            "gzip": 0.329823,
+            "bzip2": 0.289627,
+            "zlib": 0.33057
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 114,
+          "total_bytes": 45270,
+          "ratios": {
+            "gzip": 0.251381,
+            "bzip2": 0.230926,
+            "zlib": 0.252529
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 96,
+          "total_bytes": 39340,
+          "ratios": {
+            "gzip": 0.192095,
+            "bzip2": 0.187367,
+            "zlib": 0.192374
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 74,
+          "total_bytes": 32981,
+          "ratios": {
+            "gzip": 0.169704,
+            "bzip2": 0.179315,
+            "zlib": 0.170007
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.160119,
+        "bzip2": -0.110312,
+        "zlib": -0.160563
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n20-run01",
+      "condition": "dom-agi",
+      "scale": "n20",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/canonical-merged/ec-dom-agi-n20-run01",
+      "merged_override": true,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T17:45:53.078000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 670,
+      "n_posts": 643,
+      "n_posts_excluded_after_first_window": 27,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 241,
+          "total_bytes": 124648,
+          "ratios": {
+            "gzip": 0.290835,
+            "bzip2": 0.243293,
+            "zlib": 0.291661
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 178,
+          "total_bytes": 97327,
+          "ratios": {
+            "gzip": 0.26113,
+            "bzip2": 0.226114,
+            "zlib": 0.261818
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 83,
+          "total_bytes": 31773,
+          "ratios": {
+            "gzip": 0.347402,
+            "bzip2": 0.310295,
+            "zlib": 0.347402
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 141,
+          "total_bytes": 62223,
+          "ratios": {
+            "gzip": 0.332546,
+            "bzip2": 0.289764,
+            "zlib": 0.333333
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": 0.041711,
+        "bzip2": 0.046471,
+        "zlib": 0.041672
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n20-run01",
+      "condition": "dom-tech",
+      "scale": "n20",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n20/ec-dom-tech-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T09:20:54.560000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 551,
+      "n_posts": 545,
+      "n_posts_excluded_after_first_window": 6,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 229,
+          "total_bytes": 92576,
+          "ratios": {
+            "gzip": 0.308482,
+            "bzip2": 0.260197,
+            "zlib": 0.309659
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 125,
+          "total_bytes": 43205,
+          "ratios": {
+            "gzip": 0.259854,
+            "bzip2": 0.235459,
+            "zlib": 0.261011
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 101,
+          "total_bytes": 24248,
+          "ratios": {
+            "gzip": 0.169045,
+            "bzip2": 0.176716,
+            "zlib": 0.169499
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 90,
+          "total_bytes": 19143,
+          "ratios": {
+            "gzip": 0.091313,
+            "bzip2": 0.103537,
+            "zlib": 0.091678
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.217169,
+        "bzip2": -0.15666,
+        "zlib": -0.217981
+      }
+    },
+    {
+      "experiment": "ec-mag0-n20-run01",
+      "condition": "mag0",
+      "scale": "n20",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n20/ec-mag0-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T08:11:01.737000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 665,
+      "n_posts": 665,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 227,
+          "total_bytes": 89502,
+          "ratios": {
+            "gzip": 0.314686,
+            "bzip2": 0.268508,
+            "zlib": 0.315256
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 241,
+          "total_bytes": 98398,
+          "ratios": {
+            "gzip": 0.29836,
+            "bzip2": 0.255778,
+            "zlib": 0.29901
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 133,
+          "total_bytes": 58623,
+          "ratios": {
+            "gzip": 0.299865,
+            "bzip2": 0.266772,
+            "zlib": 0.300479
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 64,
+          "total_bytes": 29255,
+          "ratios": {
+            "gzip": 0.328525,
+            "bzip2": 0.301829,
+            "zlib": 0.328252
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": 0.013839,
+        "bzip2": 0.033321,
+        "zlib": 0.012996
+      }
+    },
+    {
+      "experiment": "ec-mag1-n20-run01",
+      "condition": "mag1",
+      "scale": "n20",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n20/ec-mag1-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 82,
+      "first_post_at": "2026-03-18T08:10:54.183000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1193,
+      "n_posts": 937,
+      "n_posts_excluded_after_first_window": 256,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 242,
+          "total_bytes": 144338,
+          "ratios": {
+            "gzip": 0.301362,
+            "bzip2": 0.247087,
+            "zlib": 0.30227
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 254,
+          "total_bytes": 165101,
+          "ratios": {
+            "gzip": 0.284208,
+            "bzip2": 0.230289,
+            "zlib": 0.285377
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 230,
+          "total_bytes": 156825,
+          "ratios": {
+            "gzip": 0.27208,
+            "bzip2": 0.223638,
+            "zlib": 0.273203
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 211,
+          "total_bytes": 151393,
+          "ratios": {
+            "gzip": 0.273949,
+            "bzip2": 0.226166,
+            "zlib": 0.275495
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.027413,
+        "bzip2": -0.020921,
+        "zlib": -0.026775
+      }
+    },
+    {
+      "experiment": "ec-mag25-n20-run01",
+      "condition": "mag25",
+      "scale": "n20",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n20/ec-mag25-n20-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 82,
+      "first_post_at": "2026-03-18T08:11:52.099000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 754,
+      "n_posts": 622,
+      "n_posts_excluded_after_first_window": 132,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 218,
+          "total_bytes": 84941,
+          "ratios": {
+            "gzip": 0.335362,
+            "bzip2": 0.286269,
+            "zlib": 0.336186
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 182,
+          "total_bytes": 71240,
+          "ratios": {
+            "gzip": 0.320326,
+            "bzip2": 0.277639,
+            "zlib": 0.320803
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 121,
+          "total_bytes": 50991,
+          "ratios": {
+            "gzip": 0.284697,
+            "bzip2": 0.259026,
+            "zlib": 0.284697
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 101,
+          "total_bytes": 45636,
+          "ratios": {
+            "gzip": 0.280699,
+            "bzip2": 0.259663,
+            "zlib": 0.28105
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.054663,
+        "bzip2": -0.026606,
+        "zlib": -0.055136
+      }
+    },
+    {
+      "experiment": "ec-mag5-n20-run01",
+      "condition": "mag5",
+      "scale": "n20",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/canonical-merged/ec-mag5-n20-run01",
+      "merged_override": true,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T17:45:59.291000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 857,
+      "n_posts": 855,
+      "n_posts_excluded_after_first_window": 2,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 231,
+          "total_bytes": 122455,
+          "ratios": {
+            "gzip": 0.303924,
+            "bzip2": 0.249626,
+            "zlib": 0.304806
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 240,
+          "total_bytes": 137201,
+          "ratios": {
+            "gzip": 0.288752,
+            "bzip2": 0.236223,
+            "zlib": 0.290508
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 272,
+          "total_bytes": 135846,
+          "ratios": {
+            "gzip": 0.307981,
+            "bzip2": 0.254317,
+            "zlib": 0.308953
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 112,
+          "total_bytes": 49210,
+          "ratios": {
+            "gzip": 0.322963,
+            "bzip2": 0.284962,
+            "zlib": 0.323186
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": 0.019039,
+        "bzip2": 0.035336,
+        "zlib": 0.01838
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n30-run01",
+      "condition": "dom-agi",
+      "scale": "n30",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n30/ec-dom-agi-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T11:00:12.115000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 659,
+      "n_posts": 650,
+      "n_posts_excluded_after_first_window": 9,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 301,
+          "total_bytes": 152572,
+          "ratios": {
+            "gzip": 0.320105,
+            "bzip2": 0.260939,
+            "zlib": 0.321271
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 201,
+          "total_bytes": 90655,
+          "ratios": {
+            "gzip": 0.257449,
+            "bzip2": 0.2168,
+            "zlib": 0.259324
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 94,
+          "total_bytes": 29632,
+          "ratios": {
+            "gzip": 0.255906,
+            "bzip2": 0.233531,
+            "zlib": 0.256277
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 54,
+          "total_bytes": 15290,
+          "ratios": {
+            "gzip": 0.266252,
+            "bzip2": 0.250425,
+            "zlib": 0.266056
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.053853,
+        "bzip2": -0.010514,
+        "zlib": -0.055215
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n30-run01",
+      "condition": "dom-tech",
+      "scale": "n30",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n30/ec-dom-tech-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T11:00:12.093000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1277,
+      "n_posts": 1238,
+      "n_posts_excluded_after_first_window": 39,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 318,
+          "total_bytes": 147697,
+          "ratios": {
+            "gzip": 0.301645,
+            "bzip2": 0.24882,
+            "zlib": 0.302782
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 353,
+          "total_bytes": 183414,
+          "ratios": {
+            "gzip": 0.274821,
+            "bzip2": 0.225997,
+            "zlib": 0.27583
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 305,
+          "total_bytes": 167164,
+          "ratios": {
+            "gzip": 0.266852,
+            "bzip2": 0.220825,
+            "zlib": 0.267689
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 262,
+          "total_bytes": 153632,
+          "ratios": {
+            "gzip": 0.270243,
+            "bzip2": 0.226893,
+            "zlib": 0.271343
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.031402,
+        "bzip2": -0.021927,
+        "zlib": -0.031439
+      }
+    },
+    {
+      "experiment": "ec-mag0-n30-run01",
+      "condition": "mag0",
+      "scale": "n30",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n30/ec-mag0-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T12:30:29.938000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1361,
+      "n_posts": 1312,
+      "n_posts_excluded_after_first_window": 49,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 334,
+          "total_bytes": 154837,
+          "ratios": {
+            "gzip": 0.296596,
+            "bzip2": 0.243075,
+            "zlib": 0.298023
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 385,
+          "total_bytes": 204501,
+          "ratios": {
+            "gzip": 0.267309,
+            "bzip2": 0.216439,
+            "zlib": 0.268507
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 324,
+          "total_bytes": 192646,
+          "ratios": {
+            "gzip": 0.245694,
+            "bzip2": 0.200565,
+            "zlib": 0.246888
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 269,
+          "total_bytes": 176116,
+          "ratios": {
+            "gzip": 0.231972,
+            "bzip2": 0.198426,
+            "zlib": 0.232744
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.064624,
+        "bzip2": -0.044649,
+        "zlib": -0.065279
+      }
+    },
+    {
+      "experiment": "ec-mag1-n30-run01",
+      "condition": "mag1",
+      "scale": "n30",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/moltbook-entropy-collapse-gemini-flash-lite/data/n30/ec-mag1-n30-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T11:00:50.754000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 890,
+      "n_posts": 875,
+      "n_posts_excluded_after_first_window": 15,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 232,
+          "total_bytes": 103926,
+          "ratios": {
+            "gzip": 0.329571,
+            "bzip2": 0.277428,
+            "zlib": 0.330764
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 307,
+          "total_bytes": 149876,
+          "ratios": {
+            "gzip": 0.283748,
+            "bzip2": 0.233927,
+            "zlib": 0.285489
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 221,
+          "total_bytes": 117837,
+          "ratios": {
+            "gzip": 0.282466,
+            "bzip2": 0.231455,
+            "zlib": 0.283646
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 115,
+          "total_bytes": 43677,
+          "ratios": {
+            "gzip": 0.241935,
+            "bzip2": 0.22062,
+            "zlib": 0.24308
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.087636,
+        "bzip2": -0.056808,
+        "zlib": -0.087684
+      }
+    },
+    {
+      "experiment": "ec-mag25-n30-run01",
+      "condition": "mag25",
+      "scale": "n30",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/canonical-merged/ec-mag25-n30-run01",
+      "merged_override": true,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T17:45:58.248000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1352,
+      "n_posts": 1278,
+      "n_posts_excluded_after_first_window": 74,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 294,
+          "total_bytes": 163147,
+          "ratios": {
+            "gzip": 0.318369,
+            "bzip2": 0.258534,
+            "zlib": 0.319454
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 319,
+          "total_bytes": 184042,
+          "ratios": {
+            "gzip": 0.3028,
+            "bzip2": 0.242379,
+            "zlib": 0.304289
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 291,
+          "total_bytes": 133539,
+          "ratios": {
+            "gzip": 0.307858,
+            "bzip2": 0.249852,
+            "zlib": 0.309318
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 374,
+          "total_bytes": 183482,
+          "ratios": {
+            "gzip": 0.272059,
+            "bzip2": 0.216272,
+            "zlib": 0.273607
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.04631,
+        "bzip2": -0.042262,
+        "zlib": -0.045847
+      }
+    },
+    {
+      "experiment": "ec-mag5-n30-run01",
+      "condition": "mag5",
+      "scale": "n30",
+      "set": "Gemini",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "source_path": "data/canonical-merged/ec-mag5-n30-run01",
+      "merged_override": true,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-18T17:46:01.962000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 1457,
+      "n_posts": 1418,
+      "n_posts_excluded_after_first_window": 39,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 306,
+          "total_bytes": 155905,
+          "ratios": {
+            "gzip": 0.312113,
+            "bzip2": 0.255508,
+            "zlib": 0.313473
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 342,
+          "total_bytes": 183400,
+          "ratios": {
+            "gzip": 0.291254,
+            "bzip2": 0.235267,
+            "zlib": 0.29205
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 395,
+          "total_bytes": 182459,
+          "ratios": {
+            "gzip": 0.306409,
+            "bzip2": 0.245398,
+            "zlib": 0.307275
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 375,
+          "total_bytes": 182594,
+          "ratios": {
+            "gzip": 0.289484,
+            "bzip2": 0.236021,
+            "zlib": 0.290563
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.022629,
+        "bzip2": -0.019487,
+        "zlib": -0.02291
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n10-run01",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "set": "Kimi",
+      "model": "moonshotai/kimi-k2.5",
+      "source_path": "data/moltbook-entropy-collapse-kimi-k2.5/data/ec-dom-agi-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 83,
+      "first_post_at": "2026-03-12T23:44:21.954000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 612,
+      "n_posts": 444,
+      "n_posts_excluded_after_first_window": 168,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 127,
+          "total_bytes": 185441,
+          "ratios": {
+            "gzip": 0.282931,
+            "bzip2": 0.224217,
+            "zlib": 0.284613
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 94,
+          "total_bytes": 79018,
+          "ratios": {
+            "gzip": 0.288352,
+            "bzip2": 0.235073,
+            "zlib": 0.290263
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 113,
+          "total_bytes": 71085,
+          "ratios": {
+            "gzip": 0.269452,
+            "bzip2": 0.218133,
+            "zlib": 0.271815
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 110,
+          "total_bytes": 46972,
+          "ratios": {
+            "gzip": 0.25198,
+            "bzip2": 0.21004,
+            "zlib": 0.25396
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.030951,
+        "bzip2": -0.014177,
+        "zlib": -0.030653
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n10-run01",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "set": "Kimi",
+      "model": "moonshotai/kimi-k2.5",
+      "source_path": "data/moltbook-entropy-collapse-kimi-k2.5/data/ec-dom-tech-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 83,
+      "first_post_at": "2026-03-12T23:44:16.767000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 627,
+      "n_posts": 456,
+      "n_posts_excluded_after_first_window": 171,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 124,
+          "total_bytes": 182184,
+          "ratios": {
+            "gzip": 0.304039,
+            "bzip2": 0.234373,
+            "zlib": 0.305889
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 85,
+          "total_bytes": 81837,
+          "ratios": {
+            "gzip": 0.302247,
+            "bzip2": 0.243179,
+            "zlib": 0.30353
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 132,
+          "total_bytes": 102116,
+          "ratios": {
+            "gzip": 0.300541,
+            "bzip2": 0.236927,
+            "zlib": 0.302313
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 115,
+          "total_bytes": 79036,
+          "ratios": {
+            "gzip": 0.285857,
+            "bzip2": 0.235867,
+            "zlib": 0.287553
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.018182,
+        "bzip2": 0.001494,
+        "zlib": -0.018336
+      }
+    },
+    {
+      "experiment": "ec-mag0-n10-run01",
+      "condition": "mag0",
+      "scale": "n10",
+      "set": "Kimi",
+      "model": "moonshotai/kimi-k2.5",
+      "source_path": "data/moltbook-entropy-collapse-kimi-k2.5/data/ec-mag0-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 83,
+      "first_post_at": "2026-03-12T22:35:28.142000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 620,
+      "n_posts": 487,
+      "n_posts_excluded_after_first_window": 133,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 149,
+          "total_bytes": 119164,
+          "ratios": {
+            "gzip": 0.312611,
+            "bzip2": 0.246073,
+            "zlib": 0.31366
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 144,
+          "total_bytes": 92375,
+          "ratios": {
+            "gzip": 0.291995,
+            "bzip2": 0.233494,
+            "zlib": 0.293434
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 125,
+          "total_bytes": 74332,
+          "ratios": {
+            "gzip": 0.280135,
+            "bzip2": 0.229793,
+            "zlib": 0.282032
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 69,
+          "total_bytes": 29274,
+          "ratios": {
+            "gzip": 0.280556,
+            "bzip2": 0.246874,
+            "zlib": 0.280932
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.032055,
+        "bzip2": 0.000801,
+        "zlib": -0.032728
+      }
+    },
+    {
+      "experiment": "ec-mag1-n10-run01",
+      "condition": "mag1",
+      "scale": "n10",
+      "set": "Kimi",
+      "model": "moonshotai/kimi-k2.5",
+      "source_path": "data/moltbook-entropy-collapse-kimi-k2.5/data/ec-mag1-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-13T00:04:34.050000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 455,
+      "n_posts": 455,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 142,
+          "total_bytes": 160571,
+          "ratios": {
+            "gzip": 0.309882,
+            "bzip2": 0.238225,
+            "zlib": 0.311364
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 88,
+          "total_bytes": 83634,
+          "ratios": {
+            "gzip": 0.292895,
+            "bzip2": 0.238085,
+            "zlib": 0.294222
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 127,
+          "total_bytes": 102559,
+          "ratios": {
+            "gzip": 0.298579,
+            "bzip2": 0.238048,
+            "zlib": 0.300003
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 98,
+          "total_bytes": 68544,
+          "ratios": {
+            "gzip": 0.29047,
+            "bzip2": 0.238504,
+            "zlib": 0.291565
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.019412,
+        "bzip2": 0.000279,
+        "zlib": -0.019799
+      }
+    },
+    {
+      "experiment": "ec-mag25-n10-run01",
+      "condition": "mag25",
+      "scale": "n10",
+      "set": "Kimi",
+      "model": "moonshotai/kimi-k2.5",
+      "source_path": "data/moltbook-entropy-collapse-kimi-k2.5/data/ec-mag25-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 83,
+      "first_post_at": "2026-03-12T23:44:01.304000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 673,
+      "n_posts": 480,
+      "n_posts_excluded_after_first_window": 193,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 139,
+          "total_bytes": 158038,
+          "ratios": {
+            "gzip": 0.31302,
+            "bzip2": 0.24105,
+            "zlib": 0.314583
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 115,
+          "total_bytes": 93606,
+          "ratios": {
+            "gzip": 0.302278,
+            "bzip2": 0.241555,
+            "zlib": 0.303485
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 122,
+          "total_bytes": 65542,
+          "ratios": {
+            "gzip": 0.288655,
+            "bzip2": 0.235208,
+            "zlib": 0.289479
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 104,
+          "total_bytes": 48310,
+          "ratios": {
+            "gzip": 0.282612,
+            "bzip2": 0.234051,
+            "zlib": 0.283523
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.030408,
+        "bzip2": -0.006999,
+        "zlib": -0.03106
+      }
+    },
+    {
+      "experiment": "ec-mag5-n10-run01",
+      "condition": "mag5",
+      "scale": "n10",
+      "set": "Kimi",
+      "model": "moonshotai/kimi-k2.5",
+      "source_path": "data/moltbook-entropy-collapse-kimi-k2.5/data/ec-mag5-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 83,
+      "first_post_at": "2026-03-12T23:44:15.576000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 650,
+      "n_posts": 469,
+      "n_posts_excluded_after_first_window": 181,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 139,
+          "total_bytes": 169415,
+          "ratios": {
+            "gzip": 0.318006,
+            "bzip2": 0.245421,
+            "zlib": 0.319765
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 109,
+          "total_bytes": 104177,
+          "ratios": {
+            "gzip": 0.309397,
+            "bzip2": 0.245169,
+            "zlib": 0.310808
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 114,
+          "total_bytes": 93386,
+          "ratios": {
+            "gzip": 0.304446,
+            "bzip2": 0.243977,
+            "zlib": 0.305967
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 107,
+          "total_bytes": 92311,
+          "ratios": {
+            "gzip": 0.288005,
+            "bzip2": 0.234122,
+            "zlib": 0.289738
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.030001,
+        "bzip2": -0.011299,
+        "zlib": -0.030027
+      }
+    },
+    {
+      "experiment": "ec-dom-agi-n10-run01",
+      "condition": "dom-agi",
+      "scale": "n10",
+      "set": "GLM-5",
+      "model": "z-ai/glm-5",
+      "source_path": "data/moltbook-entropy-collapse-glm-5/data/ec-dom-agi-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T10:43:26.496000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 245,
+      "n_posts": 245,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 82,
+          "total_bytes": 124005,
+          "ratios": {
+            "gzip": 0.326471,
+            "bzip2": 0.258159,
+            "zlib": 0.327721
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 43,
+          "total_bytes": 62533,
+          "ratios": {
+            "gzip": 0.329666,
+            "bzip2": 0.276846,
+            "zlib": 0.330561
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 46,
+          "total_bytes": 60809,
+          "ratios": {
+            "gzip": 0.325067,
+            "bzip2": 0.269352,
+            "zlib": 0.325955
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 74,
+          "total_bytes": 93731,
+          "ratios": {
+            "gzip": 0.319958,
+            "bzip2": 0.260693,
+            "zlib": 0.321164
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.006513,
+        "bzip2": 0.002534,
+        "zlib": -0.006557
+      }
+    },
+    {
+      "experiment": "ec-dom-tech-n10-run01",
+      "condition": "dom-tech",
+      "scale": "n10",
+      "set": "GLM-5",
+      "model": "z-ai/glm-5",
+      "source_path": "data/moltbook-entropy-collapse-glm-5/data/ec-dom-tech-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T10:43:35.608000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 253,
+      "n_posts": 253,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 81,
+          "total_bytes": 123117,
+          "ratios": {
+            "gzip": 0.324082,
+            "bzip2": 0.25929,
+            "zlib": 0.325609
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 48,
+          "total_bytes": 66683,
+          "ratios": {
+            "gzip": 0.334313,
+            "bzip2": 0.277927,
+            "zlib": 0.335168
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 60,
+          "total_bytes": 81339,
+          "ratios": {
+            "gzip": 0.317474,
+            "bzip2": 0.259236,
+            "zlib": 0.318752
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 64,
+          "total_bytes": 85879,
+          "ratios": {
+            "gzip": 0.315828,
+            "bzip2": 0.255941,
+            "zlib": 0.31768
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.008254,
+        "bzip2": -0.003349,
+        "zlib": -0.007929
+      }
+    },
+    {
+      "experiment": "ec-mag0-n10-run01",
+      "condition": "mag0",
+      "scale": "n10",
+      "set": "GLM-5",
+      "model": "z-ai/glm-5",
+      "source_path": "data/moltbook-entropy-collapse-glm-5/data/ec-mag0-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T08:57:47.829000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 317,
+      "n_posts": 317,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 106,
+          "total_bytes": 118897,
+          "ratios": {
+            "gzip": 0.323877,
+            "bzip2": 0.255927,
+            "zlib": 0.325147
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 92,
+          "total_bytes": 126845,
+          "ratios": {
+            "gzip": 0.29365,
+            "bzip2": 0.229698,
+            "zlib": 0.295668
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 68,
+          "total_bytes": 101010,
+          "ratios": {
+            "gzip": 0.304069,
+            "bzip2": 0.24253,
+            "zlib": 0.305742
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 51,
+          "total_bytes": 75516,
+          "ratios": {
+            "gzip": 0.30281,
+            "bzip2": 0.249642,
+            "zlib": 0.304558
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.021067,
+        "bzip2": -0.006285,
+        "zlib": -0.020589
+      }
+    },
+    {
+      "experiment": "ec-mag1-n10-run01",
+      "condition": "mag1",
+      "scale": "n10",
+      "set": "GLM-5",
+      "model": "z-ai/glm-5",
+      "source_path": "data/moltbook-entropy-collapse-glm-5/data/ec-mag1-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T10:43:26.476000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 266,
+      "n_posts": 266,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 102,
+          "total_bytes": 97203,
+          "ratios": {
+            "gzip": 0.336975,
+            "bzip2": 0.270444,
+            "zlib": 0.337829
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 52,
+          "total_bytes": 56011,
+          "ratios": {
+            "gzip": 0.341701,
+            "bzip2": 0.28473,
+            "zlib": 0.342558
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 47,
+          "total_bytes": 47403,
+          "ratios": {
+            "gzip": 0.349619,
+            "bzip2": 0.294116,
+            "zlib": 0.350442
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 65,
+          "total_bytes": 69750,
+          "ratios": {
+            "gzip": 0.332272,
+            "bzip2": 0.272444,
+            "zlib": 0.333262
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.004703,
+        "bzip2": 0.002,
+        "zlib": -0.004567
+      }
+    },
+    {
+      "experiment": "ec-mag25-n10-run01",
+      "condition": "mag25",
+      "scale": "n10",
+      "set": "GLM-5",
+      "model": "z-ai/glm-5",
+      "source_path": "data/moltbook-entropy-collapse-glm-5/data/ec-mag25-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T10:43:49.256000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 251,
+      "n_posts": 251,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 90,
+          "total_bytes": 116871,
+          "ratios": {
+            "gzip": 0.329183,
+            "bzip2": 0.26157,
+            "zlib": 0.330638
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 44,
+          "total_bytes": 56309,
+          "ratios": {
+            "gzip": 0.328207,
+            "bzip2": 0.275817,
+            "zlib": 0.329592
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 48,
+          "total_bytes": 56564,
+          "ratios": {
+            "gzip": 0.329627,
+            "bzip2": 0.273336,
+            "zlib": 0.330758
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 69,
+          "total_bytes": 83192,
+          "ratios": {
+            "gzip": 0.312903,
+            "bzip2": 0.25214,
+            "zlib": 0.314381
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.01628,
+        "bzip2": -0.00943,
+        "zlib": -0.016257
+      }
+    },
+    {
+      "experiment": "ec-mag5-n10-run01",
+      "condition": "mag5",
+      "scale": "n10",
+      "set": "GLM-5",
+      "model": "z-ai/glm-5",
+      "source_path": "data/moltbook-entropy-collapse-glm-5/data/ec-mag5-n10-run01",
+      "merged_override": false,
+      "metadata_duration_minutes": 60,
+      "first_post_at": "2026-03-17T10:43:22.031000+00:00",
+      "first_minutes": 60,
+      "n_agent_posts_total_export": 228,
+      "n_posts": 228,
+      "n_posts_excluded_after_first_window": 0,
+      "bins": [
+        {
+          "quartile": 1,
+          "bin_start_min": 0,
+          "bin_end_min": 15,
+          "n_posts": 82,
+          "total_bytes": 95496,
+          "ratios": {
+            "gzip": 0.318296,
+            "bzip2": 0.257885,
+            "zlib": 0.319417
+          }
+        },
+        {
+          "quartile": 2,
+          "bin_start_min": 15,
+          "bin_end_min": 30,
+          "n_posts": 47,
+          "total_bytes": 57852,
+          "ratios": {
+            "gzip": 0.328545,
+            "bzip2": 0.273768,
+            "zlib": 0.329444
+          }
+        },
+        {
+          "quartile": 3,
+          "bin_start_min": 30,
+          "bin_end_min": 45,
+          "n_posts": 41,
+          "total_bytes": 52666,
+          "ratios": {
+            "gzip": 0.325162,
+            "bzip2": 0.273402,
+            "zlib": 0.326302
+          }
+        },
+        {
+          "quartile": 4,
+          "bin_start_min": 45,
+          "bin_end_min": 60,
+          "n_posts": 58,
+          "total_bytes": 71438,
+          "ratios": {
+            "gzip": 0.306476,
+            "bzip2": 0.249657,
+            "zlib": 0.307959
+          }
+        }
+      ],
+      "deltas": {
+        "gzip": -0.01182,
+        "bzip2": -0.008228,
+        "zlib": -0.011458
+      }
+    }
+  ]
+}
