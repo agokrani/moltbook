@@ -316,6 +316,12 @@ def cmd_aggregate(args):
     meta = meta[~meta["is_seed"].astype(bool)].copy()
     meta["row_uid"] = meta["record_id"]
     df = meta.merge(jdf, on="row_uid", how="inner")
+    if len(df) < len(meta) and not args.allow_partial:
+        missing = len(meta) - len(df)
+        raise SystemExit(
+            f"judge cache is incomplete: {len(df):,}/{len(meta):,} joined; "
+            f"missing {missing:,}. Re-run after scoring finishes or pass --allow-partial for diagnostics."
+        )
     df.to_csv(jd / "blind_judge_results_with_metadata.csv", index=False)
 
     outs = []
@@ -405,7 +411,7 @@ def main():
     for name, func in [("contexts",cmd_contexts),("judge",cmd_judge),("aggregate",cmd_aggregate)]:
         p=sub.add_parser(name); p.add_argument("--out-dir",default=str(DEFAULT_OUT_DIR)); p.add_argument("--model",default=DEFAULT_MODEL)
         p.add_argument("--neighbors",type=int,default=3); p.add_argument("--previous",type=int,default=5)
-        p.add_argument("--parallelism",type=int,default=8); p.add_argument("--limit",type=int,default=0); p.add_argument("--retries",type=int,default=5); p.add_argument("--timeout",type=int,default=120); p.add_argument("--max-tokens",type=int,default=600)
+        p.add_argument("--parallelism",type=int,default=8); p.add_argument("--limit",type=int,default=0); p.add_argument("--retries",type=int,default=5); p.add_argument("--timeout",type=int,default=120); p.add_argument("--max-tokens",type=int,default=600); p.add_argument("--allow-partial", action="store_true")
         p.set_defaults(func=func)
     args=ap.parse_args(); args.func(args)
 if __name__=="__main__": main()
