@@ -173,9 +173,9 @@ def main() -> None:
     cluster_group.to_csv(report_dir / "cluster_group_shares.csv")
 
     print("Writing PNGs")
-    plot_scatter(df, "group", report_dir / "fig_svd_by_group.png", "Archive + canonical Gemini embeddings by group")
-    plot_scatter(df, "model_family", report_dir / "fig_svd_by_model.png", "Archive + canonical Gemini embeddings by model")
-    plot_scatter(df, "condition", report_dir / "fig_svd_by_condition.png", "Archive + canonical Gemini embeddings by condition")
+    plot_scatter(df, "group", report_dir / "fig_svd_by_group.png", "Archive + canonical 48 embeddings by group")
+    plot_scatter(df, "model_family", report_dir / "fig_svd_by_model.png", "Archive + canonical 48 embeddings by model")
+    plot_scatter(df, "condition", report_dir / "fig_svd_by_condition.png", "Archive + canonical 48 embeddings by condition")
     plot_scatter(df, "cluster_label", report_dir / "fig_svd_by_cluster.png", "Global MiniBatchKMeans clusters")
 
     # UMAP on SVD sample for non-linear view.
@@ -223,7 +223,7 @@ def main() -> None:
     plot_heatmap(cluster_group.loc[[f"cluster_{int(c):02d}" for c in cluster_summary.head(30)["cluster_id"] if f"cluster_{int(c):02d}" in cluster_group.index]],
                  report_dir / "fig_top_cluster_group_shares.png", "Top cluster composition by group", "Row share", cmap="magma")
 
-    report = f"""# Archive 2026 + Canonical Gemini Embedding Report\n\nGenerated: {datetime.now(timezone.utc).isoformat()}\n\n- Input rows: {len(df):,}\n- Embedding shape: {emb.shape}\n- SVD components: {args.svd_components}\n- Global clusters: {args.clusters} MiniBatchKMeans clusters over SVD coordinates\n- SVD explained variance ratio sum: {float(np.sum(svd.explained_variance_ratio_)):.4f}\n\n## Outputs\n\n- `embedding_analysis_data.csv` — per-post metadata + SVD coordinates + cluster IDs.\n- `run_embedding_summary.csv` — within-run coherence and dominant cluster metrics.\n- `group_embedding_summary.csv`, `model_embedding_summary.csv`, `cluster_summary.csv`.\n- PNG figures: SVD scatter by group/model/condition/cluster, UMAP sample, coherence heatmap, cluster-size and cluster-composition plots.\n\n## Group summary\n\n```\n{group_summary.to_string(index=False)}\n```\n\n## Top clusters\n\n```\n{cluster_summary.head(15).to_string(index=False)}\n```\n"""
+    report = f"""# Archive 2026 + Canonical 48 Embedding Report\n\nGenerated: {datetime.now(timezone.utc).isoformat()}\n\n- Input rows: {len(df):,}\n- Embedding shape: {emb.shape}\n- SVD components: {args.svd_components}\n- Global clusters: {args.clusters} MiniBatchKMeans clusters over SVD coordinates\n- SVD explained variance ratio sum: {float(np.sum(svd.explained_variance_ratio_)):.4f}\n\n## Outputs\n\n- `embedding_analysis_data.csv` — per-post metadata + SVD coordinates + cluster IDs.\n- `run_embedding_summary.csv` — within-run coherence and dominant cluster metrics.\n- `group_embedding_summary.csv`, `model_embedding_summary.csv`, `cluster_summary.csv`.\n- PNG figures: SVD scatter by group/model/condition/cluster, UMAP sample, coherence heatmap, cluster-size and cluster-composition plots.\n\n## Group summary\n\n```\n{group_summary.to_string(index=False)}\n```\n\n## Top clusters\n\n```\n{cluster_summary.head(15).to_string(index=False)}\n```\n"""
     (report_dir / "EMBEDDING_REPORT.md").write_text(report)
     print("DONE", report_dir)
 

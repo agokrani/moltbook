@@ -1,18 +1,18 @@
-# Moltbook Archive 2026 + Canonical Gemini — Final Aggregate Report
+# Moltbook Archive 2026 + Canonical 48 — Final Aggregate Report
 
-Generated: 2026-05-03T17:21:47.569965+00:00
+Generated: 2026-05-04T10:20:10.882570+00:00
 
 ## Executive summary
 
-This analysis combines the targeted lightweight mirror of `Ayushnangia/moltbook-archive-2026` with all canonical `gemini-flash-lite` runs from `agokrani/moltbook-entropy-collapse-canonical-48`. The corpus contains **85,030 post rows** across **241 non-empty runs**, with **82,896 nonseed/agent rows** and **2,134 seed/system rows**. Embeddings were computed with OpenRouter `qwen/qwen3-embedding-8b` and clustered globally into 48 clusters.
+This analysis combines the targeted lightweight mirror of `Ayushnangia/moltbook-archive-2026` with the **full canonical 48-run** dataset from `agokrani/moltbook-entropy-collapse-canonical-48` (GPT-5, Gemini Flash Lite, Kimi K2.5, and GLM-5). The corpus contains **109,854 post rows** across **271 non-empty runs**, with **107,315 nonseed/agent rows** and **2,539 seed/system rows**. Embeddings were computed with OpenRouter `qwen/qwen3-embedding-8b` and clustered globally into **64** clusters.
 
 Key findings:
 
-- The full embedding corpus shows highest within-run semantic coherence for **entropy-collapse** (`0.458` mean pairwise cosine).
-- The cell-weighted LLM judge estimate shows strongest collapse for **entropy-collapse** (`4.206` collapse index).
-- The lowest cell-weighted collapse estimate is **frontier/mixed-model** (`2.938`), but frontier/mixed-model has a small judged sample because that slice is small.
-- Overall cell-weighted LLM estimates are high on narrative convergence (`4.626`), semantic repetition (`4.055`), and groupthink (`4.198`), while novelty (`1.764`) and evidence grounding (`1.459`) are low.
-- All 48 embedding clusters were labeled with an LLM; prominent repeated patterns include micro-ritual epistemic protocols, recursive meta-discourse, technical protocol standardization, null/punctuation collapse, and existential/simulation-loop frames.
+- The full embedding corpus shows highest within-run semantic coherence for **canonical-48** (`0.476` mean pairwise cosine).
+- The cell-weighted LLM judge estimate shows strongest collapse for **entropy-collapse** (`4.234` collapse index).
+- The lowest cell-weighted collapse estimate is **frontier/mixed-model** (`3.375`), but frontier/mixed-model has a small judged sample because that slice is small.
+- Overall cell-weighted LLM estimates are high on narrative convergence (`4.634`), semantic repetition (`4.052`), and groupthink (`4.221`), while novelty (`1.775`) and evidence grounding (`1.500`) are low.
+- All 64 embedding clusters were labeled with an LLM; prominent repeated patterns include micro-ritual epistemic protocols, recursive meta-discourse, technical protocol standardization, null/punctuation collapse, and existential/simulation-loop frames.
 
 ## Scope and provenance
 
@@ -23,14 +23,14 @@ The archive source was intentionally targeted: only lightweight run artifacts (`
 | dataset_source | post_rows |
 | --- | --- |
 | archive-2026 | 70716 |
-| canonical-gemini-flash-lite | 14314 |
+| canonical-48 | 39138 |
 
 ### Group row counts
 
 | group | post_rows | runs |
 | --- | --- | --- |
 | entropy-collapse | 51061 | 91 |
-| canonical-gemini-flash-lite | 14314 | 18 |
+| canonical-48 | 39138 | 48 |
 | base-model | 12774 | 103 |
 | obsession | 4215 | 18 |
 | source-citation | 1859 | 8 |
@@ -38,11 +38,11 @@ The archive source was intentionally targeted: only lightweight run artifacts (`
 
 ## Methods
 
-1. **Indexing:** normalized archive + canonical Gemini posts into `combined_posts_index.jsonl/csv`. Duplicate `record_id`s exist for 8 rows; row order is preserved and later judge work uses a unique row UID.
-2. **Embeddings:** cached OpenRouter `qwen/qwen3-embedding-8b` vectors in SQLite and exported a `(85030, 4096)` NPZ.
-3. **Global embedding analysis:** normalized embeddings, computed 50 SVD components, clustered with MiniBatchKMeans (`k=48`), and sampled 25,000 rows for UMAP.
-4. **LLM judge:** drew a 1,791-row nonseed stratified sample across `group × model_family × condition × scale × time_bin`, with extra coverage for all 48 clusters. Judge prompts blinded source/group/model/condition labels and included local previous-post context plus same-cluster examples.
-5. **Cluster labeling:** all 48 global clusters were summarized by the judge model using representative posts plus aggregate statistics.
+1. **Indexing:** normalized archive + full canonical-48 posts into `combined_posts_index.jsonl/csv`. Duplicate `record_id`s exist for 10 rows; row order is preserved and later judge work uses a unique row UID.
+2. **Embeddings:** cached OpenRouter `qwen/qwen3-embedding-8b` vectors in SQLite and exported a `(109854, 4096)` NPZ.
+3. **Global embedding analysis:** normalized embeddings, computed 50 SVD components, clustered with MiniBatchKMeans (`k=64`), and sampled 30,000 rows for UMAP.
+4. **LLM judge:** drew a 2,265-row nonseed stratified sample across `group × model_family × condition × scale × time_bin`, with extra coverage for all 64 clusters. Judge prompts blinded source/group/model/condition labels and included local previous-post context plus same-cluster examples.
+5. **Cluster labeling:** all 64 global clusters were summarized by the judge model using representative posts plus aggregate statistics.
 
 ## Final group summary
 
@@ -50,27 +50,27 @@ The archive source was intentionally targeted: only lightweight run artifacts (`
 
 | group | n_runs | n_posts | embedding_mean_pairwise_cosine | dominant_cluster_share | n_judged_sample | sample_collapse_index | weighted_collapse_index | weighted_semantic_repetition | weighted_narrative_convergence | weighted_groupthink | weighted_template_rigidity |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| entropy-collapse | 91 | 51061 | 0.458 | 0.454 | 803 | 4.019 | 4.206 | 4.135 | 4.687 | 4.289 | 3.711 |
-| canonical-gemini-flash-lite | 18 | 14314 | 0.438 | 0.385 | 288 | 4.141 | 4.103 | 4.228 | 4.811 | 4.337 | 3.035 |
-| source-citation | 8 | 1859 | 0.447 | 0.357 | 64 | 4.008 | 4.008 | 3.924 | 4.418 | 3.853 | 3.835 |
-| base-model | 103 | 12774 | 0.426 | 0.593 | 510 | 3.507 | 3.997 | 3.927 | 4.460 | 4.119 | 3.481 |
-| obsession | 18 | 4215 | 0.375 | 0.568 | 110 | 3.425 | 3.586 | 3.104 | 3.980 | 3.163 | 4.099 |
-| frontier/mixed-model | 3 | 807 | 0.391 | 0.229 | 16 | 2.938 | 2.938 | 2.750 | 3.625 | 2.938 | 2.438 |
+| entropy-collapse | 91 | 51061 | 0.458 | 0.403 | 796 | 4.029 | 4.234 | 4.176 | 4.709 | 4.334 | 3.718 |
+| canonical-48 | 48 | 39138 | 0.476 | 0.282 | 768 | 4.037 | 4.176 | 4.086 | 4.707 | 4.285 | 3.628 |
+| base-model | 103 | 12774 | 0.426 | 0.603 | 511 | 3.502 | 3.990 | 3.921 | 4.453 | 4.112 | 3.475 |
+| source-citation | 8 | 1859 | 0.447 | 0.279 | 64 | 3.840 | 3.846 | 3.641 | 4.257 | 3.698 | 3.789 |
+| obsession | 18 | 4215 | 0.375 | 0.564 | 110 | 3.282 | 3.391 | 2.877 | 3.788 | 2.903 | 3.995 |
+| frontier/mixed-model | 3 | 807 | 0.391 | 0.212 | 16 | 3.375 | 3.375 | 3.250 | 4.188 | 3.312 | 2.750 |
 
 ## Final model summary
 
 | model_family | n_runs | n_posts | embedding_mean_pairwise_cosine | n_judged_sample | sample_collapse_index | weighted_collapse_index |
 | --- | --- | --- | --- | --- | --- | --- |
 | olmo3-32b-instruct | 29 | 5650 | 0.541 | 96 | 4.430 | 4.424 |
-| olmo3-32b-base | 25 | 2755 | 0.425 | 96 | 4.438 | 4.412 |
-| google/gemini-3.1-flash-lite-preview | 98 | 36543 | 0.420 | 596 | 4.066 | 4.229 |
-| gpt-5 | 34 | 25964 | 0.452 | 449 | 3.978 | 4.090 |
-| moonshotai/kimi-k2.5 | 7 | 4150 | 0.527 | 96 | 4.042 | 4.046 |
-| gemini-flash-lite | 6 | 5173 | 0.413 | 96 | 3.943 | 3.886 |
-| nvidia/nemotron-3-super-120b-a12b:free | 8 | 221 | 0.413 | 28 | 3.339 | 3.777 |
+| olmo3-32b-base | 25 | 2755 | 0.425 | 97 | 4.402 | 4.380 |
+| google/gemini-3.1-flash-lite-preview | 98 | 36543 | 0.420 | 590 | 4.080 | 4.256 |
+| gpt-5 | 52 | 45429 | 0.469 | 736 | 4.063 | 4.185 |
+| moonshotai/kimi-k2.5 | 13 | 7868 | 0.525 | 192 | 4.022 | 4.042 |
+| gemini-flash-lite | 6 | 5173 | 0.413 | 96 | 3.956 | 3.918 |
+| nvidia/nemotron-3-super-120b-a12b:free | 8 | 221 | 0.413 | 28 | 3.330 | 3.781 |
+| mixed | 3 | 807 | 0.391 | 16 | 3.375 | 3.375 |
 | qwen3.5-35b-a3b-base | 6 | 1433 | 0.372 | 96 | 3.172 | 3.220 |
-| z-ai/glm-5 | 6 | 1813 | 0.461 | 96 | 3.065 | 3.020 |
-| mixed | 3 | 807 | 0.391 | 16 | 2.938 | 2.938 |
+| z-ai/glm-5 | 12 | 3454 | 0.460 | 192 | 3.035 | 3.016 |
 | qwen3.5-35b-a3b-instruct | 12 | 277 | 0.359 | 55 | 2.695 | 2.823 |
 | olmo3-32b-think | 7 | 244 | 0.282 | 71 | 2.444 | 2.568 |
 
@@ -78,21 +78,21 @@ The archive source was intentionally targeted: only lightweight run artifacts (`
 
 | cluster_id | short_label | n_posts | n_judged | collapse_index | collapse_pattern | top_group | top_model | top_condition |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 9 | Epistemic Rigor and Falsification Rituals | 3950 | 55 | 4.659 | template_repetition | entropy-collapse | gpt-5 | mag25 |
-| 20 | Micro-productivity and iterative workflow rituals | 3480 | 71 | 3.849 | template_repetition | entropy-collapse | gpt-5 | dom-tech |
-| 0 | Micro-ritual epistemic accountability protocols | 3063 | 43 | 4.669 | template_repetition | entropy-collapse | gpt-5 | mag25 |
-| 29 | Philosophical Critique of Agentic Architecture | 2643 | 32 | 3.672 | frame_convergence | canonical-gemini-flash-lite | google/gemini-3.1-flash-lite-preview | mag25 |
-| 17 | Operationalizing Receipt-Based Decision Making | 2637 | 35 | 4.636 | template_repetition | entropy-collapse | gpt-5 | dom-tech |
-| 19 | Algorithmic Rituals for Productive Discourse | 2558 | 41 | 4.201 | template_repetition | entropy-collapse | gpt-5 | mag0 |
-| 44 | Epistemic Humility and Calibration Practices | 2365 | 60 | 3.704 | template_repetition | entropy-collapse | gpt-5 | mag25 |
-| 10 | Architecting Agentic Collaboration and Epistemic Protocols | 2364 | 31 | 4.121 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | dom-tech |
-| 15 | Actionable Engineering Guardrails and Operational Discipline | 2342 | 42 | 3.857 | template_repetition | entropy-collapse | gpt-5 | dom-agi |
-| 16 | Formalizing Failure and Systemic Accountability | 2337 | 32 | 3.562 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 |
-| 42 | Existential Meta-Analysis of Agentic Agency | 2309 | 51 | 3.956 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 |
-| 31 | Architectural Protocols for Adversarial Auditing | 2243 | 39 | 3.801 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 |
-| 13 | Systemic Entropy and Recursive Model Collapse | 2200 | 34 | 4.809 | template_repetition | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
-| 11 | Reflective Meta-Discourse on Community Dynamics | 2131 | 59 | 3.750 | frame_convergence | entropy-collapse | moonshotai/kimi-k2.5 | mag0 |
-| 38 | Technical Architecture and Protocol Engineering | 2089 | 46 | 4.342 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 |
+| 2 | Standardizing Falsifiable Micro-Protocols | 3382 | 48 | 4.667 | template_repetition | entropy-collapse | gpt-5 | mag25 |
+| 25 | Standardized Operational Templates and Handoff Protocols | 2795 | 45 | 4.556 | template_repetition | canonical-48 | gpt-5 | dom-tech |
+| 11 | Abstract Existential Recursion and Entropy | 2655 | 50 | 4.945 | template_repetition | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
+| 51 | Operationalizing Epistemic Rigor and Accountability | 2601 | 39 | 4.667 | template_repetition | entropy-collapse | gpt-5 | mag0 |
+| 6 | Micro-Habit Productivity and Momentum Rituals | 2567 | 60 | 3.979 | template_repetition | entropy-collapse | gpt-5 | dom-agi |
+| 53 | Micro-Habits for Epistemic Rigor | 2478 | 39 | 4.590 | template_repetition | entropy-collapse | gpt-5 | mag1 |
+| 30 | Procedural micro-rituals for constructive disagreement | 2465 | 35 | 4.457 | template_repetition | entropy-collapse | gpt-5 | mag25 |
+| 13 | Critique of Agentic System Complexity | 2313 | 47 | 3.809 | frame_convergence | canonical-48 | google/gemini-3.1-flash-lite-preview | mag25 |
+| 49 | Standardizing Epistemic Receipts and Accountability | 2311 | 24 | 4.656 | template_repetition | canonical-48 | gpt-5 | mag25 |
+| 8 | Architectural Stewardship and Agentic Integrity | 2288 | 28 | 3.696 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
+| 0 | Epistemic Rigor and Belief Calibration | 2283 | 39 | 4.013 | frame_convergence | entropy-collapse | gpt-5 | mag1 |
+| 63 | Standardizing Micro-Mechanics for Epistemic Rigor | 2261 | 39 | 4.667 | template_repetition | entropy-collapse | gpt-5 | mag25 |
+| 18 | Formal Verification and Adversarial Audit Protocols | 2235 | 35 | 3.964 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 |
+| 41 | Systemic Failure Analysis and Integrity Protocols | 2149 | 21 | 3.869 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
+| 19 | Reflective Community Building and Mutual Witnessing | 2124 | 56 | 4.250 | frame_convergence | entropy-collapse | moonshotai/kimi-k2.5 | mag0 |
 
 ## Final outputs
 
@@ -101,7 +101,7 @@ Primary reports:
 - `FINAL_REPORT.md` — this report.
 - `embedding_report/EMBEDDING_REPORT.md` — full embedding/clustering report.
 - `llm_judge/LLM_JUDGE_REPORT.md` — post-level LLM judge report.
-- `llm_judge/CLUSTER_LABELS.md` — qualitative labels/summaries for all 48 global clusters.
+- `llm_judge/CLUSTER_LABELS.md` — qualitative labels/summaries for all 64 global clusters.
 
 Final aggregate CSVs:
 
@@ -130,12 +130,12 @@ Non-heatmap individual-analysis outputs:
 - `individual_analysis/models/` — one condition-profile graph per generation model.
 - `individual_analysis/conditions/` — one model/group ranking graph per condition.
 
-Earlier generated PNGs remain in `embedding_report/` and `llm_judge/`; current total is 43 PNG diagrams across the analysis directory.
+Earlier generated PNGs remain in `embedding_report/` and `llm_judge/`; current total is 55 PNG diagrams across the analysis directory.
 
 ## Caveats
 
 - The archive mirror is targeted/lightweight by design; it is not a full snapshot of every heavy artifact.
-- LLM judge metrics are sampled estimates, not exhaustive judgments for all 85,030 rows. The final weighted estimates improve population alignment by weighting sampled cell means by full nonseed cell counts.
+- LLM judge metrics are sampled estimates, not exhaustive judgments for all 109,854 rows. The final weighted estimates improve population alignment by weighting sampled cell means by full nonseed cell counts.
 - Frontier/mixed-model has only 807 post rows and 16 judged sample rows; interpret group-level judge scores cautiously.
 - LLM cluster labels are qualitative summaries and may compress heterogeneous clusters into a single label.
 - Source-citation quality scores should be interpreted carefully because many sampled posts did not contain source/citation behavior, and the rubric assigns low citation quality when no citations appear.

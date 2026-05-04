@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Combined archive-2026 + canonical Gemini embedding/judge pipeline.
+"""Combined archive-2026 + full canonical-48 embedding/judge pipeline.
 
 This script intentionally works from the targeted lightweight archive mirror plus
-local canonical Gemini runs. It does not require full HF snapshots.
+local canonical 48 runs. It does not require full HF snapshots.
 """
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ except Exception:  # pragma: no cover
     tqdm = None
 
 DEFAULT_ARCHIVE_ROOT = Path("exports/huggingface/Ayushnangia/moltbook-archive-2026-targeted")
-DEFAULT_CANONICAL_GEMINI_ROOT = Path("exports/huggingface/agokrani/moltbook-entropy-collapse-canonical-48/data/gemini-flash-lite")
+DEFAULT_CANONICAL_ROOT = Path("exports/huggingface/agokrani/moltbook-entropy-collapse-canonical-48/data")
 DEFAULT_OUT_DIR = Path("analysis/archive-2026-plus-canonical-gemini")
 DEFAULT_EMBED_MODEL = "qwen/qwen3-embedding-8b"
 DEFAULT_JUDGE_MODEL = "google/gemini-3.1-flash-lite-preview"
@@ -67,8 +67,8 @@ def parse_time(value: str) -> datetime | None:
 
 def infer_group(path: Path) -> str:
     s = str(path).lower()
-    if "canonical-48/data/gemini-flash-lite" in s:
-        return "canonical-gemini-flash-lite"
+    if "moltbook-entropy-collapse-canonical-48/data" in s or "canonical-48/data" in s:
+        return "canonical-48"
     if "base-model" in s or "/bm-" in s:
         return "base-model"
     if "obsession" in s or "obs_" in s or "/obs" in s:
@@ -187,12 +187,17 @@ def load_metadata(run_dir: Path) -> dict:
         return {}
 
 
-def discover_runs(archive_root: Path, canonical_gemini_root: Path) -> list[tuple[str, Path]]:
+def discover_runs(archive_root: Path, canonical_root: Path) -> list[tuple[str, Path]]:
     runs: list[tuple[str, Path]] = []
     for p in sorted(archive_root.rglob("posts.jsonl")):
         runs.append(("archive-2026", p.parent))
-    for p in sorted(canonical_gemini_root.glob("agents-*/*/posts.jsonl")):
-        runs.append(("canonical-gemini-flash-lite", p.parent))
+    # Full canonical 48: model_family/agents-N/run/posts.jsonl.
+    # Keep the historical Gemini dataset_source stable so existing cached
+    # embeddings remain reusable; group is normalized separately as canonical-48.
+    for p in sorted(canonical_root.glob("*/*/*/posts.jsonl")):
+        model_dir = p.parents[2].name
+        source = "canonical-gemini-flash-lite" if model_dir == "gemini-flash-lite" else "canonical-48"
+        runs.append((source, p.parent))
     return runs
 
 
@@ -264,7 +269,7 @@ def load_run(dataset_source: str, run_dir: Path, include_seeds: bool = True) -> 
 
 def build_index(args) -> list[CombinedPost]:
     records: list[CombinedPost] = []
-    runs = discover_runs(Path(args.archive_root), Path(args.canonical_gemini_root))
+    runs = discover_runs(Path(args.archive_root), Path(args.canonical_root))
     for source, run_dir in progress(runs, desc="Indexing runs", unit="run"):
         records.extend(load_run(source, run_dir, include_seeds=args.include_seeds))
     records.sort(key=lambda r: (r.dataset_source, r.group, r.model_family, r.run_id, r.created_at, r.post_id))
@@ -475,7 +480,7 @@ def parse_args():
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("index")
     p.add_argument("--archive-root", default=str(DEFAULT_ARCHIVE_ROOT))
-    p.add_argument("--canonical-gemini-root", default=str(DEFAULT_CANONICAL_GEMINI_ROOT))
+    p.add_argument("--canonical-root", default=str(DEFAULT_CANONICAL_ROOT))
     p.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
     p.add_argument("--include-seeds", action="store_true", default=True)
     p.set_defaults(func=cmd_index)

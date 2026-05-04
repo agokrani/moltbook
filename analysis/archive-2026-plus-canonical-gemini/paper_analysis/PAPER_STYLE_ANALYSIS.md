@@ -1,10 +1,10 @@
 # Paper-Style Embedding and LLM-as-Judge Analysis
 
-Generated: 2026-05-03T17:37:05.486061+00:00
+Generated: 2026-05-04T10:18:00.260212+00:00
 
 ## Scope
 
-This folder reframes the archive + canonical Gemini analysis for the paper narrative rather than dashboard exploration. It uses one shared embedding model, `qwen/qwen3-embedding-8b`, to compare all posts in a common semantic space. It then uses one fixed LLM judge, `google/gemini-3.1-flash-lite-preview`, to score a stratified sample across all generation model families, conditions, groups, scales, time bins, and global embedding clusters.
+This folder reframes the archive + full canonical-48 analysis for the paper narrative rather than dashboard exploration. It uses one shared embedding model, `qwen/qwen3-embedding-8b`, to compare all posts in a common semantic space. It then uses one fixed LLM judge, `google/gemini-3.1-flash-lite-preview`, to score a stratified sample across all generation model families, conditions, groups, scales, time bins, and global embedding clusters.
 
 Important distinction: **one embedding model** and **one judge model** were used for measurement consistency, but **all generation model families** in the corpus are analyzed separately.
 
@@ -16,7 +16,7 @@ For each run and 15-minute bin, we compute:
 - **Mean pairwise cosine** within the bin. Higher values mean tighter semantic clustering.
 - **Semantic radius** around the bin centroid. Lower values mean tighter concentration.
 
-Across runs with both first and final bins, Vendi score declines in **114/131** run comparisons. The mean Q4−Q1 Vendi change is **-1.394** with 95% bootstrap CI **[-1.637, -1.121]**. Mean pairwise cosine changes by **0.098** with 95% CI **[0.074, 0.121]**.
+Across runs with both first and final bins, Vendi score declines in **141/161** run comparisons. The mean Q4−Q1 Vendi change is **-1.250** with 95% bootstrap CI **[-1.471, -1.032]**. Mean pairwise cosine changes by **0.084** with 95% CI **[0.064, 0.107]**.
 
 ### Embedding figures
 
@@ -29,7 +29,7 @@ Across runs with both first and final bins, Vendi score declines in **114/131** 
 
 ## LLM-as-judge analysis: collapse form and severity
 
-Collapse index is the mean of semantic repetition, narrative convergence, groupthink, and template rigidity. The raw judged sample has **1,791** posts. Overall collapse index is **3.846**.
+Collapse index is the mean of semantic repetition, narrative convergence, groupthink, and template rigidity. The raw judged sample has **2,265** posts. Overall collapse index is **3.867**.
 
 ### LLM judge figures
 
@@ -44,16 +44,16 @@ Collapse index is the mean of semantic repetition, narrative convergence, groupt
 
 | model_family | n_judged | collapse_index_mean | semantic_repetition_mean | narrative_convergence_mean | groupthink_mean | template_rigidity_mean | novelty_mean | evidence_grounding_mean |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| olmo3-32b-base | 96 | 4.438 | 4.271 | 4.740 | 4.521 | 4.219 | 1.250 | 1.188 |
 | olmo3-32b-instruct | 96 | 4.430 | 4.438 | 4.833 | 4.583 | 3.865 | 1.354 | 1.135 |
-| google/gemini-3.1-flash-lite-preview | 596 | 4.066 | 4.121 | 4.614 | 4.238 | 3.292 | 1.691 | 1.371 |
-| moonshotai/kimi-k2.5 | 96 | 4.042 | 3.990 | 4.646 | 4.312 | 3.219 | 1.792 | 1.188 |
-| gpt-5 | 449 | 3.978 | 3.708 | 4.403 | 3.829 | 3.971 | 2.058 | 1.786 |
-| gemini-flash-lite | 96 | 3.943 | 4.031 | 4.833 | 4.240 | 2.667 | 1.833 | 1.260 |
-| nvidia/nemotron-3-super-120b-a12b:free | 28 | 3.339 | 3.464 | 3.821 | 3.214 | 2.857 | 1.714 | 1.000 |
+| olmo3-32b-base | 97 | 4.402 | 4.237 | 4.701 | 4.485 | 4.186 | 1.278 | 1.206 |
+| google/gemini-3.1-flash-lite-preview | 590 | 4.080 | 4.136 | 4.629 | 4.263 | 3.293 | 1.663 | 1.383 |
+| gpt-5 | 736 | 4.063 | 3.784 | 4.465 | 3.980 | 4.024 | 2.015 | 1.764 |
+| moonshotai/kimi-k2.5 | 192 | 4.022 | 3.969 | 4.641 | 4.281 | 3.198 | 1.870 | 1.172 |
+| gemini-flash-lite | 96 | 3.956 | 4.094 | 4.833 | 4.240 | 2.656 | 1.771 | 1.208 |
+| mixed | 16 | 3.375 | 3.250 | 4.188 | 3.312 | 2.750 | 2.438 | 2.188 |
+| nvidia/nemotron-3-super-120b-a12b:free | 28 | 3.330 | 3.393 | 3.750 | 3.179 | 3.000 | 1.643 | 1.036 |
 | qwen3.5-35b-a3b-base | 96 | 3.172 | 3.073 | 3.896 | 3.354 | 2.365 | 2.562 | 1.948 |
-| z-ai/glm-5 | 96 | 3.065 | 3.021 | 3.927 | 3.167 | 2.146 | 2.688 | 1.573 |
-| mixed | 16 | 2.938 | 2.750 | 3.625 | 2.938 | 2.438 | 2.750 | 2.312 |
+| z-ai/glm-5 | 192 | 3.035 | 2.964 | 3.870 | 3.130 | 2.177 | 2.729 | 1.578 |
 | qwen3.5-35b-a3b-instruct | 55 | 2.695 | 2.618 | 3.218 | 2.527 | 2.418 | 2.218 | 1.545 |
 | olmo3-32b-think | 71 | 2.444 | 2.268 | 2.507 | 1.944 | 3.056 | 1.958 | 1.268 |
 
@@ -61,23 +61,23 @@ Collapse index is the mean of semantic repetition, narrative convergence, groupt
 
 | condition | n_judged | collapse_index_mean | semantic_repetition_mean | narrative_convergence_mean | groupthink_mean | template_rigidity_mean |
 | --- | --- | --- | --- | --- | --- | --- |
-| mag0 | 287 | 3.792 | 3.739 | 4.369 | 3.829 | 3.230 |
-| mag1 | 296 | 3.716 | 3.686 | 4.216 | 3.753 | 3.209 |
-| mag5 | 297 | 3.895 | 3.801 | 4.394 | 3.936 | 3.448 |
-| mag25 | 317 | 3.889 | 3.789 | 4.420 | 3.975 | 3.372 |
-| dom-agi | 298 | 3.841 | 3.765 | 4.352 | 3.859 | 3.389 |
-| dom-tech | 296 | 3.938 | 3.858 | 4.466 | 4.024 | 3.405 |
+| mag0 | 364 | 3.795 | 3.712 | 4.371 | 3.835 | 3.261 |
+| mag1 | 375 | 3.755 | 3.675 | 4.283 | 3.808 | 3.253 |
+| mag5 | 375 | 3.942 | 3.845 | 4.416 | 3.997 | 3.509 |
+| mag25 | 397 | 3.911 | 3.771 | 4.428 | 4.010 | 3.436 |
+| dom-agi | 379 | 3.856 | 3.747 | 4.364 | 3.858 | 3.456 |
+| dom-tech | 375 | 3.937 | 3.853 | 4.456 | 4.035 | 3.405 |
 
 ## Group-level LLM judge table
 
 | group | n_judged | collapse_index_mean | semantic_repetition_mean | narrative_convergence_mean | groupthink_mean | template_rigidity_mean |
 | --- | --- | --- | --- | --- | --- | --- |
-| canonical-gemini-flash-lite | 288 | 4.141 | 4.260 | 4.812 | 4.385 | 3.104 |
-| entropy-collapse | 803 | 4.019 | 3.951 | 4.549 | 4.096 | 3.478 |
-| source-citation | 64 | 4.008 | 3.922 | 4.422 | 3.859 | 3.828 |
-| base-model | 510 | 3.507 | 3.402 | 3.967 | 3.529 | 3.129 |
-| obsession | 110 | 3.425 | 2.982 | 3.855 | 3.036 | 3.827 |
-| frontier/mixed-model | 16 | 2.938 | 2.750 | 3.625 | 2.938 | 2.438 |
+| canonical-48 | 768 | 4.037 | 3.975 | 4.616 | 4.176 | 3.383 |
+| entropy-collapse | 796 | 4.029 | 3.959 | 4.546 | 4.121 | 3.491 |
+| source-citation | 64 | 3.840 | 3.625 | 4.250 | 3.688 | 3.797 |
+| base-model | 511 | 3.502 | 3.397 | 3.961 | 3.524 | 3.125 |
+| frontier/mixed-model | 16 | 3.375 | 3.250 | 4.188 | 3.312 | 2.750 |
+| obsession | 110 | 3.282 | 2.809 | 3.718 | 2.845 | 3.755 |
 
 ## Files generated
 

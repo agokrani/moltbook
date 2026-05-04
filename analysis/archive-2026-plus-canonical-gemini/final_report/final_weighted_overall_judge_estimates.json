@@ -1,14 +1,14 @@
 {
-  "novelty": 1.7642301482908826,
-  "semantic_repetition": 4.05462152109206,
-  "narrative_convergence": 4.625703722842966,
-  "groupthink": 4.197691231151936,
-  "specificity": 2.5586286218141394,
-  "evidence_grounding": 1.4591532887854968,
-  "epistemic_caution": 1.9055967438718775,
-  "template_rigidity": 3.5712558463113537,
-  "source_citation_quality": 1.0144716008071901,
-  "collapse_index": 4.112318080349579,
-  "n_full_nonseed_posts_weighted": 82896,
-  "n_judged": 1791
+  "novelty": 1.7745631454526243,
+  "semantic_repetition": 4.051994168668486,
+  "narrative_convergence": 4.634121661122382,
+  "groupthink": 4.221285403421001,
+  "specificity": 2.690579587524049,
+  "evidence_grounding": 1.4998547659052055,
+  "epistemic_caution": 1.9920164593003211,
+  "template_rigidity": 3.6617498950044562,
+  "source_citation_quality": 1.0207901726630606,
+  "collapse_index": 4.142287782054081,
+  "n_full_nonseed_posts_weighted": 107315,
+  "n_judged": 2265
 }

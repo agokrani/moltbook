@@ -1,10 +1,10 @@
 {
-  "created_at": "2026-05-03T16:53:33.802478+00:00",
+  "created_at": "2026-05-04T10:00:16.608409+00:00",
   "rubric_version": "archive-entropy-collapse-v1",
-  "rows": 1791,
+  "rows": 2265,
   "posts_per_cell": 4,
   "min_per_cluster": 8,
-  "max_rows": 1800,
+  "max_rows": 2400,
   "seed": 42,
   "group_cols": [
     "group",

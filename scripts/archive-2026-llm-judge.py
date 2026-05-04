@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""LLM judge and cluster labeling for archive-2026 + canonical Gemini corpus.
+"""LLM judge and cluster labeling for archive-2026 + full canonical-48 corpus.
 
 Uses the combined index and embedding_report cluster assignments already produced
 under analysis/archive-2026-plus-canonical-gemini/. All network outputs are
@@ -493,7 +493,7 @@ def cmd_aggregate(args: argparse.Namespace) -> None:
     plt.close(fig)
 
     means = df[SCORE_FIELDS].mean(numeric_only=True).round(3)
-    report = f"""# Archive 2026 + Canonical Gemini LLM-as-a-Judge Report\n\nGenerated: {datetime.now(timezone.utc).isoformat()}\n\n## Method\n\nA stratified sample was drawn across `group × model_family × condition × scale × time_bin`, with extra coverage guarantees for every global embedding cluster. The judge prompt blinds group/model/condition/source labels and supplies local previous-post context plus same-cluster examples. Results are cached in SQLite and aggregated here.\n\n- Rubric version: `{RUBRIC_VERSION}`\n- Judge model: `{args.model}`\n- Sample rows: {len(sample_rows):,}\n- Completed judgments included: {len(df):,}\n\n## Outputs\n\n- `judge_results.jsonl` / `judge_results.csv` — post-level scored sample.\n- `judge_summary_by_cell.csv`, `judge_summary_by_group.csv`, `judge_summary_by_model.csv`, `judge_summary_by_condition.csv`, `judge_summary_by_cluster.csv`.\n- `judge_collapse_label_shares.csv`, `judge_claim_behavior_shares.csv`.\n- PNG heatmaps: `fig_judge_*_group_condition.png`; cluster repetition chart.\n\n## Overall score means\n\n```\n{means.to_string()}\n```\n\n## Group means\n\n```\n{pd.read_csv(judge_dir / 'judge_summary_by_group.csv').round(3).to_string(index=False)}\n```\n"""
+    report = f"""# Archive 2026 + Canonical 48 LLM-as-a-Judge Report\n\nGenerated: {datetime.now(timezone.utc).isoformat()}\n\n## Method\n\nA stratified sample was drawn across `group × model_family × condition × scale × time_bin`, with extra coverage guarantees for every global embedding cluster. The judge prompt blinds group/model/condition/source labels and supplies local previous-post context plus same-cluster examples. Results are cached in SQLite and aggregated here.\n\n- Rubric version: `{RUBRIC_VERSION}`\n- Judge model: `{args.model}`\n- Sample rows: {len(sample_rows):,}\n- Completed judgments included: {len(df):,}\n\n## Outputs\n\n- `judge_results.jsonl` / `judge_results.csv` — post-level scored sample.\n- `judge_summary_by_cell.csv`, `judge_summary_by_group.csv`, `judge_summary_by_model.csv`, `judge_summary_by_condition.csv`, `judge_summary_by_cluster.csv`.\n- `judge_collapse_label_shares.csv`, `judge_claim_behavior_shares.csv`.\n- PNG heatmaps: `fig_judge_*_group_condition.png`; cluster repetition chart.\n\n## Overall score means\n\n```\n{means.to_string()}\n```\n\n## Group means\n\n```\n{pd.read_csv(judge_dir / 'judge_summary_by_group.csv').round(3).to_string(index=False)}\n```\n"""
     (judge_dir / "LLM_JUDGE_REPORT.md").write_text(report)
     print(f"Wrote judge aggregate: {len(df):,} judgments -> {judge_dir}")
 
@@ -612,7 +612,7 @@ def cmd_label_clusters(args: argparse.Namespace) -> None:
             rr["representative_terms"] = "; ".join(map(str, rr.get("representative_terms", [])))
             csv_rows.append(rr)
         pd.DataFrame(csv_rows).to_csv(judge_dir / "cluster_labels.csv", index=False)
-        lines = ["# Archive 2026 + Canonical Gemini Cluster Labels", "", f"Generated: {datetime.now(timezone.utc).isoformat()}", ""]
+        lines = ["# Archive 2026 + Canonical 48 Cluster Labels", "", f"Generated: {datetime.now(timezone.utc).isoformat()}", ""]
         for r in rows:
             lines.append(f"## Cluster {int(r['cluster_id']):02d}: {r.get('short_label','')}")
             lines.append("")
