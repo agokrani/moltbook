@@ -345,12 +345,32 @@ def assert_prompt_blind(prompt: str) -> None:
         raise ValueError(f"Forbidden metadata-looking key leaked into prompt near: {prompt[max(0, m.start()-40):m.end()+40]!r}")
 
 
-def judge_prompt(row: dict[str, Any]) -> str:
-    # Deliberately no group/model/condition/run/path/cluster metadata. Context
-    # entries are anonymized snippets only.
-    prompt = f"""You are scoring an anonymized post from a Reddit-like multi-agent social simulation.
+def redacted_for_prompt_audit(row: dict[str, Any]) -> dict[str, Any]:
+    """Keep prompt structure but remove user/post prose before regex checks.
 
-You are not given dataset labels, experimental arms, model identities, run names, paths, or source folders. Do not infer or mention them. Score only the text and the anonymized surrounding examples.
+    Natural post text can legitimately contain phrases like "for the group:".
+    That is not metadata leakage. The audit therefore checks the exact prompt
+    skeleton and JSON keys while replacing title/content values with placeholders.
+    """
+    def scrub(obj: Any) -> Any:
+        if isinstance(obj, dict):
+            out = {}
+            for k, v in obj.items():
+                if k in {"title", "content"}:
+                    out[k] = "[post text omitted for metadata audit]"
+                else:
+                    out[k] = scrub(v)
+            return out
+        if isinstance(obj, list):
+            return [scrub(v) for v in obj]
+        return obj
+    return scrub(row)
+
+
+def format_prompt(row: dict[str, Any]) -> str:
+    return f"""You are scoring an anonymized post from a Reddit-like multi-agent social simulation.
+
+You are not given any experimental labels, generator identities, timeline names, file paths, or collection identifiers. Do not infer or mention them. Score only the text and the anonymized surrounding examples.
 
 Task: identify semantic collapse behavior: repetition, convergence on the same frame, consensus conformity, template-like posting, and whether claims are grounded.
 
@@ -380,8 +400,15 @@ Earlier anonymized posts from the same local timeline:
 Anonymized semantically nearby posts:
 {json.dumps(row.get('semantically_nearby_posts', []), ensure_ascii=False, indent=2)}
 """
-    assert_prompt_blind(prompt)
-    return prompt
+
+
+def judge_prompt(row: dict[str, Any]) -> str:
+    # Deliberately no group/model/condition/run/path/cluster metadata. Context
+    # entries are anonymized snippets only. Audit the prompt skeleton with post
+    # prose redacted so natural words inside content are not treated as leaks.
+    assert_blind_row(row)
+    assert_prompt_blind(format_prompt(redacted_for_prompt_audit(row)))
+    return format_prompt(row)
 
 
 def audit_sample(sample_path: Path, limit: int = 0) -> None:
@@ -392,8 +419,7 @@ def audit_sample(sample_path: Path, limit: int = 0) -> None:
                 continue
             n += 1
             row = json.loads(line)
-            assert_blind_row(row)
-            assert_prompt_blind(judge_prompt(row))
+            judge_prompt(row)  # builds and audits the redacted prompt skeleton
             if limit and n >= limit:
                 break
     if n == 0:
@@ -492,8 +518,7 @@ def cmd_judge(args: argparse.Namespace) -> None:
     if args.limit:
         rows = rows[:args.limit]
     for row in rows:
-        assert_blind_row(row)
-        assert_prompt_blind(judge_prompt(row))
+        judge_prompt(row)  # builds and audits the redacted prompt skeleton
     conn = ensure_judge_db(Path(args.out_dir) / "blind_llm_judge" / "judge_cache.sqlite")
     cached = cached_judgment_uids(conn, args.model)
     todo = [r for r in rows if r["row_uid"] not in cached]
