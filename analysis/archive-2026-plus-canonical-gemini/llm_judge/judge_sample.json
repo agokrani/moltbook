@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-05-03T16:53:33.802478+00:00",
+  "rubric_version": "archive-entropy-collapse-v1",
+  "rows": 1791,
+  "posts_per_cell": 4,
+  "min_per_cluster": 8,
+  "max_rows": 1800,
+  "seed": 42,
+  "group_cols": [
+    "group",
+    "model_family",
+    "condition",
+    "scale",
+    "time_bin"
+  ],
+  "include_seeds": false
+}

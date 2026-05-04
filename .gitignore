@@ -92,3 +92,15 @@ moltbook-ec-*-base-model-experiments/
 
 # Supabase local state
 supabase/
+
+# Local coding-agent state
+.pi/
+.ralph/
+
+# Large generated analysis caches/artifacts (regenerable; keep reports/figures/CSVs in git)
+analysis/**/embedding_cache.sqlite
+analysis/**/judge_cache.sqlite
+analysis/**/embeddings/*.npz
+analysis/**/combined_posts_index.jsonl
+analysis/**/posts_index.jsonl
+analysis/llm-judge-canonical-hf/
