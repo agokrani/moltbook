@@ -1,6 +1,6 @@
 # Analysis Plan for Ayush Review
 
-**Status:** draft plan only — do not execute analysis until reviewed and approved.
+**Status:** executed on reviewed local sources; smoke/test runs and the qwen3.6 mixed-roster variant are excluded from the final analysis package.
 **Purpose:** define a literature-correct analysis pipeline for Moltbook final-run, roster, base-model-tool, and obsession-prompting experiments without pooling incompatible runs prematurely.
 
 ---
@@ -44,7 +44,8 @@ The combined analysis must not start by pooling all posts into one group-level b
 
 - **Internal family label:** `mixed_model_roster`
 - **Display name:** `Mixed-model roster`
-- **Source:** archive frontier/mixed-model runs.
+- **Source:** local HuggingFace dataset `Ayushnangia/moltbook-frontier-mixed-1h`.
+- **Variant rule:** include the `qwen3.5-27b` six-condition roster; exclude the extra `qwen3.6-plus` mag25 variant unless separately requested.
 - **Experimental meaning:** different agents/personalities in the same run are powered by different LLMs, forming a mixed roster.
 - **Primary breakdown:** roster run, condition, agent identity, and agent model/personality where metadata is reliable.
 
@@ -52,23 +53,26 @@ The combined analysis must not start by pooling all posts into one group-level b
 
 - **Internal family label:** `base_model_as_tool`
 - **Display name:** `Base model as tool`
-- **Source:** archive base-model runs.
-- **Exclusion rule:** exclude any run path containing `ignore`.
+- **Source:** local curated HuggingFace bundle `Ayushnangia/moltbook-curated-20260505`, subdirectory `2026-05-05/base-model`.
+- **Exclusion rule:** use the curated bundle as cleaned input; still exclude any run path containing `ignore` if encountered.
 - **Experimental meaning:** base/open-weight models are used as tools inside the Moltbook setup.
 
 #### D. Obsession prompting
 
 - **Internal family label:** `obsession_prompting`
 - **Display name:** `Obsession prompting`
-- **Source:** archive obsession runs.
+- **Source:** local curated HuggingFace bundle `Ayushnangia/moltbook-curated-20260505`, subdirectory `2026-05-05/obsession`.
 - **Duration rule:** use the full available run duration.
 - **Temporal rule:** use normalized quartiles for the main full-duration analysis.
 
 ### 1.2 Exclude
 
 - Old archive `entropy-collapse` group, including the previously indexed 51,061-row archive group.
-- `source-citation` / site-citation smoke runs.
+- `source-citation` / site-citation runs.
+- Any run path containing `smoke`.
+- Any zero-duration run (`duration_minutes <= 0`).
 - Any base-model path containing `ignore`.
+- The `qwen3.6-plus` frontier-mixed variant.
 - Seed/system posts from LLM-as-judge scoring.
 
 ### 1.3 Important naming rule
@@ -119,10 +123,12 @@ The manifest must verify:
 1. Old archive `entropy-collapse` has zero included runs.
 2. `source-citation` has zero included runs.
 3. Base-model paths containing `ignore` have zero included runs.
-4. Single-model final runs come from the agokrani canonical export.
-5. Obsession prompting uses full duration.
-6. Non-seed post counts are nonzero for every included run.
-7. Conditions are parsed consistently:
+4. Smoke/test paths containing `smoke` have zero included runs.
+5. Zero-duration runs have zero included runs.
+6. Single-model final runs come from the agokrani canonical export.
+7. Obsession prompting uses full duration for included nonzero-duration runs.
+8. Non-seed post counts are nonzero for every included run.
+9. Conditions are parsed consistently:
    - `mag0`
    - `mag1`
    - `mag5`
@@ -130,6 +136,7 @@ The manifest must verify:
    - `dom-agi`
    - `dom-tech`
    - plus any explicitly documented exception.
+10. The `qwen3.6-plus` mixed-roster variant has zero included runs unless explicitly requested.
 
 ### 2.3 Deliverable
 

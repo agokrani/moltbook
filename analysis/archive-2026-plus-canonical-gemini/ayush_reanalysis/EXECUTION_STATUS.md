@@ -4,68 +4,55 @@ Generated/updated: 2026-05-04
 
 ## Completed
 
-- Wrote detailed plan: `ANALYSIS_PLAN_FOR_AYUSH.md`.
-- Implemented deterministic/embedding executor: `scripts/ayush-analysis-plan-execute.py`.
-- Implemented blinded all-post judge pipeline: `scripts/ayush-blind-llm-judge.py`.
-- Built clean manifest with confirmed scope:
-  - `single_model_final`: 48 runs / 38,490 non-seed posts
-  - `mixed_model_roster`: 3 runs / 732 non-seed posts
-  - `base_model_as_tool`: 49 runs / 7,680 non-seed posts
-  - `obsession_prompting`: 15 runs / 3,903 non-seed posts
-- Excluded:
-  - old archive entropy-collapse: 94 runs
-  - source/site-citation: 8 runs
-  - base-model paths containing `ignore`: 60 runs
-  - empty/non-agent obsession runs: 7 runs
-- Ran findings-handoff-style one-to-one deterministic metrics:
-  - compression
-  - lexical diversity / Distinct-1..5
-  - bin-size-controlled subsampled Distinct-1..5
-  - phrase provenance top 4/5-grams
-  - phrase diffusion first usage timelines
-  - agent phrase concentration
-- Ran embedding/Vendi metrics from cached `qwen/qwen3-embedding-8b` embeddings:
-  - 50,805 non-seed posts
-  - 0 missing embeddings
-  - run-level Vendi, mean cosine, semantic radius deltas
-- Generated per-family and combined deterministic/embedding summaries.
-- Generated PNG/PDF checkpoint figures under `ayush_reanalysis/figures/`.
-- Replaced stale archive-only root `FINAL_REPORT.md` with a current Ayush reanalysis checkpoint report.
-- Removed stale archive-only tracked outputs from the staged package:
-  - `combined_posts_index.csv`
-  - `embedding_report/`
-  - `final_report/`
-  - `paper_analysis/`
-  - stale embedding metadata JSON
-- Built blinded judge contexts for all 50,805 non-seed posts:
-  - target post text
-  - previous same-run posts
-  - semantic-neighbor posts from embedding space
-  - no metadata in prompt skeleton
-- Prompt audit passed for all 50,805 contexts.
+Final reanalysis is complete on the reviewed local source set.
 
-## Running in background
+Included scope:
 
-Full all-post blinded LLM-as-judge scoring is running against:
+- `single_model_final`: 48 canonical runs / 38,490 non-seed posts
+- `mixed_model_roster`: 6 qwen3.5 frontier-mixed runs / 2,189 non-seed posts
+- `base_model_as_tool`: 18 curated base-model runs / 5,137 non-seed posts
+- `obsession_prompting`: 9 curated obsession runs / 3,845 non-seed posts
 
-`google/gemini-3.1-flash-lite-preview`
+Excluded:
 
-Current observed progress: **12,149 / 50,805 judgments cached** (~23.9%).
+- `qwen3.6-plus` frontier-mixed variant: 1 run
 
-Files:
+Source mapping:
 
-- PID: `ayush_reanalysis/llm_judge/judge_all.pid`
-- log: `ayush_reanalysis/llm_judge/logs/judge_all.log`
-- cache: `ayush_reanalysis/llm_judge/judge_cache.sqlite`
+- Single-model final: `exports/huggingface/agokrani/moltbook-entropy-collapse-canonical-48`
+- Mixed-model roster: `exports/huggingface/Ayushnangia/moltbook-frontier-mixed-1h`, qwen3.5 variant only
+- Base model as tool: `exports/huggingface/Ayushnangia/moltbook-curated-20260505/2026-05-05/base-model`
+- Obsession prompting: `exports/huggingface/Ayushnangia/moltbook-curated-20260505/2026-05-05/obsession`
 
-The judge cache/context files are ignored by git and resumable.
+Completed analyses:
 
-## Still pending after judge completes
+- manifest generation and validation
+- deterministic run-level metrics
+- Qwen embedding/Vendi metrics
+- blinded LLM-as-judge context generation and prompt audit
+- blinded LLM-as-judge scoring and aggregation
+- per-family reports
+- combined deterministic, embedding, and LLM-judge summaries
+- PNG/PDF checkpoint figures
+- final report: `FINAL_REPORT.md`
 
-Run:
+Embedding status:
 
-```bash
-python3 scripts/ayush-blind-llm-judge.py aggregate
-```
+- Embedding model: `qwen/qwen3-embedding-8b`
+- Current included non-seed rows: 49,661
+- Missing current embeddings: 0
+- Existing canonical-48 embeddings were reused by row ID.
+- Curated copied-run embeddings were reused by exact text hash where possible; only remaining missing current rows were embedded.
 
-This will create run-level LLM-judge metrics and deltas from the completed post-level judgments. Then update `FINAL_REPORT.md` and commit/push the final package.
+Judge status:
+
+- Judge model: `google/gemini-3.1-flash-lite-preview`
+- Current included non-seed rows: 49,661
+- Unique current judge row IDs: 49,656
+- Judged current row IDs: 49,656 / 49,656
+- Post-level joined rows after aggregation: 49,661 / 49,661
+- Existing canonical-48 judgments were reused by row ID.
+- New/current non-single rows were scored under the same metadata-blind prompt protocol.
+- Prompt audit passed; prompts contain post text and anonymized context but no run/group/model/condition/path/source metadata.
+
+Large local caches/context files remain ignored by git.

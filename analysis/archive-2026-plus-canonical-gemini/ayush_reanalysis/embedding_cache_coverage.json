@@ -1,6 +1,6 @@
 {
-  "cached_embeddings": 109844,
-  "nonseed_posts": 50805,
+  "cached_embeddings": 121015,
+  "nonseed_posts": 49661,
   "missing_nonseed_embeddings": 0,
   "embedding_model": "qwen/qwen3-embedding-8b"
 }

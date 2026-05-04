@@ -1,24 +1,21 @@
 {
-  "generated_at": "2026-05-04T13:48:29.118470+00:00",
-  "runs_total_discovered": 284,
-  "runs_included": 115,
-  "runs_excluded": 169,
+  "generated_at": "2026-05-04T22:02:03.050176+00:00",
+  "runs_total_discovered": 82,
+  "runs_included": 81,
+  "runs_excluded": 1,
   "included_by_family": {
-    "base_model_as_tool": 49,
-    "mixed_model_roster": 3,
-    "obsession_prompting": 15,
+    "base_model_as_tool": 18,
+    "mixed_model_roster": 6,
+    "obsession_prompting": 9,
     "single_model_final": 48
   },
   "included_posts_by_family": {
-    "base_model_as_tool": 7680,
-    "mixed_model_roster": 732,
-    "obsession_prompting": 3903,
+    "base_model_as_tool": 5137,
+    "mixed_model_roster": 2189,
+    "obsession_prompting": 3845,
     "single_model_final": 38490
   },
   "excluded_by_reason": {
-    "base-model path contains ignore": 60,
-    "no non-seed/agent posts": 7,
-    "old archive entropy-collapse excluded": 94,
-    "source/site-citation excluded": 8
+    "qwen3.6 mixed-roster variant excluded per review": 1
   }
 }

@@ -161,7 +161,7 @@ def build_report(root: Path) -> str:
 
 Generated: {generated}
 
-This report supersedes the older archive-only embedding package. The current scope follows `ANALYSIS_PLAN_FOR_AYUSH.md` and excludes old archive `entropy-collapse`, source/site-citation runs, and base-model paths containing `ignore`.
+This report supersedes the older archive-only embedding package. The current scope follows `ANALYSIS_PLAN_FOR_AYUSH.md`: canonical 48 single-model runs, the qwen3.5 frontier mixed roster, and the curated 2026-05-05 base-model/obsession bundle. The qwen3.6 mixed-roster variant is excluded per review.
 
 ## Status
 
@@ -192,7 +192,7 @@ Embedding model: `{coverage.get('embedding_model', 'qwen/qwen3-embedding-8b')}`.
 
 {markdown_table(emb_table)}
 
-Single-model final and base-model-as-tool runs show decreasing semantic diversity / increasing semantic concentration by embedding metrics. Mixed-model roster has only three runs, so its positive Vendi direction should be treated as exploratory.
+Single-model final and base-model-as-tool runs show decreasing semantic diversity / increasing semantic concentration by embedding metrics. Mixed-model roster now covers six qwen3.5 roster conditions; qwen3.6 remains excluded.
 
 {judge_section}
 

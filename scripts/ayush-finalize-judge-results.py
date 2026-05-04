@@ -18,22 +18,23 @@ DEFAULT_MODEL = "google/gemini-3.1-flash-lite-preview"
 RUBRIC_VERSION = "ayush-blind-all-posts-v1"
 
 
-def expected_total(root: Path) -> int:
-    """Return unique judge rows, not raw post rows.
-
-    The post index contains a few exact duplicate non-seed records. Judge cache
-    keys by row_uid, so complete scoring means every unique row_uid is judged;
-    aggregation joins the single judgment back onto duplicate metadata rows.
-    """
+def expected_row_ids(root: Path) -> set[str]:
+    """Return unique judge row IDs for the current included non-seed post index."""
     post_index = root / "ayush_reanalysis" / "post_index.jsonl"
+    ids: set[str] = set()
     if post_index.exists():
-        ids = set()
         for line in post_index.open():
             if not line.strip():
                 continue
             row = json.loads(line)
             if not row.get("is_seed"):
                 ids.add(str(row["record_id"]))
+    return ids
+
+
+def expected_total(root: Path) -> int:
+    ids = expected_row_ids(root)
+    if ids:
         return len(ids)
     summary = root / "data_manifest_summary.json"
     if summary.exists():
@@ -46,12 +47,14 @@ def cached_count(root: Path, model: str) -> int:
     db = root / "ayush_reanalysis" / "llm_judge" / "judge_cache.sqlite"
     if not db.exists():
         return 0
+    expected_ids = expected_row_ids(root)
     conn = sqlite3.connect(db)
     try:
-        return int(conn.execute(
-            "SELECT count(*) FROM judgments WHERE judge_model=? AND rubric_version=?",
+        rows = {str(r[0]) for r in conn.execute(
+            "SELECT row_uid FROM judgments WHERE judge_model=? AND rubric_version=?",
             (model, RUBRIC_VERSION),
-        ).fetchone()[0])
+        )}
+        return len(rows & expected_ids) if expected_ids else len(rows)
     finally:
         conn.close()
 

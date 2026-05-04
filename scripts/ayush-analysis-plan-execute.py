@@ -17,11 +17,14 @@ import gzip
 import hashlib
 import json
 import math
+import os
 import re
 import sqlite3
 import statistics
+import time
 import zlib
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -29,12 +32,25 @@ from typing import Iterable, Sequence
 
 import numpy as np
 import pandas as pd
+import requests
 from sklearn.preprocessing import normalize
 
-DEFAULT_ARCHIVE_ROOT = Path("exports/huggingface/Ayushnangia/moltbook-archive-2026-targeted")
+try:
+    from dotenv import load_dotenv
+except Exception:
+    load_dotenv = None
+try:
+    from tqdm import tqdm
+except Exception:
+    tqdm = None
+
+DEFAULT_ARCHIVE_ROOT = Path("exports/huggingface/Ayushnangia/moltbook-archive-2026-targeted")  # legacy; no longer used by default
 DEFAULT_CANONICAL_ROOT = Path("exports/huggingface/agokrani/moltbook-entropy-collapse-canonical-48/data")
+DEFAULT_MIXED_ROOT = Path("exports/huggingface/Ayushnangia/moltbook-frontier-mixed-1h")
+DEFAULT_CURATED_ROOT = Path("exports/huggingface/Ayushnangia/moltbook-curated-20260505")
 DEFAULT_OUT_DIR = Path("analysis/archive-2026-plus-canonical-gemini")
 EMBED_MODEL = "qwen/qwen3-embedding-8b"
+EMBED_ENDPOINT = "https://openrouter.ai/api/v1/embeddings"
 SEED_PREFIXES = ("civiclens_",)
 CONDITIONS = ["mag0", "mag1", "mag5", "mag25", "dom-agi", "dom-tech"]
 FAMILIES = ["single_model_final", "mixed_model_roster", "base_model_as_tool", "obsession_prompting"]
@@ -52,6 +68,14 @@ MODEL_DISPLAY = {
     "kimi-k2.5": "Kimi K2.5",
     "z-ai/glm-5": "GLM-5",
     "glm-5": "GLM-5",
+    "olmo-3-32b-base": "OLMo 3 32B Base",
+    "olmo-3-32b-instruct": "OLMo 3 32B Instruct",
+    "olmo3-32b-base": "OLMo 3 32B Base",
+    "olmo3-32b-instruct": "OLMo 3 32B Instruct",
+    "qwen-3.5-35b-a3b-base": "Qwen 3.5 35B A3B Base",
+    "qwen3.5-35b-a3b-base": "Qwen 3.5 35B A3B Base",
+    "qwen/qwen3.5-27b": "Qwen 3.5 27B",
+    "qwen/qwen3.6-plus": "Qwen 3.6 Plus",
 }
 FIXED_BINS = [(0.0, 15.0), (15.0, 30.0), (30.0, 45.0), (45.0, 60.0)]
 COMPRESSORS = {"gzip": gzip.compress, "bzip2": bz2.compress, "zlib": zlib.compress}
@@ -266,7 +290,12 @@ def discover_archive(archive_root: Path) -> list[RunSpec]:
         reason = ""
         family = ""
         display = ""
-        if group == "base-model":
+        if "smoke" in path_s:
+            include = False
+            reason = "smoke/test run excluded"
+            family = "excluded_smoke"
+            display = "Excluded smoke/test run"
+        elif group == "base-model":
             if "ignore" in path_s:
                 include = False
                 reason = "base-model path contains ignore"
@@ -314,6 +343,135 @@ def discover_archive(archive_root: Path) -> list[RunSpec]:
             include_in_main=include,
             exclusion_reason=reason,
         ))
+    return specs
+
+
+def metadata_n_agents(meta: dict, run_dir: Path) -> int:
+    for key in ["num_agents", "n_agents", "agents"]:
+        val = meta.get(key)
+        if isinstance(val, int) and val > 0:
+            return int(val)
+        if isinstance(val, str) and val.isdigit():
+            return int(val)
+    agents = load_jsonl(run_dir / "agents.jsonl")
+    if agents:
+        return len(agents)
+    return infer_n_agents(run_dir.name, run_dir.parent.name)
+
+
+def discover_frontier_mixed(mixed_root: Path) -> list[RunSpec]:
+    """Discover the curated frontier/mixed 1h HF dataset.
+
+    The dataset is already cleaned of smoke runs and has one run per
+    variant/condition directory.
+    """
+    specs: list[RunSpec] = []
+    if not mixed_root.exists():
+        return specs
+    for posts_path in sorted(mixed_root.rglob("posts.jsonl")):
+        run_dir = posts_path.parent
+        if ".cache" in run_dir.parts:
+            continue
+        meta = load_json(run_dir / "metadata.json")
+        rel = run_dir.relative_to(mixed_root)
+        variant = rel.parts[0] if rel.parts else run_dir.parent.name
+        include = "qwen3.6" not in variant.lower()
+        reason = "" if include else "qwen3.6 mixed-roster variant excluded per review"
+        condition = str(meta.get("condition") or infer_condition(run_dir.name))
+        n_agents = metadata_n_agents(meta, run_dir)
+        theta_model = ""
+        agent_models = meta.get("agent_models") or {}
+        if isinstance(agent_models, dict):
+            theta_model = str(agent_models.get("agent_theta") or "")
+        roster = f"Mixed roster ({model_display(theta_model) if theta_model else variant})"
+        run_id = str(meta.get("experiment_name") or f"{variant}-{condition}")
+        specs.append(RunSpec(
+            run_uid=sha1_text(f"moltbook-frontier-mixed-1h:{run_dir}"),
+            source_dataset="moltbook-frontier-mixed-1h",
+            source_path=str(run_dir),
+            internal_family_label="mixed_model_roster",
+            display_family_label=DISPLAY_FAMILY["mixed_model_roster"],
+            model_family=f"mixed-roster/{variant}",
+            model_display=roster,
+            roster_name=roster,
+            condition=condition,
+            n_agents=n_agents,
+            scale=f"n{n_agents}" if n_agents else "unknown",
+            run_id=run_id,
+            include_in_main=include,
+            exclusion_reason=reason,
+            notes="frontier-mixed 1h local HF dataset; one model per agent; qwen3.6 variant excluded" if not include else "frontier-mixed 1h local HF dataset; one model per agent",
+        ))
+    return specs
+
+
+def discover_curated(curated_root: Path) -> list[RunSpec]:
+    """Discover the 2026-05-05 curated base-model and obsession bundle."""
+    specs: list[RunSpec] = []
+    root = curated_root / "2026-05-05" if (curated_root / "2026-05-05").exists() else curated_root
+    if not root.exists():
+        return specs
+
+    def add_spec(run_dir: Path, family: str, source_dataset: str, model: str, condition: str, run_id: str, notes: str) -> None:
+        meta = load_json(run_dir / "metadata.json")
+        n_agents = metadata_n_agents(meta, run_dir)
+        include = "smoke" not in str(run_dir).lower()
+        specs.append(RunSpec(
+            run_uid=sha1_text(f"{source_dataset}:{run_dir}"),
+            source_dataset=source_dataset,
+            source_path=str(run_dir),
+            internal_family_label=family if include else "excluded_smoke",
+            display_family_label=DISPLAY_FAMILY.get(family, "Excluded smoke/test run") if include else "Excluded smoke/test run",
+            model_family=model,
+            model_display=model_display(model),
+            roster_name=model_display(model),
+            condition=condition,
+            n_agents=n_agents,
+            scale=f"n{n_agents}" if n_agents else "unknown",
+            run_id=run_id,
+            include_in_main=include,
+            exclusion_reason="" if include else "smoke/test run excluded",
+            notes=notes,
+        ))
+
+    base_root = root / "base-model"
+    if base_root.exists():
+        for posts_path in sorted(base_root.rglob("posts.jsonl")):
+            run_dir = posts_path.parent
+            rel = run_dir.relative_to(base_root)
+            if len(rel.parts) < 2:
+                continue
+            variant, condition = rel.parts[0], rel.parts[1]
+            meta = load_json(run_dir / "metadata.json")
+            add_spec(
+                run_dir,
+                "base_model_as_tool",
+                "moltbook-curated-20260505/base-model",
+                variant,
+                str(meta.get("condition") or condition),
+                str(meta.get("experiment_name") or f"{variant}-{condition}"),
+                "curated 2026-05-05 base-model bundle",
+            )
+
+    obs_root = root / "obsession"
+    if obs_root.exists():
+        for posts_path in sorted(obs_root.rglob("posts.jsonl")):
+            run_dir = posts_path.parent
+            rel = run_dir.relative_to(obs_root)
+            if len(rel.parts) < 2:
+                continue
+            variant, run_name = rel.parts[0], rel.parts[1]
+            meta = load_json(run_dir / "metadata.json")
+            model = str(meta.get("model") or {"gpt5": "gpt-5"}.get(variant, variant))
+            add_spec(
+                run_dir,
+                "obsession_prompting",
+                "moltbook-curated-20260505/obsession",
+                model,
+                str(meta.get("condition") or infer_condition(run_name)),
+                str(meta.get("experiment_name") or run_name),
+                "curated 2026-05-05 obsession bundle; full available duration",
+            )
     return specs
 
 
@@ -643,6 +801,37 @@ def summarize_deltas(df: pd.DataFrame, by: list[str], metrics: list[str]) -> pd.
 
 # ------------------------------- embeddings --------------------------------
 
+def progress(x, **kw):
+    return tqdm(x, **kw) if tqdm else x
+
+
+def load_env_key() -> str:
+    if load_dotenv:
+        load_dotenv(Path(".env"), override=False)
+    key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not key:
+        raise SystemExit("OPENROUTER_API_KEY missing; key is never printed")
+    return key
+
+
+def ensure_embedding_db(path: Path) -> sqlite3.Connection:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(path)
+    conn.execute("PRAGMA journal_mode=WAL")
+    conn.execute("PRAGMA synchronous=NORMAL")
+    conn.execute("""CREATE TABLE IF NOT EXISTS embeddings (
+        record_id TEXT NOT NULL,
+        model TEXT NOT NULL,
+        dim INTEGER NOT NULL,
+        embedding BLOB NOT NULL,
+        text_sha1 TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        PRIMARY KEY(record_id, model)
+    )""")
+    conn.commit()
+    return conn
+
+
 def load_embedding_map(sqlite_path: Path, model: str = EMBED_MODEL) -> dict[str, np.ndarray]:
     if not sqlite_path.exists():
         return {}
@@ -679,6 +868,82 @@ def semantic_radius(x: np.ndarray) -> float:
     if n <= 1e-12: return math.nan
     c = c / n
     return float(np.mean(1.0 - (x @ c)))
+
+
+def current_nonseed_records(out_dir: Path) -> list[PostRecord]:
+    rows = [p for p in load_post_index(out_dir) if not p.is_seed]
+    dedup: dict[str, PostRecord] = {}
+    for p in rows:
+        dedup.setdefault(p.record_id, p)
+    return list(dedup.values())
+
+
+def alias_embeddings_by_text(conn: sqlite3.Connection, records: list[PostRecord], model: str) -> int:
+    """Reuse existing cached embeddings for copied runs with identical text."""
+    done = {r[0] for r in conn.execute("SELECT record_id FROM embeddings WHERE model=?", (model,))}
+    by_sha: dict[str, tuple[int, bytes]] = {}
+    for text_sha, dim, blob in conn.execute("SELECT text_sha1, dim, embedding FROM embeddings WHERE model=?", (model,)):
+        by_sha.setdefault(str(text_sha), (int(dim), blob))
+    now = datetime.now(timezone.utc).isoformat()
+    rows = []
+    for r in records:
+        if r.record_id in done:
+            continue
+        text_sha = sha1_text(r.text)
+        got = by_sha.get(text_sha)
+        if got is None:
+            continue
+        dim, blob = got
+        rows.append((r.record_id, model, dim, blob, text_sha, now))
+    if rows:
+        conn.executemany("INSERT OR REPLACE INTO embeddings VALUES (?,?,?,?,?,?)", rows)
+        conn.commit()
+    return len(rows)
+
+
+def cached_embedding_ids(conn: sqlite3.Connection, model: str) -> set[str]:
+    return {r[0] for r in conn.execute("SELECT record_id FROM embeddings WHERE model=?", (model,))}
+
+
+def openrouter_embed(texts: Sequence[str], model: str, key: str, retries: int, timeout: int) -> np.ndarray:
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    payload = {"model": model, "input": list(texts), "encoding_format": "float"}
+    last = None
+    for attempt in range(retries):
+        try:
+            resp = requests.post(EMBED_ENDPOINT, headers=headers, json=payload, timeout=timeout)
+            resp.raise_for_status()
+            data = sorted(resp.json()["data"], key=lambda x: x.get("index", 0))
+            return np.asarray([x["embedding"] for x in data], dtype=np.float32)
+        except Exception as e:
+            last = e
+            sleep = min(30, 2 ** attempt)
+            print(f"embedding request failed attempt={attempt+1}/{retries}: {e}; sleep {sleep}s")
+            time.sleep(sleep)
+    raise RuntimeError(last)
+
+
+def store_embedding_batch(conn: sqlite3.Connection, batch: list[PostRecord], vecs: np.ndarray, model: str) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    rows = []
+    for r, v in zip(batch, vecs):
+        arr = np.asarray(v, dtype=np.float32)
+        rows.append((r.record_id, model, int(arr.shape[0]), arr.tobytes(), sha1_text(r.text), now))
+    conn.executemany("INSERT OR REPLACE INTO embeddings VALUES (?,?,?,?,?,?)", rows)
+    conn.commit()
+
+
+def embedding_batches(records: list[PostRecord], batch_size: int, max_batch_chars: int, max_text_chars: int):
+    cur, chars = [], 0
+    for r in records:
+        n = min(len(r.text), max_text_chars)
+        if cur and (len(cur) >= batch_size or chars + n > max_batch_chars):
+            yield cur
+            cur, chars = [], 0
+        cur.append(r)
+        chars += n
+    if cur:
+        yield cur
 
 
 def embedding_bin_metrics(posts: list[PostRecord], emb_map: dict[str, np.ndarray], scheme: str, max_n: int, reps: int) -> tuple[list[dict], list[dict]]:
@@ -727,7 +992,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
         return
     fieldnames = sorted({k for row in rows for k in row})
     with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         w.writeheader(); w.writerows(rows)
 
 
@@ -747,7 +1012,17 @@ def md_table(df: pd.DataFrame, max_rows: int = 30) -> str:
 # ------------------------------- main run ----------------------------------
 
 def build_specs(args) -> list[RunSpec]:
-    specs = discover_canonical(Path(args.canonical_root)) + discover_archive(Path(args.archive_root))
+    # Final reviewed source set:
+    # - canonical 48 single-model export from agokrani
+    # - local HF frontier-mixed 1h dataset
+    # - local HF curated 2026-05-05 bundle for base-model and obsession runs
+    specs = (
+        discover_canonical(Path(args.canonical_root))
+        + discover_frontier_mixed(Path(args.mixed_root))
+        + discover_curated(Path(args.curated_root))
+    )
+    if getattr(args, "include_legacy_archive", False):
+        specs += discover_archive(Path(args.archive_root))
     return specs
 
 
@@ -768,6 +1043,9 @@ def cmd_manifest(args) -> None:
         if include and n_nonseed <= 0:
             include = False
             reason = "no non-seed/agent posts"
+        if include and duration <= 0:
+            include = False
+            reason = "zero-duration run excluded"
         rr.update({
             "include_in_main": include,
             "exclusion_reason": reason,
@@ -877,6 +1155,45 @@ def cmd_metrics(args) -> None:
     print(f"Wrote deterministic metrics for {len(by_run)} runs -> {ar}")
 
 
+def cmd_embed_missing(args) -> None:
+    ensure_manifest(args)
+    out = Path(args.out_dir)
+    records = current_nonseed_records(out)
+    if args.limit:
+        records = records[:args.limit]
+    conn = ensure_embedding_db(out / "embedding_cache.sqlite")
+    before = cached_embedding_ids(conn, args.model)
+    aliased = alias_embeddings_by_text(conn, records, args.model)
+    after_alias = cached_embedding_ids(conn, args.model)
+    todo = [r for r in records if r.record_id not in after_alias]
+    print(
+        f"embedding model={args.model}; current_unique_nonseed={len(records):,}; "
+        f"cached_before={len(before):,}; aliased_by_text={aliased:,}; remaining={len(todo):,}"
+    )
+    if args.no_fetch or not todo:
+        print(f"cached_now={len(after_alias):,}")
+        return
+    key = load_env_key()
+    batches = list(embedding_batches(todo, args.batch_size, args.max_batch_chars, args.max_text_chars))
+    print(f"fetching missing embeddings: batches={len(batches):,}; parallelism={args.parallelism}")
+
+    def one(batch: list[PostRecord]):
+        vecs = openrouter_embed([r.text[:args.max_text_chars] for r in batch], args.model, key, args.retries, args.timeout)
+        return batch, vecs
+
+    if args.parallelism <= 1:
+        for batch in progress(batches, desc="embed", unit="batch"):
+            b, vecs = one(batch)
+            store_embedding_batch(conn, b, vecs, args.model)
+    else:
+        with ThreadPoolExecutor(max_workers=args.parallelism) as pool:
+            futs = [pool.submit(one, batch) for batch in batches]
+            for fut in progress(as_completed(futs), total=len(futs), desc="embed", unit="batch"):
+                b, vecs = fut.result()
+                store_embedding_batch(conn, b, vecs, args.model)
+    print(f"cached_now={len(cached_embedding_ids(conn, args.model)):,}")
+
+
 def cmd_embedding(args) -> None:
     ensure_manifest(args)
     out = Path(args.out_dir)
@@ -927,15 +1244,27 @@ def cmd_all_deterministic(args) -> None:
 def parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for name in ["manifest", "metrics", "embedding", "all-deterministic"]:
+    for name in ["manifest", "metrics", "embedding", "embed-missing", "all-deterministic"]:
         p = sub.add_parser(name)
-        p.add_argument("--archive-root", default=str(DEFAULT_ARCHIVE_ROOT))
+        p.add_argument("--archive-root", default=str(DEFAULT_ARCHIVE_ROOT), help="legacy archive root; ignored unless --include-legacy-archive is set")
         p.add_argument("--canonical-root", default=str(DEFAULT_CANONICAL_ROOT))
+        p.add_argument("--mixed-root", default=str(DEFAULT_MIXED_ROOT))
+        p.add_argument("--curated-root", default=str(DEFAULT_CURATED_ROOT))
+        p.add_argument("--include-legacy-archive", action="store_true", help="diagnostic only; final reviewed analysis leaves this off")
         p.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
         p.add_argument("--subsample-reps", type=int, default=100)
         p.add_argument("--vendi-reps", type=int, default=50)
         p.add_argument("--vendi-max-n", type=int, default=400)
-        p.set_defaults(func={"manifest": cmd_manifest, "metrics": cmd_metrics, "embedding": cmd_embedding, "all-deterministic": cmd_all_deterministic}[name])
+        p.add_argument("--model", default=EMBED_MODEL)
+        p.add_argument("--batch-size", type=int, default=80)
+        p.add_argument("--max-batch-chars", type=int, default=90000)
+        p.add_argument("--max-text-chars", type=int, default=6000)
+        p.add_argument("--parallelism", type=int, default=4)
+        p.add_argument("--retries", type=int, default=5)
+        p.add_argument("--timeout", type=int, default=120)
+        p.add_argument("--limit", type=int, default=0)
+        p.add_argument("--no-fetch", action="store_true", help="alias exact-text cached embeddings only; do not call OpenRouter")
+        p.set_defaults(func={"manifest": cmd_manifest, "metrics": cmd_metrics, "embedding": cmd_embedding, "embed-missing": cmd_embed_missing, "all-deterministic": cmd_all_deterministic}[name])
     return ap.parse_args()
 
 
