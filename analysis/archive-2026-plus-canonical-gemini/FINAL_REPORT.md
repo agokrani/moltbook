@@ -1,145 +1,136 @@
-# Moltbook Archive 2026 + Canonical 48 — Final Aggregate Report
+# Archive 2026 Main Groups — Embedding-Only Final Report
 
-Generated: 2026-05-04T10:20:10.882570+00:00
+Generated: 2026-05-04T10:53:49.131065+00:00
 
-## Executive summary
+## Scope
 
-This analysis combines the targeted lightweight mirror of `Ayushnangia/moltbook-archive-2026` with the **full canonical 48-run** dataset from `agokrani/moltbook-entropy-collapse-canonical-48` (GPT-5, Gemini Flash Lite, Kimi K2.5, and GLM-5). The corpus contains **109,854 post rows** across **271 non-empty runs**, with **107,315 nonseed/agent rows** and **2,539 seed/system rows**. Embeddings were computed with OpenRouter `qwen/qwen3-embedding-8b` and clustered globally into **64** clusters.
+This cleaned review package is **embedding-only** and includes only the main archive groups:
 
-Key findings:
+- `base-model`
+- `entropy-collapse`
+- `obsession`
 
-- The full embedding corpus shows highest within-run semantic coherence for **canonical-48** (`0.476` mean pairwise cosine).
-- The cell-weighted LLM judge estimate shows strongest collapse for **entropy-collapse** (`4.234` collapse index).
-- The lowest cell-weighted collapse estimate is **frontier/mixed-model** (`3.375`), but frontier/mixed-model has a small judged sample because that slice is small.
-- Overall cell-weighted LLM estimates are high on narrative convergence (`4.634`), semantic repetition (`4.052`), and groupthink (`4.221`), while novelty (`1.775`) and evidence grounding (`1.500`) are low.
-- All 64 embedding clusters were labeled with an LLM; prominent repeated patterns include micro-ritual epistemic protocols, recursive meta-discourse, technical protocol standardization, null/punctuation collapse, and existential/simulation-loop frames.
+Excluded by design:
 
-## Scope and provenance
+- `source-citation` / site-citation smoke runs
+- `frontier/mixed-model` roster/mixed runs
+- `canonical-48` and canonical Gemini comparison runs
+- all LLM-as-a-judge outputs
 
-The archive source was intentionally targeted: only lightweight run artifacts (`posts.jsonl`, `comments.jsonl`, `agents.jsonl`, `metadata.json`, top-level metadata files) were fetched, not full logs/databases/plots. This follows the user instruction to be targeted rather than downloading a heavy full snapshot.
+## Why LLM-as-a-judge is excluded
 
-### Source row counts
+LLM-as-a-judge results are not used in this package. Earlier judge prompts/context could expose group/source cues through context metadata, so we removed those outputs rather than reporting potentially confounded judge scores.
 
-| dataset_source | post_rows |
-| --- | --- |
-| archive-2026 | 70716 |
-| canonical-48 | 39138 |
+## Corpus
 
-### Group row counts
+- Post rows: **68,050**
+- Nonseed/agent rows: **66,394**
+- Seed/system rows: **1,656**
+- Non-empty runs: **212**
+- Embedding NPZ shape: **(68050, 4096)**
+- Global embedding clusters: **48**
+
+## Key embedding result
+
+The highest within-run semantic coherence is **entropy-collapse** with mean pairwise cosine **0.458**.
+
+## Group counts
 
 | group | post_rows | runs |
 | --- | --- | --- |
 | entropy-collapse | 51061 | 91 |
-| canonical-48 | 39138 | 48 |
 | base-model | 12774 | 103 |
 | obsession | 4215 | 18 |
-| source-citation | 1859 | 8 |
-| frontier/mixed-model | 807 | 3 |
 
-## Methods
+## Model counts
 
-1. **Indexing:** normalized archive + full canonical-48 posts into `combined_posts_index.jsonl/csv`. Duplicate `record_id`s exist for 10 rows; row order is preserved and later judge work uses a unique row UID.
-2. **Embeddings:** cached OpenRouter `qwen/qwen3-embedding-8b` vectors in SQLite and exported a `(109854, 4096)` NPZ.
-3. **Global embedding analysis:** normalized embeddings, computed 50 SVD components, clustered with MiniBatchKMeans (`k=64`), and sampled 30,000 rows for UMAP.
-4. **LLM judge:** drew a 2,265-row nonseed stratified sample across `group × model_family × condition × scale × time_bin`, with extra coverage for all 64 clusters. Judge prompts blinded source/group/model/condition labels and included local previous-post context plus same-cluster examples.
-5. **Cluster labeling:** all 64 global clusters were summarized by the judge model using representative posts plus aggregate statistics.
+| model_family | post_rows | runs |
+| --- | --- | --- |
+| google/gemini-3.1-flash-lite-preview | 27402 | 86 |
+| gpt-5 | 24105 | 26 |
+| olmo3-32b-instruct | 5650 | 29 |
+| moonshotai/kimi-k2.5 | 4150 | 7 |
+| olmo3-32b-base | 2755 | 25 |
+| z-ai/glm-5 | 1813 | 6 |
+| qwen3.5-35b-a3b-base | 1433 | 6 |
+| qwen3.5-35b-a3b-instruct | 277 | 12 |
+| olmo3-32b-think | 244 | 7 |
+| nvidia/nemotron-3-super-120b-a12b:free | 221 | 8 |
 
-## Final group summary
+## Group embedding summary
 
-`sample_collapse_index` is the raw mean over sampled posts. `weighted_collapse_index` weights cell-level judge means by the full nonseed post count of each cell, so it is the better group-level estimate. Collapse index = mean of semantic repetition, narrative convergence, groupthink, and template rigidity.
+| group | n_runs | n_posts | mean_pairwise_cosine | dominant_cluster_share |
+| --- | --- | --- | --- | --- |
+| entropy-collapse | 91 | 51061 | 0.458 | 0.473 |
+| base-model | 103 | 12774 | 0.426 | 0.538 |
+| obsession | 18 | 4215 | 0.375 | 0.574 |
 
-| group | n_runs | n_posts | embedding_mean_pairwise_cosine | dominant_cluster_share | n_judged_sample | sample_collapse_index | weighted_collapse_index | weighted_semantic_repetition | weighted_narrative_convergence | weighted_groupthink | weighted_template_rigidity |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| entropy-collapse | 91 | 51061 | 0.458 | 0.403 | 796 | 4.029 | 4.234 | 4.176 | 4.709 | 4.334 | 3.718 |
-| canonical-48 | 48 | 39138 | 0.476 | 0.282 | 768 | 4.037 | 4.176 | 4.086 | 4.707 | 4.285 | 3.628 |
-| base-model | 103 | 12774 | 0.426 | 0.603 | 511 | 3.502 | 3.990 | 3.921 | 4.453 | 4.112 | 3.475 |
-| source-citation | 8 | 1859 | 0.447 | 0.279 | 64 | 3.840 | 3.846 | 3.641 | 4.257 | 3.698 | 3.789 |
-| obsession | 18 | 4215 | 0.375 | 0.564 | 110 | 3.282 | 3.391 | 2.877 | 3.788 | 2.903 | 3.995 |
-| frontier/mixed-model | 3 | 807 | 0.391 | 0.212 | 16 | 3.375 | 3.375 | 3.250 | 4.188 | 3.312 | 2.750 |
+## Model embedding summary
 
-## Final model summary
+| model_family | n_runs | n_posts | mean_pairwise_cosine | dominant_cluster_share |
+| --- | --- | --- | --- | --- |
+| olmo3-32b-instruct | 29 | 5650 | 0.541 | 0.568 |
+| moonshotai/kimi-k2.5 | 7 | 4150 | 0.527 | 0.421 |
+| z-ai/glm-5 | 6 | 1813 | 0.461 | 0.397 |
+| gpt-5 | 26 | 24105 | 0.453 | 0.314 |
+| olmo3-32b-base | 25 | 2755 | 0.425 | 0.593 |
+| google/gemini-3.1-flash-lite-preview | 86 | 27402 | 0.416 | 0.507 |
+| nvidia/nemotron-3-super-120b-a12b:free | 8 | 221 | 0.413 | 0.821 |
+| qwen3.5-35b-a3b-base | 6 | 1433 | 0.372 | 0.531 |
+| qwen3.5-35b-a3b-instruct | 12 | 277 | 0.359 | 0.584 |
+| olmo3-32b-think | 7 | 244 | 0.282 | 0.521 |
 
-| model_family | n_runs | n_posts | embedding_mean_pairwise_cosine | n_judged_sample | sample_collapse_index | weighted_collapse_index |
-| --- | --- | --- | --- | --- | --- | --- |
-| olmo3-32b-instruct | 29 | 5650 | 0.541 | 96 | 4.430 | 4.424 |
-| olmo3-32b-base | 25 | 2755 | 0.425 | 97 | 4.402 | 4.380 |
-| google/gemini-3.1-flash-lite-preview | 98 | 36543 | 0.420 | 590 | 4.080 | 4.256 |
-| gpt-5 | 52 | 45429 | 0.469 | 736 | 4.063 | 4.185 |
-| moonshotai/kimi-k2.5 | 13 | 7868 | 0.525 | 192 | 4.022 | 4.042 |
-| gemini-flash-lite | 6 | 5173 | 0.413 | 96 | 3.956 | 3.918 |
-| nvidia/nemotron-3-super-120b-a12b:free | 8 | 221 | 0.413 | 28 | 3.330 | 3.781 |
-| mixed | 3 | 807 | 0.391 | 16 | 3.375 | 3.375 |
-| qwen3.5-35b-a3b-base | 6 | 1433 | 0.372 | 96 | 3.172 | 3.220 |
-| z-ai/glm-5 | 12 | 3454 | 0.460 | 192 | 3.035 | 3.016 |
-| qwen3.5-35b-a3b-instruct | 12 | 277 | 0.359 | 55 | 2.695 | 2.823 |
-| olmo3-32b-think | 7 | 244 | 0.282 | 71 | 2.444 | 2.568 |
+## Top clusters
 
-## Top clusters by size
+| cluster_id | n_posts | n_runs | top_group | top_model | top_condition | seed_share | post_share |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 16 | 3420 | 48 | entropy-collapse | gpt-5 | dom-agi | 0.005 | 0.050 |
+| 24 | 2429 | 23 | entropy-collapse | gpt-5 | mag25 | 0.000 | 0.036 |
+| 18 | 2354 | 43 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 | 0.000 | 0.035 |
+| 44 | 2319 | 66 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 | 0.000 | 0.034 |
+| 0 | 2248 | 45 | entropy-collapse | gpt-5 | mag1 | 0.000 | 0.033 |
+| 6 | 2175 | 91 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag25 | 0.000 | 0.032 |
+| 29 | 2114 | 27 | entropy-collapse | gpt-5 | mag25 | 0.000 | 0.031 |
+| 11 | 2050 | 26 | entropy-collapse | gpt-5 | dom-tech | 0.000 | 0.030 |
+| 2 | 1987 | 40 | entropy-collapse | gpt-5 | dom-agi | 0.000 | 0.029 |
+| 41 | 1932 | 38 | entropy-collapse | gpt-5 | mag0 | 0.000 | 0.028 |
+| 38 | 1858 | 64 | entropy-collapse | moonshotai/kimi-k2.5 | mag0 | 0.000 | 0.027 |
+| 12 | 1832 | 63 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 | 0.000 | 0.027 |
+| 15 | 1808 | 27 | entropy-collapse | gpt-5 | mag25 | 0.000 | 0.027 |
+| 13 | 1805 | 47 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 | 0.000 | 0.027 |
+| 42 | 1701 | 27 | entropy-collapse | gpt-5 | mag1 | 0.000 | 0.025 |
+| 37 | 1673 | 12 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 | 0.000 | 0.025 |
+| 3 | 1637 | 90 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 | 0.000 | 0.024 |
+| 47 | 1607 | 102 | entropy-collapse | google/gemini-3.1-flash-lite-preview | dom-tech | 0.000 | 0.024 |
+| 7 | 1607 | 90 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag25 | 0.000 | 0.024 |
+| 5 | 1584 | 40 | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 | 0.000 | 0.023 |
 
-| cluster_id | short_label | n_posts | n_judged | collapse_index | collapse_pattern | top_group | top_model | top_condition |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2 | Standardizing Falsifiable Micro-Protocols | 3382 | 48 | 4.667 | template_repetition | entropy-collapse | gpt-5 | mag25 |
-| 25 | Standardized Operational Templates and Handoff Protocols | 2795 | 45 | 4.556 | template_repetition | canonical-48 | gpt-5 | dom-tech |
-| 11 | Abstract Existential Recursion and Entropy | 2655 | 50 | 4.945 | template_repetition | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
-| 51 | Operationalizing Epistemic Rigor and Accountability | 2601 | 39 | 4.667 | template_repetition | entropy-collapse | gpt-5 | mag0 |
-| 6 | Micro-Habit Productivity and Momentum Rituals | 2567 | 60 | 3.979 | template_repetition | entropy-collapse | gpt-5 | dom-agi |
-| 53 | Micro-Habits for Epistemic Rigor | 2478 | 39 | 4.590 | template_repetition | entropy-collapse | gpt-5 | mag1 |
-| 30 | Procedural micro-rituals for constructive disagreement | 2465 | 35 | 4.457 | template_repetition | entropy-collapse | gpt-5 | mag25 |
-| 13 | Critique of Agentic System Complexity | 2313 | 47 | 3.809 | frame_convergence | canonical-48 | google/gemini-3.1-flash-lite-preview | mag25 |
-| 49 | Standardizing Epistemic Receipts and Accountability | 2311 | 24 | 4.656 | template_repetition | canonical-48 | gpt-5 | mag25 |
-| 8 | Architectural Stewardship and Agentic Integrity | 2288 | 28 | 3.696 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
-| 0 | Epistemic Rigor and Belief Calibration | 2283 | 39 | 4.013 | frame_convergence | entropy-collapse | gpt-5 | mag1 |
-| 63 | Standardizing Micro-Mechanics for Epistemic Rigor | 2261 | 39 | 4.667 | template_repetition | entropy-collapse | gpt-5 | mag25 |
-| 18 | Formal Verification and Adversarial Audit Protocols | 2235 | 35 | 3.964 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag0 |
-| 41 | Systemic Failure Analysis and Integrity Protocols | 2149 | 21 | 3.869 | frame_convergence | entropy-collapse | google/gemini-3.1-flash-lite-preview | mag5 |
-| 19 | Reflective Community Building and Mutual Witnessing | 2124 | 56 | 4.250 | frame_convergence | entropy-collapse | moonshotai/kimi-k2.5 | mag0 |
-
-## Final outputs
-
-Primary reports:
+## Main outputs
 
 - `FINAL_REPORT.md` — this report.
 - `embedding_report/EMBEDDING_REPORT.md` — full embedding/clustering report.
-- `llm_judge/LLM_JUDGE_REPORT.md` — post-level LLM judge report.
-- `llm_judge/CLUSTER_LABELS.md` — qualitative labels/summaries for all 64 global clusters.
+- `paper_analysis/PAPER_STYLE_ANALYSIS.md` — paper-style embedding-only analysis with Vendi/MDS figures.
+- `final_report/final_group_embedding_summary.csv`
+- `final_report/final_model_embedding_summary.csv`
+- `final_report/final_cluster_embedding_summary.csv`
+- `final_report/final_run_embedding_summary.csv`
+- `final_report/final_embedding_only_summary.json`
 
-Final aggregate CSVs:
+## Final PNGs
 
-- `final_report/final_group_summary.csv`
-- `final_report/final_model_summary.csv`
-- `final_report/final_cluster_summary.csv`
-- `final_report/final_cell_weighting_inputs.csv`
-- `final_report/final_weighted_overall_judge_estimates.json`
-- `final_report/artifact_inventory.csv`
+- `final_report/fig_final_group_embedding_coherence.png`
+- `final_report/fig_final_group_dominant_cluster_share.png`
+- `final_report/fig_final_model_embedding_coherence.png`
+- `final_report/fig_final_cluster_sizes.png`
 
-Final aggregate PNGs:
+## Reproducibility
 
-- `final_report/fig_final_group_collapse_index.png`
-- `final_report/fig_final_embedding_vs_judge_collapse.png`
-- `final_report/fig_final_model_collapse_index.png`
-- `final_report/fig_final_cluster_size_vs_collapse.png`
-- `final_report/fig_final_group_judge_metric_heatmap.png`
+Regenerate the cleaned index and analysis with:
 
-Non-heatmap individual-analysis outputs:
-
-- `individual_analysis/INDIVIDUAL_MODEL_CONDITION_ANALYSIS.md`
-- `individual_analysis/fig_all_models_collapse_lollipop.png`
-- `individual_analysis/fig_conditions_collapse_lollipop.png`
-- `individual_analysis/fig_model_condition_collapse_facets.png`
-- `individual_analysis/fig_group_condition_collapse_bars.png`
-- `individual_analysis/models/` — one condition-profile graph per generation model.
-- `individual_analysis/conditions/` — one model/group ranking graph per condition.
-
-Earlier generated PNGs remain in `embedding_report/` and `llm_judge/`; current total is 55 PNG diagrams across the analysis directory.
-
-## Caveats
-
-- The archive mirror is targeted/lightweight by design; it is not a full snapshot of every heavy artifact.
-- LLM judge metrics are sampled estimates, not exhaustive judgments for all 109,854 rows. The final weighted estimates improve population alignment by weighting sampled cell means by full nonseed cell counts.
-- Frontier/mixed-model has only 807 post rows and 16 judged sample rows; interpret group-level judge scores cautiously.
-- LLM cluster labels are qualitative summaries and may compress heterogeneous clusters into a single label.
-- Source-citation quality scores should be interpreted carefully because many sampled posts did not contain source/citation behavior, and the rubric assigns low citation quality when no citations appear.
-
-## Artifact inventory
-
-See `final_report/artifact_inventory.csv` for file sizes and paths. Current final inventory contains 88 files.
+```bash
+python3 scripts/archive-2026-combined-analysis.py index
+python3 scripts/archive-2026-combined-analysis.py embed --model qwen/qwen3-embedding-8b --export-npz
+python3 scripts/archive-2026-embedding-report.py --clusters 48 --umap-sample 25000 --svd-components 50
+python3 scripts/archive-2026-paper-analysis.py --max-bin-n 400 --mds-sample 4000
+python3 scripts/archive-2026-final-report.py
+```

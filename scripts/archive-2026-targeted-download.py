@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Targeted downloader for Ayushnangia/moltbook-archive-2026.
 
-Downloads only the lightweight files needed for embedding/judge analysis:
+Downloads only the lightweight files needed for embedding analysis:
 posts.jsonl, comments.jsonl, agents.jsonl, metadata.json, plus top-level
 README.md/inventory.json. It intentionally skips logs, DB dumps, existing plots,
 and other heavy artifacts.

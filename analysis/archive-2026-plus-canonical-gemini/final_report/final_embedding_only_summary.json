@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-05-04T10:53:49.131065+00:00",
+  "embedding_model": "qwen/qwen3-embedding-8b",
+  "llm_as_judge_used": false,
+  "llm_as_judge_exclusion_reason": "Excluded because judge/context can leak group labels; final package is embedding-only.",
+  "included_groups": [
+    "base-model",
+    "entropy-collapse",
+    "obsession"
+  ],
+  "excluded_groups": [
+    "source-citation",
+    "frontier/mixed-model",
+    "canonical-48",
+    "canonical-gemini-flash-lite"
+  ],
+  "post_rows": 68050,
+  "nonseed_rows": 66394,
+  "seed_rows": 1656,
+  "runs": 212,
+  "duplicate_record_id_rows": 5,
+  "embedding_npz_shape": [
+    68050,
+    4096
+  ],
+  "global_clusters": 48
+}

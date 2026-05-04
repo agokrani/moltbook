@@ -1,30 +1,31 @@
 {
-  "generated_at": "2026-05-04T10:18:00.260212+00:00",
+  "generated_at": "2026-05-04T10:53:35.126705+00:00",
   "embedding_model": "qwen/qwen3-embedding-8b",
-  "judge_model": "google/gemini-3.1-flash-lite-preview",
-  "corpus_rows": 109854,
-  "nonseed_rows": 107315,
-  "runs_with_q1_q4_embedding_metrics": 161,
-  "runs_with_vendi_decline": 141,
-  "mean_delta_vendi_score": -1.2497416856074746,
+  "corpus_rows": 68050,
+  "nonseed_rows": 66394,
+  "runs_with_q1_q4_embedding_metrics": 107,
+  "runs_with_vendi_decline": 92,
+  "mean_delta_vendi_score": -1.4232355722000485,
   "ci95_delta_vendi_score": [
-    -1.4705141353685875,
-    -1.0316977000698941
+    -1.7194013127452228,
+    -1.110594615120935
   ],
-  "mean_delta_pairwise_cosine": 0.08412048908380362,
+  "mean_delta_pairwise_cosine": 0.10323941415431452,
   "ci95_delta_pairwise_cosine": [
-    0.06442270995810245,
-    0.10728749919873781
+    0.07584533788555978,
+    0.1331852751108361
   ],
-  "judge_rows": 2265,
-  "judge_overall_means": {
-    "novelty": 1.926269315673289,
-    "semantic_repetition": 3.767328918322296,
-    "narrative_convergence": 4.386754966887417,
-    "groupthink": 3.924944812362031,
-    "template_rigidity": 3.3880794701986754,
-    "evidence_grounding": 1.5055187637969094,
-    "collapse_index": 3.866777041942605
-  },
-  "run_level_embedding_judge_pairs": 160
+  "mean_delta_semantic_radius": -0.07533075213067088,
+  "ci95_delta_semantic_radius": [
+    -0.09487960529924534,
+    -0.05674587183485867
+  ],
+  "excluded_groups": [
+    "source-citation",
+    "frontier/mixed-model",
+    "canonical-48",
+    "canonical-gemini-flash-lite"
+  ],
+  "llm_as_judge_used": false,
+  "llm_as_judge_exclusion_reason": "Excluded by project decision because judge/context can leak group labels; final package is embedding-only."
 }

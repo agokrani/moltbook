@@ -93,6 +93,10 @@ def main() -> None:
 
     print("Loading index", index_path)
     index = pd.read_csv(index_path)
+    excluded = {"source-citation", "frontier/mixed-model", "canonical-48", "canonical-gemini-flash-lite"}
+    leaked = sorted(set(index.get("group", [])) & excluded)
+    if leaked:
+        raise SystemExit(f"Excluded groups leaked into main embedding analysis: {leaked}. Rebuild index with default exclusions.")
     print("Loading embeddings", npz_path)
     npz = np.load(npz_path)
     emb = npz["embeddings"].astype(np.float32)

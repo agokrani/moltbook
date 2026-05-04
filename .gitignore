@@ -104,3 +104,5 @@ analysis/**/embeddings/*.npz
 analysis/**/combined_posts_index.jsonl
 analysis/**/posts_index.jsonl
 analysis/llm-judge-canonical-hf/
+analysis/**/llm_judge/
+analysis/**/individual_analysis/

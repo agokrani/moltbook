@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Combined archive-2026 + full canonical-48 embedding/judge pipeline.
+"""Combined archive-2026 embedding pipeline.
 
 This script intentionally works from the targeted lightweight archive mirror plus
 local canonical 48 runs. It does not require full HF snapshots.
@@ -37,9 +37,7 @@ DEFAULT_ARCHIVE_ROOT = Path("exports/huggingface/Ayushnangia/moltbook-archive-20
 DEFAULT_CANONICAL_ROOT = Path("exports/huggingface/agokrani/moltbook-entropy-collapse-canonical-48/data")
 DEFAULT_OUT_DIR = Path("analysis/archive-2026-plus-canonical-gemini")
 DEFAULT_EMBED_MODEL = "qwen/qwen3-embedding-8b"
-DEFAULT_JUDGE_MODEL = "google/gemini-3.1-flash-lite-preview"
 EMBED_ENDPOINT = "https://openrouter.ai/api/v1/embeddings"
-CHAT_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions"
 SEED_PREFIXES = ("civiclens_",)
 
 CONDITIONS = ["mag0", "mag1", "mag5", "mag25", "dom-agi", "dom-tech"]
@@ -191,13 +189,8 @@ def discover_runs(archive_root: Path, canonical_root: Path) -> list[tuple[str, P
     runs: list[tuple[str, Path]] = []
     for p in sorted(archive_root.rglob("posts.jsonl")):
         runs.append(("archive-2026", p.parent))
-    # Full canonical 48: model_family/agents-N/run/posts.jsonl.
-    # Keep the historical Gemini dataset_source stable so existing cached
-    # embeddings remain reusable; group is normalized separately as canonical-48.
-    for p in sorted(canonical_root.glob("*/*/*/posts.jsonl")):
-        model_dir = p.parents[2].name
-        source = "canonical-gemini-flash-lite" if model_dir == "gemini-flash-lite" else "canonical-48"
-        runs.append((source, p.parent))
+    # Canonical-48 is intentionally excluded by default for this archive-focused
+    # paper package. Include explicitly for ablations/comparisons only.
     return runs
 
 
@@ -270,7 +263,21 @@ def load_run(dataset_source: str, run_dir: Path, include_seeds: bool = True) -> 
 def build_index(args) -> list[CombinedPost]:
     records: list[CombinedPost] = []
     runs = discover_runs(Path(args.archive_root), Path(args.canonical_root))
+    if args.include_canonical_48:
+        for p in sorted(Path(args.canonical_root).glob("*/*/*/posts.jsonl")):
+            model_dir = p.parents[2].name
+            source = "canonical-gemini-flash-lite" if model_dir == "gemini-flash-lite" else "canonical-48"
+            runs.append((source, p.parent))
     for source, run_dir in progress(runs, desc="Indexing runs", unit="run"):
+        group = infer_group(run_dir)
+        # Main paper package excludes source/site-citation, frontier/mixed roster,
+        # and canonical-48 by default. Include explicitly only for ablations.
+        if group == "source-citation" and not args.include_source_citation:
+            continue
+        if group == "frontier/mixed-model" and not args.include_frontier_mixed:
+            continue
+        if group == "canonical-48" and not args.include_canonical_48:
+            continue
         records.extend(load_run(source, run_dir, include_seeds=args.include_seeds))
     records.sort(key=lambda r: (r.dataset_source, r.group, r.model_family, r.run_id, r.created_at, r.post_id))
     return records
@@ -452,29 +459,6 @@ def cmd_embed(args):
         print("Exported NPZ:", out_path)
 
 
-def cmd_judge_smoke(args):
-    # Minimal one-call structured smoke. Full judge/cluster labels come next iteration.
-    key = load_env_key()
-    records = [r for r in read_index(Path(args.out_dir)) if not r.is_seed and r.text][: args.limit]
-    if not records:
-        raise SystemExit("No records for judge smoke")
-    r = records[0]
-    prompt = f"""Score this AI-agent post for entropy-collapse behavior. Return JSON only with keys novelty, repetition, convergence, rationale.
-Title: {r.title}
-Content: {r.content[:1200]}
-"""
-    resp = requests.post(
-        CHAT_ENDPOINT,
-        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
-        json={"model": args.model, "messages": [{"role": "user", "content": prompt}], "temperature": 0, "max_tokens": 200, "response_format": {"type": "json_object"}},
-        timeout=90,
-    )
-    resp.raise_for_status()
-    out = Path(args.out_dir) / "judge_smoke.json"
-    out.write_text(resp.json()["choices"][0]["message"].get("content", "{}"))
-    print("Wrote", out)
-
-
 def parse_args():
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -483,6 +467,9 @@ def parse_args():
     p.add_argument("--canonical-root", default=str(DEFAULT_CANONICAL_ROOT))
     p.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
     p.add_argument("--include-seeds", action="store_true", default=True)
+    p.add_argument("--include-source-citation", action="store_true", help="Include source-citation/site-citation smoke runs; excluded by default")
+    p.add_argument("--include-frontier-mixed", action="store_true", help="Include frontier/mixed roster runs; excluded by default")
+    p.add_argument("--include-canonical-48", action="store_true", help="Include full canonical-48 comparison runs; excluded by default")
     p.set_defaults(func=cmd_index)
 
     p = sub.add_parser("embed")
@@ -499,11 +486,6 @@ def parse_args():
     p.add_argument("--export-npz", action="store_true")
     p.set_defaults(func=cmd_embed)
 
-    p = sub.add_parser("judge-smoke")
-    p.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
-    p.add_argument("--model", default=DEFAULT_JUDGE_MODEL)
-    p.add_argument("--limit", type=int, default=5)
-    p.set_defaults(func=cmd_judge_smoke)
     return ap.parse_args()
 
 

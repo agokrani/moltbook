@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Build final aggregate report for archive-2026 + full canonical-48 analysis."""
+"""Build embedding-only final report for archive-2026 main groups.
+
+Main package intentionally excludes source-citation/site-citation, frontier/mixed
+roster runs, canonical-48 comparison runs, and all LLM-as-a-judge outputs.
+"""
 from __future__ import annotations
 
 import argparse
 import json
-import math
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -16,136 +19,42 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 DEFAULT_OUT_DIR = Path("analysis/archive-2026-plus-canonical-gemini")
-SCORE_FIELDS = [
-    "novelty",
-    "semantic_repetition",
-    "narrative_convergence",
-    "groupthink",
-    "specificity",
-    "evidence_grounding",
-    "epistemic_caution",
-    "template_rigidity",
-    "source_citation_quality",
-]
-COLLAPSE_FIELDS = ["semantic_repetition", "narrative_convergence", "groupthink", "template_rigidity"]
+MAIN_GROUPS = ["base-model", "entropy-collapse", "obsession"]
+EXCLUDED_GROUPS = ["source-citation", "frontier/mixed-model", "canonical-48", "canonical-gemini-flash-lite"]
 
 
 def is_true(s: pd.Series) -> pd.Series:
     return s.astype(str).str.lower().isin(["true", "1", "yes"])
 
 
-def md_table(df: pd.DataFrame, cols: list[str] | None = None, max_rows: int = 20, decimals: int = 3) -> str:
-    if cols:
-        df = df[cols]
-    df = df.head(max_rows).copy()
-    for c in df.columns:
-        if pd.api.types.is_float_dtype(df[c]):
-            df[c] = df[c].map(lambda x: "" if pd.isna(x) else f"{x:.{decimals}f}")
-    headers = list(df.columns)
-    lines = ["| " + " | ".join(headers) + " |", "| " + " | ".join(["---"] * len(headers)) + " |"]
-    for _, row in df.iterrows():
-        lines.append("| " + " | ".join(str(row[c]) for c in headers) + " |")
+def md_table(df: pd.DataFrame, max_rows: int = 20, decimals: int = 3) -> str:
+    d = df.head(max_rows).copy()
+    for c in d.columns:
+        if pd.api.types.is_float_dtype(d[c]):
+            d[c] = d[c].map(lambda x: "" if pd.isna(x) else f"{x:.{decimals}f}")
+    lines = ["| " + " | ".join(d.columns) + " |", "| " + " | ".join(["---"] * len(d.columns)) + " |"]
+    for _, r in d.iterrows():
+        lines.append("| " + " | ".join(str(r[c]) for c in d.columns) + " |")
     return "\n".join(lines)
 
 
-def weighted_means(df: pd.DataFrame, by: list[str], weight_col: str, value_cols: list[str]) -> pd.DataFrame:
-    rows = []
-    for key, sub in df.groupby(by, dropna=False):
-        if not isinstance(key, tuple):
-            key = (key,)
-        w = sub[weight_col].astype(float).to_numpy()
-        row = {col: val for col, val in zip(by, key)}
-        row["n_full_nonseed_posts_with_judged_cells"] = int(w.sum())
-        row["n_judged"] = int(sub.get("n_judged_cell", pd.Series(dtype=float)).sum()) if "n_judged_cell" in sub.columns else int(len(sub))
-        for col in value_cols:
-            vals = sub[col].astype(float).to_numpy()
-            mask = np.isfinite(vals) & np.isfinite(w) & (w > 0)
-            row[col] = float(np.average(vals[mask], weights=w[mask])) if mask.any() else float("nan")
-        rows.append(row)
-    return pd.DataFrame(rows)
-
-
-def plot_barh(df: pd.DataFrame, label_col: str, value_col: str, path: Path, title: str, xlabel: str, color: str = "#4e79a7") -> None:
-    sub = df.sort_values(value_col).copy()
-    fig, ax = plt.subplots(figsize=(10, max(4, 0.45 * len(sub))))
-    ax.barh(sub[label_col].astype(str), sub[value_col], color=color)
+def plot_barh(df: pd.DataFrame, label: str, value: str, path: Path, title: str, xlabel: str, color: str) -> None:
+    d = df.sort_values(value).copy()
+    fig, ax = plt.subplots(figsize=(8, max(3.5, 0.45 * len(d))))
+    ax.barh(d[label].astype(str), d[value], color=color)
     ax.set_xlabel(xlabel)
     ax.set_title(title)
-    ax.grid(axis="x", alpha=0.2)
-    fig.tight_layout()
-    fig.savefig(path)
-    plt.close(fig)
-
-
-def plot_group_scatter(df: pd.DataFrame, path: Path) -> None:
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sizes = 80 + 800 * (df["n_posts"] / df["n_posts"].max())
-    ax.scatter(df["mean_pairwise_cosine"], df["weighted_collapse_index"], s=sizes, alpha=0.75, color="#e15759", edgecolor="white")
-    for _, r in df.iterrows():
-        ax.annotate(str(r["group"]), (r["mean_pairwise_cosine"], r["weighted_collapse_index"]), xytext=(4, 4), textcoords="offset points", fontsize=8)
-    ax.set_xlabel("Full-corpus within-run embedding coherence")
-    ax.set_ylabel("Cell-weighted LLM collapse index")
-    ax.set_title("Embedding coherence vs. judged collapse by group")
-    ax.grid(alpha=0.25)
-    fig.tight_layout()
-    fig.savefig(path)
-    plt.close(fig)
-
-
-def plot_cluster_scatter(df: pd.DataFrame, path: Path) -> None:
-    fig, ax = plt.subplots(figsize=(10, 7))
-    colors = df["collapse_pattern"].fillna("unknown").astype("category").cat.codes
-    sc = ax.scatter(df["n_posts"], df["collapse_index"], c=colors, cmap="tab20", s=40 + 260 * (df["n_judged"] / max(1, df["n_judged"].max())), alpha=0.8, edgecolor="white")
-    ax.set_xscale("log")
-    ax.set_xlabel("Cluster posts (log scale)")
-    ax.set_ylabel("Cluster LLM collapse index")
-    ax.set_title("Global clusters: size vs. judged collapse")
-    top = df.sort_values(["n_posts", "collapse_index"], ascending=False).head(10)
-    for _, r in top.iterrows():
-        label = f"c{int(r['cluster_id']):02d}"
-        if isinstance(r.get("short_label"), str) and r["short_label"]:
-            label += ": " + r["short_label"][:24]
-        ax.annotate(label, (r["n_posts"], r["collapse_index"]), xytext=(4, 4), textcoords="offset points", fontsize=7)
-    ax.grid(alpha=0.25)
-    fig.tight_layout()
-    fig.savefig(path)
-    plt.close(fig)
-
-
-def plot_metric_heatmap(group_df: pd.DataFrame, path: Path) -> None:
-    metrics = ["weighted_novelty", "weighted_semantic_repetition", "weighted_narrative_convergence", "weighted_groupthink", "weighted_template_rigidity", "weighted_evidence_grounding"]
-    labels = ["novelty", "semantic rep.", "narrative conv.", "groupthink", "template rigid.", "evidence"]
-    pivot = group_df.set_index("group")[metrics]
-    fig, ax = plt.subplots(figsize=(9, 4.8))
-    im = ax.imshow(pivot.to_numpy(dtype=float), aspect="auto", cmap="magma", vmin=1, vmax=5)
-    ax.set_xticks(range(len(metrics)), labels, rotation=25, ha="right")
-    ax.set_yticks(range(len(pivot.index)), pivot.index)
-    ax.set_title("Cell-weighted LLM judge means by group")
-    for i in range(pivot.shape[0]):
-        for j in range(pivot.shape[1]):
-            val = pivot.iat[i, j]
-            if np.isfinite(val):
-                ax.text(j, i, f"{val:.2f}", ha="center", va="center", fontsize=7, color="white" if val > 3 else "black")
-    fig.colorbar(im, ax=ax, label="Mean score (1-5)")
+    ax.grid(axis="x", alpha=0.25)
     fig.tight_layout()
     fig.savefig(path)
     plt.close(fig)
 
 
 def artifact_inventory(root: Path, final_dir: Path) -> pd.DataFrame:
-    interesting_dirs = [
-        root,
-        root / "embedding_report",
-        root / "llm_judge",
-        final_dir,
-        root / "embeddings",
-        root / "individual_analysis",
-        root / "individual_analysis" / "models",
-        root / "individual_analysis" / "conditions",
-    ]
+    dirs = [root, root / "embedding_report", root / "paper_analysis", final_dir, root / "embeddings"]
     rows = []
-    seen: set[Path] = set()
-    for d in interesting_dirs:
+    seen = set()
+    for d in dirs:
         if not d.exists():
             continue
         for p in sorted(d.glob("*")):
@@ -165,128 +74,73 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out-dir", default=str(DEFAULT_OUT_DIR))
     args = ap.parse_args()
+
     root = Path(args.out_dir)
     final_dir = root / "final_report"
     final_dir.mkdir(parents=True, exist_ok=True)
 
     index = pd.read_csv(root / "combined_posts_index.csv")
+    bad = sorted(set(index["group"]) - set(MAIN_GROUPS))
+    if bad:
+        raise SystemExit(f"Excluded groups leaked into main index: {bad}")
+
     emb_group = pd.read_csv(root / "embedding_report" / "group_embedding_summary.csv")
     emb_model = pd.read_csv(root / "embedding_report" / "model_embedding_summary.csv")
     emb_cluster = pd.read_csv(root / "embedding_report" / "cluster_summary.csv")
-    emb_data = pd.read_csv(root / "embedding_report" / "embedding_analysis_data.csv")
-    judge_group = pd.read_csv(root / "llm_judge" / "judge_summary_by_group.csv")
-    judge_model = pd.read_csv(root / "llm_judge" / "judge_summary_by_model.csv")
-    judge_cell = pd.read_csv(root / "llm_judge" / "judge_summary_by_cell.csv")
-    judge_cluster = pd.read_csv(root / "llm_judge" / "judge_summary_by_cluster.csv")
-    cluster_labels = pd.read_csv(root / "llm_judge" / "cluster_labels.csv")
-    judge_results = pd.read_csv(root / "llm_judge" / "judge_results.csv")
-
-    # Cell-weighted judge estimates: cell means are weighted by the full nonseed corpus
-    # counts in each group/model/condition/scale cell.
-    emb_nonseed = emb_data[~is_true(emb_data["is_seed"])].copy()
-    cell_cols = ["group", "model_family", "condition", "scale"]
-    cell_counts = emb_nonseed.groupby(cell_cols, dropna=False).size().reset_index(name="n_full_nonseed_cell")
-    rename = {f"{m}_mean": f"weighted_{m}" for m in SCORE_FIELDS if f"{m}_mean" in judge_cell.columns}
-    rename.update({f"{SCORE_FIELDS[0]}_count": "n_judged_cell"})
-    jcell = judge_cell.rename(columns=rename)
-    metric_cols = [f"weighted_{m}" for m in SCORE_FIELDS]
-    cell_join = cell_counts.merge(jcell[cell_cols + metric_cols + ["n_judged_cell"]], on=cell_cols, how="left")
-    cell_join.to_csv(final_dir / "final_cell_weighting_inputs.csv", index=False)
-
-    weighted_group = weighted_means(cell_join.dropna(subset=["weighted_semantic_repetition"]), ["group"], "n_full_nonseed_cell", metric_cols)
-    weighted_model = weighted_means(cell_join.dropna(subset=["weighted_semantic_repetition"]), ["model_family"], "n_full_nonseed_cell", metric_cols)
-    for df in [weighted_group, weighted_model]:
-        df["weighted_collapse_index"] = df[[f"weighted_{m}" for m in COLLAPSE_FIELDS]].mean(axis=1)
-
-    group = emb_group.merge(judge_group, on="group", how="left", suffixes=("_embedding", "_sample_judge"))
-    group["sample_collapse_index"] = group[COLLAPSE_FIELDS].mean(axis=1)
-    group = group.merge(weighted_group, on="group", how="left")
-    group = group.rename(columns={
-        "n_judged_x": "n_judged_sample",
-        "mean_pairwise_cosine": "embedding_mean_pairwise_cosine",
-    })
-    # Restore short aliases used by plotting/reporting.
-    group["mean_pairwise_cosine"] = group["embedding_mean_pairwise_cosine"]
-    group = group.sort_values("weighted_collapse_index", ascending=False)
-    group.to_csv(final_dir / "final_group_summary.csv", index=False)
-
-    model = emb_model.merge(judge_model, on="model_family", how="left")
-    model["sample_collapse_index"] = model[COLLAPSE_FIELDS].mean(axis=1)
-    model = model.merge(weighted_model, on="model_family", how="left")
-    model = model.rename(columns={
-        "mean_pairwise_cosine": "embedding_mean_pairwise_cosine",
-        "n_judged_x": "n_judged_sample",
-    })
-    model = model.sort_values("weighted_collapse_index", ascending=False)
-    model.to_csv(final_dir / "final_model_summary.csv", index=False)
-
-    cluster = emb_cluster.merge(judge_cluster, on="cluster_id", how="left", suffixes=("_embedding", "_judge"))
-    cluster = cluster.merge(cluster_labels, on="cluster_id", how="left", suffixes=("", "_label"))
-    cluster["collapse_index"] = cluster[COLLAPSE_FIELDS].mean(axis=1)
-    cluster = cluster.sort_values(["n_posts", "collapse_index"], ascending=False)
-    cluster.to_csv(final_dir / "final_cluster_summary.csv", index=False)
-
-    # Overall estimates.
-    weighted_overall = {}
-    for col in metric_cols:
-        vals = cell_join[col].astype(float)
-        weights = cell_join["n_full_nonseed_cell"].astype(float)
-        mask = vals.notna() & weights.notna() & (weights > 0)
-        weighted_overall[col.replace("weighted_", "")] = float(np.average(vals[mask], weights=weights[mask]))
-    weighted_overall["collapse_index"] = float(np.mean([weighted_overall[m] for m in COLLAPSE_FIELDS]))
-    weighted_overall["n_full_nonseed_posts_weighted"] = int(cell_join.dropna(subset=["weighted_semantic_repetition"])["n_full_nonseed_cell"].sum())
-    weighted_overall["n_judged"] = int(judge_results.shape[0])
-    (final_dir / "final_weighted_overall_judge_estimates.json").write_text(json.dumps(weighted_overall, indent=2))
-
-    # Final PNGs.
-    plot_barh(group, "group", "weighted_collapse_index", final_dir / "fig_final_group_collapse_index.png", "Cell-weighted collapse index by group", "Collapse index (mean of repetition/convergence/groupthink/template)", "#e15759")
-    plot_group_scatter(group, final_dir / "fig_final_embedding_vs_judge_collapse.png")
-    plot_barh(model.head(12), "model_family", "weighted_collapse_index", final_dir / "fig_final_model_collapse_index.png", "Cell-weighted collapse index by model family", "Collapse index", "#f28e2b")
-    plot_cluster_scatter(cluster, final_dir / "fig_final_cluster_size_vs_collapse.png")
-    plot_metric_heatmap(group, final_dir / "fig_final_group_judge_metric_heatmap.png")
-
-    inventory = artifact_inventory(root, final_dir)
-    inventory.to_csv(final_dir / "artifact_inventory.csv", index=False)
-    total_png = len(list(root.rglob("*.png")))
-
-    # Helpful top tables.
-    group_display = group[[
-        "group", "n_runs", "n_posts", "embedding_mean_pairwise_cosine", "dominant_cluster_share",
-        "n_judged_sample", "sample_collapse_index", "weighted_collapse_index",
-        "weighted_semantic_repetition", "weighted_narrative_convergence", "weighted_groupthink", "weighted_template_rigidity",
-    ]].copy()
-    model_display = model[[
-        "model_family", "n_runs", "n_posts", "embedding_mean_pairwise_cosine", "n_judged_sample",
-        "sample_collapse_index", "weighted_collapse_index",
-    ]].copy()
-    cluster_display = cluster[[
-        "cluster_id", "short_label", "n_posts", "n_judged", "collapse_index", "collapse_pattern", "top_group", "top_model", "top_condition",
-    ]].head(15).copy()
+    emb_run = pd.read_csv(root / "embedding_report" / "run_embedding_summary.csv")
 
     total_rows = len(index)
-    unique_record_ids = index["record_id"].nunique()
-    duplicate_rows = total_rows - unique_record_ids
     seed_rows = int(is_true(index["is_seed"]).sum())
     nonseed_rows = total_rows - seed_rows
     total_runs = index["run_path"].nunique()
+    unique_ids = index["record_id"].nunique()
+    duplicate_rows = total_rows - unique_ids
     cluster_n = int(emb_cluster["cluster_id"].nunique())
-    judge_sample_n = int(judge_results.shape[0])
-    umap_n = len(pd.read_csv(root / "embedding_report" / "umap_sample.csv")) if (root / "embedding_report" / "umap_sample.csv").exists() else 0
-    npz_shape = tuple(np.load(root / "embeddings" / "qwen-qwen3-embedding-8b.npz")["embeddings"].shape) if (root / "embeddings" / "qwen-qwen3-embedding-8b.npz").exists() else (total_rows, 4096)
-    source_counts_df = index.copy()
-    source_counts_df["dataset_source_report"] = source_counts_df["dataset_source"].map(lambda s: "canonical-48" if str(s).startswith("canonical-") else s)
-    source_counts = source_counts_df.groupby("dataset_source_report").size().reset_index(name="post_rows").rename(columns={"dataset_source_report": "dataset_source"})
+    npz_path = root / "embeddings" / "qwen-qwen3-embedding-8b.npz"
+    npz_shape = tuple(np.load(npz_path)["embeddings"].shape) if npz_path.exists() else (total_rows, 4096)
+
     group_counts = index.groupby("group").agg(post_rows=("record_id", "count"), runs=("run_path", "nunique")).reset_index().sort_values("post_rows", ascending=False)
+    model_counts = index.groupby("model_family").agg(post_rows=("record_id", "count"), runs=("run_path", "nunique")).reset_index().sort_values("post_rows", ascending=False)
 
-    top_group = group_display.iloc[0]
-    lowest_group = group_display.sort_values("weighted_collapse_index").iloc[0]
-    top_coherence = group.sort_values("embedding_mean_pairwise_cosine", ascending=False).iloc[0]
+    final_group = emb_group.sort_values("mean_pairwise_cosine", ascending=False)
+    final_model = emb_model.sort_values("mean_pairwise_cosine", ascending=False)
+    final_cluster = emb_cluster.sort_values("n_posts", ascending=False)
 
-    report = f"""# Moltbook Archive 2026 + Canonical 48 — Final Aggregate Report\n\nGenerated: {datetime.now(timezone.utc).isoformat()}\n\n## Executive summary\n\nThis analysis combines the targeted lightweight mirror of `Ayushnangia/moltbook-archive-2026` with the **full canonical 48-run** dataset from `agokrani/moltbook-entropy-collapse-canonical-48` (GPT-5, Gemini Flash Lite, Kimi K2.5, and GLM-5). The corpus contains **{total_rows:,} post rows** across **{total_runs:,} non-empty runs**, with **{nonseed_rows:,} nonseed/agent rows** and **{seed_rows:,} seed/system rows**. Embeddings were computed with OpenRouter `{np.load(root / 'embeddings' / 'qwen-qwen3-embedding-8b.npz')['embedding_model'][0] if (root / 'embeddings' / 'qwen-qwen3-embedding-8b.npz').exists() else 'qwen/qwen3-embedding-8b'}` and clustered globally into **{cluster_n}** clusters.\n\nKey findings:\n\n- The full embedding corpus shows highest within-run semantic coherence for **{top_coherence['group']}** (`{top_coherence['embedding_mean_pairwise_cosine']:.3f}` mean pairwise cosine).\n- The cell-weighted LLM judge estimate shows strongest collapse for **{top_group['group']}** (`{top_group['weighted_collapse_index']:.3f}` collapse index).\n- The lowest cell-weighted collapse estimate is **{lowest_group['group']}** (`{lowest_group['weighted_collapse_index']:.3f}`), but frontier/mixed-model has a small judged sample because that slice is small.\n- Overall cell-weighted LLM estimates are high on narrative convergence (`{weighted_overall['narrative_convergence']:.3f}`), semantic repetition (`{weighted_overall['semantic_repetition']:.3f}`), and groupthink (`{weighted_overall['groupthink']:.3f}`), while novelty (`{weighted_overall['novelty']:.3f}`) and evidence grounding (`{weighted_overall['evidence_grounding']:.3f}`) are low.\n- All {cluster_n} embedding clusters were labeled with an LLM; prominent repeated patterns include micro-ritual epistemic protocols, recursive meta-discourse, technical protocol standardization, null/punctuation collapse, and existential/simulation-loop frames.\n\n## Scope and provenance\n\nThe archive source was intentionally targeted: only lightweight run artifacts (`posts.jsonl`, `comments.jsonl`, `agents.jsonl`, `metadata.json`, top-level metadata files) were fetched, not full logs/databases/plots. This follows the user instruction to be targeted rather than downloading a heavy full snapshot.\n\n### Source row counts\n\n{md_table(source_counts)}\n\n### Group row counts\n\n{md_table(group_counts)}\n\n## Methods\n\n1. **Indexing:** normalized archive + full canonical-48 posts into `combined_posts_index.jsonl/csv`. Duplicate `record_id`s exist for {duplicate_rows} rows; row order is preserved and later judge work uses a unique row UID.\n2. **Embeddings:** cached OpenRouter `qwen/qwen3-embedding-8b` vectors in SQLite and exported a `{npz_shape}` NPZ.\n3. **Global embedding analysis:** normalized embeddings, computed 50 SVD components, clustered with MiniBatchKMeans (`k={cluster_n}`), and sampled {umap_n:,} rows for UMAP.\n4. **LLM judge:** drew a {judge_sample_n:,}-row nonseed stratified sample across `group × model_family × condition × scale × time_bin`, with extra coverage for all {cluster_n} clusters. Judge prompts blinded source/group/model/condition labels and included local previous-post context plus same-cluster examples.\n5. **Cluster labeling:** all {cluster_n} global clusters were summarized by the judge model using representative posts plus aggregate statistics.\n\n## Final group summary\n\n`sample_collapse_index` is the raw mean over sampled posts. `weighted_collapse_index` weights cell-level judge means by the full nonseed post count of each cell, so it is the better group-level estimate. Collapse index = mean of semantic repetition, narrative convergence, groupthink, and template rigidity.\n\n{md_table(group_display, decimals=3)}\n\n## Final model summary\n\n{md_table(model_display, max_rows=20, decimals=3)}\n\n## Top clusters by size\n\n{md_table(cluster_display, max_rows=15, decimals=3)}\n\n## Final outputs\n\nPrimary reports:\n\n- `FINAL_REPORT.md` — this report.\n- `embedding_report/EMBEDDING_REPORT.md` — full embedding/clustering report.\n- `llm_judge/LLM_JUDGE_REPORT.md` — post-level LLM judge report.\n- `llm_judge/CLUSTER_LABELS.md` — qualitative labels/summaries for all {cluster_n} global clusters.\n\nFinal aggregate CSVs:\n\n- `final_report/final_group_summary.csv`\n- `final_report/final_model_summary.csv`\n- `final_report/final_cluster_summary.csv`\n- `final_report/final_cell_weighting_inputs.csv`\n- `final_report/final_weighted_overall_judge_estimates.json`\n- `final_report/artifact_inventory.csv`\n\nFinal aggregate PNGs:\n\n- `final_report/fig_final_group_collapse_index.png`\n- `final_report/fig_final_embedding_vs_judge_collapse.png`\n- `final_report/fig_final_model_collapse_index.png`\n- `final_report/fig_final_cluster_size_vs_collapse.png`\n- `final_report/fig_final_group_judge_metric_heatmap.png`\n\nNon-heatmap individual-analysis outputs:\n\n- `individual_analysis/INDIVIDUAL_MODEL_CONDITION_ANALYSIS.md`\n- `individual_analysis/fig_all_models_collapse_lollipop.png`\n- `individual_analysis/fig_conditions_collapse_lollipop.png`\n- `individual_analysis/fig_model_condition_collapse_facets.png`\n- `individual_analysis/fig_group_condition_collapse_bars.png`\n- `individual_analysis/models/` — one condition-profile graph per generation model.\n- `individual_analysis/conditions/` — one model/group ranking graph per condition.\n\nEarlier generated PNGs remain in `embedding_report/` and `llm_judge/`; current total is {total_png} PNG diagrams across the analysis directory.\n\n## Caveats\n\n- The archive mirror is targeted/lightweight by design; it is not a full snapshot of every heavy artifact.\n- LLM judge metrics are sampled estimates, not exhaustive judgments for all {total_rows:,} rows. The final weighted estimates improve population alignment by weighting sampled cell means by full nonseed cell counts.\n- Frontier/mixed-model has only 807 post rows and 16 judged sample rows; interpret group-level judge scores cautiously.\n- LLM cluster labels are qualitative summaries and may compress heterogeneous clusters into a single label.\n- Source-citation quality scores should be interpreted carefully because many sampled posts did not contain source/citation behavior, and the rubric assigns low citation quality when no citations appear.\n\n## Artifact inventory\n\nSee `final_report/artifact_inventory.csv` for file sizes and paths. Current final inventory contains {len(inventory):,} files.\n"""
+    final_group.to_csv(final_dir / "final_group_embedding_summary.csv", index=False)
+    final_model.to_csv(final_dir / "final_model_embedding_summary.csv", index=False)
+    final_cluster.to_csv(final_dir / "final_cluster_embedding_summary.csv", index=False)
+    emb_run.to_csv(final_dir / "final_run_embedding_summary.csv", index=False)
+
+    plot_barh(final_group, "group", "mean_pairwise_cosine", final_dir / "fig_final_group_embedding_coherence.png", "Within-run embedding coherence by group", "Mean pairwise cosine", "#4e79a7")
+    plot_barh(final_group, "group", "dominant_cluster_share", final_dir / "fig_final_group_dominant_cluster_share.png", "Dominant-cluster share by group", "Mean dominant-cluster share", "#e15759")
+    plot_barh(final_model.head(20), "model_family", "mean_pairwise_cosine", final_dir / "fig_final_model_embedding_coherence.png", "Within-run embedding coherence by model", "Mean pairwise cosine", "#f28e2b")
+    plot_barh(final_cluster.head(20), "cluster_id", "n_posts", final_dir / "fig_final_cluster_sizes.png", "Top global embedding clusters by size", "Posts", "#59a14f")
+
+    inventory = artifact_inventory(root, final_dir)
+    inventory.to_csv(final_dir / "artifact_inventory.csv", index=False)
+
+    summary = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "embedding_model": "qwen/qwen3-embedding-8b",
+        "llm_as_judge_used": False,
+        "llm_as_judge_exclusion_reason": "Excluded because judge/context can leak group labels; final package is embedding-only.",
+        "included_groups": MAIN_GROUPS,
+        "excluded_groups": EXCLUDED_GROUPS,
+        "post_rows": total_rows,
+        "nonseed_rows": nonseed_rows,
+        "seed_rows": seed_rows,
+        "runs": int(total_runs),
+        "duplicate_record_id_rows": int(duplicate_rows),
+        "embedding_npz_shape": npz_shape,
+        "global_clusters": cluster_n,
+    }
+    (final_dir / "final_embedding_only_summary.json").write_text(json.dumps(summary, indent=2))
+
+    top_group = final_group.iloc[0]
+    report = f"""# Archive 2026 Main Groups — Embedding-Only Final Report\n\nGenerated: {summary['generated_at']}\n\n## Scope\n\nThis cleaned review package is **embedding-only** and includes only the main archive groups:\n\n- `base-model`\n- `entropy-collapse`\n- `obsession`\n\nExcluded by design:\n\n- `source-citation` / site-citation smoke runs\n- `frontier/mixed-model` roster/mixed runs\n- `canonical-48` and canonical Gemini comparison runs\n- all LLM-as-a-judge outputs\n\n## Why LLM-as-a-judge is excluded\n\nLLM-as-a-judge results are not used in this package. Earlier judge prompts/context could expose group/source cues through context metadata, so we removed those outputs rather than reporting potentially confounded judge scores.\n\n## Corpus\n\n- Post rows: **{total_rows:,}**\n- Nonseed/agent rows: **{nonseed_rows:,}**\n- Seed/system rows: **{seed_rows:,}**\n- Non-empty runs: **{total_runs:,}**\n- Embedding NPZ shape: **{npz_shape}**\n- Global embedding clusters: **{cluster_n}**\n\n## Key embedding result\n\nThe highest within-run semantic coherence is **{top_group['group']}** with mean pairwise cosine **{top_group['mean_pairwise_cosine']:.3f}**.\n\n## Group counts\n\n{md_table(group_counts)}\n\n## Model counts\n\n{md_table(model_counts, max_rows=20)}\n\n## Group embedding summary\n\n{md_table(final_group)}\n\n## Model embedding summary\n\n{md_table(final_model, max_rows=20)}\n\n## Top clusters\n\n{md_table(final_cluster.head(20), max_rows=20)}\n\n## Main outputs\n\n- `FINAL_REPORT.md` — this report.\n- `embedding_report/EMBEDDING_REPORT.md` — full embedding/clustering report.\n- `paper_analysis/PAPER_STYLE_ANALYSIS.md` — paper-style embedding-only analysis with Vendi/MDS figures.\n- `final_report/final_group_embedding_summary.csv`\n- `final_report/final_model_embedding_summary.csv`\n- `final_report/final_cluster_embedding_summary.csv`\n- `final_report/final_run_embedding_summary.csv`\n- `final_report/final_embedding_only_summary.json`\n\n## Final PNGs\n\n- `final_report/fig_final_group_embedding_coherence.png`\n- `final_report/fig_final_group_dominant_cluster_share.png`\n- `final_report/fig_final_model_embedding_coherence.png`\n- `final_report/fig_final_cluster_sizes.png`\n\n## Reproducibility\n\nRegenerate the cleaned index and analysis with:\n\n```bash\npython3 scripts/archive-2026-combined-analysis.py index\npython3 scripts/archive-2026-combined-analysis.py embed --model qwen/qwen3-embedding-8b --export-npz\npython3 scripts/archive-2026-embedding-report.py --clusters 48 --umap-sample 25000 --svd-components 50\npython3 scripts/archive-2026-paper-analysis.py --max-bin-n 400 --mds-sample 4000\npython3 scripts/archive-2026-final-report.py\n```\n"""
     (root / "FINAL_REPORT.md").write_text(report)
     (final_dir / "FINAL_REPORT.md").write_text(report)
-    print(f"Wrote final report -> {root / 'FINAL_REPORT.md'}")
-    print(f"Final report files -> {final_dir}")
+    print(f"Wrote embedding-only final report -> {root / 'FINAL_REPORT.md'}")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Paper-style embedding + LLM-as-judge analysis for archive-2026 corpus.
+"""Paper-style embedding-only analysis for archive-2026 corpus.
 
 This intentionally avoids dashboard heatmaps. It creates publication-style dot,
 slope, line, stacked-bar, and semantic-map figures aligned with the EMNLP draft
@@ -337,154 +337,6 @@ def collapse_index(df: pd.DataFrame, prefix: str = "") -> pd.Series:
     return df[cols].mean(axis=1)
 
 
-def aggregate_judge(judge: pd.DataFrame, by: list[str]) -> pd.DataFrame:
-    rows = []
-    for key, sub in judge.groupby(by, dropna=False):
-        if not isinstance(key, tuple):
-            key = (key,)
-        row = {k: v for k, v in zip(by, key)}
-        row["n_judged"] = len(sub)
-        for metric in JUDGE_METRICS + ["specificity", "epistemic_caution", "source_citation_quality"]:
-            if metric in sub:
-                mean, lo, hi = bootstrap_ci(sub[metric].to_numpy(), seed=81)
-                row[f"{metric}_mean"] = mean
-                row[f"{metric}_ci_low"] = lo
-                row[f"{metric}_ci_high"] = hi
-        row["collapse_index_mean"] = float(np.mean([row[f"{m}_mean"] for m in COLLAPSE_COMPONENTS]))
-        rows.append(row)
-    return pd.DataFrame(rows)
-
-
-def plot_judge_model_dot(jm: pd.DataFrame, out_dir: Path) -> None:
-    d = jm.sort_values("collapse_index_mean").copy()
-    y = np.arange(len(d))
-    fig, ax = plt.subplots(figsize=(7.6, max(4, 0.38 * len(d))))
-    ax.hlines(y, 1, d["collapse_index_mean"], color="#DDD", lw=2)
-    ax.scatter(d["collapse_index_mean"], y, s=70, color="#E15759", label="collapse index")
-    for yi, (_, r) in enumerate(d.iterrows()):
-        ax.text(r["collapse_index_mean"] + 0.035, yi, f"{r['collapse_index_mean']:.2f}  (n={int(r['n_judged'])})", va="center", fontsize=7)
-    ax.set_xlim(1, 5)
-    ax.set_yticks(y, d["model_family"].astype(str))
-    ax.set_xlabel("LLM-judge collapse index")
-    ax.set_title("Generation models ranked by LLM-judged collapse")
-    ax.grid(axis="x", alpha=0.25)
-    save_fig(fig, out_dir / "fig_llm_judge_model_collapse_dotplot.png")
-
-
-def plot_judge_condition_dot(jc: pd.DataFrame, out_dir: Path) -> None:
-    d = jc.copy()
-    order = {c: i for i, c in enumerate(CONDITION_ORDER)}
-    d["_order"] = d["condition"].map(lambda x: order.get(x, 99))
-    d = d.sort_values("_order")
-    fig, ax = plt.subplots(figsize=(7.2, 4.4))
-    y = np.arange(len(d))
-    ax.hlines(y, 1, d["collapse_index_mean"], color="#DDD", lw=2)
-    colors = [COND_COLORS.get(c, "#777") for c in d["condition"]]
-    ax.scatter(d["collapse_index_mean"], y, s=75, color=colors)
-    for yi, (_, r) in enumerate(d.iterrows()):
-        ax.text(r["collapse_index_mean"] + 0.035, yi, f"{r['collapse_index_mean']:.2f}", va="center", fontsize=8)
-    ax.set_xlim(1, 5)
-    ax.set_yticks(y, [CONDITION_LABELS.get(c, c) for c in d["condition"]])
-    ax.set_xlabel("LLM-judge collapse index")
-    ax.set_title("Stimulus conditions ranked by LLM-judged collapse")
-    ax.grid(axis="x", alpha=0.25)
-    save_fig(fig, out_dir / "fig_llm_judge_condition_collapse_dotplot.png")
-
-
-def plot_model_condition_smallmultiples(jmc: pd.DataFrame, out_dir: Path) -> None:
-    models = jmc.groupby("model_family")["n_judged"].sum().sort_values(ascending=False).index.tolist()
-    ncols = 3
-    nrows = int(math.ceil(len(models) / ncols))
-    fig, axes = plt.subplots(nrows, ncols, figsize=(14.5, max(7, 3.1 * nrows)), sharex=True)
-    axes = np.asarray(axes).reshape(-1)
-    order = {c: i for i, c in enumerate(CONDITION_ORDER)}
-    for ax, model in zip(axes, models):
-        sub = jmc[jmc["model_family"] == model].copy()
-        sub["_order"] = sub["condition"].map(lambda x: order.get(x, 99))
-        sub = sub.sort_values("_order")
-        y = np.arange(len(sub))
-        ax.barh(y, sub["collapse_index_mean"], color="#E15759", alpha=0.8)
-        ax.set_yticks(y, [CONDITION_LABELS.get(c, c) for c in sub["condition"]])
-        ax.set_xlim(1, 5)
-        ax.set_title(model, fontsize=9)
-        ax.grid(axis="x", alpha=0.2)
-        for yi, (_, r) in enumerate(sub.iterrows()):
-            ax.text(r["collapse_index_mean"] + 0.03, yi, f"{r['collapse_index_mean']:.2f}", va="center", fontsize=7)
-    for ax in axes[len(models):]:
-        ax.axis("off")
-    fig.suptitle("LLM-judge collapse by condition, split by generation model", y=1.01)
-    fig.supxlabel("Collapse index")
-    save_fig(fig, out_dir / "fig_llm_judge_model_by_condition_smallmultiples.png")
-
-
-def plot_metric_profiles(jm: pd.DataFrame, out_dir: Path) -> None:
-    metrics = ["novelty", "semantic_repetition", "narrative_convergence", "groupthink", "template_rigidity", "evidence_grounding"]
-    labels = ["Novelty", "Repetition", "Narr. conv.", "Groupthink", "Template", "Evidence"]
-    models = jm.sort_values("collapse_index_mean", ascending=False)["model_family"].tolist()
-    fig, ax = plt.subplots(figsize=(10.5, max(5, 0.42 * len(models))))
-    y_base = np.arange(len(models))
-    offsets = np.linspace(-0.24, 0.24, len(metrics))
-    for i, metric in enumerate(metrics):
-        vals = jm.set_index("model_family").loc[models, f"{metric}_mean"].to_numpy()
-        ax.scatter(vals, y_base + offsets[i], s=22, label=labels[i], color=PALETTE[i])
-    ax.set_yticks(y_base, models)
-    ax.invert_yaxis()
-    ax.set_xlim(1, 5)
-    ax.set_xlabel("Mean LLM-judge score")
-    ax.set_title("LLM-judge metric profile by generation model")
-    ax.grid(axis="x", alpha=0.25)
-    ax.legend(frameon=False, ncol=3, loc="lower right")
-    save_fig(fig, out_dir / "fig_llm_judge_model_metric_profiles.png")
-
-
-def plot_label_distribution(judge: pd.DataFrame, out_dir: Path) -> None:
-    counts = pd.crosstab(judge["model_family"], judge["collapse_label"], normalize="index")
-    order = judge.groupby("model_family").size().sort_values(ascending=True).index.tolist()
-    labels = ["novel_contribution", "mild_rephrase", "frame_convergence", "template_repetition", "source_grounded", "off_topic"]
-    labels = [l for l in labels if l in counts.columns] + [l for l in counts.columns if l not in labels]
-    counts = counts.reindex(index=order, columns=labels, fill_value=0)
-    fig, ax = plt.subplots(figsize=(8.5, max(4.5, 0.42 * len(counts))))
-    left = np.zeros(len(counts))
-    colors = ["#59A14F", "#F28E2B", "#E15759", "#B07AA1", "#4E79A7", "#BAB0AC"]
-    y = np.arange(len(counts))
-    for i, label in enumerate(labels):
-        vals = counts[label].to_numpy()
-        ax.barh(y, vals, left=left, color=colors[i % len(colors)], label=label.replace("_", " "))
-        left += vals
-    ax.set_yticks(y, counts.index)
-    ax.set_xlim(0, 1)
-    ax.set_xlabel("Share of judged posts")
-    ax.set_title("Qualitative collapse labels by generation model")
-    ax.legend(frameon=False, ncol=2, loc="lower right")
-    save_fig(fig, out_dir / "fig_llm_judge_collapse_label_stackedbars.png")
-
-
-def plot_embedding_vs_judge(deltas: pd.DataFrame, judge: pd.DataFrame, out_dir: Path) -> pd.DataFrame:
-    # Merge run-level embedding delta with run-level judged collapse if available.
-    jr = judge.copy()
-    jr["collapse_index"] = jr[COLLAPSE_COMPONENTS].mean(axis=1)
-    run_judge = jr.groupby(["group", "model_family", "condition", "scale", "run_path"], dropna=False).agg(
-        collapse_index=("collapse_index", "mean"),
-        n_judged=("collapse_index", "count"),
-    ).reset_index()
-    m = deltas.merge(run_judge, on=["group", "model_family", "condition", "scale", "run_path"], how="inner")
-    m.to_csv(out_dir / "embedding_delta_vs_judge_by_run.csv", index=False)
-    if len(m) >= 3:
-        fig, ax = plt.subplots(figsize=(7, 5.2))
-        groups = [g for g in GROUP_ORDER if g in set(m["group"])] + [g for g in sorted(set(m["group"])) if g not in GROUP_ORDER]
-        for i, g in enumerate(groups):
-            sub = m[m["group"] == g]
-            ax.scatter(sub["delta_vendi_score"], sub["collapse_index"], s=35 + 8 * sub["n_judged"], alpha=0.75, label=g, color=PALETTE[i % len(PALETTE)], edgecolor="white", linewidth=0.4)
-        ax.axvline(0, color="#555", linestyle="--", lw=1)
-        ax.set_xlabel("Q4 − Q1 Vendi score (negative = semantic narrowing)")
-        ax.set_ylabel("Mean LLM-judge collapse index")
-        ax.set_title("Run-level semantic narrowing vs. judged collapse")
-        ax.grid(alpha=0.25)
-        ax.legend(frameon=False, fontsize=7, ncol=2)
-        save_fig(fig, out_dir / "fig_embedding_delta_vs_llm_judge_collapse.png")
-    return m
-
-
 def md_table(df: pd.DataFrame, cols: list[str] | None = None, max_rows: int = 20, decimals: int = 3) -> str:
     d = df.copy()
     if cols:
@@ -525,48 +377,15 @@ def main() -> None:
     plot_delta_dot(by_group, "group", "delta_vendi_score", paper, "fig_embedding_delta_vendi_by_group.png", "Early-to-late semantic diversity change by corpus group", "Q4 − Q1 Vendi score")
     plot_mds_maps(df, x, paper, args.mds_sample, args.seed)
 
-    judge = pd.read_csv(root / "llm_judge" / "judge_results.csv")
-    judge["collapse_index"] = judge[COLLAPSE_COMPONENTS].mean(axis=1)
-    jm = aggregate_judge(judge, ["model_family"])
-    jc = aggregate_judge(judge, ["condition"])
-    jg = aggregate_judge(judge, ["group"])
-    jmc = aggregate_judge(judge, ["model_family", "condition"])
-    jgc = aggregate_judge(judge, ["group", "condition"])
-    jm.to_csv(paper / "llm_judge_summary_by_model.csv", index=False)
-    jc.to_csv(paper / "llm_judge_summary_by_condition.csv", index=False)
-    jg.to_csv(paper / "llm_judge_summary_by_group.csv", index=False)
-    jmc.to_csv(paper / "llm_judge_summary_by_model_condition.csv", index=False)
-    jgc.to_csv(paper / "llm_judge_summary_by_group_condition.csv", index=False)
-
-    plot_judge_model_dot(jm, paper)
-    plot_judge_condition_dot(jc, paper)
-    plot_model_condition_smallmultiples(jmc, paper)
-    plot_metric_profiles(jm, paper)
-    plot_label_distribution(judge, paper)
-    merged = plot_embedding_vs_judge(deltas, judge, paper)
-
-    # Tables for manuscript appendix.
-    model_rank = jm.sort_values("collapse_index_mean", ascending=False)[["model_family", "n_judged", "collapse_index_mean", "semantic_repetition_mean", "narrative_convergence_mean", "groupthink_mean", "template_rigidity_mean", "novelty_mean", "evidence_grounding_mean"]]
-    condition_rank = jc.copy()
-    order = {c: i for i, c in enumerate(CONDITION_ORDER)}
-    condition_rank["_order"] = condition_rank["condition"].map(lambda c: order.get(c, 99))
-    condition_rank = condition_rank.sort_values("_order")[["condition", "n_judged", "collapse_index_mean", "semantic_repetition_mean", "narrative_convergence_mean", "groupthink_mean", "template_rigidity_mean"]]
-    group_rank = jg.sort_values("collapse_index_mean", ascending=False)[["group", "n_judged", "collapse_index_mean", "semantic_repetition_mean", "narrative_convergence_mean", "groupthink_mean", "template_rigidity_mean"]]
-    model_rank.to_csv(paper / "table_llm_judge_model_ranked.csv", index=False)
-    condition_rank.to_csv(paper / "table_llm_judge_condition_ranked.csv", index=False)
-    group_rank.to_csv(paper / "table_llm_judge_group_ranked.csv", index=False)
-
-    # Summary stats.
+    # Summary stats (embedding-only; LLM-as-judge intentionally excluded).
     neg_vendi = int((deltas["delta_vendi_score"] < 0).sum())
     n_delta = len(deltas)
     mean_dv, lo_dv, hi_dv = bootstrap_ci(deltas["delta_vendi_score"].to_numpy())
     mean_dc, lo_dc, hi_dc = bootstrap_ci(deltas["delta_mean_pairwise_cosine"].to_numpy())
-    overall_judge = {m: float(judge[m].mean()) for m in JUDGE_METRICS if m in judge}
-    overall_judge["collapse_index"] = float(judge["collapse_index"].mean())
+    mean_dr, lo_dr, hi_dr = bootstrap_ci(deltas["delta_semantic_radius"].to_numpy())
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "embedding_model": "qwen/qwen3-embedding-8b",
-        "judge_model": "google/gemini-3.1-flash-lite-preview",
         "corpus_rows": int(len(df)),
         "nonseed_rows": int((~df["is_seed_bool"]).sum()),
         "runs_with_q1_q4_embedding_metrics": n_delta,
@@ -575,16 +394,18 @@ def main() -> None:
         "ci95_delta_vendi_score": [lo_dv, hi_dv],
         "mean_delta_pairwise_cosine": mean_dc,
         "ci95_delta_pairwise_cosine": [lo_dc, hi_dc],
-        "judge_rows": int(len(judge)),
-        "judge_overall_means": overall_judge,
-        "run_level_embedding_judge_pairs": int(len(merged)),
+        "mean_delta_semantic_radius": mean_dr,
+        "ci95_delta_semantic_radius": [lo_dr, hi_dr],
+        "excluded_groups": ["source-citation", "frontier/mixed-model", "canonical-48", "canonical-gemini-flash-lite"],
+        "llm_as_judge_used": False,
+        "llm_as_judge_exclusion_reason": "Excluded by project decision because judge/context can leak group labels; final package is embedding-only.",
     }
     (paper / "paper_analysis_summary.json").write_text(json.dumps(summary, indent=2))
 
-    pngs = sorted(p.name for p in paper.glob("*.png"))
-    report = f"""# Paper-Style Embedding and LLM-as-Judge Analysis\n\nGenerated: {summary['generated_at']}\n\n## Scope\n\nThis folder reframes the archive + full canonical-48 analysis for the paper narrative rather than dashboard exploration. It uses one shared embedding model, `qwen/qwen3-embedding-8b`, to compare all posts in a common semantic space. It then uses one fixed LLM judge, `google/gemini-3.1-flash-lite-preview`, to score a stratified sample across all generation model families, conditions, groups, scales, time bins, and global embedding clusters.\n\nImportant distinction: **one embedding model** and **one judge model** were used for measurement consistency, but **all generation model families** in the corpus are analyzed separately.\n\n## Embedding analysis: semantic narrowing\n\nFor each run and 15-minute bin, we compute:\n\n- **Vendi score / effective semantic diversity** from the cosine kernel. Lower values mean fewer effective semantic items.\n- **Mean pairwise cosine** within the bin. Higher values mean tighter semantic clustering.\n- **Semantic radius** around the bin centroid. Lower values mean tighter concentration.\n\nAcross runs with both first and final bins, Vendi score declines in **{neg_vendi}/{n_delta}** run comparisons. The mean Q4−Q1 Vendi change is **{mean_dv:.3f}** with 95% bootstrap CI **[{lo_dv:.3f}, {hi_dv:.3f}]**. Mean pairwise cosine changes by **{mean_dc:.3f}** with 95% CI **[{lo_dc:.3f}, {hi_dc:.3f}]**.\n\n### Embedding figures\n\n- `fig_embedding_mds_condition_time.png` — paper-style semantic map: same balanced MDS projection colored by condition and by time.\n- `fig_embedding_vendi_over_time_by_group.png` — semantic diversity trajectories by archive group.\n- `fig_embedding_vendi_over_time_by_condition.png` — semantic diversity trajectories by stimulus condition.\n- `fig_embedding_delta_vendi_by_model.png` — early-to-late Vendi deltas by generation model with bootstrap CIs.\n- `fig_embedding_delta_vendi_by_condition.png` — early-to-late Vendi deltas by condition.\n- `fig_embedding_delta_vendi_by_group.png` — early-to-late Vendi deltas by corpus group.\n\n## LLM-as-judge analysis: collapse form and severity\n\nCollapse index is the mean of semantic repetition, narrative convergence, groupthink, and template rigidity. The raw judged sample has **{len(judge):,}** posts. Overall collapse index is **{overall_judge['collapse_index']:.3f}**.\n\n### LLM judge figures\n\n- `fig_llm_judge_model_collapse_dotplot.png` — all generation models ranked by judged collapse.\n- `fig_llm_judge_condition_collapse_dotplot.png` — all stimulus conditions ranked by judged collapse.\n- `fig_llm_judge_model_by_condition_smallmultiples.png` — separate condition plot for each generation model.\n- `fig_llm_judge_model_metric_profiles.png` — model-level score profiles across novelty/repetition/convergence/groupthink/template/evidence.\n- `fig_llm_judge_collapse_label_stackedbars.png` — qualitative collapse-label distribution by generation model.\n- `fig_embedding_delta_vs_llm_judge_collapse.png` — run-level relationship between semantic diversity change and judged collapse.\n\n## Ranked model-level LLM judge table\n\n{md_table(model_rank, max_rows=20)}\n\n## Condition-level LLM judge table\n\n{md_table(condition_rank, max_rows=20)}\n\n## Group-level LLM judge table\n\n{md_table(group_rank, max_rows=20)}\n\n## Files generated\n\nPNG/PDF figure pairs generated in this folder:\n\n{chr(10).join(f'- `{p}` / `{Path(p).with_suffix(".pdf").name}`' for p in pngs)}\n\nCSV tables:\n\n- `embedding_timebin_metrics.csv`\n- `embedding_q4_minus_q1_deltas.csv`\n- `embedding_delta_summary_by_group.csv`\n- `embedding_delta_summary_by_model.csv`\n- `embedding_delta_summary_by_condition.csv`\n- `llm_judge_summary_by_model.csv`\n- `llm_judge_summary_by_condition.csv`\n- `llm_judge_summary_by_group.csv`\n- `llm_judge_summary_by_model_condition.csv`\n- `llm_judge_summary_by_group_condition.csv`\n- `table_llm_judge_model_ranked.csv`\n- `table_llm_judge_condition_ranked.csv`\n- `table_llm_judge_group_ranked.csv`\n\n## Caveats\n\n- Vendi and pairwise metrics are sampled for large bins (`max_bin_n={args.max_bin_n}`) for tractability.\n- The MDS map is a balanced sample (`n≈{args.mds_sample}`), intended as a visual check, not a standalone inferential statistic.\n- LLM judge results are sampled, not exhaustive over all posts.\n- Small groups such as frontier/mixed-model have wider uncertainty because they have fewer posts and judged examples.\n"""
+    pngs = sorted(p.name for p in paper.glob("*.png") if not p.name.startswith("fig_llm_judge") and "llm_judge" not in p.name)
+    report = f"""# Paper-Style Embedding Analysis\n\nGenerated: {summary['generated_at']}\n\n## Scope\n\nThis folder reframes the archive analysis for the paper narrative. It uses one shared embedding model, `qwen/qwen3-embedding-8b`, to compare all posts in a common semantic space. The cleaned main corpus includes only the archive groups `base-model`, `entropy-collapse`, and `obsession`.\n\nExcluded from the main package by design:\n\n- `source-citation` / site-citation smoke runs\n- `frontier/mixed-model` roster/mixed runs\n- `canonical-48` / canonical Gemini comparison runs\n\n## Why LLM-as-a-judge is excluded\n\nLLM-as-a-judge outputs are **not used** in this cleaned package. Earlier judge prompts/context could expose group/source cues through context metadata, so those results are removed from the review package rather than reported. This package is embedding-only.\n\n## Embedding analysis: semantic narrowing\n\nFor each run and 15-minute bin, we compute:\n\n- **Vendi score / effective semantic diversity** from the cosine kernel. Lower values mean fewer effective semantic items.\n- **Mean pairwise cosine** within the bin. Higher values mean tighter semantic clustering.\n- **Semantic radius** around the bin centroid. Lower values mean tighter concentration.\n\nAcross runs with both first and final bins, Vendi score declines in **{neg_vendi}/{n_delta}** run comparisons. The mean Q4−Q1 Vendi change is **{mean_dv:.3f}** with 95% bootstrap CI **[{lo_dv:.3f}, {hi_dv:.3f}]**. Mean pairwise cosine changes by **{mean_dc:.3f}** with 95% CI **[{lo_dc:.3f}, {hi_dc:.3f}]**. Mean semantic radius changes by **{mean_dr:.3f}** with 95% CI **[{lo_dr:.3f}, {hi_dr:.3f}]**.\n\n## Embedding figures\n\n- `fig_embedding_mds_condition_time.png` — paper-style semantic map: same balanced MDS projection colored by condition and by time.\n- `fig_embedding_vendi_over_time_by_group.png` — semantic diversity trajectories by archive group.\n- `fig_embedding_vendi_over_time_by_condition.png` — semantic diversity trajectories by stimulus condition.\n- `fig_embedding_delta_vendi_by_model.png` — early-to-late Vendi deltas by generation model with bootstrap CIs.\n- `fig_embedding_delta_vendi_by_condition.png` — early-to-late Vendi deltas by condition.\n- `fig_embedding_delta_vendi_by_group.png` — early-to-late Vendi deltas by corpus group.\n\n## CSV tables\n\n- `embedding_timebin_metrics.csv`\n- `embedding_q4_minus_q1_deltas.csv`\n- `embedding_delta_summary_by_group.csv`\n- `embedding_delta_summary_by_model.csv`\n- `embedding_delta_summary_by_condition.csv`\n- `embedding_mds_balanced_sample.csv`\n\n## Files generated\n\nPNG/PDF figure pairs generated in this folder:\n\n{chr(10).join(f'- `{name}` / `{Path(name).with_suffix(".pdf").name}`' for name in pngs)}\n\n## Caveats\n\n- Vendi and pairwise metrics are sampled for large bins (`max_bin_n={args.max_bin_n}`) for tractability.\n- The MDS map is a balanced sample (`n≈{args.mds_sample}`), intended as a visual check, not a standalone inferential statistic.\n- This is archive-main-only: source-citation, frontier/mixed, and canonical comparison runs are intentionally excluded.\n"""
     (paper / "PAPER_STYLE_ANALYSIS.md").write_text(report)
-    print(f"Wrote paper-style analysis -> {paper}")
+    print(f"Wrote embedding-only paper analysis -> {paper}")
     print(json.dumps(summary, indent=2))
 
 
