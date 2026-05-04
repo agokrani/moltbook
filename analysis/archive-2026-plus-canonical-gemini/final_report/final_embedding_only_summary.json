@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-05-04T10:53:49.131065+00:00",
+  "generated_at": "2026-05-04T11:09:34.940295+00:00",
   "embedding_model": "qwen/qwen3-embedding-8b",
   "llm_as_judge_used": false,
-  "llm_as_judge_exclusion_reason": "Excluded because judge/context can leak group labels; final package is embedding-only.",
+  "llm_as_judge_exclusion_reason": "Main package is embedding-only. If judge is re-enabled, use the blinded row-level protocol and aggregate groups only post-hoc.",
+  "optional_blinded_judge_protocol": "BLINDED_LLM_JUDGE_PROTOCOL.md",
   "included_groups": [
     "base-model",
     "entropy-collapse",

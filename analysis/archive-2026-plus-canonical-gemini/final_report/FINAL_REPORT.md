@@ -1,6 +1,6 @@
 # Archive 2026 Main Groups — Embedding-Only Final Report
 
-Generated: 2026-05-04T10:53:49.131065+00:00
+Generated: 2026-05-04T11:09:34.940295+00:00
 
 ## Scope
 
@@ -19,7 +19,9 @@ Excluded by design:
 
 ## Why LLM-as-a-judge is excluded
 
-LLM-as-a-judge results are not used in this package. Earlier judge prompts/context could expose group/source cues through context metadata, so we removed those outputs rather than reporting potentially confounded judge scores.
+LLM-as-a-judge results are not used in this main package. Earlier judge prompts/context could expose group/source cues through context metadata, so we removed those outputs rather than reporting potentially confounded judge scores.
+
+If judge scoring is re-enabled, it must use the blinded row-level protocol in `BLINDED_LLM_JUDGE_PROTOCOL.md`: the model receives no group/model/condition/run/source metadata, scores individual posts only, and group summaries are computed locally after joining scores back to metadata.
 
 ## Corpus
 
@@ -110,6 +112,7 @@ The highest within-run semantic coherence is **entropy-collapse** with mean pair
 - `FINAL_REPORT.md` — this report.
 - `embedding_report/EMBEDDING_REPORT.md` — full embedding/clustering report.
 - `paper_analysis/PAPER_STYLE_ANALYSIS.md` — paper-style embedding-only analysis with Vendi/MDS figures.
+- `BLINDED_LLM_JUDGE_PROTOCOL.md` — optional safe judge protocol; group analysis is post-hoc only.
 - `final_report/final_group_embedding_summary.csv`
 - `final_report/final_model_embedding_summary.csv`
 - `final_report/final_cluster_embedding_summary.csv`

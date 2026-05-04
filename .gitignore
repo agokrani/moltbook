@@ -106,3 +106,7 @@ analysis/**/posts_index.jsonl
 analysis/llm-judge-canonical-hf/
 analysis/**/llm_judge/
 analysis/**/individual_analysis/
+analysis/**/blind_llm_judge/judge_cache.sqlite*
+analysis/**/blind_llm_judge/blind_judge_sample*.json
+analysis/**/blind_llm_judge/blind_judge_sample*.jsonl
+analysis/**/blind_llm_judge/blind_judge_posthoc_join.csv

@@ -7,6 +7,7 @@ analysis/archive-2026-plus-canonical-gemini/embedding_report/group_embedding_sum
 analysis/archive-2026-plus-canonical-gemini/embedding_report/model_embedding_summary.csv,model_embedding_summary.csv,.csv,745,0.001
 analysis/archive-2026-plus-canonical-gemini/embedding_report/run_embedding_summary.csv,run_embedding_summary.csv,.csv,68216,0.065
 analysis/archive-2026-plus-canonical-gemini/embedding_report/umap_sample.csv,umap_sample.csv,.csv,13561151,12.933
+analysis/archive-2026-plus-canonical-gemini/final_report/artifact_inventory.csv,artifact_inventory.csv,.csv,7123,0.007
 analysis/archive-2026-plus-canonical-gemini/final_report/final_cluster_embedding_summary.csv,final_cluster_embedding_summary.csv,.csv,3945,0.004
 analysis/archive-2026-plus-canonical-gemini/final_report/final_group_embedding_summary.csv,final_group_embedding_summary.csv,.csv,244,0.0
 analysis/archive-2026-plus-canonical-gemini/final_report/final_model_embedding_summary.csv,final_model_embedding_summary.csv,.csv,735,0.001
@@ -18,10 +19,13 @@ analysis/archive-2026-plus-canonical-gemini/paper_analysis/embedding_mds_balance
 analysis/archive-2026-plus-canonical-gemini/paper_analysis/embedding_q4_minus_q1_deltas.csv,embedding_q4_minus_q1_deltas.csv,.csv,41439,0.04
 analysis/archive-2026-plus-canonical-gemini/paper_analysis/embedding_timebin_metrics.csv,embedding_timebin_metrics.csv,.csv,159336,0.152
 analysis/archive-2026-plus-canonical-gemini/embeddings/qwen-qwen3-embedding-8b.json,qwen-qwen3-embedding-8b.json,.json,228,0.0
+analysis/archive-2026-plus-canonical-gemini/final_report/final_embedding_only_summary.json,final_embedding_only_summary.json,.json,671,0.001
 analysis/archive-2026-plus-canonical-gemini/paper_analysis/paper_analysis_summary.json,paper_analysis_summary.json,.json,954,0.001
 analysis/archive-2026-plus-canonical-gemini/combined_posts_index.jsonl,combined_posts_index.jsonl,.jsonl,141894873,135.321
-analysis/archive-2026-plus-canonical-gemini/FINAL_REPORT.md,FINAL_REPORT.md,.md,10229,0.01
+analysis/archive-2026-plus-canonical-gemini/BLINDED_LLM_JUDGE_PROTOCOL.md,BLINDED_LLM_JUDGE_PROTOCOL.md,.md,1488,0.001
+analysis/archive-2026-plus-canonical-gemini/FINAL_REPORT.md,FINAL_REPORT.md,.md,5672,0.005
 analysis/archive-2026-plus-canonical-gemini/embedding_report/EMBEDDING_REPORT.md,EMBEDDING_REPORT.md,.md,2997,0.003
+analysis/archive-2026-plus-canonical-gemini/final_report/FINAL_REPORT.md,FINAL_REPORT.md,.md,5672,0.005
 analysis/archive-2026-plus-canonical-gemini/paper_analysis/PAPER_STYLE_ANALYSIS.md,PAPER_STYLE_ANALYSIS.md,.md,3456,0.003
 analysis/archive-2026-plus-canonical-gemini/embeddings/qwen-qwen3-embedding-8b.npz,qwen-qwen3-embedding-8b.npz,.npz,577497038,550.744
 analysis/archive-2026-plus-canonical-gemini/paper_analysis/fig_embedding_delta_vendi_by_condition.pdf,fig_embedding_delta_vendi_by_condition.pdf,.pdf,11019,0.011
