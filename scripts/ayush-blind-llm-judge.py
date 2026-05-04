@@ -6,7 +6,7 @@ post text and anonymized context only; metadata is joined after scoring.
 """
 from __future__ import annotations
 
-import argparse, json, os, re, sqlite3, time, hashlib
+import argparse, json, os, re, sqlite3, time, hashlib, math
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -237,44 +237,168 @@ def cmd_judge(args):
                 r,p,j=fut.result(); store(r,p,j)
     print("cached now", len(cached(conn,args.model)))
 
+def sign_test_p(values: pd.Series) -> float:
+    vals = pd.to_numeric(values, errors="coerce").dropna()
+    vals = vals[vals != 0]
+    n = int(len(vals))
+    if n == 0:
+        return float("nan")
+    k = int(min((vals > 0).sum(), (vals < 0).sum()))
+    p = 2.0 * sum(math.comb(n, i) for i in range(k + 1)) / (2 ** n)
+    return float(min(1.0, p))
+
+
+def bootstrap_ci(values: pd.Series, n_boot: int = 2000, seed: int = 42) -> tuple[float, float]:
+    vals = pd.to_numeric(values, errors="coerce").dropna().to_numpy(dtype=float)
+    if len(vals) == 0:
+        return (float("nan"), float("nan"))
+    if len(vals) == 1:
+        return (float(vals[0]), float(vals[0]))
+    rng = np.random.default_rng(seed)
+    samples = rng.choice(vals, size=(n_boot, len(vals)), replace=True).mean(axis=1)
+    return (float(np.percentile(samples, 2.5)), float(np.percentile(samples, 97.5)))
+
+
+def summarize_deltas(deltas: pd.DataFrame) -> pd.DataFrame:
+    metrics = [f"delta_{c}" for c in SCORE_FIELDS + ["collapse_index"]]
+    rows = []
+    for (family, scheme), sub in deltas.groupby(["internal_family_label", "scheme"], dropna=False):
+        row = {"internal_family_label": family, "scheme": scheme, "n_runs": int(sub["run_uid"].nunique())}
+        for metric in metrics:
+            vals = pd.to_numeric(sub[metric], errors="coerce").dropna()
+            lo, hi = bootstrap_ci(vals)
+            row.update({
+                f"{metric}_n_valid": int(vals.size),
+                f"{metric}_mean": float(vals.mean()) if vals.size else float("nan"),
+                f"{metric}_median": float(vals.median()) if vals.size else float("nan"),
+                f"{metric}_ci_low": lo,
+                f"{metric}_ci_high": hi,
+                f"{metric}_n_negative": int((vals < 0).sum()),
+                f"{metric}_n_positive": int((vals > 0).sum()),
+                f"{metric}_sign_p": sign_test_p(vals),
+            })
+        rows.append(row)
+    return pd.DataFrame(rows).sort_values(["internal_family_label", "scheme"])
+
+
+def markdown_table(df: pd.DataFrame) -> str:
+    def fmt(x: Any) -> str:
+        if pd.isna(x):
+            return ""
+        if isinstance(x, (float, np.floating)):
+            return f"{float(x):.4g}"
+        return str(x)
+    cols = list(df.columns)
+    lines = ["| " + " | ".join(cols) + " |", "| " + " | ".join(["---"] * len(cols)) + " |"]
+    for _, row in df.iterrows():
+        lines.append("| " + " | ".join(fmt(row[c]) for c in cols) + " |")
+    return "\n".join(lines)
+
+
 def cmd_aggregate(args):
-    root=Path(args.out_dir); jd=root/"ayush_reanalysis"/"llm_judge"; conn=ensure_db(jd/"judge_cache.sqlite")
-    rows=[]
-    for uid,model,rubric,jtxt,psha,created in conn.execute("SELECT row_uid,judge_model,rubric_version,judgment_json,prompt_sha1,created_at FROM judgments WHERE judge_model=? AND rubric_version=?", (args.model,RUBRIC_VERSION)):
-        j=json.loads(jtxt); j.update({"row_uid":uid,"judge_model":model,"rubric_version":rubric,"prompt_sha1":psha,"judged_at":created}); rows.append(j)
-    if not rows: raise SystemExit("no judgments")
-    jdf=pd.DataFrame(rows)
-    meta=pd.read_json(root/"ayush_reanalysis"/"post_index.jsonl", lines=True)
-    meta=meta[~meta["is_seed"].astype(bool)].copy(); meta["row_uid"]=meta["record_id"]
-    df=meta.merge(jdf,on="row_uid",how="inner")
-    df.to_csv(jd/"blind_judge_results_with_metadata.csv", index=False)
-    # run × scheme bins
-    outs=[]; deltas=[]
-    for (run_uid, scheme), sub in []:
-        pass
-    # Simple run-level quartile/fixed aggregation for judge scores.
+    root = Path(args.out_dir)
+    public_dir = root / "ayush_reanalysis"
+    combined_dir = root / "combined_report"
+    jd = public_dir / "llm_judge"
+    conn = ensure_db(jd / "judge_cache.sqlite")
+    rows = []
+    for uid, model, rubric, jtxt, psha, created in conn.execute(
+        "SELECT row_uid,judge_model,rubric_version,judgment_json,prompt_sha1,created_at FROM judgments WHERE judge_model=? AND rubric_version=?",
+        (args.model, RUBRIC_VERSION),
+    ):
+        j = json.loads(jtxt)
+        j.update({"row_uid": uid, "judge_model": model, "rubric_version": rubric, "prompt_sha1": psha, "judged_at": created})
+        rows.append(j)
+    if not rows:
+        raise SystemExit("no judgments")
+    jdf = pd.DataFrame(rows)
+    meta = pd.read_json(public_dir / "post_index.jsonl", lines=True)
+    meta = meta[~meta["is_seed"].astype(bool)].copy()
+    meta["row_uid"] = meta["record_id"]
+    df = meta.merge(jdf, on="row_uid", how="inner")
+    df.to_csv(jd / "blind_judge_results_with_metadata.csv", index=False)
+
+    outs = []
+    deltas = []
+    metric_cols = SCORE_FIELDS + ["collapse_index"]
+    meta_cols = ["internal_family_label", "display_family_label", "model_family", "model_display", "roster_name", "condition", "scale", "n_agents", "run_id", "source_path"]
+
+    # Run-level aggregation: score posts first, average inside run × time bin,
+    # then compute within-run final-bin minus first-bin deltas.
     for run_uid, sub in df.groupby("run_uid"):
-        first=sub.iloc[0]; schemes=["normalized_quartile"] if first.internal_family_label=="obsession_prompting" else ["fixed_15m","normalized_quartile"]
+        first = sub.iloc[0]
+        schemes = ["normalized_quartile"] if first.internal_family_label == "obsession_prompting" else ["fixed_15m", "normalized_quartile"]
         for scheme in schemes:
-            if scheme=="fixed_15m":
-                bins=[(0,"0-15m",sub[(sub.minutes_elapsed>=0)&(sub.minutes_elapsed<15)]),(1,"15-30m",sub[(sub.minutes_elapsed>=15)&(sub.minutes_elapsed<30)]),(2,"30-45m",sub[(sub.minutes_elapsed>=30)&(sub.minutes_elapsed<45)]),(3,"45-60m",sub[(sub.minutes_elapsed>=45)&(sub.minutes_elapsed<=60)])]
+            if scheme == "fixed_15m":
+                bins = [
+                    (0, "0-15m", sub[(sub.minutes_elapsed >= 0) & (sub.minutes_elapsed < 15)]),
+                    (1, "15-30m", sub[(sub.minutes_elapsed >= 15) & (sub.minutes_elapsed < 30)]),
+                    (2, "30-45m", sub[(sub.minutes_elapsed >= 30) & (sub.minutes_elapsed < 45)]),
+                    (3, "45-60m", sub[(sub.minutes_elapsed >= 45) & (sub.minutes_elapsed <= 60)]),
+                ]
             else:
-                bins=[(0,"Q1",sub[(sub.normalized_time>=0)&(sub.normalized_time<.25)]),(1,"Q2",sub[(sub.normalized_time>=.25)&(sub.normalized_time<.5)]),(2,"Q3",sub[(sub.normalized_time>=.5)&(sub.normalized_time<.75)]),(3,"Q4",sub[(sub.normalized_time>=.75)&(sub.normalized_time<=1.000001)])]
-            b_rows=[]
-            for bi,label,b in bins:
-                row={"run_uid":run_uid,"scheme":scheme,"bin_idx":bi,"bin_label":label,"n_judged":len(b)}
-                for c in SCORE_FIELDS+["collapse_index"]: row[c]=float(b[c].mean()) if len(b) else np.nan
-                for c in ["internal_family_label","display_family_label","model_family","model_display","roster_name","condition","scale","n_agents","run_id","source_path"]: row[c]=first[c]
-                outs.append(row); b_rows.append(row)
-            if b_rows:
-                d={"run_uid":run_uid,"scheme":scheme,"first_bin":b_rows[0]["bin_label"],"final_bin":b_rows[-1]["bin_label"]}
-                for c in SCORE_FIELDS+["collapse_index"]:
-                    a,b=b_rows[0][c],b_rows[-1][c]; d[f"delta_{c}"]=(b-a) if np.isfinite(a) and np.isfinite(b) else np.nan
-                for c in ["internal_family_label","display_family_label","model_family","model_display","roster_name","condition","scale","n_agents","run_id","source_path"]: d[c]=first[c]
-                deltas.append(d)
-    pd.DataFrame(outs).to_csv(jd/"judge_run_timebin_metrics.csv", index=False)
-    pd.DataFrame(deltas).to_csv(jd/"judge_run_deltas.csv", index=False)
-    print(f"aggregated judgments={len(df):,} -> {jd}")
+                bins = [
+                    (0, "Q1", sub[(sub.normalized_time >= 0) & (sub.normalized_time < .25)]),
+                    (1, "Q2", sub[(sub.normalized_time >= .25) & (sub.normalized_time < .5)]),
+                    (2, "Q3", sub[(sub.normalized_time >= .5) & (sub.normalized_time < .75)]),
+                    (3, "Q4", sub[(sub.normalized_time >= .75) & (sub.normalized_time <= 1.000001)]),
+                ]
+            b_rows = []
+            for bi, label, b in bins:
+                row = {"run_uid": run_uid, "scheme": scheme, "bin_idx": bi, "bin_label": label, "n_judged": int(len(b))}
+                for c in metric_cols:
+                    row[c] = float(b[c].mean()) if len(b) else np.nan
+                for c in meta_cols:
+                    row[c] = first[c]
+                outs.append(row)
+                b_rows.append(row)
+            d = {"run_uid": run_uid, "scheme": scheme, "first_bin": b_rows[0]["bin_label"], "final_bin": b_rows[-1]["bin_label"]}
+            for c in metric_cols:
+                a, b = b_rows[0][c], b_rows[-1][c]
+                d[f"delta_{c}"] = (b - a) if np.isfinite(a) and np.isfinite(b) else np.nan
+            for c in meta_cols:
+                d[c] = first[c]
+            deltas.append(d)
+
+    timebin_df = pd.DataFrame(outs)
+    delta_df = pd.DataFrame(deltas)
+    summary = summarize_deltas(delta_df)
+    label_counts = (
+        df.groupby(["internal_family_label", "collapse_label"], dropna=False)
+        .size()
+        .reset_index(name="n_posts")
+        .sort_values(["internal_family_label", "n_posts"], ascending=[True, False])
+    )
+
+    public_dir.mkdir(parents=True, exist_ok=True)
+    combined_dir.mkdir(parents=True, exist_ok=True)
+    timebin_df.to_csv(public_dir / "llm_judge_run_timebin_metrics.csv", index=False)
+    delta_df.to_csv(public_dir / "llm_judge_run_deltas.csv", index=False)
+    summary.to_csv(combined_dir / "llm_judge_summary_by_family.csv", index=False)
+    label_counts.to_csv(combined_dir / "llm_judge_label_counts.csv", index=False)
+
+    report = combined_dir / "LLM_JUDGE_SUMMARY.md"
+    selected = [
+        "internal_family_label", "scheme", "n_runs",
+        "delta_collapse_index_mean", "delta_collapse_index_ci_low", "delta_collapse_index_ci_high", "delta_collapse_index_sign_p",
+        "delta_novelty_mean", "delta_semantic_repetition_mean", "delta_specificity_mean", "delta_evidence_grounding_mean",
+    ]
+    report.write_text(
+        "# Blinded LLM Judge Summary\n\n"
+        f"Judge model: `{args.model}`\n\n"
+        f"Rubric version: `{RUBRIC_VERSION}`\n\n"
+        f"Post-level judgments joined after scoring: **{len(df):,} / {len(meta):,}** non-seed posts.\n\n"
+        "Prompts contained target post text, previous anonymized timeline posts, and anonymized semantic-neighbor posts, but no run/group/model/condition/path/source metadata.\n\n"
+        "## Run-level delta summary\n\n"
+        + markdown_table(summary[selected])
+        + "\n\n## Outputs\n\n"
+        "- `ayush_reanalysis/llm_judge_run_timebin_metrics.csv`\n"
+        "- `ayush_reanalysis/llm_judge_run_deltas.csv`\n"
+        "- `combined_report/llm_judge_summary_by_family.csv`\n"
+        "- `combined_report/llm_judge_label_counts.csv`\n"
+        "\nPost-level joined judgments remain local/ignored at `ayush_reanalysis/llm_judge/blind_judge_results_with_metadata.csv`.\n"
+    )
+    print(f"aggregated judgments={len(df):,}/{len(meta):,} -> {public_dir} and {combined_dir}")
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__); sub=ap.add_subparsers(dest="cmd",required=True)
