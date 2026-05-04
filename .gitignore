@@ -110,3 +110,10 @@ analysis/**/blind_llm_judge/judge_cache.sqlite*
 analysis/**/blind_llm_judge/blind_judge_sample*.json
 analysis/**/blind_llm_judge/blind_judge_sample*.jsonl
 analysis/**/blind_llm_judge/blind_judge_posthoc_join.csv
+analysis/**/ayush_reanalysis/post_index.csv
+analysis/**/ayush_reanalysis/post_index.jsonl
+analysis/**/ayush_reanalysis/llm_judge/blind_contexts.jsonl
+analysis/**/ayush_reanalysis/llm_judge/judge_cache.sqlite*
+analysis/**/ayush_reanalysis/llm_judge/logs/
+analysis/**/ayush_reanalysis/llm_judge/judge_all.pid
+analysis/**/ayush_reanalysis/llm_judge/blind_judge_results_with_metadata.csv

@@ -1,7 +1,0 @@
-{
-  "embedding_model": "qwen/qwen3-embedding-8b",
-  "n_rows": 68050,
-  "dim": 4096,
-  "created_at": "2026-05-04T10:47:18.113781+00:00",
-  "source_index": "analysis/archive-2026-plus-canonical-gemini/combined_posts_index.jsonl"
-}

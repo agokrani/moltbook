@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-04T13:48:29.118470+00:00",
+  "runs_total_discovered": 284,
+  "runs_included": 115,
+  "runs_excluded": 169,
+  "included_by_family": {
+    "base_model_as_tool": 49,
+    "mixed_model_roster": 3,
+    "obsession_prompting": 15,
+    "single_model_final": 48
+  },
+  "included_posts_by_family": {
+    "base_model_as_tool": 7680,
+    "mixed_model_roster": 732,
+    "obsession_prompting": 3903,
+    "single_model_final": 38490
+  },
+  "excluded_by_reason": {
+    "base-model path contains ignore": 60,
+    "no non-seed/agent posts": 7,
+    "old archive entropy-collapse excluded": 94,
+    "source/site-citation excluded": 8
+  }
+}
