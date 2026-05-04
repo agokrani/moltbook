@@ -19,12 +19,27 @@ RUBRIC_VERSION = "ayush-blind-all-posts-v1"
 
 
 def expected_total(root: Path) -> int:
+    """Return unique judge rows, not raw post rows.
+
+    The post index contains a few exact duplicate non-seed records. Judge cache
+    keys by row_uid, so complete scoring means every unique row_uid is judged;
+    aggregation joins the single judgment back onto duplicate metadata rows.
+    """
+    post_index = root / "ayush_reanalysis" / "post_index.jsonl"
+    if post_index.exists():
+        ids = set()
+        for line in post_index.open():
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            if not row.get("is_seed"):
+                ids.add(str(row["record_id"]))
+        return len(ids)
     summary = root / "data_manifest_summary.json"
     if summary.exists():
         data = json.loads(summary.read_text())
         return int(sum(data.get("included_posts_by_family", {}).values()))
-    post_index = root / "ayush_reanalysis" / "post_index.jsonl"
-    return sum(1 for line in post_index.open() if line.strip())
+    return 0
 
 
 def cached_count(root: Path, model: str) -> int:

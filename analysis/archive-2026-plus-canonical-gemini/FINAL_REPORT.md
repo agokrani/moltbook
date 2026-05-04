@@ -1,6 +1,6 @@
 # Ayush Reanalysis — Final-Run, Mixed-Roster, Base-Tool, and Obsession Experiments
 
-Generated: 2026-05-04T15:12:05+00:00
+Generated: 2026-05-04T17:06:47+00:00
 
 This report supersedes the older archive-only embedding package. The current scope follows `ANALYSIS_PLAN_FOR_AYUSH.md` and excludes old archive `entropy-collapse`, source/site-citation runs, and base-model paths containing `ignore`.
 
@@ -9,7 +9,7 @@ This report supersedes the older archive-only embedding package. The current sco
 - Deterministic/run-level analyses: **complete**.
 - Qwen embedding/Vendi analyses: **complete**.
 - Blinded LLM-as-judge context generation and audit: **complete**.
-- Full blinded LLM-as-judge scoring: **running; not yet included**.
+- Full blinded LLM-as-judge scoring: **complete and aggregated**.
 
 ## Included corpus
 
@@ -63,7 +63,19 @@ Single-model final and base-model-as-tool runs show decreasing semantic diversit
 
 ## Blinded LLM-as-judge findings
 
-Full all-post blinded LLM-as-judge scoring is still running and is not included in this checkpoint yet. After it finishes, run `python3 scripts/ayush-blind-llm-judge.py aggregate` and regenerate this report.
+The judge outputs below are metadata-blind at prompt time. The model received post text plus anonymized previous/semantic-neighbor posts only; run/group/model/condition/path/source metadata was joined locally after scoring.
+
+| family | scheme | n_runs | mean Δ collapse index | mean Δ novelty | mean Δ semantic repetition | mean Δ specificity |
+| --- | --- | --- | --- | --- | --- | --- |
+| Single-model final runs | fixed 15m | 48 | 0.2903 | -0.3082 | 0.3383 | -0.1447 |
+| Single-model final runs | normalized quartiles | 48 | 0.2985 | -0.3125 | 0.3403 | -0.1627 |
+| Base model as tool | fixed 15m | 49 | 0.09188 | -0.1072 | 0.1601 | -0.1685 |
+| Base model as tool | normalized quartiles | 49 | 0.3063 | -0.09619 | 0.3686 | -0.2226 |
+| Mixed-model roster | fixed 15m | 3 | 0.5471 | -0.4797 | 0.551 | -0.2919 |
+| Mixed-model roster | normalized quartiles | 3 | 0.1604 | -0.1356 | 0.0949 | 0.04441 |
+| Obsession prompting | normalized quartiles | 15 | 0.0035 | -0.00479 | 0.1403 | -0.05476 |
+
+Full judge summaries: `combined_report/LLM_JUDGE_SUMMARY.md`, `combined_report/llm_judge_summary_by_family.csv`.
 
 
 ## Figures

@@ -1,7 +1,7 @@
 path,bytes,kilobytes
 ANALYSIS_PLAN_FOR_AYUSH.md,29508,28.8
 BLINDED_LLM_JUDGE_PROTOCOL.md,1488,1.5
-FINAL_REPORT.md,4420,4.3
+FINAL_REPORT.md,5319,5.2
 ayush_reanalysis/EXECUTION_STATUS.md,2630,2.6
 ayush_reanalysis/agent_phrase_concentration.csv,293228,286.4
 ayush_reanalysis/deterministic_run_deltas.csv,180600,176.4
@@ -20,11 +20,16 @@ ayush_reanalysis/figures/delta_vendi_by_family.png,71265,69.6
 ayush_reanalysis/figures/manifest_included_corpus.pdf,14052,13.7
 ayush_reanalysis/figures/manifest_included_corpus.png,82497,80.6
 ayush_reanalysis/first_usage_timeline.csv,730678,713.6
+ayush_reanalysis/llm_judge_run_deltas.csv,112264,109.6
+ayush_reanalysis/llm_judge_run_timebin_metrics.csv,426895,416.9
 ayush_reanalysis/per_run_top_ngrams.csv,844981,825.2
 combined_report/DETERMINISTIC_METRICS_SUMMARY.md,4310,4.2
 combined_report/EMBEDDING_SUMMARY.md,2809,2.7
+combined_report/LLM_JUDGE_SUMMARY.md,1922,1.9
 combined_report/deterministic_summary_by_family.csv,5269,5.1
 combined_report/embedding_summary_by_family.csv,3228,3.2
+combined_report/llm_judge_label_counts.csv,918,0.9
+combined_report/llm_judge_summary_by_family.csv,9838,9.6
 data_manifest.csv,118674,115.9
 data_manifest_summary.json,648,0.6
 data_manifest_summary.md,498,0.5
