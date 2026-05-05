@@ -1,6 +1,6 @@
 # Ayush Reanalysis — Final-Run, Mixed-Roster, Base-Tool, and Obsession Experiments
 
-Generated: 2026-05-04T23:15:40+00:00
+Generated: 2026-05-05T09:27:48+00:00
 
 This report supersedes the older archive-only embedding package. The current scope follows `ANALYSIS_PLAN_FOR_AYUSH.md`: canonical 48 single-model runs, the qwen3.5 frontier mixed roster, and the curated 2026-05-05 base-model/obsession bundle. The qwen3.6 mixed-roster variant is excluded per review.
 
@@ -58,6 +58,23 @@ Embedding model: `qwen/qwen3-embedding-8b`. Coverage: 49,661 / 49,661 included n
 
 Single-model final and base-model-as-tool runs show decreasing semantic diversity / increasing semantic concentration by embedding metrics. Mixed-model roster now covers six qwen3.5 roster conditions; qwen3.6 remains excluded.
 
+## Embedding-based topical convergence findings
+
+Topics are unsupervised clusters over SVD-reduced Qwen post embeddings. Increasing dominant-topic share / HHI and decreasing topic entropy / effective topics indicate topical convergence. No new API calls are made for this step.
+
+| family | scheme | n_runs | mean Δ dominant topic share | mean Δ topic entropy | mean Δ effective topics | mean Δ topic HHI |
+| --- | --- | --- | --- | --- | --- | --- |
+| Single-model final runs | fixed 15m | 48 | 0.07371 | -0.1164 | -0.8025 | 0.1017 |
+| Single-model final runs | normalized quartiles | 48 | 0.06843 | -0.1108 | -0.7559 | 0.09757 |
+| Base model as tool | fixed 15m | 18 | 0.01418 | -0.06817 | -0.1385 | 0.06336 |
+| Base model as tool | normalized quartiles | 18 | 0.01562 | -0.06626 | -0.166 | 0.06089 |
+| Mixed-model roster | fixed 15m | 6 | -0.04512 | -0.005951 | -0.08511 | -0.02137 |
+| Mixed-model roster | normalized quartiles | 6 | -0.05106 | -0.00416 | -0.0471 | -0.02131 |
+| Obsession prompting | normalized quartiles | 9 | 0.1014 | -0.09127 | -0.5796 | 0.1087 |
+
+Full topic outputs: `ayush_reanalysis/topic_convergence/TOPIC_CONVERGENCE_SUMMARY.md`, `topic_summary_by_family.csv`, and the topic-convergence PNG/PDF figures.
+
+
 ## Blinded LLM-as-judge findings
 
 The judge outputs below are metadata-blind at prompt time. The model received post text plus anonymized previous/semantic-neighbor posts only; run/group/model/condition/path/source metadata was joined locally after scoring.
@@ -82,6 +99,13 @@ Full judge summaries: `combined_report/LLM_JUDGE_SUMMARY.md`, `combined_report/l
 - `ayush_reanalysis/figures/delta_distinct5_by_family.png`
 - `ayush_reanalysis/figures/delta_vendi_by_family.png`
 - `ayush_reanalysis/figures/delta_pairwise_cosine_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_dominant_share_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_effective_topics_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_entropy_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_dominant_share_trajectories.png`
+- `ayush_reanalysis/topic_convergence/topic_effective_topics_trajectories.png`
+- `ayush_reanalysis/topic_convergence/topic_late_distribution_heatmap.png`
+- `ayush_reanalysis/topic_convergence/embedding_topic_svd_map.png`
 
 PDF versions are stored beside each PNG.
 
@@ -91,6 +115,7 @@ PDF versions are stored beside each PNG.
 - Manifest: `data_manifest.csv`, `data_manifest_summary.md`
 - Main deterministic CSVs: `ayush_reanalysis/deterministic_timebin_metrics.csv`, `ayush_reanalysis/deterministic_run_deltas.csv`
 - Embedding CSVs: `ayush_reanalysis/embedding_run_timebin_metrics.csv`, `ayush_reanalysis/embedding_run_deltas.csv`
+- Topical convergence outputs: `ayush_reanalysis/topic_convergence/`
 - Per-family outputs: `per_family_reports/<family>/...`
 - Combined summaries: `combined_report/DETERMINISTIC_METRICS_SUMMARY.md`, `combined_report/EMBEDDING_SUMMARY.md`
 - Artifact inventory: `ayush_reanalysis/artifact_inventory.csv`

@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-05-05T09:25:24.039563+00:00",
+  "embedding_model": "qwen/qwen3-embedding-8b",
+  "n_topics": 12,
+  "svd_components": 50,
+  "n_nonseed_rows": 49661,
+  "n_unique_record_ids": 49656,
+  "missing_embeddings": 0,
+  "outputs": [
+    "TOPIC_CONVERGENCE_SUMMARY.md",
+    "embedding_topic_svd_map.pdf",
+    "embedding_topic_svd_map.png",
+    "topic_assignments.csv",
+    "topic_dominant_share_delta_by_family.pdf",
+    "topic_dominant_share_delta_by_family.png",
+    "topic_dominant_share_trajectories.pdf",
+    "topic_dominant_share_trajectories.png",
+    "topic_effective_topics_delta_by_family.pdf",
+    "topic_effective_topics_delta_by_family.png",
+    "topic_effective_topics_trajectories.pdf",
+    "topic_effective_topics_trajectories.png",
+    "topic_entropy_delta_by_family.pdf",
+    "topic_entropy_delta_by_family.png",
+    "topic_keywords.csv",
+    "topic_keywords.md",
+    "topic_late_distribution_heatmap.pdf",
+    "topic_late_distribution_heatmap.png",
+    "topic_run_deltas.csv",
+    "topic_run_timebin_metrics.csv",
+    "topic_summary_by_family.csv"
+  ]
+}

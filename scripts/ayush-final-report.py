@@ -134,6 +134,24 @@ def build_report(root: Path) -> str:
         ("mean Δ semantic radius", "delta_semantic_radius_mean"),
     ])
 
+    topic_summary = root / "ayush_reanalysis" / "topic_convergence" / "topic_summary_by_family.csv"
+    if topic_summary.exists():
+        topic = pd.read_csv(topic_summary)
+        topic_table = compact_summary(topic, [
+            ("mean Δ dominant topic share", "delta_dominant_share_mean"),
+            ("mean Δ topic entropy", "delta_topic_entropy_norm_mean"),
+            ("mean Δ effective topics", "delta_effective_topics_mean"),
+            ("mean Δ topic HHI", "delta_topic_hhi_mean"),
+        ])
+        topic_section = (
+            "## Embedding-based topical convergence findings\n\n"
+            "Topics are unsupervised clusters over SVD-reduced Qwen post embeddings. Increasing dominant-topic share / HHI and decreasing topic entropy / effective topics indicate topical convergence. No new API calls are made for this step.\n\n"
+            + markdown_table(topic_table)
+            + "\n\nFull topic outputs: `ayush_reanalysis/topic_convergence/TOPIC_CONVERGENCE_SUMMARY.md`, `topic_summary_by_family.csv`, and the topic-convergence PNG/PDF figures.\n"
+        )
+    else:
+        topic_section = ""
+
     judge_summary = root / "combined_report" / "llm_judge_summary_by_family.csv"
     if judge_summary.exists():
         judge = pd.read_csv(judge_summary)
@@ -194,6 +212,8 @@ Embedding model: `{coverage.get('embedding_model', 'qwen/qwen3-embedding-8b')}`.
 
 Single-model final and base-model-as-tool runs show decreasing semantic diversity / increasing semantic concentration by embedding metrics. Mixed-model roster now covers six qwen3.5 roster conditions; qwen3.6 remains excluded.
 
+{topic_section}
+
 {judge_section}
 
 ## Figures
@@ -203,6 +223,13 @@ Single-model final and base-model-as-tool runs show decreasing semantic diversit
 - `ayush_reanalysis/figures/delta_distinct5_by_family.png`
 - `ayush_reanalysis/figures/delta_vendi_by_family.png`
 - `ayush_reanalysis/figures/delta_pairwise_cosine_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_dominant_share_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_effective_topics_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_entropy_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_dominant_share_trajectories.png`
+- `ayush_reanalysis/topic_convergence/topic_effective_topics_trajectories.png`
+- `ayush_reanalysis/topic_convergence/topic_late_distribution_heatmap.png`
+- `ayush_reanalysis/topic_convergence/embedding_topic_svd_map.png`
 
 PDF versions are stored beside each PNG.
 
@@ -212,6 +239,7 @@ PDF versions are stored beside each PNG.
 - Manifest: `data_manifest.csv`, `data_manifest_summary.md`
 - Main deterministic CSVs: `ayush_reanalysis/deterministic_timebin_metrics.csv`, `ayush_reanalysis/deterministic_run_deltas.csv`
 - Embedding CSVs: `ayush_reanalysis/embedding_run_timebin_metrics.csv`, `ayush_reanalysis/embedding_run_deltas.csv`
+- Topical convergence outputs: `ayush_reanalysis/topic_convergence/`
 - Per-family outputs: `per_family_reports/<family>/...`
 - Combined summaries: `combined_report/DETERMINISTIC_METRICS_SUMMARY.md`, `combined_report/EMBEDDING_SUMMARY.md`
 - Artifact inventory: `ayush_reanalysis/artifact_inventory.csv`

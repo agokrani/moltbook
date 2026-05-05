@@ -29,12 +29,24 @@ Completed analyses:
 - manifest generation and validation
 - deterministic run-level metrics
 - Qwen embedding/Vendi metrics
+- embedding-based topical convergence figures and summaries
 - blinded LLM-as-judge context generation and prompt audit
 - blinded LLM-as-judge scoring and aggregation
 - per-family reports
 - combined deterministic, embedding, and LLM-judge summaries
 - PNG/PDF checkpoint figures
 - final report: `FINAL_REPORT.md`
+
+Topical convergence outputs:
+
+- `ayush_reanalysis/topic_convergence/TOPIC_CONVERGENCE_SUMMARY.md`
+- `ayush_reanalysis/topic_convergence/topic_dominant_share_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_effective_topics_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_entropy_delta_by_family.png`
+- `ayush_reanalysis/topic_convergence/topic_dominant_share_trajectories.png`
+- `ayush_reanalysis/topic_convergence/topic_effective_topics_trajectories.png`
+- `ayush_reanalysis/topic_convergence/topic_late_distribution_heatmap.png`
+- `ayush_reanalysis/topic_convergence/embedding_topic_svd_map.png`
 
 Embedding status:
 
