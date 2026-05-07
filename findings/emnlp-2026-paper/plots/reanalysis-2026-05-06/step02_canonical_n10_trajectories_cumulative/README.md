@@ -18,6 +18,14 @@ How to read collapse direction:
 - Distinct-5 down means the feed so far has fewer unique 5-grams.
 - LLM collapse index up means the feed so far is judged more repetitive, rigid, conformist, and less novel.
 
+LLM collapse index formula:
+
+```text
+(semantic_repetition + frame_convergence + consensus_conformity + template_rigidity + (6 - novelty)) / 5
+```
+
+The cumulative LLM line is the weighted mean of all judged posts up to each time cutoff. Use it as a companion “feed so far” view, not as a replacement for fixed-window trajectories.
+
 ## Gzip
 
 ![Gzip](canonical_n10_gzip_cumulative_trajectory_by_model.png)

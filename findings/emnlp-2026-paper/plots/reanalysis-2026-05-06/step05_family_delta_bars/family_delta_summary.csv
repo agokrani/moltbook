@@ -1,0 +1,17 @@
+scheme,internal_family_label,metric,n_runs,mean,ci95_low,ci95_high,n_negative,n_positive,sign_p
+fixed_15m,single_model_final,delta_effective_text,48,-0.8024912648640918,-1.0952075919449147,-0.5030597267370679,35,13,0.0020881073339964473
+fixed_15m,single_model_final,delta_effective_frame,48,-1.0630213794049628,-1.493560562159886,-0.631178003965924,36,12,0.0007172696733945827
+fixed_15m,base_model_as_tool,delta_effective_text,18,-0.13851218269163867,-0.9309030818349521,0.7422669432192408,12,6,0.237884521484375
+fixed_15m,base_model_as_tool,delta_effective_frame,18,-1.707451822701074,-2.416679314860776,-1.0155239675107022,16,2,0.001312255859375
+fixed_15m,obsession_prompting,delta_effective_text,0,,,,0,0,
+fixed_15m,obsession_prompting,delta_effective_frame,0,,,,0,0,
+fixed_15m,mixed_model_roster,delta_effective_text,6,-0.08510899301956408,-0.33789307626053927,0.14030470512229096,4,2,0.6875
+fixed_15m,mixed_model_roster,delta_effective_frame,6,1.0036702624252298,0.25022178228021685,1.842352383457473,1,5,0.21875
+normalized_quartile,single_model_final,delta_effective_text,48,-0.7559004825087365,-1.041183022582155,-0.46912386658513716,36,12,0.0007172696733945827
+normalized_quartile,single_model_final,delta_effective_frame,48,-0.8376598918630404,-1.2659492265133003,-0.4125824480833,31,17,0.05946337525377032
+normalized_quartile,base_model_as_tool,delta_effective_text,18,-0.16603712713048444,-0.9473773048231537,0.703913958366451,12,6,0.237884521484375
+normalized_quartile,base_model_as_tool,delta_effective_frame,18,-1.5496310234760406,-2.2657444433878124,-0.849192145484075,16,2,0.001312255859375
+normalized_quartile,obsession_prompting,delta_effective_text,9,-0.579637397154846,-1.542806381670536,0.22592804589036602,5,4,1.0
+normalized_quartile,obsession_prompting,delta_effective_frame,9,-2.0214902575962506,-2.8992916031527702,-1.1488485759486409,8,1,0.0390625
+normalized_quartile,mixed_model_roster,delta_effective_text,6,-0.047098221286292985,-0.2548158590029989,0.16903878800866598,4,2,0.6875
+normalized_quartile,mixed_model_roster,delta_effective_frame,6,1.1093996751446105,0.4078151326345025,1.851803804568469,0,6,0.03125

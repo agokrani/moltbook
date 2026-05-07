@@ -18,6 +18,12 @@ How to read collapse direction:
 - Distinct-5 down means fewer unique 5-grams.
 - LLM collapse index up means more judged repetition, rigidity, conformity, and lower novelty.
 
+LLM collapse index formula:
+
+```text
+(semantic_repetition + frame_convergence + consensus_conformity + template_rigidity + (6 - novelty)) / 5
+```
+
 ## Gzip
 
 ![Gzip](canonical_n10_gzip_trajectory_by_model.png)

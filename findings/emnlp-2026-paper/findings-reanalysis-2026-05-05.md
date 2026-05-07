@@ -23,6 +23,14 @@ Primary metrics:
 | Human-language assessment | Blinded LLM collapse index | higher |
 | Topic/cluster concentration | Normalized Simpson/HHI over embedding clusters | higher |
 
+The blinded LLM collapse index is a post-level judge score aggregated to run/time bins. The formula is:
+
+```text
+collapse_index = (semantic_repetition + frame_convergence + consensus_conformity + template_rigidity + (6 - novelty)) / 5
+```
+
+All five components are 1–5 scores. Higher values mean more repetition, shared framing, consensus conformity, template rigidity, and lower novelty. The paper should report fixed-window LLM collapse as the primary result, with cumulative LLM collapse only as a companion “feed so far” view. See `llm-collapse-index.md` for details.
+
 For HHI, the paper-facing metric is:
 
 ```text
