@@ -1,6 +1,6 @@
 # Reanalysis plot plan, 2026-05-06
 
-Status: draft for approval. Do not generate new plots until the exact step is approved.
+Status: Step 0–2 outputs exist and were verified on 2026-05-07. Do not generate later-step plots until the exact step is approved.
 
 This replaces the 2026-05-05 plotting approach. The 2026-05-05 plots should be treated as discarded draft outputs unless a specific file is later rescued.
 
@@ -82,7 +82,33 @@ Primary trajectory metrics:
 | Gzip compression ratio | deterministic time bins | `compression_gzip` | down |
 | Distinct-5 | deterministic time bins | `distinct_5` | down |
 | Vendi Score | embedding time bins | `vendi_score` | down |
-| Blinded LLM collapse index | LLM judge time bins | `collapse_index` | up |
+| Effective topics (post-text) | `ayush_reanalysis/topic_convergence/topic_run_timebin_metrics.csv` | `effective_topics` | down |
+| Effective frames (LLM-judge) | `ayush_reanalysis/llm_frame_topic_convergence/frame_topic_run_timebin_metrics.csv` | `effective_frames` | down |
+| Blinded LLM rubric index *(secondary, validation)* | LLM judge time bins | `collapse_index` | up |
+
+### Headline collapse metric: Hill–Shannon `effective_topics = exp(H)`
+
+We use the same operator on two independent inputs:
+
+- **`effective_topics`** — Hill-Shannon diversity of MiniBatchKMeans-12 cluster shares fit on Qwen3-embedding-8b post-text embeddings (SVD-50, L2-normalized). Pipeline: `scripts/ayush-topic-convergence.py` in the main repo.
+- **`effective_frames`** — same operator, same embedding model, same clustering hyperparameters, but applied to the *blinded LLM judge's* `dominant_frame` strings (one short label per post). Pipeline: `scripts/reanalysis-2026-05-06/step03_build_llm_frame_topics.py` in the findings-handoff worktree, output under `analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_frame_topic_convergence/`.
+
+Both are old, citable, information-theoretic constructs — Shannon (1948) entropy on a categorical distribution, Hill (1973) effective number conversion `exp(H)`. Direct prior art with this exact operator on LLM-extracted classes: Wright et al. 2025 (arXiv:2510.04226), "Epistemic Diversity and Knowledge Collapse." It is the same eigenvalue construction used in the Vendi Score (Friedman & Dieng 2023), but on cluster shares rather than similarity-matrix eigenvalues. Down means fewer effective topics / frames in the bin → more concentrated discourse.
+
+### LLM judge rubric (kept as secondary validation, not headline)
+
+```text
+collapse_index = (semantic_repetition + frame_convergence + consensus_conformity + template_rigidity + (6 - novelty)) / 5
+```
+
+All five components are 1–5 judge scores. Higher values mean more judged collapse. Novelty is inverted so low novelty raises the index. We retain the rubric mean as a secondary index because it captures judge dimensions (e.g. `template_rigidity`, `evidence_grounding`) that the frame-clustering operator collapses to a single frame label per post. See `findings/emnlp-2026-paper/llm-collapse-index.md` for the full rubric explanation and fixed-window vs cumulative aggregation formulas.
+
+### Convergent validity check
+
+Step 4 (`scripts/reanalysis-2026-05-06/step04_frame_vs_text_topics.py`, outputs in `findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step04_frame_vs_text_topics/`) joins the two pipelines on `(run_uid, scheme, bin_idx)` and produces:
+
+1. Side-by-side family-mean trajectories of `effective_topics` and `effective_frames` (fixed 15m and normalized quartile).
+2. Per-run Δ scatter of `Δ effective_topics` vs `Δ effective_frames` with Pearson r — this is the Campbell & Fiske (1959) convergent-validity figure: same construct (collapse), two methods (post-text embeddings, LLM-judge framing).
 
 Important rules:
 
@@ -260,7 +286,7 @@ Metrics:
 
 ```text
 cumulative gzip
-cumulative fixed-window Distinct-5 using distinct_5_cumulative
+cumulative Distinct-5 recomputed over all post text seen so far
 cumulative blinded LLM collapse index
 ```
 
@@ -278,7 +304,7 @@ Cumulative definition:
 Metric computation:
 
 1. Gzip cumulative is recomputed from all post text seen so far.
-2. Distinct-5 cumulative uses the existing `distinct_5_cumulative` value.
+2. Distinct-5 cumulative is recomputed from all post text seen so far.
 3. LLM collapse cumulative is the weighted cumulative mean of bin scores, using `n_judged`.
 
 Plot design:
