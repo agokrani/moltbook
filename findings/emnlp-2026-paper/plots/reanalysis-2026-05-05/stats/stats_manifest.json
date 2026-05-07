@@ -1,0 +1,8 @@
+{
+  "canonical_model_direction_tests": 24,
+  "condition_vs_empty_matched_tests": 30,
+  "mixed_vs_homogeneous_matched_summary": 36,
+  "n10_model_condition_summary": 288,
+  "obsession_matched_condition_summary": 42,
+  "scale_paired_tests_gpt5_gemini": 24
+}

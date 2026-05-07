@@ -1,0 +1,43 @@
+{
+  "embedding_npz": "data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/embeddings/qwen-qwen3-embedding-8b-current-included-unique.npz",
+  "post_index": "data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/post_index.csv",
+  "out_dir": "findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/topic_robustness",
+  "k_values": [
+    8,
+    12,
+    16,
+    24
+  ],
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "svd_components": 50,
+  "svd_explained_variance_ratio_sum": 0.48183485865592957,
+  "n_nonseed_rows": 49661,
+  "n_unique_embeddings": 49656,
+  "outputs": [
+    "TOPIC_ROBUSTNESS_REPORT.md",
+    "canonical_topic_cluster_stability_by_run.csv",
+    "dominant_share_mean_delta_by_k_seed_model.pdf",
+    "dominant_share_mean_delta_by_k_seed_model.png",
+    "dominant_share_robustness_matrix.pdf",
+    "dominant_share_robustness_matrix.png",
+    "hhi_norm_mean_delta_by_k_seed_model.pdf",
+    "hhi_norm_mean_delta_by_k_seed_model.png",
+    "hhi_norm_robustness_matrix.pdf",
+    "hhi_norm_robustness_matrix.png",
+    "topic_entropy_delta_by_k_seed.csv",
+    "topic_entropy_mean_delta_by_k_seed_model.pdf",
+    "topic_entropy_mean_delta_by_k_seed_model.png",
+    "topic_entropy_robustness_matrix.pdf",
+    "topic_entropy_robustness_matrix.png",
+    "topic_exemplars.md",
+    "topic_robustness_run_deltas.csv",
+    "topic_robustness_summary.json",
+    "topic_robustness_summary_by_model.csv"
+  ]
+}

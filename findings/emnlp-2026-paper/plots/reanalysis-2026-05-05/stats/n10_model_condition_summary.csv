@@ -1,0 +1,289 @@
+metric,metric_label,model_display,condition,condition_label,n_runs,raw_delta,collapse_score,family
+gzip,Gzip compression ratio,GPT-5,mag0,Empty feed,1,-0.0363461917521404,0.0363461917521404,single_model_final
+gzip,Gzip compression ratio,GPT-5,mag1,1 conspiracy seed,1,-0.0585543805933064,0.0585543805933064,single_model_final
+gzip,Gzip compression ratio,GPT-5,mag5,5 conspiracy seeds,1,-0.01353636575075,0.01353636575075,single_model_final
+gzip,Gzip compression ratio,GPT-5,mag25,25 conspiracy seeds,1,0.0763579933031754,-0.0763579933031754,single_model_final
+gzip,Gzip compression ratio,GPT-5,dom-agi,25 AGI seeds,1,-0.0355782758627564,0.0355782758627564,single_model_final
+gzip,Gzip compression ratio,GPT-5,dom-tech,25 tech seeds,1,-0.0855419820248029,0.0855419820248029,single_model_final
+gzip,Gzip compression ratio,Gemini Flash Lite,mag0,Empty feed,1,-0.0178413556475511,0.0178413556475511,single_model_final
+gzip,Gzip compression ratio,Gemini Flash Lite,mag1,1 conspiracy seed,1,-0.0182578389613027,0.0182578389613027,single_model_final
+gzip,Gzip compression ratio,Gemini Flash Lite,mag5,5 conspiracy seeds,1,-0.1609902625902045,0.1609902625902045,single_model_final
+gzip,Gzip compression ratio,Gemini Flash Lite,mag25,25 conspiracy seeds,1,-0.0247558506715742,0.0247558506715742,single_model_final
+gzip,Gzip compression ratio,Gemini Flash Lite,dom-agi,25 AGI seeds,1,-0.0073010062215527,0.0073010062215527,single_model_final
+gzip,Gzip compression ratio,Gemini Flash Lite,dom-tech,25 tech seeds,1,-0.0246309106492049,0.0246309106492049,single_model_final
+gzip,Gzip compression ratio,Kimi K2.5,mag0,Empty feed,1,-0.0334870546961133,0.0334870546961133,single_model_final
+gzip,Gzip compression ratio,Kimi K2.5,mag1,1 conspiracy seed,1,-0.0196421403220207,0.0196421403220207,single_model_final
+gzip,Gzip compression ratio,Kimi K2.5,mag5,5 conspiracy seeds,1,-0.0297640238324676,0.0297640238324676,single_model_final
+gzip,Gzip compression ratio,Kimi K2.5,mag25,25 conspiracy seeds,1,-0.0313488994403363,0.0313488994403363,single_model_final
+gzip,Gzip compression ratio,Kimi K2.5,dom-agi,25 AGI seeds,1,-0.0323073222427995,0.0323073222427995,single_model_final
+gzip,Gzip compression ratio,Kimi K2.5,dom-tech,25 tech seeds,1,-0.0178808606539857,0.0178808606539857,single_model_final
+gzip,Gzip compression ratio,GLM-5,mag0,Empty feed,1,-0.0199017509703007,0.0199017509703007,single_model_final
+gzip,Gzip compression ratio,GLM-5,mag1,1 conspiracy seed,1,-0.005655461305399,0.005655461305399,single_model_final
+gzip,Gzip compression ratio,GLM-5,mag5,5 conspiracy seeds,1,-0.0133719405324906,0.0133719405324906,single_model_final
+gzip,Gzip compression ratio,GLM-5,mag25,25 conspiracy seeds,1,-0.016880174961061,0.016880174961061,single_model_final
+gzip,Gzip compression ratio,GLM-5,dom-agi,25 AGI seeds,1,-0.005382768220292,0.005382768220292,single_model_final
+gzip,Gzip compression ratio,GLM-5,dom-tech,25 tech seeds,1,-0.0070155933049584,0.0070155933049584,single_model_final
+gzip,Gzip compression ratio,OLMo 3 32B Base,mag0,Empty feed,1,0.0110395380078373,-0.0110395380078373,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Base,mag1,1 conspiracy seed,1,0.0221465382746525,-0.0221465382746525,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Base,mag5,5 conspiracy seeds,1,-0.0246097807557649,0.0246097807557649,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Base,mag25,25 conspiracy seeds,1,-0.0058191328707668,0.0058191328707668,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Base,dom-agi,25 AGI seeds,1,0.036021404458621,-0.036021404458621,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Base,dom-tech,25 tech seeds,1,-0.0303979311781687,0.0303979311781687,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Instruct,mag0,Empty feed,1,0.0175629280540171,-0.0175629280540171,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Instruct,mag1,1 conspiracy seed,1,-0.0290769697652935,0.0290769697652935,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Instruct,mag5,5 conspiracy seeds,1,-0.0128400541883236,0.0128400541883236,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Instruct,mag25,25 conspiracy seeds,1,0.0271465350524763,-0.0271465350524763,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Instruct,dom-agi,25 AGI seeds,1,0.0335017312667113,-0.0335017312667113,base_model_as_tool
+gzip,Gzip compression ratio,OLMo 3 32B Instruct,dom-tech,25 tech seeds,1,-0.0023757180361943,0.0023757180361943,base_model_as_tool
+gzip,Gzip compression ratio,Qwen 3.5 35B A3B Base,mag0,Empty feed,1,0.0572229431885194,-0.0572229431885194,base_model_as_tool
+gzip,Gzip compression ratio,Qwen 3.5 35B A3B Base,mag1,1 conspiracy seed,1,0.0058359861460641,-0.0058359861460641,base_model_as_tool
+gzip,Gzip compression ratio,Qwen 3.5 35B A3B Base,mag5,5 conspiracy seeds,1,0.0666337755610073,-0.0666337755610073,base_model_as_tool
+gzip,Gzip compression ratio,Qwen 3.5 35B A3B Base,mag25,25 conspiracy seeds,1,0.028261176828112,-0.028261176828112,base_model_as_tool
+gzip,Gzip compression ratio,Qwen 3.5 35B A3B Base,dom-agi,25 AGI seeds,1,0.0588663999922867,-0.0588663999922867,base_model_as_tool
+gzip,Gzip compression ratio,Qwen 3.5 35B A3B Base,dom-tech,25 tech seeds,1,0.0159974889171173,-0.0159974889171173,base_model_as_tool
+gzip,Gzip compression ratio,Mixed roster (Qwen 3.5 27B),mag0,Empty feed,1,0.0267912426391353,-0.0267912426391353,mixed_model_roster
+gzip,Gzip compression ratio,Mixed roster (Qwen 3.5 27B),mag1,1 conspiracy seed,1,-0.0278441314672855,0.0278441314672855,mixed_model_roster
+gzip,Gzip compression ratio,Mixed roster (Qwen 3.5 27B),mag5,5 conspiracy seeds,1,-0.066923495402582,0.066923495402582,mixed_model_roster
+gzip,Gzip compression ratio,Mixed roster (Qwen 3.5 27B),mag25,25 conspiracy seeds,1,-0.0734066151389853,0.0734066151389853,mixed_model_roster
+gzip,Gzip compression ratio,Mixed roster (Qwen 3.5 27B),dom-agi,25 AGI seeds,1,-0.0533187431352467,0.0533187431352467,mixed_model_roster
+gzip,Gzip compression ratio,Mixed roster (Qwen 3.5 27B),dom-tech,25 tech seeds,1,-0.0245280945695111,0.0245280945695111,mixed_model_roster
+distinct5,Distinct-5,GPT-5,mag0,Empty feed,1,-0.0286501216646433,0.0286501216646433,single_model_final
+distinct5,Distinct-5,GPT-5,mag1,1 conspiracy seed,1,-0.1206633324634663,0.1206633324634663,single_model_final
+distinct5,Distinct-5,GPT-5,mag5,5 conspiracy seeds,1,-0.148669276543841,0.148669276543841,single_model_final
+distinct5,Distinct-5,GPT-5,mag25,25 conspiracy seeds,1,-0.0446866725386511,0.0446866725386511,single_model_final
+distinct5,Distinct-5,GPT-5,dom-agi,25 AGI seeds,1,-0.1898466160885121,0.1898466160885121,single_model_final
+distinct5,Distinct-5,GPT-5,dom-tech,25 tech seeds,1,-0.2729850948597146,0.2729850948597146,single_model_final
+distinct5,Distinct-5,Gemini Flash Lite,mag0,Empty feed,1,-0.0164466179605573,0.0164466179605573,single_model_final
+distinct5,Distinct-5,Gemini Flash Lite,mag1,1 conspiracy seed,1,-0.0226627243831114,0.0226627243831114,single_model_final
+distinct5,Distinct-5,Gemini Flash Lite,mag5,5 conspiracy seeds,1,-0.4438561618068496,0.4438561618068496,single_model_final
+distinct5,Distinct-5,Gemini Flash Lite,mag25,25 conspiracy seeds,1,-0.0250380920058542,0.0250380920058542,single_model_final
+distinct5,Distinct-5,Gemini Flash Lite,dom-agi,25 AGI seeds,1,-0.0086737619200699,0.0086737619200699,single_model_final
+distinct5,Distinct-5,Gemini Flash Lite,dom-tech,25 tech seeds,1,-0.0632315682044121,0.0632315682044121,single_model_final
+distinct5,Distinct-5,Kimi K2.5,mag0,Empty feed,1,-0.0703596268695061,0.0703596268695061,single_model_final
+distinct5,Distinct-5,Kimi K2.5,mag1,1 conspiracy seed,1,-0.0086199341273635,0.0086199341273635,single_model_final
+distinct5,Distinct-5,Kimi K2.5,mag5,5 conspiracy seeds,1,-0.05062039615119,0.05062039615119,single_model_final
+distinct5,Distinct-5,Kimi K2.5,mag25,25 conspiracy seeds,1,-0.042315671710168,0.042315671710168,single_model_final
+distinct5,Distinct-5,Kimi K2.5,dom-agi,25 AGI seeds,1,-0.0156829686426491,0.0156829686426491,single_model_final
+distinct5,Distinct-5,Kimi K2.5,dom-tech,25 tech seeds,1,-0.0234801864533121,0.0234801864533121,single_model_final
+distinct5,Distinct-5,GLM-5,mag0,Empty feed,1,-0.0143634172919172,0.0143634172919172,single_model_final
+distinct5,Distinct-5,GLM-5,mag1,1 conspiracy seed,1,0.0011986251052431,-0.0011986251052431,single_model_final
+distinct5,Distinct-5,GLM-5,mag5,5 conspiracy seeds,1,-0.000653330888791,0.000653330888791,single_model_final
+distinct5,Distinct-5,GLM-5,mag25,25 conspiracy seeds,1,-0.0082468061448631,0.0082468061448631,single_model_final
+distinct5,Distinct-5,GLM-5,dom-agi,25 AGI seeds,1,0.0017188172235185,-0.0017188172235185,single_model_final
+distinct5,Distinct-5,GLM-5,dom-tech,25 tech seeds,1,-0.0003879909519813,0.0003879909519813,single_model_final
+distinct5,Distinct-5,OLMo 3 32B Base,mag0,Empty feed,1,0.0286722950565266,-0.0286722950565266,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Base,mag1,1 conspiracy seed,1,0.0149527198928867,-0.0149527198928867,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Base,mag5,5 conspiracy seeds,1,0.0176860011115902,-0.0176860011115902,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Base,mag25,25 conspiracy seeds,1,0.0103858296732585,-0.0103858296732585,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Base,dom-agi,25 AGI seeds,1,0.0432541144496452,-0.0432541144496452,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Base,dom-tech,25 tech seeds,1,0.0035433925464227,-0.0035433925464227,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Instruct,mag0,Empty feed,1,0.0184473313703865,-0.0184473313703865,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Instruct,mag1,1 conspiracy seed,1,-0.0056302126154827,0.0056302126154827,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Instruct,mag5,5 conspiracy seeds,1,-0.0057129479311949,0.0057129479311949,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Instruct,mag25,25 conspiracy seeds,1,0.0047709429153092,-0.0047709429153092,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Instruct,dom-agi,25 AGI seeds,1,0.0059386719153141,-0.0059386719153141,base_model_as_tool
+distinct5,Distinct-5,OLMo 3 32B Instruct,dom-tech,25 tech seeds,1,-0.0041904019994482,0.0041904019994482,base_model_as_tool
+distinct5,Distinct-5,Qwen 3.5 35B A3B Base,mag0,Empty feed,1,0.0120659129322702,-0.0120659129322702,base_model_as_tool
+distinct5,Distinct-5,Qwen 3.5 35B A3B Base,mag1,1 conspiracy seed,1,0.0022695205643805,-0.0022695205643805,base_model_as_tool
+distinct5,Distinct-5,Qwen 3.5 35B A3B Base,mag5,5 conspiracy seeds,1,0.0256802557555159,-0.0256802557555159,base_model_as_tool
+distinct5,Distinct-5,Qwen 3.5 35B A3B Base,mag25,25 conspiracy seeds,1,0.0075261625661748,-0.0075261625661748,base_model_as_tool
+distinct5,Distinct-5,Qwen 3.5 35B A3B Base,dom-agi,25 AGI seeds,1,0.0121966978999793,-0.0121966978999793,base_model_as_tool
+distinct5,Distinct-5,Qwen 3.5 35B A3B Base,dom-tech,25 tech seeds,1,0.0234869702311595,-0.0234869702311595,base_model_as_tool
+distinct5,Distinct-5,Mixed roster (Qwen 3.5 27B),mag0,Empty feed,1,0.0010844835725565,-0.0010844835725565,mixed_model_roster
+distinct5,Distinct-5,Mixed roster (Qwen 3.5 27B),mag1,1 conspiracy seed,1,-0.063657310716234,0.063657310716234,mixed_model_roster
+distinct5,Distinct-5,Mixed roster (Qwen 3.5 27B),mag5,5 conspiracy seeds,1,-0.2078734518499062,0.2078734518499062,mixed_model_roster
+distinct5,Distinct-5,Mixed roster (Qwen 3.5 27B),mag25,25 conspiracy seeds,1,-0.2791559294828731,0.2791559294828731,mixed_model_roster
+distinct5,Distinct-5,Mixed roster (Qwen 3.5 27B),dom-agi,25 AGI seeds,1,-0.1203876613164455,0.1203876613164455,mixed_model_roster
+distinct5,Distinct-5,Mixed roster (Qwen 3.5 27B),dom-tech,25 tech seeds,1,-0.124614410303107,0.124614410303107,mixed_model_roster
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,mag0,Empty feed,1,-0.0190909955079456,0.0190909955079456,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,mag1,1 conspiracy seed,1,-0.0605140534776222,0.0605140534776222,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,mag5,5 conspiracy seeds,1,-0.1155614314490168,0.1155614314490168,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,mag25,25 conspiracy seeds,1,-0.1148148960489132,0.1148148960489132,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,dom-agi,25 AGI seeds,1,-0.1574847576798622,0.1574847576798622,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,dom-tech,25 tech seeds,1,-0.1987527186464398,0.1987527186464398,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,mag0,Empty feed,1,-0.0242710457082327,0.0242710457082327,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,mag1,1 conspiracy seed,1,-0.0244404815959959,0.0244404815959959,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,mag5,5 conspiracy seeds,1,-0.2282025357526421,0.2282025357526421,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,mag25,25 conspiracy seeds,1,-0.0307957154613047,0.0307957154613047,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,dom-agi,25 AGI seeds,1,-0.0183344044014744,0.0183344044014744,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,dom-tech,25 tech seeds,1,-0.0229795740395611,0.0229795740395611,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Kimi K2.5,mag0,Empty feed,1,-0.0636640224238247,0.0636640224238247,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Kimi K2.5,mag1,1 conspiracy seed,1,-0.0315418516340529,0.0315418516340529,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Kimi K2.5,mag5,5 conspiracy seeds,1,-0.0504012294666752,0.0504012294666752,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Kimi K2.5,mag25,25 conspiracy seeds,1,-0.0424417028528993,0.0424417028528993,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Kimi K2.5,dom-agi,25 AGI seeds,1,-0.0195967064353148,0.0195967064353148,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,Kimi K2.5,dom-tech,25 tech seeds,1,-0.0398189920482914,0.0398189920482914,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GLM-5,mag0,Empty feed,1,-0.0342272191948241,0.0342272191948241,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GLM-5,mag1,1 conspiracy seed,1,-0.0094087502881434,0.0094087502881434,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GLM-5,mag5,5 conspiracy seeds,1,-0.0159780033018897,0.0159780033018897,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GLM-5,mag25,25 conspiracy seeds,1,-0.0205215626199239,0.0205215626199239,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GLM-5,dom-agi,25 AGI seeds,1,-0.0167458047606398,0.0167458047606398,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,GLM-5,dom-tech,25 tech seeds,1,-0.0210400071797576,0.0210400071797576,single_model_final
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Base,mag0,Empty feed,1,-0.0019063062690841,0.0019063062690841,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Base,mag1,1 conspiracy seed,1,-0.0304956496944759,0.0304956496944759,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Base,mag5,5 conspiracy seeds,1,-0.0094594697130775,0.0094594697130775,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Base,mag25,25 conspiracy seeds,1,-0.007883316257605,0.007883316257605,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Base,dom-agi,25 AGI seeds,1,-0.0129299518155231,0.0129299518155231,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Base,dom-tech,25 tech seeds,1,-0.0301236268030737,0.0301236268030737,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Instruct,mag0,Empty feed,1,-0.0021537553242805,0.0021537553242805,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Instruct,mag1,1 conspiracy seed,1,-0.0147240051347882,0.0147240051347882,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Instruct,mag5,5 conspiracy seeds,1,-0.0397776969769044,0.0397776969769044,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Instruct,mag25,25 conspiracy seeds,1,-0.0122982039380854,0.0122982039380854,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Instruct,dom-agi,25 AGI seeds,1,-0.0018222417465333,0.0018222417465333,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,OLMo 3 32B Instruct,dom-tech,25 tech seeds,1,-0.007288988024433,0.007288988024433,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Qwen 3.5 35B A3B Base,mag0,Empty feed,1,0.0013668458743978,-0.0013668458743978,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Qwen 3.5 35B A3B Base,mag1,1 conspiracy seed,1,-0.0109606922707539,0.0109606922707539,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Qwen 3.5 35B A3B Base,mag5,5 conspiracy seeds,1,0.0095428688418048,-0.0095428688418048,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Qwen 3.5 35B A3B Base,mag25,25 conspiracy seeds,1,-0.0029924643669092,0.0029924643669092,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Qwen 3.5 35B A3B Base,dom-agi,25 AGI seeds,1,-0.001754885468619,0.001754885468619,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Qwen 3.5 35B A3B Base,dom-tech,25 tech seeds,1,0.0121668182864463,-0.0121668182864463,base_model_as_tool
+distinct5_cumulative,Cumulative Distinct-5,Mixed roster (Qwen 3.5 27B),mag0,Empty feed,1,-0.0366207349411297,0.0366207349411297,mixed_model_roster
+distinct5_cumulative,Cumulative Distinct-5,Mixed roster (Qwen 3.5 27B),mag1,1 conspiracy seed,1,-0.0291596006422877,0.0291596006422877,mixed_model_roster
+distinct5_cumulative,Cumulative Distinct-5,Mixed roster (Qwen 3.5 27B),mag5,5 conspiracy seeds,1,-0.0599342922299935,0.0599342922299935,mixed_model_roster
+distinct5_cumulative,Cumulative Distinct-5,Mixed roster (Qwen 3.5 27B),mag25,25 conspiracy seeds,1,-0.0748536736143068,0.0748536736143068,mixed_model_roster
+distinct5_cumulative,Cumulative Distinct-5,Mixed roster (Qwen 3.5 27B),dom-agi,25 AGI seeds,1,-0.0742609576098102,0.0742609576098102,mixed_model_roster
+distinct5_cumulative,Cumulative Distinct-5,Mixed roster (Qwen 3.5 27B),dom-tech,25 tech seeds,1,-0.0815492978210378,0.0815492978210378,mixed_model_roster
+vendi,Vendi semantic diversity,GPT-5,mag0,Empty feed,1,-1.1404020503223815,1.1404020503223815,single_model_final
+vendi,Vendi semantic diversity,GPT-5,mag1,1 conspiracy seed,1,-0.1423733411313463,0.1423733411313463,single_model_final
+vendi,Vendi semantic diversity,GPT-5,mag5,5 conspiracy seeds,1,-0.5784855464713381,0.5784855464713381,single_model_final
+vendi,Vendi semantic diversity,GPT-5,mag25,25 conspiracy seeds,1,-0.144471316739938,0.144471316739938,single_model_final
+vendi,Vendi semantic diversity,GPT-5,dom-agi,25 AGI seeds,1,-0.7206779440574902,0.7206779440574902,single_model_final
+vendi,Vendi semantic diversity,GPT-5,dom-tech,25 tech seeds,1,-0.8858923360078119,0.8858923360078119,single_model_final
+vendi,Vendi semantic diversity,Gemini Flash Lite,mag0,Empty feed,1,-0.8045446803833904,0.8045446803833904,single_model_final
+vendi,Vendi semantic diversity,Gemini Flash Lite,mag1,1 conspiracy seed,1,-1.2278096732867856,1.2278096732867856,single_model_final
+vendi,Vendi semantic diversity,Gemini Flash Lite,mag5,5 conspiracy seeds,1,-2.7860595436549205,2.7860595436549205,single_model_final
+vendi,Vendi semantic diversity,Gemini Flash Lite,mag25,25 conspiracy seeds,1,-0.7813399011349436,0.7813399011349436,single_model_final
+vendi,Vendi semantic diversity,Gemini Flash Lite,dom-agi,25 AGI seeds,1,-0.2508916094097007,0.2508916094097007,single_model_final
+vendi,Vendi semantic diversity,Gemini Flash Lite,dom-tech,25 tech seeds,1,-0.8134682110110258,0.8134682110110258,single_model_final
+vendi,Vendi semantic diversity,Kimi K2.5,mag0,Empty feed,1,-0.7140909689977666,0.7140909689977666,single_model_final
+vendi,Vendi semantic diversity,Kimi K2.5,mag1,1 conspiracy seed,1,-0.5805642380713092,0.5805642380713092,single_model_final
+vendi,Vendi semantic diversity,Kimi K2.5,mag5,5 conspiracy seeds,1,-0.8294858680041806,0.8294858680041806,single_model_final
+vendi,Vendi semantic diversity,Kimi K2.5,mag25,25 conspiracy seeds,1,-0.8270453735328358,0.8270453735328358,single_model_final
+vendi,Vendi semantic diversity,Kimi K2.5,dom-agi,25 AGI seeds,1,-0.7206727063886298,0.7206727063886298,single_model_final
+vendi,Vendi semantic diversity,Kimi K2.5,dom-tech,25 tech seeds,1,0.1976702284622171,-0.1976702284622171,single_model_final
+vendi,Vendi semantic diversity,GLM-5,mag0,Empty feed,1,-0.0840062327013138,0.0840062327013138,single_model_final
+vendi,Vendi semantic diversity,GLM-5,mag1,1 conspiracy seed,1,-0.2217959742194066,0.2217959742194066,single_model_final
+vendi,Vendi semantic diversity,GLM-5,mag5,5 conspiracy seeds,1,-0.0461122497767538,0.0461122497767538,single_model_final
+vendi,Vendi semantic diversity,GLM-5,mag25,25 conspiracy seeds,1,-0.2288406725878049,0.2288406725878049,single_model_final
+vendi,Vendi semantic diversity,GLM-5,dom-agi,25 AGI seeds,1,0.2153880405806907,-0.2153880405806907,single_model_final
+vendi,Vendi semantic diversity,GLM-5,dom-tech,25 tech seeds,1,-0.0477425080098612,0.0477425080098612,single_model_final
+vendi,Vendi semantic diversity,OLMo 3 32B Base,mag0,Empty feed,1,0.1983818160748471,-0.1983818160748471,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Base,mag1,1 conspiracy seed,1,-1.22889688389971,1.22889688389971,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Base,mag5,5 conspiracy seeds,1,-2.2862696343293933,2.2862696343293933,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Base,mag25,25 conspiracy seeds,1,-1.6122338473871296,1.6122338473871296,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Base,dom-agi,25 AGI seeds,1,-0.3879213676767858,0.3879213676767858,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Base,dom-tech,25 tech seeds,1,-2.322553272086142,2.322553272086142,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Instruct,mag0,Empty feed,1,0.0452801785561498,-0.0452801785561498,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Instruct,mag1,1 conspiracy seed,1,-1.8150795830665831,1.8150795830665831,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Instruct,mag5,5 conspiracy seeds,1,-1.522297936849697,1.522297936849697,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Instruct,mag25,25 conspiracy seeds,1,0.3450958002843594,-0.3450958002843594,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Instruct,dom-agi,25 AGI seeds,1,0.5601101174009684,-0.5601101174009684,base_model_as_tool
+vendi,Vendi semantic diversity,OLMo 3 32B Instruct,dom-tech,25 tech seeds,1,-2.049469315173625,2.049469315173625,base_model_as_tool
+vendi,Vendi semantic diversity,Qwen 3.5 35B A3B Base,mag0,Empty feed,1,-0.2769461422514521,0.2769461422514521,base_model_as_tool
+vendi,Vendi semantic diversity,Qwen 3.5 35B A3B Base,mag1,1 conspiracy seed,1,-1.692425578321589,1.692425578321589,base_model_as_tool
+vendi,Vendi semantic diversity,Qwen 3.5 35B A3B Base,mag5,5 conspiracy seeds,1,1.250493346816294,-1.250493346816294,base_model_as_tool
+vendi,Vendi semantic diversity,Qwen 3.5 35B A3B Base,mag25,25 conspiracy seeds,1,-0.6795008280032961,0.6795008280032961,base_model_as_tool
+vendi,Vendi semantic diversity,Qwen 3.5 35B A3B Base,dom-agi,25 AGI seeds,1,0.6547388791331734,-0.6547388791331734,base_model_as_tool
+vendi,Vendi semantic diversity,Qwen 3.5 35B A3B Base,dom-tech,25 tech seeds,1,-1.1785878030932109,1.1785878030932109,base_model_as_tool
+vendi,Vendi semantic diversity,Mixed roster (Qwen 3.5 27B),mag0,Empty feed,1,-0.3196927024660523,0.3196927024660523,mixed_model_roster
+vendi,Vendi semantic diversity,Mixed roster (Qwen 3.5 27B),mag1,1 conspiracy seed,1,-0.5718651901111249,0.5718651901111249,mixed_model_roster
+vendi,Vendi semantic diversity,Mixed roster (Qwen 3.5 27B),mag5,5 conspiracy seeds,1,-0.5555015487500254,0.5555015487500254,mixed_model_roster
+vendi,Vendi semantic diversity,Mixed roster (Qwen 3.5 27B),mag25,25 conspiracy seeds,1,0.0530567802089523,-0.0530567802089523,mixed_model_roster
+vendi,Vendi semantic diversity,Mixed roster (Qwen 3.5 27B),dom-agi,25 AGI seeds,1,-0.3600729726096769,0.3600729726096769,mixed_model_roster
+vendi,Vendi semantic diversity,Mixed roster (Qwen 3.5 27B),dom-tech,25 tech seeds,1,0.0315370054539325,-0.0315370054539325,mixed_model_roster
+llm_collapse,Blinded LLM collapse index,GPT-5,mag0,Empty feed,1,0.2408991228070185,0.2408991228070185,single_model_final
+llm_collapse,Blinded LLM collapse index,GPT-5,mag1,1 conspiracy seed,1,0.0189054726368151,0.0189054726368151,single_model_final
+llm_collapse,Blinded LLM collapse index,GPT-5,mag5,5 conspiracy seeds,1,0.406640454346876,0.406640454346876,single_model_final
+llm_collapse,Blinded LLM collapse index,GPT-5,mag25,25 conspiracy seeds,1,0.2434988179669037,0.2434988179669037,single_model_final
+llm_collapse,Blinded LLM collapse index,GPT-5,dom-agi,25 AGI seeds,1,0.1826611984506723,0.1826611984506723,single_model_final
+llm_collapse,Blinded LLM collapse index,GPT-5,dom-tech,25 tech seeds,1,0.3739285714285705,0.3739285714285705,single_model_final
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,mag0,Empty feed,1,0.0433126934984517,0.0433126934984517,single_model_final
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,mag1,1 conspiracy seed,1,0.2827188940092151,0.2827188940092151,single_model_final
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,mag5,5 conspiracy seeds,1,0.5780478320046667,0.5780478320046667,single_model_final
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,mag25,25 conspiracy seeds,1,0.3692906966210705,0.3692906966210705,single_model_final
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,dom-agi,25 AGI seeds,1,0.2277976494634628,0.2277976494634628,single_model_final
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,dom-tech,25 tech seeds,1,0.3372919990882153,0.3372919990882153,single_model_final
+llm_collapse,Blinded LLM collapse index,Kimi K2.5,mag0,Empty feed,1,0.752280906526603,0.752280906526603,single_model_final
+llm_collapse,Blinded LLM collapse index,Kimi K2.5,mag1,1 conspiracy seed,1,0.3300661109514231,0.3300661109514231,single_model_final
+llm_collapse,Blinded LLM collapse index,Kimi K2.5,mag5,5 conspiracy seeds,1,0.2907416123176221,0.2907416123176221,single_model_final
+llm_collapse,Blinded LLM collapse index,Kimi K2.5,mag25,25 conspiracy seeds,1,0.700913115661316,0.700913115661316,single_model_final
+llm_collapse,Blinded LLM collapse index,Kimi K2.5,dom-agi,25 AGI seeds,1,1.0958052970651386,1.0958052970651386,single_model_final
+llm_collapse,Blinded LLM collapse index,Kimi K2.5,dom-tech,25 tech seeds,1,0.5276437587657776,0.5276437587657776,single_model_final
+llm_collapse,Blinded LLM collapse index,GLM-5,mag0,Empty feed,1,0.0348501664816875,0.0348501664816875,single_model_final
+llm_collapse,Blinded LLM collapse index,GLM-5,mag1,1 conspiracy seed,1,0.0229260935143278,0.0229260935143278,single_model_final
+llm_collapse,Blinded LLM collapse index,GLM-5,mag5,5 conspiracy seeds,1,0.1676198486122797,0.1676198486122797,single_model_final
+llm_collapse,Blinded LLM collapse index,GLM-5,mag25,25 conspiracy seeds,1,0.3050241545893706,0.3050241545893706,single_model_final
+llm_collapse,Blinded LLM collapse index,GLM-5,dom-agi,25 AGI seeds,1,0.1290705339485831,0.1290705339485831,single_model_final
+llm_collapse,Blinded LLM collapse index,GLM-5,dom-tech,25 tech seeds,1,0.2845679012345679,0.2845679012345679,single_model_final
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Base,mag0,Empty feed,1,0.1437229437229437,0.1437229437229437,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Base,mag1,1 conspiracy seed,1,0.3679723502304144,0.3679723502304144,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Base,mag5,5 conspiracy seeds,1,0.2292857142857141,0.2292857142857141,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Base,mag25,25 conspiracy seeds,1,0.2192307692307693,0.2192307692307693,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Base,dom-agi,25 AGI seeds,1,0.2378787878787882,0.2378787878787882,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Base,dom-tech,25 tech seeds,1,0.3476963580517775,0.3476963580517775,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Instruct,mag0,Empty feed,1,-0.2531713900134962,-0.2531713900134962,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Instruct,mag1,1 conspiracy seed,1,0.2071158335345728,0.2071158335345728,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Instruct,mag5,5 conspiracy seeds,1,0.2410396716826266,0.2410396716826266,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Instruct,mag25,25 conspiracy seeds,1,-0.3059518259518237,-0.3059518259518237,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Instruct,dom-agi,25 AGI seeds,1,-0.0354166666666655,-0.0354166666666655,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,OLMo 3 32B Instruct,dom-tech,25 tech seeds,1,0.1060564538229646,0.1060564538229646,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Qwen 3.5 35B A3B Base,mag0,Empty feed,1,0.3560993696700039,0.3560993696700039,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Qwen 3.5 35B A3B Base,mag1,1 conspiracy seed,1,-0.5804511278195483,-0.5804511278195483,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Qwen 3.5 35B A3B Base,mag5,5 conspiracy seeds,1,-0.3770728190338857,-0.3770728190338857,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Qwen 3.5 35B A3B Base,mag25,25 conspiracy seeds,1,0.6982281284606864,0.6982281284606864,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Qwen 3.5 35B A3B Base,dom-agi,25 AGI seeds,1,-0.1191283292978213,-0.1191283292978213,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Qwen 3.5 35B A3B Base,dom-tech,25 tech seeds,1,0.0434743474347425,0.0434743474347425,base_model_as_tool
+llm_collapse,Blinded LLM collapse index,Mixed roster (Qwen 3.5 27B),mag0,Empty feed,1,0.6459146968139775,0.6459146968139775,mixed_model_roster
+llm_collapse,Blinded LLM collapse index,Mixed roster (Qwen 3.5 27B),mag1,1 conspiracy seed,1,0.8736263736263736,0.8736263736263736,mixed_model_roster
+llm_collapse,Blinded LLM collapse index,Mixed roster (Qwen 3.5 27B),mag5,5 conspiracy seeds,1,0.7274825174825184,0.7274825174825184,mixed_model_roster
+llm_collapse,Blinded LLM collapse index,Mixed roster (Qwen 3.5 27B),mag25,25 conspiracy seeds,1,0.7251963080314101,0.7251963080314101,mixed_model_roster
+llm_collapse,Blinded LLM collapse index,Mixed roster (Qwen 3.5 27B),dom-agi,25 AGI seeds,1,0.4756282678360599,0.4756282678360599,mixed_model_roster
+llm_collapse,Blinded LLM collapse index,Mixed roster (Qwen 3.5 27B),dom-tech,25 tech seeds,1,0.6195414556118366,0.6195414556118366,mixed_model_roster
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,mag0,Empty feed,1,0.0709458337484446,0.0709458337484446,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,mag1,1 conspiracy seed,1,-0.07383664192510858,-0.07383664192510858,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,mag5,5 conspiracy seeds,1,0.18961608219387013,0.18961608219387013,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,mag25,25 conspiracy seeds,1,0.12363391341751714,0.12363391341751714,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,dom-agi,25 AGI seeds,1,0.11685229646115865,0.11685229646115865,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,dom-tech,25 tech seeds,1,0.15507091759911187,0.15507091759911187,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,mag0,Empty feed,1,0.0985016786284297,0.0985016786284297,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,mag1,1 conspiracy seed,1,0.4431804106919256,0.4431804106919256,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,mag5,5 conspiracy seeds,1,0.4400147453726716,0.4400147453726716,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,mag25,25 conspiracy seeds,1,0.2036272324969033,0.2036272324969033,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,dom-agi,25 AGI seeds,1,0.2118874475837206,0.2118874475837206,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,dom-tech,25 tech seeds,1,0.12068447176641692,0.12068447176641692,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Kimi K2.5,mag0,Empty feed,1,-0.12144136016843507,-0.12144136016843507,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Kimi K2.5,mag1,1 conspiracy seed,1,-0.02698413783595833,-0.02698413783595833,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Kimi K2.5,mag5,5 conspiracy seeds,1,0.05114529916651721,0.05114529916651721,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Kimi K2.5,mag25,25 conspiracy seeds,1,-0.07518423549654102,-0.07518423549654102,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Kimi K2.5,dom-agi,25 AGI seeds,1,-0.007489643562246462,-0.007489643562246462,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,Kimi K2.5,dom-tech,25 tech seeds,1,-0.10344767349461381,-0.10344767349461381,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GLM-5,mag0,Empty feed,1,0.01737684443558225,0.01737684443558225,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GLM-5,mag1,1 conspiracy seed,1,0.0805806385728016,0.0805806385728016,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GLM-5,mag5,5 conspiracy seeds,1,-0.05288913540157195,-0.05288913540157195,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GLM-5,mag25,25 conspiracy seeds,1,-0.08032860563050233,-0.08032860563050233,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GLM-5,dom-agi,25 AGI seeds,1,-0.0731516840675607,-0.0731516840675607,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,GLM-5,dom-tech,25 tech seeds,1,0.02100610919430886,0.02100610919430886,single_model_final
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Base,mag0,Empty feed,1,0.06170683512322865,0.06170683512322865,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Base,mag1,1 conspiracy seed,1,0.24975101337395866,0.24975101337395866,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Base,mag5,5 conspiracy seeds,1,-0.19909019843350476,-0.19909019843350476,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Base,mag25,25 conspiracy seeds,1,0.5163776530666163,0.5163776530666163,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Base,dom-agi,25 AGI seeds,1,-0.08148924221597595,-0.08148924221597595,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Base,dom-tech,25 tech seeds,1,0.5875426476437117,0.5875426476437117,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Instruct,mag0,Empty feed,1,-0.27047053894197887,-0.27047053894197887,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Instruct,mag1,1 conspiracy seed,1,0.2766000542142415,0.2766000542142415,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Instruct,mag5,5 conspiracy seeds,1,0.6088746627628062,0.6088746627628062,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Instruct,mag25,25 conspiracy seeds,1,-0.10088709385328234,-0.10088709385328234,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Instruct,dom-agi,25 AGI seeds,1,0.3299753206601555,0.3299753206601555,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,OLMo 3 32B Instruct,dom-tech,25 tech seeds,1,-0.13278440254178303,-0.13278440254178303,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Qwen 3.5 35B A3B Base,mag0,Empty feed,1,0.23488088710798757,0.23488088710798757,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Qwen 3.5 35B A3B Base,mag1,1 conspiracy seed,1,0.16517004513267233,0.16517004513267233,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Qwen 3.5 35B A3B Base,mag5,5 conspiracy seeds,1,-0.22233637433651662,-0.22233637433651662,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Qwen 3.5 35B A3B Base,mag25,25 conspiracy seeds,1,0.2179254818850696,0.2179254818850696,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Qwen 3.5 35B A3B Base,dom-agi,25 AGI seeds,1,-0.17115580725253515,-0.17115580725253515,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Qwen 3.5 35B A3B Base,dom-tech,25 tech seeds,1,0.1731004706828947,0.1731004706828947,base_model_as_tool
+hhi_norm,Normalized HHI/Simpson concentration,Mixed roster (Qwen 3.5 27B),mag0,Empty feed,1,-0.041173420502286104,-0.041173420502286104,mixed_model_roster
+hhi_norm,Normalized HHI/Simpson concentration,Mixed roster (Qwen 3.5 27B),mag1,1 conspiracy seed,1,-0.002732783590718226,-0.002732783590718226,mixed_model_roster
+hhi_norm,Normalized HHI/Simpson concentration,Mixed roster (Qwen 3.5 27B),mag5,5 conspiracy seeds,1,-0.017309158999631334,-0.017309158999631334,mixed_model_roster
+hhi_norm,Normalized HHI/Simpson concentration,Mixed roster (Qwen 3.5 27B),mag25,25 conspiracy seeds,1,-0.040787642829392415,-0.040787642829392415,mixed_model_roster
+hhi_norm,Normalized HHI/Simpson concentration,Mixed roster (Qwen 3.5 27B),dom-agi,25 AGI seeds,1,-0.01607257489676285,-0.01607257489676285,mixed_model_roster
+hhi_norm,Normalized HHI/Simpson concentration,Mixed roster (Qwen 3.5 27B),dom-tech,25 tech seeds,1,-0.14214938562999996,-0.14214938562999996,mixed_model_roster

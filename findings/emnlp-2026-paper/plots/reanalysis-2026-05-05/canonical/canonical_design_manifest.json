@@ -1,0 +1,12 @@
+{
+  "rows":48,
+  "runs":48,
+  "outputs":[
+    "canonical_delta_matrix_gzip_fixed15m.png",
+    "canonical_delta_matrix_distinct5_fixed15m.png",
+    "canonical_delta_matrix_distinct5_cumulative.png",
+    "canonical_delta_matrix_vendi_fixed15m.png",
+    "canonical_delta_matrix_llm_collapse_index_fixed15m.png",
+    "canonical_delta_matrix_hhi_norm_robust.png"
+  ]
+}

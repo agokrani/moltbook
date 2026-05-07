@@ -1,0 +1,49 @@
+metric,model_display,n_agents,runs,conditions,non_missing_metric_values
+gzip,GPT-5,10,6,6,6
+gzip,GPT-5,20,6,6,6
+gzip,GPT-5,30,6,6,6
+gzip,Gemini Flash Lite,10,6,6,6
+gzip,Gemini Flash Lite,20,6,6,6
+gzip,Gemini Flash Lite,30,6,6,6
+gzip,Kimi K2.5,10,6,6,6
+gzip,Kimi K2.5,20,0,0,0
+gzip,Kimi K2.5,30,0,0,0
+gzip,GLM-5,10,6,6,6
+gzip,GLM-5,20,0,0,0
+gzip,GLM-5,30,0,0,0
+distinct5,GPT-5,10,6,6,6
+distinct5,GPT-5,20,6,6,6
+distinct5,GPT-5,30,6,6,6
+distinct5,Gemini Flash Lite,10,6,6,6
+distinct5,Gemini Flash Lite,20,6,6,6
+distinct5,Gemini Flash Lite,30,6,6,6
+distinct5,Kimi K2.5,10,6,6,6
+distinct5,Kimi K2.5,20,0,0,0
+distinct5,Kimi K2.5,30,0,0,0
+distinct5,GLM-5,10,6,6,6
+distinct5,GLM-5,20,0,0,0
+distinct5,GLM-5,30,0,0,0
+vendi,GPT-5,10,6,6,6
+vendi,GPT-5,20,6,6,6
+vendi,GPT-5,30,6,6,6
+vendi,Gemini Flash Lite,10,6,6,6
+vendi,Gemini Flash Lite,20,6,6,6
+vendi,Gemini Flash Lite,30,6,6,6
+vendi,Kimi K2.5,10,6,6,6
+vendi,Kimi K2.5,20,0,0,0
+vendi,Kimi K2.5,30,0,0,0
+vendi,GLM-5,10,6,6,6
+vendi,GLM-5,20,0,0,0
+vendi,GLM-5,30,0,0,0
+llm_collapse,GPT-5,10,6,6,6
+llm_collapse,GPT-5,20,6,6,6
+llm_collapse,GPT-5,30,6,6,6
+llm_collapse,Gemini Flash Lite,10,6,6,6
+llm_collapse,Gemini Flash Lite,20,6,6,6
+llm_collapse,Gemini Flash Lite,30,6,6,6
+llm_collapse,Kimi K2.5,10,6,6,6
+llm_collapse,Kimi K2.5,20,0,0,0
+llm_collapse,Kimi K2.5,30,0,0,0
+llm_collapse,GLM-5,10,6,6,6
+llm_collapse,GLM-5,20,0,0,0
+llm_collapse,GLM-5,30,0,0,0

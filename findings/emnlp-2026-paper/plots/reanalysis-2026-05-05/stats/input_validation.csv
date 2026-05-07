@@ -1,0 +1,10 @@
+path,exists,size_bytes
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_run_deltas.csv,True,130934
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_timebin_metrics.csv,True,483618
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_deltas.csv,True,58125
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_timebin_metrics.csv,True,298277
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_deltas.csv,True,77464
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_timebin_metrics.csv,True,290050
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/post_index.csv,True,88692985
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/embeddings/qwen-qwen3-embedding-8b-current-included-unique.npz,True,438616522
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/topic_robustness/topic_robustness_run_deltas.csv,True,1295618

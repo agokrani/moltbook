@@ -1,0 +1,7 @@
+source,path,exists,size_bytes,rows,columns
+deterministic run deltas,data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_run_deltas.csv,True,130934,153,44
+deterministic time bins,data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_timebin_metrics.csv,True,483618,612,41
+embedding run deltas,data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_deltas.csv,True,58125,153,19
+embedding time bins,data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_timebin_metrics.csv,True,298277,612,26
+LLM judge run deltas,data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_deltas.csv,True,77464,153,24
+LLM judge time bins,data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_timebin_metrics.csv,True,290050,612,25

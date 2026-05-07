@@ -1,0 +1,28 @@
+{
+  "all_required_files_exist": true,
+  "canonical_fixed_15m_runs": 48,
+  "canonical_n10_models": {
+    "GLM-5": 6,
+    "GPT-5": 6,
+    "Gemini Flash Lite": 6,
+    "Kimi K2.5": 6
+  },
+  "scale_complete_models": {
+    "GLM-5": [
+      10
+    ],
+    "GPT-5": [
+      10,
+      20,
+      30
+    ],
+    "Gemini Flash Lite": [
+      10,
+      20,
+      30
+    ],
+    "Kimi K2.5": [
+      10
+    ]
+  }
+}

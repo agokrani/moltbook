@@ -1,0 +1,27 @@
+internal_family_label,model_display,n_agents,scheme,runs,conditions,first_run
+base_model_as_tool,OLMo 3 32B Base,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408
+base_model_as_tool,OLMo 3 32B Base,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408
+base_model_as_tool,OLMo 3 32B Instruct,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408
+base_model_as_tool,OLMo 3 32B Instruct,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",bm-mag5-n10-run01-gemini-3.1-flash-lite-preview-20260408
+base_model_as_tool,Qwen 3.5 35B A3B Base,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260403
+base_model_as_tool,Qwen 3.5 35B A3B Base,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",bm-mag0-n10-run01-gemini-3.1-flash-lite-preview-20260403
+mixed_model_roster,Mixed roster (Qwen 3.5 27B),10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",mag0-qwen35-27b-133846-mag0-n10-run01-frontier-mixed-openrouter-20260504
+mixed_model_roster,Mixed roster (Qwen 3.5 27B),10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",mag0-qwen35-27b-133846-mag0-n10-run01-frontier-mixed-openrouter-20260504
+obsession_prompting,GPT-5,10,normalized_quartile,8,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",obs-mag5-n10-run01-gpt-5-20260419
+obsession_prompting,Gemini Flash Lite,10,normalized_quartile,1,mag25,obs-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260417
+single_model_final,GLM-5,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-agi-n10-run01
+single_model_final,GLM-5,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-agi-n10-run01
+single_model_final,GPT-5,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-mag1-run04
+single_model_final,GPT-5,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-mag1-run04
+single_model_final,GPT-5,20,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-agi-n20-run01
+single_model_final,GPT-5,20,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-agi-n20-run01
+single_model_final,GPT-5,30,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-agi-n30-run01
+single_model_final,GPT-5,30,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-agi-n30-run01
+single_model_final,Gemini Flash Lite,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-tech-n10-run01
+single_model_final,Gemini Flash Lite,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-tech-n10-run01
+single_model_final,Gemini Flash Lite,20,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-mag25-n20-run01
+single_model_final,Gemini Flash Lite,20,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-mag25-n20-run01
+single_model_final,Gemini Flash Lite,30,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-mag1-n30-run01
+single_model_final,Gemini Flash Lite,30,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-mag1-n30-run01
+single_model_final,Kimi K2.5,10,fixed_15m,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-tech-n10-run01
+single_model_final,Kimi K2.5,10,normalized_quartile,6,"dom-agi, dom-tech, mag0, mag1, mag25, mag5",ec-dom-tech-n10-run01

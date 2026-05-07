@@ -1,0 +1,25 @@
+metric,metric_label,model_display,comparison,n_condition_pairs,median_raw_difference,median_collapse_difference,n_high_more_collapse,n_high_less_collapse,sign_test_p
+gzip,Gzip compression ratio,GPT-5,n20_minus_n10,6,-0.0013515773983577015,0.0013515773983577015,3,3,1.0
+gzip,Gzip compression ratio,GPT-5,n30_minus_n10,6,-0.020824352294852102,0.020824352294852102,5,1,0.21875
+gzip,Gzip compression ratio,Gemini Flash Lite,n20_minus_n10,6,0.011477734754688499,-0.011477734754688499,3,3,1.0
+gzip,Gzip compression ratio,Gemini Flash Lite,n30_minus_n10,6,-0.03374127538778315,0.03374127538778315,5,1,0.21875
+distinct5,Distinct-5,GPT-5,n20_minus_n10,6,0.0307167345546545,-0.0307167345546545,3,3,1.0
+distinct5,Distinct-5,GPT-5,n30_minus_n10,6,-0.0386013586570884,0.0386013586570884,4,2,0.6875
+distinct5,Distinct-5,Gemini Flash Lite,n20_minus_n10,6,-0.018925924612855447,0.018925924612855447,3,3,1.0
+distinct5,Distinct-5,Gemini Flash Lite,n30_minus_n10,6,-0.09955585467959038,0.09955585467959038,4,2,0.6875
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,n20_minus_n10,6,-0.04100870737521899,0.04100870737521899,4,2,0.6875
+distinct5_cumulative,Cumulative Distinct-5,GPT-5,n30_minus_n10,6,-0.033558044012981646,0.033558044012981646,5,1,0.21875
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,n20_minus_n10,6,-0.011467970667448252,0.011467970667448252,3,3,1.0
+distinct5_cumulative,Cumulative Distinct-5,Gemini Flash Lite,n30_minus_n10,6,-0.02868747342939615,0.02868747342939615,4,2,0.6875
+vendi,Vendi semantic diversity,GPT-5,n20_minus_n10,6,0.17126254206918468,-0.17126254206918468,2,4,0.6875
+vendi,Vendi semantic diversity,GPT-5,n30_minus_n10,6,0.11460127267160125,-0.11460127267160125,2,4,0.6875
+vendi,Vendi semantic diversity,Gemini Flash Lite,n20_minus_n10,6,-0.019223950495798725,0.019223950495798725,3,3,1.0
+vendi,Vendi semantic diversity,Gemini Flash Lite,n30_minus_n10,6,-0.614881233664756,0.614881233664756,5,1,0.21875
+llm_collapse,Blinded LLM collapse index,GPT-5,n20_minus_n10,6,0.04557508864450144,0.04557508864450144,3,3,1.0
+llm_collapse,Blinded LLM collapse index,GPT-5,n30_minus_n10,6,-0.010295292984095858,-0.010295292984095858,3,3,1.0
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,n20_minus_n10,6,-0.1852073058928289,-0.1852073058928289,1,5,0.21875
+llm_collapse,Blinded LLM collapse index,Gemini Flash Lite,n30_minus_n10,6,0.135793190705648,0.135793190705648,4,2,0.6875
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,n20_minus_n10,6,-0.025063479226803867,-0.025063479226803867,1,5,0.21875
+hhi_norm,Normalized HHI/Simpson concentration,GPT-5,n30_minus_n10,6,-0.09111205254049487,-0.09111205254049487,2,4,0.6875
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,n20_minus_n10,6,0.055572561836987625,0.055572561836987625,3,3,1.0
+hhi_norm,Normalized HHI/Simpson concentration,Gemini Flash Lite,n30_minus_n10,6,0.03324833207327964,0.03324833207327964,4,2,0.6875

@@ -1,0 +1,43 @@
+metric,metric_label,condition,condition_label,baseline_gpt5_n10_collapse_score,obsession_gpt5_median_collapse_score,obsession_minus_baseline,n_obsession_gpt5_runs,gemini_obsession_single_case_collapse_score
+gzip,Gzip compression ratio,mag0,Empty feed,0.0459987569534276,-0.0582756638873941,-0.1042744208408217,1,
+gzip,Gzip compression ratio,mag1,1 conspiracy seed,0.0564319603900956,-0.0289839809616098,-0.0854159413517054,1,
+gzip,Gzip compression ratio,mag5,5 conspiracy seeds,0.0559272276023132,-0.052267428254823,-0.1081946558571362,1,
+gzip,Gzip compression ratio,mag25,25 conspiracy seeds,-0.0046075426187012,-0.080240808945929,-0.0756332663272278,3,
+gzip,Gzip compression ratio,dom-agi,25 AGI seeds,0.0740552595193178,-0.0872321708168026,-0.1612874303361204,1,
+gzip,Gzip compression ratio,dom-tech,25 tech seeds,0.1071603955957606,-0.0724968430787553,-0.17965723867451588,1,
+gzip,Gzip compression ratio,mag25,25 conspiracy seeds,,,,0,-0.1437256178179793
+distinct5,Distinct-5,mag0,Empty feed,0.0310425856550166,0.0171269120632371,-0.0139156735917795,1,
+distinct5,Distinct-5,mag1,1 conspiracy seed,0.1043482248719681,0.0339175558239446,-0.0704306690480235,1,
+distinct5,Distinct-5,mag5,5 conspiracy seeds,0.181088235825507,0.0043771857933628,-0.1767110500321442,1,
+distinct5,Distinct-5,mag25,25 conspiracy seeds,0.0934381762395043,-0.0424663831743478,-0.1359045594138521,3,
+distinct5,Distinct-5,dom-agi,25 AGI seeds,0.2487022632485015,-0.0076322322029591,-0.2563344954514606,1,
+distinct5,Distinct-5,dom-tech,25 tech seeds,0.3082202196539637,-0.0141365531047183,-0.32235677275868196,1,
+distinct5,Distinct-5,mag25,25 conspiracy seeds,,,,0,-0.0066852367688022
+distinct5_cumulative,Cumulative Distinct-5,mag0,Empty feed,0.0180757400066517,0.0186232351721444,0.0005474951654927014,1,
+distinct5_cumulative,Cumulative Distinct-5,mag1,1 conspiracy seed,0.0675457526687495,0.0217768394649344,-0.0457689132038151,1,
+distinct5_cumulative,Cumulative Distinct-5,mag5,5 conspiracy seeds,0.1301403007651574,0.0137427448760732,-0.1163975558890842,1,
+distinct5_cumulative,Cumulative Distinct-5,mag25,25 conspiracy seeds,0.1219474745882003,0.0099060657750961,-0.11204140881310419,3,
+distinct5_cumulative,Cumulative Distinct-5,dom-agi,25 AGI seeds,0.1624935571078993,0.0092487212597034,-0.1532448358481959,1,
+distinct5_cumulative,Cumulative Distinct-5,dom-tech,25 tech seeds,0.2142962020012514,-0.0048637099656237,-0.21915991196687512,1,
+distinct5_cumulative,Cumulative Distinct-5,mag25,25 conspiracy seeds,,,,0,0.0193578884062187
+vendi,Vendi semantic diversity,mag0,Empty feed,1.2305942158758043,0.2152192409822051,-1.0153749748935992,1,
+vendi,Vendi semantic diversity,mag1,1 conspiracy seed,0.0492273741807895,0.7733712184000447,0.7241438442192553,1,
+vendi,Vendi semantic diversity,mag5,5 conspiracy seeds,0.6729348602423801,0.1782933750811697,-0.4946414851612104,1,
+vendi,Vendi semantic diversity,mag25,25 conspiracy seeds,0.1443452433423306,0.2262951309579266,0.08194988761559602,3,
+vendi,Vendi semantic diversity,dom-agi,25 AGI seeds,0.722013047516695,-0.0172586484900638,-0.7392716960067588,1,
+vendi,Vendi semantic diversity,dom-tech,25 tech seeds,1.099533009230489,-0.0827311713979828,-1.1822641806284717,1,
+vendi,Vendi semantic diversity,mag25,25 conspiracy seeds,,,,0,0.1121056372406055
+llm_collapse,Blinded LLM collapse index,mag0,Empty feed,0.2445318904738487,0.0762557077625585,-0.16827618271129022,1,
+llm_collapse,Blinded LLM collapse index,mag1,1 conspiracy seed,0.0732647987636889,0.1588392063962098,0.0855744076325209,1,
+llm_collapse,Blinded LLM collapse index,mag5,5 conspiracy seeds,0.3882222222222227,0.2885808352105359,-0.09964138701168679,1,
+llm_collapse,Blinded LLM collapse index,mag25,25 conspiracy seeds,0.2077519379844963,0.1419413919413914,-0.06581054604310488,3,
+llm_collapse,Blinded LLM collapse index,dom-agi,25 AGI seeds,0.246601777401608,0.3746945898778362,0.12809281247622822,1,
+llm_collapse,Blinded LLM collapse index,dom-tech,25 tech seeds,0.3841651031894937,0.1450742240215934,-0.2390908791679003,1,
+llm_collapse,Blinded LLM collapse index,mag25,25 conspiracy seeds,,,,0,0.3629629629629627
+hhi_norm,Normalized HHI/Simpson concentration,mag0,Empty feed,0.058550810611041525,-0.0037340688825794797,-0.062284879493621007,1,
+hhi_norm,Normalized HHI/Simpson concentration,mag1,1 conspiracy seed,-0.06492483310809276,-0.049283632982745865,0.015641200125346894,1,
+hhi_norm,Normalized HHI/Simpson concentration,mag5,5 conspiracy seeds,0.14399211239145535,-0.040037540805534164,-0.1840296531969895,1,
+hhi_norm,Normalized HHI/Simpson concentration,mag25,25 conspiracy seeds,0.08400561935962968,0.06747075084697086,-0.016534868512658812,3,
+hhi_norm,Normalized HHI/Simpson concentration,dom-agi,25 AGI seeds,0.11906283393418948,0.04357044623467406,-0.07549238769951543,1,
+hhi_norm,Normalized HHI/Simpson concentration,dom-tech,25 tech seeds,0.17628660878979388,0.10771020507149243,-0.06857640371830145,1,
+hhi_norm,Normalized HHI/Simpson concentration,mag25,25 conspiracy seeds,,,,0,0.4796766788607905

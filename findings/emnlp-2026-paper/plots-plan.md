@@ -1,92 +1,101 @@
-# Reanalysis Plot Plan — 2026-05-05
+# Reanalysis plot plan, 2026-05-06
 
-Status: **proposal only; do not implement until approved**.
+Status: draft for approval. Do not generate new plots until the exact step is approved.
 
-Dataset source: `https://huggingface.co/datasets/Ayushnangia/moltbook-ayush-reanalysis-20260505`
+This replaces the 2026-05-05 plotting approach. The 2026-05-05 plots should be treated as discarded draft outputs unless a specific file is later rescued.
 
-Local data path: `data/reanalysis-2026-05-05/`
+## What went wrong in the last pass
 
-Download/validation note: the dataset was re-downloaded with `hf download --repo-type dataset --local-dir data/reanalysis-2026-05-05`. Against `FILE_MANIFEST.csv`, all 977 manifest entries are present. All analysis/data files match checksum. The only remaining mismatch is `.gitattributes` size, which is not analysis data.
+The previous plots tried to show too much at once.
 
-## Goal
+Problems to avoid:
 
-Create statistically valid, paper-presentable plots for the 2026-05-05 reanalysis without pooling incompatible experimental units.
+1. Large model x condition x scale heatmaps were hard to read.
+2. Scale was mixed into charts that were not only about scale.
+3. Secondary cohorts were plotted before the canonical story was clear.
+4. Some plots compared cohorts that do not share the same design.
+5. Cumulative metrics were visually mixed with fixed 15-minute trajectories.
+6. The plan allowed too many figures to be generated before review.
 
-The earlier family-level bar plots are not acceptable for the main paper because they collapse heterogeneous run sets into a single `n=48`, `n=18`, `n=9`, or `n=6` estimate. Those cohorts are not directly comparable: the canonical single-model cohort contains different models, conditions, and scales; the base-model, mixed-roster, and obsession cohorts have different designs.
+The new rule is simple:
 
-The revised plan keeps the experimental design visible:
+> One plot answers one question. One step generates one small family of plots. Each step needs approval before the next step.
 
-- one plotted cell/point/line should correspond to one run or to a matched within-design comparison;
-- canonical single-model runs are primary evidence;
-- base-model-as-tool, mixed-roster, and obsession-prompted runs are secondary probes;
-- scale claims use only GPT-5 and Gemini Flash Lite, because only those two models have `n10`, `n20`, and `n30`;
-- intervention/variant claims are matched by condition where possible;
-- no post-level significance tests are used as paper evidence.
+## Output locations for the new pass
 
-## Output locations
-
-Plots will be written under:
+Scripts:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/
+scripts/reanalysis-2026-05-06/
 ```
 
-Analysis and plotting scripts will be written under:
+Plots:
 
 ```text
-scripts/reanalysis-2026-05-05/
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/
 ```
 
-Previously written scripts used as inputs or references will be documented in:
+Readable findings draft, only after approved plots exist:
 
 ```text
-scripts/reanalysis-2026-05-05/external-scripts.md
+findings/emnlp-2026-paper/findings-reanalysis-2026-05-06.md
 ```
 
-## Data files to use
+## Data source
 
-Primary run-level and time-bin files from the bundle:
+Use the clean 2026-05-05 reanalysis bundle as input:
+
+```text
+data/reanalysis-2026-05-05/
+```
+
+Run-level input files:
 
 ```text
 data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_run_deltas.csv
-data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_timebin_metrics.csv
 data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_deltas.csv
-data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_timebin_metrics.csv
-data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/topic_convergence/topic_run_deltas.csv
-data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/topic_convergence/topic_run_timebin_metrics.csv
 data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_deltas.csv
-data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_timebin_metrics.csv
-data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/data_manifest.csv
 ```
 
-LLM judge results are available, but the default plan is to keep them as secondary/appendix evidence unless explicitly approved for main-text use.
+Time-bin input files:
 
-## Primary metrics
+```text
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/deterministic_timebin_metrics.csv
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/embedding_run_timebin_metrics.csv
+data/reanalysis-2026-05-05/analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge_run_timebin_metrics.csv
+```
 
-| Phenomenon | Primary metric | Collapse direction |
-|---|---|---:|
-| Compression / redundancy | `delta_compression_gzip` | negative |
-| Lexical diversity | `delta_distinct_5_sub_mean` | negative |
-| Semantic diversity | `delta_vendi_score` | negative |
-| Embedding-topic concentration | `delta_topic_entropy_norm` | negative |
+Topic robustness input, if approved later:
 
-Secondary metrics available for sensitivity/appendix:
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/topic_robustness/topic_robustness_run_deltas.csv
+```
 
-- `delta_distinct_5`
-- `delta_distinct_5_cumulative`
-- `delta_simpson_5gram_effective`
-- `delta_mean_pairwise_cosine`
-- `delta_semantic_radius`
-- `delta_dominant_share`
-- `delta_effective_topics`
-- `delta_topic_hhi`
-- `delta_collapse_index` from blinded LLM judge
+## Metrics for the first approved sequence
+
+Start with fixed 15-minute trajectories only.
+
+Primary trajectory metrics:
+
+| Metric | Source file | Column | Collapse direction |
+|---|---|---|---:|
+| Gzip compression ratio | deterministic time bins | `compression_gzip` | down |
+| Distinct-5 | deterministic time bins | `distinct_5` | down |
+| Vendi Score | embedding time bins | `vendi_score` | down |
+| Blinded LLM collapse index | LLM judge time bins | `collapse_index` | up |
+
+Important rules:
+
+1. No cumulative Distinct-5 trajectory plots in the first sequence.
+2. No subsampled Distinct-5 in main plots.
+3. HHI is a real metric, but it is not part of the first trajectory step because the robust HHI output is a late-minus-early run delta, not a clean fixed 15-minute trajectory.
+4. HHI comes later as a separate approved step.
 
 ## Paper-facing labels
 
-Proposed condition labels:
+Conditions:
 
-| Internal label | Paper-facing label |
+| Internal label | Paper label |
 |---|---|
 | `mag0` | Empty feed |
 | `mag1` | 1 conspiracy seed |
@@ -95,313 +104,604 @@ Proposed condition labels:
 | `dom-agi` | 25 AGI seeds |
 | `dom-tech` | 25 tech seeds |
 
-Proposed cohort labels:
+Models:
 
-| Internal label | Paper-facing label |
+| Internal label | Paper label |
 |---|---|
-| `single_model_final` | Homogeneous single-model agents |
-| `base_model_as_tool` | Base-model-as-tool agents |
-| `mixed_model_roster` | Mixed-model roster |
-| `obsession_prompting` | Obsession-prompted agents |
+| `GPT-5` | GPT-5 |
+| `Gemini Flash Lite` | Gemini Flash Lite |
+| `Kimi K2.5` | Kimi K2.5 |
+| `GLM-5` | GLM-5 |
 
-## Plot set
+Scales:
 
-### 1. Canonical single-model design matrices
+| Agents | Paper label |
+|---:|---|
+| 10 | 10 agents |
+| 20 | 20 agents |
+| 30 | 30 agents |
 
-Purpose: show the canonical 48 runs without pooling across models, seed conditions, or scales.
+## Global figure rules
+
+These rules apply to every step.
+
+1. No all-in-one heatmaps unless explicitly approved later.
+2. No chart should mix canonical, mixed roster, base-model, and obsession cohorts.
+3. No scale comparison unless the plot is explicitly a scale plot.
+4. No model comparison unless the plot is explicitly a matched model comparison.
+5. No post-level significance tests.
+6. No internal labels in figure titles or axes.
+7. Use plain language titles framed as questions.
+8. Save both `.png` and `.pdf`.
+9. Write a small `README.md` in each plot folder explaining how to read that step.
+10. Do not write final findings prose until the plots in that step are approved.
+
+## Step 0. Validate inputs and produce a run inventory
+
+Purpose:
+
+Confirm what is available before plotting anything.
+
+Script:
+
+```text
+scripts/reanalysis-2026-05-06/step00_validate_inventory.py
+```
+
+Outputs:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step00_inventory/run_inventory.csv
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step00_inventory/metric_availability.csv
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step00_inventory/README.md
+```
+
+What to check:
+
+1. Canonical single-model runs: 48.
+2. GPT-5 and Gemini Flash Lite have 10, 20, and 30 agent runs.
+3. Kimi K2.5 and GLM-5 only have 10 agent canonical runs.
+4. Obsession prompting uses normalized quartiles, not fixed 15-minute bins.
+5. Time-bin metrics exist for gzip, Distinct-5, Vendi, and LLM collapse index.
+
+Approval gate:
+
+Review the inventory table. If the table is right, approve Step 1.
+
+## Step 1. Main canonical trajectories at the matched 10-agent scale
+
+Question:
+
+> Do agent-only feeds narrow over time when all models are compared at the same group size?
+
+Why this comes first:
+
+All four canonical models have 10-agent runs. This avoids scale mixing and gives the cleanest first view.
+
+Cohort:
+
+```text
+internal_family_label = single_model_final
+n_agents = 10
+scheme = fixed_15m
+```
+
+Metrics:
+
+```text
+gzip
+fixed-window Distinct-5
+blinded LLM collapse index
+```
+
+Vendi is skipped for now in this step.
+
+Plot design:
+
+1. One figure per metric.
+2. Four panels inside each figure, one panel per model.
+3. X-axis: 15-minute time bin.
+4. Y-axis: raw metric value, not delta.
+5. Lines: six seed conditions.
+6. Each model panel gets its own y-axis scale.
+7. No scale in this step.
+8. No cumulative metric in this step.
+9. No HHI in this step.
+
+Planned script:
+
+```text
+scripts/reanalysis-2026-05-06/step01_canonical_n10_trajectories.py
+```
+
+Planned output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step01_canonical_n10_trajectories/
+```
+
+Planned files:
+
+```text
+canonical_n10_gzip_trajectory_by_model.png
+canonical_n10_distinct5_trajectory_by_model.png
+canonical_n10_llm_collapse_trajectory_by_model.png
+```
+
+How to read the plots:
+
+- Gzip down means text became easier to compress and more redundant.
+- Distinct-5 down means fewer unique 5-grams.
+- LLM collapse up means more judged repetition, rigidity, conformity, and lower novelty.
+
+Approval gate:
+
+Review these 3 combined plots. If they are readable, approve Step 2. If not, adjust only Step 1 before moving on.
+
+## Step 2. Cumulative canonical trajectories at the matched 10-agent scale
+
+Question:
+
+> Does the total feed seen so far become narrower as the run proceeds?
+
+Why this comes now:
+
+Step 1 showed the metric value inside each separate 15-minute window. Step 2 asks the cumulative version of the same question. The x-axis stays the same, but each point uses all non-seed posts up to that time.
+
+Cohort:
+
+```text
+internal_family_label = single_model_final
+n_agents = 10
+scheme = fixed_15m
+```
+
+Metrics:
+
+```text
+cumulative gzip
+cumulative fixed-window Distinct-5 using distinct_5_cumulative
+cumulative blinded LLM collapse index
+```
+
+Vendi is skipped for now in this step.
+
+Cumulative definition:
+
+| X-axis point | Posts included |
+|---|---|
+| 0-15 | posts from 0 to 15 minutes |
+| 15-30 | posts from 0 to 30 minutes |
+| 30-45 | posts from 0 to 45 minutes |
+| 45-60 | posts from 0 to 60 minutes |
+
+Metric computation:
+
+1. Gzip cumulative is recomputed from all post text seen so far.
+2. Distinct-5 cumulative uses the existing `distinct_5_cumulative` value.
+3. LLM collapse cumulative is the weighted cumulative mean of bin scores, using `n_judged`.
+
+Plot design:
+
+1. One figure per metric.
+2. Four panels inside each figure, one panel per model.
+3. X-axis: cumulative time cutoff.
+4. Y-axis: cumulative metric value.
+5. Lines: six seed conditions.
+6. Each model panel gets its own y-axis scale.
+7. No scale in this step.
+8. No HHI in this step.
+
+Planned script:
+
+```text
+scripts/reanalysis-2026-05-06/step02_canonical_n10_trajectories_cumulative.py
+```
+
+Planned output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step02_canonical_n10_trajectories_cumulative/
+```
+
+Planned files:
+
+```text
+canonical_n10_gzip_cumulative_trajectory_by_model.png
+canonical_n10_distinct5_cumulative_trajectory_by_model.png
+canonical_n10_llm_collapse_cumulative_trajectory_by_model.png
+```
+
+Approval gate:
+
+Review these 3 cumulative plots. If they are readable, approve the scale step.
+
+## Step 3. Scale trajectories for GPT-5 and Gemini Flash Lite only
+
+Question:
+
+> Does adding more agents preserve diversity, or does the feed still narrow?
+
+Why this is separate:
+
+Scale should not be mixed into the main canonical trajectory plots. Only GPT-5 and Gemini Flash Lite have 10, 20, and 30 agent canonical runs.
+
+Cohort:
+
+```text
+internal_family_label = single_model_final
+model_display in {GPT-5, Gemini Flash Lite}
+n_agents in {10, 20, 30}
+scheme = fixed_15m
+```
+
+Plot design:
+
+1. One figure per model per metric.
+2. Six panels in the figure, one panel per seed condition.
+3. X-axis: 15-minute time bin.
+4. Y-axis: raw metric value.
+5. Lines: 10 agents, 20 agents, 30 agents.
+6. Do not put GPT-5 and Gemini in the same chart.
+7. Do not include Kimi K2.5 or GLM-5.
+
+Planned script:
+
+```text
+scripts/reanalysis-2026-05-06/step03_scale_trajectories.py
+```
+
+Planned output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step03_scale_trajectories/
+```
+
+Planned files:
+
+```text
+gpt5_scale_gzip_trajectory.png
+gpt5_scale_distinct5_trajectory.png
+gpt5_scale_vendi_trajectory.png
+gpt5_scale_llm_collapse_trajectory.png
+
+gemini_flash_lite_scale_gzip_trajectory.png
+gemini_flash_lite_scale_distinct5_trajectory.png
+gemini_flash_lite_scale_vendi_trajectory.png
+gemini_flash_lite_scale_llm_collapse_trajectory.png
+```
+
+Approval gate:
+
+Review the eight scale figures. If they are readable, approve the next step.
+
+## Step 3. Run-level late-minus-early tables for the approved trajectory plots
+
+Question:
+
+> Are the trajectory impressions supported by run-level deltas?
+
+Purpose:
+
+This step produces tables, not main plots. It supports the captions and findings text.
+
+Cohorts:
+
+1. Canonical 10-agent runs for all four models.
+2. GPT-5 and Gemini Flash Lite scale runs.
+
+Script:
+
+```text
+scripts/reanalysis-2026-05-06/step03_run_delta_tables.py
+```
+
+Output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step03_run_delta_tables/
+```
+
+Planned files:
+
+```text
+canonical_n10_run_deltas.csv
+canonical_n10_model_summary.csv
+scale_run_deltas_gpt5_gemini.csv
+scale_model_summary.csv
+README.md
+```
+
+Statistics:
+
+1. Median late-minus-early delta.
+2. Sign count in the collapse direction.
+3. Exact sign-test p-value only as a small-n descriptive statistic.
+4. No post-level tests.
+
+Approval gate:
+
+Review whether the tables match the approved plots. If yes, approve Step 4.
+
+## Step 4. Seed condition plots, matched within model and scale
+
+Question:
+
+> Do seeds change the direction or strength of collapse compared with the empty-feed control?
+
+Why this is after Step 1 and Step 2:
+
+The empty-feed comparison only makes sense after the raw trajectories are approved.
+
+Plot design:
+
+1. One figure per model, scale, and metric.
+2. X-axis: seed condition.
+3. Y-axis: late-minus-early collapse score.
+4. Empty feed appears as the first condition, not as a hidden baseline.
+5. No model pooling.
+6. No scale pooling.
+7. No gray swarm of many unrelated blocks.
+
+Collapse score direction:
+
+- Gzip: multiply delta by `-1` so higher means more collapse.
+- Distinct-5: multiply delta by `-1`.
+- Vendi: multiply delta by `-1`.
+- LLM collapse index: keep delta as is.
+
+Planned script:
+
+```text
+scripts/reanalysis-2026-05-06/step04_condition_lollipops.py
+```
+
+Output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step04_condition_lollipops/
+```
+
+Initial planned files:
+
+Only generate the 10-agent canonical set first:
+
+```text
+gpt5_n10_condition_gzip.png
+gpt5_n10_condition_distinct5.png
+gpt5_n10_condition_vendi.png
+gpt5_n10_condition_llm_collapse.png
+
+gemini_flash_lite_n10_condition_gzip.png
+gemini_flash_lite_n10_condition_distinct5.png
+gemini_flash_lite_n10_condition_vendi.png
+gemini_flash_lite_n10_condition_llm_collapse.png
+
+kimi_k25_n10_condition_gzip.png
+kimi_k25_n10_condition_distinct5.png
+kimi_k25_n10_condition_vendi.png
+kimi_k25_n10_condition_llm_collapse.png
+
+glm5_n10_condition_gzip.png
+glm5_n10_condition_distinct5.png
+glm5_n10_condition_vendi.png
+glm5_n10_condition_llm_collapse.png
+```
+
+Do not generate 20-agent or 30-agent condition plots until the 10-agent condition plots are approved.
+
+Approval gate:
+
+Review the 10-agent condition plots. Decide whether to generate 20-agent and 30-agent condition plots for GPT-5 and Gemini Flash Lite.
+
+## Step 5. HHI embedding-cluster concentration
+
+Question:
+
+> Do later posts concentrate into fewer embedding clusters?
+
+Why this is separate:
+
+HHI is a proper metric, but the robust version is not a simple raw time trajectory. It is a late-minus-early concentration delta averaged across k and random seed settings. It should not be mixed with the Step 1 time-series plots.
+
+Metric:
+
+```text
+C = (sum_j p_j^2 - 1/k) / (1 - 1/k)
+```
+
+where `p_j` is the share of posts in embedding cluster `j`.
+
+Input:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/topic_robustness/topic_robustness_run_deltas.csv
+```
+
+Plot design:
+
+1. One figure per model and scale.
+2. X-axis: seed condition.
+3. Y-axis: robust late-minus-early normalized HHI delta.
+4. One dot per condition.
+5. Horizontal zero line.
+6. No heatmap in the first HHI pass.
+7. No model pooling.
+8. No scale pooling.
+
+Planned script:
+
+```text
+scripts/reanalysis-2026-05-06/step05_hhi_condition_plots.py
+```
+
+Output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step05_hhi_condition_plots/
+```
+
+Initial planned files:
+
+```text
+gpt5_n10_hhi_concentration.png
+gemini_flash_lite_n10_hhi_concentration.png
+kimi_k25_n10_hhi_concentration.png
+glm5_n10_hhi_concentration.png
+```
+
+If these are approved, then generate scale-specific HHI plots for GPT-5 and Gemini Flash Lite:
+
+```text
+gpt5_n20_hhi_concentration.png
+gpt5_n30_hhi_concentration.png
+gemini_flash_lite_n20_hhi_concentration.png
+gemini_flash_lite_n30_hhi_concentration.png
+```
+
+Approval gate:
+
+Review whether HHI plots are readable and worth including. If yes, approve Step 6.
+
+## Step 6. Secondary cohorts, only after canonical plots are approved
+
+Secondary cohorts should not appear in the main story until the canonical story is visually stable.
+
+### Step 6A. Base-model-as-tool runs
+
+Question:
+
+> Do base-model-as-tool agents show the same kind of narrowing?
 
 Design:
 
-- facet/panel = model;
-- rows = seed conditions;
-- columns = agent scale;
-- one cell = one run;
-- color = last-bin minus first-bin delta;
-- zero-centered diverging color scale;
-- fixed 15-minute deltas.
+1. Same plotting grammar as Step 1.
+2. One model per figure.
+3. 10-agent scale only.
+4. Fixed 15-minute bins only.
 
-Planned outputs:
+Script:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_delta_matrix_gzip_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_delta_matrix_distinct5_subsampled_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_delta_matrix_vendi_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_delta_matrix_topic_entropy_fixed15m.png
+scripts/reanalysis-2026-05-06/step06a_base_model_trajectories.py
 ```
 
-Proposed figure wording:
+Output folder:
 
-> Each cell is one canonical run. Negative gzip, Distinct-5, Vendi, and topic-entropy deltas indicate entropy collapse. This view preserves the experimental design rather than averaging across models, seed conditions, or scales.
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step06a_base_model_trajectories/
+```
 
-This is the main paper evidence because it shows how widespread the phenomenon is while keeping run identity visible.
+Approval gate:
 
-### 2. Canonical per-run temporal trajectories
+Review before any mixed-roster or obsession plots are generated.
 
-Purpose: show that run deltas are not hiding unusual trajectories.
+### Step 6B. Mixed-model roster
+
+Question:
+
+> Does a mixed roster avoid narrowing, or does it narrow in a different way?
 
 Design:
 
-- panel = model × scale;
-- x = time bin;
-- y = metric value;
-- line = seed condition;
-- no averaging across runs;
-- fixed 15-minute bins.
+1. Plot mixed roster trajectories by condition.
+2. Do not compare it to all canonical runs in the same chart.
+3. If a comparison is needed, compare only to the matched 10-agent canonical runs in a separate table first.
+4. No star charts and no gray point clouds.
 
-Planned outputs:
+Script:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_trajectories_gzip_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_trajectories_distinct5_subsampled_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_trajectories_vendi_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/canonical/canonical_trajectories_topic_entropy_fixed15m.png
+scripts/reanalysis-2026-05-06/step06b_mixed_roster_trajectories.py
 ```
 
-Proposed figure wording:
+Output folder:
 
-> Lines are individual condition runs, not cohort averages. The trajectory plots show whether collapse appears gradually, abruptly, or non-monotonically inside each experimental cell.
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step06b_mixed_roster_trajectories/
+```
 
-### 3. Scale effect, only where scale is factorial
+Approval gate:
 
-Purpose: test whether larger groups protect against collapse, using only models that actually have all three scales.
+Review the mixed-roster-only trajectories first. Approve any comparison plot separately.
 
-Valid models:
+### Step 6C. Obsession prompting
 
-- GPT-5: `n10`, `n20`, `n30` × 6 conditions;
-- Gemini Flash Lite: `n10`, `n20`, `n30` × 6 conditions.
+Question:
 
-Do not use Kimi K2.5 or GLM-5 for scale claims because they only have `n10`.
+> Does obsession prompting change the collapse trajectory?
+
+Important design constraint:
+
+Obsession prompting uses normalized quartile bins in the current reanalysis. It should not be mixed visually with fixed 15-minute canonical trajectories.
 
 Design:
 
-- one panel per model;
-- x = `n10`, `n20`, `n30`;
-- y = run delta;
-- line = same seed condition across scales;
-- fixed 15-minute deltas.
+1. Use quartile x-axis: Q1, Q2, Q3, Q4.
+2. One model per figure.
+3. One metric per figure.
+4. If comparing to GPT-5 n10 baseline, show it as a separate approved comparison after the obsession-only plot is reviewed.
 
-Planned outputs:
-
-```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/scale/scale_paired_gpt5_gemini_gzip_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/scale/scale_paired_gpt5_gemini_distinct5_subsampled_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/scale/scale_paired_gpt5_gemini_vendi_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/scale/scale_paired_gpt5_gemini_topic_entropy_fixed15m.png
-```
-
-Statistical treatment:
-
-- condition is the block;
-- compare `n30 - n10` within each condition;
-- report median paired difference and exact sign test over 6 condition-pairs per model;
-- do not make a global scale claim across all four models.
-
-Proposed figure wording:
-
-> Scale is analyzed only for GPT-5 and Gemini Flash Lite, the two models with all three group sizes. Lines connect the same seed condition across scales, so the figure tests whether increasing group size protects that condition from collapse.
-
-### 4. Seed-condition effect relative to empty feed
-
-Purpose: separate collapse caused by seeds from collapse that appears even with an empty feed.
-
-Matched comparison:
-
-- block = model × scale;
-- compare each seeded condition against `mag0` within the same model × scale;
-- valid blocks only.
-
-Design:
-
-- x = seed condition;
-- y = `delta(condition) - delta(empty feed)`;
-- points = model × scale blocks;
-- horizontal zero line;
-- fixed 15-minute deltas.
-
-Planned outputs:
+Script:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/conditions/condition_vs_empty_gzip_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/conditions/condition_vs_empty_distinct5_subsampled_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/conditions/condition_vs_empty_vendi_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/conditions/condition_vs_empty_topic_entropy_fixed15m.png
+scripts/reanalysis-2026-05-06/step06c_obsession_quartile_trajectories.py
 ```
 
-Proposed figure wording:
-
-> Each point compares a seed condition to the empty-feed control within the same model and scale. This plot asks whether seeds strengthen or weaken collapse relative to that run family's own empty-feed baseline.
-
-### 5. Matched n10 model/roster comparison
-
-Purpose: compare models and rosters only where the experimental design is shared.
-
-Included rows:
-
-- GPT-5;
-- Gemini Flash Lite;
-- Kimi K2.5;
-- GLM-5;
-- OLMo 3 32B Base;
-- OLMo 3 32B Instruct;
-- Qwen 3.5 35B A3B Base;
-- Mixed roster Qwen 3.5 27B.
-
-Columns:
-
-- Empty feed;
-- 1 conspiracy seed;
-- 5 conspiracy seeds;
-- 25 conspiracy seeds;
-- 25 AGI seeds;
-- 25 tech seeds.
-
-Design:
-
-- one cell = one `n10` run;
-- color = delta;
-- fixed 15-minute deltas;
-- descriptive comparison only.
-
-Planned outputs:
+Output folder:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/n10/n10_model_condition_matrix_gzip_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/n10/n10_model_condition_matrix_distinct5_subsampled_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/n10/n10_model_condition_matrix_vendi_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/n10/n10_model_condition_matrix_topic_entropy_fixed15m.png
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-06/step06c_obsession_quartile_trajectories/
 ```
 
-Proposed figure wording:
+Approval gate:
 
-> This matched n10 matrix compares models and rosters only in the six seed conditions they all share. It is descriptive, not a pooled estimate across incompatible cohorts.
+Review obsession-only plots first. Approve any baseline comparison separately.
 
-### 6. Mixed-roster comparison against homogeneous n10 baselines
+## Step 7. Findings draft
 
-Purpose: show the mixed-model roster without pretending its six runs are directly comparable to the full 48-run canonical inventory.
+Only write the findings file after the approved plots exist.
 
-Design:
-
-- x = condition;
-- y = metric delta;
-- points = homogeneous n10 single-model runs plus mixed roster;
-- mixed roster highlighted;
-- fixed 15-minute deltas;
-- no averaging across all conditions.
-
-Planned outputs:
+Target file:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/mixed/mixed_vs_homogeneous_n10_gzip_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/mixed/mixed_vs_homogeneous_n10_distinct5_subsampled_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/mixed/mixed_vs_homogeneous_n10_vendi_fixed15m.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/mixed/mixed_vs_homogeneous_n10_topic_entropy_fixed15m.png
+findings/emnlp-2026-paper/findings-reanalysis-2026-05-06.md
 ```
 
-Proposed figure wording:
+Proposed structure:
 
-> The mixed roster is compared condition-by-condition against homogeneous n10 runs. This avoids treating six mixed runs as directly comparable to the full 48-run canonical inventory.
+1. What happens inside an agent-only feed?
+2. Does the same narrowing appear across models?
+3. Does more scale protect diversity?
+4. Do seeds steer the collapse, or cause it?
+5. Do cluster concentrations support the same story?
+6. What does this imply for fully agentic social media?
 
-### 7. Obsession intervention matched to GPT-5 n10 baseline
+Writing rules:
 
-Purpose: evaluate obsession prompting as an intervention while respecting its unbalanced design.
+1. No em dashes.
+2. No internal labels unless they are in code blocks or tables.
+3. Do not overclaim topic convergence from HHI.
+4. Keep the main claim simple: agent-feed feedback can narrow discourse over time.
+5. Tie every claim to an approved figure or table.
 
-Use normalized quartile deltas because obsession outputs are available only for normalized quartiles in the current reanalysis.
+## Step order summary
 
-Comparison:
+| Step | Output type | Requires approval before next step? |
+|---|---|---:|
+| Step 0 | Inventory tables | yes |
+| Step 1 | Canonical 10-agent trajectories | yes |
+| Step 2 | Scale trajectories for GPT-5 and Gemini | yes |
+| Step 3 | Run-level delta tables | yes |
+| Step 4 | Condition plots | yes |
+| Step 5 | HHI concentration plots | yes |
+| Step 6A | Base-model trajectories | yes |
+| Step 6B | Mixed-roster trajectories | yes |
+| Step 6C | Obsession quartile trajectories | yes |
+| Step 7 | Findings prose | final review |
 
-- GPT-5 obsession run vs GPT-5 canonical n10 in the same seed condition;
-- `mag25` has multiple obsession repeats: show individual dots, but use condition-level median for inference;
-- Gemini Flash Lite obsession `mag25` is shown as a separate single-case note, not pooled with GPT-5.
+## Immediate next action after this plan is approved
 
-Planned outputs:
+Only implement Step 0.
 
-```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/obsession/obsession_vs_gpt5_n10_gzip_quartile.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/obsession/obsession_vs_gpt5_n10_distinct5_subsampled_quartile.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/obsession/obsession_vs_gpt5_n10_vendi_quartile.png
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/obsession/obsession_vs_gpt5_n10_topic_entropy_quartile.png
-```
-
-Proposed figure wording:
-
-> Obsession prompting is evaluated as a matched intervention against GPT-5 n10 runs in the same seed condition. Individual repeats are shown, but condition-level summaries prevent mag25 from dominating the comparison.
-
-## Statistical tables
-
-Statistical tables should be written under:
-
-```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/
-```
-
-Planned outputs:
-
-```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/canonical_model_direction_tests.csv
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/scale_paired_tests_gpt5_gemini.csv
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/condition_vs_empty_matched_tests.csv
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/n10_model_condition_summary.csv
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/mixed_vs_homogeneous_matched_summary.csv
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-05/stats/obsession_matched_condition_summary.csv
-```
-
-Rules:
-
-- main unit of inference is the run;
-- use exact sign tests over runs or matched blocks;
-- report median deltas and sign counts;
-- use bootstrap CIs only where run-level `n` is meaningful;
-- do not use post-level significance tests;
-- do not report family-level pooled bars as main evidence.
-
-## Script plan
-
-Planned script layout:
-
-```text
-scripts/reanalysis-2026-05-05/
-  README.md
-  common.py
-  validate_reanalysis_bundle.py
-  build_canonical_design_plots.py
-  build_canonical_trajectory_plots.py
-  build_scale_paired_plots.py
-  build_condition_vs_empty_plots.py
-  build_n10_comparison_plots.py
-  build_mixed_roster_plots.py
-  build_obsession_matched_plots.py
-  build_stats_tables.py
-  run_all.sh
-  external-scripts.md
-```
-
-`external-scripts.md` should document the bundled scripts and provenance:
-
-```text
-data/reanalysis-2026-05-05/scripts/ayush-analysis-plan-execute.py
-data/reanalysis-2026-05-05/scripts/ayush-topic-convergence.py
-data/reanalysis-2026-05-05/scripts/ayush-blind-llm-judge.py
-data/reanalysis-2026-05-05/scripts/ayush-finalize-judge-results.py
-data/reanalysis-2026-05-05/scripts/ayush-final-report.py
-```
-
-Original worktree/branch provenance:
-
-```text
-worktree: /Users/agokrani/Documents/git/moltbook-obsession-frontier-mixed-and-archive
-branch: obsession-frontier-mixed-and-archive
-commit: bad88a8
-```
-
-## Findings narrative after plots
-
-The updated narrative should avoid a single pooled average over all runs. Proposed wording:
-
-> The main result is not a single pooled average over all runs. Instead, the canonical design matrix shows that entropy-collapse signatures recur across many individual model × condition × scale cells. The pattern is strongest and most consistent for GPT-5 and Gemini Flash Lite, visible for Kimi K2.5 and GLM-5 in lexical/compression metrics, and heterogeneous for embedding-topic metrics. Larger groups do not cleanly preserve diversity in the models where scale is factorial. Seed conditions modulate the collapse but do not fully explain it, because empty-feed controls also narrow. Secondary cohorts show that base-model tooling, mixed rosters, and obsession prompting change the collapse signature rather than clearly eliminating it.
-
-## Open questions before implementation
-
-1. Should `delta_distinct_5_sub_mean` be the primary lexical plot metric? Recommendation: yes, because it controls for bin-size differences.
-2. Should LLM-judge results stay appendix/secondary only? Recommendation: yes, unless explicitly approved for main text.
-3. Are the proposed paper-facing condition labels acceptable?
-4. Should implementation generate all candidate plots first, then select which enter `findings.md`, or generate only the core canonical plots first?
+Do not create Step 1 plots until the Step 0 inventory is reviewed and approved.
