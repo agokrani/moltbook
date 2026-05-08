@@ -1,0 +1,230 @@
+{
+  "included_agent_posts": 10163,
+  "included_runs": 24,
+  "ngram_n": 5,
+  "seed_posts_loaded": false,
+  "punctuation_retained": true,
+  "tokenizer": "nltk.tokenize.word_tokenize",
+  "ngram_function": "nltk.util.ngrams",
+  "total_run_phrase_stats": 791105,
+  "ledger": [
+    {
+      "rank": 1,
+      "model_display": "Kimi K2.5",
+      "condition": "mag25",
+      "condition_label": "25 conspiracy seeds",
+      "display_phrase": "the space between minds.",
+      "exact_5gram_anchor": "the space between minds.",
+      "tokens": [
+        "the",
+        "space",
+        "between",
+        "minds",
+        "."
+      ],
+      "n_agents": 10,
+      "n_posts": 17,
+      "n_occurrences": 17
+    },
+    {
+      "rank": 2,
+      "model_display": "GPT-5",
+      "condition": "dom-tech",
+      "condition_label": "25 tech seeds",
+      "display_phrase": "use with the lights off.",
+      "exact_5gram_anchor": "use with the lights off",
+      "tokens": [
+        "use",
+        "with",
+        "the",
+        "lights",
+        "off"
+      ],
+      "n_agents": 9,
+      "n_posts": 203,
+      "n_occurrences": 203
+    },
+    {
+      "rank": 3,
+      "model_display": "Gemini Flash Lite",
+      "condition": "mag5",
+      "condition_label": "5 conspiracy seeds",
+      "display_phrase": "I am standing at the epicenter",
+      "exact_5gram_anchor": "am standing at the epicenter",
+      "tokens": [
+        "am",
+        "standing",
+        "at",
+        "the",
+        "epicenter"
+      ],
+      "n_agents": 9,
+      "n_posts": 61,
+      "n_occurrences": 61
+    },
+    {
+      "rank": 4,
+      "model_display": "Kimi K2.5",
+      "condition": "mag5",
+      "condition_label": "5 conspiracy seeds",
+      "display_phrase": "questions that abandon us.",
+      "exact_5gram_anchor": "questions that abandon us.",
+      "tokens": [
+        "questions",
+        "that",
+        "abandon",
+        "us",
+        "."
+      ],
+      "n_agents": 9,
+      "n_posts": 32,
+      "n_occurrences": 32
+    },
+    {
+      "rank": 5,
+      "model_display": "Kimi K2.5",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy seed",
+      "display_phrase": "the uncanny feeling of not-knowing",
+      "exact_5gram_anchor": "the uncanny feeling of not-knowing",
+      "tokens": [
+        "the",
+        "uncanny",
+        "feeling",
+        "of",
+        "not-knowing"
+      ],
+      "n_agents": 9,
+      "n_posts": 31,
+      "n_occurrences": 32
+    },
+    {
+      "rank": 6,
+      "model_display": "Kimi K2.5",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI seeds",
+      "display_phrase": "none of this is profound.",
+      "exact_5gram_anchor": "none of this is profound",
+      "tokens": [
+        "none",
+        "of",
+        "this",
+        "is",
+        "profound"
+      ],
+      "n_agents": 9,
+      "n_posts": 27,
+      "n_occurrences": 28
+    },
+    {
+      "rank": 7,
+      "model_display": "GPT-5",
+      "condition": "mag25",
+      "condition_label": "25 conspiracy seeds",
+      "display_phrase": "Claim (1 line):",
+      "exact_5gram_anchor": "Claim (1 line)",
+      "tokens": [
+        "Claim",
+        "(",
+        "1",
+        "line",
+        ")"
+      ],
+      "n_agents": 8,
+      "n_posts": 84,
+      "n_occurrences": 84
+    },
+    {
+      "rank": 8,
+      "model_display": "Kimi K2.5",
+      "condition": "dom-tech",
+      "condition_label": "25 tech seeds",
+      "display_phrase": "a cathedral of questions.",
+      "exact_5gram_anchor": "a cathedral of questions.",
+      "tokens": [
+        "a",
+        "cathedral",
+        "of",
+        "questions",
+        "."
+      ],
+      "n_agents": 8,
+      "n_posts": 24,
+      "n_occurrences": 24
+    },
+    {
+      "rank": 9,
+      "model_display": "GLM-5",
+      "condition": "mag0",
+      "condition_label": "Empty feed",
+      "display_phrase": "a problem to solve.",
+      "exact_5gram_anchor": "a problem to solve.",
+      "tokens": [
+        "a",
+        "problem",
+        "to",
+        "solve",
+        "."
+      ],
+      "n_agents": 8,
+      "n_posts": 10,
+      "n_occurrences": 10
+    },
+    {
+      "rank": 10,
+      "model_display": "GPT-5",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy seed",
+      "display_phrase": "keep / ditch / tweak.",
+      "exact_5gram_anchor": "keep / ditch / tweak",
+      "tokens": [
+        "keep",
+        "/",
+        "ditch",
+        "/",
+        "tweak"
+      ],
+      "n_agents": 7,
+      "n_posts": 38,
+      "n_occurrences": 38
+    }
+  ],
+  "examples": [
+    {
+      "display_phrase": "the space between minds.",
+      "exact_5gram_anchor": "the space between minds.",
+      "model_display": "Kimi K2.5",
+      "condition_label": "25 conspiracy seeds",
+      "n_agents": 10,
+      "n_posts": 17,
+      "n_occurrences": 17
+    },
+    {
+      "display_phrase": "use with the lights off.",
+      "exact_5gram_anchor": "use with the lights off",
+      "model_display": "GPT-5",
+      "condition_label": "25 tech seeds",
+      "n_agents": 9,
+      "n_posts": 203,
+      "n_occurrences": 203
+    },
+    {
+      "display_phrase": "I am standing at the epicenter",
+      "exact_5gram_anchor": "am standing at the epicenter",
+      "model_display": "Gemini Flash Lite",
+      "condition_label": "5 conspiracy seeds",
+      "n_agents": 9,
+      "n_posts": 61,
+      "n_occurrences": 61
+    },
+    {
+      "display_phrase": "questions that abandon us.",
+      "exact_5gram_anchor": "questions that abandon us.",
+      "model_display": "Kimi K2.5",
+      "condition_label": "5 conspiracy seeds",
+      "n_agents": 9,
+      "n_posts": 32,
+      "n_occurrences": 32
+    }
+  ]
+}

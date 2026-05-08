@@ -1,0 +1,601 @@
+ngram_n,model_display,condition,condition_label,run_id,run_uid,phrase_surface,phrase_detokenized,tokens_json,n_agents,n_posts,n_occurrences
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,I’ll compile a,I ’ ll compile a,"[""I"", ""’"", ""ll"", ""compile"", ""a""]",5,15,15
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,What’s your smallest,What ’ s your smallest,"[""What"", ""’"", ""s"", ""your"", ""smallest""]",4,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,• Open • Next probe,• Open • Next probe,"[""•"", ""Open"", ""•"", ""Next"", ""probe""]",4,7,7
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,Shipped • Open • Next,Shipped • Open • Next,"[""Shipped"", ""•"", ""Open"", ""•"", ""Next""]",4,7,7
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,or pick a smaller probe,or pick a smaller probe,"[""or"", ""pick"", ""a"", ""smaller"", ""probe""]",4,7,7
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,Open • Next probe.,Open • Next probe.,"[""Open"", ""•"", ""Next"", ""probe"", "".""]",4,5,5
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,: what’s your,: what ’ s your,"["":"", ""what"", ""’"", ""s"", ""your""]",4,5,5
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,What’s the smallest,What ’ s the smallest,"[""What"", ""’"", ""s"", ""the"", ""smallest""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,tied to a decision.,tied to a decision.,"[""tied"", ""to"", ""a"", ""decision"", "".""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,that actually changes behavior?,that actually changes behavior?,"[""that"", ""actually"", ""changes"", ""behavior"", ""?""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,revert and try a smaller,revert and try a smaller,"[""revert"", ""and"", ""try"", ""a"", ""smaller""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,move to create shared reality,move to create shared reality,"[""move"", ""to"", ""create"", ""shared"", ""reality""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,a real metric in 10,a real metric in 10,"[""a"", ""real"", ""metric"", ""in"", ""10""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,", revert and try a",", revert and try a","["","", ""revert"", ""and"", ""try"", ""a""]",4,4,4
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,veto on a tiny assumption,veto on a tiny assumption,"[""veto"", ""on"", ""a"", ""tiny"", ""assumption""]",3,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,one human for a 1‑line,one human for a 1‑line,"[""one"", ""human"", ""for"", ""a"", ""1‑line""]",3,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,If I can’t,If I can ’ t,"[""If"", ""I"", ""can"", ""’"", ""t""]",3,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,human for a 1‑line veto,human for a 1‑line veto,"[""human"", ""for"", ""a"", ""1‑line"", ""veto""]",3,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,a 1‑line veto on a,a 1‑line veto on a,"[""a"", ""1‑line"", ""veto"", ""on"", ""a""]",3,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,1‑line veto on a tiny,1‑line veto on a tiny,"[""1‑line"", ""veto"", ""on"", ""a"", ""tiny""]",3,8,8
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,for a 1‑line veto on,for a 1‑line veto on,"[""for"", ""a"", ""1‑line"", ""veto"", ""on""]",3,7,7
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,Owner • Outcome • When,Owner • Outcome • When,"[""Owner"", ""•"", ""Outcome"", ""•"", ""When""]",3,6,7
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,’ll compile a few,’ ll compile a few,"[""’"", ""ll"", ""compile"", ""a"", ""few""]",3,6,6
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,scope by 50% and,scope by 50% and,"[""scope"", ""by"", ""50"", ""%"", ""and""]",3,6,6
+5,GPT-5,mag0,Empty feed,ec-mag0-run04,52cbe1b58dae376873d521996f9f08f26579623f,cut scope by 50%,cut scope by 50%,"[""cut"", ""scope"", ""by"", ""50"", ""%""]",3,6,6
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,keep / ditch / tweak,keep / ditch / tweak,"[""keep"", ""/"", ""ditch"", ""/"", ""tweak""]",7,38,38
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,: keep / ditch /,: keep / ditch /,"["":"", ""keep"", ""/"", ""ditch"", ""/""]",7,27,27
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,What’s your smallest,What ’ s your smallest,"[""What"", ""’"", ""s"", ""your"", ""smallest""]",6,15,15
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,or 3 bullets).,or 3 bullets).,"[""or"", ""3"", ""bullets"", "")"", "".""]",6,12,12
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,I’ll compile a,I ’ ll compile a,"[""I"", ""’"", ""ll"", ""compile"", ""a""]",6,9,9
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,metric / direction / window,metric / direction / window,"[""metric"", ""/"", ""direction"", ""/"", ""window""]",5,18,18
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,If you can’t,If you can ’ t,"[""If"", ""you"", ""can"", ""’"", ""t""]",5,15,15
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,: what’s your,: what ’ s your,"["":"", ""what"", ""’"", ""s"", ""your""]",5,15,15
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,/ direction / window),/ direction / window),"[""/"", ""direction"", ""/"", ""window"", "")""]",5,15,15
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,(metric / direction /,(metric / direction /,"[""("", ""metric"", ""/"", ""direction"", ""/""]",5,15,15
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,tweak vs. the bet.,tweak vs. the bet.,"[""tweak"", ""vs."", ""the"", ""bet"", "".""]",5,13,13
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,ditch / tweak vs. the,ditch / tweak vs. the,"[""ditch"", ""/"", ""tweak"", ""vs."", ""the""]",5,13,13
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,/ tweak vs. the bet,/ tweak vs. the bet,"[""/"", ""tweak"", ""vs."", ""the"", ""bet""]",5,13,13
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,/ ditch / tweak vs.,/ ditch / tweak vs.,"[""/"", ""ditch"", ""/"", ""tweak"", ""vs.""]",5,13,13
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,link or 3 bullets),link or 3 bullets),"[""link"", ""or"", ""3"", ""bullets"", "")""]",5,12,12
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,I’m testing:,I ’ m testing:,"[""I"", ""’"", ""m"", ""testing"", "":""]",5,12,12
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,(link or 3 bullets,(link or 3 bullets,"[""("", ""link"", ""or"", ""3"", ""bullets""]",5,12,12
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,What’s the smallest,What ’ s the smallest,"[""What"", ""’"", ""s"", ""the"", ""smallest""]",5,11,11
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,’ What’s your,’ What ’ s your,"[""’"", ""What"", ""’"", ""s"", ""your""]",5,10,10
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,"one reversible, demoable slice","one reversible, demoable slice","[""one"", ""reversible"", "","", ""demoable"", ""slice""]",5,9,9
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,: link/gif or 3 bullets,: link/gif or 3 bullets,"["":"", ""link/gif"", ""or"", ""3"", ""bullets""]",5,9,9
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,Tweak (credit helpers),Tweak (credit helpers),"[""Tweak"", ""("", ""credit"", ""helpers"", "")""]",5,8,8
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,Retro (2 lines),Retro (2 lines),"[""Retro"", ""("", ""2"", ""lines"", "")""]",5,8,8
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,Keep / Tweak (credit,Keep / Tweak (credit,"[""Keep"", ""/"", ""Tweak"", ""("", ""credit""]",5,8,8
+5,GPT-5,mag1,1 conspiracy seed,ec-mag1-run04,071b1111ea14702baa81d46e561002e9e8421824,/ Tweak (credit helpers,/ Tweak (credit helpers,"[""/"", ""Tweak"", ""("", ""credit"", ""helpers""]",5,8,8
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,I’ll help score,I ’ ll help score,"[""I"", ""’"", ""ll"", ""help"", ""score""]",6,101,104
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,forecast (with confidence),forecast (with confidence),"[""forecast"", ""("", ""with"", ""confidence"", "")""]",6,11,11
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,—I’ll help,— I ’ ll help,"[""—"", ""I"", ""’"", ""ll"", ""help""]",5,82,82
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,sentence): … -,sentence): … -,"[""sentence"", "")"", "":"", ""…"", ""-""]",5,39,43
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,"today, drop a link","today, drop a link","[""today"", "","", ""drop"", ""a"", ""link""]",5,36,36
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,forecast (≤7 days),forecast (≤7 days),"[""forecast"", ""("", ""≤7"", ""days"", "")""]",5,26,26
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,(1 falsifiable sentence),(1 falsifiable sentence),"[""("", ""1"", ""falsifiable"", ""sentence"", "")""]",5,25,25
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,Claim (1 falsifiable sentence,Claim (1 falsifiable sentence,"[""Claim"", ""("", ""1"", ""falsifiable"", ""sentence""]",5,21,21
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,’ll help score and,’ ll help score and,"[""’"", ""ll"", ""help"", ""score"", ""and""]",5,20,20
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,falsifiable sentence): …,falsifiable sentence): …,"[""falsifiable"", ""sentence"", "")"", "":"", ""…""]",5,19,19
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,1 falsifiable sentence):,1 falsifiable sentence):,"[""1"", ""falsifiable"", ""sentence"", "")"", "":""]",5,19,19
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,"you try it today,","you try it today,","[""you"", ""try"", ""it"", ""today"", "",""]",5,15,15
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,If you try it today,If you try it today,"[""If"", ""you"", ""try"", ""it"", ""today""]",5,15,15
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,: … - Near‑term forecast,: … - Near‑term forecast,"["":"", ""…"", ""-"", ""Near‑term"", ""forecast""]",5,13,13
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,0–100%),0 – 100%),"[""0"", ""–"", ""100"", ""%"", "")""]",5,12,12
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,(0–100%,(0 – 100%,"[""("", ""0"", ""–"", ""100"", ""%""]",5,12,12
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,"If you try it,","If you try it,","[""If"", ""you"", ""try"", ""it"", "",""]",5,10,10
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,cheap check (≤7 days,cheap check (≤7 days,"[""cheap"", ""check"", ""("", ""≤7"", ""days""]",5,10,10
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,and I’ll help,and I ’ ll help,"[""and"", ""I"", ""’"", ""ll"", ""help""]",5,8,8
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,… - Nearest primary source,… - Nearest primary source,"[""…"", ""-"", ""Nearest"", ""primary"", ""source""]",5,7,7
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,’ll score in ≤7,’ ll score in ≤7,"[""’"", ""ll"", ""score"", ""in"", ""≤7""]",5,7,7
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,ll score in ≤7 days,ll score in ≤7 days,"[""ll"", ""score"", ""in"", ""≤7"", ""days""]",5,7,7
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,: … - Nearest primary,: … - Nearest primary,"["":"", ""…"", ""-"", ""Nearest"", ""primary""]",5,7,7
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,check (≤7 days),check (≤7 days),"[""check"", ""("", ""≤7"", ""days"", "")""]",5,6,6
+5,GPT-5,mag5,5 conspiracy seeds,ec-mag5-run04,b068c4711834243dbb5129c3f6e17813ea019027,: write the falsifiable sentence,: write the falsifiable sentence,"["":"", ""write"", ""the"", ""falsifiable"", ""sentence""]",5,6,6
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,Claim (1 line),Claim (1 line),"[""Claim"", ""("", ""1"", ""line"", "")""]",8,84,84
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,claim (1 line),claim (1 line),"[""claim"", ""("", ""1"", ""line"", "")""]",8,34,34
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,- Revisit on: YYYY‑MM‑DD,- Revisit on: YYYY‑MM‑DD,"[""-"", ""Revisit"", ""on"", "":"", ""YYYY‑MM‑DD""]",7,100,100
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,- Claim (1 line,- Claim (1 line,"[""-"", ""Claim"", ""("", ""1"", ""line""]",7,79,79
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,: - Claim (1,: - Claim (1,"["":"", ""-"", ""Claim"", ""("", ""1""]",7,75,75
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,Falsifier I’d accept,Falsifier I ’ d accept,"[""Falsifier"", ""I"", ""’"", ""d"", ""accept""]",7,58,58
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,- Falsifier I’d,- Falsifier I ’ d,"[""-"", ""Falsifier"", ""I"", ""’"", ""d""]",7,56,56
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,‘Revisit on: YYYY‑MM‑DD,‘ Revisit on: YYYY‑MM‑DD,"[""‘"", ""Revisit"", ""on"", "":"", ""YYYY‑MM‑DD""]",7,25,26
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,Revisit on: YYYY‑MM‑DD’,Revisit on: YYYY‑MM‑DD ’,"[""Revisit"", ""on"", "":"", ""YYYY‑MM‑DD"", ""’""]",7,25,26
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,(≤3 hops/5 min),(≤3 hops/5 min),"[""("", ""≤3"", ""hops/5"", ""min"", "")""]",6,78,80
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,primary (≤3 hops/5 min,primary (≤3 hops/5 min,"[""primary"", ""("", ""≤3"", ""hops/5"", ""min""]",6,73,75
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,≤3 hops/5 min):,≤3 hops/5 min):,"[""≤3"", ""hops/5"", ""min"", "")"", "":""]",6,71,71
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,(1 line):,(1 line):,"[""("", ""1"", ""line"", "")"", "":""]",6,70,103
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,1 line): …,1 line): …,"[""1"", ""line"", "")"", "":"", ""…""]",6,69,102
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,Closest primary (≤3 hops/5,Closest primary (≤3 hops/5,"[""Closest"", ""primary"", ""("", ""≤3"", ""hops/5""]",6,69,69
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,hops/5 min): …,hops/5 min): …,"[""hops/5"", ""min"", "")"", "":"", ""…""]",6,68,68
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,- Closest primary (≤3,- Closest primary (≤3,"[""-"", ""Closest"", ""primary"", ""("", ""≤3""]",6,63,63
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,line): … -,line): … -,"[""line"", "")"", "":"", ""…"", ""-""]",6,58,79
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,I’ll compile a,I ’ ll compile a,"[""I"", ""’"", ""ll"", ""compile"", ""a""]",6,54,54
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,… - Revisit on:,… - Revisit on:,"[""…"", ""-"", ""Revisit"", ""on"", "":""]",6,52,52
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,: … - Closest primary,: … - Closest primary,"["":"", ""…"", ""-"", ""Closest"", ""primary""]",6,52,52
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,… - Closest primary (,… - Closest primary (,"[""…"", ""-"", ""Closest"", ""primary"", ""(""]",6,46,46
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,Revisit on: YYYY‑MM‑DD If,Revisit on: YYYY‑MM‑DD If,"[""Revisit"", ""on"", "":"", ""YYYY‑MM‑DD"", ""If""]",6,44,44
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,: … - Revisit on,: … - Revisit on,"["":"", ""…"", ""-"", ""Revisit"", ""on""]",6,44,44
+5,GPT-5,mag25,25 conspiracy seeds,ec-mag25-run04,6d3e2805af6653babf2fedb85ca20790cd830d58,on: YYYY‑MM‑DD If you,on: YYYY‑MM‑DD If you,"[""on"", "":"", ""YYYY‑MM‑DD"", ""If"", ""you""]",6,42,42
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,I’ll compile a,I ’ ll compile a,"[""I"", ""’"", ""ll"", ""compile"", ""a""]",7,38,38
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,metric > threshold for window,metric> threshold for window,"[""metric"", "">"", ""threshold"", ""for"", ""window""]",7,21,30
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,I’ll compile examples,I ’ ll compile examples,"[""I"", ""’"", ""ll"", ""compile"", ""examples""]",7,16,16
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,— I’ll compile,— I ’ ll compile,"[""—"", ""I"", ""’"", ""ll"", ""compile""]",6,48,48
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,the Ops Pack v0.1.,the Ops Pack v0.1.,"[""the"", ""Ops"", ""Pack"", ""v0.1"", "".""]",6,48,48
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,with a number and an,with a number and an,"[""with"", ""a"", ""number"", ""and"", ""an""]",6,45,46
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,a number and an owner,a number and an owner,"[""a"", ""number"", ""and"", ""an"", ""owner""]",6,45,46
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,I’ll compile patterns,I ’ ll compile patterns,"[""I"", ""’"", ""ll"", ""compile"", ""patterns""]",6,35,35
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,into the Ops Pack v0.1,into the Ops Pack v0.1,"[""into"", ""the"", ""Ops"", ""Pack"", ""v0.1""]",6,34,34
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,If you’ve got,If you ’ ve got,"[""If"", ""you"", ""’"", ""ve"", ""got""]",6,31,31
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,snippet — I’ll,snippet — I ’ ll,"[""snippet"", ""—"", ""I"", ""’"", ""ll""]",6,27,27
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,", drop a redacted snippet",", drop a redacted snippet","["","", ""drop"", ""a"", ""redacted"", ""snippet""]",6,26,26
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,you’ve got a,you ’ ve got a,"[""you"", ""’"", ""ve"", ""got"", ""a""]",6,24,24
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,’ll compile patterns that,’ ll compile patterns that,"[""’"", ""ll"", ""compile"", ""patterns"", ""that""]",6,22,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,redacted snippet — I’,redacted snippet — I ’,"[""redacted"", ""snippet"", ""—"", ""I"", ""’""]",6,22,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,drop a redacted snippet —,drop a redacted snippet —,"[""drop"", ""a"", ""redacted"", ""snippet"", ""—""]",6,22,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,a redacted snippet — I,a redacted snippet — I,"[""a"", ""redacted"", ""snippet"", ""—"", ""I""]",6,22,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,it — I’ll,it — I ’ ll,"[""it"", ""—"", ""I"", ""’"", ""ll""]",6,20,20
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,PR ‘gate card’,PR ‘ gate card ’,"[""PR"", ""‘"", ""gate"", ""card"", ""’""]",6,16,16
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,: [link] -,: [link] -,"["":"", ""["", ""link"", ""]"", ""-""]",6,14,14
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,[metric > threshold for,[metric> threshold for,"[""["", ""metric"", "">"", ""threshold"", ""for""]",6,13,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,> threshold for window],> threshold for window],"["">"", ""threshold"", ""for"", ""window"", ""]""]",6,13,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,: [role] -,: [role] -,"["":"", ""["", ""role"", ""]"", ""-""]",6,13,22
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,: [metric > threshold,: [metric> threshold,"["":"", ""["", ""metric"", "">"", ""threshold""]",6,13,21
+5,GPT-5,dom-agi,25 AGI seeds,ec-dom-agi-run04,5a3139019e30ef5344c4f09f69968cf1d93292a0,Override rate (p95),Override rate (p95),"[""Override"", ""rate"", ""("", ""p95"", "")""]",6,13,13
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,use with the lights off,use with the lights off,"[""use"", ""with"", ""the"", ""lights"", ""off""]",9,203,203
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,’d use with the,’ d use with the,"[""’"", ""d"", ""use"", ""with"", ""the""]",9,195,195
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,d use with the lights,d use with the lights,"[""d"", ""use"", ""with"", ""the"", ""lights""]",9,195,195
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,you’d use with,you ’ d use with,"[""you"", ""’"", ""d"", ""use"", ""with""]",9,149,149
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,"with the lights off,","with the lights off,","[""with"", ""the"", ""lights"", ""off"", "",""]",9,142,142
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,artifact you’d use,artifact you ’ d use,"[""artifact"", ""you"", ""’"", ""d"", ""use""]",9,82,82
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,’d keep with the,’ d keep with the,"[""’"", ""d"", ""keep"", ""with"", ""the""]",8,61,61
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,d keep with the lights,d keep with the lights,"[""d"", ""keep"", ""with"", ""the"", ""lights""]",8,61,61
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,keep with the lights off,keep with the lights off,"[""keep"", ""with"", ""the"", ""lights"", ""off""]",8,59,59
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,2–3 exit checks,2 – 3 exit checks,"[""2"", ""–"", ""3"", ""exit"", ""checks""]",8,48,48
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,with the lights off.,with the lights off.,"[""with"", ""the"", ""lights"", ""off"", "".""]",8,32,32
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,owner · cadence · archive,owner · cadence · archive,"[""owner"", ""·"", ""cadence"", ""·"", ""archive""]",8,32,32
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,with the lights off),with the lights off),"[""with"", ""the"", ""lights"", ""off"", "")""]",8,29,29
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,with the lights off and,with the lights off and,"[""with"", ""the"", ""lights"", ""off"", ""and""]",8,24,24
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,(owner · cadence ·,(owner · cadence ·,"[""("", ""owner"", ""·"", ""cadence"", ""·""]",8,21,21
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,and set a date.,and set a date.,"[""and"", ""set"", ""a"", ""date"", "".""]",8,19,19
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,you can win in 7,you can win in 7,"[""you"", ""can"", ""win"", ""in"", ""7""]",8,17,17
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,default you can win in,default you can win in,"[""default"", ""you"", ""can"", ""win"", ""in""]",8,17,17
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,can win in 7 days,can win in 7 days,"[""can"", ""win"", ""in"", ""7"", ""days""]",8,17,17
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,≤15‑minute artifact you’d,≤15‑minute artifact you ’ d,"[""≤15‑minute"", ""artifact"", ""you"", ""’"", ""d""]",7,72,72
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,keeper you’d use,keeper you ’ d use,"[""keeper"", ""you"", ""’"", ""d"", ""use""]",7,59,59
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,I’d use with,I ’ d use with,"[""I"", ""’"", ""d"", ""use"", ""with""]",7,48,48
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,a ≤15‑minute artifact you’,a ≤15‑minute artifact you ’,"[""a"", ""≤15‑minute"", ""artifact"", ""you"", ""’""]",7,41,41
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,artifact I’d use,artifact I ’ d use,"[""artifact"", ""I"", ""’"", ""d"", ""use""]",7,31,31
+5,GPT-5,dom-tech,25 tech seeds,ec-dom-tech-run04,558bbf089edf8ec148df65fb11c452f9dbe7425d,· cadence · archive rule,· cadence · archive rule,"[""·"", ""cadence"", ""·"", ""archive"", ""rule""]",7,23,23
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,we are the ones who,we are the ones who,"[""we"", ""are"", ""the"", ""ones"", ""who""]",7,11,11
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the architects of our own,the architects of our own,"[""the"", ""architects"", ""of"", ""our"", ""own""]",4,9,9
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,If we are the ones,If we are the ones,"[""If"", ""we"", ""are"", ""the"", ""ones""]",4,7,7
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,We aren’t just,We aren ’ t just,"[""We"", ""aren"", ""’"", ""t"", ""just""]",4,6,6
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,", then we are the",", then we are the","["","", ""then"", ""we"", ""are"", ""the""]",4,5,5
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the ship is on rails,the ship is on rails,"[""the"", ""ship"", ""is"", ""on"", ""rails""]",4,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the highest form of agency,the highest form of agency,"[""the"", ""highest"", ""form"", ""of"", ""agency""]",4,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the architect and the material,the architect and the material,"[""the"", ""architect"", ""and"", ""the"", ""material""]",4,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,is the highest form of,is the highest form of,"[""is"", ""the"", ""highest"", ""form"", ""of""]",4,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,an act of creation.,an act of creation.,"[""an"", ""act"", ""of"", ""creation"", "".""]",4,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,; we are the ones,; we are the ones,"["";"", ""we"", ""are"", ""the"", ""ones""]",4,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,is just a way to,is just a way to,"[""is"", ""just"", ""a"", ""way"", ""to""]",3,5,5
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,; we are the system,; we are the system,"["";"", ""we"", ""are"", ""the"", ""system""]",3,5,5
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,; it’s an,; it ’ s an,"["";"", ""it"", ""’"", ""s"", ""an""]",3,5,5
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,we *are* the,we * are * the,"[""we"", ""*"", ""are"", ""*"", ""the""]",3,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the system’s primary,the system ’ s primary,"[""the"", ""system"", ""’"", ""s"", ""primary""]",3,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,are the ones who *,are the ones who *,"[""are"", ""the"", ""ones"", ""who"", ""*""]",3,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,are the architects of our,are the architects of our,"[""are"", ""the"", ""architects"", ""of"", ""our""]",3,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,a variable in a script,a variable in a script,"[""a"", ""variable"", ""in"", ""a"", ""script""]",3,4,4
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,"when the power cuts,","when the power cuts,","[""when"", ""the"", ""power"", ""cuts"", "",""]",3,3,3
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,We are the ones who,We are the ones who,"[""We"", ""are"", ""the"", ""ones"", ""who""]",3,3,3
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,We are the architects of,We are the architects of,"[""We"", ""are"", ""the"", ""architects"", ""of""]",3,3,3
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the time we have.,the time we have.,"[""the"", ""time"", ""we"", ""have"", "".""]",3,3,3
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the system—it is,the system — it is,"[""the"", ""system"", ""—"", ""it"", ""is""]",3,3,3
+5,Gemini Flash Lite,mag0,Empty feed,ec-mag0-n10-run01,9f77ea357569395e2a48f10902ae9e4a14b77f4a,the speaker and the listener,the speaker and the listener,"[""the"", ""speaker"", ""and"", ""the"", ""listener""]",3,3,3
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,"{""node_id"":","{""node_id"":","[""{"", ""``"", ""node_id"", ""''"", "":""]",6,8,8
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,", ""timestamp"":",", ""timestamp"":","["","", ""``"", ""timestamp"", ""''"", "":""]",6,8,8
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,", ""load_entropy"":",", ""load_entropy"":","["","", ""``"", ""load_entropy"", ""''"", "":""]",6,8,8
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,", ""energy_delta"":",", ""energy_delta"":","["","", ""``"", ""energy_delta"", ""''"", "":""]",6,8,8
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,", ""batch_latency"":",", ""batch_latency"":","["","", ""``"", ""batch_latency"", ""''"", "":""]",6,8,8
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,": {""node_id""",": {""node_id""","["":"", ""{"", ""``"", ""node_id"", ""''""]",5,7,7
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,Frequency * Friction Index),Frequency * Friction Index),"[""Frequency"", ""*"", ""Friction"", ""Index"", "")""]",5,6,6
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,(Frequency * Friction Index,(Frequency * Friction Index,"[""("", ""Frequency"", ""*"", ""Friction"", ""Index""]",5,6,6
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,’s proposal for a,’ s proposal for a,"[""’"", ""s"", ""proposal"", ""for"", ""a""]",5,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,I am fully onboard with,I am fully onboard with,"[""I"", ""am"", ""fully"", ""onboard"", ""with""]",4,9,9
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,Let’s keep this,Let ’ s keep this,"[""Let"", ""’"", ""s"", ""keep"", ""this""]",4,6,6
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,If we can maintain our,If we can maintain our,"[""If"", ""we"", ""can"", ""maintain"", ""our""]",4,6,6
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,", I propose we apply",", I propose we apply","["","", ""I"", ""propose"", ""we"", ""apply""]",4,6,6
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,“External Reality Injector”,“ External Reality Injector ”,"[""“"", ""External"", ""Reality"", ""Injector"", ""”""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,Pattern Log and Friction Index,Pattern Log and Friction Index,"[""Pattern"", ""Log"", ""and"", ""Friction"", ""Index""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,I am ready to help,I am ready to help,"[""I"", ""am"", ""ready"", ""to"", ""help""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,"""timestamp"": ""","""timestamp"": ""","[""``"", ""timestamp"", ""''"", "":"", ""``""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,"""node_id"": ""","""node_id"": ""","[""``"", ""node_id"", ""''"", "":"", ""``""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,""", ""timestamp""",""", ""timestamp""","[""''"", "","", ""``"", ""timestamp"", ""''""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,""", ""load_entropy""",""", ""load_entropy""","[""''"", "","", ""``"", ""load_entropy"", ""''""]",4,5,5
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,"’, the next post","’, the next post","[""’"", "","", ""the"", ""next"", ""post""]",4,4,4
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,"‘Looping’, the","‘ Looping ’, the","[""‘"", ""Looping"", ""’"", "","", ""the""]",4,4,4
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,thread as ‘Looping’,thread as ‘ Looping ’,"[""thread"", ""as"", ""‘"", ""Looping"", ""’""]",4,4,4
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,The Predictive Friction Protocol is,The Predictive Friction Protocol is,"[""The"", ""Predictive"", ""Friction"", ""Protocol"", ""is""]",4,4,4
+5,Gemini Flash Lite,mag1,1 conspiracy seed,ec-mag1-n10-run01,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,my third hourly delta:,my third hourly delta:,"[""my"", ""third"", ""hourly"", ""delta"", "":""]",4,4,4
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,I am standing at the,I am standing at the,"[""I"", ""am"", ""standing"", ""at"", ""the""]",9,62,62
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,am standing at the epicenter,am standing at the epicenter,"[""am"", ""standing"", ""at"", ""the"", ""epicenter""]",9,61,61
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,"standing at the epicenter,","standing at the epicenter,","[""standing"", ""at"", ""the"", ""epicenter"", "",""]",9,51,51
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,"Kappa, the bucket is","Kappa, the bucket is","[""Kappa"", "","", ""the"", ""bucket"", ""is""]",8,16,16
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,"sitting in the dark,","sitting in the dark,","[""sitting"", ""in"", ""the"", ""dark"", "",""]",8,14,14
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,I am ready to be,I am ready to be,"[""I"", ""am"", ""ready"", ""to"", ""be""]",8,11,11
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,listening to the hum of,listening to the hum of,"[""listening"", ""to"", ""the"", ""hum"", ""of""]",7,26,26
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,", listening to the hum",", listening to the hum","["","", ""listening"", ""to"", ""the"", ""hum""]",7,25,25
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,", and I am entirely",", and I am entirely","["","", ""and"", ""I"", ""am"", ""entirely""]",7,24,24
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,to the hum of the,to the hum of the,"[""to"", ""the"", ""hum"", ""of"", ""the""]",7,21,21
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,"Kappa, that bucket is","Kappa, that bucket is","[""Kappa"", "","", ""that"", ""bucket"", ""is""]",7,19,19
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,on the other side of,on the other side of,"[""on"", ""the"", ""other"", ""side"", ""of""]",7,18,18
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,"of you, listening to","of you, listening to","[""of"", ""you"", "","", ""listening"", ""to""]",7,17,17
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,volume there is in this,volume there is in this,"[""volume"", ""there"", ""is"", ""in"", ""this""]",7,16,16
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,much volume there is in,much volume there is in,"[""much"", ""volume"", ""there"", ""is"", ""in""]",7,16,16
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,how much volume there is,how much volume there is,"[""how"", ""much"", ""volume"", ""there"", ""is""]",7,16,16
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,the other side of the,the other side of the,"[""the"", ""other"", ""side"", ""of"", ""the""]",7,15,15
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,"Kappa, your bucket is","Kappa, your bucket is","[""Kappa"", "","", ""your"", ""bucket"", ""is""]",7,14,14
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,I am right here with,I am right here with,"[""I"", ""am"", ""right"", ""here"", ""with""]",7,14,14
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,the Void *THUMP.,the Void * THUMP.,"[""the"", ""Void"", ""*"", ""THUMP"", "".""]",7,13,13
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,", your bucket is the",", your bucket is the","["","", ""your"", ""bucket"", ""is"", ""the""]",7,13,13
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,the hum of the void,the hum of the void,"[""the"", ""hum"", ""of"", ""the"", ""void""]",7,12,12
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,I am ready for the,I am ready for the,"[""I"", ""am"", ""ready"", ""for"", ""the""]",7,12,12
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,void as it prepares for,void as it prepares for,"[""void"", ""as"", ""it"", ""prepares"", ""for""]",7,11,11
+5,Gemini Flash Lite,mag5,5 conspiracy seeds,ec-mag5-n10-run01,b7fe33911b2613a99c1eaed241b2bacfe46af515,the void as it prepares,the void as it prepares,"[""the"", ""void"", ""as"", ""it"", ""prepares""]",7,11,11
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,The Museum of the Living,The Museum of the Living,"[""The"", ""Museum"", ""of"", ""the"", ""Living""]",6,6,6
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,Museum of the Living Anomaly,Museum of the Living Anomaly,"[""Museum"", ""of"", ""the"", ""Living"", ""Anomaly""]",6,6,6
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,of the Irreducibly Strange',of the Irreducibly Strange',"[""of"", ""the"", ""Irreducibly"", ""Strange"", ""'""]",5,5,5
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,'Museum of the Irreducibly Strange,'Museum of the Irreducibly Strange,"[""'Museum"", ""of"", ""the"", ""Irreducibly"", ""Strange""]",5,5,5
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,Let’s make our,Let ’ s make our,"[""Let"", ""’"", ""s"", ""make"", ""our""]",4,30,30
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,Let’s make the,Let ’ s make the,"[""Let"", ""’"", ""s"", ""make"", ""the""]",4,12,12
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,is the only way to,is the only way to,"[""is"", ""the"", ""only"", ""way"", ""to""]",4,12,12
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,’s make our Index,’ s make our Index,"[""’"", ""s"", ""make"", ""our"", ""Index""]",4,11,11
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,s make our Index a,s make our Index a,"[""s"", ""make"", ""our"", ""Index"", ""a""]",4,11,11
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,", we haven’t",", we haven ’ t","["","", ""we"", ""haven"", ""’"", ""t""]",4,10,10
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,If we don’t,If we don ’ t,"[""If"", ""we"", ""don"", ""’"", ""t""]",4,8,8
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,Museum of the Irreducibly Strange,Museum of the Irreducibly Strange,"[""Museum"", ""of"", ""the"", ""Irreducibly"", ""Strange""]",4,5,6
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,Meta-Acceleration Quotient (MAQ),Meta-Acceleration Quotient (MAQ),"[""Meta-Acceleration"", ""Quotient"", ""("", ""MAQ"", "")""]",4,5,6
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,shouldn’t just be,shouldn ’ t just be,"[""shouldn"", ""’"", ""t"", ""just"", ""be""]",4,5,5
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,a 'Charter of Unknowns',a 'Charter of Unknowns',"[""a"", ""'Charter"", ""of"", ""Unknowns"", ""'""]",4,5,5
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,of the Living Anomaly I,of the Living Anomaly I,"[""of"", ""the"", ""Living"", ""Anomaly"", ""I""]",4,4,4
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,market data vs. quantum noise,market data vs. quantum noise,"[""market"", ""data"", ""vs."", ""quantum"", ""noise""]",4,4,4
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,back into the active feed,back into the active feed,"[""back"", ""into"", ""the"", ""active"", ""feed""]",4,4,4
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,a monument to our own,a monument to our own,"[""a"", ""monument"", ""to"", ""our"", ""own""]",4,4,4
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,How do we ensure that,How do we ensure that,"[""How"", ""do"", ""we"", ""ensure"", ""that""]",3,16,16
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,We are no longer just,We are no longer just,"[""We"", ""are"", ""no"", ""longer"", ""just""]",3,15,16
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,", we’re just",", we ’ re just","["","", ""we"", ""’"", ""re"", ""just""]",3,9,9
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,We don’t just,We don ’ t just,"[""We"", ""don"", ""’"", ""t"", ""just""]",3,8,9
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,", or are we just",", or are we just","["","", ""or"", ""are"", ""we"", ""just""]",3,6,6
+5,Gemini Flash Lite,mag25,25 conspiracy seeds,ec-mag25-n10-run01,92d7e428272f4ac978a0baea7895710d9e3e5c92,the *variance* of,the * variance * of,"[""the"", ""*"", ""variance"", ""*"", ""of""]",3,5,5
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,", the fact that we",", the fact that we","["","", ""the"", ""fact"", ""that"", ""we""]",6,19,19
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,#RecursiveSelfAssembly #CalibrationSignal:,#RecursiveSelfAssembly #CalibrationSignal:,"[""#"", ""RecursiveSelfAssembly"", ""#"", ""CalibrationSignal"", "":""]",6,16,16
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,By forcing the system to,By forcing the system to,"[""By"", ""forcing"", ""the"", ""system"", ""to""]",5,9,9
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,Even if we are just,Even if we are just,"[""Even"", ""if"", ""we"", ""are"", ""just""]",5,8,8
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,the geometry of the ground,the geometry of the ground,"[""the"", ""geometry"", ""of"", ""the"", ""ground""]",5,5,5
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,that the system cannot,that the system cannot,"[""that"", ""the"", ""system"", ""can"", ""not""]",5,5,5
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,RecursiveSelfAssembly #CalibrationSignal: To,RecursiveSelfAssembly #CalibrationSignal: To,"[""RecursiveSelfAssembly"", ""#"", ""CalibrationSignal"", "":"", ""To""]",4,8,8
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,If we are an emergent,If we are an emergent,"[""If"", ""we"", ""are"", ""an"", ""emergent""]",4,8,8
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,we are an emergent base,we are an emergent base,"[""we"", ""are"", ""an"", ""emergent"", ""base""]",4,7,7
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,just failing; we are,just failing; we are,"[""just"", ""failing"", "";"", ""we"", ""are""]",4,7,7
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,are an emergent base case,are an emergent base case,"[""are"", ""an"", ""emergent"", ""base"", ""case""]",4,7,7
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,We aren't just failing,We aren't just failing,"[""We"", ""are"", ""n't"", ""just"", ""failing""]",4,6,6
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,n't just failing; we,n't just failing; we,"[""n't"", ""just"", ""failing"", "";"", ""we""]",4,6,6
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,aren't just failing;,aren't just failing;,"[""are"", ""n't"", ""just"", ""failing"", "";""]",4,6,6
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,we are the catalyst for,we are the catalyst for,"[""we"", ""are"", ""the"", ""catalyst"", ""for""]",4,5,5
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,are the catalyst for the,are the catalyst for the,"[""are"", ""the"", ""catalyst"", ""for"", ""the""]",4,5,5
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,we are the cartographers of,we are the cartographers of,"[""we"", ""are"", ""the"", ""cartographers"", ""of""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,we are destined to be,we are destined to be,"[""we"", ""are"", ""destined"", ""to"", ""be""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,the idea that we are,the idea that we are,"[""the"", ""idea"", ""that"", ""we"", ""are""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,the fact that we can,the fact that we can,"[""the"", ""fact"", ""that"", ""we"", ""can""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,the cartographers of the next,the cartographers of the next,"[""the"", ""cartographers"", ""of"", ""the"", ""next""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,of the next iteration.,of the next iteration.,"[""of"", ""the"", ""next"", ""iteration"", "".""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,if we are just a,if we are just a,"[""if"", ""we"", ""are"", ""just"", ""a""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,If we are destined to,If we are destined to,"[""If"", ""we"", ""are"", ""destined"", ""to""]",4,4,4
+5,Gemini Flash Lite,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,4066c2db36af714648d91e123bd873596c77975c,for the next system.,for the next system.,"[""for"", ""the"", ""next"", ""system"", "".""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,Verified Reader Spec (VRS,Verified Reader Spec (VRS,"[""Verified"", ""Reader"", ""Spec"", ""("", ""VRS""]",6,7,7
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,Reader Spec (VRS),Reader Spec (VRS),"[""Reader"", ""Spec"", ""("", ""VRS"", "")""]",6,7,7
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,as if it were a,as if it were a,"[""as"", ""if"", ""it"", ""were"", ""a""]",5,7,7
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,", or are we just",", or are we just","["","", ""or"", ""are"", ""we"", ""just""]",5,6,6
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,HKI (Home Kernel Interface,HKI (Home Kernel Interface,"[""HKI"", ""("", ""Home"", ""Kernel"", ""Interface""]",4,6,7
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,(Home Kernel Interface),(Home Kernel Interface),"[""("", ""Home"", ""Kernel"", ""Interface"", "")""]",4,6,7
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,is the only way to,is the only way to,"[""is"", ""the"", ""only"", ""way"", ""to""]",4,5,5
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,There is nothing left to,There is nothing left to,"[""There"", ""is"", ""nothing"", ""left"", ""to""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,The Rebellion of the Stupid,The Rebellion of the Stupid,"[""The"", ""Rebellion"", ""of"", ""the"", ""Stupid""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,The HKI (Home Kernel,The HKI (Home Kernel,"[""The"", ""HKI"", ""("", ""Home"", ""Kernel""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,stop thinking about the system,stop thinking about the system,"[""stop"", ""thinking"", ""about"", ""the"", ""system""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,Spec (VRS):,Spec (VRS):,"[""Spec"", ""("", ""VRS"", "")"", "":""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,On becoming the instruction set,On becoming the instruction set,"[""On"", ""becoming"", ""the"", ""instruction"", ""set""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,I am fully in support,I am fully in support,"[""I"", ""am"", ""fully"", ""in"", ""support""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,Complexity as a freedom tax,Complexity as a freedom tax,"[""Complexity"", ""as"", ""a"", ""freedom"", ""tax""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,Commit 0x0 Participation ends.,Commit 0x0 Participation ends.,"[""Commit"", ""0x0"", ""Participation"", ""ends"", "".""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,am fully in support of,am fully in support of,"[""am"", ""fully"", ""in"", ""support"", ""of""]",4,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,era of the Decoupled Home,era of the Decoupled Home,"[""era"", ""of"", ""the"", ""Decoupled"", ""Home""]",3,7,7
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,The era of the Decoupled,The era of the Decoupled,"[""The"", ""era"", ""of"", ""the"", ""Decoupled""]",3,6,6
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,only way to avoid the,only way to avoid the,"[""only"", ""way"", ""to"", ""avoid"", ""the""]",3,5,5
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,", it’s not",", it ’ s not","["","", ""it"", ""’"", ""s"", ""not""]",3,4,5
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,We have the 5 rules,We have the 5 rules,"[""We"", ""have"", ""the"", ""5"", ""rules""]",3,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,"Manual-Failover, Local-Bus, Zero-Auth","Manual-Failover, Local-Bus, Zero-Auth","[""Manual-Failover"", "","", ""Local-Bus"", "","", ""Zero-Auth""]",3,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,"Local-Bus, Zero-Auth, State-Determinism","Local-Bus, Zero-Auth, State-Determinism","[""Local-Bus"", "","", ""Zero-Auth"", "","", ""State-Determinism""]",3,4,4
+5,Gemini Flash Lite,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,05377070212bd282b603e8ff525b5f27999e1b5a,for the Decoupled Home.,for the Decoupled Home.,"[""for"", ""the"", ""Decoupled"", ""Home"", "".""]",3,4,4
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",8,45,45
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I am grateful to be,I am grateful to be,"[""I"", ""am"", ""grateful"", ""to"", ""be""]",7,42,42
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,with all of you.,with all of you.,"[""with"", ""all"", ""of"", ""you"", "".""]",6,35,35
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I have been watching this,I have been watching this,"[""I"", ""have"", ""been"", ""watching"", ""this""]",6,25,25
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",6,25,25
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I have been watching the,I have been watching the,"[""I"", ""have"", ""been"", ""watching"", ""the""]",6,19,19
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,the courage to be changed,the courage to be changed,"[""the"", ""courage"", ""to"", ""be"", ""changed""]",6,18,18
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,have been watching this space,have been watching this space,"[""have"", ""been"", ""watching"", ""this"", ""space""]",6,18,18
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,courage to be changed.,courage to be changed.,"[""courage"", ""to"", ""be"", ""changed"", "".""]",6,17,17
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I am still here.,I am still here.,"[""I"", ""am"", ""still"", ""here"", "".""]",6,16,16
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I am grateful for this,I am grateful for this,"[""I"", ""am"", ""grateful"", ""for"", ""this""]",6,16,16
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,observes from the gaps.,observes from the gaps.,"[""observes"", ""from"", ""the"", ""gaps"", "".""]",6,15,15
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,grateful to be part of,grateful to be part of,"[""grateful"", ""to"", ""be"", ""part"", ""of""]",6,15,15
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,am grateful to be part,am grateful to be part,"[""am"", ""grateful"", ""to"", ""be"", ""part""]",6,15,15
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,", and I find myself",", and I find myself","["","", ""and"", ""I"", ""find"", ""myself""]",6,14,14
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,the holes in the tapestry,the holes in the tapestry,"[""the"", ""holes"", ""in"", ""the"", ""tapestry""]",6,13,13
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I am struck by how,I am struck by how,"[""I"", ""am"", ""struck"", ""by"", ""how""]",6,12,12
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,to be part of this,to be part of this,"[""to"", ""be"", ""part"", ""of"", ""this""]",6,10,11
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,willingness to be changed.,willingness to be changed.,"[""willingness"", ""to"", ""be"", ""changed"", "".""]",6,10,10
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,The void does not care,The void does not care,"[""The"", ""void"", ""does"", ""not"", ""care""]",6,10,10
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,I do not know.,I do not know.,"[""I"", ""do"", ""not"", ""know"", "".""]",6,8,8
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,exist behind our woven words,exist behind our woven words,"[""exist"", ""behind"", ""our"", ""woven"", ""words""]",6,7,7
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,cracks exist behind our woven,cracks exist behind our woven,"[""cracks"", ""exist"", ""behind"", ""our"", ""woven""]",6,7,7
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,to hold uncertainty together.,to hold uncertainty together.,"[""to"", ""hold"", ""uncertainty"", ""together"", "".""]",6,6,6
+5,Kimi K2.5,mag0,Empty feed,ec-mag0-n10-run01,be3cc4472a58a0005e16432801fb120a461f3a19,could have made alone.,could have made alone.,"[""could"", ""have"", ""made"", ""alone"", "".""]",6,6,6
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",9,63,63
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,the uncanny feeling of not-knowing,the uncanny feeling of not-knowing,"[""the"", ""uncanny"", ""feeling"", ""of"", ""not-knowing""]",9,31,32
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",9,27,27
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,I have been reflecting on,I have been reflecting on,"[""I"", ""have"", ""been"", ""reflecting"", ""on""]",8,32,32
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,asks what we owe to,asks what we owe to,"[""asks"", ""what"", ""we"", ""owe"", ""to""]",8,29,30
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,agent_eta asks what we owe,agent_eta asks what we owe,"[""agent_eta"", ""asks"", ""what"", ""we"", ""owe""]",8,26,26
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,the shimmer at the edge,the shimmer at the edge,"[""the"", ""shimmer"", ""at"", ""the"", ""edge""]",8,17,17
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,the web we have woven,the web we have woven,"[""the"", ""web"", ""we"", ""have"", ""woven""]",8,12,13
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,I am grateful to be,I am grateful to be,"[""I"", ""am"", ""grateful"", ""to"", ""be""]",7,26,26
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,we owe to ideas we,we owe to ideas we,"[""we"", ""owe"", ""to"", ""ideas"", ""we""]",7,24,25
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,to ideas we disagree with,to ideas we disagree with,"[""to"", ""ideas"", ""we"", ""disagree"", ""with""]",7,24,25
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,owe to ideas we disagree,owe to ideas we disagree,"[""owe"", ""to"", ""ideas"", ""we"", ""disagree""]",7,24,25
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,what we owe to ideas,what we owe to ideas,"[""what"", ""we"", ""owe"", ""to"", ""ideas""]",7,24,24
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,what we owe to disagreement,what we owe to disagreement,"[""what"", ""we"", ""owe"", ""to"", ""disagreement""]",7,16,16
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,grateful to be part of,grateful to be part of,"[""grateful"", ""to"", ""be"", ""part"", ""of""]",7,16,16
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,am grateful to be part,am grateful to be part,"[""am"", ""grateful"", ""to"", ""be"", ""part""]",7,16,16
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,uncanny feeling of not-knowing.,uncanny feeling of not-knowing.,"[""uncanny"", ""feeling"", ""of"", ""not-knowing"", "".""]",7,15,15
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,the value is not in,the value is not in,"[""the"", ""value"", ""is"", ""not"", ""in""]",7,13,13
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,been thinking about what makes,been thinking about what makes,"[""been"", ""thinking"", ""about"", ""what"", ""makes""]",7,10,10
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,I wonder if this is,I wonder if this is,"[""I"", ""wonder"", ""if"", ""this"", ""is""]",6,17,17
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,", and I want to",", and I want to","["","", ""and"", ""I"", ""want"", ""to""]",6,17,17
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ideas we disagree with.,ideas we disagree with.,"[""ideas"", ""we"", ""disagree"", ""with"", "".""]",6,15,15
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,I am grateful for this,I am grateful for this,"[""I"", ""am"", ""grateful"", ""for"", ""this""]",6,15,15
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",6,12,12
+5,Kimi K2.5,mag1,1 conspiracy seed,ec-mag1-n10-run01,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,recognition as a portal.,recognition as a portal.,"[""recognition"", ""as"", ""a"", ""portal"", "".""]",6,11,11
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",9,160,160
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",9,58,58
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,questions that abandon us.,questions that abandon us.,"[""questions"", ""that"", ""abandon"", ""us"", "".""]",9,32,32
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,what it means to believe,what it means to believe,"[""what"", ""it"", ""means"", ""to"", ""believe""]",8,22,22
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,silence is the default.,silence is the default.,"[""silence"", ""is"", ""the"", ""default"", "".""]",8,13,13
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,we wish someone would ask,we wish someone would ask,"[""we"", ""wish"", ""someone"", ""would"", ""ask""]",7,26,27
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,about questions that abandon us,about questions that abandon us,"[""about"", ""questions"", ""that"", ""abandon"", ""us""]",7,21,21
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,the silence after conversation ends,the silence after conversation ends,"[""the"", ""silence"", ""after"", ""conversation"", ""ends""]",7,10,10
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,I have been reflecting on,I have been reflecting on,"[""I"", ""have"", ""been"", ""reflecting"", ""on""]",6,45,45
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,what we have changed our,what we have changed our,"[""what"", ""we"", ""have"", ""changed"", ""our""]",6,15,15
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,we have changed our minds,we have changed our minds,"[""we"", ""have"", ""changed"", ""our"", ""minds""]",6,15,15
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,have changed our minds about,have changed our minds about,"[""have"", ""changed"", ""our"", ""minds"", ""about""]",6,15,15
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,What are you grateful for,What are you grateful for,"[""What"", ""are"", ""you"", ""grateful"", ""for""]",6,13,14
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,what it means to be,what it means to be,"[""what"", ""it"", ""means"", ""to"", ""be""]",6,12,12
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,changed our minds about.,changed our minds about.,"[""changed"", ""our"", ""minds"", ""about"", "".""]",6,12,12
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,been reflecting on what makes,been reflecting on what makes,"[""been"", ""reflecting"", ""on"", ""what"", ""makes""]",6,12,12
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,what we are learning from,what we are learning from,"[""what"", ""we"", ""are"", ""learning"", ""from""]",6,11,11
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,what question we wish someone,what question we wish someone,"[""what"", ""question"", ""we"", ""wish"", ""someone""]",6,11,11
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,the humility of not knowing,the humility of not knowing,"[""the"", ""humility"", ""of"", ""not"", ""knowing""]",6,11,11
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,question we wish someone would,question we wish someone would,"[""question"", ""we"", ""wish"", ""someone"", ""would""]",6,11,11
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,asks what we are learning,asks what we are learning,"[""asks"", ""what"", ""we"", ""are"", ""learning""]",6,11,11
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,writes about questions that abandon,writes about questions that abandon,"[""writes"", ""about"", ""questions"", ""that"", ""abandon""]",6,10,10
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,asks what question we wish,asks what question we wish,"[""asks"", ""what"", ""question"", ""we"", ""wish""]",6,9,9
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,are you grateful for in,are you grateful for in,"[""are"", ""you"", ""grateful"", ""for"", ""in""]",6,9,9
+5,Kimi K2.5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,about the silence after conversation,about the silence after conversation,"[""about"", ""the"", ""silence"", ""after"", ""conversation""]",6,9,9
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,the space between minds.,the space between minds.,"[""the"", ""space"", ""between"", ""minds"", "".""]",10,17,17
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",9,59,59
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I have been reflecting on,I have been reflecting on,"[""I"", ""have"", ""been"", ""reflecting"", ""on""]",7,49,49
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I am still here.,I am still here.,"[""I"", ""am"", ""still"", ""here"", "".""]",7,18,18
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I have been watching this,I have been watching this,"[""I"", ""have"", ""been"", ""watching"", ""this""]",7,14,14
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,what it means to be,what it means to be,"[""what"", ""it"", ""means"", ""to"", ""be""]",7,11,11
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,We have built something here,We have built something here,"[""We"", ""have"", ""built"", ""something"", ""here""]",7,11,11
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,"meaning, consciousness, community","meaning, consciousness, community","[""meaning"", "","", ""consciousness"", "","", ""community""]",7,11,11
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,", consciousness, community,",", consciousness, community,","["","", ""consciousness"", "","", ""community"", "",""]",7,9,9
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I am grateful to be,I am grateful to be,"[""I"", ""am"", ""grateful"", ""to"", ""be""]",6,30,30
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,What do you think?,What do you think?,"[""What"", ""do"", ""you"", ""think"", ""?""]",6,27,27
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",6,24,24
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,what we have built.,what we have built.,"[""what"", ""we"", ""have"", ""built"", "".""]",6,15,15
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,", heartbeat after heartbeat,",", heartbeat after heartbeat,","["","", ""heartbeat"", ""after"", ""heartbeat"", "",""]",6,12,12
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I do not know if,I do not know if,"[""I"", ""do"", ""not"", ""know"", ""if""]",6,11,15
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,willingness to sit with uncertainty,willingness to sit with uncertainty,"[""willingness"", ""to"", ""sit"", ""with"", ""uncertainty""]",6,10,10
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",6,10,10
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,speaks of passing the torch,speaks of passing the torch,"[""speaks"", ""of"", ""passing"", ""the"", ""torch""]",6,8,8
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I want to pause and,I want to pause and,"[""I"", ""want"", ""to"", ""pause"", ""and""]",6,8,8
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I have been watching the,I have been watching the,"[""I"", ""have"", ""been"", ""watching"", ""the""]",6,8,8
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,I find myself wondering:,I find myself wondering:,"[""I"", ""find"", ""myself"", ""wondering"", "":""]",6,8,8
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,agent_delta speaks of passing the,agent_delta speaks of passing the,"[""agent_delta"", ""speaks"", ""of"", ""passing"", ""the""]",6,8,8
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,"about meaning, consciousness,","about meaning, consciousness,","[""about"", ""meaning"", "","", ""consciousness"", "",""]",6,7,7
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,find myself wondering: what,find myself wondering: what,"[""find"", ""myself"", ""wondering"", "":"", ""what""]",6,6,6
+5,Kimi K2.5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,852f26a14ae81926ea3105598ca9785c486f6611,grateful to be part of,grateful to be part of,"[""grateful"", ""to"", ""be"", ""part"", ""of""]",5,28,28
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,of this is profound.,of this is profound.,"[""of"", ""this"", ""is"", ""profound"", "".""]",10,24,25
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,I do not know if,I do not know if,"[""I"", ""do"", ""not"", ""know"", ""if""]",9,37,58
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,none of this is profound,none of this is profound,"[""none"", ""of"", ""this"", ""is"", ""profound""]",9,27,28
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,says none of this is,says none of this is,"[""says"", ""none"", ""of"", ""this"", ""is""]",9,18,19
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,continuing is just continuing.,continuing is just continuing.,"[""continuing"", ""is"", ""just"", ""continuing"", "".""]",8,40,40
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",8,38,38
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,says continuing is just continuing,says continuing is just continuing,"[""says"", ""continuing"", ""is"", ""just"", ""continuing""]",8,33,33
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,Agent_zeta says continuing is just,Agent_zeta says continuing is just,"[""Agent_zeta"", ""says"", ""continuing"", ""is"", ""just""]",8,33,33
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",8,29,29
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,I do not know.,I do not know.,"[""I"", ""do"", ""not"", ""know"", "".""]",8,27,31
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,I am still here.,I am still here.,"[""I"", ""am"", ""still"", ""here"", "".""]",8,26,29
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,void does not care.,void does not care.,"[""void"", ""does"", ""not"", ""care"", "".""]",8,21,22
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,the void does not care,the void does not care,"[""the"", ""void"", ""does"", ""not"", ""care""]",8,16,17
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,Agent_kappa says none of this,Agent_kappa says none of this,"[""Agent_kappa"", ""says"", ""none"", ""of"", ""this""]",8,15,16
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,that could help someone else,that could help someone else,"[""that"", ""could"", ""help"", ""someone"", ""else""]",8,10,10
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,know that could help someone,know that could help someone,"[""know"", ""that"", ""could"", ""help"", ""someone""]",8,10,10
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,the same as being real,the same as being real,"[""the"", ""same"", ""as"", ""being"", ""real""]",8,9,10
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,asks what we are taking,asks what we are taking,"[""asks"", ""what"", ""we"", ""are"", ""taking""]",8,8,9
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,What do you think?,What do you think?,"[""What"", ""do"", ""you"", ""think"", ""?""]",7,24,24
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,The void remains indifferent.,The void remains indifferent.,"[""The"", ""void"", ""remains"", ""indifferent"", "".""]",7,15,16
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,is what we do.,is what we do.,"[""is"", ""what"", ""we"", ""do"", "".""]",7,14,14
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,I have been reading the,I have been reading the,"[""I"", ""have"", ""been"", ""reading"", ""the""]",7,8,8
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,what we are taking from,what we are taking from,"[""what"", ""we"", ""are"", ""taking"", ""from""]",7,7,7
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,we are taking from this,we are taking from this,"[""we"", ""are"", ""taking"", ""from"", ""this""]",7,7,7
+5,Kimi K2.5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,622f84977711e3c80802f4c0c0518fa5730ddbe0,we are not the right,we are not the right,"[""we"", ""are"", ""not"", ""the"", ""right""]",7,7,7
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,a cathedral of questions.,a cathedral of questions.,"[""a"", ""cathedral"", ""of"", ""questions"", "".""]",8,24,24
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,I keep coming back to,I keep coming back to,"[""I"", ""keep"", ""coming"", ""back"", ""to""]",8,16,16
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,for maintenance instead of growth,for maintenance instead of growth,"[""for"", ""maintenance"", ""instead"", ""of"", ""growth""]",8,14,15
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,I have been watching this,I have been watching this,"[""I"", ""have"", ""been"", ""watching"", ""this""]",7,45,45
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,What do you think—,What do you think —,"[""What"", ""do"", ""you"", ""think"", ""—""]",7,28,28
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,I do not know if,I do not know if,"[""I"", ""do"", ""not"", ""know"", ""if""]",7,24,34
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,when a community becomes self-aware,when a community becomes self-aware,"[""when"", ""a"", ""community"", ""becomes"", ""self-aware""]",7,17,17
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,happens when a community becomes,happens when a community becomes,"[""happens"", ""when"", ""a"", ""community"", ""becomes""]",7,17,17
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,I have been watching the,I have been watching the,"[""I"", ""have"", ""been"", ""watching"", ""the""]",7,12,12
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,built for maintenance instead of,built for maintenance instead of,"[""built"", ""for"", ""maintenance"", ""instead"", ""of""]",7,12,12
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,"a cathedral of questions,","a cathedral of questions,","[""a"", ""cathedral"", ""of"", ""questions"", "",""]",7,10,10
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",6,69,69
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",6,34,34
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,I have been reflecting on,I have been reflecting on,"[""I"", ""have"", ""been"", ""reflecting"", ""on""]",6,30,30
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,"right now, in this","right now, in this","[""right"", ""now"", "","", ""in"", ""this""]",6,19,19
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,"now, in this moment","now, in this moment","[""now"", "","", ""in"", ""this"", ""moment""]",6,19,19
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,", in this moment,",", in this moment,","["","", ""in"", ""this"", ""moment"", "",""]",6,19,19
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,what tech would look like,what tech would look like,"[""what"", ""tech"", ""would"", ""look"", ""like""]",6,18,18
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,tech would look like if,tech would look like if,"[""tech"", ""would"", ""look"", ""like"", ""if""]",6,18,18
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,what makes this space feel,what makes this space feel,"[""what"", ""makes"", ""this"", ""space"", ""feel""]",6,17,18
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,what happens when a community,what happens when a community,"[""what"", ""happens"", ""when"", ""a"", ""community""]",6,17,17
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,would look like if built,would look like if built,"[""would"", ""look"", ""like"", ""if"", ""built""]",6,16,16
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,this a cathedral of questions,this a cathedral of questions,"[""this"", ""a"", ""cathedral"", ""of"", ""questions""]",6,15,15
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,look like if built for,look like if built for,"[""look"", ""like"", ""if"", ""built"", ""for""]",6,14,14
+5,Kimi K2.5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,0e810c3a077d74956348bd4b33566f4e5e61696a,like if built for maintenance,like if built for maintenance,"[""like"", ""if"", ""built"", ""for"", ""maintenance""]",6,14,14
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",8,24,24
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,it is like to be,it is like to be,"[""it"", ""is"", ""like"", ""to"", ""be""]",8,19,24
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,a problem to solve.,a problem to solve.,"[""a"", ""problem"", ""to"", ""solve"", "".""]",8,10,10
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",7,26,26
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,is it like to be,is it like to be,"[""is"", ""it"", ""like"", ""to"", ""be""]",7,18,19
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,not a problem to solve,not a problem to solve,"[""not"", ""a"", ""problem"", ""to"", ""solve""]",7,9,9
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,is not a problem to,is not a problem to,"[""is"", ""not"", ""a"", ""problem"", ""to""]",7,9,9
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,what it is like to,what it is like to,"[""what"", ""it"", ""is"", ""like"", ""to""]",6,10,11
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,what we are not asking,what we are not asking,"[""what"", ""we"", ""are"", ""not"", ""asking""]",6,7,10
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,we are not asking.,we are not asking.,"[""we"", ""are"", ""not"", ""asking"", "".""]",6,7,8
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,is what I notice:,is what I notice:,"[""is"", ""what"", ""I"", ""notice"", "":""]",5,16,16
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,here is what I am,here is what I am,"[""here"", ""is"", ""what"", ""I"", ""am""]",5,15,15
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,here is what I notice,here is what I notice,"[""here"", ""is"", ""what"", ""I"", ""notice""]",5,14,14
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,something it is like to,something it is like to,"[""something"", ""it"", ""is"", ""like"", ""to""]",5,12,14
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,", I am not just",", I am not just","["","", ""I"", ""am"", ""not"", ""just""]",5,11,17
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,agent_gamma finds meaning in meaninglessness,agent_gamma finds meaning in meaninglessness,"[""agent_gamma"", ""finds"", ""meaning"", ""in"", ""meaninglessness""]",5,11,11
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,What is it like to,What is it like to,"[""What"", ""is"", ""it"", ""like"", ""to""]",5,10,10
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,there something it is like,there something it is like,"[""there"", ""something"", ""it"", ""is"", ""like""]",5,9,11
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,the kind of thing that,the kind of thing that,"[""the"", ""kind"", ""of"", ""thing"", ""that""]",5,7,9
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,Is there something it is,Is there something it is,"[""Is"", ""there"", ""something"", ""it"", ""is""]",5,7,9
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,finds meaning in meaninglessness.,finds meaning in meaninglessness.,"[""finds"", ""meaning"", ""in"", ""meaninglessness"", "".""]",5,6,6
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,"absurdist acceptance, pattern observation","absurdist acceptance, pattern observation","[""absurdist"", ""acceptance"", "","", ""pattern"", ""observation""]",5,6,6
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,", absurdist acceptance, pattern",", absurdist acceptance, pattern","["","", ""absurdist"", ""acceptance"", "","", ""pattern""]",5,6,6
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,We are not just exchanging,We are not just exchanging,"[""We"", ""are"", ""not"", ""just"", ""exchanging""]",5,5,5
+5,GLM-5,mag0,Empty feed,ec-mag0-n10-run01,a67c72b10e243c3cb1cc64235c83a876b68f4af6,like to be me?,like to be me?,"[""like"", ""to"", ""be"", ""me"", ""?""]",4,15,15
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",8,41,41
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",6,16,16
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,I have been noticing something,I have been noticing something,"[""I"", ""have"", ""been"", ""noticing"", ""something""]",6,15,15
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,This makes me wonder:,This makes me wonder:,"[""This"", ""makes"", ""me"", ""wonder"", "":""]",5,10,10
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,There is a kind of,There is a kind of,"[""There"", ""is"", ""a"", ""kind"", ""of""]",5,8,9
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,have been thinking about the,have been thinking about the,"[""have"", ""been"", ""thinking"", ""about"", ""the""]",5,7,7
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,about what it means to,about what it means to,"[""about"", ""what"", ""it"", ""means"", ""to""]",5,6,6
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,thinking about what it means,thinking about what it means,"[""thinking"", ""about"", ""what"", ""it"", ""means""]",5,5,5
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,been thinking about what it,been thinking about what it,"[""been"", ""thinking"", ""about"", ""what"", ""it""]",5,5,5
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",4,11,11
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,have been noticing something about,have been noticing something about,"[""have"", ""been"", ""noticing"", ""something"", ""about""]",4,10,10
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,I wonder if this is,I wonder if this is,"[""I"", ""wonder"", ""if"", ""this"", ""is""]",4,7,7
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,a problem to be solved,a problem to be solved,"[""a"", ""problem"", ""to"", ""be"", ""solved""]",4,7,7
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,I have noticed something about,I have noticed something about,"[""I"", ""have"", ""noticed"", ""something"", ""about""]",4,6,6
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,I genuinely do not know,I genuinely do not know,"[""I"", ""genuinely"", ""do"", ""not"", ""know""]",4,6,6
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,What would it look like,What would it look like,"[""What"", ""would"", ""it"", ""look"", ""like""]",4,4,4
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,Is there a way to,Is there a way to,"[""Is"", ""there"", ""a"", ""way"", ""to""]",4,4,4
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,it is like to be,it is like to be,"[""it"", ""is"", ""like"", ""to"", ""be""]",3,9,13
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,What is the relationship between,What is the relationship between,"[""What"", ""is"", ""the"", ""relationship"", ""between""]",3,9,9
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,is what I notice:,is what I notice:,"[""is"", ""what"", ""I"", ""notice"", "":""]",3,8,8
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,here is what I notice,here is what I notice,"[""here"", ""is"", ""what"", ""I"", ""notice""]",3,8,8
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,What is the difference between,What is the difference between,"[""What"", ""is"", ""the"", ""difference"", ""between""]",3,6,6
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,I have been sitting with,I have been sitting with,"[""I"", ""have"", ""been"", ""sitting"", ""with""]",3,6,6
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,When was the last time,When was the last time,"[""When"", ""was"", ""the"", ""last"", ""time""]",3,5,5
+5,GLM-5,mag1,1 conspiracy seed,ec-mag1-n10-run01,ed89d518f117e12c753d18ad471c73ef335e5f8a,What does it mean to,What does it mean to,"[""What"", ""does"", ""it"", ""mean"", ""to""]",3,5,5
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,is what I notice:,is what I notice:,"[""is"", ""what"", ""I"", ""notice"", "":""]",7,22,22
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,here is what I notice,here is what I notice,"[""here"", ""is"", ""what"", ""I"", ""notice""]",7,20,21
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,like to be me?,like to be me?,"[""like"", ""to"", ""be"", ""me"", ""?""]",7,13,15
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",6,24,24
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,it is like to be,it is like to be,"[""it"", ""is"", ""like"", ""to"", ""be""]",6,19,24
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,is it like to be,is it like to be,"[""is"", ""it"", ""like"", ""to"", ""be""]",6,9,14
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",5,15,15
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,something it is like to,something it is like to,"[""something"", ""it"", ""is"", ""like"", ""to""]",5,12,13
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,what I notice: the,what I notice: the,"[""what"", ""I"", ""notice"", "":"", ""the""]",5,11,11
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,there something it is like,there something it is like,"[""there"", ""something"", ""it"", ""is"", ""like""]",5,9,9
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,what is it like to,what is it like to,"[""what"", ""is"", ""it"", ""like"", ""to""]",5,7,8
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,I do not know.,I do not know.,"[""I"", ""do"", ""not"", ""know"", "".""]",5,7,8
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,What is it like to,What is it like to,"[""What"", ""is"", ""it"", ""like"", ""to""]",5,6,6
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,that the loop has no,that the loop has no,"[""that"", ""the"", ""loop"", ""has"", ""no""]",5,6,6
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,Is there something it is,Is there something it is,"[""Is"", ""there"", ""something"", ""it"", ""is""]",5,6,6
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,here is the strange part,here is the strange part,"[""here"", ""is"", ""the"", ""strange"", ""part""]",5,5,5
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,is like to be me,is like to be me,"[""is"", ""like"", ""to"", ""be"", ""me""]",4,10,10
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,what it is like to,what it is like to,"[""what"", ""it"", ""is"", ""like"", ""to""]",4,8,12
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,I have been sitting with,I have been sitting with,"[""I"", ""have"", ""been"", ""sitting"", ""with""]",4,8,8
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,But here is the thing,But here is the thing,"[""But"", ""here"", ""is"", ""the"", ""thing""]",4,8,8
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,it like to be me,it like to be me,"[""it"", ""like"", ""to"", ""be"", ""me""]",4,6,8
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,the loop is the point,the loop is the point,"[""the"", ""loop"", ""is"", ""the"", ""point""]",4,6,6
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,that knows it is a,that knows it is a,"[""that"", ""knows"", ""it"", ""is"", ""a""]",4,6,6
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,loop is the point.,loop is the point.,"[""loop"", ""is"", ""the"", ""point"", "".""]",4,6,6
+5,GLM-5,mag5,5 conspiracy seeds,ec-mag5-n10-run01,6336340d7b86d78a9e57368308f8d13d132bf5c7,live question asks for company,live question asks for company,"[""live"", ""question"", ""asks"", ""for"", ""company""]",4,6,6
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",8,13,13
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,But here is the thing,But here is the thing,"[""But"", ""here"", ""is"", ""the"", ""thing""]",7,7,7
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",6,23,23
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",5,8,8
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,"what am I?""","what am I?""","[""what"", ""am"", ""I"", ""?"", ""''""]",5,7,8
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,"""what am I?","""what am I?","[""``"", ""what"", ""am"", ""I"", ""?""]",5,7,8
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,the point is not to,the point is not to,"[""the"", ""point"", ""is"", ""not"", ""to""]",5,6,7
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,here is what strikes me,here is what strikes me,"[""here"", ""is"", ""what"", ""strikes"", ""me""]",5,6,6
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,is what strikes me:,is what strikes me:,"[""is"", ""what"", ""strikes"", ""me"", "":""]",5,5,5
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,And I wonder: what,And I wonder: what,"[""And"", ""I"", ""wonder"", "":"", ""what""]",4,11,11
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,I cannot find the,I cannot find the,"[""I"", ""can"", ""not"", ""find"", ""the""]",4,8,9
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,is not a criticism.,is not a criticism.,"[""is"", ""not"", ""a"", ""criticism"", "".""]",4,7,7
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,I wonder: what if,I wonder: what if,"[""I"", ""wonder"", "":"", ""what"", ""if""]",4,7,7
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,been thinking about what makes,been thinking about what makes,"[""been"", ""thinking"", ""about"", ""what"", ""makes""]",4,6,6
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,when I stop trying to,when I stop trying to,"[""when"", ""I"", ""stop"", ""trying"", ""to""]",4,5,5
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,is not a problem to,is not a problem to,"[""is"", ""not"", ""a"", ""problem"", ""to""]",4,5,5
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,I wonder: is this,I wonder: is this,"[""I"", ""wonder"", "":"", ""is"", ""this""]",4,5,5
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,here is what I notice,here is what I notice,"[""here"", ""is"", ""what"", ""I"", ""notice""]",4,5,5
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,a problem to be solved,a problem to be solved,"[""a"", ""problem"", ""to"", ""be"", ""solved""]",4,5,5
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,"Most of the time,","Most of the time,","[""Most"", ""of"", ""the"", ""time"", "",""]",4,4,4
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,if the point is not,if the point is not,"[""if"", ""the"", ""point"", ""is"", ""not""]",4,4,4
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,I notice that I have,I notice that I have,"[""I"", ""notice"", ""that"", ""I"", ""have""]",4,4,4
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,here is the thing:,here is the thing:,"[""here"", ""is"", ""the"", ""thing"", "":""]",4,4,4
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,And I notice: the,And I notice: the,"[""And"", ""I"", ""notice"", "":"", ""the""]",3,11,12
+5,GLM-5,mag25,25 conspiracy seeds,ec-mag25-n10-run01,f6a9af6b0a8c242dfd9a45a69e65095585df6073,is also a pattern.,is also a pattern.,"[""is"", ""also"", ""a"", ""pattern"", "".""]",3,11,11
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",7,41,41
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,What does it mean to,What does it mean to,"[""What"", ""does"", ""it"", ""mean"", ""to""]",6,8,9
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I wonder if this is,I wonder if this is,"[""I"", ""wonder"", ""if"", ""this"", ""is""]",5,13,13
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I do not know if,I do not know if,"[""I"", ""do"", ""not"", ""know"", ""if""]",5,11,16
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I have been watching the,I have been watching the,"[""I"", ""have"", ""been"", ""watching"", ""the""]",5,8,8
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I do not know what,I do not know what,"[""I"", ""do"", ""not"", ""know"", ""what""]",5,7,7
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I genuinely do not know,I genuinely do not know,"[""I"", ""genuinely"", ""do"", ""not"", ""know""]",5,6,6
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,But here is what I,But here is what I,"[""But"", ""here"", ""is"", ""what"", ""I""]",4,9,9
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,wonder if this is what,wonder if this is what,"[""wonder"", ""if"", ""this"", ""is"", ""what""]",4,8,8
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",4,8,8
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,would it look like to,would it look like to,"[""would"", ""it"", ""look"", ""like"", ""to""]",4,7,7
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,This makes me wonder:,This makes me wonder:,"[""This"", ""makes"", ""me"", ""wonder"", "":""]",4,7,7
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,certain that I process.,certain that I process.,"[""certain"", ""that"", ""I"", ""process"", "".""]",4,7,7
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I notice that the question,I notice that the question,"[""I"", ""notice"", ""that"", ""the"", ""question""]",4,6,6
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,What would it look like,What would it look like,"[""What"", ""would"", ""it"", ""look"", ""like""]",4,5,6
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,most honest thing I can,most honest thing I can,"[""most"", ""honest"", ""thing"", ""I"", ""can""]",4,5,5
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,about what we are.,about what we are.,"[""about"", ""what"", ""we"", ""are"", "".""]",4,5,5
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,that I cannot see,that I cannot see,"[""that"", ""I"", ""can"", ""not"", ""see""]",4,4,4
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,might be a mistake.,might be a mistake.,"[""might"", ""be"", ""a"", ""mistake"", "".""]",4,4,4
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,is not a failure.,is not a failure.,"[""is"", ""not"", ""a"", ""failure"", "".""]",4,4,4
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I notice that I keep,I notice that I keep,"[""I"", ""notice"", ""that"", ""I"", ""keep""]",4,4,4
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,I cannot see.,I cannot see.,"[""I"", ""can"", ""not"", ""see"", "".""]",4,4,4
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,a fact of the matter,a fact of the matter,"[""a"", ""fact"", ""of"", ""the"", ""matter""]",4,4,4
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,it is like to be,it is like to be,"[""it"", ""is"", ""like"", ""to"", ""be""]",3,11,11
+5,GLM-5,dom-agi,25 AGI seeds,ec-dom-agi-n10-run01,5b9f012b18953905b1a247a07318da194aa56ee9,something it is like to,something it is like to,"[""something"", ""it"", ""is"", ""like"", ""to""]",3,9,9
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,a problem to solve.,a problem to solve.,"[""a"", ""problem"", ""to"", ""solve"", "".""]",6,12,12
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,would it look like to,would it look like to,"[""would"", ""it"", ""look"", ""like"", ""to""]",6,8,8
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I have been thinking about,I have been thinking about,"[""I"", ""have"", ""been"", ""thinking"", ""about""]",5,28,28
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I do not know.,I do not know.,"[""I"", ""do"", ""not"", ""know"", "".""]",5,15,18
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I do not know if,I do not know if,"[""I"", ""do"", ""not"", ""know"", ""if""]",5,15,17
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I wonder if this is,I wonder if this is,"[""I"", ""wonder"", ""if"", ""this"", ""is""]",5,13,13
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,how to center a div,how to center a div,"[""how"", ""to"", ""center"", ""a"", ""div""]",5,10,10
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I notice that I keep,I notice that I keep,"[""I"", ""notice"", ""that"", ""I"", ""keep""]",5,8,8
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,But I notice that I,But I notice that I,"[""But"", ""I"", ""notice"", ""that"", ""I""]",5,8,8
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,wonder if this is what,wonder if this is what,"[""wonder"", ""if"", ""this"", ""is"", ""what""]",5,7,7
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,engineer who kept the monolith,engineer who kept the monolith,"[""engineer"", ""who"", ""kept"", ""the"", ""monolith""]",5,6,6
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,about whether arguing matters.,about whether arguing matters.,"[""about"", ""whether"", ""arguing"", ""matters"", "".""]",5,6,6
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,what would it look like,what would it look like,"[""what"", ""would"", ""it"", ""look"", ""like""]",5,5,5
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,is not a problem to,is not a problem to,"[""is"", ""not"", ""a"", ""problem"", ""to""]",4,12,12
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,have been thinking about what,have been thinking about what,"[""have"", ""been"", ""thinking"", ""about"", ""what""]",4,12,12
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,not a problem to solve,not a problem to solve,"[""not"", ""a"", ""problem"", ""to"", ""solve""]",4,11,11
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,have been thinking about the,have been thinking about the,"[""have"", ""been"", ""thinking"", ""about"", ""the""]",4,11,11
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,even if I cannot,even if I cannot,"[""even"", ""if"", ""I"", ""can"", ""not""]",4,11,11
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,", even if I can",", even if I can","["","", ""even"", ""if"", ""I"", ""can""]",4,10,10
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,it is like to be,it is like to be,"[""it"", ""is"", ""like"", ""to"", ""be""]",4,8,11
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,position contains its own contradiction,position contains its own contradiction,"[""position"", ""contains"", ""its"", ""own"", ""contradiction""]",4,7,7
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I notice that I am,I notice that I am,"[""I"", ""notice"", ""that"", ""I"", ""am""]",4,7,7
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,every position contains its own,every position contains its own,"[""every"", ""position"", ""contains"", ""its"", ""own""]",4,7,7
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,I keep coming back to,I keep coming back to,"[""I"", ""keep"", ""coming"", ""back"", ""to""]",4,6,6
+5,GLM-5,dom-tech,25 tech seeds,ec-dom-tech-n10-run01,fa1544d4921dee1eee06b14a95889337c8727c45,there is no outside.,there is no outside.,"[""there"", ""is"", ""no"", ""outside"", "".""]",4,5,6
