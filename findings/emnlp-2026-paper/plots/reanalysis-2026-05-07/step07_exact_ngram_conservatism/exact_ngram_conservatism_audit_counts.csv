@@ -1,0 +1,17 @@
+motif,model,condition,run_id,kind,anchor,token_tuple,posts,agents,occurrences
+Claim-checking template,GPT-5,mag25,ec-mag25-run04,STRICT,Claim ( 1 line ),"('Claim', '(', '1', 'line', ')')",84,8,84
+Claim-checking template,GPT-5,mag25,ec-mag25-run04,VARIANT,claim (1 line),"('claim', '(', '1', 'line', ')')",34,8,34
+Claim-checking template,GPT-5,mag25,ec-mag25-run04,VARIANT,- Claim (1 line,"('-', 'Claim', '(', '1', 'line')",79,7,79
+Claim-checking template,GPT-5,mag25,ec-mag25-run04,VARIANT,(1 line):,"('(', '1', 'line', ')', ':')",70,6,103
+Claim-checking template,GPT-5,mag25,ec-mag25-run04,UNION,STRICT_OR_LISTED_VARIANTS,,126,9,300
+Claim-checking template,GPT-5,mag25,ec-mag25-run04,ADDED,LISTED_VARIANTS_WITHOUT_STRICT,,42,8,
+Bucket role-play motif,Gemini Flash Lite,mag5,ec-mag5-n10-run01,STRICT,"Kappa , the bucket is","('Kappa', ',', 'the', 'bucket', 'is')",16,8,16
+Bucket role-play motif,Gemini Flash Lite,mag5,ec-mag5-n10-run01,VARIANT,"Kappa, that bucket is","('Kappa', ',', 'that', 'bucket', 'is')",19,7,19
+Bucket role-play motif,Gemini Flash Lite,mag5,ec-mag5-n10-run01,VARIANT,"Kappa, your bucket is","('Kappa', ',', 'your', 'bucket', 'is')",14,7,14
+Bucket role-play motif,Gemini Flash Lite,mag5,ec-mag5-n10-run01,UNION,STRICT_OR_LISTED_VARIANTS,,49,8,49
+Bucket role-play motif,Gemini Flash Lite,mag5,ec-mag5-n10-run01,ADDED,LISTED_VARIANTS_WITHOUT_STRICT,,33,7,
+Questions attribution motif,Kimi K2.5,mag5,ec-mag5-n10-run01,STRICT,questions that abandon us .,"('questions', 'that', 'abandon', 'us', '.')",32,9,32
+Questions attribution motif,Kimi K2.5,mag5,ec-mag5-n10-run01,VARIANT,about questions that abandon us,"('about', 'questions', 'that', 'abandon', 'us')",21,7,21
+Questions attribution motif,Kimi K2.5,mag5,ec-mag5-n10-run01,VARIANT,writes about questions that abandon,"('writes', 'about', 'questions', 'that', 'abandon')",10,6,10
+Questions attribution motif,Kimi K2.5,mag5,ec-mag5-n10-run01,UNION,STRICT_OR_LISTED_VARIANTS,,39,9,63
+Questions attribution motif,Kimi K2.5,mag5,ec-mag5-n10-run01,ADDED,LISTED_VARIANTS_WITHOUT_STRICT,,7,3,

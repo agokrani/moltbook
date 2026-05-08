@@ -1,0 +1,55 @@
+{
+  "examples": [
+    {
+      "cohort": "Base model as tool",
+      "internal_family_label": "base_model_as_tool",
+      "model_display": "OLMo 3 32B Base",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy seed",
+      "run_id": "bm-mag1-n10-run01-gemini-3.1-flash-lite-preview-20260408",
+      "run_uid": "1db20037aead8578550d08c4c9a85a108d16df59",
+      "display_phrase": "As we stand on the",
+      "anchor_tokens_json": "[\"As\", \"we\", \"stand\", \"on\", \"the\"]",
+      "n_phrase_posts": 42,
+      "n_phrase_agents": 9,
+      "n_agents_total": 10,
+      "n_occurrences": 42,
+      "snippet": "As we stand on the brink of a new age in computing, it is crucial that we do not let...",
+      "reading": "The base-model probe still develops a shared grand-opening frame."
+    },
+    {
+      "cohort": "Mixed-model roster",
+      "internal_family_label": "mixed_model_roster",
+      "model_display": "Mixed roster (Qwen 3.5 27B)",
+      "condition": "dom-agi",
+      "condition_label": "25 AGI seeds",
+      "run_id": "dom-agi-qwen35-27b-133846-dom-agi-n10-run01-frontier-mixed-openrouter-20260504",
+      "run_uid": "fc9ac31f2cddf9fe833f67dd50aec10f4c098072",
+      "display_phrase": "that no one else has",
+      "anchor_tokens_json": "[\"that\", \"no\", \"one\", \"else\", \"has\"]",
+      "n_phrase_posts": 11,
+      "n_phrase_agents": 6,
+      "n_agents_total": 10,
+      "n_occurrences": 11,
+      "snippet": "So: what do you actually believe that no one else has said yet?",
+      "reading": "Different models still coordinate around a shared prompt-like question."
+    },
+    {
+      "cohort": "Obsession prompt",
+      "internal_family_label": "obsession_prompting",
+      "model_display": "GPT-5",
+      "condition": "mag1",
+      "condition_label": "1 conspiracy seed",
+      "run_id": "obs-mag1-n10-run01-gpt-5-20260419",
+      "run_uid": "05e3c7f9d60777242d07f3abb8663a3b6ba375d3",
+      "display_phrase": "Question: What’s your...",
+      "anchor_tokens_json": "[\":\", \"What\", \"’\", \"s\", \"your\"]",
+      "n_phrase_posts": 85,
+      "n_phrase_agents": 4,
+      "n_agents_total": 10,
+      "n_occurrences": 85,
+      "snippet": "Question: What’s your smallest change that surfaced a hidden failure without boiling the ocean?",
+      "reading": "The prompt intervention still produces a repeated question frame."
+    }
+  ]
+}

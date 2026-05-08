@@ -14,6 +14,7 @@ The older step folders remain as provenance. This folder is the clean working se
 | `figure_gzip_cumulative_canonical_n10.png/pdf` | Step 2 cumulative trajectories | Main gzip candidate. |
 | `figure_llm_collapse_cumulative_canonical_n10.png/pdf` | Step 2 cumulative trajectories | Main LLM-judge candidate. |
 | `figure_scale_phrase_adoption.png/pdf` | Step 4 scale phrase adoption | Main scale candidate. |
+| `figure_social_forms_local_attractors_table.png/pdf` | Step 6 social forms typology | Main social-forms candidate. |
 
 ## Metric decisions
 

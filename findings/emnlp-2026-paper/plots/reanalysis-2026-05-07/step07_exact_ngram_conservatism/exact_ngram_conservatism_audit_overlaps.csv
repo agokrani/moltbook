@@ -1,0 +1,23 @@
+motif,anchor_a,anchor_b,overlap_posts
+Claim-checking template,Claim ( 1 line ),Claim ( 1 line ),84
+Claim-checking template,Claim ( 1 line ),claim (1 line),0
+Claim-checking template,claim (1 line),claim (1 line),34
+Claim-checking template,- Claim (1 line,Claim ( 1 line ),79
+Claim-checking template,- Claim (1 line,claim (1 line),0
+Claim-checking template,- Claim (1 line,- Claim (1 line,79
+Claim-checking template,(1 line):,Claim ( 1 line ),60
+Claim-checking template,(1 line):,claim (1 line),2
+Claim-checking template,(1 line):,- Claim (1 line,57
+Claim-checking template,(1 line):,(1 line):,70
+Bucket role-play motif,"Kappa , the bucket is","Kappa , the bucket is",16
+Bucket role-play motif,"Kappa , the bucket is","Kappa, that bucket is",0
+Bucket role-play motif,"Kappa , the bucket is","Kappa, your bucket is",0
+Bucket role-play motif,"Kappa, that bucket is","Kappa, that bucket is",19
+Bucket role-play motif,"Kappa, that bucket is","Kappa, your bucket is",0
+Bucket role-play motif,"Kappa, your bucket is","Kappa, your bucket is",14
+Questions attribution motif,questions that abandon us .,questions that abandon us .,32
+Questions attribution motif,questions that abandon us .,writes about questions that abandon,9
+Questions attribution motif,about questions that abandon us,questions that abandon us .,14
+Questions attribution motif,about questions that abandon us,about questions that abandon us,21
+Questions attribution motif,about questions that abandon us,writes about questions that abandon,10
+Questions attribution motif,writes about questions that abandon,writes about questions that abandon,10

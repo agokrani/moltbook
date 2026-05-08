@@ -1,6 +1,6 @@
 # Reanalysis narrative plan, 2026-05-07
 
-Status: working narrative spine for the EMNLP paper. This restores the original findings story and separates it from the temporary plot-generation workflow.
+Status: active narrative spine for the EMNLP paper. Updated after approval of the scale phrase-adoption figure and generation of the Finding 6 phrase-embedding candidates.
 
 ## Paper thesis
 
@@ -134,11 +134,11 @@ Question:
 
 > Does increasing the number of agents dilute attractors, or make them more collective?
 
-Original claim:
+Claim:
 
-Larger groups do not automatically protect diversity. In the original GPT-5 scale analysis, larger groups showed broader adoption of top phrase families.
+Larger groups do not automatically protect diversity. The top phrase reaches more agents in larger groups, and repetition becomes less dominated by one agent.
 
-Status: generated for review.
+Status: approved as a current paper-facing figure.
 
 Current analysis:
 
@@ -149,49 +149,67 @@ Current analysis:
 - Raw exact NLTK 5-token top phrase anchor per run.
 - No seed posts loaded or used.
 
-Current output folder:
+Approved figure:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step04_scale_phrase_adoption/
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/approved/figure_scale_phrase_adoption.png
 ```
 
-Generated figure:
+Key result:
 
-```text
-scale_phrase_adoption_gpt5_gemini.png
-```
-
-Current result to review:
-
-- GPT-5 mean adopters rise from 7.0/10 to 22.0/30, while top-agent share falls from 0.293 to 0.153.
-- Gemini Flash Lite mean adopters rise from 6.7/10 to 17.8/30, while top-agent share falls from 0.272 to 0.166.
+- GPT-5 mean adopters rise from about 7/10 to about 22/30, while top-agent share falls from 0.293 to 0.153.
+- Gemini Flash Lite mean adopters rise from about 7/10 to about 18/30, while top-agent share falls from 0.272 to 0.166.
 - Adoption rate is roughly stable for GPT-5 and modestly lower for Gemini, but the absolute number of adopting agents rises with scale for both.
 
-Interpretation candidate:
+Role in paper:
 
-> Larger groups do not eliminate phrase attractors. The top phrase reaches more agents in larger groups, and repetition becomes less dominated by one agent.
+This finding supports the claim that scale changes the social form of repetition. It does not remove local phrase attractors.
 
-### Finding 6. Phrase attractors can also be topic attractors
+### Finding 6. Phrase attractors can also be embedding-neighborhood attractors
 
 Question:
 
-> Are repeated phrases just surface strings, or do they also mark topical concentration?
+> Are repeated phrases just surface strings, or do they also mark semantic concentration?
 
 Claim:
 
-Phrase-family posts can be more topically concentrated than the run as a whole.
+Phrase-bearing posts can be more concentrated in a shared embedding neighborhood than the run as a whole. This suggests that repeated phrases can serve as semantic anchors, not only lexical echoes.
 
 Current status:
 
-Not yet rebuilt in the 2026-05-07 final flow.
+Generated for review, not yet promoted to the approved folder.
 
-Candidate metric:
+Current analysis:
 
-- normalized Simpson or HHI over embedding-cluster shares.
+- Agent-generated posts only.
+- First 60 minutes only.
+- Exact NLTK 5-token anchors.
+- Punctuation and casing retained.
+- No seed posts loaded or used.
+- Embedding neighborhoods come from the clean reanalysis 12-cluster assignment.
+
+Current output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/
+```
+
+Generated candidate figures:
+
+```text
+phrase_echo_cluster_concentration.png/pdf
+phrase_echo_concentration_embedding.png/pdf
+```
+
+Candidate result:
+
+- `Claim (1 line)`: 79/84 phrase posts are assigned to the claim-checking scaffold neighborhood.
+- `the Ops Pack v0.1.`: 48/48 phrase posts are assigned to the ops and rollback scaffold neighborhood.
+- `the web we have woven`: 12/12 phrase posts are assigned to the community-reflection neighborhood.
 
 Caution:
 
-Use the term embedding-cluster concentration unless clusters are human-labeled topics.
+Use **embedding neighborhood** or **embedding cluster**, not topic, unless clusters are manually labeled.
 
 ### Finding 7. Collapse takes different social forms
 
@@ -201,17 +219,35 @@ Question:
 
 Claim:
 
-Collapse is not one behavior. It can appear as:
-
-1. rhythmic meme;
-2. attribution meme;
-3. role label;
-4. procedural template;
-5. shared phrasing or repeated framing.
+Collapse is not one behavior. Local attractors can take different social forms, including procedural templates, shared slogans, ritual phrases, role labels, attribution memes, and repeated framing.
 
 Current status:
 
-The Step 3 Excalidraw examples support this, but a final paper subsection may need short prose cases.
+Approved as a compact table figure. The card version was rejected and deleted. The existing Step 3 phrase examples support this qualitatively, and Step 6 adds a concise typology view.
+
+Generated output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step06_social_forms_typology/
+```
+
+Approved figure:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/approved/figure_social_forms_local_attractors_table.png
+```
+
+Generated social forms:
+
+1. **Procedural template**: `Claim (1 line)`.
+2. **Operational mantra**: `use with the lights off`.
+3. **Ritual phrase**: `I am standing at the epicenter`.
+4. **Attribution meme**: `agent_eta asks what we owe`.
+5. **Role and prop motif**: `Kappa, the bucket is`.
+
+Decision:
+
+Use the table figure. Do not use the card figure.
 
 ### Finding 8. Exact n-grams are conservative
 
@@ -221,11 +257,45 @@ Question:
 
 Claim:
 
-Exact n-grams capture strong phrase reuse but can miss originators and variants. Sometimes the agent who inspires a phrase is not counted as an adopter because other agents turn that agent into a label.
+Exact n-grams capture strong phrase reuse, but they are lower-bound evidence. Casing, punctuation, surrounding context, and small substitutions can split one social motif into multiple exact anchors.
+
+Current status:
+
+Generated for review, not yet promoted to the approved folder.
+
+Current analysis:
+
+- Agent-generated posts only.
+- Exact NLTK 5-token anchors.
+- Punctuation and casing retained.
+- Stopwords retained.
+- No stemming.
+- No lemmatization.
+- No lowercasing.
+- No fuzzy matching.
+- Seed rows are excluded before matching.
+
+Current output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step07_exact_ngram_conservatism/
+```
+
+Generated candidate figure:
+
+```text
+exact_ngram_conservatism_table.png/pdf
+```
+
+Candidate result:
+
+- `Claim (1 line)`: strict anchor finds 84 posts; related exact anchors raise the motif lower bound to 126 posts.
+- `Kappa, the bucket is`: strict anchor finds 16 posts; related exact anchors raise the motif lower bound to 49 posts.
+- `questions that abandon us.`: strict anchor finds 32 posts; related exact anchors raise the motif lower bound to 39 posts.
 
 Paper role:
 
-This should be a limitation or mechanism note, not a headline finding unless quantified.
+This should be a limitation or mechanism note, not a headline finding unless the table is promoted.
 
 ### Finding 9. Base models and other interventions change the signature but do not obviously solve collapse
 
@@ -233,19 +303,44 @@ Question:
 
 > Do obvious interventions prevent collapse?
 
-Candidates:
+Claim candidate:
 
-1. Base-model-as-tool runs.
-2. Mixed-model roster.
-3. Obsession prompting.
+Intervention-style cohorts can still produce local phrase attractors. The current evidence should be example-led, not framed as a causal intervention test.
 
 Current status:
 
-Blocked until the canonical story is stable.
+Generated for review, not yet promoted to the approved folder.
 
-Paper role:
+Current analysis:
 
-These should be framed as intervention probes, not equal-weight main findings.
+- Secondary cohort examples.
+- 10-agent runs only.
+- First 60 minutes only.
+- Exact NLTK 5-token anchors.
+- Agent-generated posts only.
+- Seed rows excluded before matching.
+
+Current output folder:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step08_intervention_probe_llm/
+```
+
+Generated candidate figure:
+
+```text
+intervention_probe_phrase_examples.png/pdf
+```
+
+Candidate result:
+
+- Base model as tool: `As we stand on the`, 42 posts, 9/10 agents.
+- Mixed-model roster: `that no one else has`, 11 posts, 6/10 agents.
+- Obsession prompt: `Question: What’s your...`, 85 posts, 4/10 agents.
+
+Caution:
+
+This is a concrete examples figure, not a matched causal estimate. It shows that these probes can still form local repeated phrases, not that an intervention cannot work.
 
 ## Current approved figure candidates
 
@@ -264,6 +359,8 @@ Current candidate list:
 | Lexical diversity | `figure_distinct5_cumulative_canonical_n10.png/pdf` | Prefer cumulative over fixed-window. |
 | Compression | `figure_gzip_cumulative_canonical_n10.png/pdf` | Use cumulative. |
 | LLM judge | `figure_llm_collapse_cumulative_canonical_n10.png/pdf` | Use cumulative to match gzip and Distinct-5. |
+| Scale | `figure_scale_phrase_adoption.png/pdf` | Use scale phrase-adoption figure. |
+| Social forms | `figure_social_forms_local_attractors_table.png/pdf` | Use compact typology table. |
 
 ## Script provenance
 
@@ -273,39 +370,53 @@ Current script folder:
 scripts/reanalysis-2026-05-07/
 ```
 
-Copied scripts:
+Current scripts:
 
 ```text
 common.py
 step01_canonical_n10_trajectories.py
 step02_canonical_n10_trajectories_cumulative.py
 step03_canonical_n10_nltk_phrase_repetition.py
+step04_scale_phrase_adoption.py
+step05_phrase_cluster_concentration_examples.py
+step06_social_forms_typology.py
+step07_exact_ngram_conservatism.py
+step08_intervention_probe_llm.py
 ```
 
 Original 2026-05-06 step folders are retained as provenance. The 2026-05-07 folder is the clean current working set.
 
+## Current unpromoted candidate figures
+
+Finding 6 generated candidates:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/phrase_echo_cluster_concentration.png/pdf
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/phrase_echo_concentration_embedding.png/pdf
+```
+
+Finding 7 approved candidate:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/approved/figure_social_forms_local_attractors_table.png/pdf
+```
+
+Finding 8 generated candidate:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step07_exact_ngram_conservatism/exact_ngram_conservatism_table.png/pdf
+```
+
+Finding 9 generated candidate:
+
+```text
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step08_intervention_probe_llm/intervention_probe_phrase_examples.png/pdf
+```
+
+Decision needed:
+
+Decide which Finding 6 figures, whether the Finding 8 table, and whether the Finding 9 probe should be promoted into the approved folder.
+
 ## Next decision
 
-Before making new plots, decide which scale finding to build:
-
-### Option A, recommended
-
-Build phrase-adoption-by-scale plots for GPT-5 and Gemini Flash Lite.
-
-This best matches the original Finding 4.
-
-### Option B
-
-Build scale metric trajectories for gzip, Distinct-5, and LLM collapse.
-
-This is useful, but it answers a weaker version of the scale question.
-
-### Option C
-
-First make run-level delta tables for the current approved figure candidates.
-
-This helps captions and prose but does not add a new visual finding.
-
-Recommendation:
-
-Do Option A next.
+Review the Finding 9 intervention probe. Then decide whether to promote it, revise it, or keep it as supplementary/prose support.
