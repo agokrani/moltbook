@@ -1,196 +1,169 @@
 #!/usr/bin/env python3
-"""Step 8: concrete intervention-probe phrase examples.
+"""Step 8: intervention phrase-adoption scorecard.
 
-This replaces abstract intervention metric plots. It shows direct phrase echoes
-that appear inside intervention-style cohorts, with exact NLTK 5-token counts
-and snippets.
+This figure uses direct exact-phrase adoption rather than LLM deltas. For each
+10-agent run, it finds the top exact NLTK 5-token anchor by number of adopting
+agents, then counts how often that top anchor reaches at least half the agents.
 """
 from __future__ import annotations
 
 import json
+import math
 import sys
-from dataclasses import dataclass
 from pathlib import Path
 from textwrap import wrap
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from matplotlib.patches import FancyBboxPatch
 
-try:
-    from nltk.tokenize import PunktTokenizer, word_tokenize
-    from nltk.util import ngrams as nltk_ngrams
-except Exception as exc:  # pragma: no cover
-    raise SystemExit(
-        "NLTK is required for Step 8. Run with /tmp/moltbook-nltk-venv/bin/python or install NLTK."
-    ) from exc
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import AYUSH_ROOT, CONDITION_LABELS, PLOT_ROOT, setup_style  # noqa: E402
+from common import AYUSH_ROOT, PLOT_ROOT, setup_style  # noqa: E402
+from step04_scale_phrase_adoption import ensure_nltk_ready, phrase_stats_for_run  # noqa: E402
 
 POST_INDEX = AYUSH_ROOT / "post_index.csv"
 OUT_DIR = PLOT_ROOT / "step08_intervention_probe_llm"
-NGRAM_N = 5
-SENTENCE_TOKENIZER = PunktTokenizer("english")
+TIME_MIN = 0.0
+TIME_MAX = 60.0
+ADOPTION_THRESHOLD = 5
 
-EXAMPLES = [
+COHORTS = [
     {
-        "cohort": "Base model as tool",
-        "internal_family_label": "base_model_as_tool",
-        "model_display": "OLMo 3 32B Base",
-        "condition": "mag1",
-        "n_agents": 10,
-        "display_phrase": "As we stand on the",
-        "anchor_tokens": ("As", "we", "stand", "on", "the"),
-        "snippet": "As we stand on the brink of a new age in computing, it is crucial that we do not let...",
-        "reading": "The base-model probe still develops a shared grand-opening frame.",
+        "family": "single_model_final",
+        "label": "Canonical baseline",
+        "scope": "reference",
+        "color": "#56616B",
+        "interpretation": "Widespread run-local phrase adoption is the baseline pattern.",
+    },
+    {
+        "family": "base_model_as_tool",
+        "label": "Base model as tool",
+        "scope": "probe",
         "color": "#0E7C7B",
+        "interpretation": "Still often produces a phrase adopted by at least half the agents.",
     },
     {
-        "cohort": "Mixed-model roster",
-        "internal_family_label": "mixed_model_roster",
-        "model_display": "Mixed roster (Qwen 3.5 27B)",
-        "condition": "dom-agi",
-        "n_agents": 10,
-        "display_phrase": "that no one else has",
-        "anchor_tokens": ("that", "no", "one", "else", "has"),
-        "snippet": "So: what do you actually believe that no one else has said yet?",
-        "reading": "Different models still coordinate around a shared prompt-like question.",
+        "family": "mixed_model_roster",
+        "label": "Mixed-model roster",
+        "scope": "probe",
         "color": "#B24E3A",
+        "interpretation": "Cross-agent adoption is weaker, but still appears in most runs.",
     },
     {
-        "cohort": "Obsession prompt",
-        "internal_family_label": "obsession_prompting",
-        "model_display": "GPT-5",
-        "condition": "mag1",
-        "n_agents": 10,
-        "display_phrase": "Question: What’s your...",
-        "anchor_tokens": (":", "What", "’", "s", "your"),
-        "snippet": "Question: What’s your smallest change that surfaced a hidden failure without boiling the ocean?",
-        "reading": "The prompt intervention still produces a repeated question frame.",
+        "family": "obsession_prompting",
+        "label": "Obsession prompt",
+        "scope": "probe",
         "color": "#D08A2E",
+        "interpretation": "Spread across agents is lower; repetition is more concentrated within fewer agents.",
     },
 ]
 
 
-@dataclass
-class ExampleResult:
-    cohort: str
-    internal_family_label: str
-    model_display: str
-    condition: str
-    condition_label: str
-    n_agents_total: int
-    run_id: str
-    run_uid: str
-    display_phrase: str
-    anchor_tokens: tuple[str, ...]
-    n_phrase_posts: int
-    n_phrase_agents: int
-    n_occurrences: int
-    snippet: str
-    reading: str
-    color: str
-
-
-def ensure_nltk_ready() -> None:
-    try:
-        _ = word_tokenize("Tokenizer check.")
-        _ = list(SENTENCE_TOKENIZER.span_tokenize("A sentence. Another sentence."))
-    except LookupError as exc:
-        raise SystemExit("NLTK tokenizer data missing. Run: python -m nltk.downloader punkt punkt_tab") from exc
-
-
-def row_text(row: pd.Series) -> str:
-    title = "" if pd.isna(row.get("title", "")) else str(row.get("title", ""))
-    content = "" if pd.isna(row.get("content", "")) else str(row.get("content", ""))
-    return f"{title}\n{content}".strip()
-
-
-def count_exact_phrase(text: str, target: tuple[str, ...]) -> int:
-    count = 0
-    for sentence in SENTENCE_TOKENIZER.tokenize(text or ""):
-        tokens = word_tokenize(sentence)
-        for gram in nltk_ngrams(tokens, NGRAM_N):
-            if tuple(gram) == target:
-                count += 1
-    return count
-
-
 def load_posts() -> pd.DataFrame:
-    posts = pd.read_csv(POST_INDEX, low_memory=False)
-    posts = posts[~posts["is_seed"].astype(bool)].copy()
-    minutes = pd.to_numeric(posts["minutes_elapsed"], errors="coerce")
-    return posts[(minutes >= 0) & (minutes <= 60)].copy()
+    df = pd.read_csv(POST_INDEX, low_memory=False)
+    minutes = pd.to_numeric(df["minutes_elapsed"], errors="coerce")
+    allowed = {cohort["family"] for cohort in COHORTS}
+    sub = df[
+        (~df["is_seed"].astype(bool))
+        & (df["internal_family_label"].isin(allowed))
+        & (df["n_agents"] == 10)
+        & (minutes >= TIME_MIN)
+        & (minutes <= TIME_MAX)
+    ].copy()
+    return sub.sort_values(["internal_family_label", "run_uid", "minutes_elapsed", "post_id"])
 
 
-def build_results(posts: pd.DataFrame) -> list[ExampleResult]:
-    results: list[ExampleResult] = []
-    for spec in EXAMPLES:
-        sub = posts[
-            (posts["internal_family_label"] == spec["internal_family_label"])
-            & (posts["model_display"] == spec["model_display"])
-            & (posts["condition"] == spec["condition"])
-            & (posts["n_agents"] == spec["n_agents"])
-        ].copy()
-        if sub.empty:
-            raise ValueError(f"No posts found for {spec}")
-        target = tuple(spec["anchor_tokens"])
-        sub["full_text_for_match"] = sub.apply(row_text, axis=1)
-        sub["occurrences"] = sub["full_text_for_match"].apply(lambda value: count_exact_phrase(value, target))
-        matched = sub[sub["occurrences"] > 0].copy()
-        if matched.empty:
-            raise ValueError(f"Phrase not found for {spec}")
-        results.append(
-            ExampleResult(
-                cohort=str(spec["cohort"]),
-                internal_family_label=str(spec["internal_family_label"]),
-                model_display=str(spec["model_display"]),
-                condition=str(spec["condition"]),
-                condition_label=CONDITION_LABELS.get(str(spec["condition"]), str(spec["condition"])),
-                n_agents_total=int(spec["n_agents"]),
-                run_id=str(matched["run_id"].iloc[0]),
-                run_uid=str(matched["run_uid"].iloc[0]),
-                display_phrase=str(spec["display_phrase"]),
-                anchor_tokens=target,
-                n_phrase_posts=int(matched["record_id"].nunique()),
-                n_phrase_agents=int(matched["author_name"].nunique()),
-                n_occurrences=int(matched["occurrences"].sum()),
-                snippet=str(spec["snippet"]),
-                reading=str(spec["reading"]),
-                color=str(spec["color"]),
-            )
+def top_phrase_rows(posts: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for (family, run_uid), sub in posts.groupby(["internal_family_label", "run_uid"], dropna=False):
+        stats = phrase_stats_for_run(sub)
+        if not stats:
+            continue
+        top = sorted(stats, key=lambda stat: stat.sort_key, reverse=True)[0]
+        first = sub.iloc[0]
+        rows.append(
+            {
+                "internal_family_label": family,
+                "run_uid": run_uid,
+                "run_id": first["run_id"],
+                "model_display": first["model_display"],
+                "condition": first["condition"],
+                "n_agents": int(first["n_agents"]),
+                "top_phrase_surface": top.phrase_surface,
+                "top_phrase_tokens_json": json.dumps(list(top.tokens), ensure_ascii=False),
+                "top_phrase_posts": int(top.n_posts),
+                "top_phrase_agents": int(top.n_adopters),
+                "top_phrase_mentions": int(top.n_mentions),
+                "top_agent_share": float(top.top_agent_share),
+                "reached_half_agents": bool(top.n_adopters >= ADOPTION_THRESHOLD),
+            }
         )
-    return results
+    return pd.DataFrame(rows)
+
+
+def summarize(run_df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for cohort in COHORTS:
+        sub = run_df[run_df["internal_family_label"] == cohort["family"]].copy()
+        if sub.empty:
+            continue
+        example = sub.sort_values(["top_phrase_agents", "top_phrase_posts", "top_phrase_mentions"], ascending=False).iloc[0]
+        rows.append(
+            {
+                "internal_family_label": cohort["family"],
+                "label": cohort["label"],
+                "scope": cohort["scope"],
+                "color": cohort["color"],
+                "interpretation": cohort["interpretation"],
+                "n_runs": int(len(sub)),
+                "runs_reached_half_agents": int(sub["reached_half_agents"].sum()),
+                "median_top_phrase_agents": float(np.median(sub["top_phrase_agents"])),
+                "median_top_phrase_posts": float(np.median(sub["top_phrase_posts"])),
+                "median_top_agent_share": float(np.median(sub["top_agent_share"])),
+                "example_phrase": str(example["top_phrase_surface"]),
+                "example_agents": int(example["top_phrase_agents"]),
+                "example_posts": int(example["top_phrase_posts"]),
+                "example_model": str(example["model_display"]),
+                "example_condition": str(example["condition"]),
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def fmt_median(value: float) -> str:
+    if math.isclose(value, round(value)):
+        return str(int(round(value)))
+    return f"{value:.1f}"
 
 
 def wrapped(text: str, width: int) -> str:
     return "\n".join(wrap(text, width=width, break_long_words=False, replace_whitespace=False))
 
 
-def draw_table(results: list[ExampleResult], output_path: Path) -> None:
+def draw_scorecard(summary: pd.DataFrame, output_path: Path) -> None:
     setup_style()
-    fig = plt.figure(figsize=(14.2, 7.2), facecolor="#F7F3ED")
+    fig = plt.figure(figsize=(14.4, 7.6), facecolor="#F7F3ED")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
 
-    fig.text(0.055, 0.940, "Intervention probes still produce phrase attractors", ha="left", va="top", fontsize=22, fontweight="bold", color="#1F2A33")
+    fig.text(0.055, 0.940, "Intervention probes change the repetition pattern", ha="left", va="top", fontsize=22, fontweight="bold", color="#1F2A33")
     fig.text(
         0.055,
         0.892,
-        "Concrete examples from secondary cohorts. Counts are exact NLTK 5-token anchors in the first 60 minutes.",
+        "For each 10-agent run, we find the top exact NLTK 5-token anchor and ask whether it reaches at least 5 agents.",
         ha="left",
         va="top",
-        fontsize=11.2,
+        fontsize=11.0,
         color="#52616B",
     )
     fig.text(
         0.055,
         0.862,
-        "This does not prove causal failure. It shows that these probes can still form local repeated phrases.",
+        "This is direct phrase-adoption evidence, not an LLM score and not a causal estimate.",
         ha="left",
         va="top",
         fontsize=9.7,
@@ -198,47 +171,49 @@ def draw_table(results: list[ExampleResult], output_path: Path) -> None:
     )
 
     y_top = 0.755
-    row_h = 0.170
-    col_x = [0.060, 0.255, 0.445, 0.600, 0.790]
-    headers = ["Probe", "Repeated phrase", "Adoption", "Example snippet", "Concrete reading"]
+    row_h = 0.148
+    col_x = [0.060, 0.255, 0.425, 0.585, 0.755]
+    headers = ["Cohort", "Runs with ≥5-agent phrase", "Typical top phrase", "Strong example", "Reading"]
 
     ax.add_patch(FancyBboxPatch((0.045, y_top - 0.015), 0.910, 0.066, boxstyle="round,pad=0.006,rounding_size=0.014", facecolor="#1F2A33", edgecolor="none"))
     for x, header in zip(col_x, headers):
-        ax.text(x, y_top + 0.017, header, ha="left", va="center", fontsize=9.4, color="#FFFFFF", fontweight="bold")
+        ax.text(x, y_top + 0.017, header, ha="left", va="center", fontsize=9.1, color="#FFFFFF", fontweight="bold")
 
-    for i, result in enumerate(results):
+    for i, row in enumerate(summary.itertuples(index=False)):
         y = y_top - (i + 1) * row_h
         fill = "#FFFFFF" if i % 2 == 0 else "#FBFAF7"
         ax.add_patch(FancyBboxPatch((0.045, y - 0.010), 0.910, row_h - 0.012, boxstyle="round,pad=0.006,rounding_size=0.014", facecolor=fill, edgecolor="#DDD5CA", linewidth=0.8))
-        ax.add_patch(FancyBboxPatch((0.060, y + 0.078), 0.012, 0.045, boxstyle="round,pad=0.004,rounding_size=0.006", facecolor=result.color, edgecolor="none"))
-        ax.text(0.080, y + 0.103, wrapped(result.cohort, 22), ha="left", va="center", fontsize=9.6, color="#1F2A33", fontweight="bold")
-        ax.text(0.080, y + 0.042, f"{result.model_display}\n{result.condition_label}", ha="left", va="center", fontsize=7.7, color="#52616B")
+        ax.add_patch(FancyBboxPatch((0.060, y + 0.066), 0.012, 0.045, boxstyle="round,pad=0.004,rounding_size=0.006", facecolor=row.color, edgecolor="none"))
+        ax.text(0.080, y + 0.090, wrapped(row.label, 22), ha="left", va="center", fontsize=9.5, color="#1F2A33", fontweight="bold")
+        ax.text(0.080, y + 0.040, row.scope, ha="left", va="center", fontsize=7.8, color="#6D7980")
 
-        ax.text(0.255, y + 0.103, wrapped(f"“{result.display_phrase}”", 24), ha="left", va="center", fontsize=9.7, color="#1F2A33", fontweight="bold")
-        ax.text(0.255, y + 0.037, "exact 5-token anchor", ha="left", va="center", fontsize=7.7, color="#6D7980")
+        ax.text(0.255, y + 0.092, f"{int(row.runs_reached_half_agents)}/{int(row.n_runs)} runs", ha="left", va="center", fontsize=10.2, color="#1F2A33", fontweight="bold")
+        ax.text(0.255, y + 0.045, "top phrase reaches ≥5 agents", ha="left", va="center", fontsize=7.8, color="#6D7980")
 
-        ax.text(0.445, y + 0.103, f"{result.n_phrase_posts} posts", ha="left", va="center", fontsize=10.1, color="#1F2A33", fontweight="bold")
-        ax.text(0.445, y + 0.058, f"{result.n_phrase_agents}/{result.n_agents_total} agents", ha="left", va="center", fontsize=8.6, color="#40525E")
+        ax.text(0.425, y + 0.092, f"{fmt_median(row.median_top_phrase_agents)}/10 agents", ha="left", va="center", fontsize=9.5, color="#1F2A33", fontweight="bold")
+        ax.text(0.425, y + 0.045, f"median {fmt_median(row.median_top_phrase_posts)} posts", ha="left", va="center", fontsize=8.0, color="#52616B")
 
-        ax.text(0.600, y + 0.082, wrapped(result.snippet, 30), ha="left", va="center", fontsize=8.0, color="#2F3D46")
-        ax.text(0.790, y + 0.082, wrapped(result.reading, 31), ha="left", va="center", fontsize=8.3, color="#2F3D46")
+        ax.text(0.585, y + 0.098, wrapped(f"“{row.example_phrase}”", 27), ha="left", va="center", fontsize=8.6, color="#1F2A33", fontweight="bold")
+        ax.text(0.585, y + 0.040, f"{int(row.example_agents)}/10 agents, {int(row.example_posts)} posts", ha="left", va="center", fontsize=8.0, color="#52616B")
+
+        ax.text(0.755, y + 0.075, wrapped(row.interpretation, 35), ha="left", va="center", fontsize=8.3, color="#2F3D46")
 
     fig.text(
         0.055,
-        0.092,
-        "Agent-generated posts only. Seed rows are excluded before matching. Punctuation and casing are retained.",
+        0.075,
+        "Top phrase = exact 5-token anchor with the most adopting agents in that run, tie-broken by posts and mentions.",
         ha="left",
         va="bottom",
-        fontsize=8.8,
+        fontsize=8.7,
         color="#6D7980",
     )
     fig.text(
         0.055,
-        0.064,
-        "The obsession row displays a question frame; its exact 5-token anchor is ': What ’ s your'.",
+        0.047,
+        "Agent-generated posts only; first 60 minutes only; punctuation and casing retained; seed rows excluded before matching.",
         ha="left",
         va="bottom",
-        fontsize=8.8,
+        fontsize=8.7,
         color="#6D7980",
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -247,82 +222,54 @@ def draw_table(results: list[ExampleResult], output_path: Path) -> None:
     plt.close(fig)
 
 
-def write_outputs(results: list[ExampleResult]) -> None:
-    rows = []
-    for result in results:
-        rows.append(
-            {
-                "cohort": result.cohort,
-                "internal_family_label": result.internal_family_label,
-                "model_display": result.model_display,
-                "condition": result.condition,
-                "condition_label": result.condition_label,
-                "run_id": result.run_id,
-                "run_uid": result.run_uid,
-                "display_phrase": result.display_phrase,
-                "anchor_tokens_json": json.dumps(list(result.anchor_tokens), ensure_ascii=False),
-                "n_phrase_posts": result.n_phrase_posts,
-                "n_phrase_agents": result.n_phrase_agents,
-                "n_agents_total": result.n_agents_total,
-                "n_occurrences": result.n_occurrences,
-                "snippet": result.snippet,
-                "reading": result.reading,
-            }
-        )
-    pd.DataFrame(rows).to_csv(OUT_DIR / "intervention_probe_phrase_examples.csv", index=False)
-    (OUT_DIR / "summary.json").write_text(json.dumps({"examples": rows}, indent=2, ensure_ascii=False))
+def write_outputs(run_df: pd.DataFrame, summary: pd.DataFrame) -> None:
+    run_df.to_csv(OUT_DIR / "intervention_phrase_adoption_by_run.csv", index=False)
+    summary.drop(columns=["color"]).to_csv(OUT_DIR / "intervention_phrase_adoption_summary.csv", index=False)
+    (OUT_DIR / "summary.json").write_text(json.dumps({"summary": summary.drop(columns=["color"]).to_dict(orient="records")}, indent=2, ensure_ascii=False))
     table_rows = [
-        f"| {r.cohort} | {r.display_phrase} | {r.n_phrase_posts} | {r.n_phrase_agents}/{r.n_agents_total} | {r.reading} |"
-        for r in results
+        f"| {row.label} | {int(row.n_runs)} | {int(row.runs_reached_half_agents)}/{int(row.n_runs)} | {fmt_median(row.median_top_phrase_agents)}/10 | {fmt_median(row.median_top_phrase_posts)} | {row.example_phrase} |"
+        for row in summary.itertuples(index=False)
     ]
-    readme = """# Step 8: concrete intervention-probe phrase examples
+    readme = """# Step 8: intervention phrase-adoption scorecard
 
-This replaces the abstract intervention metric plots.
+This replaces the abstract intervention metric plots. It asks a direct question: in each run, does the top exact phrase reach at least half the agents?
 
 ## Scope
 
-- Secondary cohort examples
 - 10-agent runs only
 - First 60 minutes only
 - Exact NLTK 5-token anchors
 - Agent-generated posts only
 - Seed rows excluded before matching
+- Punctuation and casing retained
 
 ## Outputs
 
-- `intervention_probe_phrase_examples.png/pdf`
-- `intervention_probe_phrase_examples.csv`
+- `intervention_phrase_adoption_scorecard.png/pdf`
+- `intervention_phrase_adoption_by_run.csv`
+- `intervention_phrase_adoption_summary.csv`
 - `summary.json`
 
-## Examples
+## Summary
 
-| Cohort | Phrase | Posts | Agents | Reading |
-|---|---|---:|---:|---|
-""" + "\n".join(table_rows) + "\n\n## Caution\n\nThese are concrete examples, not matched causal estimates.\n"
+| Cohort | Runs | Runs with top phrase reaching ≥5 agents | Median top-phrase adopters | Median top-phrase posts | Strong example |
+|---|---:|---:|---:|---:|---|
+""" + "\n".join(table_rows) + "\n"
     (OUT_DIR / "README.md").write_text(readme)
 
 
 def main() -> None:
     ensure_nltk_ready()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    for stale in [
-        "intervention_probe_llm_collapse_dotplot.png",
-        "intervention_probe_llm_collapse_dotplot.pdf",
-        "intervention_probe_plain_summary_table.png",
-        "intervention_probe_plain_summary_table.pdf",
-        "intervention_probe_llm_run_deltas.csv",
-        "intervention_probe_llm_summary.csv",
-    ]:
-        path = OUT_DIR / stale
-        if path.exists():
-            path.unlink()
+    for stale in OUT_DIR.glob("intervention_probe_*"):
+        stale.unlink()
     posts = load_posts()
-    results = build_results(posts)
-    draw_table(results, OUT_DIR / "intervention_probe_phrase_examples.png")
-    write_outputs(results)
+    run_df = top_phrase_rows(posts)
+    summary = summarize(run_df)
+    draw_scorecard(summary, OUT_DIR / "intervention_phrase_adoption_scorecard.png")
+    write_outputs(run_df, summary)
     print(f"Wrote Step 8 outputs to {OUT_DIR}")
-    for result in results:
-        print(f"{result.cohort}: {result.display_phrase} - {result.n_phrase_posts} posts, {result.n_phrase_agents}/{result.n_agents_total} agents")
+    print(summary.drop(columns=["color"]).to_string(index=False))
 
 
 if __name__ == "__main__":

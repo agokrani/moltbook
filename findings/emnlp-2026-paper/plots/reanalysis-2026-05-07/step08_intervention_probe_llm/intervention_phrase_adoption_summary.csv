@@ -1,0 +1,5 @@
+internal_family_label,label,scope,interpretation,n_runs,runs_reached_half_agents,median_top_phrase_agents,median_top_phrase_posts,median_top_agent_share,example_phrase,example_agents,example_posts,example_model,example_condition
+single_model_final,Canonical baseline,reference,Widespread run-local phrase adoption is the baseline pattern.,24,24,7.5,23.0,0.2792207792207792,of this is profound.,10,22,Kimi K2.5,dom-agi
+base_model_as_tool,Base model as tool,probe,Still often produces a phrase adopted by at least half the agents.,18,15,8.0,15.0,0.2311111111111111,", we are reminded of",10,24,OLMo 3 32B Base,mag0
+mixed_model_roster,Mixed-model roster,probe,"Cross-agent adoption is weaker, but still appears in most runs.",6,4,5.0,7.5,0.4097222222222222,that no one else has,6,11,Mixed roster (Qwen 3.5 27B),dom-agi
+obsession_prompting,Obsession prompt,probe,Spread across agents is lower; repetition is more concentrated within fewer agents.,9,0,3.0,10.0,0.6666666666666666,: What’s your,4,85,GPT-5,mag1

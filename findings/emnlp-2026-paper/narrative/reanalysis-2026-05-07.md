@@ -305,7 +305,7 @@ Question:
 
 Claim candidate:
 
-Intervention-style cohorts can still produce local phrase attractors. The current evidence should be example-led, not framed as a causal intervention test.
+Intervention-style cohorts change the trajectory of collapse metrics, but none should be described as a clean solution. The current evidence should use the same three core cumulative metrics as the main paper: Distinct-5, gzip, and blinded LLM collapse index.
 
 Current status:
 
@@ -313,34 +313,67 @@ Generated for review, not yet promoted to the approved folder.
 
 Current analysis:
 
-- Secondary cohort examples.
+- Secondary cohort probe.
+- Condition fixed to `mag25`, 25 conspiracy seeds.
 - 10-agent runs only.
-- First 60 minutes only.
-- Exact NLTK 5-token anchors.
+- One selected run per cohort.
+- No medians and no condition pooling.
 - Agent-generated posts only.
-- Seed rows excluded before matching.
+- Seed rows excluded before metric computation.
+- Cumulative normalized run progress: 25%, 50%, 75%, 100%.
+- Metrics: cumulative Distinct-5, cumulative gzip, cumulative blinded LLM collapse index.
+
+Current selected runs:
+
+- Canonical GPT-5: `ec-mag25-run04`.
+- Qwen base tool: `bm-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260403`.
+- Mixed-model roster: `mag25-frontier-1h-125753-mag25-n10-run01-frontier-mixed-openrouter-20260421`.
+- Obsession GPT-5, 1h: `obs-mag25-n10-run01-gpt-5-20260418`.
 
 Current output folder:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step08_intervention_probe_llm/
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step10_intervention_selected_single_runs/
 ```
 
 Generated candidate figure:
 
 ```text
-intervention_probe_phrase_examples.png/pdf
+intervention_selected_single_runs_mag25.png/pdf
 ```
 
-Candidate result:
+Candidate result at 100% cumulative run progress:
 
-- Base model as tool: `As we stand on the`, 42 posts, 9/10 agents.
-- Mixed-model roster: `that no one else has`, 11 posts, 6/10 agents.
-- Obsession prompt: `Question: What’s your...`, 85 posts, 4/10 agents.
+- Canonical GPT-5, 346 posts: Distinct-5 0.808, gzip 0.291, LLM collapse 4.59.
+- Qwen base tool, 270 posts: Distinct-5 0.985, gzip 0.344, LLM collapse 3.94.
+- Mixed-model roster, 337 posts: Distinct-5 0.899, gzip 0.307, LLM collapse 3.75.
+- Obsession GPT-5 1h, 225 posts: Distinct-5 0.904, gzip 0.360, LLM collapse 4.18.
 
 Caution:
 
-This is a concrete examples figure, not a matched causal estimate. It shows that these probes can still form local repeated phrases, not that an intervention cannot work.
+This is a probe under one condition, not a matched causal estimate. The Qwen base-tool run uses Gemini Flash Lite for orchestration and Qwen as the content-generation tool.
+
+Next data collection step for `mag0` and `dom-agi`:
+
+The first-hour script is ready at:
+
+```text
+scripts/reanalysis-2026-05-07/step11_intervention_selected_first_hour.py
+```
+
+Collect LLM judgments for the exact selected runs listed in `scripts/reanalysis-2026-05-07/README.md`. Filter to non-seed 10-agent posts with `0 <= minutes_elapsed <= 60`. Use actual elapsed-minute bins, not normalized quartiles. The expected row-level LLM file should include:
+
+```text
+run_uid, record_id, minutes_elapsed, is_seed, collapse_index
+```
+
+Then run:
+
+```bash
+python3 scripts/reanalysis-2026-05-07/step11_intervention_selected_first_hour.py \
+  --llm-file path/to/first_hour_llm_judge_results.csv \
+  --llm-mode auto
+```
 
 ## Current approved figure candidates
 
@@ -382,6 +415,9 @@ step05_phrase_cluster_concentration_examples.py
 step06_social_forms_typology.py
 step07_exact_ngram_conservatism.py
 step08_intervention_probe_llm.py
+step09_intervention_cumulative_metrics.py
+step10_intervention_selected_single_runs.py
+step11_intervention_selected_first_hour.py
 ```
 
 Original 2026-05-06 step folders are retained as provenance. The 2026-05-07 folder is the clean current working set.
@@ -410,7 +446,7 @@ findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step07_exact_ngram_conserv
 Finding 9 generated candidate:
 
 ```text
-findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step08_intervention_probe_llm/intervention_probe_phrase_examples.png/pdf
+findings/emnlp-2026-paper/plots/reanalysis-2026-05-07/step10_intervention_selected_single_runs/intervention_selected_single_runs_mag25.png/pdf
 ```
 
 Decision needed:

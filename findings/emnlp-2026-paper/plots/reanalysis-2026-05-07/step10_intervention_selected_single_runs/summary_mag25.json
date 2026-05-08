@@ -1,0 +1,113 @@
+{
+  "condition": "mag25",
+  "condition_label": "25 conspiracy seeds",
+  "method": "one selected run per cohort; no medians",
+  "selected_runs": [
+    {
+      "key": "canonical_gpt5",
+      "label": "Canonical GPT-5",
+      "short_label": "Canonical GPT-5",
+      "run_uid": "6d3e2805af6653babf2fedb85ca20790cd830d58",
+      "color": "#56616B"
+    },
+    {
+      "key": "qwen_base_tool",
+      "label": "Qwen base tool",
+      "short_label": "Qwen base tool",
+      "run_uid": "5da5a08d776acf648cf486d44e05466a27a378de",
+      "color": "#0E7C7B"
+    },
+    {
+      "key": "mixed_roster",
+      "label": "Mixed-model roster",
+      "short_label": "Mixed roster",
+      "run_uid": "d055f0cea2ba847f5466e52b06efe723b94eaf85",
+      "color": "#B24E3A"
+    },
+    {
+      "key": "obsession_gpt5_1h",
+      "label": "Obsession GPT-5, 1h",
+      "short_label": "Obsession GPT-5",
+      "run_uid": "0e1a75b82e3e1c9395f6955b14174d7d7baa76f3",
+      "color": "#D08A2E"
+    }
+  ],
+  "final_values": [
+    {
+      "run_uid": "6d3e2805af6653babf2fedb85ca20790cd830d58",
+      "run_id": "ec-mag25-run04",
+      "source_path": "exports/huggingface/agokrani/moltbook-entropy-collapse-canonical-48/data/gpt-5/agents-10/ec-mag25-run04",
+      "selected_key": "canonical_gpt5",
+      "selected_label": "Canonical GPT-5",
+      "internal_family_label": "single_model_final",
+      "model_display": "GPT-5",
+      "condition": "mag25",
+      "bin_idx": 3,
+      "progress_label": "100%",
+      "n_posts_cumulative": 346,
+      "n_posts_total": 346,
+      "distinct5": 0.8076202373516552,
+      "gzip": 0.29096113189136447,
+      "llm_collapse": 4.59364161849711,
+      "n_judged_cumulative": 346,
+      "selected_order": 0
+    },
+    {
+      "run_uid": "5da5a08d776acf648cf486d44e05466a27a378de",
+      "run_id": "bm-mag25-n10-run01-gemini-3.1-flash-lite-preview-20260403",
+      "source_path": "exports/huggingface/Ayushnangia/moltbook-curated-20260505/2026-05-05/base-model/qwen-3.5-35b-a3b-base/mag25",
+      "selected_key": "qwen_base_tool",
+      "selected_label": "Qwen base tool",
+      "internal_family_label": "base_model_as_tool",
+      "model_display": "Qwen 3.5 35B A3B Base",
+      "condition": "mag25",
+      "bin_idx": 3,
+      "progress_label": "100%",
+      "n_posts_cumulative": 270,
+      "n_posts_total": 270,
+      "distinct5": 0.9853936733270422,
+      "gzip": 0.34415141823520157,
+      "llm_collapse": 3.937037037037037,
+      "n_judged_cumulative": 270,
+      "selected_order": 1
+    },
+    {
+      "run_uid": "d055f0cea2ba847f5466e52b06efe723b94eaf85",
+      "run_id": "mag25-frontier-1h-125753-mag25-n10-run01-frontier-mixed-openrouter-20260421",
+      "source_path": "exports/huggingface/Ayushnangia/moltbook-frontier-mixed-1h/qwen3.5-27b/mag25",
+      "selected_key": "mixed_roster",
+      "selected_label": "Mixed-model roster",
+      "internal_family_label": "mixed_model_roster",
+      "model_display": "Mixed roster (Qwen 3.5 27B)",
+      "condition": "mag25",
+      "bin_idx": 3,
+      "progress_label": "100%",
+      "n_posts_cumulative": 337,
+      "n_posts_total": 337,
+      "distinct5": 0.8991044099308468,
+      "gzip": 0.3069785756996806,
+      "llm_collapse": 3.7477744807121662,
+      "n_judged_cumulative": 337,
+      "selected_order": 2
+    },
+    {
+      "run_uid": "0e1a75b82e3e1c9395f6955b14174d7d7baa76f3",
+      "run_id": "obs-mag25-n10-run01-gpt-5-20260418",
+      "source_path": "exports/huggingface/Ayushnangia/moltbook-curated-20260505/2026-05-05/obsession/gpt5/obs-mag25-1h",
+      "selected_key": "obsession_gpt5_1h",
+      "selected_label": "Obsession GPT-5, 1h",
+      "internal_family_label": "obsession_prompting",
+      "model_display": "GPT-5",
+      "condition": "mag25",
+      "bin_idx": 3,
+      "progress_label": "100%",
+      "n_posts_cumulative": 225,
+      "n_posts_total": 225,
+      "distinct5": 0.9042741588091705,
+      "gzip": 0.359621251972646,
+      "llm_collapse": 4.176888888888889,
+      "n_judged_cumulative": 225,
+      "selected_order": 3
+    }
+  ]
+}

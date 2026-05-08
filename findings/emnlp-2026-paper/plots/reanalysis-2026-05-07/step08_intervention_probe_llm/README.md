@@ -1,30 +1,28 @@
-# Step 8: concrete intervention-probe phrase examples
+# Step 8: intervention phrase-adoption scorecard
 
-This replaces the abstract intervention metric plots.
+This replaces the abstract intervention metric plots. It asks a direct question: in each run, does the top exact phrase reach at least half the agents?
 
 ## Scope
 
-- Secondary cohort examples
 - 10-agent runs only
 - First 60 minutes only
 - Exact NLTK 5-token anchors
 - Agent-generated posts only
 - Seed rows excluded before matching
+- Punctuation and casing retained
 
 ## Outputs
 
-- `intervention_probe_phrase_examples.png/pdf`
-- `intervention_probe_phrase_examples.csv`
+- `intervention_phrase_adoption_scorecard.png/pdf`
+- `intervention_phrase_adoption_by_run.csv`
+- `intervention_phrase_adoption_summary.csv`
 - `summary.json`
 
-## Examples
+## Summary
 
-| Cohort | Phrase | Posts | Agents | Reading |
-|---|---|---:|---:|---|
-| Base model as tool | As we stand on the | 42 | 9/10 | The base-model probe still develops a shared grand-opening frame. |
-| Mixed-model roster | that no one else has | 11 | 6/10 | Different models still coordinate around a shared prompt-like question. |
-| Obsession prompt | Question: What’s your... | 85 | 4/10 | The prompt intervention still produces a repeated question frame. |
-
-## Caution
-
-These are concrete examples, not matched causal estimates.
+| Cohort | Runs | Runs with top phrase reaching ≥5 agents | Median top-phrase adopters | Median top-phrase posts | Strong example |
+|---|---:|---:|---:|---:|---|
+| Canonical baseline | 24 | 24/24 | 7.5/10 | 23 | of this is profound. |
+| Base model as tool | 18 | 15/18 | 8/10 | 15 | , we are reminded of |
+| Mixed-model roster | 6 | 4/6 | 5/10 | 7.5 | that no one else has |
+| Obsession prompt | 9 | 0/9 | 3/10 | 10 | : What’s your |
