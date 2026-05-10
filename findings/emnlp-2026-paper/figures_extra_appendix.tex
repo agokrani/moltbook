@@ -138,6 +138,13 @@
 \begin{figure*}[p]
   \centering
   \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{plots/reanalysis-2026-05-07/step11_obsession_first_hour_llm_judge/obsession_first_hour_llm_judge.pdf}
-  \caption{Additional diagnostic: first-hour-only blinded LLM-judge analysis for GPT-5 obsession prompting. Five-hour obsession runs are truncated to minutes 0--60 and physical runs are grouped by run UID/source path to avoid merging the 1h and 5h MAG25 exports that share a human-readable run id.}
+  \caption{Additional diagnostic: first-hour-only blinded LLM-judge analysis for GPT-5 obsession prompting using the existing judge file. Five-hour obsession runs are truncated to minutes 0--60 and physical runs are grouped by run UID/source path to avoid merging the 1h and 5h MAG25 exports that share a human-readable run id.}
   \label{fig:extra-obsession-first-hour-llm-judge}
+\end{figure*}
+
+\begin{figure*}[p]
+  \centering
+  \includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{plots/reanalysis-2026-05-07/step12_obsession_first_hour_openrouter_judge/obsession_first_hour_openrouter_judge.pdf}
+  \caption{Additional diagnostic: fresh OpenRouter LLM-as-judge pass for the corrected GPT-5 obsession first-hour set. The judge scores all 1,920 first-hour obsession posts with the same blinded rubric, after truncating five-hour runs to minutes 0--60 and grouping by run UID/source path.}
+  \label{fig:extra-obsession-first-hour-openrouter-judge}
 \end{figure*}
