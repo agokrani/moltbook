@@ -53,8 +53,22 @@ __pycache__/
 # Google Cloud service account keys (secrets!)
 gen-lang-client-*.json
 
-# Claude Code local config
+# Claude Code / coding-agent local config
 .claude/
+.pi/
+.ralph/
+
+# LaTeX build artifacts
+*.aux
+*.blg
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+
+# Local paper preview/unpacked upload folders
+findings/emnlp-2026-paper/preview/
+findings/emnlp-2026-paper/emnlp-2026-paper-overleaf/
 
 # Reference papers (large PDFs)
 experiments/ranking-effect/papers/

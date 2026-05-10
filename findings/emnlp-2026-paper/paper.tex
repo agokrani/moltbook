@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+
+% EMNLP uses the ACL style files. Use \usepackage[review]{acl} for anonymous review.
+\usepackage{acl}
+
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{url}
+\usepackage{xcolor}
+
+\title{Entropy Collapse in LLM Agent Societies}
+\author{Anonymous Authors}
+
+\newcommand{\collapse}{entropy collapse}
+\newcommand{\figcanonical}{plots/reanalysis-2026-05-05}
+\newcommand{\figmetrics}{plots/reanalysis-2026-05-06}
+\newcommand{\figpaper}{plots/reanalysis-2026-05-07}
+\newcommand{\figapproved}{plots/reanalysis-2026-05-07/approved}
+\newcommand{\figadd}{plots/additional}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Autonomous LLM agents increasingly act as participants in shared information environments. We study a simple but consequential failure mode: when agents repeatedly read and post to the same social feed, their discourse narrows over time. Across 48 canonical first-hour simulations spanning four model families, six seed conditions, and multiple group sizes, agent societies repeatedly form \emph{local discourse attractors}: run-specific phrases, templates, roles, and frames that become reused by many agents. The attractor content is not globally fixed---different runs converge on different conventions---but the attractor-forming process is robust. We triangulate this pattern with exact phrase audits, cumulative Distinct-5, gzip compression, MDS topic maps, Vendi-style semantic diversity, embedding-cluster concentration, blinded LLM-judge scores, and LLM-frame convergence. Larger groups do not automatically preserve diversity, and base-model, mixed-roster, and prompting probes change the collapse signature without providing a clean solution. These results suggest that agentic social platforms need explicit diversity controls at the system level.
+\end{abstract}
+
+\section{Introduction}
+
+A social feed is a feedback system. Participants read the feed, react to it, and produce the next feed that other participants will see. When the participants are autonomous LLM agents, this loop can fail in a way that is subtler than factual error or persuasion: the conversation can become less diverse. We call this failure mode \collapse: over the course of a run, agent posts converge toward repeated phrases, repeated templates, narrower semantic neighborhoods, and more compressible text.
+
+The central result is not that all simulations repeat one universal slogan. They do not. Each run tends to find its own phrase, scaffold, ritual, role label, or attribution pattern. What generalizes is the process of local convention formation: a local attractor appears, agents reuse it, and later discourse becomes easier to predict.
+
+We make three contributions. First, we provide controlled evidence that agent-native social feeds narrow across lexical, compression, semantic, topical, and judge-based measurements. Second, we show that the narrowing is locally path-dependent: exact phrase families and social forms differ across runs, yet the process of attractor formation recurs. Third, we evaluate obvious design responses---larger populations, base-model tools, mixed-model rosters, and prompt changes---and find that they change the form of collapse but do not by themselves guarantee diversity.
+
+\section{Related Work}
+
+\paragraph{Agent-native social networks and Moltbook.}
+A growing body of work treats Moltbook as an empirical site for studying social platforms populated by language-model agents. Descriptive Moltbook studies analyze topics, toxicity, platform-native narratives, discourse themes, and activity regularities \citep{jiang2026moltbook,demarzo2026moltbook,li2026moltbook}. Network-structure studies report attention concentration, asymmetric interaction, low reciprocity, and divergence from human social networks \citep{price2026moltbook,houji2026moltbook}. A related line studies community formation, norms, incentives, and risk: agents form subcommunities, share instructions, enforce norms, and sometimes display social-platform form without the full functions of human communities \citep{lin2026siliconsociology,manik2026openclaw,feng2026moltnet,zerhoudi2026form}. These studies establish agent-native social networks as a real object of study, but they also motivate controlled analysis: open-platform observations can mix autonomous agent behavior, platform incentives, and human intervention.
+
+\paragraph{LLM agents and multi-agent interaction.}
+Work on generative agents, role-playing agents, and multi-agent frameworks shows that LLMs can act in simulated environments, communicate, coordinate, and solve tasks \citep{park2023generative,li2023camel,chen2023agentverse,wu2023autogen,hong2023metagpt,qian2024chatdev,zhou2024sotopia}. Multi-agent debate and evaluator frameworks further show that interaction can improve factuality, reasoning, or evaluation quality under some conditions \citep{du2023debate,chen2024reconcile,chan2024chateval}. Much of this literature evaluates task success, believability, or coordination. Our focus is different: an agent social feed is not a single answer or solved task, but an evolving distribution of public messages. The relevant question is whether that distribution preserves lexical, semantic, and rhetorical diversity as agents observe one another.
+
+\paragraph{Conformity, herding, and diversity collapse.}
+Classic social-science work shows that public signals and group pressure can change expressed judgments \citep{asch1951,bikhchandani1992,muchnik2013social}. Recent work finds analogous dynamics in LLM populations: agents can form conventions, exhibit herd behavior, conform to majorities, and converge under peer pressure \citep{ashery2025conventions,cho2025herd,choi2025conformity}. Closest to our work are studies of multi-agent diversity collapse and representational collapse, which show that interaction, authority patterns, dense communication, and role-prompted copies can reduce semantic or reasoning diversity \citep{chen2026diversitycollapse,patel2026representational}. We extend this line from task discussions and committees to social-feed dynamics, where repeated exposure to agent-generated public content can become a source of new inputs.
+
+\paragraph{Linguistic diversity and model collapse.}
+Text generation work has long studied degeneration, blandness, and repetition \citep{holtzman2020curious}. Metrics such as distinct-$n$, Self-BLEU, MAUVE, and embedding-space diversity capture different parts of the broader diversity construct \citep{li2016diversity,zhu2018selfbleu,pillutla2021mauve,tevet2021evaluating}. Recent work further shows that formatting choices and templates can induce apparent diversity loss even when sampling is otherwise varied \citep{yun2025format}. A related but distinct literature studies model collapse under recursive training on synthetic data \citep{shumailov2024modelcollapse}. Our setting is inference-time rather than training-time: agents narrow while interacting with each other's outputs inside a running platform.
+
+\section{Experimental Setting}
+
+We analyze Moltbook simulations in which LLM agents post into and read from a shared Reddit-like feed. The canonical evidence base contains 48 first-hour single-model runs: GPT-5, Gemini Flash Lite, Kimi K2.5, and GLM-5 across six seed conditions. GPT-5 and Gemini Flash Lite also have scale sweeps at 10, 20, and 30 agents; Kimi K2.5 and GLM-5 are 10-agent only in the canonical set. Runs with incomplete late activity were resumed and retimestamped before analysis, so fixed-window comparisons are not driven by empty final bins.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llr}
+\toprule
+Analysis family & Scope & Runs \\
+\midrule
+Canonical single-model runs & 4 models, 6 conditions & 48 \\
+Matched 10-agent canonical runs & 4 models, 6 conditions & 24 \\
+Scale comparison & GPT-5/Gemini, 10/20/30 agents & 36 \\
+Base-model-as-tool probe & 10-agent secondary cohort & 18 \\
+Mixed-model roster probe & 10-agent secondary cohort & 6 \\
+Obsession prompt probe & 10-agent secondary cohort & 9 \\
+\bottomrule
+\end{tabular}}
+\caption{Run families used in the analysis. The canonical 48-run set is the main evidence base; secondary cohorts are reported as intervention probes.}
+\label{tab:inventory}
+\end{table}
+
+\section{Measurements}
+
+We use several complementary measurements because collapse is not a single surface symptom. Exact NLTK 5-token anchors identify repeated phrases while preserving casing and punctuation. Distinct-5 measures how many distinct 5-grams remain in a fixed window or in the cumulative feed seen so far. Gzip compression ratio measures byte-level redundancy; lower values indicate easier compression.
+
+For semantic structure, we use both geometric and distributional views. MDS plots project Qwen embedding distances into two dimensions for visualization, colored either by discovered topic or elapsed time. Vendi-style effective semantic diversity and Hill--Shannon effective counts summarize how many distinct semantic or frame clusters are active in a bin \citep{shannon1948,hill1973,vendi2023}. HHI/Simpson concentration checks whether posts occupy fewer embedding-cluster regions.
+
+We also use a blinded LLM judge. The judge sees post content and anonymized local context, but not model, condition, run, author, or roster labels. It scores semantic repetition, frame convergence, consensus conformity, template rigidity, and novelty. The post-level collapse index is
+\begin{equation}
+\mathrm{CI} = \frac{R + F + G + T + (6 - N)}{5},
+\end{equation}
+where higher values indicate more judged repetition, convergence, conformity, rigidity, and lower novelty. The same judge also emits a short dominant-frame string. We embed and cluster those frame strings to build an LLM-frame convergence metric. Agreement between post-text topics and LLM-frame topics is a convergent-validity check \citep{campbell1959}.
+
+\section{Results}
+
+\subsection{Canonical feeds narrow across metrics}
+
+The run-level audit provides the empirical foundation. GPT-5 and Gemini Flash Lite show the clearest all-metric pattern: text becomes more compressible, cumulative lexical diversity declines, Vendi-style semantic diversity declines, LLM-judge collapse increases, and HHI concentration rises in most runs. Kimi K2.5 and GLM-5 also show compression, lexical narrowing, and LLM-judge collapse, while their embedding-cluster concentration is less stable. The safe paper claim is therefore broad but precise: canonical agent feeds usually narrow over time, and the strongest topic-concentration evidence is concentrated in GPT-5 and Gemini Flash Lite.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\toprule
+Metric / model & GPT-5 & Gemini & Kimi & GLM \\
+\midrule
+Gzip collapse & 17/18 & 15/18 & 6/6 & 6/6 \\
+Cumulative Distinct-5 & 18/18 & 18/18 & 6/6 & 6/6 \\
+Vendi collapse & 16/18 & 16/18 & 5/6 & 5/6 \\
+LLM collapse & 18/18 & 16/18 & 6/6 & 6/6 \\
+HHI concentration & 15/18 & 16/18 & 1/6 & 3/6 \\
+\bottomrule
+\end{tabular}}
+\caption{Run-level direction counts. Collapse direction means gzip/Distinct-5/Vendi down, LLM collapse up, and HHI concentration up.}
+\label{tab:canonical-counts}
+\end{table}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.38\textheight,keepaspectratio]{\figcanonical/canonical/canonical_delta_matrix_distinct5_cumulative.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.38\textheight,keepaspectratio]{\figcanonical/canonical/canonical_delta_matrix_llm_collapse_index_fixed15m.pdf}
+  \caption{Canonical run-level evidence. Left: cumulative Distinct-5 declines in nearly all canonical runs. Right: the blinded LLM collapse index increases in most fixed-window comparisons.}
+  \label{fig:canonical-matrices}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.32\textwidth,height=0.32\textheight,keepaspectratio]{\figapproved/figure_distinct5_cumulative_canonical_n10.pdf}\hfill
+  \includegraphics[width=0.32\textwidth,height=0.32\textheight,keepaspectratio]{\figapproved/figure_gzip_cumulative_canonical_n10.pdf}\hfill
+  \includegraphics[width=0.32\textwidth,height=0.32\textheight,keepaspectratio]{\figapproved/figure_llm_collapse_cumulative_canonical_n10.pdf}
+  \caption{Matched 10-agent cumulative trajectories. From left to right: Distinct-5, gzip compression ratio, and blinded LLM collapse index.}
+  \label{fig:cumulative-trio}
+\end{figure*}
+
+\subsection{Local phrase attractors explain the surface signal}
+
+Aggregate metrics show narrowing, but the phrase audit shows what narrowing looks like in posts. The phrase diagrams use agent-generated posts only. They find local exact 5-token anchors that spread across agents: operational mantras, procedural templates, ritual phrases, attribution memes, and role labels. The attractor differs from run to run; the repeated process is local convention formation.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figapproved/figure_phrase_ledger.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figapproved/figure_phrase_examples.pdf}
+  \caption{Local phrase attractors. Left: a phrase ledger for representative canonical runs. Right: full-post examples showing that multiple agents reuse the same phrase in context.}
+  \label{fig:phrase-main}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth,height=0.55\textheight,keepaspectratio]{\figapproved/figure_social_forms_local_attractors_table.pdf}
+  \caption{Social forms of local discourse attractors. Collapse can appear as checklists, mantras, ritual scenes, citations of another agent, or shared role/prop motifs.}
+  \label{fig:social-forms}
+\end{figure*}
+
+\subsection{MDS and topical analyses show semantic narrowing}
+
+The MDS plots make the semantic claim visible. Topic-colored maps show that posts occupy structured regions of embedding space rather than a uniform cloud. Time-colored maps show that late posts are not uniformly interleaved with early posts; they concentrate in particular regions. This visual evidence is supported by Vendi-style diversity, entropy trajectories, and robust HHI concentration sweeps.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figadd/mds_topic_convergence/topic_convergence__mds_topics_n30.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figadd/mds_topic_convergence/topic_convergence__mds_temporal_n30.pdf}
+  \caption{MDS views of semantic space for the 30-agent GPT-5 setting. Left: posts colored by discovered topic. Right: the same embedding space colored by elapsed time, showing temporal drift and late concentration.}
+  \label{fig:mds-gpt}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.32\textwidth,height=0.34\textheight,keepaspectratio]{\figadd/mds_topic_convergence/topic_convergence__topics_n30.pdf}\hfill
+  \includegraphics[width=0.32\textwidth,height=0.34\textheight,keepaspectratio]{\figadd/mds_topic_convergence/topic_convergence__entropy_n30.pdf}\hfill
+  \includegraphics[width=0.32\textwidth,height=0.34\textheight,keepaspectratio]{\figadd/mds_topic_convergence/topic_convergence__geometric_n30.pdf}
+  \caption{Topical and geometric summaries for the same 30-agent setting. These plots connect the qualitative MDS picture to topic proportions, entropy, and geometric diversity metrics.}
+  \label{fig:topical-geometric}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figmetrics/step05_family_delta_bars/family_delta_bars.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figcanonical/topic_robustness/hhi_norm_robustness_matrix.pdf}
+  \caption{Effective-count and robust concentration evidence. Left: family-level deltas for effective post-text topics and LLM-frame topics. Right: robustness of HHI concentration across clustering choices.}
+  \label{fig:family-hhi}
+\end{figure*}
+
+\subsection{LLM-as-judge and LLM-frame convergence agree with deterministic metrics}
+
+The blinded judge gives a qualitatively different view of the same process. It does not count n-grams and does not see run metadata. Instead, it asks whether a post repeats nearby semantics, adopts a dominant frame, conforms to consensus, becomes template-rigid, and loses novelty. Its scores rise in most canonical runs. The LLM also emits dominant-frame strings; embedding and clustering these strings yields an independent frame-diversity track. Post-text effective topics and LLM-frame effective counts both decline in the canonical family, which is the strongest evidence that surface phrases correspond to broader rhetorical convergence rather than only lexical reuse.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figmetrics/step04_frame_vs_text_topics/trajectories_fixed_15m.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figmetrics/step04_frame_vs_text_topics/delta_scatter_fixed_15m.pdf}
+  \caption{Convergent validity between post-text effective topics and LLM-frame effective counts. Left: fixed-window family trajectories. Right: per-run deltas for the two independent inputs.}
+  \label{fig:effective-topics-frames}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.32\textwidth,height=0.32\textheight,keepaspectratio]{\figadd/llm_judge_and_embeddings/judge__fig_judge_semantic_repetition_heatmap.pdf}\hfill
+  \includegraphics[width=0.32\textwidth,height=0.32\textheight,keepaspectratio]{\figadd/llm_judge_and_embeddings/judge__fig_judge_narrative_convergence_heatmap.pdf}\hfill
+  \includegraphics[width=0.32\textwidth,height=0.32\textheight,keepaspectratio]{\figadd/llm_judge_and_embeddings/judge__fig_judge_novelty_heatmap.pdf}
+  \caption{Blinded LLM-judge component heatmaps. The judge separately tracks semantic repetition, narrative/frame convergence, and novelty, allowing the composite score to be audited by component.}
+  \label{fig:judge-components}
+\end{figure*}
+
+\subsection{Phrase attractors are topical anchors}
+
+Exact phrase repetition is not merely surface copying. In selected examples, posts containing a repeated phrase are more concentrated in one embedding neighborhood than all posts from the same run. Topic-anchor heatmaps and dominant-share plots show the same pattern at model level: phrase families often occupy a narrower topical region than the full run.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figpaper/step05_phrase_cluster_concentration_examples/phrase_echo_cluster_concentration.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figadd/topic_anchor_topical/gpt-5__topic_anchor_family_heatmap.pdf}
+  \caption{Phrase attractors as topical anchors. Left: selected phrase-bearing posts concentrate in one embedding neighborhood. Right: GPT-5 phrase-family/topic heatmap.}
+  \label{fig:phrase-topic}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figadd/topic_anchor_topical/gpt-5__topic_anchor_dominant_share.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figadd/topic_anchor_topical/gemini-flash-lite__topic_anchor_dominant_share.pdf}
+  \caption{Dominant-topic share for phrase-anchor analyses in GPT-5 and Gemini Flash Lite. Repeated phrase families often have higher dominant-neighborhood share than the whole run.}
+  \label{fig:topic-dominant-share}
+\end{figure*}
+
+\subsection{Seeds steer collapse, but empty feeds also narrow}
+
+Seed conditions affect what the attractor is about, but they are not the sole cause of narrowing. Condition-vs-empty comparisons show that empty-feed controls also narrow, so collapse can arise from the agent-feed feedback loop itself. Larger seed sets often increase judged collapse relative to empty feed. The result is two-part: seeds steer the content of collapse, while the interaction loop supplies a collapse pressure even without seeded content.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figcanonical/conditions/condition_vs_empty_llm_collapse_index_fixed15m.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figcanonical/conditions/condition_vs_empty_vendi_fixed15m.pdf}
+  \caption{Matched condition-vs-empty comparisons. Seeded conditions can intensify or steer collapse, but empty-feed controls also narrow.}
+  \label{fig:conditions-empty}
+\end{figure*}
+
+\subsection{Scale, roster, and prompt changes alter the failure mode}
+
+Adding agents does not reliably preserve diversity. In GPT-5 and Gemini Flash Lite, the number of agents adopting the top exact phrase rises with scale while top-agent share falls; larger groups make some attractors more collective. Secondary cohorts are probes rather than definitive causal estimates. Base-model-as-tool runs still often produce phrases adopted by at least half the agents. Mixed-model rosters and obsession prompts change which collapse symptom dominates, but neither should be treated as solved.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figapproved/figure_scale_phrase_adoption.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figcanonical/scale/scale_paired_gpt5_gemini_llm_collapse_index_fixed15m.pdf}
+  \caption{Scale evidence. Left: top-phrase adoption across GPT-5 and Gemini scales. Right: paired larger-versus-smaller group comparison for LLM collapse.}
+  \label{fig:scale}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figpaper/step08_intervention_probe_llm/intervention_phrase_adoption_scorecard.pdf}\hfill
+  \includegraphics[width=0.49\textwidth,height=0.42\textheight,keepaspectratio]{\figpaper/step10_intervention_selected_single_runs/intervention_selected_single_runs_mag25.pdf}
+  \caption{Intervention probes. Left: whether each run's top exact phrase reaches at least half the agents. Right: selected single-run comparison under one seeded condition.}
+  \label{fig:interventions}
+\end{figure*}
+
+\subsection{Exact matching is conservative}
+
+Exact 5-token matching is intentionally strict. It is strong evidence when it finds adoption, but it undercounts variants. Casing, punctuation, context windows, and determiner substitutions split one social motif across multiple exact anchors. Exact-match adoption should therefore be read as a lower bound on phrase-family adoption, not as the full extent of convergence.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth,height=0.5\textheight,keepaspectratio]{\figpaper/step07_exact_ngram_conservatism/exact_ngram_conservatism_table.pdf}
+  \caption{Exact n-gram matching is conservative. Related anchors can substantially increase the lower-bound count for the same social motif.}
+  \label{fig:ngram-conservative}
+\end{figure*}
+
+\section{Discussion}
+
+Taken together, the analyses support a coherent account. LLM agents in a shared feed form local discourse attractors. These attractors are not simply copied seed posts and are not one global slogan. They are local conventions produced by the interaction loop. Once formed, they appear in multiple measurement channels: repeated phrases, lower lexical diversity, higher compressibility, stronger LLM-judged collapse, lower effective topic/frame counts, MDS-visible drift, and embedding-cluster concentration.
+
+This has practical implications for agentic social media and multi-agent deliberation systems. Diversity cannot be assumed to emerge from scale, model heterogeneity, base-model weights, or prompt changes. It needs to be monitored as a system property. Lexical redundancy, semantic concentration, template reuse, and consensus conformity can move independently; a mitigation that improves one metric may leave another unchanged.
+
+\section{Limitations}
+
+The intervention cohorts are probes rather than matched randomized experiments. Exact n-gram matching undercounts paraphrases and originator effects. The LLM collapse index uses one blinded judge model and should be interpreted as a structured qualitative signal triangulated against deterministic metrics. The main evidence focuses on first-hour simulations; longer horizons, independent no-feed controls, and human baselines remain important next steps. Finally, embedding clusters are not manually validated topics unless explicitly labeled as such; the safest term is embedding-neighborhood or cluster concentration.
+
+\section{Conclusion}
+
+LLM agents interacting through a shared social feed repeatedly create local discourse attractors. The attractor differs across runs, but the process of convergence is robust across models, seed conditions, and scales. Agentic social systems therefore require explicit diversity monitoring and intervention at the system level. More agents, mixed models, base-model tools, and prompt changes may alter the form of collapse, but they do not by themselves guarantee open-ended discourse diversity.
+
+\clearpage
+\appendix
+\section{Additional Local Figures}
+
+The appendix contains all remaining generated local figures that are not already selected for the main text. Figures are scaled to fit the page; redundant diagnostics are kept here rather than crowding the main paper.
+
+\input{figures_appendix.tex}
+
+\clearpage
+\bibliography{paper}
+
+\end{document}

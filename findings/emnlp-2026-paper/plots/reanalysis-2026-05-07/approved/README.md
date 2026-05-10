@@ -8,8 +8,10 @@ The older step folders remain as provenance. This folder is the clean working se
 
 | File | Source | Use |
 |---|---|---|
-| `figure_phrase_ledger.excalidraw` | Step 3 Excalidraw rewrite | Qualitative phrase attractor ledger. |
-| `figure_phrase_examples.excalidraw` | Step 3 Excalidraw rewrite | Full-post examples of repeated phrases. |
+| `figure_phrase_ledger.excalidraw` | Step 3 Excalidraw rewrite | Qualitative phrase attractor ledger source. |
+| `figure_phrase_ledger.png/pdf` | Step 3 rendered copy for LaTeX | Rendered phrase-attractor ledger used by `paper.tex`. |
+| `figure_phrase_examples.excalidraw` | Step 3 Excalidraw rewrite | Full-post examples source. |
+| `figure_phrase_examples.png/pdf` | Step 3 rendered copy for LaTeX | Rendered full-post examples used by `paper.tex`. |
 | `figure_distinct5_cumulative_canonical_n10.png/pdf` | Step 2 cumulative trajectories | Main Distinct-5 candidate. Prefer cumulative over fixed-window. |
 | `figure_gzip_cumulative_canonical_n10.png/pdf` | Step 2 cumulative trajectories | Main gzip candidate. |
 | `figure_llm_collapse_cumulative_canonical_n10.png/pdf` | Step 2 cumulative trajectories | Main LLM-judge candidate. |
@@ -27,4 +29,4 @@ The older step folders remain as provenance. This folder is the clean working se
 - Fixed-window gzip.
 - Fixed-window Distinct-5.
 - Fixed-window LLM collapse index.
-- Generated matplotlib Step 3 PNG/PDF phrase plots, because the Excalidraw versions replaced them.
+- Step 3 phrase Excalidraw files remain the preferred editable sources; rendered PNG/PDF copies are included so the local LaTeX draft can compile.
