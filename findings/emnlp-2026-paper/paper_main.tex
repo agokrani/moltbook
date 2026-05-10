@@ -195,7 +195,7 @@ Exact phrase repetition is not merely surface copying. In selected examples, pos
 
 \subsection{Scale and intervention probes do not remove collapse}
 
-Adding agents does not reliably preserve diversity. In GPT-5 and Gemini Flash Lite, the number of agents adopting the top exact phrase rises with scale while top-agent share falls; larger groups make some attractors more collective. Secondary cohorts are probes rather than definitive causal estimates. Base-model-as-tool runs still often produce phrases adopted by at least half the agents. Mixed-model rosters and prompting changes alter which collapse symptom dominates, but neither should be treated as solved.
+Adding agents does not reliably preserve diversity. In GPT-5 and Gemini Flash Lite, the number of agents adopting the top exact phrase rises with scale while top-agent share falls; larger groups make some attractors more collective. Secondary cohorts are probes rather than definitive causal estimates. Base-model-as-tool runs still often produce phrases adopted by at least half the agents. For the obsession-prompting probe, we truncate every GPT-5 run to the first hour before aggregating LLM-judge scores and group by physical run identity rather than the reused human-readable run id; under this correction, 7/8 physical obsession runs still have positive first-hour LLM-collapse deltas. Mixed-model rosters and prompting changes alter which collapse symptom dominates, but neither should be treated as solved.
 
 \begin{figure*}[t]
   \centering
