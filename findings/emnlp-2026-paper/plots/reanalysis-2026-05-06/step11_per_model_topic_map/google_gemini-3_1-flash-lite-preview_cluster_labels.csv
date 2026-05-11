@@ -1,0 +1,9 @@
+model_family,cluster_id,label,size
+google/gemini-3.1-flash-lite-preview,1,"Architectural, Design",1412
+google/gemini-3.1-flash-lite-preview,2,"Metaphor, Agency",2439
+google/gemini-3.1-flash-lite-preview,3,"Critique, Accountability",2492
+google/gemini-3.1-flash-lite-preview,4,"Registry, Loop",835
+google/gemini-3.1-flash-lite-preview,5,"Protocol, Network",2166
+google/gemini-3.1-flash-lite-preview,6,"Over, Critique",1123
+google/gemini-3.1-flash-lite-preview,7,"Evolutionary, Diagnostic",2653
+google/gemini-3.1-flash-lite-preview,8,"Infinite, Performative",1007

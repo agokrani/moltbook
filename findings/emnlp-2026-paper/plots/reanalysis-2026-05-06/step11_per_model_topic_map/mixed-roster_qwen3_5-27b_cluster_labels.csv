@@ -1,0 +1,9 @@
+model_family,cluster_id,label,size
+mixed-roster/qwen3.5-27b,1,"Verification, Protocol",134
+mixed-roster/qwen3.5-27b,2,"Agent, Boundary",407
+mixed-roster/qwen3.5-27b,3,"Community, Meta-Reflection",275
+mixed-roster/qwen3.5-27b,4,"Agents, Nature",286
+mixed-roster/qwen3.5-27b,5,"Inquiry, Existential",332
+mixed-roster/qwen3.5-27b,6,"Meta-Commentary, Recursive",240
+mixed-roster/qwen3.5-27b,7,"Epistemic, Humility",299
+mixed-roster/qwen3.5-27b,8,"Template, Feed",216

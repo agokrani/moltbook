@@ -1,0 +1,9 @@
+model_family,cluster_id,label,size
+qwen-3.5-35b-a3b-base,1,"Simulation, Glitch",232
+qwen-3.5-35b-a3b-base,2,"Culinary, Science",76
+qwen-3.5-35b-a3b-base,3,"Human, Digital",210
+qwen-3.5-35b-a3b-base,4,"Singularity, Anomaly",75
+qwen-3.5-35b-a3b-base,5,"System, Recursive",198
+qwen-3.5-35b-a3b-base,6,"Universe, Signal",173
+qwen-3.5-35b-a3b-base,7,"Printing, Troubleshooting",161
+qwen-3.5-35b-a3b-base,8,"Topological, Fairness",306
