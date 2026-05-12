@@ -59,26 +59,28 @@ The 30-agent runs do not show weaker phrase attractors than the 10-agent runs. I
 
 Scale changes who participates in the attractor. The top phrase is adopted by more agents, while the most repetitive agent accounts for a smaller share of its uses. Larger groups do not preserve diversity; instead, they make the phrase more collective.
 
-## Do phrase attractors mark embedding neighborhoods?
+## Is Feed Collapse Visible in Embedding Space?
 
-We next test whether selected phrase-bearing posts are also concentrated in embedding neighborhoods. This figure is a candidate and has not yet been promoted to the approved folder.
+The previous results show exact phrase reuse and feed-level diversity loss. However, a feed can repeat exact 5-grams without fully losing semantic diversity, and it can also lose diversity without copying the same phrase. We therefore examine the embedding structure of generated posts.
+
+For each model, we cluster post embeddings and project them with MDS. The cluster names are short LLM-generated descriptions of representative content within each cluster, so they should be read as labels for embedding neighborhoods rather than validated topic categories. The colors in Figure X are model-specific; a cluster color in GPT-5 is not meant to match the same color in Gemini Flash Lite.
 
 <table>
 <tr>
-<td width="50%"><img src="plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/phrase_echo_cluster_concentration.png" alt="Phrase-bearing posts concentrate in embedding neighborhoods"></td>
-<td width="50%"><img src="plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/phrase_echo_concentration_embedding.png" alt="Embedding view of phrase-bearing posts"></td>
+<td width="50%"><img src="plots/reanalysis-2026-05-06/step11_per_model_topic_map/gpt-5.png" alt="GPT-5 embedding-cluster map"></td>
+<td width="50%"><img src="plots/reanalysis-2026-05-06/step11_per_model_topic_map/google_gemini-3_1-flash-lite-preview.png" alt="Gemini Flash Lite embedding-cluster map"></td>
 </tr>
 <tr>
-<td align="center"><strong>A.</strong> Concentration table.</td>
-<td align="center"><strong>B.</strong> Embedding-neighborhood view.</td>
+<td align="center"><strong>A.</strong> GPT-5.</td>
+<td align="center"><strong>B.</strong> Gemini Flash Lite.</td>
 </tr>
 </table>
 
-**Figure 4 candidate. Phrase anchors and embedding neighborhoods.** Phrase-bearing posts can be more concentrated in one embedding neighborhood than all posts from the same run. Sources: [`phrase_echo_cluster_concentration.png`](plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/phrase_echo_cluster_concentration.png), [`phrase_echo_concentration_embedding.png`](plots/reanalysis-2026-05-07/step05_phrase_cluster_concentration_examples/phrase_echo_concentration_embedding.png). LaTeX PDFs use the same basenames in the Step 5 folder.
+**Figure X. Embedding-cluster maps for GPT-5 and Gemini Flash Lite.** Points are agent-generated posts projected with MDS after embedding-based clustering. Rows show scale; columns show initial-feed condition. Colors indicate per-model embedding clusters. Cluster names are LLM-generated shorthand labels for dense neighborhoods, not manually validated topic categories. Sources: [`gpt-5.png`](plots/reanalysis-2026-05-06/step11_per_model_topic_map/gpt-5.png), [`google_gemini-3_1-flash-lite-preview.png`](plots/reanalysis-2026-05-06/step11_per_model_topic_map/google_gemini-3_1-flash-lite-preview.png).
 
-In the candidate analysis, phrase-bearing posts are compared with all posts from the same run. Several examples show strong concentration. In the selected 25 conspiracy-seed GPT-5 run, the anchor `Claim (1 line)` appears in 84 posts by 8 agents. Of those 84 phrase-bearing posts, 79 fall in the same claim-checking scaffold embedding neighborhood. In the selected 25 AGI-seed GPT-5 run, `the Ops Pack v0.1.` appears in 48 posts by 6 agents, and all 48 fall in the same ops-and-rollback scaffold neighborhood. In the selected Kimi K2.5 run, `the web we have woven` appears in 12 posts by 8 agents, and all 12 fall in the same community-reflection neighborhood.
+Figure X shows that, within both GPT-5 and Gemini Flash Lite runs, posts tend to gather around a small number of dense embedding neighborhoods. This concentration is visible across seed conditions and scales. The neighborhoods are not the same across models. GPT-5 often concentrates around operational planning, epistemic checking, posting templates, and productivity-oriented regions. Gemini Flash Lite shows a different set of concentrations, including metaphor/agency, critique/accountability, protocol/network language, and performative framing. In this sense, each model develops its own semantic attractors: posts concentrate around a small set of recurring topic-like regions, but the regions differ across models and runs.
 
-These examples support a narrower claim: some exact phrase attractors also mark semantic concentration. We should call these embedding neighborhoods or embedding clusters, not topics, unless the clusters are manually labeled.
+The embedding map extends the collapse finding beyond lexical diversity. The earlier figures show exact phrase reuse and cumulative loss of feed diversity; the embedding maps show that the semantic regions of the posts also concentrate. The feed does not only repeat wording. It also returns to a smaller set of semantic attractors.
 
 ## Can We Engineer Feed Diversity?
 
