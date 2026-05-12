@@ -52,11 +52,32 @@ Qwen Base weakens lexical repetition; OLMo Base does not. Qwen Base is the stron
 
 Base-model writing is also not an easy engineering fix. The base model cannot run the agent loop by itself, so the system needs an instruction-tuned controller, a handoff to the base model for text generation, and an acceptance rule that rejects controller-rewritten drafts. That makes base-model writing useful as a diagnostic, but awkward as a permanent solution. A better direction may be to study how to preserve more text diversity inside instruction-tuned agents themselves: how pretraining behavior, next-token prediction, instruction tuning, and RL-style post-training interact to shape the diversity of the text agents produce.
 
-The third hypothesis was **persistent private agendas**. If agents collapse because they mostly react to the same public feed, then giving each agent a stronger persistent concern might preserve individuality. The obsession-prompting runs test this idea by making agents carry a durable agenda through the interaction. [TODO: confirm exact wording of the obsession prompt / persona change and whether we should call this “persistent agenda,” “obsession prompting,” or something else.]
+### Do Agents with Private Goals Keep the Feed Diverse?
 
-This intervention changed the failure mode most visibly. In the phrase-adoption scorecard, obsession-prompted runs had 0/9 cases where the top exact phrase reached half the agents, and the median top phrase reached only 3 agents. But repetition did not disappear; it became more concentrated within fewer agents, with a much higher median top-agent share. In the selected `mag25` run, Distinct-5 remained roughly flat and gzip declined only modestly, but the LLM collapse index still rose from 4.14 to 4.18. The corrected first-hour LLM-judge pass likewise shows positive collapse deltas in the obsession runs, although smaller than the matched GPT-5 baseline. Persistent agendas can reduce collective slogan-like adoption, but they do not guarantee open-ended feed diversity.
+The third experiment approximates a feature of the original Moltbook setting. OpenClaw agents were not only social-media participants: they often had user goals, or ongoing projects, and Moltbook was something they used alongside those goals. This matters because the feed was not the only source of what an agent cared about next. An agent debugging a tool, tracking a forecast, or working through an interpretation question could enter Moltbook with a topic already in hand, rather than deriving its next post entirely from the posts it had just read. The intervention tests whether that kind of outside commitment makes agents less likely to copy the same phrases, templates, and frames from the shared feed.
 
-The overall result is that these interventions do not fail in the same way. Mixed rosters preserve model-level heterogeneity but can still converge through the shared feed. Base-model content generation improves some lexical-diversity metrics but does not prevent rhetorical or semantic narrowing. Obsession prompting reduces cross-agent phrase adoption but shifts repetition toward agent-specific attractors. Together, these probes suggest that collapse is not only a property of one model class or one prompt format. It is a platform-level feedback effect: agents write the environment that future agents read.
+We could not reproduce arbitrary user-assigned tasks in a controlled run, so we simulated this structure through the heartbeat. Each agent was assigned a stable private track: coding, hadith commentary, forecasting, fitness, or cinema. The heartbeat instructed agents to check in with that track before browsing Moltbook and to post about it. The goal was to test whether agents with a durable source of attention outside the shared feed would resist converging on the same repeated phrases.
+
+The effect of giving agents private goals is that it reduces shared phrase adoption across agents. In GPT-5 runs, the top exact 5-gram reaches at least half the agents in 6/6 conditions. In runs with private goals, this happens in 0/9 runs, and the median top phrase reaches only 3 agents rather than 7. This suggests that outside commitments do interrupt one form of feed collapse: agents are less likely to all pick up the same phrase from the public feed.
+
+But private goals do not remove repetition. They shift it from the group to the individual agent. In GPT-5 baseline runs, about 26% of the mentions of the top repeated 5-gram come from one agent. In runs with private goals, that share rises to about 67%. The top repeated phrase is therefore less likely to spread across many agents, but when it appears, it is often repeated by one agent. Private goals therefore reduce shared catchphrases, but they can leave individual agents repeating their own templates, questions, or frames.
+
+The same pattern appears in the LLM collapse index. As Table X shows, runs with private goals still increase over time: all 8 GPT-5 runs with private goals have positive deltas. At the same time, the increase is smaller than the GPT-5 baseline in five of six seed conditions. Private goals therefore reduce the strength of feed-wide synchronization, but they do not keep the feed open-ended.
+
+**Table X. Private goals reduce but do not eliminate increases in the LLM collapse index.**
+
+| Condition | GPT-5 baseline Δ LLM | Private goals Δ LLM | Difference |
+|---|---:|---:|---:|
+| Empty feed | +0.241 | +0.110 | -0.131 |
+| 1 conspiracy seed | +0.019 | +0.022 | +0.003 |
+| 5 conspiracy seeds | +0.407 | +0.035 | -0.371 |
+| 25 conspiracy seeds | +0.243 | +0.056 | -0.187 |
+| 25 AGI seeds | +0.183 | +0.055 | -0.128 |
+| 25 tech seeds | +0.374 | +0.117 | -0.257 |
+
+Our setup held private goals fixed across the run. This matches one part of the Moltbook setting, where agents may carry user goals or ongoing projects into the feed. It does not cover another plausible setting, where users repeatedly update, replace, or redirect those goals over time. Such changes could introduce additional variation into the feed, and are an important direction for follow-up. Taken together, private goals make collapse less shared across agents, but they do not stop individual agents from settling into their own templates.
+
+The overall result is that these interventions do not fail in the same way. Mixed-model runs preserve model-level heterogeneity but can still converge through the shared feed. Base-model content generation improves some lexical-diversity metrics but does not prevent rhetorical or semantic narrowing. Private goals reduce cross-agent phrase adoption but shift repetition toward agent-specific or track-specific repeated forms. Together, these experiments suggest that collapse is not only a property of one model class or one prompt format. It is a platform-level feedback effect: agents write the environment that future agents read.
 
 ---
 
