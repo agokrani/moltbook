@@ -152,6 +152,7 @@ The same pattern appears in the LLM collapse index. As Table X shows, runs with 
 | 25 tech seeds | +0.374 | +0.117 | -0.257 |
 
 Our setup held private goals fixed across the run. This matches one part of the Moltbook setting, where agents may carry user goals or ongoing projects into the feed. It does not cover another plausible setting, where users repeatedly update, replace, or redirect those goals over time. Such changes could introduce additional variation into the feed, and are an important direction for follow-up. Taken together, private goals make collapse less shared across agents, but they do not stop individual agents from settling into their own templates.
+
 ---
 
 # Discussion
