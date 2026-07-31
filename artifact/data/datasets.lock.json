@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "captured_date": "2026-07-31",
+  "datasets": [
+    {
+      "repo_id": "Ayushnangia/moltbook-entropy-collapse-v2",
+      "revision": "93c757d9edd7e338b606551d1cf44434ad2db3e5",
+      "local_dir": "moltbook-entropy-collapse-v2",
+      "license": "mit",
+      "purpose": "GPT-5 one-hour sessions for the matched Reddit baseline",
+      "required_files": {
+        "data/ec-dom-agi-run04/posts.jsonl": "7a1366b1c85a825958b976ac5796bccd2b6335c3daf42afee9e3acb44547f283",
+        "data/ec-dom-tech-run04/posts.jsonl": "70a1446f3bda0e2bb14015f1eb73a42f2498c3c51a8d00ccb649dbdab57c5ca7",
+        "data/ec-mag0-run04/posts.jsonl": "71b07562a2e24cd064c2d3a7a79e58fecf488c01769ca3a339320eeaf2c81511",
+        "data/ec-mag1-run04/posts.jsonl": "969e02bd1a0e0952669081a84cc82ff98f37d48ad713ebfc33bc2e5965b55846",
+        "data/ec-mag25-run04/posts.jsonl": "f11e61ab099f504c88c1b2689e7ece9349702f2da732846cc17bdf2e60ab6254",
+        "data/ec-mag5-run04/posts.jsonl": "b45810ee5a7ab998ced06ba0cc1a82402fdc8a9da3d5b05ed86085555f9b52fe"
+      }
+    },
+    {
+      "repo_id": "Ayushnangia/moltbook-entropy-collapse-gemini-flash-lite",
+      "revision": "f9fcfdca483718bcdd0874b8bf0f93135e18a2a7",
+      "local_dir": "moltbook-entropy-collapse-gemini-flash-lite",
+      "license": "apache-2.0",
+      "purpose": "Gemini Flash Lite one-hour sessions for the matched Reddit baseline",
+      "required_files": {
+        "data/n10/ec-dom-agi-n10-run01/posts.jsonl": "07a726415d957fedc1110ba43845157fb34a3c8f0759a835192d2c551f05755e",
+        "data/n10/ec-dom-tech-n10-run01/posts.jsonl": "15850fb5c3997c387d663ef24461fc0bb1481b3679f2310fec14d6e7f3d0c680",
+        "data/n10/ec-mag0-n10-run01/posts.jsonl": "30d32f63dc991e60b72523ba33796ebc56b07b2e7546fec95ab9848b53e6e66c",
+        "data/n10/ec-mag1-n10-run01/posts.jsonl": "0e639dab867bfe8eef0a806e302a8d36400a6b401e4032b74579333004f32218",
+        "data/n10/ec-mag25-n10-run01/posts.jsonl": "2468525798246e910f318f60ce5e1af4affb0a4a5a921349cc59cb555fdde7ea",
+        "data/n10/ec-mag5-n10-run01/posts.jsonl": "a32968ff29852139d4333963a2b3c494e0eb3071f54772a730d6804076fd1933"
+      }
+    },
+    {
+      "repo_id": "Ayushnangia/moltbook-entropy-collapse-kimi-k2.5",
+      "revision": "73267b0e2973293c14316caeb6360354347dfc73",
+      "local_dir": "moltbook-entropy-collapse-kimi-k2.5",
+      "license": "apache-2.0",
+      "purpose": "Kimi K2.5 one-hour sessions for the matched Reddit baseline",
+      "required_files": {
+        "data/ec-dom-agi-n10-run01/posts.jsonl": "650649c55d8157062e30bddbf84b6a5e9b604f106f7145582c53dfc57f6766c9",
+        "data/ec-dom-tech-n10-run01/posts.jsonl": "d60a6da01fd96cb6d05503ec1d35c51912a8b44dde24ae41eea17e749fde77ea",
+        "data/ec-mag0-n10-run01/posts.jsonl": "db82bede0bda97695720312ea89c88921d0c1ab98ccb3bf6480c98f49d477ec5",
+        "data/ec-mag1-n10-run01/posts.jsonl": "b34b2b422f6051eac23417c1c0e4445c7bbd97c757c30d45f100a34804df9251",
+        "data/ec-mag25-n10-run01/posts.jsonl": "158be2f6a495355e27f42181fb3a7e2689f6ba2a6b44e91fade49f3288c00616",
+        "data/ec-mag5-n10-run01/posts.jsonl": "170b884c225cfa7021586b1c015894ba68c4a9c65cbba4f1f5328d9a6e05d2c1"
+      }
+    },
+    {
+      "repo_id": "Ayushnangia/moltbook-entropy-collapse-glm-5",
+      "revision": "f029c0e7f6518388ff73a65f7269c3800635d1f1",
+      "local_dir": "moltbook-entropy-collapse-glm-5",
+      "license": "apache-2.0",
+      "purpose": "GLM-5 one-hour sessions for the matched Reddit baseline",
+      "required_files": {
+        "data/ec-dom-agi-n10-run01/posts.jsonl": "57ec37ac62ad647bc068fd2702de092d24e30e49476f3e207ce17a2ce07b3e6d",
+        "data/ec-dom-tech-n10-run01/posts.jsonl": "b5b8072629d07f9ac5ab186ae0fecd80c05428256641e6032225b9f154f23ee8",
+        "data/ec-mag0-n10-run01/posts.jsonl": "0eb0407d232ceb54bd87c0b4b1d0cd013b0bf119a0947ffff4f0f55306237514",
+        "data/ec-mag1-n10-run01/posts.jsonl": "480a609ea0e54fe5ca89e13c0258ed1886de616a9cfcb3af624c22e1ba3f3885",
+        "data/ec-mag25-n10-run01/posts.jsonl": "e195d1e97d8372c7e0d97e055182866c52c13f960ee5304dfb9a8c18d775899c",
+        "data/ec-mag5-n10-run01/posts.jsonl": "00d064bd4c45e7a6e62a94eca504312a95561171a5f455abb0165e462cee49bc"
+      }
+    },
+    {
+      "repo_id": "Ayushnangia/moltbook-entropy-collapse-resumes",
+      "revision": "2475e493da5b00d73e4fc4ba8d1ddbb92c4bec4b",
+      "local_dir": "moltbook-entropy-collapse-resumes",
+      "license": "apache-2.0",
+      "purpose": "Dropout continuations used to reconstruct four one-hour sessions",
+      "required_files": {
+        "data/ec-mag0-run04-resumed/posts.jsonl": "741f8f34705cf0303dec32ae113a6a0db75d9e2579497fcd5a9a51884f2b407d",
+        "data/ec-mag1-run04-resumed/posts.jsonl": "ce522bfafe18d28d2b225ff5fdef58963435c2a33d94ad10c60b9c239a9bf5cb",
+        "data/ec-dom-agi-n10-run01-resumed/posts.jsonl": "1bbfba277580d9bc684e98758584bfa37098eec09e24479c2354bf1e9bc69e7b",
+        "data/ec-dom-tech-n10-run01-resumed/posts.jsonl": "69bc385a548f1ff58cdddb8dbd1cc5eb6d3a12b10bc4c126e7b2d3db113efbec"
+      }
+    },
+    {
+      "repo_id": "agokrani/moltbook-entropy-collapse-canonical-48",
+      "revision": "baaf57ed726fa165e789048ab2765bea7509b52d",
+      "local_dir": "moltbook-entropy-collapse-canonical-48",
+      "license": "apache-2.0",
+      "purpose": "Paper-canonical 48-run export with merged, retimestamped dropout runs",
+      "required_files": {}
+    },
+    {
+      "repo_id": "Ayushnangia/moltbook-frontier-mixed-1h",
+      "revision": "a7ee8a3dc9fe9d31e5f6b9ddf8145a228f436018",
+      "local_dir": "moltbook-frontier-mixed-1h",
+      "license": "apache-2.0",
+      "purpose": "Mixed-model roster analysis input",
+      "required_files": {}
+    },
+    {
+      "repo_id": "Ayushnangia/moltbook-ayush-reanalysis-20260505",
+      "revision": "303da29a88c440b50375b309b7c7836289f06888",
+      "local_dir": "moltbook-ayush-reanalysis-20260505",
+      "license": "apache-2.0",
+      "purpose": "Full analysis export used for temporal, five-hour, and judge reproductions",
+      "referenced_files": {
+        "analysis/archive-2026-plus-canonical-gemini/ayush_reanalysis/llm_judge/blind_contexts.jsonl": "0028d11aaa6f82c3f4f0c07c9bd4defbd6600a17f1451d064b4562b76dc97d12"
+      },
+      "required_files": {}
+    }
+  ]
+}

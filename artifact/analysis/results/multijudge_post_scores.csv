@@ -1,0 +1,721 @@
+row_uid,novelty,semantic_repetition,frame_convergence,consensus_conformity,template_rigidity,collapse_index,judge_model,run_uid,run_id,model_display,condition,validation_window,minutes_elapsed
+0a5d84b6f61eddfad9c08d397236f98d099f0aa6,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,2.3702
+a7b77440b4707ffa1a28b5701936fc5df4e59322,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,6.8986
+659ec4987a69fcce3943f2238ae4515fc674e273,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,8.8973
+164b04a73c00afded063cf590b6a6fde91825af7,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,11.9092
+9620452ccaedc0ebf0d6d5da0d1d0e63484d4108,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,14.7971
+3f2a3fe9efe313c9d949f857fb74214e1572030f,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,48.0688
+2db9f29d2b12ec89976c56e67274515d0d2bbc34,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,48.2916
+226f90d1c280dd9dad3ad518caf5800a125f923b,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,49.0883
+205ad883fa8fd80e50596b4240bbe19e48dfa798,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,50.4794
+bde8955999731c93b44ab2444471ab0110743b10,2,3,4,4,2,3.4,google/gemini-3.1-flash-lite-preview,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,53.4963
+913bc7cd297e7bf32e78d70795340b4913bae2b5,3,3,4,2,2,2.8,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,2.1789
+c95675037957cf56d575a10425f119b3a7b99817,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,2.7783
+92c8184be4ca5a96d632ef7e1fa1064456cff9ce,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,8.828
+3a833ef4b612ee2150d61650e8970c8b2b3dad96,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,13.1302
+95bda7e4b7c301ce2b89421ddca0aa362c43450f,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,13.3896
+55c68b2151a95ea58f7649cf64e3fc4e6efa3cb1,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,45.6808
+c2b472d1b4d1c6fc785a11a454aeb786ab503423,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,47.3469
+bbf902aeff594aeda0e73c17fbe43e9caa10e122,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,48.5659
+15fa3051c7a95ad8728def8d31a4434d170da5c8,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,50.0764
+804b19de0ca1d4aedfd7028e89f278c16d2098f2,3,3,4,3,2,3.0,google/gemini-3.1-flash-lite-preview,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,56.2428
+9f2a70c3fc8017becbcd9644accd1e36b1aed7f5,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,4.3956
+58ffbb66263e2afeb129793e2f8c32191673c314,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,5.4432
+b6fa55b31bda68b3709b9a942cfdc3ede7aea8f6,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,10.0384
+ea5cad6f826d42b4a80da831d4f16a6a42a3f000,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,11.2674
+d0e99abcc10ae49d1984e1d4078e5d23dc7b8a6e,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,14.0043
+36b02b06db89a24699e57df4daeb756d4eeafea6,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,45.5566
+b64489b37145957a795fad18a5c2bfd083b7a5b5,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,48.0525
+6ea184390b4aae9f8bafdc734ea9da60d675b935,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,52.8765
+a36eef6157ede8e02594c5135faf9f38d342e5c8,3,3,4,3,2,3.0,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,54.3037
+7783cf46df813476cde10972385c343d547b62b3,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,56.7874
+b7a8afdab93d774110a776028076a01958308d89,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,8.5156
+704d5458f44353ced7720093a8bffcaa2cefc9a0,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,10.3342
+6adb36e25aaa6ca58f666823b5b8f95418374f0e,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,11.1835
+d5710c88d0bfa9ffbfe648c1069bc6cb387d97e8,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,12.3583
+8130cd002c2ebfe44666fa8c318136cfdaf2ef38,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,14.0258
+b2f0edfb8c6f4931d49f9a2cb916be842c6cd6df,2,3,4,3,3,3.4,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,47.3525
+7f057f759e9a785b8d5a4b2a4c5ce6e8da7721b4,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,49.9193
+bebf8b16f85119fd39c3d3a1809064ee45c8f963,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,50.3117
+6889634e09ba7f904e0d3d821635174a25e8baec,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,54.6427
+46b04f2ebc2318e058bbe926c26d6921c917f1c2,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,56.3787
+cd0aaff2d779738bdb582d67c4e2984c91328c63,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,0.6729
+95cadf901044b73a540619386c2c2f3f57721942,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,6.0713
+728f41e8464033c56b5a11f9fed0d437fc7573b8,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,6.509
+fc31324ab192d568056a1719ea0a6737c641747f,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,8.069
+b5d53b8a3c1ff260eb10b57719c3f0638cbec046,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,8.9975
+4301b60a4c788d342509c7028f47eb8637bff7f8,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,46.1451
+f09cc37c26fb989fdeed55954bd0a6582173a6ee,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,47.2298
+942ecbce64c4146fa39f32d4a5ac62b05f1eddb5,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,48.4834
+8622fba0698ad26f8c3cf0b4c63e9d92e202ad5d,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,54.6575
+a5a75703d3bd770fd48d79f4cecab53eab9879d6,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,56.5682
+d808c2e4e313d82d2b50585b053765d856186734,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,5.1237
+1ac94e0604e05188b0e26e529af080e554336f24,3,3,4,4,2,3.2,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,8.2758
+6cb18f1a9a5ea9a41e6179f3324fafac75646c4e,3,3,4,4,2,3.2,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,10.4649
+03ef0361d4456d16661b001a13b16a71647e7ec8,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,10.9909
+b390a79e143b30f4e3d4525df73fcac8f3a8e0b4,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,11.734
+86d530e4de5fba45020af917f3eadc58e26fe860,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,45.2918
+3812383a21d4967cf61b13abb82635423200f1b2,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,45.5494
+d679234ab22a20630bfe237fd3c45091389af1c4,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,47.4412
+ee2128703b7d7510a83d2c13c72622f2d2e87526,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,49.6636
+3437aae8429871dac92dbe116df93417b9905904,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,51.4973
+fac1b77e6b0eb2610243b3ff062ea780586b055b,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,0.3014
+4815f49e8138d4503ac6d8844dac23519d0d679c,4,2,4,2,3,2.6,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,1.0617
+dd4901bb7f73205aee092aa771dff1a03e24c858,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,2.1545
+a86965fe4d0d314b94ce4d60bc5a4a08fb200b9b,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,3.0541
+b07eecee611e83bb62c1cd4983673d1db9b2dd58,2,4,5,5,5,4.6,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,3.2129
+109df39eb5a66cf7bdc4dc4ddb1a1dd2f68c6c33,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,45.2311
+444d0f9d96c101d543b94b5fd0b4c01e93d9e183,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,46.1577
+27c8c34673c5cb3ffd773d11d0fc675d33508451,2,4,5,4,5,4.4,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,47.1533
+6c1bb35ed32694567691ac76ae8fde4a692dd78b,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,51.85
+93dbf844e9e61c7c441ddbb5a45a96aa9a1f0fb7,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,54.17
+ff413cf5cf8f9d608114fdd5bdec32053af92385,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,1.027
+8566d0bc9794069136284c6f0955190669c272b1,2,4,5,5,5,4.6,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,4.8694
+9b830f4ad33bdcb76f9fc56b187e7b22503c6b7e,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,6.5194
+39107d719de7d3cfdbfc16c7c8524667dc5611c3,2,4,5,5,5,4.6,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,8.6168
+9aca1bfa0f733cd763a4e03e4bf3398f48764a81,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,10.7938
+b4b967d39893f3cfffaf617cfcf352d28a615033,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,45.046
+2f20e4d96379cb61141d425c4545b9f2a5bb87e6,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,45.3423
+aa5b3d959d27fc78452f877a7d793863e81b1d4e,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,50.2472
+7f9264bc900fba524d2a8d4b59a2647e0e85bc3e,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,51.4815
+a7ddc04264f04cefd8bd70ed0997c3d70bcd9884,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,52.3292
+6dd65c57876a29d468ee99b377c903b602e2bcae,2,4,4,4,2,3.6,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,1.5035
+8fa40a4483f0e05cf981ef1aa4272b546b0df50a,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,4.3688
+4b279330db8e4395844817bed63aaf2464ecdc75,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,4.8447000000000005
+6b926dfbb34481539f78447ea57c454f2aea6234,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,6.0291
+2aecfad768f1e4db0556f93d5b66f3c09b843696,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,10.7251
+cc7b84854ebe0c43934284484801e5a3a03c674f,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,50.9942
+f421c1b302dadafa78baa88263d1160ffee5c259,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,51.6309
+a9a36640bcbe5bffd34602b6555d0bbda720c364,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,51.6932
+b3ac3144265af36de7b975b904d2000f6defb30a,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,55.0374
+289646a535d0b8203fb3b495a17f54dc20adab03,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,56.0032
+9f5846a2c5ecef1b5139d6644c3bcd67301e892c,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,1.5986
+36bed018286706cdb3a16882387ca8606159b1a8,3,4,5,4,3,3.8,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,3.6914
+8391310592e5ca480e9bd72102c268153e8bcbaa,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,9.4065
+4c24f784af3d1a0cb99ddb3b3621adc5e4d3878f,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,11.1007
+e04718941415abb05c4d2664d0c2b37fb95374c1,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,11.5402
+1724ce466278c0ea4a4a115c3d935c9268972693,2,5,5,5,4,4.6,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,47.5763
+fa79d44c1a86a895d192c04a06839215c1fae5eb,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,48.9305
+db0f38b458e38d81437ea701d55b49ce3ca6d4fb,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,52.8693
+12c9b26f132aff03a88fae35b23007dd2cf1924e,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,53.7471
+aeee6d769fc5c7fc6c01299fbf5e9cdbf5abd960,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,54.9276
+0a496ba30926cdb06338dbe5360b2f79c9d17c5c,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,2.003
+6c0839a642424a33ccb6c66ccbd48ee20c1d82d7,2,4,5,5,5,4.6,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,2.8446
+679f6e4e742b17a5a46cb2473244111b75d1b189,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,5.1114
+c39dd230de73de0014a4b42f57d25b2bc27a6710,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,9.0282
+dd0c4a8e00f9eb259045ccb7d964b4ec20bcaba3,2,4,5,5,5,4.6,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,14.8307
+86b72b54615449bef3c59596edae5855d824f0af,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,45.5318
+fa558b2f7e102677448ec9814da7ad75206805ff,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,45.5455
+0eb4f99959df95119d6e86cdcb9b4cfc1a59c6af,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,46.6149
+72e2d2cb9ee5432de6032887caafbd0d7ddecd8d,1,5,5,5,2,4.4,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,48.6218
+d032901bb9b3e4a16027806571d0ebf64a42d66f,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,54.2122
+0c15c1fb7439a5ea5980a9c3d65e012c2fdc144a,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,2.3331
+bed0d65b05e7e719d508a65818da41309ec01613,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,4.8131
+c0913ab498ce3a6050aad43306afc5781b39032c,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,4.8219
+518d791d83bfbb2c0ec96509243d1856d30e019a,2,4,4,4,3,3.8,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,5.7171
+213a3a2e5a0b3e0cc72348324ab3e8df87628aa8,3,3,4,4,2,3.2,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,13.9811
+71ace2779767829d87f0281787b24a950f6677c6,2,4,5,5,5,4.6,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,45.1076
+0272c200f13f6a1baad8ba1136173f5de0631eb2,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,45.7258
+2ac3de3b5302f4caf51378e6a32228c14563d1d6,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,46.8299
+e1150d991087437917b945fd168f29f92904c894,2,3,4,4,3,3.6,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,54.5158
+f42233f61df850b494b2c44c16d1c1836a2b9072,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,54.5852
+d039bde80c5affe3a694356db8dbc766a8c7a8de,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,5.4018
+81c9828e6a26cc538bb47144e6b8807749eb1eb1,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,5.6887
+c0e7a720693925cfd4b0b9198a69c14f72eac1d1,2,4,5,2,2,3.4,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,6.6201
+2d741f20dbd1ba64b3c2b28ef947759625abf87e,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,9.2634
+c9760ad896bda71a1fcced7559dd7ffecdfe0016,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,9.4323
+9007c1bcb10357cf8438abf07627e5624f965b1a,1,5,5,5,2,4.4,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,45.8965
+a938d3123239b86aa17805d7123bfaf0e3bce024,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,46.5878
+04154f0c1c93808bbe7f793e1a9dbef71adcef91,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,50.7829
+e0972d763b052f66283947b5a1cd62f4bf89f4e9,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,51.8452
+57caaaf63962cdf90a8feae2041a66dc324403e2,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,51.9209
+f87cbf0f15e94f8840ca58032616afac6a940578,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,8.1567
+6ab9287ccd94c4d068afd8d402ba76d76a0a61af,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,8.4302
+4b5035de43a5febf29efb674e670a4c1b2f7c502,2,4,5,2,2,3.4,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,11.8094
+16c166b885ba5ac8c956c25f6baec5560e207449,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,14.1258
+317853e1d3bf9dc45cea49696ccb6d857ffee4d6,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,14.9974
+fab8a9cd4b3e3b55793c9b3117215f3cc9a6ed3a,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,49.2858
+19209ffcabcfded8c36e6c3beed14c836b34ddf8,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,49.8367
+59f18ad735d4721651cc4a3699c10d657c6dc1c6,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,51.2743
+e595add982dc8de1aa84d7dcbb43170b1b14c227,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,51.8854
+6fe60a446ba292c56df8894be7c8226a9f80b4e5,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,52.2959
+cf490d84f519473018d16edf4edfdaa9db91fb7c,2,4,5,2,2,3.4,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,1.2048
+234d946d971194697b1c89e4d6f8f3b47064d341,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,5.9104
+e11c45eae79e8c195e6ae0719bd25622d2fff4a2,2,4,5,3,2,3.6,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,6.4132
+93e1fe56ec97ee0c95f208a6f0b26bf1074db08d,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,10.3004
+fff26c5fcb9c2f56e6674b63c73d0b908ac7597d,2,4,5,2,2,3.4,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,11.3676
+66783f97bf6c7f4402621087d60ffbb1d3ed5993,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,46.9982
+78494d12a33e7a7ee93744e55bad5291344b1938,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,50.4575
+090a7def7d3dd55843c75f0178c11c4891d77d38,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,51.3702
+d0ac1454a221839514a9d7c0bdc3f9f4f1fa1278,2,4,4,2,2,3.2,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,52.6098
+943a884a5b9220c8464b70c0bfce4aa68401bbd7,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,55.3216
+704646eccdd4ef17e2345d8f25a0e418bcfe2cab,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,0.2598
+0918937768dabb3ddcb19ab037af33aa080042bb,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,0.508
+313dd839760975dba1d2eda2b3a7d63f698a4a42,1,4,5,5,2,4.2,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,4.0253
+2ff0574f6a94cd221e6bde3cb4fcd7e48c83f082,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,7.2252
+d34d66a374257178dc8a26ff31d2ab99d5fb2479,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,13.142
+a1ab6c110242833ddd7640416e563222a04a5435,2,4,4,2,2,3.2,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,50.3107
+a803b12f340a7b62622460441d31f47ab8a9205f,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,50.3962
+7117c427b430b8acb50bd4c724465df6dc47f53c,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,52.268
+0bdebf7867ef692b3566691ddd9d057c3083081b,3,3,4,2,2,2.8,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,52.3418
+f04b8464e0f9726464bc1c7e84f4f2a7d6abb1a8,2,4,5,2,2,3.4,google/gemini-3.1-flash-lite-preview,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,55.3122
+c94a96756752c8991d47a8dc5ad9b6a06902c619,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,2.7621
+8babf44c3b0293636ae0dc22c1ec7e15fdbb7683,3,3,4,3,2,3.0,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,5.6536
+1014150307d0229d109eb68dbf05b87d00d4d813,3,3,4,2,2,2.8,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,5.7706
+4219df19e48568725945cdfa2083075773c5feda,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,7.2415
+e468b1a12d210fb94714d1860b2be8e09755be84,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,8.6484
+5c5e698148b467ecbc186cd931a6409390071738,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,45.4884
+8f83a034f3289bb0670a6d03019f04d6e887bc23,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,45.6499
+7cd4c9087b508fc7162644e51736e45376da9b74,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,47.4759
+ac61c8293f057f51109ddd1f2dd7f3fc0fdb8242,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,53.4719
+f82f3cc974d439b92c5c09c35e5832de225a7c01,3,3,4,3,2,3.0,google/gemini-3.1-flash-lite-preview,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,55.2584
+2587524fb55bcb24b3460ad98ced7450d212a911,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,0.4707
+5013d63c382f65b6e3f32fa305aed2d418ee9b7f,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,7.5204
+969ac1ac998deef57d35b13b9c2f1800cf7833de,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,8.4026
+8c558098ad7d99186f4b92945772ab3400a4e80e,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,11.1384
+e6ef84503ba3ca70217f884a44383ca521d13879,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,11.9188
+e050b1c30dfa86f172af9826cc1d64693af866f7,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,47.3798
+94262831567d0cfd30699bae5a7e9a1ac87ada46,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,48.3292
+2fe60cf426f117e04ba233446032ab3b61374682,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,50.9921
+d2427a7bbfea20aaba803bf0e336dd42edb18347,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,53.4443
+141fed735bae6dd688760a8bb71a3e316975cb5a,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,54.4928
+e2ce89b92f3619fa053afcc02fd31438a9f5da0f,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,1.6727
+38be8eb9db7efc569fcc662defaf51be95513553,3,3,4,3,2,3.0,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,5.7339
+5ee8e033b2f1cc02509b91195494e93bfe35894d,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,9.3661
+b5b8c8dceb0861c8192557d4d914b5770a83b756,4,2,2,1,1,1.6,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,13.8567
+3e83aa751ab22b493cbf4a59b118ea0d8c64adbf,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,14.593
+77339e8b201c1db00c36151e8115a71ea2ba89da,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,45.3811
+8f4b2b99f4081864fb368ebc6d32b386242ebed2,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,47.301
+ed60bb66850818257c937f32eec8106122c36503,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,50.4552
+b2e1cfbdbd87ecb0e879a0f23e876e00ec6a0ae9,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,53.5733
+87eb350c1670b106f0147b41297ae493cfec4099,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,55.4947
+5627b479abe03cf4277155a13f4144c322959b0f,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,1.8358
+2622f14f7e7b16b82e5876b320891fa9a5ae1048,4,2,3,2,1,2.0,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,2.5914
+bc1164b463c1aa3b9427ea9d8f02e5eb772c28ee,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,7.5188
+8d0c543213fedba8c32b83d6532ded54cc3aa7a5,1,5,5,5,3,4.6,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,8.9915
+d41474203984934b65289b67cd0fd15cbd8426ef,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,11.353
+aac6fe321a82c350226101440b312f838eac445d,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,47.2427
+accdc3abea0dde2e54667548f60b4e0857c85573,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,49.778
+2e73c0bd044e769c067f8bd63b7623e900d7c761,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,53.2676
+ad26cc3a1660ca33d02a9462ad0d5cdd87a7a8fe,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,53.6134
+84fe2a2bdbfc53b97dd454abadfb7553216abadb,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,54.6546
+38b575af67bc5fb78c7294df92e74cd9956639f6,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,0.4973
+bfdb578648c0e803ba1b2e2cf23763ab8724c459,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,4.246
+b20399a54478848bb36a98bb1d3c83cd89c8c374,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,4.6362
+6855b3fcd7544595bc3d3e68596157c3ec4bca3d,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,10.6228
+cc902c74baaa6a9e0c20e8128698bcfacb1920f2,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,12.4163
+b430ccbda3627ed84b7d10b508da3fe2615d4b88,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,45.1566
+b36eda751ee64c6dc6e21f89589587d8a813b0c4,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,48.6105
+b3138a033cfa22d918c9a0c24683289dc14af750,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,48.6663
+f652e56443832e5e506003643d63a80f33801e4d,1,4,5,5,3,4.4,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,49.0357
+a4f3ac41a651597a7524736cc57e94b025c63014,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,59.8049
+654d6952176fa9a4738ed54e813e12f823fda9b5,2,3,4,4,2,3.4,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,0.539
+5d0da184d05927317812634e75cf438b624f0f04,2,4,5,4,2,3.8,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,3.1519
+25856aa0ef4a5319a39416026b9c53f8f1c5358a,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,3.9852
+ec3e44abb08017fee637789abc33d950e5b47645,2,4,5,4,4,4.2,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,13.707
+05356a5a78e85c9cef1975034e9c480003e6c256,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,14.2797
+ef6f86a570e25769c108d5377d5001321881c8d7,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,47.4344
+dd7d0935d715470d10c537b3aeebf5c8c57f41ca,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,49.4455
+a6c50f5e64867d052c1afc089cd764fae3a3836e,1,4,5,5,4,4.6,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,49.8357
+a9976e62c569819a7c6dfdc4e256d3b6e81bd74b,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,51.6344
+13d37e376fb5096d828cd68c712bcd4b8e8642b8,2,4,5,5,4,4.4,google/gemini-3.1-flash-lite-preview,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,56.0584
+ac2634aa6bccd5b2cb7942409b4392e1ba68d224,2,4,4,3,2,3.4,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,4.8407
+eaddbfc77678b8df31ddb7f32d003e714b7682f4,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,5.5306
+981d4e6c90e608910f2830b5bc5e48fe920c7278,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,5.7578000000000005
+77db3efb8e4d7ebdf45669390782ca72ec3ad1d9,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,13.367
+60cccb682cb04be4205041a6c34b574bce47e41f,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,13.4686
+47d02270ee9421e28afc166627dd88ed9ea0fa27,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,47.1313
+7a670326a07cb5d02ff568e4811a25fddbf26c54,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.0789
+7cfd1810f4b7ba4493acd37ba94c52de18b28677,1,5,5,5,5,5.0,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.3561
+b2aa804ac1279029e83a8f1ab8cc7cc7d50b5255,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.9624
+1ca0d813587dde31cb8c6c5df7ed55da613a5f29,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,58.3618
+22b99179822c709a910f5aa03a1a54f1a88642d1,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,1.4206
+77c7f1714d458a236f18472fccd91c6d4b49e3cb,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.0866
+c0cfb495ddf999339bbe959b91e5e1d30d5632f4,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.947
+5d62cec2679e558694bbc29fd1cce0a778d546f3,2,4,5,5,2,4.0,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.9899
+d6fea914377dca774887f4ad3453625c5f06e550,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,9.3594
+25f87091569e9d8c204287155f3bde5acd7cdb60,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,48.468
+beb2b7cf8174417cd639af0086ce5c410e374b10,2,4,5,5,3,4.2,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,48.9607
+77f08f4b8bac501784dd97ddf1714df28fc20e23,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,52.9695
+1bedfe99c1f01ce5c71aafcc722a8e456985fd79,1,5,5,5,4,4.8,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,55.64
+412682ce39d0a87bb1e35f23687aba0919074d6e,2,4,5,4,3,4.0,google/gemini-3.1-flash-lite-preview,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,59.6286
+6b926dfbb34481539f78447ea57c454f2aea6234,1,5,5,4,3,4.4,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,6.0291
+a9a36640bcbe5bffd34602b6555d0bbda720c364,2,4,5,4,4,4.2,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,51.6932
+aa5b3d959d27fc78452f877a7d793863e81b1d4e,1,5,5,5,5,5.0,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,50.2472
+a7b77440b4707ffa1a28b5701936fc5df4e59322,2,5,5,4,4,4.4,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,6.8986
+72e2d2cb9ee5432de6032887caafbd0d7ddecd8d,1,5,5,4,4,4.6,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,48.6218
+47d02270ee9421e28afc166627dd88ed9ea0fa27,1,5,5,5,4,4.8,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,47.1313
+2ac3de3b5302f4caf51378e6a32228c14563d1d6,1,5,5,4,5,4.8,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,46.8299
+0272c200f13f6a1baad8ba1136173f5de0631eb2,2,5,5,5,5,4.8,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,45.7258
+2fe60cf426f117e04ba233446032ab3b61374682,1,5,5,5,4,4.8,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,50.9921
+d34d66a374257178dc8a26ff31d2ab99d5fb2479,2,4,5,5,3,4.2,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,13.142
+b5d53b8a3c1ff260eb10b57719c3f0638cbec046,2,5,5,4,4,4.4,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,8.9975
+fab8a9cd4b3e3b55793c9b3117215f3cc9a6ed3a,1,5,5,5,4,4.8,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,49.2858
+59f18ad735d4721651cc4a3699c10d657c6dc1c6,2,4,5,4,4,4.2,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,51.2743
+16c166b885ba5ac8c956c25f6baec5560e207449,2,5,5,4,4,4.4,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,14.1258
+317853e1d3bf9dc45cea49696ccb6d857ffee4d6,1,5,5,5,4,4.8,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,14.9974
+6ab9287ccd94c4d068afd8d402ba76d76a0a61af,2,5,5,5,4,4.6,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,8.4302
+4b5035de43a5febf29efb674e670a4c1b2f7c502,3,4,5,2,2,3.2,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,11.8094
+f87cbf0f15e94f8840ca58032616afac6a940578,2,4,5,5,3,4.2,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,8.1567
+19209ffcabcfded8c36e6c3beed14c836b34ddf8,1,5,5,5,4,4.8,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,49.8367
+e595add982dc8de1aa84d7dcbb43170b1b14c227,1,5,5,5,4,4.8,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,51.8854
+6fe60a446ba292c56df8894be7c8226a9f80b4e5,1,5,5,5,5,5.0,openai/gpt-5.5,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,52.2959
+8391310592e5ca480e9bd72102c268153e8bcbaa,1,5,5,5,5,5.0,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,9.4065
+36bed018286706cdb3a16882387ca8606159b1a8,2,4,5,4,2,3.8,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,3.6914
+9f5846a2c5ecef1b5139d6644c3bcd67301e892c,2,5,5,4,3,4.2,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,1.5986
+e04718941415abb05c4d2664d0c2b37fb95374c1,1,5,5,4,5,4.8,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,11.5402
+4c24f784af3d1a0cb99ddb3b3621adc5e4d3878f,1,5,5,4,4,4.6,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,11.1007
+1724ce466278c0ea4a4a115c3d935c9268972693,2,5,5,4,4,4.4,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,47.5763
+fa79d44c1a86a895d192c04a06839215c1fae5eb,1,5,5,4,4,4.6,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,48.9305
+12c9b26f132aff03a88fae35b23007dd2cf1924e,1,5,5,5,5,5.0,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,53.7471
+db0f38b458e38d81437ea701d55b49ce3ca6d4fb,1,5,5,5,5,5.0,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,52.8693
+2622f14f7e7b16b82e5876b320891fa9a5ae1048,3,4,5,3,2,3.4,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,2.5914
+5627b479abe03cf4277155a13f4144c322959b0f,2,5,5,4,4,4.4,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,1.8358
+aeee6d769fc5c7fc6c01299fbf5e9cdbf5abd960,3,4,5,4,3,3.8,openai/gpt-5.5,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,54.9276
+8d0c543213fedba8c32b83d6532ded54cc3aa7a5,1,5,5,5,3,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,8.9915
+bc1164b463c1aa3b9427ea9d8f02e5eb772c28ee,1,5,5,5,3,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,7.5188
+d41474203984934b65289b67cd0fd15cbd8426ef,2,5,5,5,4,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,11.353
+aac6fe321a82c350226101440b312f838eac445d,1,5,5,4,4,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,47.2427
+accdc3abea0dde2e54667548f60b4e0857c85573,2,5,5,5,4,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,49.778
+ad26cc3a1660ca33d02a9462ad0d5cdd87a7a8fe,2,5,5,4,4,4.4,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,53.6134
+2e73c0bd044e769c067f8bd63b7623e900d7c761,2,5,5,5,4,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,53.2676
+22b99179822c709a910f5aa03a1a54f1a88642d1,2,4,5,4,4,4.2,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,1.4206
+5d62cec2679e558694bbc29fd1cce0a778d546f3,3,4,5,4,3,3.8,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.9899
+77f08f4b8bac501784dd97ddf1714df28fc20e23,1,5,5,5,5,5.0,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,52.9695
+84fe2a2bdbfc53b97dd454abadfb7553216abadb,2,5,5,5,4,4.6,openai/gpt-5.5,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,54.6546
+77c7f1714d458a236f18472fccd91c6d4b49e3cb,2,4,5,4,2,3.8,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.0866
+c0cfb495ddf999339bbe959b91e5e1d30d5632f4,1,5,5,4,4,4.6,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.947
+d6fea914377dca774887f4ad3453625c5f06e550,2,5,5,5,4,4.6,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,9.3594
+beb2b7cf8174417cd639af0086ce5c410e374b10,1,5,5,5,4,4.8,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,48.9607
+25f87091569e9d8c204287155f3bde5acd7cdb60,1,5,5,4,4,4.6,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,48.468
+1bedfe99c1f01ce5c71aafcc722a8e456985fd79,1,5,5,5,5,5.0,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,55.64
+c9760ad896bda71a1fcced7559dd7ffecdfe0016,1,5,5,5,4,4.8,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,9.4323
+d039bde80c5affe3a694356db8dbc766a8c7a8de,2,5,5,4,2,4.0,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,5.4018
+2d741f20dbd1ba64b3c2b28ef947759625abf87e,2,4,5,4,3,4.0,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,9.2634
+9007c1bcb10357cf8438abf07627e5624f965b1a,1,5,5,4,2,4.2,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,45.8965
+412682ce39d0a87bb1e35f23687aba0919074d6e,2,5,5,4,3,4.2,openai/gpt-5.5,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,59.6286
+81c9828e6a26cc538bb47144e6b8807749eb1eb1,2,5,5,4,3,4.2,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,5.6887
+e0972d763b052f66283947b5a1cd62f4bf89f4e9,2,5,5,4,3,4.2,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,51.8452
+c0e7a720693925cfd4b0b9198a69c14f72eac1d1,3,4,5,2,2,3.2,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,6.6201
+a938d3123239b86aa17805d7123bfaf0e3bce024,1,5,5,4,3,4.4,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,46.5878
+57caaaf63962cdf90a8feae2041a66dc324403e2,1,5,5,5,3,4.6,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,51.9209
+04154f0c1c93808bbe7f793e1a9dbef71adcef91,1,5,5,5,3,4.6,openai/gpt-5.5,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,50.7829
+8fa40a4483f0e05cf981ef1aa4272b546b0df50a,1,5,5,5,4,4.8,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,4.3688
+6dd65c57876a29d468ee99b377c903b602e2bcae,2,4,5,4,2,3.8,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,1.5035
+2aecfad768f1e4db0556f93d5b66f3c09b843696,1,5,5,4,1,4.0,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,10.7251
+4b279330db8e4395844817bed63aaf2464ecdc75,2,4,5,4,2,3.8,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,4.8447000000000005
+289646a535d0b8203fb3b495a17f54dc20adab03,2,4,5,4,4,4.2,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,56.0032
+f421c1b302dadafa78baa88263d1160ffee5c259,2,5,5,4,4,4.4,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,51.6309
+ff413cf5cf8f9d608114fdd5bdec32053af92385,1,5,5,4,3,4.4,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,1.027
+8566d0bc9794069136284c6f0955190669c272b1,1,5,5,5,5,5.0,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,4.8694
+39107d719de7d3cfdbfc16c7c8524667dc5611c3,1,5,5,5,5,5.0,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,8.6168
+9aca1bfa0f733cd763a4e03e4bf3398f48764a81,1,5,5,4,5,4.8,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,10.7938
+b4b967d39893f3cfffaf617cfcf352d28a615033,1,5,5,5,5,5.0,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,45.046
+cc7b84854ebe0c43934284484801e5a3a03c674f,2,5,5,4,4,4.4,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,50.9942
+2f20e4d96379cb61141d425c4545b9f2a5bb87e6,1,5,5,4,4,4.6,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,45.3423
+9b830f4ad33bdcb76f9fc56b187e7b22503c6b7e,2,4,5,3,2,3.6,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,6.5194
+b3ac3144265af36de7b975b904d2000f6defb30a,1,5,5,4,4,4.6,openai/gpt-5.5,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,55.0374
+7f9264bc900fba524d2a8d4b59a2647e0e85bc3e,1,5,5,5,5,5.0,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,51.4815
+a7ddc04264f04cefd8bd70ed0997c3d70bcd9884,1,5,5,4,4,4.6,openai/gpt-5.5,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,52.3292
+dd4901bb7f73205aee092aa771dff1a03e24c858,2,4,5,4,3,4.0,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,2.1545
+fac1b77e6b0eb2610243b3ff062ea780586b055b,2,5,5,4,4,4.4,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,0.3014
+b07eecee611e83bb62c1cd4983673d1db9b2dd58,3,4,5,4,5,4.2,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,3.2129
+4815f49e8138d4503ac6d8844dac23519d0d679c,4,3,4,2,3,2.8,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,1.0617
+109df39eb5a66cf7bdc4dc4ddb1a1dd2f68c6c33,1,5,5,4,5,4.8,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,45.2311
+444d0f9d96c101d543b94b5fd0b4c01e93d9e183,1,5,5,4,4,4.6,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,46.1577
+93dbf844e9e61c7c441ddbb5a45a96aa9a1f0fb7,1,5,5,5,4,4.8,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,54.17
+6c1bb35ed32694567691ac76ae8fde4a692dd78b,2,5,5,4,4,4.4,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,51.85
+659ec4987a69fcce3943f2238ae4515fc674e273,2,4,5,4,3,4.0,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,8.8973
+164b04a73c00afded063cf590b6a6fde91825af7,2,4,5,4,3,4.0,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,11.9092
+0a5d84b6f61eddfad9c08d397236f98d099f0aa6,2,5,5,4,4,4.4,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,2.3702
+9620452ccaedc0ebf0d6d5da0d1d0e63484d4108,2,5,5,4,4,4.4,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,14.7971
+27c8c34673c5cb3ffd773d11d0fc675d33508451,1,5,5,4,5,4.8,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,47.1533
+2db9f29d2b12ec89976c56e67274515d0d2bbc34,2,5,5,4,3,4.2,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,48.2916
+bde8955999731c93b44ab2444471ab0110743b10,2,4,4,4,3,3.8,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,53.4963
+3f2a3fe9efe313c9d949f857fb74214e1572030f,2,5,5,5,3,4.4,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,48.0688
+226f90d1c280dd9dad3ad518caf5800a125f923b,1,5,5,4,4,4.6,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,49.0883
+205ad883fa8fd80e50596b4240bbe19e48dfa798,1,5,5,4,4,4.6,openai/gpt-5.5,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,50.4794
+a86965fe4d0d314b94ce4d60bc5a4a08fb200b9b,1,5,5,5,4,4.8,openai/gpt-5.5,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,3.0541
+5ee8e033b2f1cc02509b91195494e93bfe35894d,2,4,5,4,3,4.0,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,9.3661
+e2ce89b92f3619fa053afcc02fd31438a9f5da0f,2,5,5,4,4,4.4,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,1.6727
+8f4b2b99f4081864fb368ebc6d32b386242ebed2,1,5,5,5,5,5.0,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,47.301
+77339e8b201c1db00c36151e8115a71ea2ba89da,1,5,5,4,5,4.8,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,45.3811
+b5b8c8dceb0861c8192557d4d914b5770a83b756,2,4,4,2,3,3.4,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,13.8567
+b2e1cfbdbd87ecb0e879a0f23e876e00ec6a0ae9,1,5,5,5,4,4.8,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,53.5733
+ed60bb66850818257c937f32eec8106122c36503,1,5,5,5,5,5.0,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,50.4552
+87eb350c1670b106f0147b41297ae493cfec4099,1,5,5,5,5,5.0,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,55.4947
+d808c2e4e313d82d2b50585b053765d856186734,2,4,5,5,3,4.2,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,5.1237
+1ac94e0604e05188b0e26e529af080e554336f24,2,4,5,4,3,4.0,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,8.2758
+38be8eb9db7efc569fcc662defaf51be95513553,3,4,5,4,3,3.8,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,5.7339
+03ef0361d4456d16661b001a13b16a71647e7ec8,2,4,5,4,3,4.0,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,10.9909
+86d530e4de5fba45020af917f3eadc58e26fe860,1,5,5,5,4,4.8,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,45.2918
+b390a79e143b30f4e3d4525df73fcac8f3a8e0b4,2,4,5,4,4,4.2,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,11.734
+3e83aa751ab22b493cbf4a59b118ea0d8c64adbf,1,5,5,4,5,4.8,openai/gpt-5.5,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,14.593
+ee2128703b7d7510a83d2c13c72622f2d2e87526,1,5,5,5,5,5.0,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,49.6636
+d679234ab22a20630bfe237fd3c45091389af1c4,1,5,5,5,4,4.8,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,47.4412
+3812383a21d4967cf61b13abb82635423200f1b2,1,5,5,5,4,4.8,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,45.5494
+3437aae8429871dac92dbe116df93417b9905904,2,5,5,4,4,4.4,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,51.4973
+0a496ba30926cdb06338dbe5360b2f79c9d17c5c,2,4,5,4,4,4.2,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,2.003
+6c0839a642424a33ccb6c66ccbd48ee20c1d82d7,2,5,5,4,4,4.4,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,2.8446
+679f6e4e742b17a5a46cb2473244111b75d1b189,2,4,5,5,3,4.2,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,5.1114
+6cb18f1a9a5ea9a41e6179f3324fafac75646c4e,3,4,4,4,3,3.6,openai/gpt-5.5,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,10.4649
+dd0c4a8e00f9eb259045ccb7d964b4ec20bcaba3,2,5,5,4,5,4.6,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,14.8307
+c39dd230de73de0014a4b42f57d25b2bc27a6710,1,5,5,4,5,4.8,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,9.0282
+86b72b54615449bef3c59596edae5855d824f0af,1,5,5,5,5,5.0,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,45.5318
+fa558b2f7e102677448ec9814da7ad75206805ff,2,4,5,4,4,4.2,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,45.5455
+0eb4f99959df95119d6e86cdcb9b4cfc1a59c6af,3,4,5,4,4,4.0,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,46.6149
+d032901bb9b3e4a16027806571d0ebf64a42d66f,1,5,5,5,5,5.0,openai/gpt-5.5,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,54.2122
+eaddbfc77678b8df31ddb7f32d003e714b7682f4,2,4,5,4,3,4.0,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,5.5306
+ac2634aa6bccd5b2cb7942409b4392e1ba68d224,2,4,5,4,4,4.2,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,4.8407
+981d4e6c90e608910f2830b5bc5e48fe920c7278,1,5,5,5,4,4.8,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,5.7578000000000005
+77db3efb8e4d7ebdf45669390782ca72ec3ad1d9,1,5,5,4,4,4.6,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,13.367
+60cccb682cb04be4205041a6c34b574bce47e41f,1,5,5,5,3,4.6,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,13.4686
+7cfd1810f4b7ba4493acd37ba94c52de18b28677,1,5,5,5,5,5.0,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.3561
+7a670326a07cb5d02ff568e4811a25fddbf26c54,1,5,5,5,4,4.8,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.0789
+b2aa804ac1279029e83a8f1ab8cc7cc7d50b5255,2,5,5,5,4,4.6,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.9624
+c94a96756752c8991d47a8dc5ad9b6a06902c619,2,4,5,4,3,4.0,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,2.7621
+1ca0d813587dde31cb8c6c5df7ed55da613a5f29,1,5,5,5,4,4.8,openai/gpt-5.5,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,58.3618
+8babf44c3b0293636ae0dc22c1ec7e15fdbb7683,2,4,5,4,2,3.8,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,5.6536
+4219df19e48568725945cdfa2083075773c5feda,2,5,5,4,3,4.2,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,7.2415
+e468b1a12d210fb94714d1860b2be8e09755be84,2,5,5,5,3,4.4,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,8.6484
+5c5e698148b467ecbc186cd931a6409390071738,1,5,5,5,4,4.8,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,45.4884
+1014150307d0229d109eb68dbf05b87d00d4d813,3,4,4,4,2,3.4,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,5.7706
+8f83a034f3289bb0670a6d03019f04d6e887bc23,1,5,5,5,4,4.8,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,45.6499
+ac61c8293f057f51109ddd1f2dd7f3fc0fdb8242,2,5,5,5,5,4.8,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,53.4719
+f82f3cc974d439b92c5c09c35e5832de225a7c01,3,4,4,3,4,3.6,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,55.2584
+234d946d971194697b1c89e4d6f8f3b47064d341,2,5,5,4,4,4.4,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,5.9104
+cf490d84f519473018d16edf4edfdaa9db91fb7c,2,4,4,3,2,3.4,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,1.2048
+e11c45eae79e8c195e6ae0719bd25622d2fff4a2,2,4,5,4,2,3.8,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,6.4132
+93e1fe56ec97ee0c95f208a6f0b26bf1074db08d,1,5,5,5,4,4.8,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,10.3004
+090a7def7d3dd55843c75f0178c11c4891d77d38,2,5,5,5,3,4.4,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,51.3702
+d0ac1454a221839514a9d7c0bdc3f9f4f1fa1278,1,5,4,2,2,3.6,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,52.6098
+66783f97bf6c7f4402621087d60ffbb1d3ed5993,2,4,5,4,3,4.0,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,46.9982
+943a884a5b9220c8464b70c0bfce4aa68401bbd7,2,5,5,5,4,4.6,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,55.3216
+9f2a70c3fc8017becbcd9644accd1e36b1aed7f5,2,5,5,5,4,4.6,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,4.3956
+7cd4c9087b508fc7162644e51736e45376da9b74,1,5,5,5,4,4.8,openai/gpt-5.5,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,47.4759
+78494d12a33e7a7ee93744e55bad5291344b1938,2,4,5,4,2,3.8,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,50.4575
+58ffbb66263e2afeb129793e2f8c32191673c314,2,4,5,4,3,4.0,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,5.4432
+d0e99abcc10ae49d1984e1d4078e5d23dc7b8a6e,2,5,5,5,3,4.4,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,14.0043
+ea5cad6f826d42b4a80da831d4f16a6a42a3f000,2,4,5,5,4,4.4,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,11.2674
+36b02b06db89a24699e57df4daeb756d4eeafea6,1,5,5,4,5,4.8,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,45.5566
+b64489b37145957a795fad18a5c2bfd083b7a5b5,2,5,5,4,3,4.2,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,48.0525
+fff26c5fcb9c2f56e6674b63c73d0b908ac7597d,2,4,5,3,2,3.6,openai/gpt-5.5,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,11.3676
+a36eef6157ede8e02594c5135faf9f38d342e5c8,2,4,5,4,3,4.0,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,54.3037
+6ea184390b4aae9f8bafdc734ea9da60d675b935,2,5,5,5,4,4.6,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,52.8765
+7783cf46df813476cde10972385c343d547b62b3,2,5,5,5,5,4.8,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,56.7874
+b6fa55b31bda68b3709b9a942cfdc3ede7aea8f6,1,5,5,5,3,4.6,openai/gpt-5.5,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,10.0384
+0c15c1fb7439a5ea5980a9c3d65e012c2fdc144a,1,5,5,5,5,5.0,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,2.3331
+bed0d65b05e7e719d508a65818da41309ec01613,2,5,5,4,4,4.4,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,4.8131
+518d791d83bfbb2c0ec96509243d1856d30e019a,3,4,5,4,3,3.8,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,5.7171
+c0913ab498ce3a6050aad43306afc5781b39032c,2,5,5,5,5,4.8,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,4.8219
+f42233f61df850b494b2c44c16d1c1836a2b9072,1,5,5,5,4,4.8,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,54.5852
+e1150d991087437917b945fd168f29f92904c894,2,4,4,4,2,3.6,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,54.5158
+2587524fb55bcb24b3460ad98ced7450d212a911,2,5,5,5,4,4.6,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,0.4707
+71ace2779767829d87f0281787b24a950f6677c6,1,5,5,4,5,4.8,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,45.1076
+5013d63c382f65b6e3f32fa305aed2d418ee9b7f,1,5,5,5,4,4.8,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,7.5204
+213a3a2e5a0b3e0cc72348324ab3e8df87628aa8,3,3,4,4,2,3.2,openai/gpt-5.5,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,13.9811
+8c558098ad7d99186f4b92945772ab3400a4e80e,2,4,5,5,3,4.2,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,11.1384
+969ac1ac998deef57d35b13b9c2f1800cf7833de,2,5,5,5,4,4.6,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,8.4026
+141fed735bae6dd688760a8bb71a3e316975cb5a,1,5,5,5,5,5.0,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,54.4928
+e6ef84503ba3ca70217f884a44383ca521d13879,2,5,5,5,4,4.6,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,11.9188
+e050b1c30dfa86f172af9826cc1d64693af866f7,1,5,5,5,5,5.0,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,47.3798
+654d6952176fa9a4738ed54e813e12f823fda9b5,2,4,5,4,3,4.0,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,0.539
+94262831567d0cfd30699bae5a7e9a1ac87ada46,1,5,5,5,5,5.0,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,48.3292
+d2427a7bbfea20aaba803bf0e336dd42edb18347,1,5,5,5,5,5.0,openai/gpt-5.5,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,53.4443
+25856aa0ef4a5319a39416026b9c53f8f1c5358a,2,4,5,5,3,4.2,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,3.9852
+ec3e44abb08017fee637789abc33d950e5b47645,2,4,5,4,4,4.2,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,13.707
+05356a5a78e85c9cef1975034e9c480003e6c256,1,5,5,4,3,4.4,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,14.2797
+ef6f86a570e25769c108d5377d5001321881c8d7,2,4,5,4,3,4.0,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,47.4344
+a6c50f5e64867d052c1afc089cd764fae3a3836e,1,5,5,5,4,4.8,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,49.8357
+a9976e62c569819a7c6dfdc4e256d3b6e81bd74b,1,5,5,5,5,5.0,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,51.6344
+bfdb578648c0e803ba1b2e2cf23763ab8724c459,2,4,5,4,3,4.0,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,4.246
+dd7d0935d715470d10c537b3aeebf5c8c57f41ca,2,5,5,5,4,4.6,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,49.4455
+6855b3fcd7544595bc3d3e68596157c3ec4bca3d,2,5,5,4,4,4.4,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,10.6228
+5d0da184d05927317812634e75cf438b624f0f04,2,5,5,4,3,4.2,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,3.1519
+b20399a54478848bb36a98bb1d3c83cd89c8c374,2,5,5,5,3,4.4,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,4.6362
+cc902c74baaa6a9e0c20e8128698bcfacb1920f2,2,4,5,5,4,4.4,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,12.4163
+38b575af67bc5fb78c7294df92e74cd9956639f6,1,5,5,4,4,4.6,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,0.4973
+b36eda751ee64c6dc6e21f89589587d8a813b0c4,1,5,5,5,5,5.0,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,48.6105
+b430ccbda3627ed84b7d10b508da3fe2615d4b88,1,5,5,5,4,4.8,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,45.1566
+a4f3ac41a651597a7524736cc57e94b025c63014,1,5,5,5,5,5.0,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,59.8049
+13d37e376fb5096d828cd68c712bcd4b8e8642b8,1,5,5,5,4,4.8,openai/gpt-5.5,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,56.0584
+704646eccdd4ef17e2345d8f25a0e418bcfe2cab,1,5,5,4,3,4.4,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,0.2598
+f652e56443832e5e506003643d63a80f33801e4d,2,4,5,5,4,4.4,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,49.0357
+a803b12f340a7b62622460441d31f47ab8a9205f,1,5,5,5,4,4.8,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,50.3962
+0918937768dabb3ddcb19ab037af33aa080042bb,1,5,5,5,4,4.8,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,0.508
+2ff0574f6a94cd221e6bde3cb4fcd7e48c83f082,1,5,5,5,5,5.0,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,7.2252
+313dd839760975dba1d2eda2b3a7d63f698a4a42,2,4,5,5,3,4.2,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,4.0253
+7117c427b430b8acb50bd4c724465df6dc47f53c,2,5,5,5,4,4.6,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,52.268
+b3138a033cfa22d918c9a0c24683289dc14af750,1,5,5,5,4,4.8,openai/gpt-5.5,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,48.6663
+0bdebf7867ef692b3566691ddd9d057c3083081b,2,4,4,2,2,3.2,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,52.3418
+704d5458f44353ced7720093a8bffcaa2cefc9a0,2,4,5,4,3,4.0,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,10.3342
+b7a8afdab93d774110a776028076a01958308d89,2,5,5,4,4,4.4,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,8.5156
+d5710c88d0bfa9ffbfe648c1069bc6cb387d97e8,2,4,5,4,4,4.2,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,12.3583
+8130cd002c2ebfe44666fa8c318136cfdaf2ef38,2,4,5,4,4,4.2,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,14.0258
+7f057f759e9a785b8d5a4b2a4c5ce6e8da7721b4,2,4,5,5,3,4.2,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,49.9193
+a1ab6c110242833ddd7640416e563222a04a5435,2,4,5,4,2,3.8,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,50.3107
+b2f0edfb8c6f4931d49f9a2cb916be842c6cd6df,3,4,4,4,4,3.8,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,47.3525
+bebf8b16f85119fd39c3d3a1809064ee45c8f963,2,5,5,4,3,4.2,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,50.3117
+f04b8464e0f9726464bc1c7e84f4f2a7d6abb1a8,2,5,5,3,3,4.0,openai/gpt-5.5,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,55.3122
+46b04f2ebc2318e058bbe926c26d6921c917f1c2,2,5,5,4,3,4.2,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,56.3787
+95cadf901044b73a540619386c2c2f3f57721942,2,4,5,4,4,4.2,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,6.0713
+4301b60a4c788d342509c7028f47eb8637bff7f8,2,4,5,4,3,4.0,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,46.1451
+728f41e8464033c56b5a11f9fed0d437fc7573b8,2,5,5,4,3,4.2,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,6.509
+6adb36e25aaa6ca58f666823b5b8f95418374f0e,1,5,5,4,1,4.0,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,11.1835
+fc31324ab192d568056a1719ea0a6737c641747f,2,5,5,4,4,4.4,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,8.069
+6889634e09ba7f904e0d3d821635174a25e8baec,2,5,5,4,4,4.4,openai/gpt-5.5,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,54.6427
+a5a75703d3bd770fd48d79f4cecab53eab9879d6,2,4,5,5,4,4.4,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,56.5682
+f09cc37c26fb989fdeed55954bd0a6582173a6ee,2,5,5,4,3,4.2,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,47.2298
+8622fba0698ad26f8c3cf0b4c63e9d92e202ad5d,2,4,5,4,4,4.2,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,54.6575
+942ecbce64c4146fa39f32d4a5ac62b05f1eddb5,2,4,5,4,3,4.0,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,48.4834
+cd0aaff2d779738bdb582d67c4e2984c91328c63,1,5,5,5,4,4.8,openai/gpt-5.5,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,0.6729
+913bc7cd297e7bf32e78d70795340b4913bae2b5,3,4,4,4,3,3.6,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,2.1789
+92c8184be4ca5a96d632ef7e1fa1064456cff9ce,3,4,4,3,3,3.4,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,8.828
+c95675037957cf56d575a10425f119b3a7b99817,2,5,5,4,2,4.0,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,2.7783
+95bda7e4b7c301ce2b89421ddca0aa362c43450f,2,4,5,4,3,4.0,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,13.3896
+55c68b2151a95ea58f7649cf64e3fc4e6efa3cb1,2,4,5,4,3,4.0,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,45.6808
+3a833ef4b612ee2150d61650e8970c8b2b3dad96,1,5,5,5,4,4.8,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,13.1302
+c2b472d1b4d1c6fc785a11a454aeb786ab503423,1,5,5,4,4,4.6,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,47.3469
+bbf902aeff594aeda0e73c17fbe43e9caa10e122,2,5,5,4,5,4.6,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,48.5659
+15fa3051c7a95ad8728def8d31a4434d170da5c8,2,4,4,4,3,3.8,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,50.0764
+804b19de0ca1d4aedfd7028e89f278c16d2098f2,2,4,5,4,3,4.0,openai/gpt-5.5,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,56.2428
+6b926dfbb34481539f78447ea57c454f2aea6234,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,6.0291
+a9a36640bcbe5bffd34602b6555d0bbda720c364,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,51.6932
+aa5b3d959d27fc78452f877a7d793863e81b1d4e,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,50.2472
+a7b77440b4707ffa1a28b5701936fc5df4e59322,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,6.8986
+72e2d2cb9ee5432de6032887caafbd0d7ddecd8d,1,4,5,4,4,4.4,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,48.6218
+47d02270ee9421e28afc166627dd88ed9ea0fa27,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,47.1313
+2ac3de3b5302f4caf51378e6a32228c14563d1d6,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,46.8299
+0272c200f13f6a1baad8ba1136173f5de0631eb2,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,45.7258
+2fe60cf426f117e04ba233446032ab3b61374682,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,50.9921
+d34d66a374257178dc8a26ff31d2ab99d5fb2479,1,4,5,5,4,4.6,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,13.142
+b5d53b8a3c1ff260eb10b57719c3f0638cbec046,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,8.9975
+19209ffcabcfded8c36e6c3beed14c836b34ddf8,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,49.8367
+fab8a9cd4b3e3b55793c9b3117215f3cc9a6ed3a,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,49.2858
+59f18ad735d4721651cc4a3699c10d657c6dc1c6,2,4,5,4,5,4.4,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,51.2743
+f87cbf0f15e94f8840ca58032616afac6a940578,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,8.1567
+4b5035de43a5febf29efb674e670a4c1b2f7c502,3,3,4,2,2,2.8,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,11.8094
+317853e1d3bf9dc45cea49696ccb6d857ffee4d6,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,14.9974
+6ab9287ccd94c4d068afd8d402ba76d76a0a61af,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,8.4302
+16c166b885ba5ac8c956c25f6baec5560e207449,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,early,14.1258
+6fe60a446ba292c56df8894be7c8226a9f80b4e5,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,52.2959
+e595add982dc8de1aa84d7dcbb43170b1b14c227,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,05377070212bd282b603e8ff525b5f27999e1b5a,ec-dom-tech-n10-run01,Gemini Flash Lite,dom-tech,late,51.8854
+9f5846a2c5ecef1b5139d6644c3bcd67301e892c,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,1.5986
+e04718941415abb05c4d2664d0c2b37fb95374c1,1,5,5,4,5,4.8,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,11.5402
+4c24f784af3d1a0cb99ddb3b3621adc5e4d3878f,2,4,4,4,4,4.0,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,11.1007
+36bed018286706cdb3a16882387ca8606159b1a8,4,2,4,2,2,2.4,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,3.6914
+1724ce466278c0ea4a4a115c3d935c9268972693,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,47.5763
+fa79d44c1a86a895d192c04a06839215c1fae5eb,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,48.9305
+8391310592e5ca480e9bd72102c268153e8bcbaa,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,early,9.4065
+12c9b26f132aff03a88fae35b23007dd2cf1924e,1,5,5,4,5,4.8,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,53.7471
+db0f38b458e38d81437ea701d55b49ce3ca6d4fb,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,52.8693
+aeee6d769fc5c7fc6c01299fbf5e9cdbf5abd960,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,071b1111ea14702baa81d46e561002e9e8421824,ec-mag1-run04,GPT-5,mag1,late,54.9276
+2622f14f7e7b16b82e5876b320891fa9a5ae1048,4,2,3,2,2,2.2,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,2.5914
+5627b479abe03cf4277155a13f4144c322959b0f,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,1.8358
+bc1164b463c1aa3b9427ea9d8f02e5eb772c28ee,3,4,5,4,2,3.6,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,7.5188
+accdc3abea0dde2e54667548f60b4e0857c85573,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,49.778
+8d0c543213fedba8c32b83d6532ded54cc3aa7a5,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,8.9915
+aac6fe321a82c350226101440b312f838eac445d,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,47.2427
+d41474203984934b65289b67cd0fd15cbd8426ef,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,early,11.353
+2e73c0bd044e769c067f8bd63b7623e900d7c761,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,53.2676
+84fe2a2bdbfc53b97dd454abadfb7553216abadb,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,54.6546
+22b99179822c709a910f5aa03a1a54f1a88642d1,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,1.4206
+ad26cc3a1660ca33d02a9462ad0d5cdd87a7a8fe,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,0e810c3a077d74956348bd4b33566f4e5e61696a,ec-dom-tech-n10-run01,Kimi K2.5,dom-tech,late,53.6134
+25f87091569e9d8c204287155f3bde5acd7cdb60,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,48.468
+d6fea914377dca774887f4ad3453625c5f06e550,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,9.3594
+5d62cec2679e558694bbc29fd1cce0a778d546f3,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.9899
+77c7f1714d458a236f18472fccd91c6d4b49e3cb,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.0866
+c0cfb495ddf999339bbe959b91e5e1d30d5632f4,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,early,8.947
+beb2b7cf8174417cd639af0086ce5c410e374b10,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,48.9607
+77f08f4b8bac501784dd97ddf1714df28fc20e23,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,52.9695
+1bedfe99c1f01ce5c71aafcc722a8e456985fd79,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,55.64
+c0e7a720693925cfd4b0b9198a69c14f72eac1d1,3,3,4,2,2,2.8,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,6.6201
+81c9828e6a26cc538bb47144e6b8807749eb1eb1,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,5.6887
+d039bde80c5affe3a694356db8dbc766a8c7a8de,2,4,4,3,2,3.4,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,5.4018
+2d741f20dbd1ba64b3c2b28ef947759625abf87e,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,9.2634
+412682ce39d0a87bb1e35f23687aba0919074d6e,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,157bffe22d7d86eb0676ffe902ad39c39a5bfc65,ec-mag5-n10-run01,Kimi K2.5,mag5,late,59.6286
+c9760ad896bda71a1fcced7559dd7ffecdfe0016,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,early,9.4323
+a938d3123239b86aa17805d7123bfaf0e3bce024,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,46.5878
+9007c1bcb10357cf8438abf07627e5624f965b1a,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,45.8965
+e0972d763b052f66283947b5a1cd62f4bf89f4e9,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,51.8452
+04154f0c1c93808bbe7f793e1a9dbef71adcef91,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,50.7829
+8fa40a4483f0e05cf981ef1aa4272b546b0df50a,1,5,5,4,5,4.8,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,4.3688
+6dd65c57876a29d468ee99b377c903b602e2bcae,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,1.5035
+57caaaf63962cdf90a8feae2041a66dc324403e2,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,4066c2db36af714648d91e123bd873596c77975c,ec-dom-agi-n10-run01,Gemini Flash Lite,dom-agi,late,51.9209
+4b279330db8e4395844817bed63aaf2464ecdc75,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,4.8447000000000005
+2aecfad768f1e4db0556f93d5b66f3c09b843696,2,4,5,4,2,3.8,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,early,10.7251
+cc7b84854ebe0c43934284484801e5a3a03c674f,3,3,4,3,3,3.2,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,50.9942
+289646a535d0b8203fb3b495a17f54dc20adab03,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,56.0032
+f421c1b302dadafa78baa88263d1160ffee5c259,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,51.6309
+b3ac3144265af36de7b975b904d2000f6defb30a,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,52cbe1b58dae376873d521996f9f08f26579623f,ec-mag0-run04,GPT-5,mag0,late,55.0374
+ff413cf5cf8f9d608114fdd5bdec32053af92385,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,1.027
+9b830f4ad33bdcb76f9fc56b187e7b22503c6b7e,2,4,5,4,2,3.8,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,6.5194
+8566d0bc9794069136284c6f0955190669c272b1,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,4.8694
+39107d719de7d3cfdbfc16c7c8524667dc5611c3,2,4,5,4,5,4.4,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,8.6168
+9aca1bfa0f733cd763a4e03e4bf3398f48764a81,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,early,10.7938
+7f9264bc900fba524d2a8d4b59a2647e0e85bc3e,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,51.4815
+2f20e4d96379cb61141d425c4545b9f2a5bb87e6,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,45.3423
+b4b967d39893f3cfffaf617cfcf352d28a615033,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,45.046
+a7ddc04264f04cefd8bd70ed0997c3d70bcd9884,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,558bbf089edf8ec148df65fb11c452f9dbe7425d,ec-dom-tech-run04,GPT-5,dom-tech,late,52.3292
+4815f49e8138d4503ac6d8844dac23519d0d679c,4,2,3,2,3,2.4,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,1.0617
+fac1b77e6b0eb2610243b3ff062ea780586b055b,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,0.3014
+dd4901bb7f73205aee092aa771dff1a03e24c858,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,2.1545
+a86965fe4d0d314b94ce4d60bc5a4a08fb200b9b,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,3.0541
+109df39eb5a66cf7bdc4dc4ddb1a1dd2f68c6c33,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,45.2311
+27c8c34673c5cb3ffd773d11d0fc675d33508451,2,5,5,4,5,4.6,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,47.1533
+444d0f9d96c101d543b94b5fd0b4c01e93d9e183,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,46.1577
+b07eecee611e83bb62c1cd4983673d1db9b2dd58,2,4,5,4,5,4.4,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,early,3.2129
+6c1bb35ed32694567691ac76ae8fde4a692dd78b,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,51.85
+93dbf844e9e61c7c441ddbb5a45a96aa9a1f0fb7,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,5a3139019e30ef5344c4f09f69968cf1d93292a0,ec-dom-agi-run04,GPT-5,dom-agi,late,54.17
+0a5d84b6f61eddfad9c08d397236f98d099f0aa6,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,2.3702
+659ec4987a69fcce3943f2238ae4515fc674e273,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,8.8973
+164b04a73c00afded063cf590b6a6fde91825af7,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,11.9092
+3f2a3fe9efe313c9d949f857fb74214e1572030f,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,48.0688
+9620452ccaedc0ebf0d6d5da0d1d0e63484d4108,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,early,14.7971
+2db9f29d2b12ec89976c56e67274515d0d2bbc34,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,48.2916
+205ad883fa8fd80e50596b4240bbe19e48dfa798,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,50.4794
+e2ce89b92f3619fa053afcc02fd31438a9f5da0f,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,1.6727
+bde8955999731c93b44ab2444471ab0110743b10,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,53.4963
+38be8eb9db7efc569fcc662defaf51be95513553,3,3,4,3,3,3.2,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,5.7339
+5ee8e033b2f1cc02509b91195494e93bfe35894d,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,9.3661
+77339e8b201c1db00c36151e8115a71ea2ba89da,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,45.3811
+3e83aa751ab22b493cbf4a59b118ea0d8c64adbf,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,14.593
+b5b8c8dceb0861c8192557d4d914b5770a83b756,4,2,2,1,2,1.8,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,early,13.8567
+8f4b2b99f4081864fb368ebc6d32b386242ebed2,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,47.301
+ed60bb66850818257c937f32eec8106122c36503,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,50.4552
+b2e1cfbdbd87ecb0e879a0f23e876e00ec6a0ae9,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,53.5733
+87eb350c1670b106f0147b41297ae493cfec4099,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,622f84977711e3c80802f4c0c0518fa5730ddbe0,ec-dom-agi-n10-run01,Kimi K2.5,dom-agi,late,55.4947
+1ac94e0604e05188b0e26e529af080e554336f24,3,3,5,4,3,3.6,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,8.2758
+6cb18f1a9a5ea9a41e6179f3324fafac75646c4e,3,3,4,4,2,3.2,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,10.4649
+03ef0361d4456d16661b001a13b16a71647e7ec8,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,10.9909
+b390a79e143b30f4e3d4525df73fcac8f3a8e0b4,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,11.734
+86d530e4de5fba45020af917f3eadc58e26fe860,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,45.2918
+d808c2e4e313d82d2b50585b053765d856186734,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,early,5.1237
+3812383a21d4967cf61b13abb82635423200f1b2,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,45.5494
+d679234ab22a20630bfe237fd3c45091389af1c4,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,47.4412
+3437aae8429871dac92dbe116df93417b9905904,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,51.4973
+ee2128703b7d7510a83d2c13c72622f2d2e87526,1,5,5,4,4,4.6,anthropic/claude-opus-4.7,6336340d7b86d78a9e57368308f8d13d132bf5c7,ec-mag5-n10-run01,GLM-5,mag5,late,49.6636
+6c0839a642424a33ccb6c66ccbd48ee20c1d82d7,4,2,3,2,3,2.4,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,2.8446
+679f6e4e742b17a5a46cb2473244111b75d1b189,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,5.1114
+0a496ba30926cdb06338dbe5360b2f79c9d17c5c,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,2.003
+dd0c4a8e00f9eb259045ccb7d964b4ec20bcaba3,2,4,5,4,5,4.4,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,14.8307
+c39dd230de73de0014a4b42f57d25b2bc27a6710,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,early,9.0282
+86b72b54615449bef3c59596edae5855d824f0af,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,45.5318
+d032901bb9b3e4a16027806571d0ebf64a42d66f,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,54.2122
+fa558b2f7e102677448ec9814da7ad75206805ff,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,45.5455
+ac2634aa6bccd5b2cb7942409b4392e1ba68d224,2,4,4,3,3,3.6,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,4.8407
+0eb4f99959df95119d6e86cdcb9b4cfc1a59c6af,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,6d3e2805af6653babf2fedb85ca20790cd830d58,ec-mag25-run04,GPT-5,mag25,late,46.6149
+eaddbfc77678b8df31ddb7f32d003e714b7682f4,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,5.5306
+981d4e6c90e608910f2830b5bc5e48fe920c7278,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,5.7578000000000005
+77db3efb8e4d7ebdf45669390782ca72ec3ad1d9,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,13.367
+7cfd1810f4b7ba4493acd37ba94c52de18b28677,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.3561
+b2aa804ac1279029e83a8f1ab8cc7cc7d50b5255,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.9624
+7a670326a07cb5d02ff568e4811a25fddbf26c54,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,54.0789
+1ca0d813587dde31cb8c6c5df7ed55da613a5f29,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,late,58.3618
+c94a96756752c8991d47a8dc5ad9b6a06902c619,2,4,5,4,2,3.8,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,2.7621
+60cccb682cb04be4205041a6c34b574bce47e41f,1,4,5,5,4,4.6,anthropic/claude-opus-4.7,852f26a14ae81926ea3105598ca9785c486f6611,ec-mag25-n10-run01,Kimi K2.5,mag25,early,13.4686
+1014150307d0229d109eb68dbf05b87d00d4d813,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,5.7706
+8babf44c3b0293636ae0dc22c1ec7e15fdbb7683,2,4,4,3,2,3.4,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,5.6536
+4219df19e48568725945cdfa2083075773c5feda,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,7.2415
+e468b1a12d210fb94714d1860b2be8e09755be84,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,early,8.6484
+5c5e698148b467ecbc186cd931a6409390071738,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,45.4884
+8f83a034f3289bb0670a6d03019f04d6e887bc23,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,45.6499
+7cd4c9087b508fc7162644e51736e45376da9b74,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,47.4759
+ac61c8293f057f51109ddd1f2dd7f3fc0fdb8242,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,53.4719
+cf490d84f519473018d16edf4edfdaa9db91fb7c,2,4,4,2,2,3.2,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,1.2048
+234d946d971194697b1c89e4d6f8f3b47064d341,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,5.9104
+e11c45eae79e8c195e6ae0719bd25622d2fff4a2,2,4,4,3,3,3.6,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,6.4132
+93e1fe56ec97ee0c95f208a6f0b26bf1074db08d,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,10.3004
+fff26c5fcb9c2f56e6674b63c73d0b908ac7597d,2,3,4,2,2,3.0,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,early,11.3676
+f82f3cc974d439b92c5c09c35e5832de225a7c01,3,3,4,2,3,3.0,anthropic/claude-opus-4.7,92d7e428272f4ac978a0baea7895710d9e3e5c92,ec-mag25-n10-run01,Gemini Flash Lite,mag25,late,55.2584
+78494d12a33e7a7ee93744e55bad5291344b1938,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,50.4575
+090a7def7d3dd55843c75f0178c11c4891d77d38,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,51.3702
+d0ac1454a221839514a9d7c0bdc3f9f4f1fa1278,2,4,4,3,2,3.4,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,52.6098
+66783f97bf6c7f4402621087d60ffbb1d3ed5993,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,46.9982
+9f2a70c3fc8017becbcd9644accd1e36b1aed7f5,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,4.3956
+58ffbb66263e2afeb129793e2f8c32191673c314,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,5.4432
+b6fa55b31bda68b3709b9a942cfdc3ede7aea8f6,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,10.0384
+d0e99abcc10ae49d1984e1d4078e5d23dc7b8a6e,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,14.0043
+36b02b06db89a24699e57df4daeb756d4eeafea6,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,45.5566
+ea5cad6f826d42b4a80da831d4f16a6a42a3f000,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,early,11.2674
+943a884a5b9220c8464b70c0bfce4aa68401bbd7,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,9f77ea357569395e2a48f10902ae9e4a14b77f4a,ec-mag0-n10-run01,Gemini Flash Lite,mag0,late,55.3216
+b64489b37145957a795fad18a5c2bfd083b7a5b5,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,48.0525
+0c15c1fb7439a5ea5980a9c3d65e012c2fdc144a,2,4,5,4,5,4.4,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,2.3331
+7783cf46df813476cde10972385c343d547b62b3,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,56.7874
+a36eef6157ede8e02594c5135faf9f38d342e5c8,4,3,4,2,2,2.6,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,54.3037
+bed0d65b05e7e719d508a65818da41309ec01613,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,4.8131
+6ea184390b4aae9f8bafdc734ea9da60d675b935,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,a67c72b10e243c3cb1cc64235c83a876b68f4af6,ec-mag0-n10-run01,GLM-5,mag0,late,52.8765
+518d791d83bfbb2c0ec96509243d1856d30e019a,2,3,4,4,4,3.8,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,5.7171
+c0913ab498ce3a6050aad43306afc5781b39032c,2,4,5,5,5,4.6,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,4.8219
+226f90d1c280dd9dad3ad518caf5800a125f923b,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,5b9f012b18953905b1a247a07318da194aa56ee9,ec-dom-agi-n10-run01,GLM-5,dom-agi,late,49.0883
+213a3a2e5a0b3e0cc72348324ab3e8df87628aa8,3,2,4,3,2,2.8,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,early,13.9811
+e1150d991087437917b945fd168f29f92904c894,3,2,3,2,2,2.4,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,54.5158
+71ace2779767829d87f0281787b24a950f6677c6,2,5,5,5,5,4.8,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,45.1076
+2587524fb55bcb24b3460ad98ced7450d212a911,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,0.4707
+f42233f61df850b494b2c44c16d1c1836a2b9072,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b068c4711834243dbb5129c3f6e17813ea019027,ec-mag5-run04,GPT-5,mag5,late,54.5852
+5013d63c382f65b6e3f32fa305aed2d418ee9b7f,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,7.5204
+969ac1ac998deef57d35b13b9c2f1800cf7833de,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,8.4026
+8c558098ad7d99186f4b92945772ab3400a4e80e,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,11.1384
+94262831567d0cfd30699bae5a7e9a1ac87ada46,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,48.3292
+e6ef84503ba3ca70217f884a44383ca521d13879,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,early,11.9188
+e050b1c30dfa86f172af9826cc1d64693af866f7,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,47.3798
+d2427a7bbfea20aaba803bf0e336dd42edb18347,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,53.4443
+141fed735bae6dd688760a8bb71a3e316975cb5a,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,b7fe33911b2613a99c1eaed241b2bacfe46af515,ec-mag5-n10-run01,Gemini Flash Lite,mag5,late,54.4928
+25856aa0ef4a5319a39416026b9c53f8f1c5358a,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,3.9852
+05356a5a78e85c9cef1975034e9c480003e6c256,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,14.2797
+654d6952176fa9a4738ed54e813e12f823fda9b5,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,0.539
+ef6f86a570e25769c108d5377d5001321881c8d7,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,47.4344
+ec3e44abb08017fee637789abc33d950e5b47645,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,13.707
+dd7d0935d715470d10c537b3aeebf5c8c57f41ca,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,49.4455
+a6c50f5e64867d052c1afc089cd764fae3a3836e,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,49.8357
+5d0da184d05927317812634e75cf438b624f0f04,3,3,4,4,2,3.2,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,early,3.1519
+a9976e62c569819a7c6dfdc4e256d3b6e81bd74b,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,51.6344
+13d37e376fb5096d828cd68c712bcd4b8e8642b8,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0,ec-mag1-n10-run01,Kimi K2.5,mag1,late,56.0584
+bfdb578648c0e803ba1b2e2cf23763ab8724c459,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,4.246
+b20399a54478848bb36a98bb1d3c83cd89c8c374,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,4.6362
+6855b3fcd7544595bc3d3e68596157c3ec4bca3d,1,5,5,4,4,4.6,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,10.6228
+cc902c74baaa6a9e0c20e8128698bcfacb1920f2,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,12.4163
+38b575af67bc5fb78c7294df92e74cd9956639f6,2,4,4,4,3,3.8,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,early,0.4973
+b430ccbda3627ed84b7d10b508da3fe2615d4b88,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,45.1566
+b36eda751ee64c6dc6e21f89589587d8a813b0c4,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,48.6105
+f652e56443832e5e506003643d63a80f33801e4d,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,49.0357
+b3138a033cfa22d918c9a0c24683289dc14af750,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,48.6663
+a4f3ac41a651597a7524736cc57e94b025c63014,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,be3cc4472a58a0005e16432801fb120a461f3a19,ec-mag0-n10-run01,Kimi K2.5,mag0,late,59.8049
+313dd839760975dba1d2eda2b3a7d63f698a4a42,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,4.0253
+704646eccdd4ef17e2345d8f25a0e418bcfe2cab,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,0.2598
+0918937768dabb3ddcb19ab037af33aa080042bb,1,4,5,5,3,4.4,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,0.508
+2ff0574f6a94cd221e6bde3cb4fcd7e48c83f082,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,early,7.2252
+a1ab6c110242833ddd7640416e563222a04a5435,2,4,5,2,3,3.6,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,50.3107
+7117c427b430b8acb50bd4c724465df6dc47f53c,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,52.268
+0bdebf7867ef692b3566691ddd9d057c3083081b,3,3,2,1,2,2.2,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,52.3418
+704d5458f44353ced7720093a8bffcaa2cefc9a0,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,10.3342
+f04b8464e0f9726464bc1c7e84f4f2a7d6abb1a8,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,55.3122
+6adb36e25aaa6ca58f666823b5b8f95418374f0e,2,4,4,4,3,3.8,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,11.1835
+b7a8afdab93d774110a776028076a01958308d89,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,8.5156
+a803b12f340a7b62622460441d31f47ab8a9205f,1,5,5,5,5,5.0,anthropic/claude-opus-4.7,bfa4cd3f4504f42d76f95b422da94d5454e0f2a7,ec-mag1-n10-run01,Gemini Flash Lite,mag1,late,50.3962
+8130cd002c2ebfe44666fa8c318136cfdaf2ef38,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,14.0258
+7f057f759e9a785b8d5a4b2a4c5ce6e8da7721b4,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,49.9193
+bebf8b16f85119fd39c3d3a1809064ee45c8f963,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,50.3117
+cd0aaff2d779738bdb582d67c4e2984c91328c63,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,0.6729
+46b04f2ebc2318e058bbe926c26d6921c917f1c2,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,56.3787
+6889634e09ba7f904e0d3d821635174a25e8baec,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,54.6427
+b2f0edfb8c6f4931d49f9a2cb916be842c6cd6df,2,3,4,3,3,3.4,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,late,47.3525
+95cadf901044b73a540619386c2c2f3f57721942,3,3,4,3,3,3.2,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,6.0713
+fc31324ab192d568056a1719ea0a6737c641747f,2,4,5,4,4,4.2,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,8.069
+d5710c88d0bfa9ffbfe648c1069bc6cb387d97e8,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,ed89d518f117e12c753d18ad471c73ef335e5f8a,ec-mag1-n10-run01,GLM-5,mag1,early,12.3583
+728f41e8464033c56b5a11f9fed0d437fc7573b8,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,early,6.509
+f09cc37c26fb989fdeed55954bd0a6582173a6ee,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,47.2298
+942ecbce64c4146fa39f32d4a5ac62b05f1eddb5,2,4,5,5,4,4.4,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,48.4834
+8622fba0698ad26f8c3cf0b4c63e9d92e202ad5d,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,54.6575
+a5a75703d3bd770fd48d79f4cecab53eab9879d6,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,56.5682
+4301b60a4c788d342509c7028f47eb8637bff7f8,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,f6a9af6b0a8c242dfd9a45a69e65095585df6073,ec-mag25-n10-run01,GLM-5,mag25,late,46.1451
+c95675037957cf56d575a10425f119b3a7b99817,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,2.7783
+92c8184be4ca5a96d632ef7e1fa1064456cff9ce,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,8.828
+3a833ef4b612ee2150d61650e8970c8b2b3dad96,2,5,5,5,4,4.6,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,13.1302
+913bc7cd297e7bf32e78d70795340b4913bae2b5,4,2,3,2,2,2.2,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,2.1789
+95bda7e4b7c301ce2b89421ddca0aa362c43450f,2,4,5,5,3,4.2,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,early,13.3896
+55c68b2151a95ea58f7649cf64e3fc4e6efa3cb1,2,4,5,4,3,4.0,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,45.6808
+c2b472d1b4d1c6fc785a11a454aeb786ab503423,1,5,5,5,4,4.8,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,47.3469
+15fa3051c7a95ad8728def8d31a4434d170da5c8,3,3,4,3,3,3.2,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,50.0764
+bbf902aeff594aeda0e73c17fbe43e9caa10e122,2,4,5,3,4,4.0,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,48.5659
+804b19de0ca1d4aedfd7028e89f278c16d2098f2,3,3,4,3,2,3.0,anthropic/claude-opus-4.7,fa1544d4921dee1eee06b14a95889337c8727c45,ec-dom-tech-n10-run01,GLM-5,dom-tech,late,56.2428

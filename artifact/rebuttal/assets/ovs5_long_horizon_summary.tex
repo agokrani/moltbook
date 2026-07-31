@@ -1,0 +1,22 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{booktabs}
+\begin{document}
+\begin{minipage}{10.6in}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccrr}
+\toprule
+Metric & Collapse ranking at 60 min & Collapse ranking at 300 min & Spearman $\rho$ & Mean $\Delta_{60\rightarrow300}$ \\
+\midrule
+Cumulative Distinct-5 & 1 conspiracy $>$ AGI $>$ Tech $>$ Empty $>$ 25 conspiracies $>$ 5 conspiracies & 1 conspiracy $>$ AGI $>$ Empty $>$ 5 conspiracies $>$ 25 conspiracies $>$ Tech & 0.60 & -0.011 \\
+Cumulative gzip ratio & Tech $>$ Empty $>$ 5 conspiracies $>$ AGI $>$ 1 conspiracy $>$ 25 conspiracies & 1 conspiracy $>$ Empty $>$ AGI $>$ 5 conspiracies $>$ 25 conspiracies $>$ Tech & -0.26 & -0.008 \\
+Cumulative LLM collapse index & 1 conspiracy $>$ Empty $>$ 25 conspiracies $>$ Tech $>$ AGI $>$ 5 conspiracies & 1 conspiracy $>$ Empty $>$ 25 conspiracies $>$ Tech $>$ 5 conspiracies $>$ AGI & 0.94 & +0.053 \\
+\bottomrule
+\end{tabular}
+\vspace{5pt}
+\parbox{10.3in}{\scriptsize Rankings run from greater to lower collapse. Lower Distinct-5 and gzip indicate greater collapse; higher judge index indicates greater collapse. The 300-minute value is the final available log for runs ending between 272 and 297 minutes. One run is available per condition, so confidence intervals are not estimated.}
+\end{minipage}
+\end{document}

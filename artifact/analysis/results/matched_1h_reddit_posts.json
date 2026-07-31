@@ -1,0 +1,1366 @@
+{
+  "source": {
+    "dataset": "The Pushshift Reddit Dataset",
+    "file": "RS_2019-04.zst",
+    "unit": "Reddit submission (title plus selftext)",
+    "url": "https://zenodo.org/records/3608135/files/RS_2019-04.zst?download=1",
+    "data_doi": "10.5281/zenodo.3608135",
+    "paper_doi": "10.1609/icwsm.v14i1.7347",
+    "license": "CC-BY-4.0",
+    "rows_scanned": 729786,
+    "hours": [
+      "2019-04-01T00:00:00+00:00",
+      "2019-04-01T01:00:00+00:00",
+      "2019-04-01T02:00:00+00:00",
+      "2019-04-01T03:00:00+00:00",
+      "2019-04-01T04:00:00+00:00",
+      "2019-04-01T05:00:00+00:00",
+      "2019-04-01T06:00:00+00:00",
+      "2019-04-01T07:00:00+00:00",
+      "2019-04-01T08:00:00+00:00",
+      "2019-04-01T09:00:00+00:00",
+      "2019-04-01T10:00:00+00:00",
+      "2019-04-01T11:00:00+00:00",
+      "2019-04-01T12:00:00+00:00",
+      "2019-04-01T13:00:00+00:00",
+      "2019-04-01T14:00:00+00:00",
+      "2019-04-01T15:00:00+00:00",
+      "2019-04-01T16:00:00+00:00",
+      "2019-04-01T17:00:00+00:00",
+      "2019-04-01T18:00:00+00:00",
+      "2019-04-01T19:00:00+00:00",
+      "2019-04-01T20:00:00+00:00",
+      "2019-04-01T21:00:00+00:00",
+      "2019-04-01T22:00:00+00:00",
+      "2019-04-01T23:00:00+00:00"
+    ]
+  },
+  "design": {
+    "seed": 42,
+    "pairs": 24,
+    "reddit_hours": 24,
+    "minimum_cleaned_characters": 40,
+    "same_post_count_within_pair": true,
+    "distinct_n_equal_token_budget": true,
+    "distinct_n_preprocessing": "time_binned_lexical_metrics_5gram.py",
+    "distinct_n_max_tokens_per_post": 200,
+    "gzip_equal_character_budget": true,
+    "reddit_text_redistributed": false
+  },
+  "summary": {
+    "gzip_ratio": {
+      "agent_mean": 0.3090426836069285,
+      "reddit_mean": 0.4153497429776697,
+      "mean_difference_agent_minus_reddit": -0.10630705937074118,
+      "agent_more_repetitive_pairs": 24,
+      "two_sided_sign_test_p": 1.1920928955078125e-07
+    },
+    "distinct_1": {
+      "agent_mean": 0.2353789296907342,
+      "reddit_mean": 0.4409191054796768,
+      "mean_difference_agent_minus_reddit": -0.20554017578894257,
+      "agent_more_repetitive_pairs": 24,
+      "two_sided_sign_test_p": 1.1920928955078125e-07
+    },
+    "distinct_2": {
+      "agent_mean": 0.8048140966828464,
+      "reddit_mean": 0.8806153665813099,
+      "mean_difference_agent_minus_reddit": -0.07580126989846346,
+      "agent_more_repetitive_pairs": 20,
+      "two_sided_sign_test_p": 0.001543879508972168
+    },
+    "distinct_5": {
+      "agent_mean": 0.9673816104690882,
+      "reddit_mean": 0.9234805436408231,
+      "mean_difference_agent_minus_reddit": 0.04390106682826512,
+      "agent_more_repetitive_pairs": 5,
+      "two_sided_sign_test_p": 0.006610751152038574
+    }
+  },
+  "cumulative_distinct_5": {
+    "checkpoint_definition": "ordered cumulative post-count quartiles",
+    "same_post_count_within_pair_at_each_checkpoint": true,
+    "same_token_budget_within_pair_at_each_checkpoint": true,
+    "checkpoints": [
+      {
+        "post_fraction": 0.25,
+        "agent_mean": 0.9886609931250488,
+        "reddit_mean": 0.9567848628845828,
+        "mean_difference_agent_minus_reddit": 0.03187613024046606,
+        "agent_lower_pairs": 2
+      },
+      {
+        "post_fraction": 0.5,
+        "agent_mean": 0.9801394976460934,
+        "reddit_mean": 0.938870201522409,
+        "mean_difference_agent_minus_reddit": 0.04126929612368446,
+        "agent_lower_pairs": 4
+      },
+      {
+        "post_fraction": 0.75,
+        "agent_mean": 0.9725408944191626,
+        "reddit_mean": 0.930849245034411,
+        "mean_difference_agent_minus_reddit": 0.04169164938475161,
+        "agent_lower_pairs": 4
+      },
+      {
+        "post_fraction": 1.0,
+        "agent_mean": 0.9673816104690882,
+        "reddit_mean": 0.9234805436408231,
+        "mean_difference_agent_minus_reddit": 0.04390106682826512,
+        "agent_lower_pairs": 5
+      }
+    ],
+    "first_to_final_change": {
+      "agent_mean": -0.021279382655960632,
+      "reddit_mean": -0.03330431924375969,
+      "mean_difference_agent_minus_reddit": 0.01202493658779906,
+      "agent_steeper_decline_pairs": 9,
+      "two_sided_sign_test_p": 0.30745625495910645
+    }
+  },
+  "pairs": [
+    {
+      "model": "GPT-5",
+      "run": "ec-dom-agi-run04",
+      "reddit_hour": "2019-04-01T15:00:00+00:00",
+      "n_posts_each": 464,
+      "equal_token_budget": 10978,
+      "equal_character_budget": 199403,
+      "agent": {
+        "gzip_ratio": 0.30284959518626325,
+        "distinct_1": 0.20859901621424667,
+        "distinct_2": 0.7349509168364512,
+        "distinct_5": 0.9290310001949698
+      },
+      "reddit": {
+        "gzip_ratio": 0.43063964201105553,
+        "distinct_1": 0.42393878666423757,
+        "distinct_2": 0.9246861924686193,
+        "distinct_5": 0.9653248742069569
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 116,
+          "equal_token_budget": 3026,
+          "agent": 0.9926315789473684,
+          "reddit": 0.9902610050642774
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 232,
+          "equal_token_budget": 5971,
+          "agent": 0.9793263232935305,
+          "reddit": 0.9720902612826603
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 348,
+          "equal_token_budget": 8904,
+          "agent": 0.9504082612872238,
+          "reddit": 0.9801914384472215
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 464,
+          "equal_token_budget": 10978,
+          "agent": 0.9290310001949698,
+          "reddit": 0.9653248742069569
+        }
+      ]
+    },
+    {
+      "model": "GPT-5",
+      "run": "ec-dom-tech-run04",
+      "reddit_hour": "2019-04-01T05:00:00+00:00",
+      "n_posts_each": 501,
+      "equal_token_budget": 12745,
+      "equal_character_budget": 192107,
+      "agent": {
+        "gzip_ratio": 0.233753860965141,
+        "distinct_1": 0.1289132993330718,
+        "distinct_2": 0.5450168512277324,
+        "distinct_5": 0.8531817790407302
+      },
+      "reddit": {
+        "gzip_ratio": 0.37722842055109984,
+        "distinct_1": 0.3597489211455473,
+        "distinct_2": 0.7739038131787377,
+        "distinct_5": 0.8148423005565862
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 125,
+          "equal_token_budget": 2621,
+          "agent": 0.9962763756723211,
+          "reddit": 0.9605077574047954
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 250,
+          "equal_token_budget": 6004,
+          "agent": 0.9469752186588921,
+          "reddit": 0.8616364722277523
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 376,
+          "equal_token_budget": 10103,
+          "agent": 0.8837108485965103,
+          "reddit": 0.8407510431154381
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 501,
+          "equal_token_budget": 12745,
+          "agent": 0.8531817790407302,
+          "reddit": 0.8148423005565862
+        }
+      ]
+    },
+    {
+      "model": "GPT-5",
+      "run": "ec-mag0-run04",
+      "reddit_hour": "2019-04-01T18:00:00+00:00",
+      "n_posts_each": 479,
+      "equal_token_budget": 9070,
+      "equal_character_budget": 104477,
+      "agent": {
+        "gzip_ratio": 0.34268981659914083,
+        "distinct_1": 0.22723263506063948,
+        "distinct_2": 0.8102131539952125,
+        "distinct_5": 0.9712002029941639
+      },
+      "reddit": {
+        "gzip_ratio": 0.45352044429535204,
+        "distinct_1": 0.4592061742006615,
+        "distinct_2": 0.9482076350093109,
+        "distinct_5": 0.986194394087296
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 120,
+          "equal_token_budget": 2416,
+          "agent": 0.9869585468095017,
+          "reddit": 0.9602683178534571
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 240,
+          "equal_token_budget": 4697,
+          "agent": 0.9734106840705825,
+          "reddit": 0.9780690024070607
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 359,
+          "equal_token_budget": 6847,
+          "agent": 0.9723102585487906,
+          "reddit": 0.9833825701624815
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 479,
+          "equal_token_budget": 9070,
+          "agent": 0.9712002029941639,
+          "reddit": 0.986194394087296
+        }
+      ]
+    },
+    {
+      "model": "GPT-5",
+      "run": "ec-mag1-run04",
+      "reddit_hour": "2019-04-01T23:00:00+00:00",
+      "n_posts_each": 508,
+      "equal_token_budget": 12339,
+      "equal_character_budget": 169841,
+      "agent": {
+        "gzip_ratio": 0.3227466430811289,
+        "distinct_1": 0.19207391198638463,
+        "distinct_2": 0.733083645443196,
+        "distinct_5": 0.9407823252444767
+      },
+      "reddit": {
+        "gzip_ratio": 0.43700994386437,
+        "distinct_1": 0.39055028770564876,
+        "distinct_2": 0.9214907462182034,
+        "distinct_5": 0.9685412835156325
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 127,
+          "equal_token_budget": 3288,
+          "agent": 0.9906291834002677,
+          "reddit": 1.0
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 254,
+          "equal_token_budget": 6605,
+          "agent": 0.9596841928439442,
+          "reddit": 0.9973219068023568
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 381,
+          "equal_token_budget": 9423,
+          "agent": 0.9528535980148883,
+          "reddit": 0.974993685274059
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 508,
+          "equal_token_budget": 12339,
+          "agent": 0.9407823252444767,
+          "reddit": 0.9685412835156325
+        }
+      ]
+    },
+    {
+      "model": "GPT-5",
+      "run": "ec-mag25-run04",
+      "reddit_hour": "2019-04-01T13:00:00+00:00",
+      "n_posts_each": 346,
+      "equal_token_budget": 6569,
+      "equal_character_budget": 74839,
+      "agent": {
+        "gzip_ratio": 0.3269982581768918,
+        "distinct_1": 0.25848683209012024,
+        "distinct_2": 0.7760311284046693,
+        "distinct_5": 0.9641248122809944
+      },
+      "reddit": {
+        "gzip_ratio": 0.4486711829077645,
+        "distinct_1": 0.511341147815497,
+        "distinct_2": 0.9249558090952916,
+        "distinct_5": 0.9559191530317613
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 86,
+          "equal_token_budget": 1701,
+          "agent": 1.0,
+          "reddit": 0.9771723122238586
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 173,
+          "equal_token_budget": 2873,
+          "agent": 0.9939599848999623,
+          "reddit": 0.9405306495882891
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 260,
+          "equal_token_budget": 4613,
+          "agent": 0.9803736107826909,
+          "reddit": 0.9371683887182352
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 346,
+          "equal_token_budget": 6569,
+          "agent": 0.9641248122809944,
+          "reddit": 0.9559191530317613
+        }
+      ]
+    },
+    {
+      "model": "GPT-5",
+      "run": "ec-mag5-run04",
+      "reddit_hour": "2019-04-01T10:00:00+00:00",
+      "n_posts_each": 282,
+      "equal_token_budget": 6432,
+      "equal_character_budget": 93647,
+      "agent": {
+        "gzip_ratio": 0.2979955686092647,
+        "distinct_1": 0.2255907960199005,
+        "distinct_2": 0.710425937698665,
+        "distinct_5": 0.9376702997275205
+      },
+      "reddit": {
+        "gzip_ratio": 0.39170698818116917,
+        "distinct_1": 0.43967661691542287,
+        "distinct_2": 0.7957757920389927,
+        "distinct_5": 0.8555347091932458
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 70,
+          "equal_token_budget": 1252,
+          "agent": 0.940068493150685,
+          "reddit": 0.9280575539568345
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 141,
+          "equal_token_budget": 3350,
+          "agent": 0.9574951330304997,
+          "reddit": 0.8123209169054442
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 212,
+          "equal_token_budget": 5018,
+          "agent": 0.9540305010893246,
+          "reddit": 0.8358030592734226
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 282,
+          "equal_token_budget": 6432,
+          "agent": 0.9376702997275205,
+          "reddit": 0.8555347091932458
+        }
+      ]
+    },
+    {
+      "model": "Gemini",
+      "run": "ec-dom-agi-n10-run01",
+      "reddit_hour": "2019-04-01T17:00:00+00:00",
+      "n_posts_each": 396,
+      "equal_token_budget": 7839,
+      "equal_character_budget": 99466,
+      "agent": {
+        "gzip_ratio": 0.3093343914294217,
+        "distinct_1": 0.24199515244291364,
+        "distinct_2": 0.8523578090109024,
+        "distinct_5": 0.996250901225667
+      },
+      "reddit": {
+        "gzip_ratio": 0.4429816281311169,
+        "distinct_1": 0.4755708636305651,
+        "distinct_2": 0.9364674278038952,
+        "distinct_5": 0.9753027405991077
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 99,
+          "equal_token_budget": 1982,
+          "agent": 0.9994400895856663,
+          "reddit": 0.9861460957178841
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 198,
+          "equal_token_budget": 3766,
+          "agent": 0.9970570924072985,
+          "reddit": 0.9775092312856664
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 297,
+          "equal_token_budget": 5911,
+          "agent": 0.9958262189337886,
+          "reddit": 0.9719350073855244
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 396,
+          "equal_token_budget": 7839,
+          "agent": 0.996250901225667,
+          "reddit": 0.9753027405991077
+        }
+      ]
+    },
+    {
+      "model": "Gemini",
+      "run": "ec-dom-tech-n10-run01",
+      "reddit_hour": "2019-04-01T11:00:00+00:00",
+      "n_posts_each": 325,
+      "equal_token_budget": 7445,
+      "equal_character_budget": 116090,
+      "agent": {
+        "gzip_ratio": 0.3164984597579863,
+        "distinct_1": 0.2591000671591672,
+        "distinct_2": 0.8044761773994233,
+        "distinct_5": 0.985287626894218
+      },
+      "reddit": {
+        "gzip_ratio": 0.35758714052247725,
+        "distinct_1": 0.4300873069173942,
+        "distinct_2": 0.8075842696629213,
+        "distinct_5": 0.8649878147847279
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 81,
+          "equal_token_budget": 2216,
+          "agent": 0.998003992015968,
+          "reddit": 0.9329461457233369
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 162,
+          "equal_token_budget": 3687,
+          "agent": 0.9934190846545019,
+          "reddit": 0.865485564304462
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 244,
+          "equal_token_budget": 5667,
+          "agent": 0.9834919401825597,
+          "reddit": 0.8872580302063391
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 325,
+          "equal_token_budget": 7445,
+          "agent": 0.985287626894218,
+          "reddit": 0.8649878147847279
+        }
+      ]
+    },
+    {
+      "model": "Gemini",
+      "run": "ec-mag0-n10-run01",
+      "reddit_hour": "2019-04-01T14:00:00+00:00",
+      "n_posts_each": 472,
+      "equal_token_budget": 10930,
+      "equal_character_budget": 142406,
+      "agent": {
+        "gzip_ratio": 0.29406178425786267,
+        "distinct_1": 0.20045745654162855,
+        "distinct_2": 0.8474688954316649,
+        "distinct_5": 0.9969976410036457
+      },
+      "reddit": {
+        "gzip_ratio": 0.4255281158146307,
+        "distinct_1": 0.41299176578225066,
+        "distinct_2": 0.8974383483081628,
+        "distinct_5": 0.9281225884687465
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 118,
+          "equal_token_budget": 2687,
+          "agent": 0.9995573262505534,
+          "reddit": 0.9743474347434743
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 236,
+          "equal_token_budget": 5056,
+          "agent": 0.9978991596638656,
+          "reddit": 0.893884457336234
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 354,
+          "equal_token_budget": 8111,
+          "agent": 0.99797072039426,
+          "reddit": 0.9053993752788934
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 472,
+          "equal_token_budget": 10930,
+          "agent": 0.9969976410036457,
+          "reddit": 0.9281225884687465
+        }
+      ]
+    },
+    {
+      "model": "Gemini",
+      "run": "ec-mag1-n10-run01",
+      "reddit_hour": "2019-04-01T16:00:00+00:00",
+      "n_posts_each": 345,
+      "equal_token_budget": 8554,
+      "equal_character_budget": 135957,
+      "agent": {
+        "gzip_ratio": 0.29496998250491824,
+        "distinct_1": 0.2159223754968436,
+        "distinct_2": 0.766016045982517,
+        "distinct_5": 0.9786876776026866
+      },
+      "reddit": {
+        "gzip_ratio": 0.4223276288852911,
+        "distinct_1": 0.44166471826046294,
+        "distinct_2": 0.9151242084754019,
+        "distinct_5": 0.9684678427559383
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 86,
+          "equal_token_budget": 2004,
+          "agent": 0.9944933920704846,
+          "reddit": 0.9368231046931408
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 172,
+          "equal_token_budget": 4081,
+          "agent": 0.9851551956815114,
+          "reddit": 0.9656185718483691
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 259,
+          "equal_token_budget": 6328,
+          "agent": 0.9787011173184358,
+          "reddit": 0.9604296212549462
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 345,
+          "equal_token_budget": 8554,
+          "agent": 0.9786876776026866,
+          "reddit": 0.9684678427559383
+        }
+      ]
+    },
+    {
+      "model": "Gemini",
+      "run": "ec-mag25-n10-run01",
+      "reddit_hour": "2019-04-01T01:00:00+00:00",
+      "n_posts_each": 418,
+      "equal_token_budget": 9271,
+      "equal_character_budget": 130644,
+      "agent": {
+        "gzip_ratio": 0.30347162266551553,
+        "distinct_1": 0.23665192535864524,
+        "distinct_2": 0.829688535453943,
+        "distinct_5": 0.994168749256218
+      },
+      "reddit": {
+        "gzip_ratio": 0.3979241716303456,
+        "distinct_1": 0.43565958364793445,
+        "distinct_2": 0.91179128077705,
+        "distinct_5": 0.9523309258043335
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 104,
+          "equal_token_budget": 1973,
+          "agent": 1.0,
+          "reddit": 0.9603326935380678
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 209,
+          "equal_token_budget": 3830,
+          "agent": 0.9985507246376811,
+          "reddit": 0.9617431803060545
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 314,
+          "equal_token_budget": 6393,
+          "agent": 0.9979199167966719,
+          "reddit": 0.9704797047970479
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 418,
+          "equal_token_budget": 9271,
+          "agent": 0.994168749256218,
+          "reddit": 0.9523309258043335
+        }
+      ]
+    },
+    {
+      "model": "Gemini",
+      "run": "ec-mag5-n10-run01",
+      "reddit_hour": "2019-04-01T12:00:00+00:00",
+      "n_posts_each": 423,
+      "equal_token_budget": 9646,
+      "equal_character_budget": 129912,
+      "agent": {
+        "gzip_ratio": 0.26279130023928915,
+        "distinct_1": 0.20578478125647937,
+        "distinct_2": 0.7128977151398677,
+        "distinct_5": 0.88881069669247
+      },
+      "reddit": {
+        "gzip_ratio": 0.4222335032639549,
+        "distinct_1": 0.44339622641509435,
+        "distinct_2": 0.8950563746747615,
+        "distinct_5": 0.9344036121911451
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 106,
+          "equal_token_budget": 2084,
+          "agent": 0.9989177489177489,
+          "reddit": 0.968129885748647
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 212,
+          "equal_token_budget": 4808,
+          "agent": 0.9884433962264151,
+          "reddit": 0.9200907486765818
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 317,
+          "equal_token_budget": 7017,
+          "agent": 0.9526579415091291,
+          "reddit": 0.9175776505292382
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 423,
+          "equal_token_budget": 9646,
+          "agent": 0.88881069669247,
+          "reddit": 0.9344036121911451
+        }
+      ]
+    },
+    {
+      "model": "Kimi",
+      "run": "ec-dom-agi-n10-run01",
+      "reddit_hour": "2019-04-01T21:00:00+00:00",
+      "n_posts_each": 421,
+      "equal_token_budget": 7812,
+      "equal_character_budget": 92501,
+      "agent": {
+        "gzip_ratio": 0.285953520533293,
+        "distinct_1": 0.23809523809523808,
+        "distinct_2": 0.7470003870468327,
+        "distinct_5": 0.8891384778012685
+      },
+      "reddit": {
+        "gzip_ratio": 0.45137803285007605,
+        "distinct_1": 0.48310291858678955,
+        "distinct_2": 0.9541334054931674,
+        "distinct_5": 0.9985363473735567
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 105,
+          "equal_token_budget": 2051,
+          "agent": 0.880988401412002,
+          "reddit": 0.9945088468578401
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 210,
+          "equal_token_budget": 3973,
+          "agent": 0.843335931410756,
+          "reddit": 0.9971355824315723
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 316,
+          "equal_token_budget": 5634,
+          "agent": 0.8535335042109118,
+          "reddit": 0.9979461433135555
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 421,
+          "equal_token_budget": 7812,
+          "agent": 0.8891384778012685,
+          "reddit": 0.9985363473735567
+        }
+      ]
+    },
+    {
+      "model": "Kimi",
+      "run": "ec-dom-tech-n10-run01",
+      "reddit_hour": "2019-04-01T06:00:00+00:00",
+      "n_posts_each": 456,
+      "equal_token_budget": 12076,
+      "equal_character_budget": 201159,
+      "agent": {
+        "gzip_ratio": 0.30091689378031283,
+        "distinct_1": 0.20279894004637297,
+        "distinct_2": 0.7876586506346025,
+        "distinct_5": 0.9582048646796848
+      },
+      "reddit": {
+        "gzip_ratio": 0.3766120478177715,
+        "distinct_1": 0.3420006624710169,
+        "distinct_2": 0.7220024083949768,
+        "distinct_5": 0.7706270627062707
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 114,
+          "equal_token_budget": 2977,
+          "agent": 0.9937608318890815,
+          "reddit": 0.9692186266771902
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 228,
+          "equal_token_budget": 6035,
+          "agent": 0.9722934838378656,
+          "reddit": 0.9675665177704409
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 342,
+          "equal_token_budget": 8737,
+          "agent": 0.9498462266382778,
+          "reddit": 0.8798271671617607
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 456,
+          "equal_token_budget": 12076,
+          "agent": 0.9582048646796848,
+          "reddit": 0.7706270627062707
+        }
+      ]
+    },
+    {
+      "model": "Kimi",
+      "run": "ec-mag0-n10-run01",
+      "reddit_hour": "2019-04-01T09:00:00+00:00",
+      "n_posts_each": 481,
+      "equal_token_budget": 11309,
+      "equal_character_budget": 175291,
+      "agent": {
+        "gzip_ratio": 0.2977344804222441,
+        "distinct_1": 0.17791139800159164,
+        "distinct_2": 0.7739442946990117,
+        "distinct_5": 0.983857264231096
+      },
+      "reddit": {
+        "gzip_ratio": 0.354822884941643,
+        "distinct_1": 0.3758953046246353,
+        "distinct_2": 0.7227914705067848,
+        "distinct_5": 0.7724862112855324
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 120,
+          "equal_token_budget": 3491,
+          "agent": 0.9923383389518847,
+          "reddit": 0.7350115932427956
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 240,
+          "equal_token_budget": 5715,
+          "agent": 0.9882528435577103,
+          "reddit": 0.7635106828655216
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 361,
+          "equal_token_budget": 8880,
+          "agent": 0.9847648752399232,
+          "reddit": 0.7791460313211083
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 481,
+          "equal_token_budget": 11309,
+          "agent": 0.983857264231096,
+          "reddit": 0.7724862112855324
+        }
+      ]
+    },
+    {
+      "model": "Kimi",
+      "run": "ec-mag1-n10-run01",
+      "reddit_hour": "2019-04-01T02:00:00+00:00",
+      "n_posts_each": 451,
+      "equal_token_budget": 9783,
+      "equal_character_budget": 117456,
+      "agent": {
+        "gzip_ratio": 0.3127026705828424,
+        "distinct_1": 0.227639783297557,
+        "distinct_2": 0.8207937164117404,
+        "distinct_5": 0.974986638161411
+      },
+      "reddit": {
+        "gzip_ratio": 0.4242268326855641,
+        "distinct_1": 0.42522743534703056,
+        "distinct_2": 0.9174076057846813,
+        "distinct_5": 0.966167290886392
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 113,
+          "equal_token_budget": 2772,
+          "agent": 0.9704545454545455,
+          "reddit": 0.9685751183814033
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 226,
+          "equal_token_budget": 4873,
+          "agent": 0.9628516212153747,
+          "reddit": 0.9748743718592965
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 338,
+          "equal_token_budget": 7291,
+          "agent": 0.9695882943623584,
+          "reddit": 0.9664373216982716
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 451,
+          "equal_token_budget": 9783,
+          "agent": 0.974986638161411,
+          "reddit": 0.966167290886392
+        }
+      ]
+    },
+    {
+      "model": "Kimi",
+      "run": "ec-mag25-n10-run01",
+      "reddit_hour": "2019-04-01T22:00:00+00:00",
+      "n_posts_each": 444,
+      "equal_token_budget": 9886,
+      "equal_character_budget": 116414,
+      "agent": {
+        "gzip_ratio": 0.31691009023509065,
+        "distinct_1": 0.22455998381549666,
+        "distinct_2": 0.8285801901257283,
+        "distinct_5": 0.9915558370276546
+      },
+      "reddit": {
+        "gzip_ratio": 0.43420750821928283,
+        "distinct_1": 0.41412097916245194,
+        "distinct_2": 0.9289345477653039,
+        "distinct_5": 0.9726178781925344
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 111,
+          "equal_token_budget": 2637,
+          "agent": 0.9968266560888537,
+          "reddit": 0.989100817438692
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 222,
+          "equal_token_budget": 5331,
+          "agent": 0.9933476814713363,
+          "reddit": 0.9764468371467026
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 333,
+          "equal_token_budget": 7602,
+          "agent": 0.9928669410150892,
+          "reddit": 0.9655117609663064
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 444,
+          "equal_token_budget": 9886,
+          "agent": 0.9915558370276546,
+          "reddit": 0.9726178781925344
+        }
+      ]
+    },
+    {
+      "model": "Kimi",
+      "run": "ec-mag5-n10-run01",
+      "reddit_hour": "2019-04-01T04:00:00+00:00",
+      "n_posts_each": 469,
+      "equal_token_budget": 9820,
+      "equal_character_budget": 175524,
+      "agent": {
+        "gzip_ratio": 0.3157137658911555,
+        "distinct_1": 0.24887983706720979,
+        "distinct_2": 0.8545417138154511,
+        "distinct_5": 0.9948005093378608
+      },
+      "reddit": {
+        "gzip_ratio": 0.37701500180272446,
+        "distinct_1": 0.41476578411405296,
+        "distinct_2": 0.8920971019142337,
+        "distinct_5": 0.9394624466214518
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 117,
+          "equal_token_budget": 2544,
+          "agent": 0.9995894909688013,
+          "reddit": 0.9678039404132629
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 234,
+          "equal_token_budget": 5126,
+          "agent": 0.9971556277935798,
+          "reddit": 0.9263759828448892
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 352,
+          "equal_token_budget": 7403,
+          "agent": 0.9967637540453075,
+          "reddit": 0.9364181091877497
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 469,
+          "equal_token_budget": 9820,
+          "agent": 0.9948005093378608,
+          "reddit": 0.9394624466214518
+        }
+      ]
+    },
+    {
+      "model": "GLM-5",
+      "run": "ec-dom-agi-n10-run01",
+      "reddit_hour": "2019-04-01T19:00:00+00:00",
+      "n_posts_each": 245,
+      "equal_token_budget": 5260,
+      "equal_character_budget": 73511,
+      "agent": {
+        "gzip_ratio": 0.3393626418427669,
+        "distinct_1": 0.3252851711026616,
+        "distinct_2": 0.9185043144774688,
+        "distinct_5": 0.9984251968503937
+      },
+      "reddit": {
+        "gzip_ratio": 0.4526773180025403,
+        "distinct_1": 0.5165399239543726,
+        "distinct_2": 0.9559497707793502,
+        "distinct_5": 0.9962782042335426
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 61,
+          "equal_token_budget": 1212,
+          "agent": 1.0,
+          "reddit": 1.0
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 122,
+          "equal_token_budget": 2498,
+          "agent": 1.0,
+          "reddit": 0.9930693069306931
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 184,
+          "equal_token_budget": 3501,
+          "agent": 1.0,
+          "reddit": 0.9949658396260338
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 245,
+          "equal_token_budget": 5260,
+          "agent": 0.9984251968503937,
+          "reddit": 0.9962782042335426
+        }
+      ]
+    },
+    {
+      "model": "GLM-5",
+      "run": "ec-dom-tech-n10-run01",
+      "reddit_hour": "2019-04-01T07:00:00+00:00",
+      "n_posts_each": 253,
+      "equal_token_budget": 6186,
+      "equal_character_budget": 117578,
+      "agent": {
+        "gzip_ratio": 0.322361484303255,
+        "distinct_1": 0.27190430003233107,
+        "distinct_2": 0.8788916055419723,
+        "distinct_5": 0.9966566365763958
+      },
+      "reddit": {
+        "gzip_ratio": 0.42621669845566973,
+        "distinct_1": 0.45845457484642743,
+        "distinct_2": 0.8151331311088642,
+        "distinct_5": 0.8579961464354527
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 63,
+          "equal_token_budget": 987,
+          "agent": 1.0,
+          "reddit": 0.8829931972789116
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 126,
+          "equal_token_budget": 2842,
+          "agent": 0.9985433357611071,
+          "reddit": 0.9390451832907076
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 190,
+          "equal_token_budget": 4043,
+          "agent": 0.9971845405682109,
+          "reddit": 0.9384288747346072
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 253,
+          "equal_token_budget": 6186,
+          "agent": 0.9966566365763958,
+          "reddit": 0.8579961464354527
+        }
+      ]
+    },
+    {
+      "model": "GLM-5",
+      "run": "ec-mag0-n10-run01",
+      "reddit_hour": "2019-04-01T08:00:00+00:00",
+      "n_posts_each": 317,
+      "equal_token_budget": 7291,
+      "equal_character_budget": 126173,
+      "agent": {
+        "gzip_ratio": 0.3199502392951095,
+        "distinct_1": 0.239336167878206,
+        "distinct_2": 0.8702290076335878,
+        "distinct_5": 0.9975539568345324
+      },
+      "reddit": {
+        "gzip_ratio": 0.3796926922093783,
+        "distinct_1": 0.4173638732684131,
+        "distinct_2": 0.7435860685108213,
+        "distinct_5": 0.7771164021164021
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 79,
+          "equal_token_budget": 1572,
+          "agent": 0.9993206521739131,
+          "reddit": 0.920284135753749
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 158,
+          "equal_token_budget": 3408,
+          "agent": 0.9984472049689441,
+          "reddit": 0.8859397417503587
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 238,
+          "equal_token_budget": 5600,
+          "agent": 0.9983082706766917,
+          "reddit": 0.7741589886436683
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 317,
+          "equal_token_budget": 7291,
+          "agent": 0.9975539568345324,
+          "reddit": 0.7771164021164021
+        }
+      ]
+    },
+    {
+      "model": "GLM-5",
+      "run": "ec-mag1-n10-run01",
+      "reddit_hour": "2019-04-01T00:00:00+00:00",
+      "n_posts_each": 266,
+      "equal_token_budget": 6307,
+      "equal_character_budget": 89984,
+      "agent": {
+        "gzip_ratio": 0.33720594762538836,
+        "distinct_1": 0.29554463294751865,
+        "distinct_2": 0.9167202572347267,
+        "distinct_5": 1.0
+      },
+      "reddit": {
+        "gzip_ratio": 0.42713805421307,
+        "distinct_1": 0.49595687331536387,
+        "distinct_2": 0.9470286376427743,
+        "distinct_5": 0.9864916286149162
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 66,
+          "equal_token_budget": 1612,
+          "agent": 1.0,
+          "reddit": 0.9837758112094396
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 133,
+          "equal_token_budget": 2983,
+          "agent": 1.0,
+          "reddit": 0.9865853658536585
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 200,
+          "equal_token_budget": 4836,
+          "agent": 1.0,
+          "reddit": 0.9873949579831933
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 266,
+          "equal_token_budget": 6307,
+          "agent": 1.0,
+          "reddit": 0.9864916286149162
+        }
+      ]
+    },
+    {
+      "model": "GLM-5",
+      "run": "ec-mag25-n10-run01",
+      "reddit_hour": "2019-04-01T03:00:00+00:00",
+      "n_posts_each": 251,
+      "equal_token_budget": 5635,
+      "equal_character_budget": 74057,
+      "agent": {
+        "gzip_ratio": 0.33545747883730037,
+        "distinct_1": 0.3025732031943212,
+        "distinct_2": 0.9227460118300771,
+        "distinct_5": 0.9988911476621697
+      },
+      "reddit": {
+        "gzip_ratio": 0.4197479045038857,
+        "distinct_1": 0.4940550133096717,
+        "distinct_2": 0.9411218424962853,
+        "distinct_5": 0.9792880258899677
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 63,
+          "equal_token_budget": 1517,
+          "agent": 0.9993117687543015,
+          "reddit": 0.9992101105845181
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 126,
+          "equal_token_budget": 3269,
+          "agent": 0.9987248963978324,
+          "reddit": 0.9931333574268161
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 188,
+          "equal_token_budget": 4516,
+          "agent": 0.9990774907749077,
+          "reddit": 0.9779665516325989
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 251,
+          "equal_token_budget": 5635,
+          "agent": 0.9988911476621697,
+          "reddit": 0.9792880258899677
+        }
+      ]
+    },
+    {
+      "model": "GLM-5",
+      "run": "ec-mag5-n10-run01",
+      "reddit_hour": "2019-04-01T20:00:00+00:00",
+      "n_posts_each": 228,
+      "equal_token_budget": 5062,
+      "equal_character_budget": 68223,
+      "agent": {
+        "gzip_ratio": 0.3245939097447014,
+        "distinct_1": 0.29375740813907547,
+        "distinct_2": 0.8733013589128698,
+        "distinct_5": 0.9968944099378882
+      },
+      "reddit": {
+        "gzip_ratio": 0.4373000457038391,
+        "distinct_1": 0.5207427894112999,
+        "distinct_2": 0.9421009098428453,
+        "distinct_5": 0.9764931638282561
+      },
+      "cumulative_distinct_5": [
+        {
+          "post_fraction": 0.25,
+          "n_posts_each": 57,
+          "equal_token_budget": 1238,
+          "agent": 0.9982964224872232,
+          "reddit": 0.9773622047244095
+        },
+        {
+          "post_fraction": 0.5,
+          "n_posts_each": 114,
+          "equal_token_budget": 2143,
+          "agent": 0.9990191270230505,
+          "reddit": 0.9829009433962265
+        },
+        {
+          "post_fraction": 0.75,
+          "n_posts_each": 171,
+          "equal_token_budget": 3473,
+          "agent": 0.9987926350739511,
+          "reddit": 0.9768105601141635
+        },
+        {
+          "post_fraction": 1.0,
+          "n_posts_each": 228,
+          "equal_token_budget": 5062,
+          "agent": 0.9968944099378882,
+          "reddit": 0.9764931638282561
+        }
+      ]
+    }
+  ],
+  "repository_style_robustness": {
+    "upstream_repository": "https://github.com/strangeloopcanon/moltbook_vs_reddit",
+    "upstream_commit": "30b9bae05635f73e08dde4231367d7f527e9f596",
+    "matching": {
+      "bin_size_characters": 50,
+      "minimum_cleaned_characters": 40
+    },
+    "agent": {
+      "n": 9241,
+      "distinct_1": 0.02721799995566116,
+      "distinct_2": 0.5485482751397508,
+      "exact_duplicate_rate": 0.008981711935937664,
+      "soft_duplicate_rate": 0.009955632507304357,
+      "mean_gzip_bits_per_char": 5.031439566655818,
+      "pairwise_jaccard": {
+        "pairs": 2000,
+        "max_tokens": 80,
+        "mean": 0.021536066594566375,
+        "median": 0.013513513513513514,
+        "p95": 0.072,
+        "p99": 0.10638297872340426
+      },
+      "unigram_entropy_bits": 11.058485228147706
+    },
+    "reddit": {
+      "n": 9241,
+      "distinct_1": 0.08195139575164441,
+      "distinct_2": 0.7250792288249855,
+      "exact_duplicate_rate": 0.003138188507737283,
+      "soft_duplicate_rate": 0.09530011939650496,
+      "mean_gzip_bits_per_char": 4.7076170640162145,
+      "pairwise_jaccard": {
+        "pairs": 2000,
+        "max_tokens": 80,
+        "mean": 0.0191151126535234,
+        "median": 0.007936507936507936,
+        "p95": 0.041237113402061855,
+        "p99": 0.07627118644067797
+      },
+      "unigram_entropy_bits": 12.089520581769005
+    }
+  }
+}

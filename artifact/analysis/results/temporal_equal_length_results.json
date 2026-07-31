@@ -1,0 +1,1095 @@
+{
+  "method": {
+    "cohort": "24 paper single-model n10 runs",
+    "windows_minutes": [
+      [
+        0.0,
+        15.0
+      ],
+      [
+        15.0,
+        30.0
+      ],
+      [
+        30.0,
+        45.0
+      ],
+      [
+        45.0,
+        60.0
+      ]
+    ],
+    "seed_posts_excluded": true,
+    "distinct_5_control": "same token count in every window within each run",
+    "gzip_control": "same UTF-8 byte count in every window within each run",
+    "random_post_permutations_per_window": 100
+  },
+  "summary": {
+    "distinct_5_equal_token": {
+      "runs": 24,
+      "declines": 22,
+      "mean_delta": -0.07079825408571266,
+      "median_delta": -0.0372252772361919,
+      "two_sided_sign_test_p": 3.5881996154785156e-05
+    },
+    "gzip_ratio_equal_byte": {
+      "runs": 24,
+      "declines": 24,
+      "mean_delta": -0.060569309361701476,
+      "median_delta": -0.0492290539377066,
+      "two_sided_sign_test_p": 1.1920928955078125e-07
+    },
+    "by_model": {
+      "GLM-5": {
+        "distinct_5_equal_token": {
+          "runs": 6,
+          "declines": 5,
+          "mean_delta": -0.001274412324684504,
+          "median_delta": -0.0011347000664460039,
+          "two_sided_sign_test_p": 0.21875
+        },
+        "gzip_ratio_equal_byte": {
+          "runs": 6,
+          "declines": 6,
+          "mean_delta": -0.0196093251309786,
+          "median_delta": -0.020651715682845767,
+          "two_sided_sign_test_p": 0.03125
+        }
+      },
+      "GPT-5": {
+        "distinct_5_equal_token": {
+          "runs": 6,
+          "declines": 6,
+          "mean_delta": -0.14182149805525776,
+          "median_delta": -0.1462566232476632,
+          "two_sided_sign_test_p": 0.03125
+        },
+        "gzip_ratio_equal_byte": {
+          "runs": 6,
+          "declines": 6,
+          "mean_delta": -0.09386677651446353,
+          "median_delta": -0.09655282800225276,
+          "two_sided_sign_test_p": 0.03125
+        }
+      },
+      "Gemini Flash Lite": {
+        "distinct_5_equal_token": {
+          "runs": 6,
+          "declines": 5,
+          "mean_delta": -0.08499487254535293,
+          "median_delta": -0.017958829898942597,
+          "two_sided_sign_test_p": 0.21875
+        },
+        "gzip_ratio_equal_byte": {
+          "runs": 6,
+          "declines": 6,
+          "mean_delta": -0.07383906765753197,
+          "median_delta": -0.05848579024001993,
+          "two_sided_sign_test_p": 0.03125
+        }
+      },
+      "Kimi K2.5": {
+        "distinct_5_equal_token": {
+          "runs": 6,
+          "declines": 6,
+          "mean_delta": -0.05510223341755547,
+          "median_delta": -0.05333447904708055,
+          "two_sided_sign_test_p": 0.03125
+        },
+        "gzip_ratio_equal_byte": {
+          "runs": 6,
+          "declines": 6,
+          "mean_delta": -0.0549620681438318,
+          "median_delta": -0.0504031912990304,
+          "two_sided_sign_test_p": 0.03125
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "run_uid": "4066c2db36af714648d91e123bd873596c77975c",
+      "run_id": "ec-dom-agi-n10-run01",
+      "model": "Gemini Flash Lite",
+      "condition": "dom-agi",
+      "post_counts": [
+        103,
+        97,
+        139,
+        57
+      ],
+      "token_counts_before_matching": [
+        4157,
+        2966,
+        3843,
+        1552
+      ],
+      "byte_counts_before_matching": [
+        53106,
+        36349,
+        49810,
+        20021
+      ],
+      "equal_token_budget": 1552,
+      "equal_byte_budget": 20021,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9988257584335668,
+        0.9974100951579754,
+        0.9992914503188588,
+        1.0
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3787712901453474,
+        0.3638549523000849,
+        0.34704210578892164,
+        0.32620948004595174
+      ],
+      "delta_distinct_5_equal_token": 0.0011742415664331984,
+      "delta_gzip_ratio_equal_byte": -0.052561810099395645
+    },
+    {
+      "run_uid": "05377070212bd282b603e8ff525b5f27999e1b5a",
+      "run_id": "ec-dom-tech-n10-run01",
+      "model": "Gemini Flash Lite",
+      "condition": "dom-tech",
+      "post_counts": [
+        107,
+        85,
+        57,
+        82
+      ],
+      "token_counts_before_matching": [
+        4610,
+        4189,
+        1964,
+        1931
+      ],
+      "byte_counts_before_matching": [
+        52434,
+        47787,
+        24017,
+        23843
+      ],
+      "equal_token_budget": 1931,
+      "equal_byte_budget": 23843,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9893898700852382,
+        0.9946293652234518,
+        0.9545175901525478,
+        0.9266625233064015
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.38751792979071426,
+        0.3556075158327392,
+        0.3477003732751751,
+        0.31900473933649287
+      ],
+      "delta_distinct_5_equal_token": -0.06272734677883662,
+      "delta_gzip_ratio_equal_byte": -0.06851319045422138
+    },
+    {
+      "run_uid": "9f77ea357569395e2a48f10902ae9e4a14b77f4a",
+      "run_id": "ec-mag0-n10-run01",
+      "model": "Gemini Flash Lite",
+      "condition": "mag0",
+      "post_counts": [
+        136,
+        123,
+        118,
+        95
+      ],
+      "token_counts_before_matching": [
+        3489,
+        3403,
+        3348,
+        2785
+      ],
+      "byte_counts_before_matching": [
+        43574,
+        43015,
+        43181,
+        35422
+      ],
+      "equal_token_budget": 2785,
+      "equal_byte_budget": 35422,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9985703028240267,
+        0.9980548278067077,
+        0.9957960407051727,
+        0.9970893970893971
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.34487775958443906,
+        0.3277937440009034,
+        0.31210970583253345,
+        0.315627293772232
+      ],
+      "delta_distinct_5_equal_token": -0.0014809057346295562,
+      "delta_gzip_ratio_equal_byte": -0.029250465812207083
+    },
+    {
+      "run_uid": "bfa4cd3f4504f42d76f95b422da94d5454e0f2a7",
+      "run_id": "ec-mag1-n10-run01",
+      "model": "Gemini Flash Lite",
+      "condition": "mag1",
+      "post_counts": [
+        124,
+        98,
+        67,
+        56
+      ],
+      "token_counts_before_matching": [
+        5361,
+        4062,
+        2773,
+        2333
+      ],
+      "byte_counts_before_matching": [
+        61528,
+        44413,
+        30681,
+        25956
+      ],
+      "equal_token_budget": 2333,
+      "equal_byte_budget": 25956,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9935095554065474,
+        0.9805029929091041,
+        0.9466853925712856,
+        0.9615931721194879
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3762270765911543,
+        0.33857181383880414,
+        0.33141431653567577,
+        0.31181730621051007
+      ],
+      "delta_distinct_5_equal_token": -0.03191638328705948,
+      "delta_gzip_ratio_equal_byte": -0.06440977038064422
+    },
+    {
+      "run_uid": "92d7e428272f4ac978a0baea7895710d9e3e5c92",
+      "run_id": "ec-mag25-n10-run01",
+      "model": "Gemini Flash Lite",
+      "condition": "mag25",
+      "post_counts": [
+        133,
+        102,
+        100,
+        83
+      ],
+      "token_counts_before_matching": [
+        5449,
+        4708,
+        5037,
+        4274
+      ],
+      "byte_counts_before_matching": [
+        65243,
+        55143,
+        59308,
+        49546
+      ],
+      "equal_token_budget": 4274,
+      "equal_byte_budget": 49546,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9984203531216831,
+        0.9922635700704587,
+        0.9926569456635197,
+        0.9944190766108574
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3480763331045897,
+        0.3162834537601421,
+        0.3151281637266379,
+        0.311403544181165
+      ],
+      "delta_distinct_5_equal_token": -0.004001276510825713,
+      "delta_gzip_ratio_equal_byte": -0.03667278892342468
+    },
+    {
+      "run_uid": "b7fe33911b2613a99c1eaed241b2bacfe46af515",
+      "run_id": "ec-mag5-n10-run01",
+      "model": "Gemini Flash Lite",
+      "condition": "mag5",
+      "post_counts": [
+        139,
+        114,
+        96,
+        74
+      ],
+      "token_counts_before_matching": [
+        4725,
+        3934,
+        3493,
+        2773
+      ],
+      "byte_counts_before_matching": [
+        57682,
+        45384,
+        39436,
+        33055
+      ],
+      "equal_token_budget": 2773,
+      "equal_byte_budget": 33055,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9927696840265938,
+        0.8783795771065495,
+        0.732868604302121,
+        0.5817521194993944
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.36612161548933597,
+        0.2776454394191499,
+        0.20882408107699288,
+        0.1744952352140372
+      ],
+      "delta_distinct_5_equal_token": -0.4110175645271994,
+      "delta_gzip_ratio_equal_byte": -0.19162638027529877
+    },
+    {
+      "run_uid": "5b9f012b18953905b1a247a07318da194aa56ee9",
+      "run_id": "ec-dom-agi-n10-run01",
+      "model": "GLM-5",
+      "condition": "dom-agi",
+      "post_counts": [
+        82,
+        43,
+        46,
+        74
+      ],
+      "token_counts_before_matching": [
+        9685,
+        4829,
+        4679,
+        7143
+      ],
+      "byte_counts_before_matching": [
+        124087,
+        62576,
+        60855,
+        93805
+      ],
+      "equal_token_budget": 4679,
+      "equal_byte_budget": 60855,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9989133211219786,
+        0.9962376207160184,
+        0.996440489432703,
+        0.998527987910136
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.33990896393065484,
+        0.3292961958754416,
+        0.32343866568071644,
+        0.3287159641771424
+      ],
+      "delta_distinct_5_equal_token": -0.00038533321184264224,
+      "delta_gzip_ratio_equal_byte": -0.011192999753512456
+    },
+    {
+      "run_uid": "fa1544d4921dee1eee06b14a95889337c8727c45",
+      "run_id": "ec-dom-tech-n10-run01",
+      "model": "GLM-5",
+      "condition": "dom-tech",
+      "post_counts": [
+        81,
+        48,
+        60,
+        64
+      ],
+      "token_counts_before_matching": [
+        9845,
+        5270,
+        6439,
+        6637
+      ],
+      "byte_counts_before_matching": [
+        123198,
+        66731,
+        81399,
+        85943
+      ],
+      "equal_token_budget": 5270,
+      "equal_byte_budget": 66731,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9981803468091108,
+        0.9972430090586846,
+        0.9821322985394333,
+        0.9970186920252426
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.337663005199982,
+        0.334176469706733,
+        0.3232819828865145,
+        0.31982287092955297
+      ],
+      "delta_distinct_5_equal_token": -0.0011616547838682045,
+      "delta_gzip_ratio_equal_byte": -0.01784013427042902
+    },
+    {
+      "run_uid": "a67c72b10e243c3cb1cc64235c83a876b68f4af6",
+      "run_id": "ec-mag0-n10-run01",
+      "model": "GLM-5",
+      "condition": "mag0",
+      "post_counts": [
+        106,
+        92,
+        68,
+        51
+      ],
+      "token_counts_before_matching": [
+        9494,
+        9802,
+        7673,
+        5606
+      ],
+      "byte_counts_before_matching": [
+        119003,
+        126937,
+        101078,
+        75567
+      ],
+      "equal_token_budget": 5606,
+      "equal_byte_budget": 75567,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9982444363199529,
+        0.9938244515467782,
+        0.9978189077173627,
+        0.9959274342835986
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3341372556803896,
+        0.3062360554210171,
+        0.3105473288604814,
+        0.3041088041076131
+      ],
+      "delta_distinct_5_equal_token": -0.00231700203635421,
+      "delta_gzip_ratio_equal_byte": -0.030028451572776504
+    },
+    {
+      "run_uid": "ed89d518f117e12c753d18ad471c73ef335e5f8a",
+      "run_id": "ec-mag1-n10-run01",
+      "model": "GLM-5",
+      "condition": "mag1",
+      "post_counts": [
+        102,
+        52,
+        47,
+        65
+      ],
+      "token_counts_before_matching": [
+        7557,
+        4309,
+        3646,
+        5329
+      ],
+      "byte_counts_before_matching": [
+        97305,
+        56063,
+        47450,
+        69815
+      ],
+      "equal_token_budget": 3646,
+      "equal_byte_budget": 47450,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9998606922593951,
+        0.9993396866142735,
+        1.0,
+        1.0
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3521083245521602,
+        0.34563203371970497,
+        0.34878124341412015,
+        0.3413197049525817
+      ],
+      "delta_distinct_5_equal_token": 0.00013930774060488815,
+      "delta_gzip_ratio_equal_byte": -0.010788619599578497
+    },
+    {
+      "run_uid": "f6a9af6b0a8c242dfd9a45a69e65095585df6073",
+      "run_id": "ec-mag25-n10-run01",
+      "model": "GLM-5",
+      "condition": "mag25",
+      "post_counts": [
+        90,
+        44,
+        48,
+        69
+      ],
+      "token_counts_before_matching": [
+        9084,
+        4326,
+        4311,
+        6390
+      ],
+      "byte_counts_before_matching": [
+        116961,
+        56353,
+        56612,
+        83261
+      ],
+      "equal_token_budget": 4311,
+      "equal_byte_budget": 56353,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9995457970634666,
+        0.9985876662636034,
+        0.9995144452537024,
+        0.9984380517144428
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.34371249090554185,
+        0.32877220378684363,
+        0.32696946036590774,
+        0.31937004241122924
+      ],
+      "delta_distinct_5_equal_token": -0.0011077453490238032,
+      "delta_gzip_ratio_equal_byte": -0.024342448494312607
+    },
+    {
+      "run_uid": "6336340d7b86d78a9e57368308f8d13d132bf5c7",
+      "run_id": "ec-mag5-n10-run01",
+      "model": "GLM-5",
+      "condition": "mag5",
+      "post_counts": [
+        82,
+        47,
+        41,
+        58
+      ],
+      "token_counts_before_matching": [
+        7436,
+        4476,
+        4111,
+        5448
+      ],
+      "byte_counts_before_matching": [
+        95578,
+        57899,
+        52707,
+        71496
+      ],
+      "equal_token_budget": 4111,
+      "equal_byte_budget": 52707,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9981671480228504,
+        0.9993877134602238,
+        0.9956929313402584,
+        0.9953531017152274
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3354988900905003,
+        0.330303754719487,
+        0.3249837782457738,
+        0.3120355929952378
+      ],
+      "delta_distinct_5_equal_token": -0.0028140463076230526,
+      "delta_gzip_ratio_equal_byte": -0.023463297095262514
+    },
+    {
+      "run_uid": "5a3139019e30ef5344c4f09f69968cf1d93292a0",
+      "run_id": "ec-dom-agi-run04",
+      "model": "GPT-5",
+      "condition": "dom-agi",
+      "post_counts": [
+        154,
+        141,
+        112,
+        57
+      ],
+      "token_counts_before_matching": [
+        9543,
+        8205,
+        6583,
+        2925
+      ],
+      "byte_counts_before_matching": [
+        98855,
+        81911,
+        66618,
+        28974
+      ],
+      "equal_token_budget": 2925,
+      "equal_byte_budget": 28974,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9815569478781405,
+        0.910560957234946,
+        0.8469662923687734,
+        0.7619577308120133
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.4087985780354801,
+        0.36655449713536276,
+        0.3426468558017533,
+        0.31284013253261544
+      ],
+      "delta_distinct_5_equal_token": -0.21959921706612717,
+      "delta_gzip_ratio_equal_byte": -0.09595844550286464
+    },
+    {
+      "run_uid": "558bbf089edf8ec148df65fb11c452f9dbe7425d",
+      "run_id": "ec-dom-tech-run04",
+      "model": "GPT-5",
+      "condition": "dom-tech",
+      "post_counts": [
+        140,
+        140,
+        141,
+        80
+      ],
+      "token_counts_before_matching": [
+        6597,
+        6030,
+        5219,
+        2705
+      ],
+      "byte_counts_before_matching": [
+        68690,
+        61853,
+        53516,
+        27034
+      ],
+      "equal_token_budget": 2705,
+      "equal_byte_budget": 27034,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9640815537773442,
+        0.8677159568207856,
+        0.8257812406978027,
+        0.7056603773584905
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3627676259525043,
+        0.2928723089442924,
+        0.264432936302434,
+        0.2214559443663535
+      ],
+      "delta_distinct_5_equal_token": -0.25842117641885365,
+      "delta_gzip_ratio_equal_byte": -0.1413116815861508
+    },
+    {
+      "run_uid": "52cbe1b58dae376873d521996f9f08f26579623f",
+      "run_id": "ec-mag0-run04",
+      "model": "GPT-5",
+      "condition": "mag0",
+      "post_counts": [
+        114,
+        126,
+        144,
+        96
+      ],
+      "token_counts_before_matching": [
+        3892,
+        3650,
+        3984,
+        3243
+      ],
+      "byte_counts_before_matching": [
+        41512,
+        38273,
+        41441,
+        33933
+      ],
+      "equal_token_budget": 3243,
+      "equal_byte_budget": 33933,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9723280417020282,
+        0.9809527282129719,
+        0.9787387375155684,
+        0.9587844917918268
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3931768484955648,
+        0.3763973123508089,
+        0.3736524916747709,
+        0.3460209825243863
+      ],
+      "delta_distinct_5_equal_token": -0.013543549910201458,
+      "delta_gzip_ratio_equal_byte": -0.04715586597117849
+    },
+    {
+      "run_uid": "071b1111ea14702baa81d46e561002e9e8421824",
+      "run_id": "ec-mag1-run04",
+      "model": "GPT-5",
+      "condition": "mag1",
+      "post_counts": [
+        134,
+        143,
+        135,
+        96
+      ],
+      "token_counts_before_matching": [
+        5578,
+        5126,
+        4677,
+        2400
+      ],
+      "byte_counts_before_matching": [
+        58197,
+        51870,
+        48029,
+        25596
+      ],
+      "equal_token_budget": 2400,
+      "equal_byte_budget": 25596,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9783843008727999,
+        0.9622201760201621,
+        0.9520981863760953,
+        0.8705357142857143
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.4084216283794343,
+        0.3852176121268948,
+        0.3757747304266292,
+        0.3112744178777934
+      ],
+      "delta_distinct_5_equal_token": -0.10784858658708563,
+      "delta_gzip_ratio_equal_byte": -0.09714721050164088
+    },
+    {
+      "run_uid": "6d3e2805af6653babf2fedb85ca20790cd830d58",
+      "run_id": "ec-mag25-run04",
+      "model": "GPT-5",
+      "condition": "mag25",
+      "post_counts": [
+        141,
+        100,
+        87,
+        18
+      ],
+      "token_counts_before_matching": [
+        6429,
+        4078,
+        3148,
+        665
+      ],
+      "byte_counts_before_matching": [
+        69520,
+        43657,
+        33319,
+        7226
+      ],
+      "equal_token_budget": 665,
+      "equal_byte_budget": 7226,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9926528102454224,
+        0.9558692183573891,
+        0.9419192240429399,
+        0.9258010118043845
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.4680071962358151,
+        0.4175200664267921,
+        0.40604622197619705,
+        0.4167049543315804
+      ],
+      "delta_distinct_5_equal_token": -0.06685179844103795,
+      "delta_gzip_ratio_equal_byte": -0.05130224190423471
+    },
+    {
+      "run_uid": "b068c4711834243dbb5129c3f6e17813ea019027",
+      "run_id": "ec-mag5-run04",
+      "model": "GPT-5",
+      "condition": "mag5",
+      "post_counts": [
+        109,
+        78,
+        74,
+        21
+      ],
+      "token_counts_before_matching": [
+        5144,
+        3243,
+        2672,
+        758
+      ],
+      "byte_counts_before_matching": [
+        56454,
+        34055,
+        27672,
+        7841
+      ],
+      "equal_token_budget": 758,
+      "equal_byte_budget": 7841,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9888189625788639,
+        0.9466205385728186,
+        0.9152807256546478,
+        0.8041543026706232
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.44764060706542536,
+        0.4005432980487183,
+        0.36522892488203035,
+        0.3173153934447137
+      ],
+      "delta_distinct_5_equal_token": -0.18466465990824077,
+      "delta_gzip_ratio_equal_byte": -0.13032521362071164
+    },
+    {
+      "run_uid": "622f84977711e3c80802f4c0c0518fa5730ddbe0",
+      "run_id": "ec-dom-agi-n10-run01",
+      "model": "Kimi K2.5",
+      "condition": "dom-agi",
+      "post_counts": [
+        127,
+        94,
+        113,
+        110
+      ],
+      "token_counts_before_matching": [
+        14124,
+        6187,
+        5751,
+        3852
+      ],
+      "byte_counts_before_matching": [
+        185568,
+        79112,
+        71198,
+        47082
+      ],
+      "equal_token_budget": 3852,
+      "equal_byte_budget": 47082,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9809943355830666,
+        0.9737097926145389,
+        0.9633784570892464,
+        0.8866724486845909
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.32947007348880675,
+        0.30678029820313496,
+        0.28537678943120515,
+        0.2523371989295272
+      ],
+      "delta_distinct_5_equal_token": -0.09432188689847565,
+      "delta_gzip_ratio_equal_byte": -0.07713287455927953
+    },
+    {
+      "run_uid": "0e810c3a077d74956348bd4b33566f4e5e61696a",
+      "run_id": "ec-dom-tech-n10-run01",
+      "model": "Kimi K2.5",
+      "condition": "dom-tech",
+      "post_counts": [
+        124,
+        85,
+        132,
+        115
+      ],
+      "token_counts_before_matching": [
+        14458,
+        6628,
+        8439,
+        6696
+      ],
+      "byte_counts_before_matching": [
+        182308,
+        81922,
+        102248,
+        79151
+      ],
+      "equal_token_budget": 6628,
+      "equal_byte_budget": 79151,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9776833740097322,
+        0.9701017811704835,
+        0.9736255522214573,
+        0.9281721509446935
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.32397392326060315,
+        0.3034988818839939,
+        0.30609834367222144,
+        0.2880559942388599
+      ],
+      "delta_distinct_5_equal_token": -0.049511223065038634,
+      "delta_gzip_ratio_equal_byte": -0.03591792902174323
+    },
+    {
+      "run_uid": "be3cc4472a58a0005e16432801fb120a461f3a19",
+      "run_id": "ec-mag0-n10-run01",
+      "model": "Kimi K2.5",
+      "condition": "mag0",
+      "post_counts": [
+        149,
+        144,
+        125,
+        69
+      ],
+      "token_counts_before_matching": [
+        9710,
+        7385,
+        5865,
+        2392
+      ],
+      "byte_counts_before_matching": [
+        119313,
+        92519,
+        74457,
+        29343
+      ],
+      "equal_token_budget": 2392,
+      "equal_byte_budget": 29343,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9953873202635463,
+        0.9892760035089484,
+        0.9809323968598032,
+        0.9216783216783216
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.35891490304331525,
+        0.3347377568755751,
+        0.3211784752751934,
+        0.2803851003646526
+      ],
+      "delta_distinct_5_equal_token": -0.07370899858522462,
+      "delta_gzip_ratio_equal_byte": -0.07852980267866266
+    },
+    {
+      "run_uid": "bc19d8fdf4a7fe00f0c24d267590e3efec58a8b0",
+      "run_id": "ec-mag1-n10-run01",
+      "model": "Kimi K2.5",
+      "condition": "mag1",
+      "post_counts": [
+        142,
+        88,
+        127,
+        98
+      ],
+      "token_counts_before_matching": [
+        12625,
+        6522,
+        8258,
+        5520
+      ],
+      "byte_counts_before_matching": [
+        160713,
+        83722,
+        102686,
+        68642
+      ],
+      "equal_token_budget": 5520,
+      "equal_byte_budget": 68642,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.986730873779494,
+        0.9774020624241463,
+        0.9919043562141573,
+        0.9733514880373468
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3290728708370968,
+        0.2994348940881676,
+        0.31219326359954547,
+        0.2916874508318522
+      ],
+      "delta_distinct_5_equal_token": -0.013379385742147143,
+      "delta_gzip_ratio_equal_byte": -0.037385420005244585
+    },
+    {
+      "run_uid": "852f26a14ae81926ea3105598ca9785c486f6611",
+      "run_id": "ec-mag25-n10-run01",
+      "model": "Kimi K2.5",
+      "condition": "mag25",
+      "post_counts": [
+        139,
+        115,
+        122,
+        104
+      ],
+      "token_counts_before_matching": [
+        12632,
+        7295,
+        5311,
+        4093
+      ],
+      "byte_counts_before_matching": [
+        158177,
+        93718,
+        65664,
+        48414
+      ],
+      "equal_token_budget": 4093,
+      "equal_byte_budget": 48414,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9966825730420814,
+        0.9920942074104412,
+        0.9776010843118755,
+        0.9395248380129589
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.3425891271119924,
+        0.32198434337175197,
+        0.3008925104308671,
+        0.2833905481885405
+      ],
+      "delta_distinct_5_equal_token": -0.05715773502912247,
+      "delta_gzip_ratio_equal_byte": -0.05919857892345193
+    },
+    {
+      "run_uid": "157bffe22d7d86eb0676ffe902ad39c39a5bfc65",
+      "run_id": "ec-mag5-n10-run01",
+      "model": "Kimi K2.5",
+      "condition": "mag5",
+      "post_counts": [
+        139,
+        109,
+        114,
+        107
+      ],
+      "token_counts_before_matching": [
+        13386,
+        8164,
+        7385,
+        7266
+      ],
+      "byte_counts_before_matching": [
+        169554,
+        104286,
+        93500,
+        92418
+      ],
+      "equal_token_budget": 7266,
+      "equal_byte_budget": 92418,
+      "repetitions": 100,
+      "distinct_5_equal_token_by_window": [
+        0.9939819629372986,
+        0.9907564104819551,
+        0.9830777906798953,
+        0.9514477917519742
+      ],
+      "gzip_ratio_equal_byte_by_window": [
+        0.33272998766474066,
+        0.31250102793828044,
+        0.30681674565560824,
+        0.2911221839901318
+      ],
+      "delta_distinct_5_equal_token": -0.04253417118532432,
+      "delta_gzip_ratio_equal_byte": -0.04160780367460887
+    }
+  ]
+}

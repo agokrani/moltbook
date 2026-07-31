@@ -1,0 +1,114 @@
+{
+  "cutoffs_minutes": [
+    15,
+    30,
+    45,
+    60,
+    120,
+    180,
+    240,
+    300
+  ],
+  "run_duration_minutes": {
+    "mag0": 297.486,
+    "mag1": 295.275,
+    "mag5": 287.536,
+    "mag25": 289.081,
+    "dom-agi": 272.156,
+    "dom-tech": 296.714
+  },
+  "replicates_per_condition": 1,
+  "confidence_intervals_available": false,
+  "metrics": [
+    {
+      "metric": "distinct_5_cumulative",
+      "metric_label": "Cumulative Distinct-5",
+      "ranking_60": [
+        "mag1",
+        "dom-agi",
+        "dom-tech",
+        "mag0",
+        "mag25",
+        "mag5"
+      ],
+      "ranking_300": [
+        "mag1",
+        "dom-agi",
+        "mag0",
+        "mag5",
+        "mag25",
+        "dom-tech"
+      ],
+      "spearman_rho": 0.6,
+      "mean_change_60_to_300": -0.011058923787334862,
+      "per_condition_change_60_to_300": {
+        "mag0": -0.019000669763756695,
+        "mag1": -0.019669660196004135,
+        "mag5": -0.014387608559059073,
+        "mag25": -0.009879025212441328,
+        "dom-agi": -0.008891338717810338,
+        "dom-tech": 0.005474759725062395
+      }
+    },
+    {
+      "metric": "gzip_ratio_cumulative",
+      "metric_label": "Cumulative gzip ratio",
+      "ranking_60": [
+        "dom-tech",
+        "mag0",
+        "mag5",
+        "dom-agi",
+        "mag1",
+        "mag25"
+      ],
+      "ranking_300": [
+        "mag1",
+        "mag0",
+        "dom-agi",
+        "mag5",
+        "mag25",
+        "dom-tech"
+      ],
+      "spearman_rho": -0.2571428571428572,
+      "mean_change_60_to_300": -0.007714714502247838,
+      "per_condition_change_60_to_300": {
+        "mag0": -0.010205159753751136,
+        "mag1": -0.01912011808097136,
+        "mag5": -0.007644109431951818,
+        "mag25": -0.0113335837626094,
+        "dom-agi": -0.01138455002246419,
+        "dom-tech": 0.013399234038260877
+      }
+    },
+    {
+      "metric": "collapse_index_cumulative",
+      "metric_label": "Cumulative LLM collapse index",
+      "ranking_60": [
+        "mag1",
+        "mag0",
+        "mag25",
+        "dom-tech",
+        "dom-agi",
+        "mag5"
+      ],
+      "ranking_300": [
+        "mag1",
+        "mag0",
+        "mag25",
+        "dom-tech",
+        "mag5",
+        "dom-agi"
+      ],
+      "spearman_rho": 0.942857142857143,
+      "mean_change_60_to_300": 0.05349631439026744,
+      "per_condition_change_60_to_300": {
+        "mag0": 0.03273528402944503,
+        "mag1": 0.001761645493042252,
+        "mag5": 0.13661591116815508,
+        "mag25": 0.03167823634144806,
+        "dom-agi": 0.0650082595390904,
+        "dom-tech": 0.0531785497704238
+      }
+    }
+  ]
+}

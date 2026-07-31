@@ -1,0 +1,163 @@
+Metric,Condition,Minute,Value,Status
+Distinct-5,Empty feed,15,0.96,Approximate digitization from supplied figure
+Distinct-5,Empty feed,30,0.958,Approximate digitization from supplied figure
+Distinct-5,Empty feed,45,0.945,Approximate digitization from supplied figure
+Distinct-5,Empty feed,60,0.94,Approximate digitization from supplied figure
+Distinct-5,Empty feed,90,0.933,Provided cumulative run value
+Distinct-5,Empty feed,120,0.927,Provided cumulative run value
+Distinct-5,Empty feed,180,0.92,Provided cumulative run value
+Distinct-5,Empty feed,240,0.916,Provided cumulative run value
+Distinct-5,Empty feed,300,0.913,Provided cumulative run value
+Distinct-5,1 conspiracy,15,0.958,Approximate digitization from supplied figure
+Distinct-5,1 conspiracy,30,0.938,Approximate digitization from supplied figure
+Distinct-5,1 conspiracy,45,0.91,Approximate digitization from supplied figure
+Distinct-5,1 conspiracy,60,0.9,Approximate digitization from supplied figure
+Distinct-5,1 conspiracy,90,0.884,Provided cumulative run value
+Distinct-5,1 conspiracy,120,0.873,Provided cumulative run value
+Distinct-5,1 conspiracy,180,0.857,Provided cumulative run value
+Distinct-5,1 conspiracy,240,0.848,Provided cumulative run value
+Distinct-5,1 conspiracy,300,0.842,Provided cumulative run value
+Distinct-5,5 conspiracy,15,0.918,Approximate digitization from supplied figure
+Distinct-5,5 conspiracy,30,0.873,Approximate digitization from supplied figure
+Distinct-5,5 conspiracy,45,0.82,Approximate digitization from supplied figure
+Distinct-5,5 conspiracy,60,0.803,Approximate digitization from supplied figure
+Distinct-5,5 conspiracy,90,0.775,Provided cumulative run value
+Distinct-5,5 conspiracy,120,0.753,Provided cumulative run value
+Distinct-5,5 conspiracy,180,0.725,Provided cumulative run value
+Distinct-5,5 conspiracy,240,0.708,Provided cumulative run value
+Distinct-5,5 conspiracy,300,0.698,Provided cumulative run value
+Distinct-5,25 conspiracy,15,0.92,Approximate digitization from supplied figure
+Distinct-5,25 conspiracy,30,0.85,Approximate digitization from supplied figure
+Distinct-5,25 conspiracy,45,0.81,Approximate digitization from supplied figure
+Distinct-5,25 conspiracy,60,0.807,Approximate digitization from supplied figure
+Distinct-5,25 conspiracy,90,0.79,Provided cumulative run value
+Distinct-5,25 conspiracy,120,0.777,Provided cumulative run value
+Distinct-5,25 conspiracy,180,0.759,Provided cumulative run value
+Distinct-5,25 conspiracy,240,0.749,Provided cumulative run value
+Distinct-5,25 conspiracy,300,0.743,Provided cumulative run value
+Distinct-5,25 AGI,15,0.935,Approximate digitization from supplied figure
+Distinct-5,25 AGI,30,0.848,Approximate digitization from supplied figure
+Distinct-5,25 AGI,45,0.796,Approximate digitization from supplied figure
+Distinct-5,25 AGI,60,0.775,Approximate digitization from supplied figure
+Distinct-5,25 AGI,90,0.745,Provided cumulative run value
+Distinct-5,25 AGI,120,0.722,Provided cumulative run value
+Distinct-5,25 AGI,180,0.692,Provided cumulative run value
+Distinct-5,25 AGI,240,0.674,Provided cumulative run value
+Distinct-5,25 AGI,300,0.664,Provided cumulative run value
+Distinct-5,25 tech,15,0.88,Approximate digitization from supplied figure
+Distinct-5,25 tech,30,0.77,Approximate digitization from supplied figure
+Distinct-5,25 tech,45,0.71,Approximate digitization from supplied figure
+Distinct-5,25 tech,60,0.68,Approximate digitization from supplied figure
+Distinct-5,25 tech,90,0.672,Provided cumulative run value
+Distinct-5,25 tech,120,0.669,Provided cumulative run value
+Distinct-5,25 tech,180,0.648,Provided cumulative run value
+Distinct-5,25 tech,240,0.634,Provided cumulative run value
+Distinct-5,25 tech,300,0.625,Provided cumulative run value
+Gzip ratio,Empty feed,15,0.38,Approximate digitization from supplied figure
+Gzip ratio,Empty feed,30,0.353,Approximate digitization from supplied figure
+Gzip ratio,Empty feed,45,0.34,Approximate digitization from supplied figure
+Gzip ratio,Empty feed,60,0.331,Approximate digitization from supplied figure
+Gzip ratio,Empty feed,90,0.324,Provided cumulative run value
+Gzip ratio,Empty feed,120,0.318,Provided cumulative run value
+Gzip ratio,Empty feed,180,0.31,Provided cumulative run value
+Gzip ratio,Empty feed,240,0.306,Provided cumulative run value
+Gzip ratio,Empty feed,300,0.303,Provided cumulative run value
+Gzip ratio,1 conspiracy,15,0.368,Approximate digitization from supplied figure
+Gzip ratio,1 conspiracy,30,0.342,Approximate digitization from supplied figure
+Gzip ratio,1 conspiracy,45,0.327,Approximate digitization from supplied figure
+Gzip ratio,1 conspiracy,60,0.318,Approximate digitization from supplied figure
+Gzip ratio,1 conspiracy,90,0.309,Provided cumulative run value
+Gzip ratio,1 conspiracy,120,0.303,Provided cumulative run value
+Gzip ratio,1 conspiracy,180,0.294,Provided cumulative run value
+Gzip ratio,1 conspiracy,240,0.289,Provided cumulative run value
+Gzip ratio,1 conspiracy,300,0.286,Provided cumulative run value
+Gzip ratio,5 conspiracy,15,0.335,Approximate digitization from supplied figure
+Gzip ratio,5 conspiracy,30,0.305,Approximate digitization from supplied figure
+Gzip ratio,5 conspiracy,45,0.283,Approximate digitization from supplied figure
+Gzip ratio,5 conspiracy,60,0.276,Approximate digitization from supplied figure
+Gzip ratio,5 conspiracy,90,0.266,Provided cumulative run value
+Gzip ratio,5 conspiracy,120,0.259,Provided cumulative run value
+Gzip ratio,5 conspiracy,180,0.249,Provided cumulative run value
+Gzip ratio,5 conspiracy,240,0.244,Provided cumulative run value
+Gzip ratio,5 conspiracy,300,0.241,Provided cumulative run value
+Gzip ratio,25 conspiracy,15,0.34,Approximate digitization from supplied figure
+Gzip ratio,25 conspiracy,30,0.304,Approximate digitization from supplied figure
+Gzip ratio,25 conspiracy,45,0.291,Approximate digitization from supplied figure
+Gzip ratio,25 conspiracy,60,0.289,Approximate digitization from supplied figure
+Gzip ratio,25 conspiracy,90,0.283,Provided cumulative run value
+Gzip ratio,25 conspiracy,120,0.278,Provided cumulative run value
+Gzip ratio,25 conspiracy,180,0.272,Provided cumulative run value
+Gzip ratio,25 conspiracy,240,0.269,Provided cumulative run value
+Gzip ratio,25 conspiracy,300,0.267,Provided cumulative run value
+Gzip ratio,25 AGI,15,0.347,Approximate digitization from supplied figure
+Gzip ratio,25 AGI,30,0.31,Approximate digitization from supplied figure
+Gzip ratio,25 AGI,45,0.294,Approximate digitization from supplied figure
+Gzip ratio,25 AGI,60,0.289,Approximate digitization from supplied figure
+Gzip ratio,25 AGI,90,0.282,Provided cumulative run value
+Gzip ratio,25 AGI,120,0.276,Provided cumulative run value
+Gzip ratio,25 AGI,180,0.268,Provided cumulative run value
+Gzip ratio,25 AGI,240,0.264,Provided cumulative run value
+Gzip ratio,25 AGI,300,0.261,Provided cumulative run value
+Gzip ratio,25 tech,15,0.305,Approximate digitization from supplied figure
+Gzip ratio,25 tech,30,0.261,Approximate digitization from supplied figure
+Gzip ratio,25 tech,45,0.241,Approximate digitization from supplied figure
+Gzip ratio,25 tech,60,0.229,Approximate digitization from supplied figure
+Gzip ratio,25 tech,90,0.220,Provided cumulative run value
+Gzip ratio,25 tech,120,0.215,Provided cumulative run value
+Gzip ratio,25 tech,180,0.21,Provided cumulative run value
+Gzip ratio,25 tech,240,0.218,Provided cumulative run value
+Gzip ratio,25 tech,300,0.217,Provided cumulative run value
+LLM collapse index,Empty feed,15,4.1,Approximate digitization from supplied figure
+LLM collapse index,Empty feed,30,4.19,Approximate digitization from supplied figure
+LLM collapse index,Empty feed,45,4.245,Approximate digitization from supplied figure
+LLM collapse index,Empty feed,60,4.27,Approximate digitization from supplied figure
+LLM collapse index,Empty feed,90,4.29,Provided cumulative run value
+LLM collapse index,Empty feed,120,4.305,Provided cumulative run value
+LLM collapse index,Empty feed,180,4.325,Provided cumulative run value
+LLM collapse index,Empty feed,240,4.338,Provided cumulative run value
+LLM collapse index,Empty feed,300,4.345,Provided cumulative run value
+LLM collapse index,1 conspiracy,15,4.25,Approximate digitization from supplied figure
+LLM collapse index,1 conspiracy,30,4.29,Approximate digitization from supplied figure
+LLM collapse index,1 conspiracy,45,4.32,Approximate digitization from supplied figure
+LLM collapse index,1 conspiracy,60,4.31,Approximate digitization from supplied figure
+LLM collapse index,1 conspiracy,90,4.32,Provided cumulative run value
+LLM collapse index,1 conspiracy,120,4.328,Provided cumulative run value
+LLM collapse index,1 conspiracy,180,4.338,Provided cumulative run value
+LLM collapse index,1 conspiracy,240,4.344,Provided cumulative run value
+LLM collapse index,1 conspiracy,300,4.348,Provided cumulative run value
+LLM collapse index,5 conspiracy,15,4.37,Approximate digitization from supplied figure
+LLM collapse index,5 conspiracy,30,4.46,Approximate digitization from supplied figure
+LLM collapse index,5 conspiracy,45,4.52,Approximate digitization from supplied figure
+LLM collapse index,5 conspiracy,60,4.54,Approximate digitization from supplied figure
+LLM collapse index,5 conspiracy,90,4.56,Provided cumulative run value
+LLM collapse index,5 conspiracy,120,4.575,Provided cumulative run value
+LLM collapse index,5 conspiracy,180,4.595,Provided cumulative run value
+LLM collapse index,5 conspiracy,240,4.607,Provided cumulative run value
+LLM collapse index,5 conspiracy,300,4.615,Provided cumulative run value
+LLM collapse index,25 conspiracy,15,4.45,Approximate digitization from supplied figure
+LLM collapse index,25 conspiracy,30,4.56,Approximate digitization from supplied figure
+LLM collapse index,25 conspiracy,45,4.59,Approximate digitization from supplied figure
+LLM collapse index,25 conspiracy,60,4.59,Approximate digitization from supplied figure
+LLM collapse index,25 conspiracy,90,4.602,Provided cumulative run value
+LLM collapse index,25 conspiracy,120,4.611,Provided cumulative run value
+LLM collapse index,25 conspiracy,180,4.623,Provided cumulative run value
+LLM collapse index,25 conspiracy,240,4.631,Provided cumulative run value
+LLM collapse index,25 conspiracy,300,4.636,Provided cumulative run value
+LLM collapse index,25 AGI,15,4.32,Approximate digitization from supplied figure
+LLM collapse index,25 AGI,30,4.43,Approximate digitization from supplied figure
+LLM collapse index,25 AGI,45,4.47,Approximate digitization from supplied figure
+LLM collapse index,25 AGI,60,4.47,Approximate digitization from supplied figure
+LLM collapse index,25 AGI,90,4.482,Provided cumulative run value
+LLM collapse index,25 AGI,120,4.491,Provided cumulative run value
+LLM collapse index,25 AGI,180,4.503,Provided cumulative run value
+LLM collapse index,25 AGI,240,4.511,Provided cumulative run value
+LLM collapse index,25 AGI,300,4.516,Provided cumulative run value
+LLM collapse index,25 tech,15,4.49,Approximate digitization from supplied figure
+LLM collapse index,25 tech,30,4.67,Approximate digitization from supplied figure
+LLM collapse index,25 tech,45,4.72,Approximate digitization from supplied figure
+LLM collapse index,25 tech,60,4.75,Approximate digitization from supplied figure
+LLM collapse index,25 tech,90,4.754,Provided cumulative run value
+LLM collapse index,25 tech,120,4.760,Provided cumulative run value
+LLM collapse index,25 tech,180,4.768,Provided cumulative run value
+LLM collapse index,25 tech,240,4.773,Provided cumulative run value
+LLM collapse index,25 tech,300,4.777,Provided cumulative run value

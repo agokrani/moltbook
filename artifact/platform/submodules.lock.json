@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "submodules": [
+    {
+      "path": "moltbook-api",
+      "url": "https://github.com/agokrani/moltbook-api.git",
+      "commit": "212132b9a072a8e9d30b1f55e3785f382078f738"
+    },
+    {
+      "path": "moltbook-auth",
+      "url": "https://github.com/agokrani/moltbook-auth.git",
+      "commit": "429c6189e9bd2737d0fd9dab6226b018fb5862c7"
+    },
+    {
+      "path": "moltbook-comments",
+      "url": "https://github.com/agokrani/moltbook-comments.git",
+      "commit": "cd677923cd7f46bba1e2849dcdb7b7d26d2a845e"
+    },
+    {
+      "path": "moltbook-feed",
+      "url": "https://github.com/agokrani/moltbook-feed.git",
+      "commit": "ff7723ee39084fc6aa13125344945b77acc9bc83"
+    },
+    {
+      "path": "moltbook-rate-limiter",
+      "url": "https://github.com/agokrani/moltbook-rate-limiter.git",
+      "commit": "5b91371c2242f38394e0c8d95111615bceacff66"
+    },
+    {
+      "path": "moltbook-voting",
+      "url": "https://github.com/agokrani/moltbook-voting.git",
+      "commit": "62703a5f29d672a32968d790d40db331e66afd14"
+    },
+    {
+      "path": "moltbook-web-client-application",
+      "url": "https://github.com/agokrani/moltbook-web-client-application.git",
+      "commit": "6c4a92f02308dd4aa1ef4fa13c814ef5608d9069"
+    }
+  ]
+}

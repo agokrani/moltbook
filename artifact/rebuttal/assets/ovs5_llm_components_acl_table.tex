@@ -1,0 +1,55 @@
+\documentclass[border=10pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{booktabs}
+\usepackage{array}
+
+\begin{document}
+\begin{minipage}{7.35in}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{5.2pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Condition &
+\shortstack{$\Delta$ Novelty\\$\downarrow$} &
+\shortstack{$\Delta$ Semantic\\repetition $\uparrow$} &
+\shortstack{$\Delta$ Frame\\convergence $\uparrow$} &
+\shortstack{$\Delta$ Consensus\\conformity $\uparrow$} &
+\shortstack{$\Delta$ Template\\rigidity $\uparrow$} \\
+\midrule
+GPT-5 & Empty & \textbf{-0.005} & \textbf{+0.104} & \textbf{+0.209} & \textbf{+0.399} & \textbf{+0.487} \\
+GPT-5 & 1 conspiracy & \textbf{-0.160} & -0.014 & -0.069 & -0.183 & \textbf{+0.200} \\
+GPT-5 & 5 conspiracies & \textbf{-0.533} & \textbf{+0.512} & \textbf{+0.072} & \textbf{+0.191} & \textbf{+0.726} \\
+GPT-5 & 25 conspiracies & \textbf{-0.259} & \textbf{+0.132} & \textbf{+0.078} & \textbf{+0.312} & \textbf{+0.436} \\
+GPT-5 & AGI & \textbf{-0.165} & \textbf{+0.195} & \textbf{+0.046} & \textbf{+0.149} & \textbf{+0.359} \\
+GPT-5 & Tech & \textbf{-0.416} & \textbf{+0.411} & \textbf{+0.079} & \textbf{+0.316} & \textbf{+0.648} \\
+\addlinespace[2pt]
+Gemini Flash Lite & Empty & \textbf{-0.016} & \textbf{+0.074} & \textbf{+0.045} & -0.101 & \textbf{+0.183} \\
+Gemini Flash Lite & 1 conspiracy & \textbf{-0.427} & \textbf{+0.512} & \textbf{+0.074} & -0.123 & \textbf{+0.524} \\
+Gemini Flash Lite & 5 conspiracies & \textbf{-0.584} & \textbf{+0.641} & \textbf{+0.065} & \textbf{+0.439} & \textbf{+1.162} \\
+Gemini Flash Lite & 25 conspiracies & \textbf{-0.223} & \textbf{+0.318} & \textbf{+0.040} & \textbf{+0.330} & \textbf{+0.935} \\
+Gemini Flash Lite & AGI & \textbf{-0.394} & \textbf{+0.491} & \textbf{+0.064} & \textbf{+0.109} & \textbf{+0.080} \\
+Gemini Flash Lite & Tech & \textbf{-0.340} & \textbf{+0.375} & \textbf{+0.125} & \textbf{+0.227} & \textbf{+0.620} \\
+\addlinespace[2pt]
+Kimi K2.5 & Empty & \textbf{-0.852} & \textbf{+0.924} & \textbf{+0.201} & \textbf{+0.602} & \textbf{+1.182} \\
+Kimi K2.5 & 1 conspiracy & \textbf{-0.356} & \textbf{+0.383} & \textbf{+0.043} & \textbf{+0.420} & \textbf{+0.447} \\
+Kimi K2.5 & 5 conspiracies & \textbf{-0.272} & \textbf{+0.366} & \textbf{+0.184} & \textbf{+0.209} & \textbf{+0.423} \\
+Kimi K2.5 & 25 conspiracies & \textbf{-0.748} & \textbf{+0.774} & \textbf{+0.276} & \textbf{+0.652} & \textbf{+1.055} \\
+Kimi K2.5 & AGI & \textbf{-1.097} & \textbf{+1.145} & \textbf{+0.416} & \textbf{+1.171} & \textbf{+1.649} \\
+Kimi K2.5 & Tech & \textbf{-0.592} & \textbf{+0.575} & \textbf{+0.175} & \textbf{+0.440} & \textbf{+0.857} \\
+\addlinespace[2pt]
+GLM-5 & Empty & +0.132 & \textbf{+0.001} & -0.002 & \textbf{+0.080} & \textbf{+0.228} \\
+GLM-5 & 1 conspiracy & +0.105 & -0.049 & \textbf{+0.024} & \textbf{+0.077} & \textbf{+0.168} \\
+GLM-5 & 5 conspiracies & \textbf{-0.080} & \textbf{+0.129} & \textbf{+0.059} & \textbf{+0.191} & \textbf{+0.378} \\
+GLM-5 & 25 conspiracies & \textbf{-0.169} & \textbf{+0.163} & \textbf{+0.126} & \textbf{+0.612} & \textbf{+0.455} \\
+GLM-5 & AGI & \textbf{-0.091} & \textbf{+0.212} & -0.015 & \textbf{+0.182} & \textbf{+0.176} \\
+GLM-5 & Tech & \textbf{-0.179} & \textbf{+0.226} & \textbf{+0.110} & \textbf{+0.618} & \textbf{+0.291} \\
+\bottomrule
+\end{tabular}
+
+\vspace{5pt}
+\parbox{7.20in}{\small\textbf{Table W1:} Start-to-end changes in the five LLM-judge components for the 10-agent runs. Each cell is the final-window mean (45--60 minutes) minus the first-window mean (0--15 minutes). Arrows show the collapse direction; bold cells move in that direction. The equal-duration windows do not overlap, and components and runs are not averaged together.}
+\end{minipage}
+\end{document}

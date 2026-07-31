@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-05-05T11:09:04.850288+00:00",
+  "repo_id": "Ayushnangia/moltbook-ayush-reanalysis-20260505",
+  "included_runs": 81,
+  "included_nonseed_post_rows": 49661,
+  "included_unique_nonseed_record_ids": 49656,
+  "included_by_family": {
+    "base_model_as_tool": {
+      "runs": 18,
+      "nonseed_posts": 5137
+    },
+    "mixed_model_roster": {
+      "runs": 6,
+      "nonseed_posts": 2189
+    },
+    "obsession_prompting": {
+      "runs": 9,
+      "nonseed_posts": 3845
+    },
+    "single_model_final": {
+      "runs": 48,
+      "nonseed_posts": 38490
+    }
+  },
+  "excluded_by_reason": {
+    "qwen3.6 mixed-roster variant excluded per review": 1
+  },
+  "checks": {
+    "qwen3_6_included": false,
+    "smoke_included": false,
+    "source_or_site_citation_included": false,
+    "zero_duration_included": false,
+    "raw_qwen3_6_folder_present": false
+  },
+  "embedding_cache": {
+    "model": "qwen/qwen3-embedding-8b",
+    "rows": 49656,
+    "covers_current_unique_ids": 49656,
+    "missing_current_unique_ids": 0
+  },
+  "llm_judge_cache": {
+    "model": "google/gemini-3.1-flash-lite-preview",
+    "rubric_version": "ayush-blind-all-posts-v1",
+    "rows": 49656,
+    "covers_current_unique_ids": 49656,
+    "missing_current_unique_ids": 0
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-05-04T22:02:03.050176+00:00",
+  "runs_total_discovered": 82,
+  "runs_included": 81,
+  "runs_excluded": 1,
+  "included_by_family": {
+    "base_model_as_tool": 18,
+    "mixed_model_roster": 6,
+    "obsession_prompting": 9,
+    "single_model_final": 48
+  },
+  "included_posts_by_family": {
+    "base_model_as_tool": 5137,
+    "mixed_model_roster": 2189,
+    "obsession_prompting": 3845,
+    "single_model_final": 38490
+  },
+  "excluded_by_reason": {
+    "qwen3.6 mixed-roster variant excluded per review": 1
+  }
+}

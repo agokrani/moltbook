@@ -1,0 +1,98 @@
+{
+  "comparison": "first quartile versus final quartile",
+  "trajectory_metric": "paper-style cumulative values at four cutoffs within each run",
+  "gzip_control": "same UTF-8 byte count in all four windows; mean of 100 deterministic post-order permutations",
+  "one_hour_gpt5": {
+    "n_runs": 6,
+    "conditions": [
+      "dom-agi",
+      "dom-tech",
+      "mag0",
+      "mag1",
+      "mag25",
+      "mag5"
+    ],
+    "duration_minutes_range": [
+      54.17,
+      57.004
+    ],
+    "equal_post_distinct_5_decreases": 6,
+    "quarterly_collapse_index_increases": 6,
+    "cumulative_distinct_5_decreases": 6,
+    "cumulative_collapse_index_increases": 6,
+    "mean_delta_equal_post_distinct_5": -0.17563108825522164,
+    "mean_delta_quarterly_collapse_index": 0.2574229550058931,
+    "mean_delta_cumulative_distinct_5": -0.11103647546830003,
+    "mean_delta_cumulative_collapse_index": 0.15873542028687634,
+    "equal_byte_gzip_decreases": 6,
+    "mean_delta_equal_byte_gzip": -0.09244899545046854,
+    "cumulative_gzip_decreases": 6,
+    "mean_delta_cumulative_gzip": -0.05547653844202327
+  },
+  "one_hour_gemini_flash_lite": {
+    "n_runs": 6,
+    "conditions": [
+      "dom-agi",
+      "dom-tech",
+      "mag0",
+      "mag1",
+      "mag25",
+      "mag5"
+    ],
+    "duration_minutes_range": [
+      51.923,
+      58.27
+    ],
+    "equal_post_distinct_5_decreases": 6,
+    "quarterly_collapse_index_increases": 6,
+    "cumulative_distinct_5_decreases": 6,
+    "cumulative_collapse_index_increases": 6,
+    "mean_delta_equal_post_distinct_5": -0.09874407340561146,
+    "mean_delta_quarterly_collapse_index": 0.29125031734470674,
+    "mean_delta_cumulative_distinct_5": -0.058170626159868566,
+    "mean_delta_cumulative_collapse_index": 0.1564983556495776,
+    "equal_byte_gzip_decreases": null,
+    "mean_delta_equal_byte_gzip": null,
+    "cumulative_gzip_decreases": null,
+    "mean_delta_cumulative_gzip": null
+  },
+  "extended_gpt5": {
+    "n_runs": 6,
+    "conditions": [
+      "dom-agi",
+      "dom-tech",
+      "mag0",
+      "mag1",
+      "mag25",
+      "mag5"
+    ],
+    "duration_minutes_range": [
+      272.156,
+      297.486
+    ],
+    "equal_post_distinct_5_decreases": 6,
+    "quarterly_collapse_index_increases": 6,
+    "cumulative_distinct_5_decreases": 5,
+    "cumulative_collapse_index_increases": 6,
+    "mean_delta_equal_post_distinct_5": -0.02425723634038285,
+    "mean_delta_quarterly_collapse_index": 0.19756432586835423,
+    "mean_delta_cumulative_distinct_5": -0.011405649430388002,
+    "mean_delta_cumulative_collapse_index": 0.04976828445040601,
+    "equal_byte_gzip_decreases": 5,
+    "mean_delta_equal_byte_gzip": -0.02593623041012763,
+    "cumulative_gzip_decreases": 5,
+    "mean_delta_cumulative_gzip": -0.008294555483076968
+  },
+  "gemini_five_hour": {
+    "scheduled_attempts": 2,
+    "conditions_attempted": [
+      "mag25"
+    ],
+    "scheduled_minutes": 300,
+    "nonseed_post_counts": [
+      3,
+      0
+    ],
+    "final_quarter_estimate_available": false
+  }
+}
