@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "release_branch": "codex/emnlp-2026-artifact-release",
+  "repository_base": {
+    "repository": "https://github.com/agokrani/moltbook",
+    "commit": "0fe832dcd8187401fbed2b92a4bd43bbc5c41643",
+    "branch_at_capture": "findings-handoff"
+  },
+  "paper": {
+    "overleaf_project": "https://www.overleaf.com/project/6a03485faf2be710dce38b2f",
+    "export_name": "_ARR_Entropy_Collapse_in_LLM_Agent_Societies.zip",
+    "export_sha256": "661863546b3f9b60ad60abc664441ad608488add9506c96d64ded4017bf25830",
+    "included_path": "artifact/paper/source"
+  },
+  "rebuttal": {
+    "repository": "https://github.com/ayushnangia/rebuttal-9256",
+    "authoritative_branch": "main",
+    "authoritative_commit": "7aa442fa1b8183800c8a88958247691220acc04b",
+    "archive_sha256": "db8de2c6bb4c5a0c0866269f9944f4414da8b78cbf3ee19c9f278f5adda6aaf9",
+    "session_builder_branch": "agent/rebuttal-evidence-and-reviewer-responses",
+    "session_builder_commit": "2d95dd8bc5c0f6b7ced929a82b12bdc8390d3be1",
+    "session_builder_archive_sha256": "59220dd18436c059b4855d07782d36be5aa677690787dcdcc534787665498b9f"
+  },
+  "review": {
+    "openreview_id": "xlsQwVr1bm",
+    "discussion": "https://openreview.net/forum?id=xlsQwVr1bm#discussion"
+  },
+  "reddit_baseline": {
+    "source_url": "https://zenodo.org/records/3608135/files/RS_2019-04.zst?download=1",
+    "data_doi": "10.5281/zenodo.3608135",
+    "paper_doi": "10.1609/icwsm.v14i1.7347",
+    "license": "CC-BY-4.0",
+    "optional_robustness_repository": "https://github.com/strangeloopcanon/moltbook_vs_reddit",
+    "optional_robustness_commit": "30b9bae05635f73e08dde4231367d7f527e9f596"
+  }
+}

@@ -65,6 +65,12 @@ gen-lang-client-*.json
 *.toc
 *.fls
 *.fdb_latexmk
+artifact/paper/source/main.pdf
+artifact/paper/source/supplement.pdf
+
+# Artifact downloads and temporary verification outputs
+artifact/data/cache/
+artifact/**/*.part
 
 # Local paper preview/unpacked upload folders
 findings/emnlp-2026-paper/preview/

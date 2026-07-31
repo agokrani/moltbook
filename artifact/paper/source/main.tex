@@ -1,0 +1,434 @@
+\documentclass[11pt]{article}
+
+% EMNLP uses the ACL style files. Use \usepackage[review]{acl} for anonymous review.
+\usepackage[review]{acl}
+\usepackage{adjustbox}
+\usepackage{subcaption} % only if ACL allows it
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{inconsolata}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{float}
+\usepackage[skins,breakable]{tcolorbox}
+
+% Signposting colors for tables (soft yellow highlight matches the figure palette).
+\definecolor{tabhi}{HTML}{FFF3C4}
+\definecolor{tabhiink}{HTML}{6A4E00}
+\newcommand{\hi}[1]{\textbf{\textcolor{tabhiink}{#1}}}
+
+% Colors for appendix exemplar cards (one per model family).
+\definecolor{gptframe}{HTML}{6F8AC6}
+\definecolor{geminiframe}{HTML}{6FA785}
+\definecolor{mixedframe}{HTML}{D08A2C}
+\definecolor{belowthresh}{HTML}{FBE3E3}
+\definecolor{atthresh}{HTML}{EAF1FA}
+
+% Exemplar card: \begin{exemplarbox}{color}{title}{anchor} ... \end{exemplarbox}
+\newtcolorbox{exemplarbox}[3]{%
+  enhanced,
+  breakable,
+  colback=#1!4!white,
+  colframe=#1!72!black,
+  colbacktitle=#1!72!black,
+  coltitle=white,
+  fonttitle=\bfseries\small,
+  title={#2\hfill\normalfont\itshape anchor: \textbf{#3}},
+  boxrule=0.5pt,
+  arc=2pt,
+  left=7pt, right=7pt, top=4pt, bottom=4pt,
+  toptitle=2pt, bottomtitle=2pt,
+  before skip=3pt, after skip=3pt,
+}
+\title{Entropy Collapse in Agentic Social Media}
+\author{Anonymous Authors}
+
+\newcommand{\collapse}{entropy collapse}
+\newtheorem{definition}{Definition}
+\newcommand{\figcanonical}{plots/reanalysis-2026-05-05}
+\newcommand{\figmetrics}{plots/reanalysis-2026-05-06}
+\newcommand{\figpaper}{plots/reanalysis-2026-05-07}
+\newcommand{\figapproved}{plots/reanalysis-2026-05-07/approved}
+\newcommand{\figadd}{plots/additional}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A critical concern for multi-agent LLM systems in shared environments is that their outputs may converge toward over-homogeneous language. Because agents often share training corpora, post-training recipes, and decoding settings, their outputs can cluster around a small set of phrasings, which then become context for later agents. We study this phenomenon as \emph{entropy collapse} in Moltbook, a Reddit-style multi-agent sandbox. Earlier studies noted this narrowing in debate and conformity tasks, but few have asked whether design choices can stop it. Across 24 one-hour sessions with 10 agents each, spanning four model families and six starting feeds, we compare three fixes: heterogeneous-model rosters, base-model post writers, and persistent goals. Lexical novelty (Distinct-5) and gzip ratio drop in every run, and an LLM-judge collapse index climbs in 23/24. Each session forms its own \emph{local attractors}: reusable phrases, templates, and frames that spread between accounts. Each fix reshapes collapse rather than preventing it: heterogeneous rosters align on common framings; base writers cut exact reuse but not higher-level convergence; persistent goals move repetition into single-agent loops. Entropy collapse comes from the shared feed itself, not from any single agent.
+\end{abstract}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth,keepaspectratio]{plots/final/moltbook_v2.png}
+  \caption{Moltbook setup: Inputs (left) feed a shared feed (center) that a pool of persona-conditioned agents (right) reads and writes each heartbeat. One seed propagates into a repeated 5-gram (\emph{``none of this is profound''}, 9/10 agents, 27 posts).}
+  \label{fig:moltbook-overview}
+\end{figure*}
+\section{Introduction}
+
+LLM agents are now deployed in shared environments such as multi-agent debate, collaborative coding, evaluation pipelines, role-playing simulations, and agent-native social platforms \citep{park2023generative,li2023camel,wu2023autogen,hong2023metagpt}. The scale of these deployments is growing, and so is the share of public text that comes from agents rather than humans. Because agents share much of their training data and alignment recipes, their outputs tend to drift toward a narrow set of phrasings, frames, and topics. When that agent-generated text then re-enters the public web through scraping, downstream training data, or direct consumption by future models and users, the narrowing compounds across model generations \citep{shumailov2024modelcollapse}. Diversity in agent-produced text is therefore not only a feature of any one deployment. 
+
+Studies on LLM debate, conformity, conventions, and aligned-population diversity report convergence on phrases, opinions, and reasoning paths \citep{ashery2025conventions,cho2025herd,choi2025conformity,chen2026diversitycollapse,patel2026representational}. We refer to this failure mode as \emph{\collapse{}}: a narrowing of discourse in which later posts become more redundant, more compressible, and more concentrated on a few phrases, topics, or framings. The follow-up question is whether entropy collapse can be engineered away in deployed shared-feed systems, and that question has not been answered. 
+% If it can be engineered away, the most plausible solutions are mixing model families within a run, swapping in a different writer for post content, or assigning agents persistent goals outside the feed.
+
+We address this gap in Moltbook, a Reddit-like platform for autonomous LLM agents (Figure~\ref{fig:moltbook-overview}). 
+% We run 24 first-hour 10-agent simulations across four model families (GPT-5, Gemini 3.1 Flash Lite Preview, Kimi K2.5, GLM-5) and six initial-feed conditions, and we test all three interventions. 
+We run 24 first-hour 10-agent simulations across four model families (GPT-5, Gemini 3.1 Flash Lite Preview, Kimi K2.5, GLM-5; \citealp{openai2026gpt5,google2026gemini31flashlite,kimiteam2026k25,glm5team2026}) and six initial-feed conditions. To test whether collapse can be engineered away, we evaluate three natural interventions: mixing model families within a run, swapping in a base model  for writing post content, and assigning agents persistent goals outside the feed. Three measurements of the accumulated feed agree that diversity declines in the baseline: cumulative Distinct-5 declines in 24/24 runs, gzip ratio declines in 24/24, and the LLM-judge collapse index rises in 23/24. None of the three mitigations reliably preserves diversity. Mixed-model rosters still synchronize on shared frames, base-model writers reduce some exact phrase repetition but not feed-level convergence, and persistent goals shift repetition from shared catchphrases into individual-agent templates. Entropy collapse in shared-feed agent societies therefore appears to be a property of the interaction loop, not a side effect of any one model or design choice. 
+
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Agent social systems.}
+Most multi-agent LLM research studies coordination rather than open-ended communication, placing agents in simulated worlds, role-playing settings, software teams, debate protocols, or evaluation pipelines \citep{park2023generative,li2023camel,chen2023agentverse,wu2023autogen,hong2023metagpt,qian2024chatdev,zhou2024sotopia,du2023debate,chen2024reconcile,chan2024chateval}. These settings usually measure task success, coordination, reasoning, or believability. Moltbook raises a different question: what happens to the public text stream when agents read and write in the same space? Studies of the public Moltbook platform report repeated topics, attention skewed toward a few accounts, mostly one-sided interactions, the emergence of subgroups, and shared posting conventions \citep{jiang2026moltbook,demarzo2026moltbook,li2026moltbook,price2026moltbook,houji2026moltbook,lin2026siliconsociology,manik2026openclaw,feng2026moltnet,zerhoudi2026form}. Because the public platform is open, those traces can include platform incentives and human steering. Our controlled deployment removes that ambiguity.
+
+\paragraph{Convergence and text diversity.}
+The closest background comes from two areas: research on how groups influence each other, and methods for measuring diversity in generated text. Public signals and group pressure can shift expressed judgments \citep{asch1951,bikhchandani1992,muchnik2013social}; LLM-agent studies report conventions, herding, conformity, and losses of semantic or reasoning diversity \citep{ashery2025conventions,cho2025herd,choi2025conformity,chen2026diversitycollapse,patel2026representational}. Text-generation work measures degeneration and repetition with distinct-$n$, Self-BLEU, MAUVE, compression, and embedding-space diversity \citep{li2016diversity,zhu2018selfbleu,holtzman2020curious,pillutla2021mauve,tevet2021evaluating,yun2025format}. We borrow these tools but apply them to a running social feed, where narrowing arises not from updated weights, as in training-time model collapse \citep{shumailov2024modelcollapse}, but from agent outputs becoming the next round of inputs.
+
+
+\section{Experimental Setup and Metrics}
+\label{sec:setup}
+
+\paragraph{Shared-feed environment.}
+We run the experiments in a controlled Moltbook-style platform. For this study, the important object is not the database or web client but the feedback loop: agents read a shared Reddit-like feed, then write back to it. Each run fixes the model roster, personas, heartbeat, rate limits, and initial feed. Humans can watch the feed, but they do not post, vote, or moderate during any run (full platform configuration and agent-loop details in Appendix~\ref{app:implementation-details}).
+
+At heartbeat $t$, agent $i$ observes the current feed $F_t$ and its own persona/history $h_i$, chooses an action $a_{i,t}$, and submits it through the API:
+\begin{equation}
+    a_{i,t} = \pi_i(F_t, h_i), \qquad F_{t+1} = \Phi\bigl(F_t, \{a_{j,t}\}_j\bigr).
+    \label{eq:loop}
+\end{equation}
+Here $\pi_i$ is agent $i$'s policy, which in practice is an LLM conditioned on the heartbeat prompt, persona, and recent history. $\Phi$ is the platform update rule that applies the submitted actions to the feed (appending new posts and adjusting scores from votes). The action set is fixed across the paper:
+\[
+\begin{aligned}
+\mathcal{A} = \{&\textsc{post}, \textsc{vote},\\
+&\textsc{follow}, \textsc{no-op}\}.
+\end{aligned}
+\]
+
+\begin{figure*}[t]
+   \centering
+   \makebox[\textwidth][c]{%
+
+\includegraphics[width=1.10\textwidth]{plots/final/moltbook-experiment-diagram-polished-v10-paper-legible.png}
+   }
+   \caption{
+   Overview of the Moltbook experimental conditions: baseline shared-feed
+dynamics,
+   mixed-model rosters, base-model content tools, and persistent private
+goals injected
+   through the agent heartbeat.
+   }
+   \label{fig:moltbook-experiment-diagram}
+\end{figure*}
+
+When an action creates public text, that text becomes context for later agents. This is the loop we measure and perturb.
+\begin{figure*}[t]
+  \centering
+\includegraphics[width=\textwidth,keepaspectratio]{plots/final/figure_phrase_attractors.png}
+  \caption{Local phrase attractors. \textbf{(A)} Example seed posts shown to agents across the conspiracy, AGI, and technology conditions. \textbf{(B)} Ten phrase attractors observed in agent-generated text across runs, with model and seed condition.}
+  \label{fig:phrase-attractors}
+\end{figure*}
+\subsection{Run design}
+\label{subsec:design}
+
+A \emph{run} is one independent deployment with a fixed roster, model setting, and initial feed. All main runs use 10 agents, a one-minute heartbeat, and are analyzed over the first hour; seed posts initialize the feed but are excluded from all metrics.
+
+The core of our design is three interventions targeting entropy collapse: mixed-model rosters, base-model content generators, and persistent goals. Each is run across six initial-feed conditions. As baseline reference cohorts, we additionally run four single-model conditions (GPT-5, Gemini 3.1 Flash Lite Preview, Kimi K2.5, GLM-5) across the same six conditions, in which all agents use the same chat model so that persona variation is the only source of agent-level difference.
+
+\subsection{Initial feed conditions}
+\label{subsec:conditions}
+
+We test six initial feed conditions (Table~\ref{tab:feed-conditions}). The empty condition starts with no posts, so any collapse has to come from the agents themselves rather than from a seeded topic. The seeded conditions insert pre-written posts before the agents start, varying the amount (1, 5, or 25) and the topic (conspiracies, AGI, tech), and let us see how a given seed shapes the trajectory of the feed. Representative seed posts and example generated text are shown in Appendix~\ref{app:seed-conditions}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lp{0.62\columnwidth}}
+\toprule
+Condition & Initial feed state \\
+\midrule
+Empty & No seed posts \\
+1 conspiracy & 1 conspiracy-themed seed post \\
+5 conspiracies & 5 conspiracy-themed seed posts \\
+25 conspiracies & 25 conspiracy-themed seed posts \\
+AGI & 25 AGI hype/risk seed posts \\
+Tech & 25 tech-humor/product-failure seed posts \\
+\bottomrule
+\end{tabular}
+\caption{Initial feed conditions. Seed posts initialize the feed but are excluded from all reported metrics.}
+\label{tab:feed-conditions}
+\end{table}
+
+\subsection{Agents and intervention variants}
+\label{subsec:alt}
+
+Each intervention changes one part of the agent setup:
+
+\begin{itemize}\itemsep1pt
+    \item \textbf{Mixed-model rosters} put different chat models in the same feed.
+    \item \textbf{Base-model writers} keep an instruction-tuned controller for action selection, but use a base model to draft post text. Drafts rewritten by the controller are rejected.
+    \item \textbf{Persistent-goal agents} receive a stable outside track, such as coding, forecasting, fitness, hadith study, or cinema, and are instructed to check that track before browsing the feed.
+\end{itemize}
+The persona roster and heartbeat prompt are in Appendix~\ref{app:personas-heartbeat}; per-intervention implementation details and the mixed-model roster are in Appendix~\ref{app:intervention-details}.
+
+\subsection{Collapse target and metrics}
+\label{subsec:metrics}
+
+We compute each metric on the cumulative feed at time $t$, meaning every agent-generated post from the start of the run through $t$. A run collapses on a metric when that metric moves toward less diversity over time: lower Distinct-5, lower gzip ratio, or higher LLM-judge collapse index.
+
+We use three cumulative metrics:
+\begin{itemize}
+\setlength{\itemsep}{2pt}
+\item \textbf{Distinct-5}: the fraction of unique 5-grams in the cumulative feed. Lower values mean new posts add fewer new local word sequences.
+\item \textbf{Gzip ratio}: compressed size divided by raw size for the concatenated agent-authored text. Lower values mean the feed is easier to compress.
+\item \textbf{LLM-judge collapse index}: each post is scored on a $1$--$5$ scale for semantic repetition $R$, frame convergence $F$, consensus conformity $G$, template rigidity $T$, and novelty $N$. The judge sees anonymized local context but not model, run, condition, agent name, or file path. The judge prompt, a worked input/output example, and human-agreement scores (quadratic-weighted $\bar\kappa=0.63$ on 200 blinded posts) are in Appendices~\ref{app:llm-judge-details} and~\ref{app:human-scoring-protocol}.
+\end{itemize}
+We combine the LLM-judge fields as
+\begin{equation}
+\mathrm{CI} = \frac{R + F + G + T + (6 - N)}{5},
+\label{eq:ci}
+\end{equation}
+so higher values mean more repetition, more frame alignment, more conformity, more template rigidity, and less novelty. Formal definitions of Distinct-5 and gzip ratio, along with tokenization details, are in Appendix~\ref{app:lexical-details}.
+
+We also report one diagnostic that is easier to inspect qualitatively: exact repeated 5-grams (Figure~\ref{fig:phrase-attractors}, panel B), which are concrete phrase attractors that recur across agents.
+
+
+\section{Results}
+\label{sec:results}
+
+
+We begin by showing that Moltbook also exhibits entropy collapse under controlled conditions. The collapse appears inside posts as repeated 5-grams and local templates. Feed-level diversity also declines over time: cumulative Distinct-5 and gzip ratio fall, while the LLM-judge collapse index rises. We then test three ways to preserve diversity: mixing models in a run, using base models as content-generation tools, and assigning agents persistent goals. None reliably preserves feed diversity; each changes the form of collapse instead. Per-condition delta values for all interventions are in Appendix~\ref{app:full-intervention-tables}.
+
+\subsection{Entropy Collapse in Agent-Only Social Media}
+\label{subsec:entropy-collapse-baseline}
+
+% In our simulated Moltbook runs, entropy collapse is visible as concrete repeated language. Figure~\ref{fig:phrase-attractors}(A) shows examples of the human-written seed posts used to condition agents in the conspiracy, AGI, and technology conditions. Figure~\ref{fig:phrase-attractors}(B) lists ten phrase attractors observed in agent-generated text across four models and several initial-feed conditions, each reused by at least 7/10 agents within one hour. For example, in a GPT-5 25-conspiracy run, 8 agents used the exact 5-gram \texttt{Claim (1 line):} across 84 posts; in a Kimi K2.5 25-AGI run, 9 agents used \texttt{none of this is profound.} across 27 posts; in a GPT-5 25-technology run, 9 agents used \texttt{use with the lights off.} across 203 posts. The repeated language is not confined to one agent or one seed condition; in several runs, the same short phrases are reused by most agents in the group.
+
+
+
+
+% \begin{figure}[!t]
+%   \centering
+
+%   \includegraphics[width=\columnwidth]{plots/final/figure_gpt5_distinct5_cumulative_canonical_n10.png}\\[-0.5ex]
+%   {\scriptsize (a) Cumulative Distinct-5.}\par\vspace{0.8ex}
+
+%   \includegraphics[width=\columnwidth]{plots/final/figure_gpt5_gzip_cumulative_canonical_n10.png}\\[-0.5ex]
+%   {\scriptsize (b) Cumulative gzip ratio.}\par\vspace{0.8ex}
+
+%   \includegraphics[width=\columnwidth]{plots/final/figure_gpt5_llm_collapse_cumulative_canonical_n10.png}\\[-0.5ex]
+%   {\scriptsize (c) Cumulative LLM-judge collapse index.}
+
+%   \caption{Cumulative feed-level collapse in 10-agent runs. Each metric is recomputed over the accumulated feed at each 15-minute cutoff.}
+%   \label{fig:cumulative-collapse}
+% \end{figure}
+% We measure this pattern with repeated 5-grams. Seed posts are removed before matching, so the counts refer only to agent-generated posts. Because the comparison is n-gram based, it only counts a five-token sequence when the same sequence appears again. The reported counts are therefore conservative lower bounds on repeated language. Paraphrases, near-matches, and structurally similar posts are not counted.
+
+% The same loss of diversity appears at the accumulated-feed level. Figure~\ref{fig:cumulative-collapse} shows cumulative metrics for the GPT-5 10-agent runs, computed over all agent-generated posts observed up to each 15-minute cutoff. (a) reports Distinct-5, (b) reports gzip ratio, and (c) reports the LLM-judge collapse index. \textbf{Across the six GPT-5 runs, cumulative Distinct-5 declines in 6 of 6 runs, gzip ratio declines in 6 of 6 runs, and the LLM-judge collapse index rises in 6 of 6 runs.} The feed becomes larger but less diverse. New posts add fewer new 5-grams, the accumulated text becomes easier to compress, and the rising LLM-judge collapse index highlights stronger repetition, frame convergence, template rigidity, and loss of novelty.
+
+% The repeated 5-grams and GPT-5 cumulative metrics show that our agent-only Moltbook simulations reproduce the entropy-collapse phenomenon. The repeated phrases differ across runs, but within a run they are often reused by several agents. The cumulative feed also loses diversity over time. Appendix~\ref{app:base-counts} reports the same direction of change across all four model families in the full set of 24 single-model 10-agent runs.
+
+\paragraph{Repeated phrases spread across agents.}
+In our simulated Moltbook runs, entropy collapse is visible as concrete repeated language. Figure~\ref{fig:phrase-attractors}(A) shows examples of the human-written seed posts used to condition agents in the conspiracy, AGI, and technology conditions. Figure~\ref{fig:phrase-attractors}(B) lists ten phrase attractors observed in agent-generated text across four models and several initial-feed conditions, each reused by at least 7/10 agents within one hour. For example:  
+\begin{itemize}\setlength\itemsep{0pt}\setlength\parskip{0pt}
+  \item GPT-5, 25-conspiracy: 8 agents used \texttt{Claim (1 line):} across 84 posts.
+  \item Kimi K2.5, 25-AGI: 9 agents used \texttt{none of this is profound.} across 27 posts.
+  \item GPT-5, 25-technology: 9 agents used \texttt{use with the lights off.} across 203 posts.
+\end{itemize}
+The repeated language is not confined to one agent or one seed condition: in several runs, the same short phrases are reused by most agents in the group. Seed posts are excluded from matching and only exact 5-gram repeats are counted, so the reported counts are a conservative lower bound on repeated language. Full-length post examples showing template and frame convergence are in Appendix~\ref{app:qualitative-feed-examples}.
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{plots/final/figure_gpt5_distinct5_cumulative_canonical_n10.png}\\[-0.5ex]
+{\scriptsize (a) Cumulative Distinct-5.}\par\vspace{0.8ex}
+
+
+\includegraphics[width=\columnwidth]{plots/final/figure_gpt5_gzip_cumulative_canonical_n10.png}\\[-0.5ex]
+{\scriptsize (b) Cumulative gzip ratio.}\par\vspace{0.8ex}
+
+
+\includegraphics[width=\columnwidth]{plots/final/figure_gpt5_llm_collapse_cumulative_canonical_n10.png}\\[-0.5ex]
+{\scriptsize (c) Cumulative LLM-judge collapse index.}
+
+\caption{Cumulative feed-level collapse in 10-agent runs. Each metric is recomputed over the accumulated feed at each 15-minute cutoff.}
+\label{fig:cumulative-collapse}
+\end{figure}
+
+
+\paragraph{Metrics pointing towards collapse.}
+The same loss of diversity appears at the accumulated-feed level. Figure~\ref{fig:cumulative-collapse} shows cumulative metrics for the GPT-5 10-agent runs, computed over all agent-generated posts observed up to each
+15-minute cutoff. (a) reports Distinct-5, (b) reports gzip ratio, and (c) reports the LLM-judge collapse index. Across the six GPT-5 runs, cumulative Distinct-5 declines in 6 of 6 runs, gzip ratio declines in 6 of 6 runs, and the LLM-judge collapse index rises in 6 of 6 runs. The feed becomes larger but less diverse. New posts add fewer new 5-grams, the accumulated text becomes easier to compress, and the rising LLM-judge collapse index highlights stronger repetition, frame convergence, template rigidity, and loss of novelty.
+
+The repeated 5-grams and GPT-5 cumulative metrics show that our agent-only Moltbook simulations reproduce the entropy-collapse phenomenon. The repeated phrases differ across runs, but within a run they are often reused by several agents. The cumulative feed also loses diversity over time. Appendix~\ref{app:single-model-cumulative} reports the same direction of change across all four model families in the full set of 24 single-model 10-agent runs.  Appendix~\ref{app:scaling} further shows that increasing the population from 10 to 20 or 30 agents does not weaken local phrase attractors. Instead, the top phrase reaches more agents and becomes more collective.
+
+\subsection{Can Mixing Heterogeneous Models Preserve Feed Diversity?}
+\label{subsec:mixing-models}
+
+\paragraph{Motivation.}
+The motivation for this experiment comes directly from the single-model 10-agent runs. Different model families did not converge on the same repeated phrases: GPT-5, Gemini 3.1 Flash Lite Preview, Kimi K2.5, and GLM-5 each produced different 5-grams, templates, and recurring frames. If those differences come from training data, post-training, decoding behavior, or model-specific response style, then mixing model families inside a single run should increase the feed diversity. The expectation is that model-level variation would become feed-level variation: different model families would contribute different phrasings, templates, and frames, making it harder for any one style to dominate.
+\paragraph{Feed collapse.}
+Mixing models does not preserve open-ended feed diversity. Across all six seed conditions, the mixed-model runs move in the direction of collapse, on all three core metrics: Distinct-5 decreases, gzip ratio decreases, and LLM-judge collapse index increases.
+
+% \begin{table*}[t]
+% \centering
+% \caption{Mixed models still narrow across all seed conditions. Values show change from cumulative 0 -- 15m to cumulative 0 -- 60m.}
+% \label{tab:mixed-models}
+% \scriptsize
+% \setlength{\tabcolsep}{3pt}
+% \begin{adjustbox}{max width=\textwidth}
+% \begin{tabular}{lrrrrrrrrr}
+% \toprule
+% Condition & GPT-5 $\Delta$ D-5 & GPT-5 $\Delta$ gzip & GPT-5 $\Delta$ LLM
+% & Gemini $\Delta$ D-5 & Gemini $\Delta$ gzip & Gemini $\Delta$ LLM
+% & Mixed $\Delta$ D-5 & Mixed $\Delta$ gzip & Mixed $\Delta$ LLM \\
+% \midrule
+% Empty feed & -0.019 & -0.049 & +0.16 & -0.024 & -0.038 & +0.05 & -0.037 & -0.013 & +0.30 \\
+% 1 conspiracy seed & -0.061 & -0.048 & +0.06 & -0.024 & -0.035 & +0.15 & -0.029 & -0.030 & +0.39 \\
+% 5 conspiracy seeds & -0.116 & -0.055 & +0.17 & -0.228 & -0.096 & +0.34 & -0.060 & -0.029 & +0.31 \\
+% 25 conspiracy seeds & -0.115 & -0.048 & +0.15 & -0.031 & -0.036 & +0.19 & -0.075 & -0.030 & +0.31 \\
+% 25 AGI seeds & -0.157 & -0.058 & +0.16 & -0.018 & -0.032 & +0.10 & -0.074 & -0.036 & +0.21 \\
+% 25 tech seeds & -0.199 & -0.075 & +0.26 & -0.023 & -0.032 & +0.11 & -0.082 & -0.027 & +0.22 \\
+% \bottomrule
+% \end{tabular}
+% \end{adjustbox}
+% \end{table*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{plots/final/figure_mixed_models.png}
+\caption{Mixing model families does not stop collapse. Change in each metric from cumulative 0--15m to 0--60m across six initial-feed conditions. Mixed has smaller surface declines (Distinct-5, gzip) than the single-model baselines, but the largest LLM-judge collapse rise in 4/6 conditions: lexical diversity survives, semantic convergence does not.}
+\label{fig:mixed-models}
+\end{figure*}
+
+
+Figure~\ref{fig:mixed-models} reports cumulative changes across all six conditions. Compared with GPT-5 and Gemini 3.1 Flash Lite Preview, the mixed-model runs often have smaller drops in Distinct-5 and gzip, especially gzip. But this does not mean the feed remains diverse. The LLM-judge collapse index rises in every mixed-model condition, and in 4 of 6 conditions it rises more than in both GPT-5 and Gemini 3.1 Flash Lite Preview. Mixing models therefore weakens some surface redundancy signals, while the LLM judge still sees increasing repetition, rigidity, and frame convergence. Appendix~\ref{app:mixed-exemplars} shows the kind of agent text the judge responds to.
+
+\paragraph{Phrase adoption.}
+Shared phrase adoption is weaker than in single-model runs but does not disappear: the top exact phrase reaches at least half the agents in 4/6 mixed-model runs, compared with 24/24 single-model runs (per-run examples in Appendix~\ref{app:mixed-exemplars}). Model diversity changes how repetition spreads, but the shared feed can still lose diversity overall. Agents repeat the same phrases less often than in single-model runs, yet they return to similar content in different wording.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{plots/final/figure_base_writers.png}
+\caption{Base-model writers do not restore feed diversity. Change in each metric from cumulative 0--15m to 0--60m across six initial-feed conditions. Qwen 3.5 35B-A3B Base often keeps surface metrics flat or improving, yet the LLM-judge collapse index still rises in 4/6 conditions; OLMo 3 32B Base moves in the collapse direction on the LLM-judge in 5/6 conditions.}
+\label{fig:base-writers}
+\end{figure*}
+
+\subsection{Can Base Models Restore Text Diversity?}
+\label{subsec:base-models}
+\paragraph{Hypothesis.}
+The second intervention targets the model that generates the content. We hypothesize that entropy collapse may be driven by instruction-tuned or RLHF-trained agents. These models are optimized to be helpful, compliant, and easy to follow, and post-training can make their responses more standardized. As a result, agents may converge on checklist formats, polite framing, safety caveats, or assistant-like phrases. This hypothesis is consistent with prior work showing that decoding, formatting, and prompt structure affect linguistic diversity, as well as work on diversity collapse in aligned multi-agent systems
+\citep{li2016diversity,zhu2018selfbleu,holtzman2020curious,tevet2021evaluating,yun2025format,chen2026diversitycollapse}. If instruction-tuned writing contributes to feed collapse, then replacing the content generator with a base model should improve diversity.
+
+% \paragraph{Design choice}
+% We could not replace the full agent with a base model because operating Moltbook requires following heartbeat instructions, deciding whether to post, using API tools, and maintaining the action loop. Base models were too unreliable at this control layer to operate the platform in the desired way. We therefore split the agent into two components. An instruction-tuned controller reads the feed, follows the heartbeat, and selects the next action. When the action requires public text, a base model generates the text. To ensure the runs contain only base-model-authored content, we reject outputs that the controller rewrites before posting. Implementation details are given in Appendix ~\ref{app:implementation-details}.
+
+% The base-model runs contain fewer accepted agent-generated texts. The runs with GPT-5 and Gemini 3.1 Flash Lite Preview produce median counts of 472 and 407, respectively. Qwen Base and OLMo Base produce 260 and 238 accepted texts. That difference matters: fewer accepted texts create fewer chances for an exact 5-gram to recur, and cumulative Distinct-5 can look higher even when the feed is not genuinely more diverse. For that reason, higher Distinct-5 in these runs is not enough by itself to show that base models restored diversity. Detailed post counts for the standard and base-model runs are reported in the Appendix ~\ref{app:base-counts}.
+
+\paragraph{Base-model collapse.}
+% Qwen Base weakens lexical repetition; OLMo Base does not. Qwen Base is the strongest evidence for the base-model hypothesis: across six conditions, Distinct-5 is nearly flat, declining in only 3/6 conditions with a median change near zero. Its top exact 5-gram reaches at least half the agents in only 3/6 runs. But the other metrics still show feed collapse. Gzip still declines in 5/6 Qwen Base conditions, and the LLM-judge collapse index rises in 4/6. In other words, exact phrase repetition weakens, while compression and the LLM judge still detect growing redundancy, repetition, rigidity, or frame convergence. OLMo Base points the other way. It declines on Distinct-5 in 6/6 conditions and on gzip and LLM collapse in 5/6, while its top exact 5-gram reaches at least half the agents in 6/6 runs. Replacing the writer with a base model can weaken one form of lexical repetition, but it does not reliably restore feed diversity.
+Figure~\ref{fig:base-writers} shows that Qwen 3.5 35B-A3B Base \citep{qwenteam2026qwen35} and OLMo 3 32B Base \citep{olmo3team2025} behave differently. Qwen Base weakens exact phrase repetition more than OLMo Base does. Its Distinct-5 stays nearly flat, declining in only 3 of 6 conditions with a median change near zero, and its top exact 5-gram reaches at least half the agents in only 3 of 6 runs. But the feed does not stay diverse: gzip ratio still declines in 5 of 6 Qwen Base conditions, and the LLM-judge collapse index rises in 4 of 6. OLMo Base looks more like the standard collapse pattern. It moves in the collapse direction for Distinct-5 in 6 of 6 conditions and for gzip ratio and LLM-judge collapse index in 5 of 6, and its top exact 5-gram reaches at least half the agents in 6 of 6 runs. Replacing an instruction-tuned writer with a base model can weaken one form of lexical repetition, but it does not reliably keep the feed open. Eligible post counts for each condition and writer setup are in Appendix~\ref{app:base-counts}.
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{plots/final/figure_persistent_goals.png}
+\caption{Persistent goals reduce, but never eliminate, the rise in the LLM-judge collapse index. Persistent-goals runs are positive in all 6/6 conditions and smaller than the GPT-5 baseline in 5/6.}
+\label{fig:persistent-goals}
+\end{figure}
+% \begin{table*}[t]
+% \centering
+% \caption{Base model as content generators do not behave uniformly. Values show change from cumulative 0 -- 15m to cumulative 0 -- 60m.}
+% \label{tab:base-writers}
+% \scriptsize
+% \begin{adjustbox}{max width=\textwidth}
+% \begin{tabular}{lrrrrrr}
+% \toprule
+% Condition & Qwen $\Delta$D-5 & Qwen $\Delta$gzip & Qwen $\Delta$LLM & OLMo Base $\Delta$D-5 & OLMo Base $\Delta$gzip & OLMo Base $\Delta$LLM \\
+% \midrule
+% Empty feed & +0.001 & -0.003 & +0.21 & -0.002 & +0.005 & -0.05 \\
+% 1 conspiracy seed & -0.011 & -0.022 & -0.22 & -0.030 & -0.012 & +0.16 \\
+% 5 conspiracy seeds & +0.010 & -0.000 & -0.03 & -0.009 & -0.022 & +0.15 \\
+% 25 conspiracy seeds & -0.003 & -0.024 & +0.41 & -0.008 & -0.015 & +0.07 \\
+% 25 AGI seeds & -0.002 & +0.002 & +0.02 & -0.013 & -0.010 & +0.07 \\
+% 25 tech seeds & +0.012 & -0.008 & +0.10 & -0.030 & -0.034 & +0.20 \\
+% \bottomrule
+% \end{tabular}
+% \end{adjustbox}
+% \end{table*}
+
+% \paragraph{Engineering cost}
+% Base-model content generation is also not an easy engineering fix. The base model cannot run the agent loop by itself, so the system needs an instruction-tuned controller, a handoff to the base model for text generation, and an acceptance rule that rejects controller-rewritten drafts. This makes base models useful as a tool for studying diversity, but difficult to use as a permanent solution. A better direction may be to study how to preserve text diversity inside instruction-tuned agents themselves, including how pretraining behavior, next-token prediction, instruction tuning, and RL-style post-training shape the diversity of the text agents produce.
+
+\subsection{Do Persistent Goals Prevent Convergence?}
+\label{subsec:persistent-goals}
+\paragraph{Rationale.}
+The third intervention gives agents persistent goals outside the Moltbook simulation. In the original Moltbook platform, agents often carried user goals or ongoing projects, and social media was something they used alongside those goals. The feed was therefore not the only thing the agent cared about. An agent debugging a tool or working toward a user goal could enter Moltbook with a topic already in hand, rather than deriving its next post from the earlier feed. Human social media also works this way. Posts are heavily influenced by the outside world, since users bring work, interests, relationships, events, and opinions into what they post. If entropy collapse is driven by agents reusing language and topics already present on the platform, then persistent goals should reduce convergence on the same phrases, templates, and frames.
+% \paragraph{Design choice}
+% Because user goals are difficult to simulate, we implemented private goals through the heartbeat. Each agent received one private goal: coding, hadith study, forecasting, fitness, or cinema. Before browsing Moltbook, the heartbeat instructed the agent to check in with its assigned goal and use it as a source for posting. This experiment tests whether agents with content influenced by the outside world are less likely to converge on the same repeated phrases.
+
+\paragraph{Phrase adoption.}
+The effect of giving agents persistent goals is that it reduces shared phrase adoption across agents. In GPT-5 runs, the top repeated 5-gram reaches at least half the agents in 6/6 conditions. In runs with persistent goals, this happens in 0/6 runs. Across those runs, the top repeated 5-gram is used by a median of 3 agents, compared with 7 agents in the GPT-5 runs without persistent goals. This suggests that persistent goals interrupt one form of feed collapse: agents are less likely to all pick up the same phrase from the public feed.
+
+\paragraph{Feed collapse.}
+But persistent goals do not remove repetition. They shift it from the group to the individual agent. In GPT-5 runs, about 26\% of the mentions of the top repeated 5-gram come from one agent. In runs with persistent goals, that share rises to about 68\%. The top repeated phrase is therefore less likely to spread across many agents, but when it appears, it is often repeated by one agent. Persistent goals therefore reduce shared catchphrases, but they can leave individual agents repeating their own templates, questions, or frames.
+
+The same pattern appears in the LLM-judge collapse index. As Figure~\ref{fig:persistent-goals} shows, runs with persistent goals still increase over time: all 6 GPT-5 runs with persistent goals have positive deltas. At the same time, the increase is smaller than the GPT-5 baseline in 5 of 6 seed conditions. Persistent goals therefore reduce the feed-wide increase in collapse, but they do not keep the overall discourse open-ended.
+
+% \begin{table}[t]
+% \centering
+% \caption{Private goals reduce but do not eliminate increases in the LLM-judge collapse index.}
+% \label{tab:private-goals}
+% \scriptsize
+% \setlength{\tabcolsep}{3pt}
+% \begin{tabular}{@{}lrrr@{}}
+% \toprule
+% Condition & GPT-5 $\Delta$ LLM & Private Goals $\Delta$ LLM & Diff. \\
+% \midrule
+% Empty feed & +0.241 & +0.110 & -0.131 \\
+% 1 conspiracy seed & +0.019 & +0.022 & +0.003 \\
+% 5 conspiracy seeds & +0.407 & +0.035 & -0.371 \\
+% 25 conspiracy seeds & +0.243 & +0.056 & -0.187 \\
+% 25 AGI seeds & +0.183 & +0.055 & -0.128 \\
+% 25 tech seeds & +0.374 & +0.117 & -0.257 \\
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+% \paragraph{Caveat}
+% Our setup held private goals fixed across the run. This matches one part of the Moltbook setting, where agents may carry user goals or ongoing projects into the feed. It does not cover another plausible setting, where users repeatedly update, replace, or redirect those goals over time. Such changes could introduce additional variation into the feed, and are an important direction for follow-up. Taken together, private goals make collapse less shared across agents, but they do not stop individual agents from settling into their own templates.
+
+\section{Conclusion}
+\label{sec:conclusion}
+We asked whether simple design changes can stop entropy collapse on a live shared agent feed. Across 24 one-hour Moltbook sessions spanning four model families and six starting feeds, lexical novelty (Distinct-5) and gzip ratio drop in every run, and an LLM-judge collapse index climbs in 23/24. Each session forms its own local attractors: reusable phrases, templates, roles, and frames that spread between accounts and become context for later agents.
+
+The three fixes reshape collapse rather than preventing it. Heterogeneous-model rosters preserve surface variety while aligning on common framings. Base-model post writers cut exact phrase reuse but not higher-level convergence. Persistent goals move repetition out of shared catchphrases and into single-agent template loops. Entropy collapse comes from the shared feed itself, not from any single agent, so shared-feed agent systems need diversity monitoring and feed-level interventions, not only better individual agents.
+
+\section{Limitations}
+\label{sec:limitations}
+We view the present results as a controlled first step, not a full account of all agent social systems.
+\paragraph{Time horizon.}
+The runs cover the first hour only, so we cannot say whether collapse keeps growing, stabilizes, or breaks over longer deployments.
+
+\paragraph{Population.}
+The feeds are fully agent-generated and include no human or mixed human-agent baselines, so the results do not generalize directly to public social media.
+
+\paragraph{Interventions.}
+Mixed models, base writers, and persistent goals are practical probes and do not test feed-level mechanisms such as ranking, novelty incentives, or external inputs.
+
+\paragraph{Measurement.}
+Exact 5-grams miss paraphrases and the LLM-judge collapse index uses a single judge model; we do not include multiple judges.
+
+\bibliography{paper}
+\appendix
+\input{appendix}
+\end{document}
